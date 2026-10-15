@@ -59,8 +59,14 @@ Add `--batch_job_role <arn>` if the queue needs an explicit job role. Use
 - `hosts.tsv`: wall time of each task's core command, plus the vCPUs, memory and
   CPU model of the instance it ran on.
 - `checksums.tsv`: read, base and masked-base (`N`) counts per variant, an
-  ordered MD5 of the output, and order-independent hashes of whole records
-  and of read IDs. A variant reproduces `current` if `hash_unordered` matches.
+  ordered MD5 of the output, and order-independent hashes of whole records,
+  read IDs, sequences, and quality scores outside `N` bases. A variant
+  reproduces `current` if `hash_unordered` matches. If only
+  `hash_seqs_unordered` and `hash_quals_outside_n_unordered` match, the variant
+  masked the same bases and differs only in the quality scores of masked bases.
+
+To recompute checksums after changing `bin/fastq_checksum.py`, rerun with
+`-resume` and the same work directory: only the `CHECKSUM` tasks rerun.
 
 The work directory holds full-size read files from every variant. Delete it
 after the run.
