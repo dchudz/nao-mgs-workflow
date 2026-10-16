@@ -2,14 +2,16 @@
 Benchmark output compression in the slowest Illumina Python steps.
 
 Every module script writes its .gz outputs through Python's gzip.open, which
-defaults to level 9. This runs five production scripts unchanged on real
-inputs, while hook/sitecustomize.py switches the writer per variant (gzip at
-another level, Zstandard, or none). Inputs stay as the production gzip files,
-so only output compression changes.
+defaults to level 9. This runs production scripts unchanged on real inputs,
+while hook/sitecustomize.py switches the writer per variant (gzip at another
+level, Zstandard, or none). Inputs stay as the production gzip files, so only
+output compression changes.
 
 Steps, named after the production processes they mirror:
   - FILTER_VIRAL_SAM, PROCESS_VIRAL_BOWTIE2_SAM (EXTRACT_VIRAL_READS_SHORT)
-  - CHECK_TSV_DUPLICATES, JOIN_TSVS, ADD_CONDITIONAL_TSV_COLUMN
+  - ADD_SAMPLE_COLUMN, JOIN_TSVS, FILTER_TSV_COLUMN_BY_VALUE
+    (PROCESS_LCA_ALIGNER_OUTPUT; JOIN_TSVS can also take downstream's join)
+  - CHECK_TSV_DUPLICATES, ADD_CONDITIONAL_TSV_COLUMN
     (SPLIT_VIRAL_TSV_BY_SELECTED_TAXID, downstream)
 A step runs only when its input params are set.
 
@@ -31,6 +33,7 @@ def hookEnv(variant) {
     """
     export PYTHONPATH="\$PWD/hook"
     export BENCH_COMPRESSION="${variant}"
+    export PYTHONDONTWRITEBYTECODE=1
     """
 }
 
@@ -91,6 +94,27 @@ process PROCESS_VIRAL_BOWTIE2_SAM {
         """
 }
 
+process FILTER_TSV_COLUMN_BY_VALUE {
+    label "python"
+    label "single"
+    tag "${variant}|rep${rep}"
+    input:
+        tuple path(tsv), val(variant), val(rep)
+        path(script)
+        path(hook, stageAs: "hook/sitecustomize.py")
+    output:
+        tuple val("FILTER_TSV_COLUMN_BY_VALUE"), val(variant), val(rep), path("out.tsv.gz"), emit: output
+        path("host.tsv"), emit: host
+    script:
+        """
+        set -euo pipefail
+        ${hookEnv(variant)}
+        start_s=\$(date +%s.%N)
+        python3 ${script} -i ${tsv} -c "classification" -v "primary" --keep-matching -o out.tsv.gz
+        ${hostRecord("FILTER_TSV_COLUMN_BY_VALUE", variant, rep)}
+        """
+}
+
 process CHECK_TSV_DUPLICATES {
     label "python"
     label "single"
@@ -112,6 +136,27 @@ process CHECK_TSV_DUPLICATES {
         """
 }
 
+process ADD_SAMPLE_COLUMN {
+    label "python"
+    label "single"
+    tag "${variant}|rep${rep}"
+    input:
+        tuple path(tsv), val(variant), val(rep)
+        path(script)
+        path(hook, stageAs: "hook/sitecustomize.py")
+    output:
+        tuple val("ADD_SAMPLE_COLUMN"), val(variant), val(rep), path("out.tsv.gz"), emit: output
+        path("host.tsv"), emit: host
+    script:
+        """
+        set -euo pipefail
+        ${hookEnv(variant)}
+        start_s=\$(date +%s.%N)
+        python3 ${script} ${tsv} ${params.asc_sample} sample out.tsv.gz
+        ${hostRecord("ADD_SAMPLE_COLUMN", variant, rep)}
+        """
+}
+
 process JOIN_TSVS {
     label "python"
     label "single"
@@ -128,7 +173,7 @@ process JOIN_TSVS {
         set -euo pipefail
         ${hookEnv(variant)}
         start_s=\$(date +%s.%N)
-        python3 ${script} ${tsv1} ${tsv2} aligner_taxid_lca left out.tsv.gz
+        python3 ${script} ${tsv1} ${tsv2} ${params.jt_field} ${params.jt_type} out.tsv.gz
         ${hostRecord("JOIN_TSVS", variant, rep)}
         """
 }
@@ -192,6 +237,16 @@ workflow {
         hook,
     )
 
+    asc_in = params.asc_tsv ? channel.of(file(params.asc_tsv)) : channel.empty()
+    asc = ADD_SAMPLE_COLUMN(asc_in.combine(runs), moduleScript("addSampleColumn", "add_sample_column.py"), hook)
+
+    ftcbv_in = params.ftcbv_tsv ? channel.of(file(params.ftcbv_tsv)) : channel.empty()
+    ftcbv = FILTER_TSV_COLUMN_BY_VALUE(
+        ftcbv_in.combine(runs),
+        moduleScript("filterTsvColumnByValue", "filter_tsv_column_by_value.py"),
+        hook,
+    )
+
     ctd_in = params.ctd_tsv ? channel.of(file(params.ctd_tsv)) : channel.empty()
     ctd = CHECK_TSV_DUPLICATES(ctd_in.combine(runs), moduleScript("checkTsvDuplicates", "check_tsv_duplicates.py"), hook)
 
@@ -206,10 +261,10 @@ workflow {
     )
 
     // Outputs should be deterministic, so checksum one replicate only
-    outputs = fvs.output.mix(pvbs.output, ctd.output, jt.output, act.output)
+    outputs = fvs.output.mix(pvbs.output, asc.output, jt.output, ftcbv.output, ctd.output, act.output)
     sums = CHECKSUM(outputs.filter { _s, _v, rep, _f -> rep == (params.checksum_replicate as int) })
 
     sums.collectFile(name: "checksums.tsv", storeDir: params.outdir, keepHeader: true, skip: 1, sort: true)
-    fvs.host.mix(pvbs.host, ctd.host, jt.host, act.host)
+    fvs.host.mix(pvbs.host, asc.host, jt.host, ftcbv.host, ctd.host, act.host)
         .collectFile(name: "hosts.tsv", storeDir: params.outdir, seed: "step\tvariant\trep\tcore_wall_s\thost_vcpus\thost_mem_gib\tcpu_model\n", sort: true)
 }

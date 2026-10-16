@@ -7,7 +7,7 @@ measurement only and isn't meant to be merged.
 
 ## How it works
 
-Each step runs the production script from `modules/local/` unchanged, with the
+Each step runs a production script from `modules/local/` unchanged, with the
 same container, CPUs and memory as production. `hook/sitecustomize.py` is put on
 `PYTHONPATH`, so Python loads it at startup. It replaces `gzip.open` for writes
 with the writer that `BENCH_COMPRESSION` names. Reads are untouched, so every
@@ -26,18 +26,26 @@ Outputs keep their `.gz` names whatever the format. Each variant runs
 
 ## Steps and inputs
 
-Each step takes the inputs of one production task, ideally the slowest one in
+Each step takes the inputs of one task from a run, ideally the slowest one in
 a large delivery. Find the task's work directory in the run's trace. Its
 `.command.sh` shows the command with the input names in argument order, and its
-`.command.run` shows where each input was staged from.
+`.command.run` shows where each input was staged from. If the run's work files
+are gone, rerun `RUN` on just that library (one samplesheet row, the run's
+params) and take the inputs from the new run.
 
-| Step | Params | What to copy |
-|---|---|---|
-| `FILTER_VIRAL_SAM` | `fvs_sam`, `fvs_reads` | The task's two inputs: the sorted SAM (first argument) and the sorted reads (second) |
-| `PROCESS_VIRAL_BOWTIE2_SAM` | `pvbs_sam` | The `FILTER_VIRAL_SAM` task's output, `*_viral_filtered.sam.gz` |
-| `CHECK_TSV_DUPLICATES` | `ctd_tsv` | The task's input (downstream, `SPLIT_VIRAL_TSV_BY_SELECTED_TAXID`) |
-| `JOIN_TSVS` | `jt_tsv1`, `jt_tsv2` | The task's two inputs in argument order: the sorted hits and the prepared taxonomy DB |
-| `ADD_CONDITIONAL_TSV_COLUMN` | `act_tsv` | The `JOIN_TSVS` task's output, `*_joined_*.tsv.gz` |
+| Step | Production process | Params | Input |
+|---|---|---|---|
+| `FILTER_VIRAL_SAM` | same | `fvs_sam`, `fvs_reads` | The sorted SAM (first argument) and the sorted reads (second) |
+| `PROCESS_VIRAL_BOWTIE2_SAM` | same | `pvbs_sam` | The `FILTER_VIRAL_SAM` output, `*_viral_filtered.sam.gz` |
+| `ADD_SAMPLE_COLUMN` | `ADD_SAMPLE_COLUMN_ALIGNER` | `asc_tsv` | The `PROCESS_VIRAL_BOWTIE2_SAM` output |
+| `JOIN_TSVS` | `PROCESS_LCA_ALIGNER_OUTPUT:JOIN_TSVS` | `jt_tsv1`, `jt_tsv2` | The task's two inputs, in argument order |
+| `FILTER_TSV_COLUMN_BY_VALUE` | same | `ftcbv_tsv` | The `JOIN_TSVS` output |
+| `CHECK_TSV_DUPLICATES` | same (downstream) | `ctd_tsv` | The task's input |
+| `ADD_CONDITIONAL_TSV_COLUMN` | same (downstream) | `act_tsv` | The downstream `JOIN_TSVS` output |
+
+The first five run in that order on one library in `RUN`, so one rerun gives
+all their inputs. For downstream's `JOIN_TSVS` instead, also set
+`jt_field=aligner_taxid_lca` and `jt_type=left`.
 
 Also set `ref_dir` to the run's index (for `PROCESS_VIRAL_BOWTIE2_SAM`'s
 metadata files). `bt2_score_threshold` defaults to production's 20; check it
@@ -52,10 +60,10 @@ Put the params in a JSON file and keep it out of the repository:
   "fvs_sam": "<...>",
   "fvs_reads": "<...>",
   "pvbs_sam": "<...>",
-  "ctd_tsv": "<...>",
+  "asc_tsv": "<...>",
   "jt_tsv1": "<...>",
   "jt_tsv2": "<...>",
-  "act_tsv": "<...>"
+  "ftcbv_tsv": "<...>"
 }
 ```
 

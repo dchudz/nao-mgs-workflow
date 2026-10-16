@@ -62,7 +62,7 @@ def main() -> None:
     write_gz(f"{out}/toy.sam.gz", ["@HD\tVN:1.0\tSO:queryname\n"] + sam)
     write_gz(f"{out}/toy_reads.fastq.gz", fastq)
 
-    # Hit tables for the downstream steps
+    # Hit tables for the table steps, sorted by read ID unless noted
     hits = []
     for i in range(args.pairs):
         taxid = rng.choice(genomes)[1]
@@ -72,21 +72,24 @@ def main() -> None:
         f"{out}/hits_by_seq_id.tsv.gz",
         [header] + [f"{s}\t{t}\t{q}\n" for s, t, q in hits],
     )
-    by_taxid = sorted(hits, key=lambda h: h[1])
     write_gz(
-        f"{out}/hits_by_taxid.tsv.gz",
-        [header] + [f"{s}\t{t}\t{q}\n" for s, t, q in by_taxid],
+        f"{out}/lca_by_seq_id.tsv.gz",
+        ["seq_id\taligner_taxid_lca_natural\n"] + [f"{s}\t{t}\n" for s, t, _ in hits],
     )
-    db = sorted({(t, s if int(t) % 5 else "NA") for _, t, s in genomes})
+    classes = ["primary", "secondary"]
     write_gz(
-        f"{out}/db_by_taxid.tsv.gz",
-        ["aligner_taxid_lca\ttaxid_species\n"] + [f"{t}\t{s}\n" for t, s in db],
+        f"{out}/joined_run.tsv.gz",
+        ["seq_id\tclassification\taligner_taxid_lca\tquery_seq\n"]
+        + [f"{s}\t{classes[n % 2]}\t{t}\t{q}\n" for n, (s, t, q) in enumerate(hits)],
     )
-    species = dict(db)
+    species = {t: (s if int(t) % 5 else "NA") for _, t, s in genomes}
     write_gz(
-        f"{out}/joined.tsv.gz",
+        f"{out}/joined_downstream.tsv.gz",
         ["seq_id\taligner_taxid_lca\tquery_seq\ttaxid_species\n"]
-        + [f"{s}\t{t}\t{q}\t{species[t]}\n" for s, t, q in by_taxid],
+        + [
+            f"{s}\t{t}\t{q}\t{species[t]}\n"
+            for s, t, q in sorted(hits, key=lambda h: h[1])
+        ],
     )
 
     params = {
@@ -94,10 +97,12 @@ def main() -> None:
         "fvs_sam": f"{out}/toy.sam.gz",
         "fvs_reads": f"{out}/toy_reads.fastq.gz",
         "pvbs_sam": f"{out}/toy.sam.gz",
+        "asc_tsv": f"{out}/hits_by_seq_id.tsv.gz",
+        "jt_tsv1": f"{out}/lca_by_seq_id.tsv.gz",
+        "jt_tsv2": f"{out}/hits_by_seq_id.tsv.gz",
+        "ftcbv_tsv": f"{out}/joined_run.tsv.gz",
         "ctd_tsv": f"{out}/hits_by_seq_id.tsv.gz",
-        "jt_tsv1": f"{out}/hits_by_taxid.tsv.gz",
-        "jt_tsv2": f"{out}/db_by_taxid.tsv.gz",
-        "act_tsv": f"{out}/joined.tsv.gz",
+        "act_tsv": f"{out}/joined_downstream.tsv.gz",
     }
     with open(f"{out}/toy-params.json", "w") as f:
         json.dump(params, f, indent=2)
