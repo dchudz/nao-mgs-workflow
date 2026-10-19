@@ -1,6 +1,7 @@
 # v3.4.0.2-dev
 
 - Compress `FILTLONG` output with `pigz` to reduce runtime (#1057)
+- Mask low-complexity regions of ONT reads with BBDuk instead of BBMask in `MASK_FASTQ_READS` to reduce memory usage. Also replace gzip with pigz for faster compression. Published outputs are unchanged. (#1058)
 
 # v3.4.0.1
 
