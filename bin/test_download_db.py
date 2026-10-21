@@ -169,11 +169,11 @@ class TestSyncFromS3:
         )
         assert os.environ == original_env
 
+    @pytest.mark.usefixtures("aws_config")
     @patch("download_db.subprocess.run")
     def test_sync_without_resolvable_home(
         self,
         mock_run: MagicMock,
-        aws_config: Path,
         tmp_path: Path,
         monkeypatch: pytest.MonkeyPatch,
     ) -> None:
@@ -185,9 +185,10 @@ class TestSyncFromS3:
         assert mock_run.call_args.args[0][:3] == ["aws", "s3", "sync"]
         assert not Path(mock_run.call_args.kwargs["env"]["AWS_CONFIG_FILE"]).exists()
 
+    @pytest.mark.usefixtures("aws_config")
     @patch("download_db.subprocess.run")
     def test_overlapping_syncs_keep_separate_configs(
-        self, mock_run: MagicMock, aws_config: Path, tmp_path: Path
+        self, mock_run: MagicMock, tmp_path: Path
     ) -> None:
         """Finishing the second download leaves the first download's config intact."""
 
@@ -209,11 +210,11 @@ class TestSyncFromS3:
         assert not Path(mock_run.call_args.kwargs["env"]["AWS_CONFIG_FILE"]).exists()
 
     @pytest.mark.parametrize("failing_command", ["configure", "s3"])
+    @pytest.mark.usefixtures("aws_config")
     @patch("download_db.subprocess.run")
     def test_sync_failure_removes_config(
         self,
         mock_run: MagicMock,
-        aws_config: Path,
         tmp_path: Path,
         failing_command: str,
     ) -> None:
