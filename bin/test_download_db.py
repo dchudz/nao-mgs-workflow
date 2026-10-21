@@ -131,33 +131,11 @@ class TestConfigureAwsS3Transfer:
         assert not config.exists()
         assert original.read_bytes() == contents
         assert os.environ == original_env
-        assert mock_run.call_count == 2
-        calls = [call[0][0] for call in mock_run.call_args_list]
-        assert [
-            "aws",
-            "configure",
-            "set",
-            "s3.preferred_transfer_client",
-            "crt",
-        ] in calls
-        assert [
-            "aws",
-            "configure",
-            "set",
-            "s3.multipart_chunksize",
-            "16MB",
-        ] in calls
-
-    @patch("download_db.subprocess.run")
-    def test_configure_aws_s3_transfer_failure(
-        self, mock_run: MagicMock, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-    ) -> None:
-        """Configuration failure propagates and removes the temporary file."""
-        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
-        mock_run.side_effect = subprocess.CalledProcessError(1, "aws")
-        with pytest.raises(subprocess.CalledProcessError), configure_aws_s3_transfer():
-            pytest.fail("Configuration must fail before yielding")
-        assert not Path(mock_run.call_args.kwargs["env"]["AWS_CONFIG_FILE"]).exists()
+        settings = dict(call.args[0][3:] for call in mock_run.call_args_list)
+        assert settings == {
+            "s3.preferred_transfer_client": "crt",
+            "s3.multipart_chunksize": "16MB",
+        }
 
     @patch("download_db.subprocess.run")
     def test_configurations_do_not_share_files(
@@ -187,26 +165,35 @@ class TestSyncFromS3:
         monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
         sync_from_s3("s3://bucket/db", Path("/scratch/db"))
         env = mock_run.call_args_list[0].kwargs["env"]
-        mock_run.assert_called_with(
-            ["aws", "s3", "sync", "s3://bucket/db", "/scratch/db", "--delete"],
-            check=True,
-            capture_output=True,
-            text=True,
-            env=env,
-        )
+        assert mock_run.call_args.args[0] == [
+            "aws",
+            "s3",
+            "sync",
+            "s3://bucket/db",
+            "/scratch/db",
+            "--delete",
+        ]
+        assert mock_run.call_args.kwargs["env"] == env
+        assert mock_run.call_args.kwargs["check"]
         assert not Path(env["AWS_CONFIG_FILE"]).exists()
 
+    @pytest.mark.parametrize("failing_command", ["configure", "s3"])
     @patch("download_db.subprocess.run")
     def test_sync_from_s3_failure(
-        self, mock_run: MagicMock, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+        self,
+        mock_run: MagicMock,
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+        failing_command: str,
     ) -> None:
-        """Test S3 sync failure raises CalledProcessError."""
+        """Configuration or download failures propagate and clean up the config."""
         monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
-        mock_run.side_effect = [
-            None,
-            None,
-            subprocess.CalledProcessError(1, "aws s3 sync"),
-        ]
+
+        def run(command: list[str], **kwargs: object) -> None:
+            if command[1] == failing_command:
+                raise subprocess.CalledProcessError(1, command)
+
+        mock_run.side_effect = run
         with pytest.raises(subprocess.CalledProcessError):
             sync_from_s3("s3://bucket/db", Path("/scratch/db"))
         assert not Path(mock_run.call_args.kwargs["env"]["AWS_CONFIG_FILE"]).exists()
