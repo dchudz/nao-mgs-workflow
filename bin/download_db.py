@@ -130,11 +130,10 @@ def file_lock(
 
 
 def configure_aws_s3_transfer(env: dict[str, str]) -> None:
-    """Set CRT and 16 MiB parts in the config selected by the supplied environment."""
+    """Configure S3 transfer tuning in the supplied environment's config."""
     settings = [
-        # In AWS CLI 2.34.9, auto uses classic except on CRT-optimized hosts.
-        ("s3.preferred_transfer_client", "crt"),
-        # Keep the explicit CRT part size used in the staging benchmark.
+        ("s3.max_concurrent_requests", "20"),
+        ("s3.multipart_threshold", "64MB"),
         ("s3.multipart_chunksize", "16MB"),
     ]
     for key, value in settings:

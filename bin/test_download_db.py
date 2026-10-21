@@ -142,7 +142,8 @@ class TestSyncFromS3:
             if call.args[0][1] == "configure"
         )
         assert settings == {
-            "s3.preferred_transfer_client": "crt",
+            "s3.max_concurrent_requests": "20",
+            "s3.multipart_threshold": "64MB",
             "s3.multipart_chunksize": "16MB",
         }
 
