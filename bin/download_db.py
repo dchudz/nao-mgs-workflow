@@ -129,35 +129,22 @@ def file_lock(
 #####################
 
 
-@contextmanager
-def configure_aws_s3_transfer() -> Generator[dict[str, str], None, None]:
-    """Yield an environment with task-local CRT settings and 16 MiB parts."""
-    env = os.environ.copy()
-    source_config = Path(
-        os.path.expandvars(env.get("AWS_CONFIG_FILE", "~/.aws/config"))
-    ).expanduser()
+def configure_aws_s3_transfer(env: dict[str, str]) -> None:
+    """Set CRT and 16 MiB parts in the config selected by the supplied environment."""
     settings = [
         # In AWS CLI 2.34.9, auto uses classic except on CRT-optimized hosts.
         ("s3.preferred_transfer_client", "crt"),
         # Keep the explicit CRT part size used in the staging benchmark.
         ("s3.multipart_chunksize", "16MB"),
     ]
-    # Preserve profiles/authentication without modifying a host-mounted config.
-    with NamedTemporaryFile(prefix="download-db-", suffix=".config") as config:
-        # Instance-role authentication does not require an existing config file.
-        with suppress(FileNotFoundError):
-            config.write(source_config.read_bytes())
-        config.flush()
-        env["AWS_CONFIG_FILE"] = config.name
-        for key, value in settings:
-            # Unqualified settings let AWS CLI select the active profile.
-            subprocess.run(
-                ["aws", "configure", "set", key, value],
-                check=True,
-                capture_output=True,
-                env=env,
-            )
-        yield env
+    for key, value in settings:
+        # Unqualified settings let AWS CLI select the active profile.
+        subprocess.run(
+            ["aws", "configure", "set", key, value],
+            check=True,
+            capture_output=True,
+            env=env,
+        )
 
 
 def sync_from_s3(source_path: str, local_path: Path) -> None:
@@ -167,7 +154,19 @@ def sync_from_s3(source_path: str, local_path: Path) -> None:
     preventing stale files from previous runs.
     """
     logger.info(f"Syncing from S3: {source_path} -> {local_path}")
-    with configure_aws_s3_transfer() as env:
+    env = os.environ.copy()
+    config_path = env.get("AWS_CONFIG_FILE", "~/.aws/config")
+    source_config = Path(os.path.expandvars(config_path)).expanduser()
+
+    # Keep transfer settings local to this download, preserving the user's config.
+    with NamedTemporaryFile(prefix="download-db-", suffix=".config") as temp_config:
+        # Instance-role authentication also works without an existing config.
+        with suppress(FileNotFoundError):
+            temp_config.write(source_config.read_bytes())
+        temp_config.flush()
+        env["AWS_CONFIG_FILE"] = temp_config.name
+
+        configure_aws_s3_transfer(env)
         subprocess.run(
             ["aws", "s3", "sync", source_path, str(local_path), "--delete"],
             check=True,
