@@ -28,13 +28,14 @@ import hashlib
 import logging
 import os
 import re
+import shutil
 import subprocess
 import time
 from collections.abc import Generator
 from contextlib import contextmanager, suppress
 from datetime import UTC, datetime
 from pathlib import Path
-from tempfile import NamedTemporaryFile
+from tempfile import TemporaryDirectory
 
 ###########
 # LOGGING #
@@ -158,12 +159,13 @@ def sync_from_s3(source_path: str, local_path: Path) -> None:
     source_config = Path(os.path.expanduser(os.path.expandvars(config_path)))
 
     # Keep transfer settings local to this download, preserving the user's config.
-    with NamedTemporaryFile(prefix="download-db-", suffix=".config") as temp_config:
+    with TemporaryDirectory(prefix="download-db-") as temp_dir:
+        temp_config = Path(temp_dir) / "config"
+        temp_config.touch(mode=0o600)
         # Instance-role authentication also works without an existing config.
         with suppress(FileNotFoundError):
-            temp_config.write(source_config.read_bytes())
-        temp_config.flush()
-        env["AWS_CONFIG_FILE"] = temp_config.name
+            shutil.copyfile(source_config, temp_config)
+        env["AWS_CONFIG_FILE"] = str(temp_config)
 
         configure_aws_s3_transfer(env)
         subprocess.run(
