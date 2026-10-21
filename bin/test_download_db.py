@@ -15,7 +15,6 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 from download_db import (
-    configure_aws_s3_transfer,
     download_database,
     file_lock,
     get_cache_name,
@@ -94,12 +93,12 @@ class TestFileLock:
             # Lock is released when file is closed
 
 
-class TestConfigureAwsS3Transfer:
-    """Test AWS S3 transfer configuration."""
+class TestSyncFromS3:
+    """Test isolated S3 configuration and database sync."""
 
     @pytest.mark.parametrize("custom_config", [False, True])
     @patch("download_db.subprocess.run")
-    def test_configure_aws_s3_transfer(
+    def test_sync_preserves_user_configuration(
         self,
         mock_run: MagicMock,
         tmp_path: Path,
@@ -121,17 +120,27 @@ class TestConfigureAwsS3Transfer:
         )
         original.write_bytes(contents)
         original_env = os.environ.copy()
-        with configure_aws_s3_transfer() as env:
+        configs = []
+
+        def run(command: list[str], *, env: dict[str, str], **kwargs: object) -> None:
             config = Path(env["AWS_CONFIG_FILE"])
+            configs.append(config)
             assert config != original
             assert config.read_bytes() == contents
             assert stat.S_IMODE(config.stat().st_mode) == 0o600
             assert env == {**original_env, "AWS_CONFIG_FILE": str(config)}
-            assert all(c.kwargs["env"] == env for c in mock_run.call_args_list)
-        assert not config.exists()
+
+        mock_run.side_effect = run
+        sync_from_s3("s3://bucket/db", tmp_path / "db")
+        assert len(set(configs)) == 1
+        assert not configs[0].exists()
         assert original.read_bytes() == contents
         assert os.environ == original_env
-        settings = dict(call.args[0][3:] for call in mock_run.call_args_list)
+        settings = dict(
+            call.args[0][3:]
+            for call in mock_run.call_args_list
+            if call.args[0][1] == "configure"
+        )
         assert settings == {
             "s3.preferred_transfer_client": "crt",
             "s3.multipart_chunksize": "16MB",
@@ -143,19 +152,21 @@ class TestConfigureAwsS3Transfer:
     ) -> None:
         """Overlapping transfers have independent temporary configurations."""
         monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
-        with (
-            configure_aws_s3_transfer() as first,
-            configure_aws_s3_transfer() as second,
-        ):
-            assert first["AWS_CONFIG_FILE"] != second["AWS_CONFIG_FILE"]
-            assert Path(first["AWS_CONFIG_FILE"]).is_file()
-            assert Path(second["AWS_CONFIG_FILE"]).is_file()
-        assert not Path(first["AWS_CONFIG_FILE"]).exists()
-        assert not Path(second["AWS_CONFIG_FILE"]).exists()
+        configs = []
 
+        def run(command: list[str], *, env: dict[str, str], **kwargs: object) -> None:
+            if command[:3] == ["aws", "s3", "sync"]:
+                config = Path(env["AWS_CONFIG_FILE"])
+                configs.append(config)
+                if len(configs) == 1:
+                    sync_from_s3("s3://bucket/second", tmp_path / "second")
+                assert config.is_file()
 
-class TestSyncFromS3:
-    """Test S3 sync function."""
+        mock_run.side_effect = run
+        sync_from_s3("s3://bucket/first", tmp_path / "first")
+        assert len(configs) == 2
+        assert configs[0] != configs[1]
+        assert all(not config.exists() for config in configs)
 
     @patch("download_db.subprocess.run")
     def test_sync_from_s3_success(
