@@ -6,6 +6,8 @@ Run with: pytest bin/test_download_db.py
 """
 
 import fcntl
+import os
+import stat
 import subprocess
 from collections.abc import Generator
 from pathlib import Path
@@ -95,77 +97,119 @@ class TestFileLock:
 class TestConfigureAwsS3Transfer:
     """Test AWS S3 transfer configuration."""
 
+    @pytest.mark.parametrize("custom_config", [False, True])
     @patch("download_db.subprocess.run")
-    def test_configure_aws_s3_transfer(self, mock_run: MagicMock) -> None:
-        """Test that AWS CLI settings are configured correctly."""
-        mock_run.return_value = MagicMock(returncode=0)
-        configure_aws_s3_transfer()
-        assert mock_run.call_count == 4
+    def test_configure_aws_s3_transfer(
+        self,
+        mock_run: MagicMock,
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+        custom_config: bool,
+    ) -> None:
+        """Transfer settings are isolated; existing config and environment survive."""
+        monkeypatch.setenv("HOME", str(tmp_path))
+        monkeypatch.delenv("AWS_CONFIG_FILE", raising=False)
+        original = tmp_path / ".aws" / "config"
+        if custom_config:
+            original = tmp_path / "custom.config"
+            monkeypatch.setenv("AWS_CONFIG_FILE", "$HOME/custom.config")
+        monkeypatch.setenv("AWS_PROFILE", "research")
+        original.parent.mkdir(parents=True, exist_ok=True)
+        contents = (
+            b"[profile research]\nsource_profile = base\nregion = us-east-1\n"
+            b"[profile base]\ncredential_process = example-credential-helper\n"
+        )
+        original.write_bytes(contents)
+        original_env = os.environ.copy()
+        with configure_aws_s3_transfer() as env:
+            config = Path(env["AWS_CONFIG_FILE"])
+            assert config != original
+            assert config.read_bytes() == contents
+            assert stat.S_IMODE(config.stat().st_mode) == 0o600
+            assert env == {**original_env, "AWS_CONFIG_FILE": str(config)}
+            assert all(c.kwargs["env"] == env for c in mock_run.call_args_list)
+        assert not config.exists()
+        assert original.read_bytes() == contents
+        assert os.environ == original_env
+        assert mock_run.call_count == 2
         calls = [call[0][0] for call in mock_run.call_args_list]
         assert [
             "aws",
             "configure",
             "set",
-            "default.s3.preferred_transfer_client",
+            "s3.preferred_transfer_client",
             "crt",
         ] in calls
         assert [
             "aws",
             "configure",
             "set",
-            "default.s3.max_concurrent_requests",
-            "20",
-        ] in calls
-        assert [
-            "aws",
-            "configure",
-            "set",
-            "default.s3.multipart_threshold",
-            "64MB",
-        ] in calls
-        assert [
-            "aws",
-            "configure",
-            "set",
-            "default.s3.multipart_chunksize",
+            "s3.multipart_chunksize",
             "16MB",
         ] in calls
 
     @patch("download_db.subprocess.run")
-    def test_configure_aws_s3_transfer_failure(self, mock_run: MagicMock) -> None:
-        """Test that configuration failure raises exception."""
+    def test_configure_aws_s3_transfer_failure(
+        self, mock_run: MagicMock, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+        """Configuration failure propagates and removes the temporary file."""
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
         mock_run.side_effect = subprocess.CalledProcessError(1, "aws")
-        with pytest.raises(subprocess.CalledProcessError):
-            configure_aws_s3_transfer()
+        with pytest.raises(subprocess.CalledProcessError), configure_aws_s3_transfer():
+            pytest.fail("Configuration must fail before yielding")
+        assert not Path(mock_run.call_args.kwargs["env"]["AWS_CONFIG_FILE"]).exists()
+
+    @patch("download_db.subprocess.run")
+    def test_configurations_do_not_share_files(
+        self, mock_run: MagicMock, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+        """Overlapping transfers have independent temporary configurations."""
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
+        with (
+            configure_aws_s3_transfer() as first,
+            configure_aws_s3_transfer() as second,
+        ):
+            assert first["AWS_CONFIG_FILE"] != second["AWS_CONFIG_FILE"]
+            assert Path(first["AWS_CONFIG_FILE"]).is_file()
+            assert Path(second["AWS_CONFIG_FILE"]).is_file()
+        assert not Path(first["AWS_CONFIG_FILE"]).exists()
+        assert not Path(second["AWS_CONFIG_FILE"]).exists()
 
 
 class TestSyncFromS3:
     """Test S3 sync function."""
 
-    @patch("download_db.configure_aws_s3_transfer")
     @patch("download_db.subprocess.run")
     def test_sync_from_s3_success(
-        self, mock_run: MagicMock, mock_configure: MagicMock
+        self, mock_run: MagicMock, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
     ) -> None:
         """Test successful S3 sync."""
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
         sync_from_s3("s3://bucket/db", Path("/scratch/db"))
-        mock_configure.assert_called_once()
-        mock_run.assert_called_once_with(
+        env = mock_run.call_args_list[0].kwargs["env"]
+        mock_run.assert_called_with(
             ["aws", "s3", "sync", "s3://bucket/db", "/scratch/db", "--delete"],
             check=True,
             capture_output=True,
             text=True,
+            env=env,
         )
+        assert not Path(env["AWS_CONFIG_FILE"]).exists()
 
-    @patch("download_db.configure_aws_s3_transfer")
     @patch("download_db.subprocess.run")
     def test_sync_from_s3_failure(
-        self, mock_run: MagicMock, mock_configure: MagicMock
+        self, mock_run: MagicMock, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
     ) -> None:
         """Test S3 sync failure raises CalledProcessError."""
-        mock_run.side_effect = subprocess.CalledProcessError(1, "aws s3 sync")
+        monkeypatch.setenv("AWS_CONFIG_FILE", str(tmp_path / "missing"))
+        mock_run.side_effect = [
+            None,
+            None,
+            subprocess.CalledProcessError(1, "aws s3 sync"),
+        ]
         with pytest.raises(subprocess.CalledProcessError):
             sync_from_s3("s3://bucket/db", Path("/scratch/db"))
+        assert not Path(mock_run.call_args.kwargs["env"]["AWS_CONFIG_FILE"]).exists()
 
 
 class TestSyncFromLocal:

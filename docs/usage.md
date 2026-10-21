@@ -55,6 +55,7 @@ The pipeline can be run in multiple ways by modifying various configuration vari
 - `batch (default)`:  **Most reliable way to run the pipeline**
   - This profile is the default and attempts to run the pipeline with AWS Batch. This is the most reliable and convenient way to run the pipeline, but requires significant additional setup (described [here](./batch.md)). Before running the pipeline using this profile, make sure you specify `--queue` on the command line or set `params.queue` in your config file to the correct Batch job queue.
   - Note that this profile uses automatic reference file caching (in the `/scratch` directory on the instance), which significantly reduces large database load times.
+      - S3 reference downloads use the AWS CLI's CRT transfer client with 16 MiB parts. This can accelerate first-time downloads when storage and network bandwidth are available; later jobs on the same worker reuse unchanged files through `aws s3 sync`. These transfer settings apply only to the download subprocess and do not modify your AWS configuration.
       - To turn off file caching, remove the `aws.batch.volumes = ['/scratch:/scratch']` line from the relevant profile.
 - `ec2_local`: **Requires the least setup, but is bottlenecked by your instance's compute, memory and storage.**
   - This profile attempts to run the whole pipeline locally on your EC2 instance, storing all files on instance-linked block storage.

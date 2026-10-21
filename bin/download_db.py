@@ -31,9 +31,10 @@ import re
 import subprocess
 import time
 from collections.abc import Generator
-from contextlib import contextmanager
+from contextlib import contextmanager, suppress
 from datetime import UTC, datetime
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 
 ###########
 # LOGGING #
@@ -128,21 +129,35 @@ def file_lock(
 #####################
 
 
-def configure_aws_s3_transfer() -> None:
-    """Configure AWS CLI settings for optimal S3 transfer performance."""
+@contextmanager
+def configure_aws_s3_transfer() -> Generator[dict[str, str], None, None]:
+    """Yield an environment with task-local CRT settings and 16 MiB parts."""
+    env = os.environ.copy()
+    source_config = Path(
+        os.path.expandvars(env.get("AWS_CONFIG_FILE", "~/.aws/config"))
+    ).expanduser()
     settings = [
-        # Auto selects the classic client on some EC2 instance types.
-        ("default.s3.preferred_transfer_client", "crt"),
-        ("default.s3.max_concurrent_requests", "20"),
-        ("default.s3.multipart_threshold", "64MB"),
-        ("default.s3.multipart_chunksize", "16MB"),
+        # In AWS CLI 2.34.9, auto uses classic except on CRT-optimized hosts.
+        ("s3.preferred_transfer_client", "crt"),
+        # Keep the explicit CRT part size used in the staging benchmark.
+        ("s3.multipart_chunksize", "16MB"),
     ]
-    for key, value in settings:
-        subprocess.run(
-            ["aws", "configure", "set", key, value],
-            check=True,
-            capture_output=True,
-        )
+    # Preserve profiles/authentication without modifying a host-mounted config.
+    with NamedTemporaryFile(prefix="download-db-", suffix=".config") as config:
+        # Instance-role authentication does not require an existing config file.
+        with suppress(FileNotFoundError):
+            config.write(source_config.read_bytes())
+        config.flush()
+        env["AWS_CONFIG_FILE"] = config.name
+        for key, value in settings:
+            # Unqualified settings let AWS CLI select the active profile.
+            subprocess.run(
+                ["aws", "configure", "set", key, value],
+                check=True,
+                capture_output=True,
+                env=env,
+            )
+        yield env
 
 
 def sync_from_s3(source_path: str, local_path: Path) -> None:
@@ -152,13 +167,14 @@ def sync_from_s3(source_path: str, local_path: Path) -> None:
     preventing stale files from previous runs.
     """
     logger.info(f"Syncing from S3: {source_path} -> {local_path}")
-    configure_aws_s3_transfer()
-    subprocess.run(
-        ["aws", "s3", "sync", source_path, str(local_path), "--delete"],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
+    with configure_aws_s3_transfer() as env:
+        subprocess.run(
+            ["aws", "s3", "sync", source_path, str(local_path), "--delete"],
+            check=True,
+            capture_output=True,
+            text=True,
+            env=env,
+        )
     logger.info("S3 sync completed")
 
 

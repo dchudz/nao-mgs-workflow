@@ -44,8 +44,6 @@ First, you need to create an EC2 launch template that specifies the configuratio
 
 [^iops]: If you want even more IOPS, you can provision an io2 volume instead of gp3. However, that's beyond the scope of this guide.
 
-Reference databases are downloaded to each worker's scratch cache by `download_db.py` using the AWS CLI's CRT transfer client. This can accelerate first-time downloads when storage and network bandwidth are available. Later jobs on the same worker reuse unchanged files through `aws s3 sync`.
-
 If you want to modify your template after creating it, you can do so by navigating to it in the panel and selecting "Actions" \> "Modify template (create new version)". Be careful to pay attention to which version of the template any dependent resources (e.g. compute environments, see below) are using.
 
 ## Step 3: Set up a Batch compute environment
