@@ -155,7 +155,7 @@ def sync_from_s3(source_path: str, local_path: Path) -> None:
     logger.info(f"Syncing from S3: {source_path} -> {local_path}")
     env = os.environ.copy()
     config_path = env.get("AWS_CONFIG_FILE", "~/.aws/config")
-    source_config = Path(os.path.expandvars(config_path)).expanduser()
+    source_config = Path(os.path.expanduser(os.path.expandvars(config_path)))
 
     # Keep transfer settings local to this download, preserving the user's config.
     with NamedTemporaryFile(prefix="download-db-", suffix=".config") as temp_config:

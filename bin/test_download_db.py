@@ -170,6 +170,22 @@ class TestSyncFromS3:
         assert os.environ == original_env
 
     @patch("download_db.subprocess.run")
+    def test_sync_without_resolvable_home(
+        self,
+        mock_run: MagicMock,
+        aws_config: Path,
+        tmp_path: Path,
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        """An unknown home directory is treated as a missing config, as in AWS CLI."""
+        monkeypatch.delenv("HOME")
+        monkeypatch.chdir(tmp_path)
+        with patch("pwd.getpwuid", side_effect=KeyError):
+            sync_from_s3("s3://bucket/db", tmp_path / "db")
+        assert mock_run.call_args.args[0][:3] == ["aws", "s3", "sync"]
+        assert not Path(mock_run.call_args.kwargs["env"]["AWS_CONFIG_FILE"]).exists()
+
+    @patch("download_db.subprocess.run")
     def test_overlapping_syncs_keep_separate_configs(
         self, mock_run: MagicMock, aws_config: Path, tmp_path: Path
     ) -> None:
