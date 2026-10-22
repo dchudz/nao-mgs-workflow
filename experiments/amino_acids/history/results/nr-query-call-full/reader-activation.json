@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-22T20:08:27.055291+00:00",
+  "source_commit": "c3a1cba600e6b0e81fd6a3c4866dacfdc21fe22f",
+  "changes": {
+    "summarize-nr-controls.py": {
+      "before_sha256": "91062a58248904cc97523c8d06662fc0c56f03a43f9a0d496ef513e0ff1d2088",
+      "after_sha256": "a6fdd2f63946b68d5cc9cbc1958ee0f35794786a446c4dad32e25772b540b219"
+    },
+    "summarize-seed-nr.py": {
+      "before_sha256": "55031428326a8a948ed7d6178d0a163d2b03c515d02b6f3cf2bec3b4501fc15d",
+      "after_sha256": "c7dd6f4e1fce7c84e7c5953af23ddc41170e890daf1350a29a39b9bd9bea334c"
+    },
+    "annotate-nr-competitors.py": {
+      "before_sha256": "9803e90dbf820ad91c52ec738c3034bdd82a22a5d41eac3feb573aece568990d",
+      "after_sha256": "c64f5e4739831fa002f5f97ea9d4ee2530924cd43fe96124b0d6c4924396b266"
+    }
+  },
+  "raw_alignment_subsets_verified": true,
+  "original_primary_classifier_unchanged": true
+}

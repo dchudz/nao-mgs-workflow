@@ -1,7 +1,7 @@
 """Select fixed-hash illustrative cases, retaining eligible evidence from each competing clade."""
-import argparse,collections,csv,gzip,hashlib,heapq,json,re
+import argparse,collections,csv,gzip,hashlib,heapq,json,re,subprocess,time
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('--evidence',required=True);p.add_argument('--protein',required=True);p.add_argument('--nr',required=True);p.add_argument('--taxonomy',required=True);p.add_argument('--output',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--evidence',required=True);p.add_argument('--protein',required=True);p.add_argument('--nr',required=True);p.add_argument('--taxonomy',required=True);p.add_argument('--output',required=True);p.add_argument('--extractor',default=str(Path(__file__).with_name('extract-nr-query-subset')));a=p.parse_args()
 protein=Path(a.protein);out=Path(a.output);out.mkdir(parents=True,exist_ok=True);groups=collections.defaultdict(list)
 for x in csv.DictReader(open(a.evidence),delimiter='\t'):
  shared=x['exact_pair_also_native']=='True';status=x['nr_status']
@@ -38,8 +38,23 @@ def category(t):
   if t in [131567,2,2157,2759]:kind='cellular';break
   seen.add(t);t=parents[t]
  cache[original]=kind;return kind
+nr_input=Path(a.nr)
+extractor=Path(a.extractor)
+if extractor.is_file() and selected:
+ ids=out/'selected-query-ids.txt';ids.write_text(''.join(q+'/'+str(m)+'\n' for q in sorted(selected) for m in [1,2]))
+ before=nr_input.stat();target=out/'selected-nr-raw';expected=0
+ from nr_evidence_inputs import manifest
+ cached=manifest(nr_input.parent) if nr_input.name=='nr.tsv' else None
+ if cached:expected=cached['counts']['input_rows']
+ command=[str(extractor),str(nr_input),str(ids),str(target),str(expected)];start=time.monotonic()
+ with (out/'extraction.log').open('w') as log:subprocess.run(command,stdout=log,stderr=log,check=True,timeout=900)
+ after=nr_input.stat();assert (before.st_size,before.st_mtime_ns)==(after.st_size,after.st_mtime_ns)
+ (out/'extraction.json').write_text(json.dumps(dict(command=command,seconds=time.monotonic()-start,input_bytes=before.st_size,input_mtime_ns=before.st_mtime_ns,extractor_sha256=hashlib.sha256(extractor.read_bytes()).hexdigest(),counts=json.loads((target/'counts.json').read_text()),raw_rows_preserved=True),indent=2))
+ nr_input=target/'alignments.tsv'
+elif not selected:
+ nr_input=out/'empty-alignments.tsv';nr_input.write_text('')
 hits=collections.defaultdict(list);best=collections.defaultdict(float)
-for row in csv.reader(open(a.nr),delimiter='\t'):
+for row in csv.reader(open(nr_input),delimiter='\t'):
  q,subject,score,evalue,length,identity,taxids=row;pair=q.rsplit('/',1)[0]
  if pair not in selected or int(length)<25:continue
  score=float(score);best[q]=max(best[q],score);taxa={int(t) for t in taxids.split(';') if t.isdigit()} or {0}

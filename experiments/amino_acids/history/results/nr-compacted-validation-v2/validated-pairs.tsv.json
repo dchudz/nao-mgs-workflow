@@ -1,0 +1,17 @@
+{
+  "pairs": 406173,
+  "status": {
+    "mixed_viral_nonviral": 187851,
+    "viral_only": 199505,
+    "no_alignment": 5062,
+    "unknown_taxonomy": 6788,
+    "nonviral_only": 6967
+  },
+  "relation": {
+    "ancestor_related": 314231,
+    "exact": 39211,
+    "unknown": 28681,
+    "divergent": 24050
+  },
+  "interpretation": "Broad-reference evidence, not known-truth validation; no alignment is unvalidated. Missing or unrecognized taxonomy remains unknown."
+}
