@@ -28,7 +28,7 @@
     },
     {
       "name": "Coding-aware spaced nucleotide seeds",
-      "status": "Prospectively added fourth arm, not yet full-reference executed",
+      "status": "HELD: do not launch until NR200 report and completed TBLASTX-versus-NR cost comparison exist",
       "mechanism": "dc-megablast coding template18 wordweight11, then nucleotide extension",
       "advantages": [
         "Existing core_nt index",
@@ -63,7 +63,18 @@
       "sources": [
         "https://github.com/soedinglab/MMseqs2/wiki#translated-sequence-searching",
         "https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options"
-      ]
+      ],
+      "implementation_verified_2026_10_22": {
+        "MMseqs2_option": "--translation-mode 1 selects full reading frames",
+        "source_behavior": "Search.cpp sets ORF_SKIP and translated_search.sh uses extractframes for nucleotide queries and targets instead of extractorfs. This offers a way to avoid default short-ORF filtering; exact installed-binary handling of stops, ambiguities, long sequences and coordinates still needs a fixture.",
+        "sources": [
+          "https://github.com/soedinglab/MMseqs2/blob/master/src/commons/Parameters.cpp",
+          "https://github.com/soedinglab/MMseqs2/blob/master/src/workflow/Search.cpp",
+          "https://raw.githubusercontent.com/soedinglab/MMseqs2/master/data/workflow/translated_search.sh"
+        ],
+        "measurement_status": "Source inspection only; no MMseqs2 install, translation or index build performed",
+        "capacity_effect": "Does not remove the full-frame translated representation and index storage costs."
+      }
     },
     {
       "name": "Staged search on uncertain queries",
@@ -97,7 +108,7 @@
     },
     {
       "name": "Translate only queries, then tblastn-fast on unchanged core_nt",
-      "status": "Implemented and normalization characterized; full-reference pilot queued after original tblastx",
+      "status": "HELD: do not launch until NR200 report and completed TBLASTX-versus-NR cost comparison exist",
       "mechanism": "All six complete query frames retained; optimized protein-versus-nucleotide search translates the original reference during search",
       "potential_benefit": "Avoids multi-terabyte derived reference index while allowing the supported fast search task",
       "measured_fixture": {
@@ -130,7 +141,8 @@
         "A reference-wide translation scan still has fixed cost; existing BLAST already performs related query-indexed seed finding",
         "Must preserve all target accessions/taxa, both strands, frame and coordinate evidence; no verdict extrapolation"
       ],
-      "implementation_gate": "Only justify custom implementation if existing fast tblastn or supported seeds leave a measured performance/recall gap; first characterize a prototype against existing frozen alignments and controlled synonymous variants"
+      "implementation_gate": "Only justify custom implementation if existing fast tblastn or supported seeds leave a measured performance/recall gap; first characterize a prototype against existing frozen alignments and controlled synonymous variants",
+      "reverse_search_warning": "Swapping a large reference into query position and indexing the small read set changes search-space statistics, per-query hit truncation, coverage orientation, and potentially masking/composition behavior. A reversed search is not interchangeable without per-read candidate completeness and statistical/coordinate checks; simply swapping output columns is insufficient."
     }
   ],
   "capacity_math": {
@@ -154,7 +166,8 @@
     "break_even": "For R repeated batches, compare direct_cost(R) with index_build_cost + R*indexed_search_cost + retained_index_storage_cost. Fit only within measured batch-size range; report fixed reference scan and marginal query work separately.",
     "evidence_quality": "Inspect strong disagreements at sequence/codon level and retain weak significance results separately. Absence of a translated hit is not proof a nucleotide hit is false; short or noncoding reads can behave differently.",
     "batching": "Shared-query alignment and assignment parity across3/24/96panels is an empirical check, not assumed.",
-    "false_positive_check": "If new weak or low-complexity matches drive differences, use deterministic composition-preserving shuffled controls before claiming increased sensitivity. No truth-label accuracy claim from these observational reads."
+    "false_positive_check": "If new weak or low-complexity matches drive differences, use deterministic composition-preserving shuffled controls before claiming increased sensitivity. No truth-label accuracy claim from these observational reads.",
+    "user_priority_gate": "Finish NR200 and measured TBLASTX-versus-NR cost comparison before additional translated panels. If default TBLASTX cost per query is orders higher, stop scaling that method. No new reference build just because the remaining budget permits one."
   },
   "profiling_evidence": {
     "scope": "15-second software CPU sample while original full-reference tblastx pilot running; not whole-run attribution",
