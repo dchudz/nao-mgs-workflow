@@ -16,7 +16,7 @@ while True:
  if seen==expected:break
  assert datetime.datetime.now(datetime.timezone.utc)<stop,'Cohort incomplete before budget reserve'
  time.sleep(30)
-for sample in expected:assert (c/'screen-metrics'/sample/'complete.json').exists(),sample
+for sample in expected:assert (c/'screen-burden-inputs'/sample/'complete.json').exists(),sample
 run('analyze-cohort.py',c/'batches',out)
 run('analyze-resources.py')
 run('analyze-species.py')

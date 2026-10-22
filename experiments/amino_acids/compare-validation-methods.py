@@ -1,7 +1,7 @@
 """Join three methods on the same original read pairs; retain every disagreement."""
 import argparse,collections,csv,json
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('--nucleotide',required=True);p.add_argument('--protein',required=True);p.add_argument('--output',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--nucleotide',required=True);p.add_argument('--protein',required=True);p.add_argument('--output',required=True);p.add_argument('--runtime-scope',choices=['pooled','standalone'],default='pooled');a=p.parse_args()
 nt=list(csv.DictReader(open(a.nucleotide),delimiter='\t'));protein=list(csv.DictReader(open(a.protein),delimiter='\t'))
 by={}
 for x in nt:
@@ -27,7 +27,7 @@ out=Path(a.output);out.mkdir(exist_ok=True,parents=True)
 for name,subset in [('all-pairs.tsv',rows),('disagreements.tsv',[x for x in rows if x['status_disagreement'] or x['taxid_disagreement']])]:
  with open(out/name,'w') as f:
   w=csv.DictWriter(f,fieldnames=list(rows[0]),delimiter='\t');w.writeheader();w.writerows(subset)
-summary={'pairs':len(rows),'available_query_sequences':sum(int(x['available_mates']) for x in selection),'groups':{},'limitations':['Identical available mate sequences, searched separately; original production validation joins or merges mates.','Nucleotide methods search core_nt; protein method searches NR. Reference coverage and representation differ, so this is not an isolated aligner comparison.','Protein runtime belongs to the pooled comprehensive-reference job; per-diagnostic runtime is not measured.','Near-best taxonomy filters differ between production nucleotide ranking and the frozen protein protocol. Disagreement is evidence to inspect, not a known-truth accuracy verdict.']}
+summary={'protein_runtime_scope':a.runtime_scope,'pairs':len(rows),'available_query_sequences':sum(int(x['available_mates']) for x in selection),'groups':{},'limitations':['Identical available mate sequences, searched separately; original production validation joins or merges mates.','Nucleotide methods search core_nt; protein method searches NR. Reference coverage and representation differ, so this is not an isolated aligner comparison.',('Protein runtime belongs to the pooled comprehensive-reference job; per-diagnostic runtime is not measured.' if a.runtime_scope=='pooled' else 'Protein runtime is measured by a separate full-NR search over these1,436availablematequeries; hardware and scheduling differ from nucleotide runs.'),'Near-best taxonomy filters differ between production nucleotide ranking and the frozen protein protocol. Disagreement is evidence to inspect, not a known-truth accuracy verdict.']}
 for group in ['all','AA12_added','NT20_added','baseline_control']:
  selected=[x for x in rows if group=='all' or x[group]=='True'];z={'pairs':len(selected),'status_disagreements':sum(x['status_disagreement'] for x in selected),'taxid_disagreements':sum(x['taxid_disagreement'] for x in selected),'methods':{}}
  for method in ['megablast','blastn','protein']:z['methods'][method]=dict(collections.Counter(x[method+'_status'] for x in selected))

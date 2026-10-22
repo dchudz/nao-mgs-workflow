@@ -26,6 +26,8 @@ for x in rows:
  x['log_text']=(run/'run.log').read_text()
  observed=hits(run/'hits.tsv.gz');outputs.append(observed)
  x['baseline_parity']=difference(reference,observed)
+ changes={side:[{'multiplicity':count,'alignment_columns':line.split('\t')} for line,count in sorted(delta.items())] for side,delta in [('baseline_only',reference-observed),('trial_only',observed-reference)]}
+ (run/'alignment-differences.json').write_text(json.dumps(changes,indent=2))
 summary={'runs':rows,'baseline':str(baseline),'mode1_repeat_parity':difference(outputs[0],outputs[2]),'notes':['Exact output multisets include every reported column and duplicate alignment multiplicity.','Shared warm-cache worker; timings are not isolated service latency.','All new trials have an explicit 400 GiB memory ceiling; the preceding cap20 baseline did not.','No assignment parity claim is inferred from alignment parity failure.']}
 (d/'summary.json').write_text(json.dumps(summary,indent=2))
 print(json.dumps([{k:v for k,v in x.items() if k not in ('command','log_text','baseline_parity')}|{'baseline_parity':{k:v for k,v in x['baseline_parity'].items() if k!='differing_query_ids'}} for x in rows]))

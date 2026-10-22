@@ -12,8 +12,9 @@ screen={};processed=collections.defaultdict(lambda:collections.defaultdict(list)
 for marker in batch_root.glob('*/complete.json'):
  b=marker.parent
  for a in json.loads(marker.read_text())['samples']:
-  p=r/'cohort-storage/screen-metrics'/a/'complete.json'
-  if p.exists():screen[a]=json.loads(p.read_text())
+  p=r/'cohort-storage/screen-burden-inputs'/a/'complete.json'
+  assert p.exists(), 'Missing measured screen resources: '+a
+  screen[a]=json.loads(p.read_text())
  with open(b/'output/trace.tsv') as f:
   for x in csv.DictReader(f,delimiter='\t'):
    m=re.search(r'(SRR\d+)_(nt22|nt20|aa12|union|nt)\b',x['name'])
@@ -22,7 +23,7 @@ for marker in batch_root.glob('*/complete.json'):
    processed[a][arm].append(None if elapsed is None or cpu is None else elapsed*cpu/100)
 rows=[]
 for a,arms_data in processed.items():
- if a not in screen:continue
+ assert a in screen, 'Missing measured screen resources: '+a
  s=screen[a]
  for arm in arms:
   resources=s['resources'];selected=['nt','aa12'] if arm=='union' else [arm];screen_cpu=sum(resources[k]['user_seconds']+resources[k]['system_seconds'] for k in selected)

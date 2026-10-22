@@ -10,6 +10,9 @@ if h=='aa-screen':
  o['screen_closure_done']=(r/'screen-closure/closure-backup-verification.json').exists()
  logs=['heldout-screen-rebalanced.log','screen-closure.log']
 elif h=='aa-experiment':
+ final_log=r/'finalize-cohort.log';o['native_analysis_done']=final_log.exists() and 'FULL1000_NATIVE_ANALYSES_COMPLETE' in final_log.read_text()
+ o['protein_primary_analysis_done']=(r/'cohort-storage/protein-finalization/complete.json').exists()
+ o['validation_started']=(r/'cohort-storage/validation-cohort/scope.json').exists()
  o['final_cohort_analyses_done']=(r/'cohort-storage/analysis/final-cohort-analyses.json').exists()
  o['protein_screen_boundaries_done']=(r/'protein-screen-boundaries/complete.json').exists()
  o['protein_repeat_gate_done']=(r/'protein-repeat-gate/complete.json').exists()
@@ -28,7 +31,7 @@ elif h=='aa-experiment':
  o['validation_done']=(r/'cohort-storage/validation-cohort/complete.json').exists()
  o['producer_commit_done']=(r/'cohort-storage/producer-finished.json').exists()
  o['cohort_free_GiB']=round(shutil.disk_usage(r/'cohort-storage').free/2**30,1)
- logs=['heldout-primary-screen.log','validation-scaling.log','validation-scaling-resumed.log','heldout-consumer-recovery.log','heldout-seed-diagnostic.log','repeat-confirmation.log','cohort-validation-scheduled.log','await-screen-commit.log','protein-nt-panel.log','blast-threading.log','header-discrepancy-validation.log','protein-repeat-gate-primary.log','protein-screen-boundaries.log','finalize-cohort.log']
+ logs=['heldout-primary-screen.log','validation-scaling.log','validation-scaling-resumed.log','heldout-consumer-recovery.log','heldout-seed-diagnostic.log','repeat-confirmation.log','cohort-validation-scheduled.log','await-screen-commit.log','protein-nt-panel.log','blast-threading.log','header-discrepancy-validation.log','protein-repeat-gate-primary.log','protein-screen-boundaries.log','finalize-cohort.log','finalize-protein-primary.log']
 else:
  o['protein_done']=(r/'cohort-storage/protein200/viral-pairs.tsv.json').exists()
  d=r/'protein/combined-validation';protocol=d/'search-protocol.json';o['nr_started']=protocol.exists() and json.loads(protocol.read_text()).get('recovery_from')=='nr24-oom-20261022T034211';o['nr_done']=(d/'complete.json').exists();o['nr_incomplete']=(d/'incomplete.json').exists()
@@ -43,12 +46,14 @@ else:
  if metrics.exists():
   with metrics.open('rb') as f:f.seek(max(0,metrics.stat().st_size-1024));last=f.read().decode().strip().splitlines()[-1]
   m=json.loads(last);o['nr_memory_available_GiB']=round(m['MemAvailable']/1024**2,2);o['nr_swap_used_GiB']=round((m['SwapTotal']-m['SwapFree'])/1024**2,2);o['nr_process_RSS_GiB']=round(m['diamond_RSS_KiB']/1024**2,2) if m['diamond_RSS_KiB'] is not None else None
+ o['nr_primary_analysis_done']=(r/'nr-primary-analysis-complete.json').exists()
+ o['nr_raw_backup_done']=(d/'search-raw-complete.json').exists()
  o['standalone_seed_nr_done']=(r/'protein/seed-nr-standalone/complete.json').exists()
  o['standalone_seed_nr_started']=(r/'protein/seed-nr-standalone/search-protocol.json').exists()
  o['standalone_seed_nr_incomplete']=(r/'protein/seed-nr-standalone/incomplete.json').exists()
  o['thread_parity_done']=(r/'protein/nr-thread-parity-on-demand/parity.json').exists()
  o['nr_memory_restart_parity_done']=(r/'protein/nr-thread-parity-memory-restart/parity.json').exists()
- logs=['nr-restart256.log','standalone-seed-nr.log','heldout-protein-preparation.log','nr-dedup-benchmark.log','cohort-storage/protein200/viral-search.log']
+ logs=['finalize-protein-nr.log','nr-restart256.log','standalone-seed-nr.log','heldout-protein-preparation.log','nr-dedup-benchmark.log','cohort-storage/protein200/viral-search.log']
 errors=[]
 for name in logs:
  p=r/name
@@ -71,7 +76,7 @@ def events(rows):
  for d in rows:
   if d.get('expected_state'):continue
   for k,v in d.items():
-   if k.endswith('_done') or k in ['nr_started','nr_incomplete','standalone_seed_nr_started','standalone_seed_nr_incomplete']:
+   if k.endswith(('_done','_started','_incomplete')):
     if v:result.add(d['host']+'/'+k)
   if d.get('repeat',0)>0:result.add('first_repeat_batch')
   for count in range(1,d.get('scaling_runs',0)+1):result.add('scaling_run_'+str(count))
@@ -102,8 +107,10 @@ while True:
  (r/'watch-status-latest.json').write_text(json.dumps(snapshot,indent=2))
  with (r/'progress-history.jsonl').open('a') as f:f.write(json.dumps(snapshot)+'\n')
  if new or time.monotonic()-last_print>300:
-  print(json.dumps(snapshot),flush=True);last_print=time.monotonic()
+  keys=['host','native','repeat','primary_screens','screened','native_analysis_done','validation_started','validation_done','nr_reference_block','nr_reference_blocks','nr_done','nr_raw_backup_done','nr_memory_available_GiB','nr_swap_used_GiB','free_GiB']
+  display={'utc':snapshot['utc'],'workers':[{k:d[k] for k in keys if k in d}|({'error_logs':d['error_logs']} if d.get('error_logs') else {})|({'connection_error':d['connection_error']} if d.get('connection_error') else {}) for d in rows if not d.get('expected_state')],'new_events':sorted(new)}
+  print(json.dumps(display),flush=True);last_print=time.monotonic()
  if new:
   state.write_text(json.dumps(sorted(seen|new)));break
- if time.monotonic()-start>900:break
+ if time.monotonic()-start>3600:break
  time.sleep(30)
