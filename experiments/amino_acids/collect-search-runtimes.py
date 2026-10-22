@@ -17,6 +17,6 @@ for folder,method,scope in [('protein-nr','DIAMOND blastx against full NR, poole
    seconds=0
    for v in m[1].split(':'):seconds=seconds*60+float(v)
    cpu=sum(float(re.search(re.escape(label)+r':\s*([\d.]+)',text)[1]) for label in ['User time (seconds)','System time (seconds)'])
-   rows.append({'method':method,'scope':scope,'queries':x['queries'],'wall_seconds':seconds,'cpu_seconds':cpu,'allocated_worker_cost_usd':seconds/3600*nr_hour,'command':shlex.join(x['command']),'runtime_scope':'Completed full-reference scan and per-search seed indexing. Pooled runtime is not allocated to subsets. Hardware and scheduling differ from nucleotide runs.'})
+   rows.append({'method':method,'scope':scope,'queries':x['queries'],'wall_seconds':seconds,'cpu_seconds':cpu,'allocated_worker_cost_usd':seconds/3600*x.get('worker_hourly_cost_usd',nr_hour),'command':shlex.join(x['command']),'runtime_scope':'Completed full-reference scan and per-search seed indexing. Pooled runtime is not allocated to subsets. Hardware and scheduling differ from nucleotide runs.'})
 (r/'search-runtimes.json').write_text(json.dumps({'runs':rows,'notes':['Unmeasured CPU remainsnull. Wholeworker cost allocations must not be summed across concurrent jobs.','Interrupted attempts, reference staging, and idle time belong in the overall instance ledger.']},indent=2))
 print(json.dumps([{k:v for k,v in x.items() if k not in ['command','runtime_scope']} for x in rows]))

@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-10-22T03:54:14.465118+00:00",
+  "scope": "Read-ID membership in saved NT24 and NT20 first-screen outputs for every original member of all378939fixed first200protein candidate queries. No new selection, alignment, index or primary threshold.",
+  "purpose": "Separate original reads absent from the initial nucleotide screen from original reads that passed it but are absent from final nucleotide assignments.",
+  "resources": "Reuse aa-screen after its scheduled protein-repeat-gate scan completes. Read two existing private FASTQ outputs per sample; no new worker.",
+  "join": "Use analyze-protein-overlap.py --screen-membership query-membership.tsv --native-arm nt or nt20 on matching final protein pair-evidence.tsv. Preserve per-query counts and original member identities; do not extrapolate validation verdicts.",
+  "primary_NR_outcomes_available": false,
+  "budget": "Existing Oct23 15UTC safeguard unchanged; audit stops before13:30UTC cleanup reserve."
+}

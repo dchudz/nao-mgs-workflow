@@ -19,16 +19,16 @@ assert {q.rsplit('/',1)[0].removeprefix('SEED_') for q in names}=={x['seq_id'] f
 uri='s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/seed-nr-standalone/'
 def upload():subprocess.run(['aws','--profile','pipeline-codex','s3','cp',str(d)+'/',uri,'--recursive','--exclude','complete.json','--only-show-errors'],check=True)
 upload();print('STANDALONE_SEED_NR_PREPARED_WAITING_FOR_PRIMARY_ANALYSIS',flush=True)
-budget_stop=datetime.datetime.fromisoformat('2026-10-23T13:30:00+00:00')
+budget_stop=datetime.datetime.fromisoformat('2026-10-23T08:30:00+00:00')
 while not (r/'nr-primary-analysis-complete.json').exists():
  assert datetime.datetime.now(datetime.timezone.utc)<budget_stop-datetime.timedelta(minutes=10),'No time remains before budget cleanup reserve'
  time.sleep(30)
 assert (primary/'complete.json').exists()
 subprocess.run(['aws','--profile','pipeline-codex','s3api','head-object','--bucket','pipeline-lab-839993661825-us-east-1','--key','runs/amino-acid-20261021/protein-nr-combined/complete.json'],check=True,stdout=subprocess.DEVNULL)
 cmd=json.loads((primary/'search-protocol.json').read_text())['command'].copy()
-assert cmd[cmd.index('--threads')+1]=='24' and cmd[cmd.index('--index-chunks')+1]=='4'
+assert cmd[cmd.index('--threads')+1]=='32' and cmd[cmd.index('--index-chunks')+1]=='4'
 cmd[cmd.index('--query')+1]=str(query);cmd[cmd.index('--out')+1]=str(d/'nr.tsv')
-protocol={'command':cmd,'queries':len(names),'query_sha256':hashlib.sha256(query.read_bytes()).hexdigest(),'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'max_runtime_seconds':min(43200,(budget_stop-datetime.datetime.now(datetime.timezone.utc)).total_seconds())};assert protocol['max_runtime_seconds']>600
+protocol={'command':cmd,'queries':len(names),'query_sha256':hashlib.sha256(query.read_bytes()).hexdigest(),'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'instance_type':'r7a.8xlarge','memory_GiB':256,'worker_hourly_cost_usd':2.4344+(1280*.08+3000*.005+875*.04)/730,'max_runtime_seconds':(budget_stop-datetime.datetime.now(datetime.timezone.utc)).total_seconds()};assert protocol['max_runtime_seconds']>600
 (d/'search-protocol.json').write_text(json.dumps(protocol,indent=2));print(json.dumps(protocol),flush=True)
 start=time.monotonic()
 with (d/'nr-search.log').open('w') as log:

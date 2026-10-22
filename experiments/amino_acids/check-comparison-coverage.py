@@ -26,4 +26,15 @@ with tempfile.TemporaryDirectory() as tmp:
  subprocess.run(cmd,check=True,stdout=subprocess.DEVNULL);s=json.loads((panel/'comparison.json').read_text());assert s['pairs']==2 and all(z['status']=={'no_alignment':2} for z in s['groups'].values())
  write(panel/'selection.tsv',selection+[selection[0]]);z=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True);assert z.returncode and 'Duplicate panel query' in z.stderr
  write(panel/'selection.tsv',selection);(panel/'megablast.tsv').write_text('q1/3\tsubject\t10239\t100\t1e-20\t30\t100\t100\n');z=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True);assert z.returncode and 'assert q in set_query_ids' in z.stderr
-print('Unaligned reads retained; jointly omitted reads, duplicate selections and unexpected mate IDs rejected.')
+with tempfile.TemporaryDirectory() as tmp:
+ d=Path(tmp)
+ write(d/'evidence.tsv',[dict(query_pair='q1',exact_pair_also_native='True',original_pairs=2,added_original_pairs=0,nr_status='mixed_viral_nonviral'),dict(query_pair='q2',exact_pair_also_native='False',original_pairs=3,added_original_pairs=3,nr_status='viral_only')])
+ write(d/'screens.tsv',[dict(query_pair='q1',original_members=2,nt_retained_original_members=2,nt_screen_status='all_retained',nt20_retained_original_members=2,nt20_screen_status='all_retained'),dict(query_pair='q2',original_members=3,nt_retained_original_members=0,nt_screen_status='none_retained',nt20_retained_original_members=1,nt20_screen_status='some_retained')])
+ cmd=['python3',str(r/'analyze-protein-overlap.py'),str(d/'evidence.tsv'),str(d/'summary.json'),'--screen-membership',str(d/'screens.tsv')]
+ result=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True);assert result.returncode and 'Specify the native arm' in result.stderr
+ for arm,status,retained in [('nt','none_retained',0),('nt20','some_retained',1)]:
+  subprocess.run(cmd+['--native-arm',arm],check=True,stdout=subprocess.DEVNULL);z=json.loads((d/'summary.json').read_text());group=z['groups']['viral_only'];category='new_exact_pair_all_original_members_absent_from_native'
+  assert group['initial_screen/'+category+'/'+status]==1
+  assert group['initial_screen_original_members/'+category+'/retained']==retained
+  assert group['initial_screen_original_members/'+category+'/excluded']==3-retained
+print('Coverage guards and arm-specific raw-screen boundary counts verified.')

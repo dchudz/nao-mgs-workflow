@@ -2,7 +2,7 @@
 import datetime,json,re,subprocess,time
 from pathlib import Path
 r=Path('/home/ec2-user/experiment');d=r/'protein/combined-validation'
-deadline=datetime.datetime.fromisoformat('2026-10-22T14:50:00+00:00')
+deadline=datetime.datetime.fromisoformat('2026-10-23T09:00:00+00:00')
 while True:
  p=d/'nr-search.log';tail=''
  if p.exists():

@@ -1,8 +1,7 @@
 """Preserve the original near-best taxon evidence for unsorted, redundant alignments."""
 import importlib.util,json,random
 from pathlib import Path
-r=Path(__file__).resolve().parent
-if (r/'experiment-code').exists():r=r/'experiment-code'
+r=Path(__file__).resolve().parent/'experiment-code'
 def load(name,path):
  spec=importlib.util.spec_from_file_location(name,path);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod);return mod.summarize
 old=load('original',r/'protein-nr-summary.original.py');new=load('bounded',r/'protein-nr-summary.py')
