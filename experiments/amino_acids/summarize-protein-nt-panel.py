@@ -1,7 +1,7 @@
 """Keep every panel pair and join observed nucleotide and protein evidence without extrapolation."""
 import argparse,collections,csv,json
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('panel');p.add_argument('--nodes',required=True);p.add_argument('--nr');a=p.parse_args();d=Path(a.panel)
+p=argparse.ArgumentParser();p.add_argument('panel');p.add_argument('--nodes',required=True);p.add_argument('--nr');p.add_argument('--selection-note',default='Sample-balanced secondary panel: one protein-only candidate beyond both NT24 and NT20 per sample, plus32 shared controls. Every mate is identical to its frozen NR input.');a=p.parse_args();d=Path(a.panel)
 parents={}
 for line in open(a.nodes):
  x=line.split('|');parents[int(x[0])]=int(x[1])
@@ -44,7 +44,7 @@ if a.nr:
 for name,data in [('comparison.tsv',rows),('eligible-nucleotide-alignments.tsv',details)]:
  with (d/name).open('w') as f:
   w=csv.DictWriter(f,fieldnames=list(data[0]) if data else ['query'],delimiter='\t');w.writeheader();w.writerows(data)
-summary={'pairs':len(selection),'nr_complete':bool(a.nr),'groups':{},'transitions':{},'interpretation':'Sample-balanced secondary panel: one protein-only candidate beyond both NT24 and NT20 per sample, plus32 shared controls. Every mate is identical to its frozen NR input. Nucleotide classifications use top10 distinct score values and90% near-best per mate, then union mate taxa. Protein uses the unchanged NR summary. These are measured competing assignments, not truth labels or read-weighted accuracy.'}
+summary={'pairs':len(selection),'nr_complete':bool(a.nr),'groups':{},'transitions':{},'interpretation':a.selection_note+' Nucleotide classifications use top10 distinct score values and90% near-best per mate, then union mate taxa. Protein uses the unchanged NR summary. These are measured competing assignments, not truth labels or read-weighted accuracy.'}
 tasks=sorted({x['task'] for x in rows});strata=sorted({x['stratum'] for x in rows});lookup={(x['task'],x['query_pair']):x for x in rows}
 for task in tasks:
  for group in strata:

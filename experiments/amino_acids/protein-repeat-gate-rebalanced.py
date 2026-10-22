@@ -21,6 +21,11 @@ def digest(p):
  with open(p,'rb') as f:
   for block in iter(lambda:f.read(2**20),b''):h.update(block)
  return h.hexdigest()
+native_protocol=json.loads((r/'native-loss-raw-screen-addendum.json').read_text())
+native_path=r/'native-loss-raw-screen-selection.tsv';assert digest(native_path)==native_protocol['selection_sha256']
+native_selection={x['seq_id']:x for x in csv.DictReader(native_path.open(),delimiter='\t')};assert len(native_selection)==native_protocol['original_pairs']
+native_by_sample=collections.defaultdict(set);native_seen=set()
+for q,x in native_selection.items():native_by_sample[x['sample']].add(q)
 assert digest(d/'repeat-index.bin')=='e4c86f4547c92f6d73dd45bbbd7e1b923c6a2dd28bda7553905ca011bd0febb9'
 calls={x['query_pair']:x for x in csv.DictReader(open(d/'viral-pairs.tsv'),delimiter='\t')}
 member_to_query={};members=collections.defaultdict(set);by_sample=collections.defaultdict(set)
@@ -36,14 +41,24 @@ counts=[]
 with (d/'candidate-members.fastq').open('xb') as selected:
  for sample in order:
   wanted=by_sample[sample]
-  if not wanted:counts.append({'sample':sample,'candidate_members':0});continue
+  if not wanted and not native_by_sample[sample]:counts.append({'sample':sample,'candidate_members':0});continue
   raw=d/'incoming.fastq';cp(uri+f'cohort-screens/{sample}/aa12.fastq',raw);seen=set()
   for key,record in pairs(raw):
    sid=key[0].decode().lstrip('@')
+   if sid in native_by_sample[sample]:
+    assert sid not in native_seen;native_seen.add(sid)
    if sid in wanted:
     assert sid not in seen;seen.add(sid);selected.write(record)
   assert seen==wanted,(sample,len(wanted-seen));raw.unlink();counts.append({'sample':sample,'candidate_members':len(seen)})
   print(json.dumps({'extracted_samples':len(counts),'planned':200}),flush=True)
+native_rows=[dict(x,present_in_original_AA12_screen=q in native_seen) for q,x in native_selection.items()]
+assert all(x['present_in_original_AA12_screen'] for x in native_rows if x['loss_boundary']=='prepared_without_eligible_viral_protein_alignment')
+with (d/'native-loss-raw-screen.tsv').open('w') as f:
+ w=csv.DictWriter(f,fieldnames=list(native_rows[0]),delimiter='\t');w.writeheader();w.writerows(native_rows)
+native_counts={}
+for boundary in sorted({x['loss_boundary'] for x in native_rows}):
+ selected_rows=[x for x in native_rows if x['loss_boundary']==boundary];native_counts[boundary]={'original_pairs':len(selected_rows),'present_in_original_AA12_screen':sum(x['present_in_original_AA12_screen'] for x in selected_rows),'absent_from_original_AA12_screen':sum(not x['present_in_original_AA12_screen'] for x in selected_rows)}
+(d/'native-loss-raw-screen.json').write_text(json.dumps({'selection_sha256':native_protocol['selection_sha256'],'original_pairs':len(native_rows),'boundaries':native_counts,'interpretation':'Observed raw AA12 FASTQ membership, collected in the same scan as the separate protein repeat-gate diagnostic. No alignment or taxonomic verdict is inferred.'},indent=2))
 cmd=[str(r/'rust-tools/target-speed/release/screen_amino_acids'),'screen','--index',str(d/'repeat-index.bin'),'--reads',str(d/'candidate-members.fastq'),'--matched',str(d/'retained-members.fastq'),'--threads','8']
 with (d/'screen.log').open('w') as log:subprocess.run(['/usr/bin/time','-v']+cmd,stdout=log,stderr=log,check=True,timeout=3600)
 retained={key[0].decode().lstrip('@') for key,raw in pairs(d/'retained-members.fastq')};assert retained<=member_to_query.keys()

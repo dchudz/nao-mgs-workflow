@@ -19,6 +19,11 @@ for marker in (d/'batches').glob('*/complete.json'):
    tables[arm]=read(paths[0])
   native,old,new=(tables[a] for a in ['nt','union','repeatunion']);extra=new.keys()-old.keys();lost=old.keys()-new.keys();v=screens[s]
   row=dict(sample=s,original_candidate_pairs=v['original_union_pairs'],repeat_candidate_pairs=v['union_pairs'],candidate_reduction_fraction=1-v['union_pairs']/v['original_union_pairs'],native_final_pairs=len(native),original_union_final_pairs=len(old),repeat_final_pairs=len(new),lost_original_union_pairs=len(lost),new_vs_original_union_pairs=len(extra),lost_native_pairs=len(native.keys()-new.keys()),added_to_native_pairs=len(new.keys()-native.keys()),taxid_changes=sum(new[q]['aligner_taxid_lca']!=old[q]['aligner_taxid_lca'] for q in new.keys()&old.keys()),original_joint_exemplars=sum(x['seq_id']==x['prim_align_dup_exemplar']==x['sim_dup_exemplar'] for x in old.values()),repeat_joint_exemplars=sum(x['seq_id']==x['prim_align_dup_exemplar']==x['sim_dup_exemplar'] for x in new.values()))
+  common=old.keys()&new.keys()
+  row['shared_query_sequence_changes']=sum((old[q]['query_seq'],old[q]['query_seq_rev'])!=(new[q]['query_seq'],new[q]['query_seq_rev']) for q in common)
+  row['primary_duplicate_exemplar_changes']=sum(old[q]['prim_align_dup_exemplar']!=new[q]['prim_align_dup_exemplar'] for q in common)
+  row['similarity_duplicate_exemplar_changes']=sum(old[q]['sim_dup_exemplar']!=new[q]['sim_dup_exemplar'] for q in common)
+  row['joint_exemplar_membership_changes']=sum((old[q]['seq_id']==old[q]['prim_align_dup_exemplar']==old[q]['sim_dup_exemplar'])!=(new[q]['seq_id']==new[q]['prim_align_dup_exemplar']==new[q]['sim_dup_exemplar']) for q in common)
   rows.append(row)
   for q in sorted(extra|lost):changes.append(dict(sample=s,seq_id=q,change='gained' if q in extra else 'lost',taxid=(new if q in extra else old)[q]['aligner_taxid_lca'],also_native=q in native))
 for name,data in [('sample-metrics.tsv',rows),('changed-pairs.tsv',changes)]:
