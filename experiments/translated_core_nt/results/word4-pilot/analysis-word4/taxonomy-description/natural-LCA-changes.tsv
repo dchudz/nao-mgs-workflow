@@ -1,0 +1,149 @@
+query	stratum	threshold	left	right	left_status	right_status	left_lca	right_lca	left_name	right_name	relation
+SRR36876989.409283716/1	NT20_added	default_E10	blastn	megablast	viral_only	no_alignment	1755588	NA	Sicinivirus A		lost_alignment
+SRR36876989.409283716/2	NT20_added	default_E10	blastn	megablast	viral_only	no_alignment	1755588	NA	Sicinivirus A		lost_alignment
+SRR36814894.28455047/1	baseline_control	default_E10	blastn	query-tblastn-fast	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	default_E10	blastn	query-tblastn-fast	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	default_E10	blastn	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	default_E10	blastn	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR37092456.254840438/2	NT20_added	default_E10	blastn	query-tblastn-fast	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR36814894.28455047/1	baseline_control	default_E10	blastn	tblastx	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	default_E10	blastn	tblastx	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	default_E10	blastn	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	default_E10	blastn	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR37076038.742988672/1	baseline_control	default_E10	blastn	tblastx	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	default_E10	blastn	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	default_E10	blastn	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	default_E10	blastn	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	default_E10	blastn	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	default_E10	blastn	tblastx	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR39695366.581592828/2	AA12_added	default_E10	blastn	tblastx	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR36814894.28455047/1	baseline_control	default_E10	blastn	tblastx-word4	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	default_E10	blastn	tblastx-word4	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	default_E10	blastn	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	default_E10	blastn	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR37076038.742988672/1	baseline_control	default_E10	blastn	tblastx-word4	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	default_E10	blastn	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	default_E10	blastn	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	default_E10	blastn	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	default_E10	blastn	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	default_E10	blastn	tblastx-word4	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR39695366.581592828/2	AA12_added	default_E10	blastn	tblastx-word4	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR36814894.28455047/1	baseline_control	default_E10	megablast	query-tblastn-fast	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	default_E10	megablast	query-tblastn-fast	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	default_E10	megablast	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	default_E10	megablast	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876989.409283716/1	NT20_added	default_E10	megablast	query-tblastn-fast	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR36876989.409283716/2	NT20_added	default_E10	megablast	query-tblastn-fast	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR37092456.254840438/2	NT20_added	default_E10	megablast	query-tblastn-fast	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR36814894.28455047/1	baseline_control	default_E10	megablast	tblastx	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	default_E10	megablast	tblastx	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	default_E10	megablast	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	default_E10	megablast	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876989.409283716/1	NT20_added	default_E10	megablast	tblastx	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR36876989.409283716/2	NT20_added	default_E10	megablast	tblastx	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR37076038.742988672/1	baseline_control	default_E10	megablast	tblastx	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	default_E10	megablast	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	default_E10	megablast	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	default_E10	megablast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	default_E10	megablast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	default_E10	megablast	tblastx	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR39695366.581592828/2	AA12_added	default_E10	megablast	tblastx	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR36814894.28455047/1	baseline_control	default_E10	megablast	tblastx-word4	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	default_E10	megablast	tblastx-word4	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	default_E10	megablast	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	default_E10	megablast	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876989.409283716/1	NT20_added	default_E10	megablast	tblastx-word4	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR36876989.409283716/2	NT20_added	default_E10	megablast	tblastx-word4	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR37076038.742988672/1	baseline_control	default_E10	megablast	tblastx-word4	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	default_E10	megablast	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	default_E10	megablast	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	default_E10	megablast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	default_E10	megablast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	default_E10	megablast	tblastx-word4	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR39695366.581592828/2	AA12_added	default_E10	megablast	tblastx-word4	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR37076038.742988672/1	baseline_control	default_E10	query-tblastn-fast	tblastx	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	default_E10	query-tblastn-fast	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	default_E10	query-tblastn-fast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	default_E10	query-tblastn-fast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	default_E10	query-tblastn-fast	tblastx	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR39695366.581592828/2	AA12_added	default_E10	query-tblastn-fast	tblastx	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR37076038.742988672/1	baseline_control	default_E10	query-tblastn-fast	tblastx-word4	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	default_E10	query-tblastn-fast	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	default_E10	query-tblastn-fast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	default_E10	query-tblastn-fast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	default_E10	query-tblastn-fast	tblastx-word4	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR39695366.581592828/2	AA12_added	default_E10	query-tblastn-fast	tblastx-word4	viral_only	viral_only	1239565	249588	Mamastrovirus 1	Mamastrovirus	broader_LCA
+SRR36876989.409283716/1	NT20_added	strict_E1e-5	blastn	megablast	viral_only	no_alignment	1755588	NA	Sicinivirus A		lost_alignment
+SRR36876989.409283716/2	NT20_added	strict_E1e-5	blastn	megablast	viral_only	no_alignment	1755588	NA	Sicinivirus A		lost_alignment
+SRR36814894.28455047/1	baseline_control	strict_E1e-5	blastn	query-tblastn-fast	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	strict_E1e-5	blastn	query-tblastn-fast	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	strict_E1e-5	blastn	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	strict_E1e-5	blastn	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR37092456.254840438/2	NT20_added	strict_E1e-5	blastn	query-tblastn-fast	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR36814894.28455047/1	baseline_control	strict_E1e-5	blastn	tblastx	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	strict_E1e-5	blastn	tblastx	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	strict_E1e-5	blastn	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	strict_E1e-5	blastn	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR37076038.742988672/1	baseline_control	strict_E1e-5	blastn	tblastx	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	strict_E1e-5	blastn	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	strict_E1e-5	blastn	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	strict_E1e-5	blastn	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	strict_E1e-5	blastn	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	strict_E1e-5	blastn	tblastx	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR39695366.581592828/2	AA12_added	strict_E1e-5	blastn	tblastx	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR36814894.28455047/1	baseline_control	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR37076038.742988672/1	baseline_control	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	strict_E1e-5	blastn	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	strict_E1e-5	blastn	tblastx-word4	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR39695366.581592828/2	AA12_added	strict_E1e-5	blastn	tblastx-word4	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR36814894.28455047/1	baseline_control	strict_E1e-5	megablast	query-tblastn-fast	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	strict_E1e-5	megablast	query-tblastn-fast	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	strict_E1e-5	megablast	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	strict_E1e-5	megablast	query-tblastn-fast	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876989.409283716/1	NT20_added	strict_E1e-5	megablast	query-tblastn-fast	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR36876989.409283716/2	NT20_added	strict_E1e-5	megablast	query-tblastn-fast	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR37092456.254840438/2	NT20_added	strict_E1e-5	megablast	query-tblastn-fast	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR36814894.28455047/1	baseline_control	strict_E1e-5	megablast	tblastx	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	strict_E1e-5	megablast	tblastx	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	strict_E1e-5	megablast	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	strict_E1e-5	megablast	tblastx	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876989.409283716/1	NT20_added	strict_E1e-5	megablast	tblastx	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR36876989.409283716/2	NT20_added	strict_E1e-5	megablast	tblastx	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR37076038.742988672/1	baseline_control	strict_E1e-5	megablast	tblastx	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	strict_E1e-5	megablast	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	strict_E1e-5	megablast	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	strict_E1e-5	megablast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	strict_E1e-5	megablast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	strict_E1e-5	megablast	tblastx	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR39695366.581592828/2	AA12_added	strict_E1e-5	megablast	tblastx	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR36814894.28455047/1	baseline_control	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	1239565	12701	Mamastrovirus 1	Human astrovirus 2	more_specific_LCA
+SRR36876821.928242945/1	AA12_added	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	194960	72149	Kobuvirus	Kobuvirus aichi	more_specific_LCA
+SRR36876831.575288286/1	AA12_added	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876831.575288286/2	AA12_added	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	2170006	1330069	Megrivirus C	Megrivirus	broader_LCA
+SRR36876989.409283716/1	NT20_added	strict_E1e-5	megablast	tblastx-word4	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR36876989.409283716/2	NT20_added	strict_E1e-5	megablast	tblastx-word4	no_alignment	viral_only	NA	1755588		Sicinivirus A	gained_alignment
+SRR37076038.742988672/1	baseline_control	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR37092456.254840438/2	NT20_added	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	strict_E1e-5	megablast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	strict_E1e-5	megablast	tblastx-word4	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR39695366.581592828/2	AA12_added	strict_E1e-5	megablast	tblastx-word4	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR37076038.742988672/1	baseline_control	strict_E1e-5	query-tblastn-fast	tblastx	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	strict_E1e-5	query-tblastn-fast	tblastx	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	strict_E1e-5	query-tblastn-fast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	strict_E1e-5	query-tblastn-fast	tblastx	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	strict_E1e-5	query-tblastn-fast	tblastx	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR39695366.581592828/2	AA12_added	strict_E1e-5	query-tblastn-fast	tblastx	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR37076038.742988672/1	baseline_control	strict_E1e-5	query-tblastn-fast	tblastx-word4	viral_only	viral_only	3432193	10912	Rotavirus alphagastroenteritidis	Rotavirus	broader_LCA
+SRR37092456.254840438/1	NT20_added	strict_E1e-5	query-tblastn-fast	tblastx-word4	viral_only	viral_only	1454551	95342	Porcine sapovirus	Sapporo virus	broader_LCA
+SRR39695246.1017503259/1	baseline_control	strict_E1e-5	query-tblastn-fast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695246.1017503259/2	baseline_control	strict_E1e-5	query-tblastn-fast	tblastx-word4	viral_only	viral_only	3432193	28875	Rotavirus alphagastroenteritidis	Rotavirus A	more_specific_LCA
+SRR39695366.581592828/1	AA12_added	strict_E1e-5	query-tblastn-fast	tblastx-word4	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment
+SRR39695366.581592828/2	AA12_added	strict_E1e-5	query-tblastn-fast	tblastx-word4	viral_only	no_alignment	1239565	NA	Mamastrovirus 1		lost_alignment

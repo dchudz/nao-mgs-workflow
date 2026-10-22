@@ -1,0 +1,37 @@
+{
+  "right_method": "tblastx-word4",
+  "source_sha256": "111d84eec00a1df89d59ed61a880556e57dd337ec2d2ddee18cfa38d54113520",
+  "input_hashes": {
+    "tblastx": "1becf45f86d9e2cf00387f8489b7f6ecdc9cb9e2eebdd9d021e9e54628b443b1",
+    "tblastx-word4": "945a58aa87ed179e753cca38ebe404c0e713a0561ff9458ec557f7172dda83bd"
+  },
+  "query_count": 43,
+  "unique_HSPs": {
+    "tblastx": 38477,
+    "tblastx-word4": 37250
+  },
+  "duplicate_identical_HSP_rows": {
+    "tblastx": 0,
+    "tblastx-word4": 0
+  },
+  "shared_identical_HSPs": 36738,
+  "only_tblastx_HSPs": 1739,
+  "only_right_HSPs": 512,
+  "shared_HSPs_with_different_bitscores": 0,
+  "shared_HSPs_with_different_evalues": 358,
+  "right_minus_tblastx_bitscore_range": [
+    0.0,
+    0.0
+  ],
+  "same_HSP_crosses_strict_E_cutoff": 1,
+  "cutoff_crossing_HSPs_with_stops": 0,
+  "queries_with_identical_HSP_cutoff_crossing": [
+    "SRR36995843.1123277743/2"
+  ],
+  "limits": [
+    "Matching requires identical query, subject, coordinates, frames, lengths and both aligned amino-acid strings.",
+    "A threshold crossing on the same HSP is a change in reported significance, not newly retrieved sequence evidence.",
+    "Unshared HSPs may reflect heuristic retrieval, output caps or frame pooling; this comparison does not identify one unique cause.",
+    "Scores and E-values are not assumed interchangeable between programs."
+  ]
+}

@@ -30,7 +30,7 @@ def characterize():
     m.save(d/'codon-audit-characterization.json',dict(created_utc=m.now(),rows=all_results,reference_sha256=m.sha(f/'reference.fna'),excluded_from_real_data=True));print('CODON_RECONSTRUCTION_VERIFIED')
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--characterize',action='store_true');p.add_argument('--directory',type=Path);p.add_argument('--analysis',default='analysis');p.add_argument('--method',choices=['tblastx','query-tblastn-fast'],default='tblastx');p.add_argument('--baseline',choices=['blastn','tblastx'],default='blastn');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--characterize',action='store_true');p.add_argument('--directory',type=Path);p.add_argument('--analysis',default='analysis');p.add_argument('--method',choices=['tblastx','query-tblastn-fast','tblastx-word4'],default='tblastx');p.add_argument('--baseline',choices=['blastn','tblastx'],default='blastn');a=p.parse_args()
     if a.characterize:characterize()
     else:
         d=a.directory;assert d is not None;out=d/a.analysis;calls=list(csv.DictReader((out/'per-mate.tsv').open(),delimiter='\t'));lookup={(x['query'],x['method'],x['threshold']):x for x in calls}
