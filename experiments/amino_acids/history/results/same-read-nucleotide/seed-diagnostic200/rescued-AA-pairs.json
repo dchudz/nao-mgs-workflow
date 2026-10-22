@@ -1,0 +1,37 @@
+{
+  "pairs": 26,
+  "relation": {
+    "exact": 16,
+    "ancestor_related": 9,
+    "divergent": 1
+  },
+  "aligned_mates": {
+    "2": 25,
+    "1": 1
+  },
+  "best_bitscore": {
+    "min": 124.0,
+    "median": 170.5,
+    "max": 211.0
+  },
+  "best_evalue": {
+    "min": 5.35e-50,
+    "median": 2.4319999999999997e-37,
+    "max": 4.16e-24
+  },
+  "best_length_nt": {
+    "min": 101,
+    "median": 144.0,
+    "max": 151
+  },
+  "best_identity_pct": {
+    "min": 83.221,
+    "median": 88.667,
+    "max": 91.275
+  },
+  "best_query_coverage_pct": {
+    "min": 85.0,
+    "median": 98.5,
+    "max": 100.0
+  }
+}

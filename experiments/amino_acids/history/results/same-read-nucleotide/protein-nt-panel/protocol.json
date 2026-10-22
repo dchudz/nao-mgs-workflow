@@ -1,0 +1,27 @@
+{
+  "frozen_utc": "2026-10-22T00:28:26.948771+00:00",
+  "secondary": true,
+  "selection": "One SHA256-ranked candidate absent from both NT24 and NT20 per each of the fixed first200 samples; one shared candidate per32 SHA256-ranked sample controls. Selection made while every broad-NR outcome was pending.",
+  "selected_pairs": 232,
+  "selected_mates": 464,
+  "strata": {
+    "added_beyond_NT24_and_NT20": 200,
+    "shared_with_NT24_and_NT20": 32
+  },
+  "selection_sha256": "bf7510b756f248fee0da885043b4de3a52910983d428282ef8a42e304a6c6bdf",
+  "query_representation": "Exactly the same complete trimmed mate sequences already included in the frozen full NR query pool. No query or protein search is repeated or altered.",
+  "searches": [
+    "megablast",
+    "blastn -task blastn"
+  ],
+  "reference": "Existing comprehensive core_nt snapshot, unchanged.",
+  "resources": "Existing primary worker only, after the sampling-cap benchmark completes,8threads with explicit8192DockerCPUshares; no added instance. Six-hour per-search resource bound and overall $500 account cap.",
+  "limits": [
+    "One candidate per sample is not a read-weighted accuracy estimate.",
+    "Shared controls were selected independently of any NR outcome.",
+    "NR and core_nt differ in reference representation and coverage; this comparison cannot isolate algorithm alone.",
+    "Both nucleotide tasks use identical separate mates; original production validation merges/joins mates.",
+    "Search tasks change both seed and scoring defaults.",
+    "The primary cohort, thresholds and original NR search remain unchanged."
+  ]
+}
