@@ -1,0 +1,131 @@
+{
+  "recorded_utc": "2026-10-22T23:03:29.464950+00:00",
+  "source_sha256": "8d9f50a3b0ae35d49f52866b3815b03bb9e4dd1d2bf320bf4120f0fb2caa5460",
+  "excluded_from_real_data": true,
+  "invariants": [
+    "No-hit denominator",
+    "Taxonomy root and leaf ancestry",
+    "Viral and natural cellular competition",
+    "Artificial competitors separated",
+    "Unknown taxonomy retained",
+    "Mixed-plus-unknown precedence matches frozen NR classifier",
+    "Invalid cyclic ancestry remains unknown"
+  ],
+  "cases": [
+    {
+      "input_taxids": [],
+      "result": {
+        "status": "no_alignment",
+        "natural_status": "no_alignment",
+        "taxid_lca": 0,
+        "known_natural_lca": 0,
+        "viral_taxa": 0,
+        "artificial_taxa": 0,
+        "cellular_taxa": 0,
+        "unknown_taxa": 0,
+        "near_best_taxids": ""
+      }
+    },
+    {
+      "input_taxids": [
+        20
+      ],
+      "result": {
+        "status": "viral_only",
+        "natural_status": "viral_only",
+        "taxid_lca": 20,
+        "known_natural_lca": 20,
+        "viral_taxa": 1,
+        "artificial_taxa": 0,
+        "cellular_taxa": 0,
+        "unknown_taxa": 0,
+        "near_best_taxids": "20"
+      }
+    },
+    {
+      "input_taxids": [
+        20,
+        21
+      ],
+      "result": {
+        "status": "mixed_viral_nonviral",
+        "natural_status": "mixed_viral_natural_nonviral",
+        "taxid_lca": 1,
+        "known_natural_lca": 1,
+        "viral_taxa": 1,
+        "artificial_taxa": 0,
+        "cellular_taxa": 1,
+        "unknown_taxa": 0,
+        "near_best_taxids": "20;21"
+      }
+    },
+    {
+      "input_taxids": [
+        20,
+        22
+      ],
+      "result": {
+        "status": "mixed_viral_nonviral",
+        "natural_status": "viral_only",
+        "taxid_lca": 1,
+        "known_natural_lca": 20,
+        "viral_taxa": 1,
+        "artificial_taxa": 1,
+        "cellular_taxa": 0,
+        "unknown_taxa": 0,
+        "near_best_taxids": "20;22"
+      }
+    },
+    {
+      "input_taxids": [
+        0,
+        20
+      ],
+      "result": {
+        "status": "unknown_taxonomy",
+        "natural_status": "unknown_taxonomy",
+        "taxid_lca": 0,
+        "known_natural_lca": 20,
+        "viral_taxa": 1,
+        "artificial_taxa": 0,
+        "cellular_taxa": 0,
+        "unknown_taxa": 1,
+        "near_best_taxids": "0;20"
+      }
+    },
+    {
+      "input_taxids": [
+        0,
+        20,
+        21
+      ],
+      "result": {
+        "status": "mixed_viral_nonviral",
+        "natural_status": "unknown_taxonomy",
+        "taxid_lca": 0,
+        "known_natural_lca": 1,
+        "viral_taxa": 1,
+        "artificial_taxa": 0,
+        "cellular_taxa": 1,
+        "unknown_taxa": 1,
+        "near_best_taxids": "0;20;21"
+      }
+    },
+    {
+      "input_taxids": [
+        9
+      ],
+      "result": {
+        "status": "unknown_taxonomy",
+        "natural_status": "unknown_taxonomy",
+        "taxid_lca": 0,
+        "known_natural_lca": 0,
+        "viral_taxa": 0,
+        "artificial_taxa": 0,
+        "cellular_taxa": 0,
+        "unknown_taxa": 1,
+        "near_best_taxids": "9"
+      }
+    }
+  ]
+}

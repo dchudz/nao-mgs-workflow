@@ -7,6 +7,7 @@ for line in a.nodes.open():
  f=line.split('|');parents[int(f[0])]=int(f[1])
 cache={}
 def ancestry(t):
+ original=t
  if t not in cache:
   seen=set();path=[];original=t
   while t in parents and t not in seen:
@@ -14,7 +15,7 @@ def ancestry(t):
    if parents[t]==t:cache[original]=path;break
    t=parents[t]
   else:cache[original]=None
- return cache[t]
+ return cache[original]
 def lca(taxa):
  paths=[ancestry(t) for t in taxa]
  if not paths or any(p is None for p in paths):return 0
