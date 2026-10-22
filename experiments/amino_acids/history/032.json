@@ -1,0 +1,15 @@
+{
+  "sequence": 32,
+  "title": "Refresh resource accounting in the interim report",
+  "reconstructed_utc": "2026-10-22T13:19:09.105841+00:00",
+  "snapshot_archive": "private-source-20261022T131620Z.tar.gz",
+  "snapshot_sha256": "b7f7279869a8a445a8212b42d44f6cb947d53676d16a6237bb9429238e8f7f68",
+  "snapshot_recorded_utc": "2026-10-22T13:16:21.065790+00:00",
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "",
+  "changed_source_sha256": {
+    "experiments/amino_acids/build-report.py": "933d05b5d9fe41c5a13986c6b7641dd1d0be97ea4d787d4c6e6716c6b3705751",
+    "experiments/amino_acids/estimate-experiment-cost.py": "12f9d5da4b3809ffafa7a897919b11cfdb0f17b0651d40a6a3babc542a3dc541"
+  }
+}

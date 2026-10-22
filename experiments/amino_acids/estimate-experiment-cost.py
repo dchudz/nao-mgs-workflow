@@ -6,6 +6,7 @@ r = Path(__file__).resolve().parent
 p = argparse.ArgumentParser()
 p.add_argument('--as-of', default=datetime.datetime.now(datetime.timezone.utc).isoformat())
 p.add_argument('--retirement-receipts', help='JSON mapping instance IDs to confirmed termination UTC timestamps')
+p.add_argument('--output', default=str(r / 'results/cost-ledger.json'))
 a = p.parse_args()
 retired = json.loads(Path(a.retirement_receipts).read_text()) if a.retirement_receipts else {}
 now = datetime.datetime.fromisoformat(a.as_of.replace('Z', '+00:00'))
@@ -57,6 +58,6 @@ result = {
     ],
 }
 result['modeled_owned_compute_EBS_IPv4_total_USD'] = sum(result[k] for k in ['modeled_EC2_compute_USD', 'modeled_EBS_maximum_configuration_USD', 'modeled_public_IPv4_USD'])
-out = r / 'results/cost-ledger.json'
+out = Path(a.output)
 out.write_text(json.dumps(result, indent=2))
 print(json.dumps({k: v for k, v in result.items() if k not in ['compute_intervals', 'volume_intervals', 'interpretation']}))
