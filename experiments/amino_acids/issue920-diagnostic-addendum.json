@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-21T21:27:18.492707+00:00",
+  "source_issue": "https://github.com/securebio/nao-mgs-workflow/issues/920",
+  "source_pr912_merged_at": "2026-08-18T19:47:03Z",
+  "scope": "Append the already-selected first-200 BLAST diagnostic query sequences to the full NR search, with SEED_ prefix; separately report same-read protein comparison. No new selection based on alignment outcomes.",
+  "pairs": 746,
+  "available_mates": 1436,
+  "query_sha256": "6cce2122e27d11da1efb574b3d8e0563fe3713eadf7e90a8ff23dff0a9340990",
+  "nr_query_sha256": "b5d74d481f0291a671af931ff0e14f13b97f58f38ecd85b2bd2950e6cb3b841a",
+  "reference_caveat": "core_nt nucleotide and NR protein databases have different coverage; differences combine representation, search and reference effects.",
+  "runtime_caveat": "Pooled NR search amortizes reference construction; individual stratum runtime is not measured. Original query layout is retained and diagnostic reads appended before first full search.",
+  "nr_deadline": "2026-10-22T14:30:00Z",
+  "duration_cap_change": "Removed arbitrary 12-hour cap before search began, retaining hard deadline inside authorized24h and existing budget."
+}
