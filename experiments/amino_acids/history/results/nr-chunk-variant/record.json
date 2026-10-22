@@ -1,0 +1,31 @@
+{
+  "experiment": "nr-chunk-variant",
+  "title": "Rejected NR index-chunk variant",
+  "status_at_capture": "complete; rejected after changed results",
+  "captured_utc": "2026-10-22T13:22:11.393024+00:00",
+  "historical_source_commits": [
+    "892a284fefebbeed4d76fbecbb008979bd55ce45"
+  ],
+  "analysis_source": [
+    {
+      "path": "experiments/amino_acids/run-development-nr.py",
+      "sha256": "92329f197ad7f0a2b6d07f9d0cb7217a6e06f19483d489422765dbd778bdb58f",
+      "last_change_commit": "892a284fefebbeed4d76fbecbb008979bd55ce45"
+    },
+    {
+      "path": "experiments/amino_acids/run-development-nr-fast.py",
+      "sha256": "228a139218bc7a7168ab5495f718a3fa5a608394056353423923c92aac2b8327",
+      "last_change_commit": "892a284fefebbeed4d76fbecbb008979bd55ce45"
+    }
+  ],
+  "results": [
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/nr-chunk-benchmark/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/nr-chunk-variant/nr-chunk-benchmark/summary.json",
+      "sha256": "d4c09834b8f601a0a3d1be31970b6e6c995ed56415eacea75482f2a29530727c",
+      "bytes": 2187
+    }
+  ],
+  "provenance_limit": "Source commits were reconstructed after these runs from saved archives. They are source references, not Git revisions recorded at launch. Executed binary, query, reference, command and timing records remain authoritative. This snapshot does not rerun or change results.",
+  "private_evidence_base": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/"
+}
