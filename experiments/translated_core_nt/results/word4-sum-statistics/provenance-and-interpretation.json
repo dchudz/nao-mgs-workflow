@@ -1,0 +1,75 @@
+{
+  "recorded_utc": "2026-10-22T23:34:25.398638+00:00",
+  "source_commit": "4c6cd0983ec120f0f8ebb170589ed25045952240",
+  "source_sha256": "14665faadefa2771d554630b3bd73a3265279a370acb29dbcb95719073d6dc80",
+  "explicit_sum_true_matches_default_for_both_word_settings": true,
+  "observed_stronger_alignment": {
+    "default-sum-default": [
+      {
+        "bitscore": "58.5",
+        "evalue": "3.71e-05",
+        "score": "123",
+        "qstart": "84",
+        "qend": "10",
+        "sstart": "2838",
+        "send": "2912"
+      }
+    ],
+    "default-sum-true": [
+      {
+        "bitscore": "58.5",
+        "evalue": "3.71e-05",
+        "score": "123",
+        "qstart": "84",
+        "qend": "10",
+        "sstart": "2838",
+        "send": "2912"
+      }
+    ],
+    "default-sum-false": [
+      {
+        "bitscore": "58.5",
+        "evalue": "2.53e-05",
+        "score": "123",
+        "qstart": "84",
+        "qend": "10",
+        "sstart": "2838",
+        "send": "2912"
+      }
+    ],
+    "word4-sum-default": [
+      {
+        "bitscore": "58.5",
+        "evalue": "5.06e-05",
+        "score": "123",
+        "qstart": "84",
+        "qend": "10",
+        "sstart": "2838",
+        "send": "2912"
+      }
+    ],
+    "word4-sum-true": [
+      {
+        "bitscore": "58.5",
+        "evalue": "5.06e-05",
+        "score": "123",
+        "qstart": "84",
+        "qend": "10",
+        "sstart": "2838",
+        "send": "2912"
+      }
+    ],
+    "word4-sum-false": [
+      {
+        "bitscore": "58.5",
+        "evalue": "2.53e-05",
+        "score": "123",
+        "qstart": "84",
+        "qend": "10",
+        "sstart": "2838",
+        "send": "2912"
+      }
+    ]
+  },
+  "interpretation": "In this controlled one-query/one-subject fixture, the default-versus-word4 Evalue difference disappears when sum statistics are disabled. An extra weak HSP is present only in default/sum-enabled output. This supports linked-HSP statistics as the mechanism for this case; not a validation verdict or a claim about all358differences."
+}
