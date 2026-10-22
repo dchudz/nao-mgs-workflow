@@ -43,7 +43,10 @@ def main(a):
         result = row(method, 'full frozen core_nt nucleotide reference', complete['queries'], rates['primary'], timing(d / 'time.txt'), protocol['command'], protocol['input_manifest']['query_sha256'])
         result.update(runner_wall_seconds=resources['wall_seconds'], source_commit=protocol['source_commit'])
         rows.append(result)
-    assert (nr / 'complete.json').exists(), 'NR search and primary summaries must complete first'
+    raw_receipt = json.loads((nr / 'search-raw-complete.json').read_text())
+    for name in ['nr-search.log', 'search-protocol.json']:
+        assert (nr / name).stat().st_size == raw_receipt['files_bytes'][name]
+    assert raw_receipt['files_bytes']['nr.tsv'] > 0
     protocol = json.loads((nr / 'search-protocol.json').read_text())
     rows.append(row('DIAMOND-sensitive', 'full frozen NR protein reference', protocol['queries'], rates['NR'], timing(nr / 'nr-search.log'), protocol['command'], protocol['query_sha256']))
     # Preserve the pre-expansion allocation, then charge added capacity only

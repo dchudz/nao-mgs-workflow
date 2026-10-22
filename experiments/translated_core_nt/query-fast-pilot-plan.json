@@ -4,7 +4,7 @@
   "question": "Does a faster six-frame query translation search retain the original pilot evidence at lower cost against unchanged full core_nt?",
   "prerequisites": [
     "Finish and report the 200-sample NR validation, including species resolution and support-count limits.",
-    "Publish the completed TBLASTX versus pooled DIAMOND/NR cost allocation with batching/reference/hardware caveats."
+    "Record privately and report in this chat the completed TBLASTX versus pooled DIAMOND/NR cost allocation with batching/reference/hardware caveats."
   ],
   "input": {
     "directory": "pilot24",
