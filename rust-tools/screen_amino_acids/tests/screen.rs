@@ -318,17 +318,63 @@ fn paired_and_parallel_inputs_preserve_the_partition() {
     let f = Fixture::new();
     f.write("ref.fa", ">toy\nATGGCTGAATTT\n");
     f.index();
-    let mut r1=String::new(); let mut r2=String::new(); let mut interleaved=String::new();
+    let mut r1 = String::new();
+    let mut r2 = String::new();
+    let mut interleaved = String::new();
     for i in 0..8200 {
-        let a=record(&format!("pair{i}/1"), if i%3==0 {"ATGGCCGAGTTC"} else {"GGTGGTGGTGGT"});
-        let b=record(&format!("pair{i}/2"), if i%5==0 {"ATGGCTGAATTT"} else {"GGTGGTGGTGGT"});
-        r1.push_str(&a);r2.push_str(&b);interleaved.push_str(&a);interleaved.push_str(&b);
+        let a = record(
+            &format!("pair{i}/1"),
+            if i % 3 == 0 {
+                "ATGGCCGAGTTC"
+            } else {
+                "GGTGGTGGTGGT"
+            },
+        );
+        let b = record(
+            &format!("pair{i}/2"),
+            if i % 5 == 0 {
+                "ATGGCTGAATTT"
+            } else {
+                "GGTGGTGGTGGT"
+            },
+        );
+        r1.push_str(&a);
+        r2.push_str(&b);
+        interleaved.push_str(&a);
+        interleaved.push_str(&b);
     }
-    f.write("reads.fq", &interleaved); f.write("r1.fq", &r1); f.write("r2.fq", &r2);
+    f.write("reads.fq", &interleaved);
+    f.write("r1.fq", &r1);
+    f.write("r2.fq", &r2);
     success(f.screen());
-    success(f.run(&["screen","--index","ref.aa","--reads","r1.fq","--reads2","r2.fq","--matched","parallel.fq","--threads","4"]));
-    assert_eq!(read(f.path("match.fq")),read(f.path("parallel.fq")));
-    f.write("r2.fq", &(r2+&record("extra/2","GGTGGTGGTGGT")));
-    assert!(!f.run(&["screen","--index","ref.aa","--reads","r1.fq","--reads2","r2.fq","--matched","bad.fq"]).status.success());
+    success(f.run(&[
+        "screen",
+        "--index",
+        "ref.aa",
+        "--reads",
+        "r1.fq",
+        "--reads2",
+        "r2.fq",
+        "--matched",
+        "parallel.fq",
+        "--threads",
+        "4",
+    ]));
+    assert_eq!(read(f.path("match.fq")), read(f.path("parallel.fq")));
+    f.write("r2.fq", &(r2 + &record("extra/2", "GGTGGTGGTGGT")));
+    assert!(!f
+        .run(&[
+            "screen",
+            "--index",
+            "ref.aa",
+            "--reads",
+            "r1.fq",
+            "--reads2",
+            "r2.fq",
+            "--matched",
+            "bad.fq"
+        ])
+        .status
+        .success());
     assert!(!f.path("bad.fq").exists());
 }
