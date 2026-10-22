@@ -1,0 +1,42 @@
+[
+  {
+    "sample": "SRR35904031",
+    "source_sha256": "9ac05897fa114a2543be741263c53cdc4c89d4347a3acf421835567345a91724",
+    "same_as_native_source": true
+  },
+  {
+    "sample": "SRR36995847",
+    "source_sha256": "138a30edf76e9122f7ecb86ea9853c2340111896a47197f0f61d08e0aa9badec",
+    "same_as_native_source": true
+  },
+  {
+    "sample": "SRR37367545",
+    "source_sha256": "fcaa061c8fd21698757466d6806f0f84186be6c092b2b91d0deb0f76f538af34",
+    "same_as_native_source": true
+  },
+  {
+    "sample": "SRR37428201",
+    "source_sha256": "d3efac9d17899374722c31b6d43e932d3d4efb8410209c6efd355656c66c8c7b",
+    "same_as_native_source": true
+  },
+  {
+    "sample": "SRR38294706",
+    "source_sha256": "40c0004fb9a6cefa65e711dcb709e0c64f6f57c4e643b0a21d170f22f51130db",
+    "same_as_native_source": true
+  },
+  {
+    "sample": "SRR38294907",
+    "source_sha256": "6a0c4e10182aba1c12043f93e68462714b309ce562f7cb08a7350f477bf7bcd7",
+    "same_as_native_source": true
+  },
+  {
+    "sample": "SRR39694967",
+    "source_sha256": "037be8d27ac1960032750d09e4155ae34f33fb866b5486b8c2d24daa70ce9906",
+    "same_as_native_source": true
+  },
+  {
+    "sample": "SRR39695246",
+    "source_sha256": "a552c3e9f2aa63bff97155f7f01b3e0f4117a9805635bf1fd82821dee217ea54",
+    "same_as_native_source": true
+  }
+]

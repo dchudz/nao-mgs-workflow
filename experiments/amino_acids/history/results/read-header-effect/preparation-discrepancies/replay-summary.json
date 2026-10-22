@@ -1,0 +1,263 @@
+{
+  "stage_pair_counts": {
+    "HUMAN_AFTER_VIRUS/diagnostic_human_after_virus_bowtie2_mapped.fastq.gz": 0,
+    "HUMAN_AFTER_VIRUS/diagnostic_human_after_virus_bowtie2_unmapped.fastq.gz": 8,
+    "HUMAN_DIRECT/diagnostic_human_direct_bowtie2_mapped.fastq.gz": 8,
+    "HUMAN_DIRECT/diagnostic_human_direct_bowtie2_unmapped.fastq.gz": 0,
+    "OTHER_AFTER_VIRUS/diagnostic_other_after_virus_bowtie2_mapped.fastq.gz": 0,
+    "OTHER_AFTER_VIRUS/diagnostic_other_after_virus_bowtie2_unmapped.fastq.gz": 8,
+    "OTHER_DIRECT/diagnostic_other_direct_bowtie2_mapped.fastq.gz": 0,
+    "OTHER_DIRECT/diagnostic_other_direct_bowtie2_unmapped.fastq.gz": 0,
+    "VIRUS/diagnostic_viral_bowtie2_mapped.fastq.gz": 8,
+    "VIRUS/diagnostic_viral_bowtie2_unmapped.fastq.gz": 0
+  },
+  "stage_pair_IDs": {
+    "HUMAN_AFTER_VIRUS/diagnostic_human_after_virus_bowtie2_mapped.fastq.gz": [],
+    "HUMAN_AFTER_VIRUS/diagnostic_human_after_virus_bowtie2_unmapped.fastq.gz": [
+      "SRR35904031.1024459631",
+      "SRR36995847.291125620",
+      "SRR37367545.350681510",
+      "SRR37428201.942670978",
+      "SRR38294706.267966619",
+      "SRR38294907.319520675",
+      "SRR39694967.944760154",
+      "SRR39695246.836642804"
+    ],
+    "HUMAN_DIRECT/diagnostic_human_direct_bowtie2_mapped.fastq.gz": [
+      "SRR35904031.1024459631",
+      "SRR36995847.291125620",
+      "SRR37367545.350681510",
+      "SRR37428201.942670978",
+      "SRR38294706.267966619",
+      "SRR38294907.319520675",
+      "SRR39694967.944760154",
+      "SRR39695246.836642804"
+    ],
+    "HUMAN_DIRECT/diagnostic_human_direct_bowtie2_unmapped.fastq.gz": [],
+    "OTHER_AFTER_VIRUS/diagnostic_other_after_virus_bowtie2_mapped.fastq.gz": [],
+    "OTHER_AFTER_VIRUS/diagnostic_other_after_virus_bowtie2_unmapped.fastq.gz": [
+      "SRR35904031.1024459631",
+      "SRR36995847.291125620",
+      "SRR37367545.350681510",
+      "SRR37428201.942670978",
+      "SRR38294706.267966619",
+      "SRR38294907.319520675",
+      "SRR39694967.944760154",
+      "SRR39695246.836642804"
+    ],
+    "OTHER_DIRECT/diagnostic_other_direct_bowtie2_mapped.fastq.gz": [],
+    "OTHER_DIRECT/diagnostic_other_direct_bowtie2_unmapped.fastq.gz": [],
+    "VIRUS/diagnostic_viral_bowtie2_mapped.fastq.gz": [
+      "SRR35904031.1024459631",
+      "SRR36995847.291125620",
+      "SRR37367545.350681510",
+      "SRR37428201.942670978",
+      "SRR38294706.267966619",
+      "SRR38294907.319520675",
+      "SRR39694967.944760154",
+      "SRR39695246.836642804"
+    ],
+    "VIRUS/diagnostic_viral_bowtie2_unmapped.fastq.gz": []
+  },
+  "viral_roundtrip_comparison": {
+    "pair_IDs_equal": true,
+    "pair_order_equal": true,
+    "sequences_and_qualities_equal": true,
+    "headers_before_after": [
+      [
+        "@SRR35904031.1024459631/1",
+        "@SRR35904031.1024459631 1",
+        "@SRR35904031.1024459631/2",
+        "@SRR35904031.1024459631 2"
+      ],
+      [
+        "@SRR36995847.291125620/1",
+        "@SRR36995847.291125620 1",
+        "@SRR36995847.291125620/2",
+        "@SRR36995847.291125620 2"
+      ],
+      [
+        "@SRR37367545.350681510/1",
+        "@SRR37367545.350681510 1",
+        "@SRR37367545.350681510/2",
+        "@SRR37367545.350681510 2"
+      ],
+      [
+        "@SRR37428201.942670978/1",
+        "@SRR37428201.942670978 1",
+        "@SRR37428201.942670978/2",
+        "@SRR37428201.942670978 2"
+      ],
+      [
+        "@SRR38294706.267966619/1",
+        "@SRR38294706.267966619 1",
+        "@SRR38294706.267966619/2",
+        "@SRR38294706.267966619 2"
+      ],
+      [
+        "@SRR38294907.319520675/1",
+        "@SRR38294907.319520675 1",
+        "@SRR38294907.319520675/2",
+        "@SRR38294907.319520675 2"
+      ],
+      [
+        "@SRR39694967.944760154/1",
+        "@SRR39694967.944760154 1",
+        "@SRR39694967.944760154/2",
+        "@SRR39694967.944760154 2"
+      ],
+      [
+        "@SRR39695246.836642804/1",
+        "@SRR39695246.836642804 1",
+        "@SRR39695246.836642804/2",
+        "@SRR39695246.836642804 2"
+      ]
+    ]
+  },
+  "contaminant_alignments": [
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR35904031.1024459631",
+      "flag": "137",
+      "reference": "chr7",
+      "CIGAR": "22S30M99S",
+      "score": "60",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR35904031.1024459631",
+      "flag": "69",
+      "reference": "chr7",
+      "CIGAR": "*",
+      "score": null,
+      "edit_distance": null
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR36995847.291125620",
+      "flag": "137",
+      "reference": "chr3",
+      "CIGAR": "10S34M106S",
+      "score": "68",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR36995847.291125620",
+      "flag": "69",
+      "reference": "chr3",
+      "CIGAR": "*",
+      "score": null,
+      "edit_distance": null
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR37367545.350681510",
+      "flag": "99",
+      "reference": "chr16",
+      "CIGAR": "91S32M27S",
+      "score": "64",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR37367545.350681510",
+      "flag": "147",
+      "reference": "chr16",
+      "CIGAR": "73S32M45S",
+      "score": "64",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR37428201.942670978",
+      "flag": "153",
+      "reference": "chr16",
+      "CIGAR": "106S32M13S",
+      "score": "64",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR37428201.942670978",
+      "flag": "101",
+      "reference": "chr16",
+      "CIGAR": "*",
+      "score": null,
+      "edit_distance": null
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR38294706.267966619",
+      "flag": "153",
+      "reference": "chr3",
+      "CIGAR": "112S31M",
+      "score": "62",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR38294706.267966619",
+      "flag": "101",
+      "reference": "chr3",
+      "CIGAR": "*",
+      "score": null,
+      "edit_distance": null
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR38294907.319520675",
+      "flag": "137",
+      "reference": "chr7",
+      "CIGAR": "119S31M",
+      "score": "62",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR38294907.319520675",
+      "flag": "69",
+      "reference": "chr7",
+      "CIGAR": "*",
+      "score": null,
+      "edit_distance": null
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR39694967.944760154",
+      "flag": "83",
+      "reference": "chr7",
+      "CIGAR": "1S33M116S",
+      "score": "66",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR39694967.944760154",
+      "flag": "163",
+      "reference": "chr7",
+      "CIGAR": "35S33M82S",
+      "score": "66",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR39695246.836642804",
+      "flag": "89",
+      "reference": "chr16",
+      "CIGAR": "14S32M104S",
+      "score": "64",
+      "edit_distance": "0"
+    },
+    {
+      "stage": "HUMAN_DIRECT",
+      "seq_id": "SRR39695246.836642804",
+      "flag": "165",
+      "reference": "chr16",
+      "CIGAR": "*",
+      "score": null,
+      "edit_distance": null
+    }
+  ]
+}

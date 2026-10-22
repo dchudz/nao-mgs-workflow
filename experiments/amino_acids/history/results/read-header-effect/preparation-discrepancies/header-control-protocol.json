@@ -1,0 +1,30 @@
+{
+  "pairs": 8,
+  "changed_lines": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32,
+    36,
+    40,
+    44,
+    48,
+    52,
+    56,
+    60
+  ],
+  "only_headers_changed": true,
+  "record_order_unchanged": true,
+  "header_transform": "Terminal /1 and /2 changed to space1 and space2, exactly matching the native SAM-to-FASTQ roundtrip.",
+  "normalized_bytes_equal_native_roundtrip": true,
+  "original_sha256": "b82dd3b4924c90f3ce688675680dc392a05d695eb05dfbc0d19a829c01b2f8cb",
+  "normalized_sha256": "e659797de495be8d25b429c4bd51ae8ebcc03874506dfc46d5be3a33f360d983",
+  "repeats_per_format": 2,
+  "explicit_Bowtie2_seed": 0,
+  "scope": "Eight discrepancies selected by observed outcome; a mechanism check, not an unbiased estimate of prevalence."
+}

@@ -1,0 +1,79 @@
+{
+  "pairs": 8,
+  "explicit_seed": 0,
+  "replicates": [
+    {
+      "format": "slash_mate_suffix",
+      "repeat": 1,
+      "mapped_to_human_pairs": 8,
+      "retained_pairs": 0,
+      "mapped_pair_IDs": [
+        "SRR35904031.1024459631",
+        "SRR36995847.291125620",
+        "SRR37367545.350681510",
+        "SRR37428201.942670978",
+        "SRR38294706.267966619",
+        "SRR38294907.319520675",
+        "SRR39694967.944760154",
+        "SRR39695246.836642804"
+      ],
+      "retained_pair_IDs": []
+    },
+    {
+      "format": "slash_mate_suffix",
+      "repeat": 2,
+      "mapped_to_human_pairs": 8,
+      "retained_pairs": 0,
+      "mapped_pair_IDs": [
+        "SRR35904031.1024459631",
+        "SRR36995847.291125620",
+        "SRR37367545.350681510",
+        "SRR37428201.942670978",
+        "SRR38294706.267966619",
+        "SRR38294907.319520675",
+        "SRR39694967.944760154",
+        "SRR39695246.836642804"
+      ],
+      "retained_pair_IDs": []
+    },
+    {
+      "format": "space_mate_comment",
+      "repeat": 1,
+      "mapped_to_human_pairs": 0,
+      "retained_pairs": 8,
+      "mapped_pair_IDs": [],
+      "retained_pair_IDs": [
+        "SRR35904031.1024459631",
+        "SRR36995847.291125620",
+        "SRR37367545.350681510",
+        "SRR37428201.942670978",
+        "SRR38294706.267966619",
+        "SRR38294907.319520675",
+        "SRR39694967.944760154",
+        "SRR39695246.836642804"
+      ]
+    },
+    {
+      "format": "space_mate_comment",
+      "repeat": 2,
+      "mapped_to_human_pairs": 0,
+      "retained_pairs": 8,
+      "mapped_pair_IDs": [],
+      "retained_pair_IDs": [
+        "SRR35904031.1024459631",
+        "SRR36995847.291125620",
+        "SRR37367545.350681510",
+        "SRR37428201.942670978",
+        "SRR38294706.267966619",
+        "SRR38294907.319520675",
+        "SRR39694967.944760154",
+        "SRR39695246.836642804"
+      ]
+    }
+  ],
+  "alignment_multiset_equal_within_format": true,
+  "only_header_lines_changed": true,
+  "interpretation": "Outcome-selected eight-pair mechanism diagnostic. Sequences, qualities and order were identical; changing only terminal /1,/2 to space1,space2 changed human-filter retention in this controlled replay. This does not measure the population frequency or establish biological truth. Primary experimental outputs remain unchanged.",
+  "documentation": "https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml",
+  "documented_mechanism": "Bowtie2 documents read-name-dependent pseudo-random initialization; the controlled observation is consistent with that mechanism."
+}
