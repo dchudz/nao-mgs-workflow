@@ -1,0 +1,53 @@
+{
+  "experiment": "first-step-exceptions",
+  "title": "Audit all 44 upstream gains absent from NT20",
+  "status_at_capture": "complete",
+  "captured_utc": "2026-10-22T13:22:11.651249+00:00",
+  "historical_source_commits": [
+    "d50296d261493c560a39193bdb64cd2793880c8c"
+  ],
+  "analysis_source": [
+    {
+      "path": "experiments/amino_acids/diagnose-aa-over-nt20.py",
+      "sha256": "470d75bc5504b75a9f9dd4fb268f479aaa3977e889edde117dc02b7bd2e5ad59",
+      "last_change_commit": "d50296d261493c560a39193bdb64cd2793880c8c"
+    },
+    {
+      "path": "experiments/amino_acids/test-correction-rescue.py",
+      "sha256": "982a5bc582cb5dc4fa3f3ed696cf382dc1664dedc111ea1c4443adc0758f8a50",
+      "last_change_commit": "d50296d261493c560a39193bdb64cd2793880c8c"
+    },
+    {
+      "path": "experiments/amino_acids/diagnose-reference-masking.py",
+      "sha256": "7e27bdc79b6318f79e43b3feab7dad8d6a2492d979565bdae05c3f969e0243bc",
+      "last_change_commit": "d50296d261493c560a39193bdb64cd2793880c8c"
+    },
+    {
+      "path": "experiments/amino_acids/summarize-first-step-exceptions.py",
+      "sha256": "fbeef66741c2f799bef0ab6f21207490178b5064217c579106b6920ffa43293f",
+      "last_change_commit": "d50296d261493c560a39193bdb64cd2793880c8c"
+    }
+  ],
+  "results": [
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/aa-over-nt20-final1000/mechanism-summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-exceptions/aa-over-nt20-final1000/mechanism-summary.json",
+      "sha256": "731f0b746e9887c08d6c980bb095397980b529f15cb1831f7fa0cbe6a6434445",
+      "bytes": 670
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/aa-over-nt20-final1000/correction-diagnostic.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-exceptions/aa-over-nt20-final1000/correction-diagnostic.json",
+      "sha256": "399d23451367032eece0ff03a62be3acfa5a014595b2e0dd07a5b7be8a675ad5",
+      "bytes": 9671
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/aa-over-nt20-final1000/reference-masking-diagnostic.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-exceptions/aa-over-nt20-final1000/reference-masking-diagnostic.json",
+      "sha256": "676250bea6f0d06746d55d6bf68eb5fb57d9b644ee977bccf71eebfb93d24881",
+      "bytes": 15322
+    }
+  ],
+  "provenance_limit": "Source commits were reconstructed after these runs from saved archives. They are source references, not Git revisions recorded at launch. Executed binary, query, reference, command and timing records remain authoritative. This snapshot does not rerun or change results.",
+  "private_evidence_base": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/"
+}

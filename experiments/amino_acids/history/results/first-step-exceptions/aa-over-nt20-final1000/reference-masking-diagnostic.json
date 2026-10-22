@@ -1,0 +1,635 @@
+{
+  "pairs": [
+    {
+      "seq_id": "SRR33038061.679258085",
+      "assigned_genome": "NC_032480.1",
+      "edit_distance": "2",
+      "edit_distance_rev": "2",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        49,
+        49
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        49,
+        49
+      ]
+    },
+    {
+      "seq_id": "SRR35904034.221733621",
+      "assigned_genome": "MK059951.1",
+      "edit_distance": "14",
+      "edit_distance_rev": "18",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        23,
+        23
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        23,
+        23
+      ]
+    },
+    {
+      "seq_id": "SRR35931336.793931690",
+      "assigned_genome": "MH341446.1",
+      "edit_distance": "NA",
+      "edit_distance_rev": "21",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        14,
+        12
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        20,
+        20
+      ]
+    },
+    {
+      "seq_id": "SRR35946895.363248762",
+      "assigned_genome": "NC_023638.1",
+      "edit_distance": "21",
+      "edit_distance_rev": "23",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        23,
+        16
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        23,
+        16
+      ]
+    },
+    {
+      "seq_id": "SRR35946908.1476556734",
+      "assigned_genome": "MZ099574.1",
+      "edit_distance": "20",
+      "edit_distance_rev": "18",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        16,
+        20
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        16,
+        20
+      ]
+    },
+    {
+      "seq_id": "SRR35946910.504981493",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "16",
+      "edit_distance_rev": "16",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR35946916.490694171",
+      "assigned_genome": "MZ099574.1",
+      "edit_distance": "7",
+      "edit_distance_rev": "6",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        25
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        18,
+        25
+      ]
+    },
+    {
+      "seq_id": "SRR35987584.691720299",
+      "assigned_genome": "LT907991.1",
+      "edit_distance": "NA",
+      "edit_distance_rev": "19",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        10,
+        11
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        10,
+        23
+      ]
+    },
+    {
+      "seq_id": "SRR36876958.478115097",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "19",
+      "edit_distance_rev": "19",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR36876962.461876202",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "23",
+      "edit_distance_rev": "23",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR36876962.731570409",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "22",
+      "edit_distance_rev": "22",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR36876962.819117223",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "23",
+      "edit_distance_rev": "24",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR36877015.763624798",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "22",
+      "edit_distance_rev": "22",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR36995863.1103088468",
+      "assigned_genome": "FJ755403.1",
+      "edit_distance": "22",
+      "edit_distance_rev": "21",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        10,
+        21
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        10,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR37089587.213055562",
+      "assigned_genome": "LT907991.1",
+      "edit_distance": "NA",
+      "edit_distance_rev": "25",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        12,
+        13
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        12,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR37092404.822848978",
+      "assigned_genome": "AB738415.1",
+      "edit_distance": "9",
+      "edit_distance_rev": "8",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        14,
+        17
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        24,
+        24
+      ]
+    },
+    {
+      "seq_id": "SRR37367516.72041602",
+      "assigned_genome": "NC_029052.1",
+      "edit_distance": "19",
+      "edit_distance_rev": "9",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        15,
+        17
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR37428202.180354801",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "17",
+      "edit_distance_rev": "17",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR38294612.302989278",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "18",
+      "edit_distance_rev": "28",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        25,
+        26
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        25,
+        26
+      ]
+    },
+    {
+      "seq_id": "SRR38294612.302989278",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "18",
+      "edit_distance_rev": "28",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        25,
+        26
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        25,
+        26
+      ]
+    },
+    {
+      "seq_id": "SRR38294686.247104382",
+      "assigned_genome": "HM237363.1",
+      "edit_distance": "21",
+      "edit_distance_rev": "24",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        29,
+        17
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        29,
+        17
+      ]
+    },
+    {
+      "seq_id": "SRR38294690.74234970",
+      "assigned_genome": "AB983218.1",
+      "edit_distance": "8",
+      "edit_distance_rev": "8",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        32,
+        32
+      ]
+    },
+    {
+      "seq_id": "SRR38294690.74330559",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "22",
+      "edit_distance_rev": "22",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        19,
+        19
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR38294693.396520875",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "23",
+      "edit_distance_rev": "23",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR38294699.510433768",
+      "assigned_genome": "KX673279.1",
+      "edit_distance": "7",
+      "edit_distance_rev": "7",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        13,
+        13
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        20,
+        20
+      ]
+    },
+    {
+      "seq_id": "SRR38294702.912553591",
+      "assigned_genome": "LC036579.1",
+      "edit_distance": "13",
+      "edit_distance_rev": "13",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        14,
+        14
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        41,
+        41
+      ]
+    },
+    {
+      "seq_id": "SRR38294846.539482009",
+      "assigned_genome": "LC646334.1",
+      "edit_distance": "20",
+      "edit_distance_rev": "24",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        21,
+        17
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        17
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.1178177236",
+      "assigned_genome": "KR019688.1",
+      "edit_distance": "NA",
+      "edit_distance_rev": "16",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        11,
+        11
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        26,
+        26
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.275283399",
+      "assigned_genome": "KX673281.1",
+      "edit_distance": "17",
+      "edit_distance_rev": "NA",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        14,
+        15
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        25,
+        25
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.528308149",
+      "assigned_genome": "NC_023674.1",
+      "edit_distance": "23",
+      "edit_distance_rev": "25",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        23,
+        23
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        23,
+        23
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.528753743",
+      "assigned_genome": "KX673281.1",
+      "edit_distance": "16",
+      "edit_distance_rev": "16",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        13,
+        13
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        20,
+        20
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.899544020",
+      "assigned_genome": "KX673281.1",
+      "edit_distance": "16",
+      "edit_distance_rev": "18",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        17,
+        11
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        20,
+        20
+      ]
+    },
+    {
+      "seq_id": "SRR39694942.477061702",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "21",
+      "edit_distance_rev": "20",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        19,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        26,
+        26
+      ]
+    },
+    {
+      "seq_id": "SRR39694942.477520217",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "19",
+      "edit_distance_rev": "19",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        26,
+        26
+      ]
+    },
+    {
+      "seq_id": "SRR39695084.164739044",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "23",
+      "edit_distance_rev": "21",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        18
+      ]
+    },
+    {
+      "seq_id": "SRR39695084.195098728",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "NA",
+      "edit_distance_rev": "22",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        11,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        11,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR39695085.759572135",
+      "assigned_genome": "NC_027214.1",
+      "edit_distance": "19",
+      "edit_distance_rev": "19",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR39695086.399344104",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "23",
+      "edit_distance_rev": "23",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR39695086.399344194",
+      "assigned_genome": "KP770140.1",
+      "edit_distance": "23",
+      "edit_distance_rev": "23",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR39695093.676513583",
+      "assigned_genome": "MZ099574.1",
+      "edit_distance": "16",
+      "edit_distance_rev": "16",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        18,
+        21
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        18,
+        21
+      ]
+    },
+    {
+      "seq_id": "SRR39695093.965177760",
+      "assigned_genome": "MH170057.2",
+      "edit_distance": "10",
+      "edit_distance_rev": "10",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        17,
+        17
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        20,
+        20
+      ]
+    },
+    {
+      "seq_id": "SRR39695094.1485967709",
+      "assigned_genome": "KX673279.1",
+      "edit_distance": "8",
+      "edit_distance_rev": "8",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        15,
+        15
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        20,
+        20
+      ]
+    },
+    {
+      "seq_id": "SRR39695144.338239630",
+      "assigned_genome": "KJ196298.1",
+      "edit_distance": "16",
+      "edit_distance_rev": "20",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        21,
+        18
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        21,
+        18
+      ]
+    },
+    {
+      "seq_id": "SRR39695213.366309224",
+      "assigned_genome": "KX673286.1",
+      "edit_distance": "20",
+      "edit_distance_rev": "20",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        17,
+        23
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        17,
+        23
+      ]
+    },
+    {
+      "seq_id": "SRR39695332.814420754",
+      "assigned_genome": "NC_029052.1",
+      "edit_distance": "20",
+      "edit_distance_rev": "24",
+      "screen_human_masked_longest_exact_nt_per_mate": [
+        17,
+        17
+      ],
+      "alignment_DUST_masked_longest_exact_nt_per_mate": [
+        24,
+        17
+      ]
+    }
+  ],
+  "interpretation": "Longest exact nucleotide substring in either strand of the reported primary reference genome. The screen uses human-masked references; Bowtie2 uses DUST-masked references. This is a local reference diagnostic, not a change to the frozen comparison."
+}

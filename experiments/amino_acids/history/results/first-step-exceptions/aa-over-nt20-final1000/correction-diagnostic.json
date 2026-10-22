@@ -1,0 +1,401 @@
+{
+  "pairs": [
+    {
+      "seq_id": "SRR33038061.679258085",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        3,
+        4
+      ]
+    },
+    {
+      "seq_id": "SRR35904034.221733621",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        6
+      ]
+    },
+    {
+      "seq_id": "SRR35931336.793931690",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR35946895.363248762",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        3,
+        3
+      ]
+    },
+    {
+      "seq_id": "SRR35946908.1476556734",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        2
+      ]
+    },
+    {
+      "seq_id": "SRR35946910.504981493",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR35946916.490694171",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        2
+      ]
+    },
+    {
+      "seq_id": "SRR35987584.691720299",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR36876958.478115097",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR36876962.461876202",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR36876962.731570409",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR36876962.819117223",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR36877015.763624798",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR36995863.1103088468",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        2
+      ]
+    },
+    {
+      "seq_id": "SRR37089587.213055562",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR37092404.822848978",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR37367516.72041602",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR37428202.180354801",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294612.302989278",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        2,
+        4
+      ]
+    },
+    {
+      "seq_id": "SRR38294686.247104382",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294690.74234970",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294690.74330559",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294693.396520875",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294699.510433768",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294702.912553591",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294846.539482009",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        1
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.1178177236",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.275283399",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.528308149",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        2,
+        3
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.528753743",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR38294945.899544020",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39694942.477061702",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39694942.477520217",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695084.164739044",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695084.195098728",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695085.759572135",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        1
+      ]
+    },
+    {
+      "seq_id": "SRR39695086.399344104",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695086.399344194",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695093.676513583",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        2,
+        1
+      ]
+    },
+    {
+      "seq_id": "SRR39695093.965177760",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695094.1485967709",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695144.338239630",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        1,
+        0
+      ]
+    },
+    {
+      "seq_id": "SRR39695213.366309224",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": true,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        1
+      ]
+    },
+    {
+      "seq_id": "SRR39695332.814420754",
+      "raw_nt20_match": false,
+      "after_FASTP_nt20_match": false,
+      "minimum_substitutions_after_end_trimming_per_mate": [
+        0,
+        0
+      ]
+    }
+  ],
+  "interpretation": "A new exact20-base match after FASTP, when absent in the same raw pair, cannot be created by end trimming alone. Original FASTP includes paired-read correction; this is an isolated diagnostic, not a changed primary pipeline."
+}
