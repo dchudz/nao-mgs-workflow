@@ -37,11 +37,12 @@ def main(a):
     for q, x in resolution.items():
         assert x['sample'] in samples
         sample_queries[x['sample']].append(q)
-    members = collections.defaultdict(set)
-    for x in table(r / 'cohort-storage/protein200/all.members.tsv.gz'):
-        if x['query_pair'] in resolution:
-            members[x['query_pair']].add(x['seq_id'])
-    assert all(len(members[q]) == int(meta[q]['occurrences']) for q in meta)
+    quality_path = Path(a.protein_qualities) if a.protein_qualities else r / 'cohort-storage/protein200-quality-recovery/qualities.tsv.gz'
+    recovered = json.loads((quality_path.parent / 'complete.json').read_text())
+    assert hashlib.sha256(quality_path.read_bytes()).hexdigest() == recovered['qualities_sha256']
+    assert hashlib.sha256((r / 'cohort-storage/protein200/all.tsv.gz').read_bytes()).hexdigest() == recovered['metadata_sha256']
+    protein_qualities = {x['query_pair']: x for x in table(quality_path) if x['query_pair'] in resolution}
+    assert protein_qualities.keys() == resolution.keys()
     batches = {s: p.parent for p in (r / 'cohort-storage/batches').glob('*/complete.json') for s in json.loads(p.read_text())['samples']}
     parents, ranks = {}, {}
     for line in (r / 'reference/results/taxonomy-nodes.dmp').open():
@@ -86,16 +87,13 @@ def main(a):
                     native_species[seqs].add(t)
         assert seen_native == native.keys()
         query_seqs = {q: (meta[q]['query_seq'], meta[q]['query_seq_rev']) for q in sample_queries[sample]}
-        wanted_ids = {name: q for q in query_seqs for name in members[q]}
-        assert len(wanted_ids) == sum(len(members[q]) for q in query_seqs)
-        seen_protein = set()
-        for key, _ in pairs(batch / 'output/fastp' / f'{sample}_aa12_fastp.fastq.gz'):
-            name = key[0].decode().lstrip('@')
-            if name in wanted_ids:
-                seqs = retain(key)
-                assert seqs == query_seqs[wanted_ids[name]], (sample, name, 'Prepared sequences differ from source FASTP')
-                seen_protein.add(name)
-        assert seen_protein == wanted_ids.keys(), (sample, 'Missing original prepared-read qualities')
+        for q, (s1, s2) in query_seqs.items():
+            cached = protein_qualities[q]
+            q1, q2 = cached['query_qual'], cached['query_qual_rev']
+            assert (len(q1), len(q2)) == (len(s1), len(s2))
+            assert int(cached['observed_original_pairs']) == int(meta[q]['occurrences'])
+            assert hashlib.sha256((s1 + '\n' + s2).encode()).hexdigest() == cached['sequence_pair_sha256']
+            retain(tuple(x.encode() for x in [cached['source_seq_id'], s1, q1, s2, q2]))
         ids = {seqs: 'p' + hashlib.sha256((seqs[0] + '\n' + seqs[1]).encode()).hexdigest() for seqs in quality}
         assert len(set(ids.values())) == len(ids)
         d = out / sample
@@ -141,6 +139,8 @@ def main(a):
         w.writeheader()
         w.writerows(rows)
     result = dict(samples=len(samples), native_arm=a.native_arm, threshold_similarity_clusters=3, counts=summary, sample_metrics=metrics, source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), helper_sha256=hashlib.sha256(helper.read_bytes()).hexdigest(), resolution_sha256=hashlib.sha256(Path(a.resolution).read_bytes()).hexdigest(), container=IMAGE, limits=['Supplementary common similarity-only support check; not the production alignment-plus-similarity exemplar definition.', 'Joint per-sample pool contains baseline retained sequences and every NR-viral-only candidate, including unresolved species. Each exact pair enters once, in deterministic sequence-hash order.', 'Original FASTP sequence and membership assertions recover real qualities; retain the maximum summed-quality observation per exact sequence pair, with lexical tie breaking.', 'Each read keeps its own taxonomic evidence. Cluster membership only reduces support counts and never transfers a validation verdict to another read.', 'A cluster can contain differently assigned reads. Per-species support counts do not establish a unique species assignment for the entire cluster.', 'Sequence support does not establish infection or known-truth accuracy.'])
+    result['recovered_qualities_sha256'] = recovered['qualities_sha256']
+    result['quality_recovery_source_sha256'] = recovered['source_sha256']
     (out / 'summary.json').write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps({k: v for k, v in result.items() if k != 'sample_metrics'}))
 
@@ -149,6 +149,7 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--root', default='/home/ec2-user/experiment')
     p.add_argument('--native-arm', choices=['nt', 'nt20'], default='nt20')
+    p.add_argument('--protein-qualities', help='Verified recovered qualities; defaults to the original worker recovery directory')
     p.add_argument('--resolution', required=True)
     p.add_argument('--output', required=True)
     main(p.parse_args())
