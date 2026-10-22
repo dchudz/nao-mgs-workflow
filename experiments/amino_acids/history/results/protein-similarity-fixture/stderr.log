@@ -1,0 +1,6 @@
+Running similarity-based deduplication on alignment-unique reads...
+Processed 3 alignment-unique reads (out of 3 total reads)
+Found 2 unique sequence clusters
+Pass 2: Writing output with sim_dup_exemplar column...
+Done!
+Processed 3 reads in 0s. Retained 3 exemplars after alignment checks, further reduced to 2 via similarity marking.
