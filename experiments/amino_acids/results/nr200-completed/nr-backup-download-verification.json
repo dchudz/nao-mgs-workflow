@@ -1,0 +1,37 @@
+{
+  "started_utc": "2026-10-22T20:27:37.403346+00:00",
+  "account": "839993661825",
+  "method": "Stream each S3 object through SHA256 and compare byte count and digest with the completed local source manifest.",
+  "files": [
+    {
+      "kind": "raw_NR",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/protein-nr-combined/nr.tsv",
+      "bytes": 153054284964,
+      "sha256": "35cc2846e5ad070e3ae8fe53dc2d77e14cc75bbcde9fb76e90e53127b64f0b90",
+      "seconds": 711.459550765001
+    },
+    {
+      "kind": "query_calls",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/protein-nr-query-calls/query-calls.tsv",
+      "bytes": 2267071601,
+      "sha256": "c76cf68eed3cc6f2bdaf8f6788b2e4fe6a1a2c4f9c76853e4bf51114cd4e3f42",
+      "seconds": 11.21634726600314
+    },
+    {
+      "kind": "native_controls",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/protein-nr-query-calls/native-control-alignments.tsv",
+      "bytes": 1128746427,
+      "sha256": "0afdca21ba790b79d9ed2599245013d31638d62af3602c1ad45815f62407b52c",
+      "seconds": 5.502070622002066
+    },
+    {
+      "kind": "seeds",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/protein-nr-query-calls/seed-alignments.tsv",
+      "bytes": 427458275,
+      "sha256": "d6f2d883a4568ef317bf62e36bbb0445694329f3a20ecf635d5e48b7821b3628",
+      "seconds": 2.6853696450052666
+    }
+  ],
+  "completed_utc": "2026-10-22T20:39:48.269931+00:00",
+  "all_download_hashes_verified": true
+}

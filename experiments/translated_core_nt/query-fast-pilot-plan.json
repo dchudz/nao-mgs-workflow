@@ -1,6 +1,6 @@
 {
   "recorded_utc": "2026-10-22T19:17:39.185749+00:00",
-  "status": "HELD; no launch from this plan",
+  "status": "RELEASED: prerequisites verified and reported; one-hour pilot only",
   "question": "Does a faster six-frame query translation search retain the original pilot evidence at lower cost against unchanged full core_nt?",
   "prerequisites": [
     "Finish and report the 200-sample NR validation, including species resolution and support-count limits.",
@@ -23,5 +23,11 @@
     "Timeout means incomplete, not zero hits. Do not scale a timed-out run or extrapolate partial results.",
     "A faster result still needs an evidence-retention assessment; no full-dataset cost prediction from this one batch."
   ],
-  "source_before_plan": "0e8e783f15799448d0c3bbbca6277e3ebc43b923"
+  "source_before_plan": "0e8e783f15799448d0c3bbbca6277e3ebc43b923",
+  "released_utc": "2026-10-22T21:09:47.937674+00:00",
+  "prerequisite_evidence": {
+    "NR200_report": "experiments/amino_acids/results/nr200-completed/nr200-result.html",
+    "full_pair_parity_sha256": "d41350a484c89c566763df6704371079c7091821b935780bd0aadbeb5ba69cdc",
+    "cost_report": "experiments/translated_core_nt/results/completed-search-costs"
+  }
 }

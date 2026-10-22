@@ -1,0 +1,127 @@
+{
+  "native_arm": "nt20",
+  "samples": 200,
+  "counts": {
+    "nr_viral_only/minimum_1": {
+      "native_species": 4851,
+      "protein_species": 5201,
+      "gained_species": 1812,
+      "lost_species": 1462,
+      "native_human_species": 2453,
+      "protein_human_species": 1802,
+      "gained_human_species": 91,
+      "lost_human_species": 742
+    },
+    "nr_viral_only/minimum_2": {
+      "native_species": 3125,
+      "protein_species": 3412,
+      "gained_species": 1263,
+      "lost_species": 976,
+      "native_human_species": 1719,
+      "protein_human_species": 1189,
+      "gained_human_species": 39,
+      "lost_human_species": 569
+    },
+    "nr_viral_only/minimum_3": {
+      "native_species": 2513,
+      "protein_species": 2755,
+      "gained_species": 1057,
+      "lost_species": 815,
+      "native_human_species": 1425,
+      "protein_human_species": 945,
+      "gained_human_species": 25,
+      "lost_human_species": 505
+    },
+    "nr_viral_only_both_mates/minimum_1": {
+      "native_species": 4851,
+      "protein_species": 5117,
+      "gained_species": 1760,
+      "lost_species": 1494,
+      "native_human_species": 2453,
+      "protein_human_species": 1776,
+      "gained_human_species": 83,
+      "lost_human_species": 760
+    },
+    "nr_viral_only_both_mates/minimum_2": {
+      "native_species": 3125,
+      "protein_species": 3351,
+      "gained_species": 1224,
+      "lost_species": 998,
+      "native_human_species": 1719,
+      "protein_human_species": 1175,
+      "gained_human_species": 37,
+      "lost_human_species": 581
+    },
+    "nr_viral_only_both_mates/minimum_3": {
+      "native_species": 2513,
+      "protein_species": 2706,
+      "gained_species": 1026,
+      "lost_species": 833,
+      "native_human_species": 1425,
+      "protein_human_species": 931,
+      "gained_human_species": 22,
+      "lost_human_species": 516
+    },
+    "nr_viral_only_related/minimum_1": {
+      "native_species": 4851,
+      "protein_species": 4922,
+      "gained_species": 1604,
+      "lost_species": 1533,
+      "native_human_species": 2453,
+      "protein_human_species": 1738,
+      "gained_human_species": 80,
+      "lost_human_species": 795
+    },
+    "nr_viral_only_related/minimum_2": {
+      "native_species": 3125,
+      "protein_species": 3201,
+      "gained_species": 1092,
+      "lost_species": 1016,
+      "native_human_species": 1719,
+      "protein_human_species": 1157,
+      "gained_human_species": 37,
+      "lost_human_species": 599
+    },
+    "nr_viral_only_related/minimum_3": {
+      "native_species": 2513,
+      "protein_species": 2561,
+      "gained_species": 892,
+      "lost_species": 844,
+      "native_human_species": 1425,
+      "protein_human_species": 920,
+      "gained_human_species": 25,
+      "lost_human_species": 530
+    },
+    "viral_reference_candidate/minimum_1": {
+      "native_species": 4851,
+      "protein_species": 7408,
+      "gained_species": 3260,
+      "lost_species": 703,
+      "native_human_species": 2453,
+      "protein_human_species": 2452,
+      "gained_human_species": 290,
+      "lost_human_species": 291
+    },
+    "viral_reference_candidate/minimum_2": {
+      "native_species": 3125,
+      "protein_species": 4745,
+      "gained_species": 2057,
+      "lost_species": 437,
+      "native_human_species": 1719,
+      "protein_human_species": 1651,
+      "gained_human_species": 145,
+      "lost_human_species": 213
+    },
+    "viral_reference_candidate/minimum_3": {
+      "native_species": 2513,
+      "protein_species": 3806,
+      "gained_species": 1656,
+      "lost_species": 363,
+      "native_human_species": 1425,
+      "protein_human_species": 1323,
+      "gained_human_species": 101,
+      "lost_human_species": 203
+    }
+  },
+  "interpretation": "Fixed viral-reference species names and human-infection annotations. Support uses exact complete-pair keys on both sides at descriptive thresholds1,2,3; it is not a diagnostic cutoff or an infection claim."
+}

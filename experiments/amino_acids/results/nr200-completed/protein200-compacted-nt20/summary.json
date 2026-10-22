@@ -1,0 +1,72 @@
+{
+  "samples": 200,
+  "native_arm": "nt20",
+  "nr_complete": true,
+  "tiers": {
+    "nr_viral_only": {
+      "native_original_pairs": 296080,
+      "native_exact_pairs": 253569,
+      "protein_exact_pairs": 193505,
+      "added_exact_pairs": 96256,
+      "lost_exact_pairs": 156320,
+      "shared_exact_pairs": 97249,
+      "protein_original_pairs": 231495,
+      "added_original_pairs": 118132,
+      "lost_original_pairs": 182717,
+      "samples_with_gain": 199,
+      "samples_with_loss": 200
+    },
+    "nr_viral_only_both_mates": {
+      "native_original_pairs": 296080,
+      "native_exact_pairs": 253569,
+      "protein_exact_pairs": 187250,
+      "added_exact_pairs": 92592,
+      "lost_exact_pairs": 158911,
+      "shared_exact_pairs": 94658,
+      "protein_original_pairs": 223487,
+      "added_original_pairs": 113273,
+      "lost_original_pairs": 185866,
+      "samples_with_gain": 199,
+      "samples_with_loss": 200
+    },
+    "nr_viral_only_related": {
+      "native_original_pairs": 296080,
+      "native_exact_pairs": 253569,
+      "protein_exact_pairs": 176474,
+      "added_exact_pairs": 79888,
+      "lost_exact_pairs": 156983,
+      "shared_exact_pairs": 96586,
+      "protein_original_pairs": 210904,
+      "added_original_pairs": 98281,
+      "lost_original_pairs": 183457,
+      "samples_with_gain": 199,
+      "samples_with_loss": 200
+    },
+    "viral_reference_candidate": {
+      "native_original_pairs": 296080,
+      "native_exact_pairs": 253569,
+      "protein_exact_pairs": 378939,
+      "added_exact_pairs": 127164,
+      "lost_exact_pairs": 1794,
+      "shared_exact_pairs": 251775,
+      "protein_original_pairs": 447209,
+      "added_original_pairs": 153144,
+      "lost_original_pairs": 2015,
+      "samples_with_gain": 200,
+      "samples_with_loss": 140
+    }
+  },
+  "nr_status": {
+    "mixed_viral_nonviral": 170357,
+    "viral_only": 193505,
+    "nonviral_only": 5643,
+    "no_alignment": 4930,
+    "unknown_taxonomy": 4504
+  },
+  "limits": [
+    "Broad protein evidence is not known-truth sensitivity or specificity.",
+    "Both arms use exact complete trimmed nucleotide-pair keys for this comparison; the native production duplicate policy also uses alignment coordinates and sequence similarity.",
+    "Species summaries use the frozen viral-reference taxonomy, including the original protein LCA, with exact-pair support; they do not establish infection or novel-virus discovery.",
+    "NR tiers and both-mate/related subsets are descriptive evidence summaries, not tuned calling thresholds."
+  ]
+}
