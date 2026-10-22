@@ -1,0 +1,20 @@
+{
+  "experiment": "nr-query-dedup",
+  "title": "Rejected extra NR query deduplication",
+  "status_at_capture": "complete; rejected after changed results",
+  "captured_utc": "2026-10-22T13:22:11.443751+00:00",
+  "historical_source_commits": [
+    "892a284fefebbeed4d76fbecbb008979bd55ce45"
+  ],
+  "analysis_source": [],
+  "results": [
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/nr-dedup-benchmark/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/nr-query-dedup/nr-dedup-benchmark/summary.json",
+      "sha256": "be92832dfc0e7a7e424e26504d54df83ac297bca643c0cd3b6607feaa7f9553a",
+      "bytes": 2283
+    }
+  ],
+  "provenance_limit": "Source commits were reconstructed after these runs from saved archives. They are source references, not Git revisions recorded at launch. Executed binary, query, reference, command and timing records remain authoritative. This snapshot does not rerun or change results.",
+  "private_evidence_base": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/"
+}
