@@ -31,7 +31,8 @@ intervals = [
 compute = [{'instance': i, 'type': t, 'start': s, 'end': e, 'modeled_hours': hours(s, e), 'USD_per_hour': rate, 'modeled_USD': hours(s, e) * rate} for i, t, s, e, rate in intervals]
 volumes = [
     ('vol-098cdf9d650bd4a0d', primary, '2026-10-21T15:24:13.296Z', retired.get(primary, a.as_of), 2048, 6000, 1000),
-    ('vol-07d4e85519abc9f76', nr, '2026-10-21T17:11:14.288Z', retired.get(nr, a.as_of), 1280, 6000, 1000),
+    ('vol-07d4e85519abc9f76', nr, '2026-10-21T17:11:14.288Z', '2026-10-22T19:41:42Z', 1280, 6000, 1000),
+    ('vol-07d4e85519abc9f76', nr, '2026-10-22T19:41:42Z', retired.get(nr, a.as_of), 1536, 6000, 1000),
     ('vol-0461a97dae04945e3', screen, '2026-10-21T16:19:36.008Z', screen_end, 256, 3000, 500),
     ('vol-0aad5b7d9f190c48d', 'i-048be724ac0462256', '2026-10-21T18:06:37Z', '2026-10-21T18:50:53Z', 512, 6000, 1000),
     ('vol-0533d3e9b96594f40', 'i-0f577952bbbd27d36', '2026-10-21T21:32:32Z', '2026-10-21T21:51:41Z', 1280, 6000, 1000),
@@ -51,7 +52,7 @@ result = {
     'interpretation': [
         'Lifetime allocation includes reference staging, failed and interrupted attempts, concurrent searches, analyses, and idle time. Individual search allocations must not be added to this ledger.',
         'Short resize stop gaps before 22:00 are conservatively counted as running; the longer NR stop from 04:06:26 to 05:22:36 is excluded from compute but included in EBS.',
-        'EBS uses the maximum observed configuration for the entire lifetime and a conservative 720-hour month. The primary volume initially had lower IOPS and throughput.',
+        'EBS uses a conservative 720-hour month. The NR volume expansion from1280to1536GiB is charged only after its recorded2026-10-22T19:41:42Z start. Other historical IOPS/throughput and the primary size use the maximum observed configuration.',
         'Historical Spot rates are verified in primary-closure/spot-price-*.json. Runtime times rate does not account for potential AWS interruption credits.',
         'S3 storage, requests, data transfer, taxes, credits and unrelated account usage are excluded. Cost Explorer and retained-storage estimates must be shown separately.',
         'This is a resource-based estimate, not an invoice or a claim that Cost Explorer is current.',
