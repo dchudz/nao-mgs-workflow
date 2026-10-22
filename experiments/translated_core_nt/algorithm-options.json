@@ -110,5 +110,13 @@
     "Index build and storage, amortized across realistic repeated use",
     "Synonymous substitutions, nonsynonymous substitutions, frameshift and repeat failure mechanisms"
   ],
-  "sources_are_design_inputs_not_benchmark_results": true
+  "sources_are_design_inputs_not_benchmark_results": true,
+  "decision_rules": {
+    "same_reference": "Derived indexes must represent the full original snapshot and preserve every accession/taxon mapping; a translated index changes representation, not chosen reference content. Explicitly report any ORF or length exclusions.",
+    "uncertain_query_cascade": "Measure retrospective routing against completed full-search outputs. Never assume a strong nucleotide viral hit has no translated competing match.",
+    "break_even": "For R repeated batches, compare direct_cost(R) with index_build_cost + R*indexed_search_cost + retained_index_storage_cost. Fit only within measured batch-size range; report fixed reference scan and marginal query work separately.",
+    "evidence_quality": "Inspect strong disagreements at sequence/codon level and retain weak significance results separately. Absence of a translated hit is not proof a nucleotide hit is false; short or noncoding reads can behave differently.",
+    "batching": "Shared-query alignment and assignment parity across3/24/96panels is an empirical check, not assumed.",
+    "false_positive_check": "If new weak or low-complexity matches drive differences, use deterministic composition-preserving shuffled controls before claiming increased sensitivity. No truth-label accuracy claim from these observational reads."
+  }
 }
