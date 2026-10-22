@@ -1,0 +1,7 @@
+{
+  "utc": "2026-10-22T22:33:30.876600+00:00",
+  "original_receipt_sha256": "190d235ee4ff84b636187e143627ca240788bb8a5c9c1c56891b3c39f5e94dc2",
+  "original_source_commit": "a56e3c32e24496ef39e6fd4ee61caa9d92b44ec6",
+  "correct_source_commit": "a56e3c3245efd786293efb9e69ca194e11ada6f1",
+  "reason": "Manual transcription error in backup invocation only; corrected full commit verified with git rev-parse a56e3c32 in the source worktree. Search protocol and file SHA256 verification are unchanged."
+}

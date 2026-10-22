@@ -1,0 +1,51 @@
+{
+  "methods": [
+    {
+      "method": "megablast",
+      "wall_seconds": 33.1,
+      "allocated_compute_EBS_IPv4_USD": 0.03343559722222222,
+      "natural_viral_mates_strict": 41,
+      "query_count": 43,
+      "subject_cap_queries": 6,
+      "source_commit": "cbba2ad268526e0f2db712413a2e9a00ae847fe6",
+      "output_sha256": "2fe2c059f8fbdbf91a713127ac28fd109a3802ab3098c252ff2b76053bf2637c"
+    },
+    {
+      "method": "blastn",
+      "wall_seconds": 229.4,
+      "allocated_compute_EBS_IPv4_USD": 0.2317258611111111,
+      "natural_viral_mates_strict": 43,
+      "query_count": 43,
+      "subject_cap_queries": 27,
+      "source_commit": "4bf91bf5ff624a369a6efbb577822221b2696d0c",
+      "output_sha256": "f3490ec54deb759d6c3982f55d32f34aa5be3f67a91215969216cb9fb231d1ed"
+    },
+    {
+      "method": "tblastx",
+      "wall_seconds": 11408.0,
+      "allocated_compute_EBS_IPv4_USD": 11.523664444444444,
+      "natural_viral_mates_strict": 41,
+      "query_count": 43,
+      "subject_cap_queries": 38,
+      "source_commit": "cd2d6f7f115a28a6540a68f448dd5591c8334574",
+      "output_sha256": "1becf45f86d9e2cf00387f8489b7f6ecdc9cb9e2eebdd9d021e9e54628b443b1"
+    },
+    {
+      "method": "query-tblastn-fast",
+      "wall_seconds": 2095.23,
+      "allocated_compute_EBS_IPv4_USD": 2.1164733041666666,
+      "natural_viral_mates_strict": 43,
+      "query_count": 43,
+      "subject_cap_queries": 37,
+      "source_commit": "0cf6239c2dd393aac7fd75a33f69efadc2cace28",
+      "output_sha256": "06b2d8749490c9134980eef9661ee14ed85c1b2ee977a772ed04ea3945163b29"
+    }
+  ],
+  "limits": [
+    "Selected small panel, not population sensitivity.",
+    "Protein and nucleotide E-values are not interchangeable.",
+    "Costs are allocations, not an invoice.",
+    "Per-frame coverage and output pooling differ.",
+    "No new reference index was built."
+  ]
+}
