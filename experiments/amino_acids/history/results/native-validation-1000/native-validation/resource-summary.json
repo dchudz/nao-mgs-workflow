@@ -1,0 +1,67 @@
+{
+  "completed_samples": 1000,
+  "runs": [
+    {
+      "arm": "nt",
+      "queries": 4614,
+      "uncompressed_query_sha256": "d4f2774515d1ca1a70f8bb0cb268a658ea7010fe5d65a75f4e3b911d4b5a67d1",
+      "task_realtime_seconds": 306.0,
+      "task_CPU_seconds_estimate": 3457.8,
+      "task_peak_rss": "267.6 GB",
+      "command_script": "#!/bin/bash -euo pipefail\nset -euo pipefail\n# Download BLAST database if not already present\ndb_local_path=$(download_db.py \"/home/ec2-user/experiment/reference/results/blast_db\" \"1200\")\n# Set up command\nio=\"-db ${db_local_path}/blast_db\"\npar=\"-perc_identity 60 -max_hsps 5 -num_alignments 250 -qcov_hsp_perc 30 -num_threads 16\"\nfmt=\"6 qseqid sseqid sgi staxid qlen evalue bitscore qcovs length pident mismatch gapopen sstrand qstart qend sstart send\"\n# Run BLAST\nzcat nt_sampled_reads.fasta.gz | blastn ${io} ${par} -outfmt \"${fmt}\" \\\n    | gzip > nt_hits.blast.gz\n# Link input to output for testing\nln -s nt_sampled_reads.fasta.gz nt_in.fasta.gz\n",
+      "work_hash": "8d/1d252a",
+      "allocated_worker_cost_usd": 0.3083316780821918
+    },
+    {
+      "arm": "nt22",
+      "queries": 4661,
+      "uncompressed_query_sha256": "ca7b120fa2c0fec12650b19d3627f2279a48259b763d60a085a89bff21fc5fca",
+      "task_realtime_seconds": 307.0,
+      "task_CPU_seconds_estimate": 3453.136,
+      "task_peak_rss": "267.7 GB",
+      "command_script": "#!/bin/bash -euo pipefail\nset -euo pipefail\n# Download BLAST database if not already present\ndb_local_path=$(download_db.py \"/home/ec2-user/experiment/reference/results/blast_db\" \"1200\")\n# Set up command\nio=\"-db ${db_local_path}/blast_db\"\npar=\"-perc_identity 60 -max_hsps 5 -num_alignments 250 -qcov_hsp_perc 30 -num_threads 16\"\nfmt=\"6 qseqid sseqid sgi staxid qlen evalue bitscore qcovs length pident mismatch gapopen sstrand qstart qend sstart send\"\n# Run BLAST\nzcat nt22_sampled_reads.fasta.gz | blastn ${io} ${par} -outfmt \"${fmt}\" \\\n    | gzip > nt22_hits.blast.gz\n# Link input to output for testing\nln -s nt22_sampled_reads.fasta.gz nt22_in.fasta.gz\n",
+      "work_hash": "c2/4579bc",
+      "allocated_worker_cost_usd": 0.3093392979452055
+    },
+    {
+      "arm": "nt20",
+      "queries": 4681,
+      "uncompressed_query_sha256": "cbe2516fcf279e2e83b730ed44714b3f825fbf6cd01c79a668d1f60883d47ed1",
+      "task_realtime_seconds": 306.0,
+      "task_CPU_seconds_estimate": 3413.1240000000003,
+      "task_peak_rss": "267.8 GB",
+      "command_script": "#!/bin/bash -euo pipefail\nset -euo pipefail\n# Download BLAST database if not already present\ndb_local_path=$(download_db.py \"/home/ec2-user/experiment/reference/results/blast_db\" \"1200\")\n# Set up command\nio=\"-db ${db_local_path}/blast_db\"\npar=\"-perc_identity 60 -max_hsps 5 -num_alignments 250 -qcov_hsp_perc 30 -num_threads 16\"\nfmt=\"6 qseqid sseqid sgi staxid qlen evalue bitscore qcovs length pident mismatch gapopen sstrand qstart qend sstart send\"\n# Run BLAST\nzcat nt20_sampled_reads.fasta.gz | blastn ${io} ${par} -outfmt \"${fmt}\" \\\n    | gzip > nt20_hits.blast.gz\n# Link input to output for testing\nln -s nt20_sampled_reads.fasta.gz nt20_in.fasta.gz\n",
+      "work_hash": "b8/bc1fa2",
+      "allocated_worker_cost_usd": 0.3083316780821918
+    },
+    {
+      "arm": "aa12",
+      "queries": 4674,
+      "uncompressed_query_sha256": "d4b69c4d2872e40907927873ebc0dadfe4b447758fbc165f1ce81f8091b63758",
+      "task_realtime_seconds": 307.0,
+      "task_CPU_seconds_estimate": 3454.9780000000005,
+      "task_peak_rss": "267.9 GB",
+      "command_script": "#!/bin/bash -euo pipefail\nset -euo pipefail\n# Download BLAST database if not already present\ndb_local_path=$(download_db.py \"/home/ec2-user/experiment/reference/results/blast_db\" \"1200\")\n# Set up command\nio=\"-db ${db_local_path}/blast_db\"\npar=\"-perc_identity 60 -max_hsps 5 -num_alignments 250 -qcov_hsp_perc 30 -num_threads 16\"\nfmt=\"6 qseqid sseqid sgi staxid qlen evalue bitscore qcovs length pident mismatch gapopen sstrand qstart qend sstart send\"\n# Run BLAST\nzcat aa12_sampled_reads.fasta.gz | blastn ${io} ${par} -outfmt \"${fmt}\" \\\n    | gzip > aa12_hits.blast.gz\n# Link input to output for testing\nln -s aa12_sampled_reads.fasta.gz aa12_in.fasta.gz\n",
+      "work_hash": "80/523e18",
+      "allocated_worker_cost_usd": 0.3093392979452055
+    },
+    {
+      "arm": "union",
+      "queries": 4684,
+      "uncompressed_query_sha256": "353c58679197a145ebb92bc6e900d12801bd40ab10e2ce728f696f080b4e5bef",
+      "task_realtime_seconds": 306.0,
+      "task_CPU_seconds_estimate": 3405.78,
+      "task_peak_rss": "267.9 GB",
+      "command_script": "#!/bin/bash -euo pipefail\nset -euo pipefail\n# Download BLAST database if not already present\ndb_local_path=$(download_db.py \"/home/ec2-user/experiment/reference/results/blast_db\" \"1200\")\n# Set up command\nio=\"-db ${db_local_path}/blast_db\"\npar=\"-perc_identity 60 -max_hsps 5 -num_alignments 250 -qcov_hsp_perc 30 -num_threads 16\"\nfmt=\"6 qseqid sseqid sgi staxid qlen evalue bitscore qcovs length pident mismatch gapopen sstrand qstart qend sstart send\"\n# Run BLAST\nzcat union_sampled_reads.fasta.gz | blastn ${io} ${par} -outfmt \"${fmt}\" \\\n    | gzip > union_hits.blast.gz\n# Link input to output for testing\nln -s union_sampled_reads.fasta.gz union_in.fasta.gz\n",
+      "work_hash": "4e/fd9570",
+      "allocated_worker_cost_usd": 0.3083316780821918
+    }
+  ],
+  "interpretation": [
+    "Original joined/merged-mate production validation with20selectedexemplars per species per pooled arm.",
+    "Realtimes and CPU estimates come from completed Nextflow search tasks; they include task startup and the cached database availability check.",
+    "The default blastn task is megablast. Allfivearms use16threads and the same comprehensive core_nt.",
+    "Whole-worker allocations include provisioned EBS but are not incremental charges and must not be summed with overlapping-job allocations.",
+    "The failed orchestration attempt is preserved separately; completed search tasks were first executed after the explicit-session resume."
+  ]
+}

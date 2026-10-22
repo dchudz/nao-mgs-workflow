@@ -1,0 +1,144 @@
+{
+  "arms": {
+    "nt": {
+      "all": {
+        "pairs": 1478260,
+        "status/not_sampled": 1473646,
+        "evidence/not_sampled": 1473646,
+        "status/aligned": 4489,
+        "evidence/aligned_natural_LCA_viral": 4246,
+        "relation/ancestor_related": 1765,
+        "relation/divergent": 927,
+        "relation/exact": 1797,
+        "also_has_artificial_LCA": 322,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 243,
+        "status/no_alignment": 125,
+        "evidence/no_alignment": 125
+      },
+      "added_to_baseline": {}
+    },
+    "nt22": {
+      "all": {
+        "pairs": 1493077,
+        "status/not_sampled": 1488416,
+        "evidence/not_sampled": 1488416,
+        "status/aligned": 4513,
+        "evidence/aligned_natural_LCA_viral": 4255,
+        "relation/ancestor_related": 1763,
+        "relation/divergent": 975,
+        "relation/exact": 1775,
+        "also_has_artificial_LCA": 321,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 258,
+        "status/no_alignment": 148,
+        "evidence/no_alignment": 148
+      },
+      "added_to_baseline": {
+        "pairs": 14817,
+        "status/not_sampled": 14616,
+        "evidence/not_sampled": 14616,
+        "status/aligned": 169,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 35,
+        "relation/divergent": 95,
+        "evidence/aligned_natural_LCA_viral": 134,
+        "relation/exact": 27,
+        "relation/ancestor_related": 47,
+        "status/no_alignment": 32,
+        "evidence/no_alignment": 32
+      }
+    },
+    "nt20": {
+      "all": {
+        "pairs": 1498327,
+        "status/not_sampled": 1493646,
+        "evidence/not_sampled": 1493646,
+        "status/aligned": 4523,
+        "evidence/aligned_natural_LCA_viral": 4253,
+        "relation/ancestor_related": 1762,
+        "relation/divergent": 993,
+        "relation/exact": 1768,
+        "also_has_artificial_LCA": 321,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 270,
+        "status/no_alignment": 158,
+        "evidence/no_alignment": 158
+      },
+      "added_to_baseline": {
+        "pairs": 20067,
+        "status/not_sampled": 19797,
+        "evidence/not_sampled": 19797,
+        "status/aligned": 222,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 50,
+        "relation/divergent": 128,
+        "evidence/aligned_natural_LCA_viral": 172,
+        "relation/exact": 36,
+        "relation/ancestor_related": 58,
+        "status/no_alignment": 48,
+        "evidence/no_alignment": 48
+      }
+    },
+    "aa12": {
+      "all": {
+        "pairs": 1495224,
+        "status/not_sampled": 1490550,
+        "evidence/not_sampled": 1490550,
+        "status/aligned": 4523,
+        "evidence/aligned_natural_LCA_viral": 4253,
+        "relation/ancestor_related": 1761,
+        "relation/divergent": 992,
+        "relation/exact": 1770,
+        "also_has_artificial_LCA": 319,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 270,
+        "status/no_alignment": 151,
+        "evidence/no_alignment": 151
+      },
+      "added_to_baseline": {
+        "pairs": 19637,
+        "status/not_sampled": 19370,
+        "evidence/not_sampled": 19370,
+        "status/aligned": 223,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 52,
+        "relation/divergent": 130,
+        "evidence/aligned_natural_LCA_viral": 171,
+        "relation/exact": 34,
+        "relation/ancestor_related": 59,
+        "status/no_alignment": 44,
+        "evidence/no_alignment": 44
+      }
+    },
+    "union": {
+      "all": {
+        "pairs": 1497897,
+        "status/not_sampled": 1493213,
+        "evidence/not_sampled": 1493213,
+        "status/aligned": 4528,
+        "evidence/aligned_natural_LCA_viral": 4254,
+        "relation/ancestor_related": 1765,
+        "relation/divergent": 996,
+        "relation/exact": 1767,
+        "also_has_artificial_LCA": 321,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 274,
+        "status/no_alignment": 156,
+        "evidence/no_alignment": 156
+      },
+      "added_to_baseline": {
+        "pairs": 19637,
+        "status/not_sampled": 19372,
+        "evidence/not_sampled": 19372,
+        "status/aligned": 221,
+        "evidence/aligned_natural_LCA_outside_viral_clade": 52,
+        "relation/divergent": 129,
+        "evidence/aligned_natural_LCA_viral": 169,
+        "relation/exact": 34,
+        "relation/ancestor_related": 58,
+        "status/no_alignment": 44,
+        "evidence/no_alignment": 44
+      }
+    }
+  },
+  "interpretation": [
+    "Original production joined/merged-mate validation, with 20 selected exemplars per species per pooled arm.",
+    "Only each read\u2019s own result is summarized; unsampled reads remain unvalidated.",
+    "An LCA outside the viral clade can represent conflicting viral and nonviral evidence; it is not necessarily nonviral-only.",
+    "Artificial-sequence evidence is reported separately and can overlap natural evidence.",
+    "Species-balanced selection is not an unbiased estimate of read-level accuracy."
+  ]
+}
