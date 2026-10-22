@@ -1,0 +1,1 @@
+{"name":"blastn","executable":"blastn","arguments":["-task","blastn","-perc_identity","60"],"identity_units":"nucleotide percent","role":"More sensitive nucleotide baseline against unchanged core_nt"}
