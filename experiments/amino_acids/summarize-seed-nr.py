@@ -2,13 +2,14 @@
 import collections,csv,json,sys
 from pathlib import Path
 sys.path.insert(0,'/home/ec2-user/experiment')
+from nr_evidence_inputs import alignment_input
 from importlib.machinery import SourceFileLoader
 summarize=SourceFileLoader('nrsummary','/home/ec2-user/experiment/protein-nr-summary.py').load_module().summarize
 r=Path('/home/ec2-user/experiment');d=Path(sys.argv[1]) if len(sys.argv)>1 else r/'protein/combined-validation';parents={}
 for line in open(r/'protein/current-nr/nodes.dmp'):
  a=line.split('|');parents[int(a[0])]=int(a[1])
 controls={'SEED_'+x['seq_id']:x for x in csv.DictReader(open(d/'seed-selection.tsv'),delimiter='\t')}
-with open(d/'nr.tsv') as f,open(d/'seed-alignments.tsv','w') as selected:
+with open(alignment_input(d,'seeds')) as f,open(d/'seed-alignments.tsv','w') as selected:
  writer=csv.writer(selected,delimiter='\t')
  for row in csv.reader(f,delimiter='\t'):
   if row[0].startswith('SEED_'):writer.writerow(row)

@@ -56,7 +56,7 @@ def check(path, dest, taxonomy=None, calls=None):
             for line in f:
                 if line.startswith(prefix.encode()): h.update(line)
         assert h.hexdigest() == hashlib.sha256((dest / name).read_bytes()).hexdigest()
-    return {'aligned_eligible_queries': len(original), 'counts': json.loads((dest / 'counts.json').read_text()), 'all_query_taxa_and_scores_identical': True, 'raw_control_and_seed_subset_bytes_identical': True}
+    return {'all_classification_records_identical': taxonomy is not None, 'classification_pairs_compared': len(calls) if calls is not None else 0, 'aligned_eligible_queries': len(original), 'counts': json.loads((dest / 'counts.json').read_text()), 'all_query_taxa_and_scores_identical': True, 'raw_control_and_seed_subset_bytes_identical': True}
 
 synthetic = check(fixture, out / 'synthetic', parents, originals)
 bad = out / 'noncontiguous.tsv'

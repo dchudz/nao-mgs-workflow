@@ -2,13 +2,14 @@
 import collections,csv,json,sys
 from pathlib import Path
 sys.path.insert(0,'/home/ec2-user/experiment')
+from nr_evidence_inputs import alignment_input
 from importlib.machinery import SourceFileLoader
 summarize=SourceFileLoader('nrsummary','/home/ec2-user/experiment/protein-nr-summary.py').load_module().summarize
 r=Path('/home/ec2-user/experiment');d=Path(sys.argv[1]) if len(sys.argv)>1 else r/'protein/combined-validation';parents={}
 for line in open(r/'protein/current-nr/nodes.dmp'):
  a=line.split('|');parents[int(a[0])]=int(a[1])
 controls={x['query_pair']:x for x in csv.DictReader(open(d/'native-controls.tsv'),delimiter='\t')}
-with open(d/'nr.tsv') as f:
+with open(alignment_input(d,'native_controls')) as f:
  rows=summarize((x for x in csv.reader(f,delimiter='\t') if x[0].startswith('NR_CONTROL_')),parents,{q:x['native_taxid'] for q,x in controls.items()})
 for x in rows:
  x['native_reference_taxid']=x.pop('viral_reference_taxid');x['sample']=controls[x['query_pair']]['sample'];x['example_seq_id']=controls[x['query_pair']]['example_seq_id']

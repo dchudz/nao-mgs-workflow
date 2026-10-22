@@ -18,7 +18,8 @@ def category(t):
   seen.add(t);t=parents[t]
  if t not in parents:found='unknown'
  cache[original]=found;return found
-with open(d/'nr.tsv') as f:calls=mod.near_best_query_taxa(csv.reader(f,delimiter='\t'))
+from nr_evidence_inputs import near_best_calls
+calls=near_best_calls(d,mod)
 rows=[]
 for source,scope in [('validated-pairs.tsv','protein_candidates'),('native-control-validation.tsv','native_controls')]:
  for x in csv.DictReader(open(d/source),delimiter='\t'):
