@@ -1,0 +1,18 @@
+{
+  "sequence": 3,
+  "title": "Compare nucleotide and amino-acid upstream screens",
+  "reconstructed_utc": "2026-10-22T13:19:03.742464+00:00",
+  "snapshot_archive": "checkpoint-20261021T161438Z.tar.gz",
+  "snapshot_sha256": "2bc0b975169f8c1a5240957705973514267c4b51fa95e312a5cd0a8856ff7a78",
+  "snapshot_recorded_utc": null,
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "",
+  "changed_source_sha256": {
+    "experiments/amino_acids/local.config": "80e8ffd8e1ffdd3814e413247ae3d578d332cf51fb8b1fd44d6aae58b85b681a",
+    "experiments/amino_acids/postscreen-workflow.nf": "8dc78b9e476eba935cb76e9c95fef83ab3a49cc104dee9c2edbbd894e4487c9f",
+    "experiments/amino_acids/postscreen.nf": "93d5a6e0d6a69ae5f507db59e2c51f2895d0d760a5654b080f3afd8730642ba9",
+    "experiments/amino_acids/union_pairs.py": "0d2b56554ba77a715e6bb552ff2dee0dd0c6bafbc9f3eea2bb43c2c4709314d7",
+    "experiments/amino_acids/validation-only.nf": "43d8a759064ad80cbca241dbc817592ad31cc3e826114c5daad4d060dba967c5"
+  }
+}
