@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
 use flate2::read::MultiGzDecoder;
-use screen_amino_acids::Index;
 use rayon::prelude::*;
+use screen_amino_acids::Index;
 use std::fs::{self, File, OpenOptions};
 use std::io::{self, BufRead, BufReader, BufWriter, Write};
 use std::path::{Path, PathBuf};
@@ -229,9 +229,21 @@ impl Record {
     }
 }
 
-fn screen(index_path: &Path, reads: &Path, reads2: Option<&Path>, matched: &Path, unmatched: Option<&Path>, threads: usize) -> io::Result<()> {
-    if threads == 0 { return Err(invalid("threads must be positive")); }
-    let pool = rayon::ThreadPoolBuilder::new().num_threads(threads).build().map_err(|e| invalid(e.to_string()))?;
+fn screen(
+    index_path: &Path,
+    reads: &Path,
+    reads2: Option<&Path>,
+    matched: &Path,
+    unmatched: Option<&Path>,
+    threads: usize,
+) -> io::Result<()> {
+    if threads == 0 {
+        return Err(invalid("threads must be positive"));
+    }
+    let pool = rayon::ThreadPoolBuilder::new()
+        .num_threads(threads)
+        .build()
+        .map_err(|e| invalid(e.to_string()))?;
     let index = Index::read(BufReader::new(File::open(index_path)?))?;
     let mut input = open_input(reads)?;
     let mut input2 = reads2.map(open_input).transpose()?;
@@ -245,26 +257,61 @@ fn screen(index_path: &Path, reads: &Path, reads2: Option<&Path>, matched: &Path
             let mut first = Record::default();
             let mut second = Record::default();
             let has_first = first.read(&mut *input)?;
-            let has_second = if let Some(ref mut mate) = input2 { second.read(&mut **mate)? } else if has_first { second.read(&mut *input)? } else { false };
-            if has_first != has_second { return Err(invalid("FASTQ has an unpaired record")); }
-            if !has_first { break; }
-            if first.pair_id(1)? != second.pair_id(2)? { return Err(invalid("FASTQ pair identifiers differ")); }
+            let has_second = if let Some(ref mut mate) = input2 {
+                second.read(&mut **mate)?
+            } else if has_first {
+                second.read(&mut *input)?
+            } else {
+                false
+            };
+            if has_first != has_second {
+                return Err(invalid("FASTQ has an unpaired record"));
+            }
+            if !has_first {
+                break;
+            }
+            if first.pair_id(1)? != second.pair_id(2)? {
+                return Err(invalid("FASTQ pair identifiers differ"));
+            }
             batch.push((first, second));
         }
-        if batch.is_empty() { break; }
-        let hits: Vec<bool> = pool.install(|| batch.par_iter().map(|(first,second)| index.matches(first.sequence()) || index.matches(second.sequence())).collect());
-        for ((first,second),hit) in batch.iter().zip(hits) {
-            let output = if hit { Some(&mut out_match) } else { out_nomatch.as_mut() };
-            if let Some(output) = output { first.write(&mut output.writer)?; second.write(&mut output.writer)?; }
+        if batch.is_empty() {
+            break;
+        }
+        let hits: Vec<bool> = pool.install(|| {
+            batch
+                .par_iter()
+                .map(|(first, second)| {
+                    index.matches(first.sequence()) || index.matches(second.sequence())
+                })
+                .collect()
+        });
+        for ((first, second), hit) in batch.iter().zip(hits) {
+            let output = if hit {
+                Some(&mut out_match)
+            } else {
+                out_nomatch.as_mut()
+            };
+            if let Some(output) = output {
+                first.write(&mut output.writer)?;
+                second.write(&mut output.writer)?;
+            }
             total += 1;
             matches += u64::from(hit);
         }
     }
     out_match.writer.flush()?;
-    if let Some(ref mut output) = out_nomatch { output.writer.flush()?; }
+    if let Some(ref mut output) = out_nomatch {
+        output.writer.flush()?;
+    }
     out_match.complete = true;
-    if let Some(ref mut output) = out_nomatch { output.complete = true; }
-    eprintln!("matched_pairs={matches} total_pairs={total} amino_k={}", index.k());
+    if let Some(ref mut output) = out_nomatch {
+        output.complete = true;
+    }
+    eprintln!(
+        "matched_pairs={matches} total_pairs={total} amino_k={}",
+        index.k()
+    );
     Ok(())
 }
 
@@ -282,6 +329,13 @@ fn main() -> io::Result<()> {
             unmatched,
             reads2,
             threads,
-        } => screen(&index, &reads, reads2.as_deref(), &matched, unmatched.as_deref(), threads),
+        } => screen(
+            &index,
+            &reads,
+            reads2.as_deref(),
+            &matched,
+            unmatched.as_deref(),
+            threads,
+        ),
     }
 }

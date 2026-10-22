@@ -8,9 +8,14 @@ const MAGIC: &[u8; 8] = b"NAOAAIDX";
 const VERSION: u32 = 1;
 const CODE: u8 = 1;
 const FRAMES: u8 = 6;
+#[cfg(test)]
 const AMINO_ACIDS: &[u8] = b"ACDEFGHIKLMNPQRSTVWY";
-// NCBI standard code, with bases ordered T, C, A, G at each position.
-const CODONS: &[u8; 64] = b"FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG";
+// NCBI standard code: T,C,A,G codon order; ACDEFGHIKLMNPQRSTVWY residue codes; 255 = stop.
+const CODON_CODES: [u8; 64] = [
+    4, 4, 9, 9, 15, 15, 15, 15, 19, 19, 255, 255, 1, 1, 255, 18, 9, 9, 9, 9, 12, 12, 12, 12, 6, 6,
+    13, 13, 14, 14, 14, 14, 7, 7, 7, 10, 16, 16, 16, 16, 11, 11, 8, 8, 15, 15, 14, 14, 17, 17, 17,
+    17, 0, 0, 0, 0, 2, 2, 3, 3, 5, 5, 5, 5,
+];
 
 fn invalid(message: &str) -> io::Error {
     io::Error::new(io::ErrorKind::InvalidData, message)
@@ -27,11 +32,8 @@ fn base_code(base: u8) -> Option<usize> {
 }
 
 fn amino_code(a: u8, b: u8, c: u8) -> Option<u64> {
-    let amino = CODONS[base_code(a)? * 16 + base_code(b)? * 4 + base_code(c)?];
-    AMINO_ACIDS
-        .iter()
-        .position(|&x| x == amino)
-        .map(|i| i as u64)
+    let amino = CODON_CODES[base_code(a)? * 16 + base_code(b)? * 4 + base_code(c)?];
+    (amino != 255).then_some(u64::from(amino))
 }
 
 fn complement(base: u8) -> u8 {
