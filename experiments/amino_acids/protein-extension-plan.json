@@ -1,0 +1,18 @@
+{
+  "scope": "800 additional preselected samples, in four fixed 200-sample query pools; join with original200 for1000. ComprehensiveNRremains original200only.",
+  "selection": "Original frozen heldout manifest positions200:1000; no selection on forthcoming NR outcomes.",
+  "budget": "Reuse already-running primary worker and its1.3GBexistingAA12FASTPoutputs. No new worker; existing500USDcap andguardremain. Expectedadditional primaryoccupiedtime8-12h (about30-45USDincludingdisk), plusprivateoutputs; do notstartifconservative incremental reserve60USD cannot fit experiment500USDcap. Currentmodelabout140USD, remainingliveworkersguardexposurealreadycounted.",
+  "pinned_invariants": [
+    "Defaultfirst200comparison outputbytes match unchanged analyzer for sameinputs.",
+    "Explicitfirst200manifest yields identical outputbytes to default.",
+    "First200sourceinputs/resultsandNRquerybytes remain unchanged.",
+    "Newcontaminantpreparation reusesexactoriginalAA12FASTPbytes,sampleIDs,containers,referencefiles,andworkflowsettings.",
+    "Oneexistingfirst200sample replay preserves exact query and originalmembership records.",
+    "Everynewpair retainsalloriginalIDs; inputdedupmembership counts sumtooriginalpreparedpairs.",
+    "ViralDIAMONDsamebinary,reference,sensitivity,code,block/chunk/scoring/outputsettings; onlyworkerandquerypooldiffer.",
+    "NoNRverdict extrapolated from validatedsamples to800newones.",
+    "Eachnewapproach committed beforelaunch, commit recordedinprotocol."
+  ],
+  "current_stage": "Prospective extension source prepared; one-sample preparation parity required before expansion",
+  "analysis_scope_parity": "Passed: unchanged/default/explicit first200 all six output files byte-identical; results/protein-scope-parity/complete.json"
+}
