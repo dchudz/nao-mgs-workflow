@@ -1,0 +1,7 @@
+{
+  "raw_frame_HSPs": 43971,
+  "normalized_HSPs": 34316,
+  "dropped_subjects_after_pool_cap": 5282,
+  "original_queries": 43,
+  "aligned_original_queries": 43
+}

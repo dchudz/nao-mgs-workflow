@@ -1,0 +1,150 @@
+{
+  "pairs": 24,
+  "mates": 43,
+  "resources": {
+    "megablast": {
+      "status": "complete",
+      "returncode": 0,
+      "finished_utc": "2026-10-22T14:57:01.693321+00:00",
+      "wall_seconds": 33.50438058900181,
+      "allocated_cost_upper_estimate_USD": 0.03722708954333535,
+      "user_seconds": 287.97,
+      "system_seconds": 12.85,
+      "max_RSS_KiB": 269836840.0,
+      "raw_alignment_rows": 2864,
+      "raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows": 0
+    },
+    "blastn": {
+      "status": "complete",
+      "returncode": 0,
+      "finished_utc": "2026-10-22T15:00:51.508752+00:00",
+      "wall_seconds": 229.75686085800407,
+      "allocated_cost_upper_estimate_USD": 0.25528540095333785,
+      "user_seconds": 3580.22,
+      "system_seconds": 13.76,
+      "max_RSS_KiB": 270313556.0,
+      "raw_alignment_rows": 8139,
+      "raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows": 0
+    },
+    "tblastx": {
+      "status": "complete",
+      "returncode": 0,
+      "finished_utc": "2026-10-22T18:11:00.642113+00:00",
+      "wall_seconds": 11409.050195003001,
+      "allocated_cost_upper_estimate_USD": 12.676722438892224,
+      "user_seconds": 181959.42,
+      "system_seconds": 35.71,
+      "max_RSS_KiB": 271502044.0,
+      "raw_alignment_rows": 38477,
+      "raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows": 36988
+    },
+    "query-tblastn-fast": {
+      "status": "complete",
+      "returncode": 0,
+      "finished_utc": "2026-10-22T21:44:54.517436+00:00",
+      "wall_seconds": 2095.5903237489983,
+      "allocated_cost_upper_estimate_USD": 2.3284336930544427,
+      "user_seconds": 33280.62,
+      "system_seconds": 30.2,
+      "max_RSS_KiB": 272112040.0,
+      "raw_alignment_rows": 34316,
+      "raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows": 0
+    }
+  },
+  "disagreements": {
+    "megablast -> blastn/default_E10": {
+      "disagreeing_mates": 2,
+      "disagreeing_pairs": 1
+    },
+    "megablast -> tblastx/default_E10": {
+      "disagreeing_mates": 19,
+      "disagreeing_pairs": 12
+    },
+    "megablast -> query-tblastn-fast/default_E10": {
+      "disagreeing_mates": 9,
+      "disagreeing_pairs": 6
+    },
+    "blastn -> tblastx/default_E10": {
+      "disagreeing_mates": 17,
+      "disagreeing_pairs": 11
+    },
+    "blastn -> query-tblastn-fast/default_E10": {
+      "disagreeing_mates": 7,
+      "disagreeing_pairs": 5
+    },
+    "tblastx -> query-tblastn-fast/default_E10": {
+      "disagreeing_mates": 10,
+      "disagreeing_pairs": 7
+    },
+    "megablast -> blastn/strict_E1e-5": {
+      "disagreeing_mates": 2,
+      "disagreeing_pairs": 1
+    },
+    "megablast -> tblastx/strict_E1e-5": {
+      "disagreeing_mates": 19,
+      "disagreeing_pairs": 12
+    },
+    "megablast -> query-tblastn-fast/strict_E1e-5": {
+      "disagreeing_mates": 9,
+      "disagreeing_pairs": 6
+    },
+    "blastn -> tblastx/strict_E1e-5": {
+      "disagreeing_mates": 17,
+      "disagreeing_pairs": 11
+    },
+    "blastn -> query-tblastn-fast/strict_E1e-5": {
+      "disagreeing_mates": 7,
+      "disagreeing_pairs": 5
+    },
+    "tblastx -> query-tblastn-fast/strict_E1e-5": {
+      "disagreeing_mates": 10,
+      "disagreeing_pairs": 7
+    }
+  },
+  "status_counts": {
+    "megablast/default_E10": {
+      "viral_only": 41,
+      "no_alignment": 2
+    },
+    "megablast/strict_E1e-5": {
+      "viral_only": 41,
+      "no_alignment": 2
+    },
+    "blastn/default_E10": {
+      "viral_only": 43
+    },
+    "blastn/strict_E1e-5": {
+      "viral_only": 43
+    },
+    "tblastx/default_E10": {
+      "viral_only": 35,
+      "mixed_viral_nonviral": 8
+    },
+    "tblastx/strict_E1e-5": {
+      "viral_only": 35,
+      "mixed_viral_nonviral": 6,
+      "no_alignment": 2
+    },
+    "query-tblastn-fast/default_E10": {
+      "viral_only": 41,
+      "mixed_viral_nonviral": 2
+    },
+    "query-tblastn-fast/strict_E1e-5": {
+      "viral_only": 41,
+      "mixed_viral_nonviral": 2
+    }
+  },
+  "production_lca_source_sha256": "727a15a9cf5d9800e28a5628982e85afa698c4ed68a6f54fcc876b6ba463008b",
+  "python_image": "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/python@sha256:c14b09c7e483786bd1504c5dffd59deb4e992ee38f54009fc09971f96379b9db",
+  "notes": [
+    "Counts describe a selected diagnostic panel, not biological truth or prevalence",
+    "Natural and combined LCA computed by unchanged production lca_tsv.py",
+    "No-hit mates retained in denominator; every requested search must finish",
+    "Top10 dense score ranks and90percent near-best applied separately within each mate and method",
+    "Strict E1e-5 is a postfilter of returned E10 hits, not a separate search",
+    "Unknown taxonomy included in status; unknown entries omitted from production LCA input",
+    "Alignment length/identity units are amino acids for translated methods and nucleotides for nucleotide methods",
+    "Separate-mate comparison is not a complete production-pipeline replay",
+    "Translated query-coverage filtering uses the peptide-frame length on the characterized cases. Report frame coverage and original-nucleotide coverage separately; raw tblastx qcovhsp can be inconsistent."
+  ]
+}

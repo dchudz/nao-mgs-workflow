@@ -1,0 +1,23 @@
+	Command being timed: "tblastn -task tblastn-fast -ungapped -comp_based_stats 0 -seg 12 2.2 2.5 -soft_masking false -db_gencode 1 -db /home/ec2-user/experiment/scratch/blast_db_190b4ae1/blast_db -query /home/ec2-user/experiment/cohort-storage/translated-core-nt/pilot24/query-tblastn-fast/queries.faa -out /home/ec2-user/experiment/cohort-storage/translated-core-nt/pilot24/query-tblastn-fast/frame-alignments.tsv -max_hsps 5 -num_alignments 250 -qcov_hsp_perc 30 -evalue 10 -num_threads 16 -outfmt 6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq"
+	User time (seconds): 33280.62
+	System time (seconds): 30.20
+	Percent of CPU this job got: 1589%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 34:55.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 272112040
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1051
+	Minor (reclaiming a frame) page faults: 9783292
+	Voluntary context switches: 4111
+	Involuntary context switches: 325022
+	Swaps: 0
+	File system inputs: 212480
+	File system outputs: 18120
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

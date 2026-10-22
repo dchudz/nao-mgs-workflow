@@ -1,0 +1,45 @@
+{
+  "tblastx": {
+    "aligned_queries": 41,
+    "queries_with_any_stop_containing_near_best_HSP": 17,
+    "queries_with_only_stop_containing_near_best_HSPs": [
+      "SRR35931357.113004579/2",
+      "SRR36814894.28455047/1",
+      "SRR36814894.28455047/2",
+      "SRR38294888.634887978/1",
+      "SRR38294979.75441378/1"
+    ],
+    "stop_HSPs": 442,
+    "total_near_best_HSPs": 4060
+  },
+  "query-tblastn-fast": {
+    "aligned_queries": 43,
+    "queries_with_any_stop_containing_near_best_HSP": 33,
+    "queries_with_only_stop_containing_near_best_HSPs": [
+      "SRR35931357.113004579/2",
+      "SRR35987654.510878905/2",
+      "SRR36814894.28455047/1",
+      "SRR36814894.28455047/2",
+      "SRR36995843.1123277743/1",
+      "SRR36995860.221905230/2",
+      "SRR37036131.1184308543/1",
+      "SRR37036131.1184308543/2",
+      "SRR37076038.742988672/1",
+      "SRR37076038.742988672/2",
+      "SRR37092456.254840438/1",
+      "SRR38294066.328099746/1",
+      "SRR38294066.328099746/2",
+      "SRR38294656.175533095/1",
+      "SRR38294656.175533095/2",
+      "SRR38294888.634887978/1",
+      "SRR38294979.75441378/1",
+      "SRR38294979.75441378/2",
+      "SRR39695246.1017503259/1",
+      "SRR39695246.1017503259/2",
+      "SRR39695366.581592828/1",
+      "SRR39695366.581592828/2"
+    ],
+    "stop_HSPs": 1850,
+    "total_near_best_HSPs": 2997
+  }
+}
