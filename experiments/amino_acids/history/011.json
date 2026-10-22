@@ -1,0 +1,27 @@
+{
+  "sequence": 11,
+  "title": "Compare full protein detection with nucleotide controls",
+  "reconstructed_utc": "2026-10-22T13:19:04.829051+00:00",
+  "snapshot_archive": "private-source-20261022T003943Z.tar.gz",
+  "snapshot_sha256": "19c8c981c14d4f1687a6eb923a19fc707288ad38823f6bf4807a962fecbf8acf",
+  "snapshot_recorded_utc": "2026-10-22T00:39:44.274673+00:00",
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "Reconstructed from the 00:39 UTC checkpoint. Group order within this checkpoint is organizational, not an inferred execution chronology.",
+  "changed_source_sha256": {
+    "experiments/amino_acids/protein-viral-summary.py": "cb0d3c22e4b376389c7ee6e4793c00dab32344b19b992e6b7af1d08026421170",
+    "experiments/amino_acids/protein-nr-summary.py": "eb1b6cb43054f7ae08f4028e1981bb836e749c02db440e8aebcc922ba67faf19",
+    "experiments/amino_acids/protein-nr-summary.original.py": "ce39d65f4107b3f2aac37f13b5ab6404ae078b008a0a49ab0b7b7bd1938ed589",
+    "experiments/amino_acids/protein-summary-runtime-addendum.json": "399db9998655a8d076e6cbd97438b27a86ac7af49966ebe50d2518e7588b7c89",
+    "experiments/amino_acids/nr-summary-storage-addendum.json": "9cade81c2a3f956f2aabdca9c8bd463b37e75a0083c8673d9bb30b9e204c8512",
+    "experiments/amino_acids/check-nr-summary-parity.py": "4fa33f49c6d1919f46946a73c578ccb1800d2b483f397692c94857b5963f24a6",
+    "experiments/amino_acids/compare-protein.py": "3f5e21a0ec9204b6e189c8eb8235e2cf25b577279af3ae9b17c56655e4d2dfca",
+    "experiments/amino_acids/analyze-protein200.py": "f152d6fc01a9505a2d98f3de2d88b30bede20fc32c2ceffeafe85369edf28dad",
+    "experiments/amino_acids/analyze-protein200-when-ready.py": "fa6eb139390c6105f173888dfe8a75743b9f60e65673cf0b2ed2dac21424de4d",
+    "experiments/amino_acids/analyze-protein-overlap.py": "9d030ec3fc0ef7560885fcb2c5d03c6296784c68bef1cc75824882a9216b15c2",
+    "experiments/amino_acids/check-protein-comparison.py": "e83b850829edf1e2e335d69cfd41b29c603956dd3008c6856389d05136a6a8cd",
+    "experiments/amino_acids/protein-analysis-addendum.json": "16b0fef3bb8e1e59d747a2e23fee7c9103a7fe03443e5f8726045941bb2e1100",
+    "experiments/amino_acids/protein-comparator-addendum.json": "0c002560e5c032b6a475af7df83a3a03ba41903473000a30c6383357c080a118",
+    "experiments/amino_acids/summarize-nr-controls.py": "91062a58248904cc97523c8d06662fc0c56f03a43f9a0d496ef513e0ff1d2088"
+  }
+}

@@ -1,5 +1,8 @@
 """Native protein evidence: near-best taxonomic LCA; no nucleotide score substitution."""
 import argparse,csv,gzip,json,sys,collections
+import gc
+# Full-depth replay verified identical TSV, JSON, and FASTA; avoid repeated scans of retained objects.
+gc.disable()
 from pathlib import Path
 r=Path('/home/ec2-user/experiment')
 sys.path.insert(0,str(r/'modules/local/lcaTsv/resources/usr/bin'))

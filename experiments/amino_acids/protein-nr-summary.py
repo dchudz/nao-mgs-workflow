@@ -2,6 +2,23 @@
 import argparse,collections,csv,json
 from pathlib import Path
 
+def near_best_query_taxa(hits):
+ # A taxon is near-best iff its maximum eligible score reaches the threshold.
+ # Retain that sufficient statistic, not every redundant accession alignment.
+ queries=collections.defaultdict(dict)
+ for row in hits:
+  q,subject,score,evalue,length,identity,taxids=row
+  if int(length)<25:continue
+  taxa={int(x) for x in taxids.split(';') if x.isdigit()} or {0}
+  score=float(score);scores=queries[q]
+  for taxid in taxa:
+   if taxid not in scores or score>scores[taxid]:scores[taxid]=score
+ calls={}
+ for q,scores in queries.items():
+  best=max(scores.values());taxa={taxid for taxid,score in scores.items() if score>=0.9*best}
+  calls[q]=(taxa,best)
+ return calls
+
 def summarize(hits,parents,viral_calls):
  cache={}
  def lineage(t):
@@ -22,17 +39,7 @@ def summarize(hits,parents,viral_calls):
   if not paths or any(x is None for x in paths):return 0
   common=set(paths[0]).intersection(*(set(x) for x in paths[1:]))
   return next((t for t in paths[0] if t in common),0)
- queries=collections.defaultdict(list)
- for row in hits:
-  q,subject,score,evalue,length,identity,taxids=row
-  if int(length)<25:continue
-  taxa={int(x) for x in taxids.split(';') if x.isdigit()} or {0}
-  queries[q].append((float(score),taxa))
- calls={}
- for q,alignments in queries.items():
-  best=max(score for score,taxa in alignments)
-  taxa=set().union(*(taxa for score,taxa in alignments if score>=0.9*best))
-  calls[q]=(taxa,best)
+ calls=near_best_query_taxa(hits)
  result=[]
  for pair,original_taxid in viral_calls.items():
   mates=[calls[q] for q in (pair+'/1',pair+'/2') if q in calls]

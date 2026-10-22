@@ -1,0 +1,7 @@
+{
+  "recorded_utc": "2026-10-21T22:25:36.720020+00:00",
+  "scope": "Descriptive first200 protein comparisons against NT20 as well as NT24, plus fixed reference human-infection annotations on the already defined species support thresholds1,2,3.",
+  "selection": "All fixed first200samples and allprotein candidates; no NR outcome available when specified.",
+  "interpretation": "Separate added original reads, exact complete-pair keys, sample-species evidence, and human-annotated taxa. No new infection or sensitivity claim. No new evidence thresholds.",
+  "NR_query_context": "Diagnostic reads are searched within the larger frozen817744-query pool. Query-pool equivalence to a standalone search is not assumed; exact-query dedup previously changed raw alignment output for2reads in a single-volume test."
+}

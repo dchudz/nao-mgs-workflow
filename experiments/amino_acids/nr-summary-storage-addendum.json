@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-10-21T19:54:59.530508+00:00",
+  "change": "Store maximum eligible alignment score per query/taxon, instead of every redundant accession alignment. A taxon meets the existing near-best threshold iff its maximum score meets it. Scientific thresholds, reference, and search parameters unchanged.",
+  "original_sha256": "ce39d65f4107b3f2aac37f13b5ab6404ae078b008a0a49ab0b7b7bd1938ed589",
+  "updated_sha256": "f43a6d6d52335af9956047be1bb300d7dd662975a56e144429e963665cf1f21c",
+  "real_development_parity": {
+    "4": {
+      "pairs": 4875,
+      "exact_output_parity": true
+    },
+    "1": {
+      "pairs": 4875,
+      "exact_output_parity": true
+    }
+  },
+  "synthetic_parity": "10001alignments/52pairs in three orders, covering min length, threshold equality, repeated taxa, higher later scores, missing taxonomy, mixed kingdoms, one/two mates, and absent alignments.",
+  "scope": "Pending NR summary and baseline-control summary. The original implementation is retained for independent comparison."
+}
