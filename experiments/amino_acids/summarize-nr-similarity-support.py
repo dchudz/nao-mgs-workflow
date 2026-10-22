@@ -148,7 +148,7 @@ def main(a):
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--root', default='/home/ec2-user/experiment')
-    p.add_argument('--native-arm', choices=['nt', 'nt20'], default='nt20')
+    p.add_argument('--native-arm', choices=['nt', 'nt20', 'aa12', 'union'], default='nt20')
     p.add_argument('--protein-qualities', help='Verified recovered qualities; defaults to the original worker recovery directory')
     p.add_argument('--resolution', required=True)
     p.add_argument('--output', required=True)

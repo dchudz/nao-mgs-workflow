@@ -44,7 +44,7 @@ def main(a):
         t=int(x['nr_species']);sample=x['sample'];assert sample in samples and sample==viral[q]['sample'];tiers['NR_resolved_species'][sample][t].add(meta[q])
         if x['species_relation']=='same_species':tiers['NR_and_viral_reference_same_species'][sample][t].add(meta[q])
     reports={};allrows=[]
-    for arm in ['nt','nt20']:
+    for arm in a.native_arms:
         baseline={}
         for sample in samples:
             batch=batches[sample];paths=list((batch/'output/marked').glob(f'*_{sample}_{arm}_duplicate_reads.tsv.gz'));assert len(paths)==1
@@ -62,4 +62,4 @@ def main(a):
     (out/'summary.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',default='/home/ec2-user/experiment');p.add_argument('--evidence',required=True);p.add_argument('--resolution',required=True);p.add_argument('--output',required=True);a=p.parse_args();main(a)
+    p=argparse.ArgumentParser();p.add_argument('--root',default='/home/ec2-user/experiment');p.add_argument('--native-arms',nargs='+',choices=['nt','nt20','aa12','union'],default=['nt','nt20']);p.add_argument('--evidence',required=True);p.add_argument('--resolution',required=True);p.add_argument('--output',required=True);a=p.parse_args();main(a)
