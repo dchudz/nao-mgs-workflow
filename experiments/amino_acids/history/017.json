@@ -1,0 +1,21 @@
+{
+  "sequence": 17,
+  "title": "Audit protein taxonomy and nucleotide validation evidence",
+  "reconstructed_utc": "2026-10-22T13:19:06.125462+00:00",
+  "snapshot_archive": "private-source-20261022T003943Z.tar.gz",
+  "snapshot_sha256": "19c8c981c14d4f1687a6eb923a19fc707288ad38823f6bf4807a962fecbf8acf",
+  "snapshot_recorded_utc": "2026-10-22T00:39:44.274673+00:00",
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "Reconstructed from the 00:39 UTC checkpoint. Group order within this checkpoint is organizational, not an inferred execution chronology.",
+  "changed_source_sha256": {
+    "experiments/amino_acids/audit-protein-cases.py": "2f8466186cef49662bca0111922051a92c6c5beb576ee96e4123bf6549ef6dd7",
+    "experiments/amino_acids/describe-nr-resolution.py": "b51f14a0df7f695cae676ed83dfb561a0e195ea96e03fd80c01ce65e7a7008d9",
+    "experiments/amino_acids/resolution-audit-addendum.json": "7b748fbac068a232fd6b0841ae30169d20e2d630fb2071a37d419e04007e7162",
+    "experiments/amino_acids/annotate-nr-competitors.py": "9803e90dbf820ad91c52ec738c3034bdd82a22a5d41eac3feb573aece568990d",
+    "experiments/amino_acids/nr-competitor-annotation-addendum.json": "1d7e49732e6cf0095e59d367b02c4463c27893b4d40efb34fec50b97cd6ca711",
+    "experiments/amino_acids/run-cohort-validation.py": "c845bf5abc5841fb4596bdba87951df9c0ab815361e2c164ac0b56979035f14c",
+    "experiments/amino_acids/summarize-native-validation.py": "d3ea744f1d2343e72a9c61c071980e5af74a3d418616a1e44b47c4cf78deab0d",
+    "experiments/amino_acids/validation-cohort.config": "ea5a5f6943046da87648e6edae5ccec2e4bd2fa3f2d7a753c6c040d5306f39e1"
+  }
+}

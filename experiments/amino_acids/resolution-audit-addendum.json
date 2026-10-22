@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-10-21T22:54:09.303756+00:00",
+  "primary_classifications_unchanged": true,
+  "descriptive_additions": [
+    "NR viral-only taxonomic resolution: same species, different species, or above species; no promotion of broad LCAs to species support.",
+    "Illustrative cases: up to three fixed SHA-ranked queries per NR outcome/novelty stratum; viral-only additions split at80percent maximum viral-reference amino-acid identity.",
+    "Retain at most two highest eligible alignments per mate per competing clade for the displayed audit, preserving raw complete outputs separately."
+  ],
+  "verification": "Independent small taxonomy/alignment fixtures checked species ancestry,25aminoacidminimum,90percentnearbestboundary,andretentionofmixedviral/cellularcompetitors."
+}

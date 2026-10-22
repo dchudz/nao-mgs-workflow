@@ -1,0 +1,8 @@
+{
+  "recorded_utc": "2026-10-21T20:25:05.899625+00:00",
+  "secondary_annotation": "Distinguish artificial constructs (NCBI81077), cellular organisms, and other known taxa among broad-reference competitors. No primary status or accepted-evidence threshold changes.",
+  "reason": "The original nucleotide LCA implementation handles natural/artificial groups separately. The protein primary nonviral category means outside the viral taxonomy and includes artificial constructs; it must not be interpreted as proof of a cellular origin.",
+  "implementation": "Extract unchanged near-best taxon aggregation into a shared function and reuse it for the descriptive annotation. Original summary parity oracle still passes10001alignments/52pairs in three orders.",
+  "summary_sha256": "eb1b6cb43054f7ae08f4028e1981bb836e749c02db440e8aebcc922ba67faf19",
+  "measurement_order": "Added before any heldout pooled NR search results. The development single-volume diagnostic contains artificial constructs and missing taxonomy."
+}
