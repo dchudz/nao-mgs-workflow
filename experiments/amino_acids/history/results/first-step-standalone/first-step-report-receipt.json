@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-10-22T16:52:07.717444+00:00",
+  "completed_result": true,
+  "independent_of_pending_NR": true,
+  "inputs": [
+    {
+      "path": "heldout/summary.json",
+      "bytes": 2810,
+      "sha256": "0637852d788d83e2606ccd79e273f4f62de3a22e84c4d3e16d1c535c45717769"
+    },
+    {
+      "path": "heldout/resource-summary.json",
+      "bytes": 2367,
+      "sha256": "2762b2ca40eaac23d437498dbfd893d18b40dba9a9d13670999972ce70b12f44"
+    },
+    {
+      "path": "heldout/species-summary.json",
+      "bytes": 4305,
+      "sha256": "c6ae1db905b686cd8ed06bdf9f8fadf996f86574d5818f9413ad106127bd8173"
+    },
+    {
+      "path": "heldout/support-transitions.json",
+      "bytes": 1452,
+      "sha256": "591eb2d20e81f28a604e44e32b90c76839582ed5658b43480464306fdf400759"
+    },
+    {
+      "path": "aa-over-nt20-final1000/mechanism-summary.json",
+      "bytes": 670,
+      "sha256": "731f0b746e9887c08d6c980bb095397980b529f15cb1831f7fa0cbe6a6434445"
+    },
+    {
+      "path": "preparation-discrepancies/header-control-summary.json",
+      "bytes": 2575,
+      "sha256": "f0ddc5c574066bafca0231ce1c4ab5125988ce07dd7cec5bb1d0436f0abc94b1"
+    },
+    {
+      "path": "preparation-discrepancies/header-control-protocol.json",
+      "bytes": 769,
+      "sha256": "158ef5f64b84fc9feab86ffef5178e426c1183904858ca431964c26e9c334a81"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "first-step-result.html",
+      "sha256": "6879a490aff7642168e91482bf24f0f9964bcf587b9fcf0ae289b5f6ff984119"
+    },
+    {
+      "file": "bowtie-header-note.html",
+      "sha256": "5aab09275f2fc80279053deaf2b65d311728caddc58d02a38509640cfce1c41a"
+    }
+  ]
+}
