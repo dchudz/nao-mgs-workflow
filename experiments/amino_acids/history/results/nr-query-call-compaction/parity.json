@@ -1,0 +1,39 @@
+{
+  "synthetic": {
+    "aligned_eligible_queries": 5,
+    "counts": {
+      "input_rows": 11,
+      "input_bytes": 319,
+      "aligned_query_mates": 6,
+      "eligible_rows": 9,
+      "near_best_query_rows": 5,
+      "native_control_raw_rows": 1,
+      "seed_raw_rows": 1
+    },
+    "all_query_taxa_and_scores_identical": true,
+    "raw_control_and_seed_subset_bytes_identical": true
+  },
+  "real_NR_volume": {
+    "aligned_eligible_queries": 47846,
+    "counts": {
+      "input_rows": 1677041,
+      "input_bytes": 122698661,
+      "aligned_query_mates": 47947,
+      "eligible_rows": 1675688,
+      "near_best_query_rows": 47846,
+      "native_control_raw_rows": 0,
+      "seed_raw_rows": 0
+    },
+    "all_query_taxa_and_scores_identical": true,
+    "raw_control_and_seed_subset_bytes_identical": true
+  },
+  "noncontiguous_input_rejected": true,
+  "candidate_classifier_sha256": "747c1b07dd43634b45a37f8ca9dd8232ebf93651c9986b80666c444ec99c8638",
+  "original_classifier_sha256": "eb1b6cb43054f7ae08f4028e1981bb836e749c02db440e8aebcc922ba67faf19",
+  "binary_sha256": "b1cc5296a242e61c7852293ecc15355a77ff67ff21cba70491953e379d6c3b31",
+  "limits": [
+    "Query-call rows contain only the near-best taxon set and best eligible score, not synthetic alignments.",
+    "All raw alignments remain separate. Raw control and seed subsets preserve every input row.",
+    "Whole-input byte and expected alignment counts must pass before using a full compaction."
+  ]
+}

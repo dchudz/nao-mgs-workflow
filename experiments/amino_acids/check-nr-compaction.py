@@ -18,6 +18,10 @@ source = r / 'protein-nr-summary.py'
 spec = importlib.util.spec_from_file_location('original', source)
 m = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)
+new_source=r/'protein-nr-summary.compact.py'
+new_spec=importlib.util.spec_from_file_location('candidate',new_source)
+n=importlib.util.module_from_spec(new_spec)
+new_spec.loader.exec_module(n)
 
 def rows(path):
     with open(path) as f:
@@ -42,10 +46,10 @@ originals = {'p': 11, 'unknown': 11, 'NR_CONTROL_c': 11, 'SEED_s': 12, 'short': 
 def check(path, dest, taxonomy=None, calls=None):
     subprocess.run([a.binary, str(path), str(dest), '0'], check=True)
     original = m.near_best_query_taxa(rows(path))
-    compact = m.near_best_query_taxa(rows(dest / 'compact.tsv'))
+    compact = {q: ({int(t) for t in taxa.split(';')},float(score)) for q,score,taxa in rows(dest / 'query-calls.tsv')}
     assert original == compact, 'Every read must retain exactly the same near-best taxon set and best score'
     if taxonomy is not None:
-        assert m.summarize(rows(path), taxonomy, calls) == m.summarize(rows(dest / 'compact.tsv'), taxonomy, calls)
+        assert m.summarize(rows(path), taxonomy, calls) == n.summarize_calls(compact, taxonomy, calls)
     for prefix, name in [('NR_CONTROL_', 'native-control-alignments.tsv'), ('SEED_', 'seed-alignments.tsv')]:
         h = hashlib.sha256()
         with path.open('rb') as f:
@@ -60,7 +64,14 @@ bad.write_text(fixture.read_text() + 'p/1\ta\t100\t1e-20\t25\t80\t11\n')
 invalid = subprocess.run([a.binary, str(bad), str(out / 'rejected-noncontiguous'), '0'], capture_output=True, text=True)
 assert invalid.returncode != 0 and 'contiguous' in invalid.stderr
 real = r / 'protein/nr-thread-parity-memory-restart/threads32.tsv'
-actual = check(real, out / 'real-volume')
-result = {'synthetic': synthetic, 'real_NR_volume': actual, 'noncontiguous_input_rejected': True, 'original_classifier_sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'binary_sha256': hashlib.sha256(Path(a.binary).read_bytes()).hexdigest(), 'limits': ['Compacted rows preserve the classifier sufficient statistic, not the original alignment multiset.', 'All raw alignments remain separate. Raw control and seed subsets preserve every input row.', 'Whole-input byte and expected alignment counts must pass before using a full compaction.']}
+parents={}
+for line in (r/'protein/current-nr/nodes.dmp').open():
+    f=line.split('|');parents[int(f[0])]=int(f[1])
+originals={}
+for name in ['development-viral-pairs.tsv','full-viral-pairs.tsv']:
+    with (r/'protein/combined-validation'/name).open() as f:
+        for row in csv.DictReader(f,delimiter='\t'): originals[row['query_pair']]=int(row['protein_taxid_lca'])
+actual = check(real, out / 'real-volume',parents,originals)
+result = {'synthetic': synthetic, 'real_NR_volume': actual, 'noncontiguous_input_rejected': True, 'candidate_classifier_sha256': hashlib.sha256(new_source.read_bytes()).hexdigest(), 'original_classifier_sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'binary_sha256': hashlib.sha256(Path(a.binary).read_bytes()).hexdigest(), 'limits': ['Query-call rows contain only the near-best taxon set and best eligible score, not synthetic alignments.', 'All raw alignments remain separate. Raw control and seed subsets preserve every input row.', 'Whole-input byte and expected alignment counts must pass before using a full compaction.']}
 (out / 'parity.json').write_text(json.dumps(result, indent=2) + '\n')
 print(json.dumps(result))

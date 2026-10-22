@@ -16,7 +16,7 @@
 #include <vector>
 
 namespace fs = std::filesystem;
-struct Best { double score; std::string prefix; };
+struct Best { double score; std::string score_text; };
 uint64_t number(std::string_view s) {
     uint64_t n = 0;
     auto r = std::from_chars(s.data(), s.data() + s.size(), n);
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     in.rdbuf()->pubsetbuf(buffer.data(), buffer.size());
     in.open(input, std::ios::binary);
     if (!in) throw std::runtime_error("Cannot open input");
-    std::ofstream compact(out / "compact.tsv.partial", std::ios::binary);
+    std::ofstream compact(out / "query-calls.tsv.partial", std::ios::binary);
     std::ofstream controls(out / "native-control-alignments.tsv.partial", std::ios::binary);
     std::ofstream seeds(out / "seed-alignments.tsv.partial", std::ios::binary);
     for (auto* f : {&compact, &controls, &seeds}) f->exceptions(std::ios::badbit | std::ios::failbit);
@@ -55,11 +55,14 @@ int main(int argc, char** argv) {
     std::unordered_map<uint64_t, Best> best;
     bool control = false, seed = false;
     auto flush = [&]() {
+        if (best.empty()) return;
+        auto maximum = std::max_element(best.begin(), best.end(), [](const auto& a, const auto& b) { return a.second.score < b.second.score; });
         std::vector<uint64_t> taxa;
-        taxa.reserve(best.size());
-        for (const auto& x : best) taxa.push_back(x.first);
+        for (const auto& x : best) if (x.second.score >= 0.9 * maximum->second.score) taxa.push_back(x.first);
         std::sort(taxa.begin(), taxa.end());
-        for (auto t : taxa) { compact << best.at(t).prefix << t << '\n'; ++emitted; }
+        compact << query << '\t' << maximum->second.score_text << '\t';
+        for (size_t i = 0; i < taxa.size(); ++i) { if (i) compact << ';'; compact << taxa[i]; }
+        compact << '\n'; ++emitted;
         best.clear();
     };
     while (std::getline(in, line)) {
@@ -90,7 +93,7 @@ int main(int argc, char** argv) {
         auto retain = [&](uint64_t taxon) {
             auto old = best.find(taxon);
             if (old == best.end() || score > old->second.score)
-                best.insert_or_assign(taxon, Best{score, line.substr(0, start)});
+                best.insert_or_assign(taxon, Best{score, std::string(f[2])});
         };
         bool any = false;
         size_t pos = 0;
@@ -108,13 +111,13 @@ int main(int argc, char** argv) {
     if (bytes != fs::file_size(input) || (expected && rows != expected))
         throw std::runtime_error("Input byte or expected row count mismatch");
     for (auto* f : {&compact, &controls, &seeds}) f->close();
-    for (const auto& name : {"compact.tsv", "native-control-alignments.tsv", "seed-alignments.tsv"})
+    for (const auto& name : {"query-calls.tsv", "native-control-alignments.tsv", "seed-alignments.tsv"})
         fs::rename(out / (std::string(name) + ".partial"), out / name);
     std::ofstream stats(out / "counts.json");
     stats.exceptions(std::ios::badbit | std::ios::failbit);
     stats << "{\"input_rows\":" << rows << ",\"input_bytes\":" << bytes
           << ",\"aligned_query_mates\":" << seen.size() << ",\"eligible_rows\":" << eligible
-          << ",\"query_taxon_maximum_rows\":" << emitted << ",\"native_control_raw_rows\":" << control_rows
+          << ",\"near_best_query_rows\":" << emitted << ",\"native_control_raw_rows\":" << control_rows
           << ",\"seed_raw_rows\":" << seed_rows << "}\n";
     stats.close();
     std::cout << "COMPLETE input_rows=" << rows << " compact_rows=" << emitted << '\n';
