@@ -1,0 +1,44 @@
+{
+  "recorded_utc": "2026-10-21T20:52:04.072033+00:00",
+  "reason": "Measured nr.000 search on54468queries required1504.5seconds at4threads while sharing a worker. A full918GB reference scan on16threads risks consuming the remaining window. Add one bounded Spot replica and retain the on-demand fallback.",
+  "instance_type": "c7i.24xlarge",
+  "vcpus": 96,
+  "AZ": "us-east-1d",
+  "spot_price_observed_USD_hour": 1.3076,
+  "compute_price_cap_USD_hour": 2,
+  "compute_storage_planning_USD_hour": 3,
+  "max_extra_reserve_USD": 60,
+  "previous_conservative_account_bound_USD": 413.2913929807,
+  "new_conservative_account_bound_USD": 473.2913929807,
+  "account_cap_USD": 500,
+  "hard_deadline_utc": "2026-10-22T15:21:40.619945+00:00",
+  "scientific_parameters": "Same query pool and full reference; frozen sensitivity, block size and4index chunks. Verify thread-count parity on the existing development+anchor single-volume benchmark before adopting accelerated output.",
+  "fallback": "On-demand reference and scheduled NR search retained. No replacement if this Spot worker is interrupted.",
+  "capacity_attempts": [
+    {
+      "instance_type": "c7i.24xlarge",
+      "AZ": "us-east-1f",
+      "outcome": "InsufficientInstanceCapacity; no instance launched"
+    },
+    {
+      "instance_type": "c7i.16xlarge",
+      "AZ": "us-east-1c",
+      "outcome": "InsufficientInstanceCapacity; no instance launched"
+    },
+    {
+      "instance_type": "c7i.24xlarge",
+      "AZ": "us-east-1d",
+      "outcome": "InsufficientInstanceCapacity; no instance launched"
+    },
+    {
+      "instance_type": "c6a.24xlarge",
+      "AZ": "us-east-1c",
+      "outcome": "Launched",
+      "instance_id": "i-0f577952bbbd27d36"
+    }
+  ],
+  "outcome": "c6a.24xlarge instance i-0f577952bbbd27d36 reclaimed by AWS at2026-10-21T21:51:41Z during reference staging; no scientific search result. Attachedvolume deletion verified. No further Spot replacement.",
+  "initial_acceleration_bound_USD": 473.2913929807,
+  "active_conservative_account_bound_USD": 418.2913929807,
+  "status": "closed"
+}

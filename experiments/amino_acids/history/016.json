@@ -1,0 +1,22 @@
+{
+  "sequence": 16,
+  "title": "Preserve comprehensive NR search and rejected variants",
+  "reconstructed_utc": "2026-10-22T13:19:05.869512+00:00",
+  "snapshot_archive": "private-source-20261022T003943Z.tar.gz",
+  "snapshot_sha256": "19c8c981c14d4f1687a6eb923a19fc707288ad38823f6bf4807a962fecbf8acf",
+  "snapshot_recorded_utc": "2026-10-22T00:39:44.274673+00:00",
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "Reconstructed from the 00:39 UTC checkpoint. Group order within this checkpoint is organizational, not an inferred execution chronology.",
+  "changed_source_sha256": {
+    "experiments/amino_acids/prepare-bounded-nr-panel.py": "eeda732eb923498dbac39b65046309ca456e537c55463e9ca1ce7fec711b8216",
+    "experiments/amino_acids/run-bounded-nr.py": "e1203f5bf0976e0b5df55b30ba7a9e5a3aa600ea1c6ef4f3a1f23ef2a4099c4a",
+    "experiments/amino_acids/run-development-nr.py": "92329f197ad7f0a2b6d07f9d0cb7217a6e06f19483d489422765dbd778bdb58f",
+    "experiments/amino_acids/run-development-nr-fast.py": "228a139218bc7a7168ab5495f718a3fa5a608394056353423923c92aac2b8327",
+    "experiments/amino_acids/run-nr-accelerator.py": "14003e158a90b2fc408ec4d6314f05d47326de4a3f1954ef0e3b67fea5f17ee6",
+    "experiments/amino_acids/run-nr-on-demand.py": "b6655cce06d9dce1d376fe487f2942555e2bd0c4f44d965fd202ce975d6cdf20",
+    "experiments/amino_acids/run-resized-nr.py": "ad63595b5c75544d88dbfd67f939b44f317f0d876f1bef0dcf4825c416a84926",
+    "experiments/amino_acids/nr-accelerator-resource-addendum.json": "ec943d61c02aebc7c85aa455cc206fcb21e4ead6dcb9a0a535b259b9c8086b0e",
+    "experiments/amino_acids/nr-dedup-decision.json": "7e1635189f8d2f4acad1c0628f1a23210eaf029605e0e7fca37600d255bb9c19"
+  }
+}

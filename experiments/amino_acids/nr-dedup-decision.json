@@ -1,0 +1,11 @@
+{
+  "recorded_utc": "2026-10-21T21:12:18.057564+00:00",
+  "adopted": false,
+  "reason": "Only3.19percentwall-time reduction and raw alignment multiset parity failed for2of54468originalreads. Five original alignments disappeared. PrimaryNRqueriesremainunchanged.",
+  "original_queries": 54468,
+  "unique_queries": 40396,
+  "original_wall_seconds": 1504.5137510509994,
+  "deduplicated_wall_seconds": 1456.5451011160003,
+  "changed_original_queries": 2,
+  "interpretation": "Both timed runs shared a worker with the ongoing viral search. Timing is a local engineering observation, not an isolated production benchmark."
+}
