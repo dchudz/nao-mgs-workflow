@@ -3,14 +3,18 @@ import argparse,collections,csv,gzip,json,sys
 from pathlib import Path
 r=Path('/home/ec2-user/experiment');sys.path.insert(0,str(r/'experiments/amino_acids'))
 from union_pairs import pairs
-p=argparse.ArgumentParser();p.add_argument('--native-arm',choices=['nt','nt22','nt20','aa12','union'],default='nt');p.add_argument('--protein',required=True);p.add_argument('--nr');p.add_argument('--output',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--native-arm',choices=['nt','nt22','nt20','aa12','union'],default='nt');p.add_argument('--protein',required=True);p.add_argument('--nr');p.add_argument('--samples-json',help='Explicit ordered sample IDs; default remains frozen first200');p.add_argument('--output',required=True);a=p.parse_args()
 d=Path(a.protein);out=Path(a.output);out.mkdir(exist_ok=True)
 def table(path):
  with (gzip.open(path,'rt') if str(path).endswith('.gz') else open(path)) as f:yield from csv.DictReader(f,delimiter='\t')
 order=[x['run_accession'] for x in json.loads((r/'heldout-ranges.json').read_text())][:200]
+if a.samples_json:
+ order=json.loads(Path(a.samples_json).read_text())
+ assert order and all(isinstance(x,str) for x in order) and len(order)==len(set(order)), 'Invalid ordered sample IDs'
 batches={s:m.parent for m in (r/'cohort-storage/batches').glob('*/complete.json') for s in json.loads(m.read_text())['samples']}
 assert set(order)<=set(batches)
 viral={x['query_pair']:x for x in table(d/'viral-pairs.tsv')}
+assert {q.split('_',1)[0] for q in viral} <= set(order), 'Protein calls outside requested samples'
 nr={x['query_pair']:x for x in table(a.nr) if x['query_pair'] in viral} if a.nr else {}
 if a.nr:assert viral.keys()==nr.keys(), 'Incomplete broad reference validation'
 meta=collections.defaultdict(dict)
