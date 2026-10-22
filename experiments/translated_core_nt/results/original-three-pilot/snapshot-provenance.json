@@ -1,0 +1,138 @@
+{
+  "writer_commit": "44e8497f36651b8e2dd9b424a6a1c06a4815398c",
+  "taxonomy_description_commit": "f196642df1c17fc56760d5f9281da947024ca9c6",
+  "raw_snapshot": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/pilot-snapshots/original-three-raw/",
+  "files": [
+    {
+      "path": "same-reference-pilot.html",
+      "bytes": 12922,
+      "sha256": "37e906fa896956603446329cf4aaecd5287d601ed97894d55abea02c6f42d95d"
+    },
+    {
+      "path": "pilot-result-summary.json",
+      "bytes": 5354,
+      "sha256": "4d43adfd98eaf22d936727a2fea63b2d6cf0c40a0c05f875a2ada1f15b2f4242"
+    },
+    {
+      "path": "pilot24/input-manifest.json",
+      "bytes": 1061,
+      "sha256": "fe8cab78b43ed9fd3e0dc4258ddc34af2749c886e5728e8dfd764bb79b0c59ee"
+    },
+    {
+      "path": "pilot24/selection.tsv",
+      "bytes": 1854,
+      "sha256": "ece3380951477aa5ce45665bda60af671c5ece7586d65affcb8ff3367c790ba8"
+    },
+    {
+      "path": "pilot24/queries.fna",
+      "bytes": 7181,
+      "sha256": "3cd013485d5086892f89a2979f373bfb6d125a77c458727fead40e297d6957aa"
+    },
+    {
+      "path": "pilot24/alternative-sequence-held.json",
+      "bytes": 508,
+      "sha256": "501c001344a3d12953bc746d448a10492983981147d8932cbe921d31a55c07f7"
+    },
+    {
+      "path": "pilot24/analysis/summary.json",
+      "bytes": 3758,
+      "sha256": "9dfc32177fcbf2108299b99c962cf5aa6634aa97b0b0abcde58067aea90c7c17"
+    },
+    {
+      "path": "pilot24/analysis/per-mate.tsv",
+      "bytes": 46588,
+      "sha256": "1b32eef9160757562f93cc2be37a6d9f1dfa322ac9e176719979c8600ea6ec5f"
+    },
+    {
+      "path": "pilot24/analysis/disagreements.tsv",
+      "bytes": 9909,
+      "sha256": "0c1ef5782e66041625ce0c2b87949cefe5275baf22fbbffbe30b625d4108954a"
+    },
+    {
+      "path": "pilot24/analysis/codon-audit.json",
+      "bytes": 23937,
+      "sha256": "2998ca7f2ac121bd6487cb9d1d4890e9d9cf0d81da8fc887dc77d2dcb3c1f6c4"
+    },
+    {
+      "path": "pilot24/analysis/taxonomy-description/summary.json",
+      "bytes": 2936,
+      "sha256": "9c87a01d1b94f9c99c7e2c3a257876b1953d507e0c9526e36c333913e4620601"
+    },
+    {
+      "path": "pilot24/analysis/taxonomy-description/per-mate.tsv",
+      "bytes": 56325,
+      "sha256": "1c804a88a51ec12f53fb49e8402855cbc953b8d57d56a8878cde33b90d3fbb1d"
+    },
+    {
+      "path": "pilot24/analysis/taxonomy-description/natural-LCA-changes.tsv",
+      "bytes": 7770,
+      "sha256": "02a80ad44aba515b04aac2cfb6bd30932fa1ec5590ce81d4e9695a6a8d019e37"
+    },
+    {
+      "path": "pilot24/analysis/taxonomy-description/taxa.tsv",
+      "bytes": 11520,
+      "sha256": "47b2deeb9ddfad249f71ce1b7c1159d91ef21f0e63a5069ca19ab05f4f40f0c4"
+    },
+    {
+      "path": "pilot24/megablast/complete.json",
+      "bytes": 178,
+      "sha256": "b547da6c1812ed6b01ccec42aea899ef0e140b2bcfd46d230dbebb547edb77e3"
+    },
+    {
+      "path": "pilot24/megablast/protocol.json",
+      "bytes": 3433,
+      "sha256": "aa9f649bdfc7dacb581ae2170bf99c10ffffd2436e1c36c1c59043b64b019d6e"
+    },
+    {
+      "path": "pilot24/megablast/resources.json",
+      "bytes": 197,
+      "sha256": "d41920d718b4586d50e0a69c36254fcb46a505b136eb8642615859b5731588ef"
+    },
+    {
+      "path": "pilot24/megablast/time.txt",
+      "bytes": 1244,
+      "sha256": "3a0e91e3ea5f22b9561de2a2dbc60e603dbcf9f251937831f5e4b41acf7f5dc8"
+    },
+    {
+      "path": "pilot24/blastn/complete.json",
+      "bytes": 178,
+      "sha256": "2246c19e5f14e5ec9ff35c218e0d5cd834258161a4d8c7fcdcc559e024cf0713"
+    },
+    {
+      "path": "pilot24/blastn/protocol.json",
+      "bytes": 3378,
+      "sha256": "89e146fa0b7e515be72f4969f2ff8037a011df60f72efb2e77c67bc3488b6cd6"
+    },
+    {
+      "path": "pilot24/blastn/resources.json",
+      "bytes": 198,
+      "sha256": "c8cce4e63320fad60aab1273b7b38290fbc125237e398c11197c68f6cb89b227"
+    },
+    {
+      "path": "pilot24/blastn/time.txt",
+      "bytes": 1239,
+      "sha256": "e544c654ef2b51fd8e7807a5259216fcfce80488ebd92a26d88989f97af4bb5e"
+    },
+    {
+      "path": "pilot24/tblastx/complete.json",
+      "bytes": 179,
+      "sha256": "db3953ce90c7deefbabe97b2a60d30c1c79e92b7a0b766bc1e85944a31338a26"
+    },
+    {
+      "path": "pilot24/tblastx/protocol.json",
+      "bytes": 3393,
+      "sha256": "a93b45b4849d88494efaed6518d8d7255bd370cb62d65e60567bdf2a0cd55377"
+    },
+    {
+      "path": "pilot24/tblastx/resources.json",
+      "bytes": 197,
+      "sha256": "1097c553dc576e86c84c863e43ce80005d752500bb6cd2aacaf845efa1171b98"
+    },
+    {
+      "path": "pilot24/tblastx/time.txt",
+      "bytes": 1248,
+      "sha256": "583d02aa1f21977728e5d0561019d8d4d191eca2eb06aede4b90aa5a06dc3091"
+    }
+  ],
+  "scope": "Completed original three-method pilot. NR comparison pending. Raw alignments remain in local experiment workspace and verified private S3 snapshot."
+}

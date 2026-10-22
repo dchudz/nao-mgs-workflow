@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-10-22T18:07:09.297386+00:00",
+  "executed_or_running_methods": [
+    "megablast",
+    "blastn",
+    "tblastx"
+  ],
+  "held_methods": [
+    "dc-megablast",
+    "query-tblastn-fast",
+    "tblastx-word4"
+  ],
+  "reason": "User priority update: complete NR200 evidence and TBLASTX-versus-NR measured cost comparison before additional translated experiments. Earlier alternative-sequence protocol records a proposed sequence, not executed searches.",
+  "larger_panels_launched": false
+}
