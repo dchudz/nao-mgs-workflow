@@ -1,0 +1,15 @@
+{
+  "as_of_utc": "2026-10-22T21:32:52.348775+00:00",
+  "owned_experiment_objects": 124750,
+  "bytes": 587744507240,
+  "GiB": 547.3797276988626,
+  "S3_Standard_USD_per_GB_month": 0.023,
+  "modeled_monthly_storage_USD": 12.58973373707384,
+  "pricing_source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/us-east-1/index.json",
+  "pricing_retrieved_utc": "2026-10-22T08:54:14.215647+00:00",
+  "limits": [
+    "Current object versions only, excludes incomplete multipart uploads, old object versions, requests and transfer.",
+    "Uses S3Standard first50TB monthly rate; this is ongoing retained-artifact storage, not worker compute.",
+    "Only the two exact experiment prefixes are included; unrelated baseline runs are excluded."
+  ]
+}
