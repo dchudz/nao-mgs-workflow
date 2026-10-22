@@ -1,0 +1,41 @@
+{
+  "recorded_utc": "2026-10-22T15:51:49.331661+00:00",
+  "entries": [
+    {
+      "file": "translation-fixture/complete.json",
+      "source_commit": "aee688ae0c8ca4214716176ba2ba2301bdea5dcf",
+      "sha256": "c2b761726bca804be6493bc1b99ef729f6aee6f6427301e59e50a5ed08923a39"
+    },
+    {
+      "file": "analysis-fixture/check-complete.json",
+      "source_commit": "4ed8cd243c9f1516f69cc632f24f9109e64c36c2",
+      "sha256": "2e775da1a74441cc84ada83fb3de59611e1ca0a8c0262356583ddd567f8384ab"
+    },
+    {
+      "file": "translation-fixture/seed-option-characterization.json",
+      "source_commit": "7b427a86b36163aa3db9f24a0060486f00ec2c15",
+      "sha256": "ab0cce5c61b464151c17926c128f0778ff35a62f28ec230677244309d5f7839b"
+    },
+    {
+      "file": "translation-fixture/query-only/characterization.json",
+      "source_commit": "b61b27f6e4e91baa8208432a22ae1cb4aa49421b",
+      "sha256": "358d6fca241922f52a1953158a41f49c44a9c339cf2ccfb6f726c1c8b76e90ab"
+    },
+    {
+      "file": "translation-fixture/codon-families/characterization.json",
+      "source_commit": "bc9a34baea704c83983b2bedcb82de8c2abb9644",
+      "sha256": "19324de7332c9317898fd41566c414f4389e56d666d73bf24ff4b5bae98c06ab"
+    },
+    {
+      "file": "translation-fixture/coverage/characterization.json",
+      "source_commit": "69ab6c28abc7765c04c6cc667cd4af7ebe519097",
+      "sha256": "114aeb43653657aba426eda40304fd31a5244891b7d6fd51473cc9c2fd99edd6"
+    },
+    {
+      "file": "pilot24/parent-context-comparison.json",
+      "source_commit": "5f0dbadb0347224225380788446e9361f8f8cf42",
+      "sha256": "4d3cd7604ed290ff9272e2a8d83e81f3f65046247bd2355feee0e9b019c9e80a"
+    }
+  ],
+  "note": "Results captured after execution; source-commit associations follow recorded commit/upload/run sequence. No rerun or historical timestamp alteration."
+}

@@ -1,0 +1,212 @@
+{
+  "created_utc": "2026-10-22T15:46:33.136250+00:00",
+  "reference_nt": 240,
+  "synonymous_nt_identity_pct": 60.0,
+  "protein_identity_pct": 100,
+  "query_sha256": "cb33f240e098413022c679577871eb3769d9e96cc160b6f430ae507b1fc1503a",
+  "results": {
+    "megablast": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "blastn",
+        "-task",
+        "megablast",
+        "-perc_identity",
+        "60",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/codon-families/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "stderr": "",
+      "queries": {
+        "reference_control": {
+          "rows": 1,
+          "best_evalue": 9.43e-130,
+          "max_query_HSP_coverage": 100.0
+        },
+        "maximal_synonymous": {
+          "rows": 0,
+          "best_evalue": null,
+          "max_query_HSP_coverage": null
+        },
+        "reverse_frame3_synonymous": {
+          "rows": 0,
+          "best_evalue": null,
+          "max_query_HSP_coverage": null
+        }
+      }
+    },
+    "blastn": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "blastn",
+        "-task",
+        "blastn",
+        "-perc_identity",
+        "60",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/codon-families/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "stderr": "",
+      "queries": {
+        "reference_control": {
+          "rows": 1,
+          "best_evalue": 1.12e-126,
+          "max_query_HSP_coverage": 100.0
+        },
+        "maximal_synonymous": {
+          "rows": 0,
+          "best_evalue": null,
+          "max_query_HSP_coverage": null
+        },
+        "reverse_frame3_synonymous": {
+          "rows": 0,
+          "best_evalue": null,
+          "max_query_HSP_coverage": null
+        }
+      }
+    },
+    "dc-megablast": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "blastn",
+        "-task",
+        "dc-megablast",
+        "-template_type",
+        "coding",
+        "-template_length",
+        "18",
+        "-word_size",
+        "11",
+        "-perc_identity",
+        "60",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/codon-families/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "stderr": "",
+      "queries": {
+        "reference_control": {
+          "rows": 1,
+          "best_evalue": 1.12e-126,
+          "max_query_HSP_coverage": 100.0
+        },
+        "maximal_synonymous": {
+          "rows": 0,
+          "best_evalue": null,
+          "max_query_HSP_coverage": null
+        },
+        "reverse_frame3_synonymous": {
+          "rows": 0,
+          "best_evalue": null,
+          "max_query_HSP_coverage": null
+        }
+      }
+    },
+    "tblastx": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "tblastx",
+        "-query_gencode",
+        "1",
+        "-db_gencode",
+        "1",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/codon-families/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "stderr": "",
+      "queries": {
+        "reference_control": {
+          "rows": 5,
+          "best_evalue": 5.5e-60,
+          "max_query_HSP_coverage": 33.0
+        },
+        "maximal_synonymous": {
+          "rows": 1,
+          "best_evalue": 5.58e-60,
+          "max_query_HSP_coverage": 100.0
+        },
+        "reverse_frame3_synonymous": {
+          "rows": 1,
+          "best_evalue": 5.58e-60,
+          "max_query_HSP_coverage": 99.0
+        }
+      }
+    }
+  },
+  "interpretation": "Tiny reference tests mechanisms and coordinate handling only; Evalues are not evidence about significance against comprehensive core_nt; no runtime claim"
+}
