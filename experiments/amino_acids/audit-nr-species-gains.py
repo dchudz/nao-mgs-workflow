@@ -5,6 +5,8 @@ import csv
 import gzip
 import hashlib
 import json
+import subprocess
+import time
 from pathlib import Path
 
 
@@ -40,7 +42,16 @@ def main(a):
     selected = {}
     for group, rows in sorted(groups.items()):
         for x in ranked(rows, lambda x: x['sample'] + ':' + x['species'], 'species-gain-call:')[:5]:
-            selected[x['sample'], x['species']] = dict(x, audit_group=group, stratum_calls=len(rows))
+            selected[x['sample'], x['species']] = dict(x, audit_group=group, stratum_calls=len(rows), audit_selection='fixed_hash')
+    for group, rows in groups.items():
+        for x in rows:
+            if x['human_annotation'] != '1':
+                continue
+            key = x['sample'], x['species']
+            if key in selected:
+                selected[key]['audit_selection'] = 'fixed_hash_and_all_human_annotated'
+            else:
+                selected[key] = dict(x, audit_group=group, stratum_calls=len(rows), audit_selection='all_human_annotated')
     candidates = collections.defaultdict(list)
     for x in table(a.resolution):
         key = x['sample'], x['nr_species']
@@ -56,15 +67,29 @@ def main(a):
     # rows in a second pass over the selected-query extraction, not the 27 GB input.
     best = collections.defaultdict(float)
     extracted = out / 'selected-viral-alignments.tsv'
-    with open(a.hits) as source, extracted.open('w') as dest:
-        for line in (source if queries else ()):
-            q = line.split('\t', 1)[0]
-            if q.rsplit('/', 1)[0] in queries:
-                dest.write(line)
-                row = line.rstrip('\n').split('\t')
-                assert len(row) == 12
-                if int(row[4]) >= 25:
-                    best[q] = max(best[q], float(row[2]))
+    extractor = Path(a.extractor)
+    if queries and extractor.is_file():
+        query_ids = out / 'selected-query-ids.txt'
+        query_ids.write_text(''.join(q + '/' + str(m) + '\n' for q in sorted(queries) for m in [1, 2]))
+        target = out / 'extracted-viral-raw'
+        command = [str(extractor), a.hits, str(query_ids), str(target), '0']
+        before = Path(a.hits).stat(); started = time.monotonic()
+        with (out / 'extraction.log').open('w') as log:
+            subprocess.run(command, stdout=log, stderr=log, check=True, timeout=900)
+        after = Path(a.hits).stat()
+        assert (before.st_size, before.st_mtime_ns) == (after.st_size, after.st_mtime_ns)
+        (target / 'alignments.tsv').replace(extracted)
+        (out / 'extraction.json').write_text(json.dumps(dict(command=command, seconds=time.monotonic()-started, input_bytes=before.st_size, input_mtime_ns=before.st_mtime_ns, extractor_sha256=hashlib.sha256(extractor.read_bytes()).hexdigest(), counts=json.loads((target/'counts.json').read_text())), indent=2))
+    else:
+        with open(a.hits) as source, extracted.open('w') as dest:
+            for line in (source if queries else ()):
+                if line.split('\t', 1)[0].rsplit('/', 1)[0] in queries:
+                    dest.write(line)
+    with extracted.open() as f:
+        for row in csv.reader(f, delimiter='\t'):
+            assert len(row) == 12
+            if int(row[4]) >= 25:
+                best[row[0]] = max(best[row[0]], float(row[2]))
     kept = collections.defaultdict(list)
     near_counts = collections.Counter()
     with extracted.open() as f:
@@ -109,7 +134,7 @@ def main(a):
             w = csv.DictWriter(f, fieldnames=list(rows[0]) if rows else ['none'], delimiter='\t')
             w.writeheader()
             w.writerows(rows)
-    summary = dict(selected_calls=len(selected), selected_pairs=len(queries), retained_alignment_rows=len(hits), source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), call_table_sha256=hashlib.sha256(Path(a.calls).read_bytes()).hexdigest(), resolution_sha256=hashlib.sha256(Path(a.resolution).read_bytes()).hexdigest(), selection='Up to five fixed-hash NT20-relative gained protein calls per baseline-support stratum, restricted to concordant NR and viral-reference species; up to twelve fixed-hash pairs per call.', limits=['Illustrative outcome-selected cases, not a representative accuracy estimate.', 'Three exact pairs is not the production alignment/similarity exemplar threshold.', 'Reference intervals come from existing viral-reference alignments, not NR alignments.', 'Up to five highest-scoring eligible rows retained per mate; ties use subject and coordinates deterministically. The selected-query raw extraction retains every row.', 'Overlapping intervals can identify concentrated support but cannot prove molecule independence or infection.'])
+    summary = dict(selected_calls=len(selected), selected_pairs=len(queries), retained_alignment_rows=len(hits), source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), call_table_sha256=hashlib.sha256(Path(a.calls).read_bytes()).hexdigest(), resolution_sha256=hashlib.sha256(Path(a.resolution).read_bytes()).hexdigest(), selected_human_annotated_calls=sum(x['human_annotation']=='1' for x in selected.values()), selection='Up to five fixed-hash NT20-relative gained protein calls per baseline-support stratum, plus every human-annotated gained call, restricted to concordant NR and viral-reference species; up to twelve fixed-hash pairs per call.', limits=['Illustrative outcome-selected cases, not a representative accuracy estimate.', 'Three exact pairs is not the production alignment/similarity exemplar threshold.', 'Reference intervals come from existing viral-reference alignments, not NR alignments.', 'Up to five highest-scoring eligible rows retained per mate; ties use subject and coordinates deterministically. The selected-query raw extraction retains every row.', 'Overlapping intervals can identify concentrated support but cannot prove molecule independence or infection.'])
     (out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
     print(json.dumps(summary))
 
@@ -118,4 +143,5 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     for name in ['calls', 'resolution', 'hits', 'genomes', 'members', 'output']:
         p.add_argument('--' + name, required=True)
+    p.add_argument('--extractor', default=str(Path(__file__).with_name('extract-nr-query-subset')))
     main(p.parse_args())
