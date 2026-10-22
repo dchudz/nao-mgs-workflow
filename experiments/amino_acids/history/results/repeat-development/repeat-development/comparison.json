@@ -1,0 +1,66 @@
+{
+  "secondary_post_hoc": true,
+  "results": [
+    {
+      "sample": "SRR39694948",
+      "native_pairs": 604,
+      "original_AA_union_pairs": 624,
+      "repeat_filtered_union_pairs": 624,
+      "lost_original_union_pairs": [],
+      "new_vs_original_union_pairs": [],
+      "lost_native_pairs": [],
+      "taxid_changes": 0
+    },
+    {
+      "sample": "SRR35946889",
+      "native_pairs": 1074,
+      "original_AA_union_pairs": 1139,
+      "repeat_filtered_union_pairs": 1139,
+      "lost_original_union_pairs": [],
+      "new_vs_original_union_pairs": [],
+      "lost_native_pairs": [],
+      "taxid_changes": 0
+    },
+    {
+      "sample": "SRR33038139",
+      "native_pairs": 259,
+      "original_AA_union_pairs": 261,
+      "repeat_filtered_union_pairs": 261,
+      "lost_original_union_pairs": [],
+      "new_vs_original_union_pairs": [],
+      "lost_native_pairs": [],
+      "taxid_changes": 0
+    },
+    {
+      "sample": "SRR39694932",
+      "native_pairs": 285,
+      "original_AA_union_pairs": 287,
+      "repeat_filtered_union_pairs": 287,
+      "lost_original_union_pairs": [],
+      "new_vs_original_union_pairs": [],
+      "lost_native_pairs": [],
+      "taxid_changes": 0
+    },
+    {
+      "sample": "SRR39694979",
+      "native_pairs": 88,
+      "original_AA_union_pairs": 88,
+      "repeat_filtered_union_pairs": 88,
+      "lost_original_union_pairs": [],
+      "new_vs_original_union_pairs": [],
+      "lost_native_pairs": [],
+      "taxid_changes": 0
+    },
+    {
+      "sample": "SRR36995860",
+      "native_pairs": 735,
+      "original_AA_union_pairs": 738,
+      "repeat_filtered_union_pairs": 738,
+      "lost_original_union_pairs": [],
+      "new_vs_original_union_pairs": [],
+      "lost_native_pairs": [],
+      "taxid_changes": 0
+    }
+  ],
+  "interpretation": "Exploratory development/outlier diagnostic. Primary heldout comparison and full protein branch are unchanged. Same baseline union and downstream rules; repeat filter modifies only AA index membership."
+}
