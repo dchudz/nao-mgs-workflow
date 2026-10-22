@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-10-22T23:10:38.144273+00:00",
+  "results": {
+    "megablast": {
+      "old_rows": 27510,
+      "new_rows": 27510,
+      "alignment_multiset_equal_on_original8fields": true,
+      "rows_only_old": 0,
+      "rows_only_new": 0,
+      "differing_query_mates": [],
+      "old_sha256": "30373120215b40680dec4fafb27be9f9c7a642fba25acd800b19a530f2ec6967",
+      "new_sha256": "3f01f6d18cf8bc8633b1e5299e3ebc632a5dbe8992f26ac7f49a4f22400b63f1"
+    },
+    "blastn": {
+      "old_rows": 84985,
+      "new_rows": 84985,
+      "alignment_multiset_equal_on_original8fields": true,
+      "rows_only_old": 0,
+      "rows_only_new": 0,
+      "differing_query_mates": [],
+      "old_sha256": "a2500aea44a425a73598281c7e00ddda168b828e9539804aa2504655574d1abe",
+      "new_sha256": "3a7cec2200865b807fa1b1e573db0a73da33e1224d0288dc808fe3793705cb56"
+    }
+  },
+  "source_sha256": "744675d42940e6750828bb7c3926026703b6863a3572813b825cb5918c49faa8",
+  "limits": [
+    "Same query bytes, frozen database and nucleotide task parameters. New runs use16threads and explicitE10; older8thread runs used pinned defaultE10.",
+    "Multiset comparison removes row-order differences and projects new19field output onto the exact original8fields.",
+    "Old wall times include shared-worker contention; time ratios are not algorithm speedups."
+  ]
+}
