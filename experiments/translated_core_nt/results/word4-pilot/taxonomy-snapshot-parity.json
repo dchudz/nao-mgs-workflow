@@ -1,0 +1,12 @@
+{
+  "nodes": {
+    "bytes": 288525339,
+    "sha256": "cc86f6b18c5b0c4a0344ef728076e69241575108ad1cdbcedcd6cbf93e7ba042"
+  },
+  "names": {
+    "bytes": 288216556,
+    "sha256": "102033d78059867bd7908eaa40663a7a8bc0a5edba783da2e4318969b0b16eb5"
+  },
+  "comparison": "Primary reference/results/taxonomy-{nodes,names}.dmp and NR protein/current-nr/{nodes,names}.dmp have identical sizes and SHA256 digests.",
+  "recorded_utc": "2026-10-22T22:56:47.430486+00:00"
+}

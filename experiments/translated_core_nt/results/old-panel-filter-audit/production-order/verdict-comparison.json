@@ -1,0 +1,12 @@
+{
+  "original_classification_sha256": "7457971a924219f0f07ff8164270516723a9e305512677660086494d7a06b97d",
+  "production_order_classification_sha256": "b958cab00f49db08744620b7183ce805d9bacf62daa6ba793c48b6fec5d9d6fa",
+  "original_summary_source_sha256": "4f2828af619b720a03fb1955cba738e0b2b568aab954ad3f405b27e8e6e27d90",
+  "changed_pair_verdicts": [],
+  "status_changes": 0,
+  "taxid_changes": 0,
+  "limits": [
+    "Only filtering order changes; same raw alignments, query bytes and taxonomy.",
+    "Historical reports and evidence are preserved; this is a labeled supplementary reanalysis."
+  ]
+}

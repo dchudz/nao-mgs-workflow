@@ -1,0 +1,33 @@
+{
+  "summary": {
+    "megablast": {
+      "queries": 464,
+      "pairs": 232,
+      "changed_score_cutoffs": 1,
+      "changed_mate_taxon_sets": 0,
+      "changed_pair_taxon_sets": 0,
+      "changed_pair_IDs": [],
+      "input_sha256": "30373120215b40680dec4fafb27be9f9c7a642fba25acd800b19a530f2ec6967"
+    },
+    "blastn": {
+      "queries": 464,
+      "pairs": 232,
+      "changed_score_cutoffs": 4,
+      "changed_mate_taxon_sets": 2,
+      "changed_pair_taxon_sets": 2,
+      "changed_pair_IDs": [
+        "SRR38294775_p133",
+        "SRR38294834_p5026"
+      ],
+      "input_sha256": "a2500aea44a425a73598281c7e00ddda168b828e9539804aa2504655574d1abe"
+    }
+  },
+  "mechanism_fixture_verified": true,
+  "source_sha256": "ae0911ead8863031d637ae4ffb4445ca9fa286f0c8836c2b3d8f788f48602b16",
+  "production_filter_order_source_sha256": "c3e968d4267ca9d0218d38a0fcd6f2d58ca88f8299fc1f2235d376e115b25e3b",
+  "limits": [
+    "Existing raw E10 outputs only; no search repeated and no historical result overwritten.",
+    "Taxon-set parity is stronger than LCA parity; changed sets would require taxonomy-level analysis before reporting changed verdicts.",
+    "The earlier summary ranked all HSPs; production first retains one highest-score/longest HSP per query and subject."
+  ]
+}
