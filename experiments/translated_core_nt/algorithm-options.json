@@ -1,0 +1,114 @@
+{
+  "goal": "Detect homologous coding sequences despite synonymous nucleotide differences while preserving comprehensive-reference competition and per-read evidence",
+  "constraints": [
+    "Same core_nt snapshot and original nucleotide accession/taxonomy provenance",
+    "No NR substitution",
+    "No query-selected reference subset",
+    "Original per-read results, no verdict extrapolation",
+    "Fresh500USDcap including build/storage costs",
+    "Freeze evaluation inputs before outcome-based tuning"
+  ],
+  "candidates": [
+    {
+      "name": "tblastx on existing core_nt",
+      "status": "Full-reference pilot running",
+      "mechanism": "Translate query and reference in six frames during search",
+      "advantages": [
+        "No new reference-content choice or index build",
+        "Direct implementation of requested comparison"
+      ],
+      "costs": [
+        "Repeated translation and scanning",
+        "Query-dependent search work"
+      ],
+      "limitations": [
+        "Ungapped alignment",
+        "Standard code1 does not model frameshifts or all genetic codes"
+      ]
+    },
+    {
+      "name": "Coding-aware spaced nucleotide seeds",
+      "status": "Prospectively added fourth arm, not yet full-reference executed",
+      "mechanism": "dc-megablast coding template18 wordweight11, then nucleotide extension",
+      "advantages": [
+        "Existing core_nt index",
+        "Tolerates some third-position changes without full translation"
+      ],
+      "limitations": [
+        "Nucleotide extension and scoring still penalize synonymous substitutions",
+        "Third-position pattern does not represent all synonymous codons",
+        "Cannot assume recall parity with translated comparison"
+      ],
+      "source": "https://blast.ncbi.nlm.nih.gov/doc/blast-topics/discontmegablast.html"
+    },
+    {
+      "name": "Pretranslated core_nt with protein seed search",
+      "status": "Design/capacity assessment, no full index authorized by this plan alone",
+      "mechanism": "Translate the same reference, retaining sequence/frame/coordinate/taxonomy mappings; use MMseqs2 or DIAMOND on all reference content",
+      "advantages": [
+        "Amortize translation over repeated batches",
+        "Established fast protein seed and alignment implementations"
+      ],
+      "costs": [
+        "One-time extraction/translation/indexing",
+        "Potential terabytes of translated sequence, index and coordinate mapping storage",
+        "Rebuild whenever nucleotide snapshot changes"
+      ],
+      "limitations": [
+        "Short ORF defaults discard reference evidence unless explicitly controlled",
+        "Stopping translation at stop codons differs from tblastx behavior",
+        "Deduplicating peptides must preserve every accession/taxon and database-size statistics",
+        "Protein search heuristics and gapped scoring differ from tblastx"
+      ],
+      "sources": [
+        "https://github.com/soedinglab/MMseqs2/wiki#translated-sequence-searching",
+        "https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options"
+      ]
+    },
+    {
+      "name": "Staged search on uncertain queries",
+      "status": "Evaluate retrospective routing only after full-search evidence",
+      "mechanism": "Run inexpensive search first, spend translated-search work on selected queries",
+      "advantages": [
+        "Could reduce translated query volume"
+      ],
+      "limitations": [
+        "Strong nucleotide viral hit does not prove absence of a stronger translated nonviral competitor",
+        "If only no-hit reads advance, measure all changed assignments missed on confident reads",
+        "Savings may be small if repeated reference scan dominates",
+        "Never extrapolate a validation verdict between reads"
+      ]
+    },
+    {
+      "name": "Frameshift-aware or codon-aware scoring",
+      "status": "Reserve for disagreements showing the need",
+      "mechanism": "Use a codon/frameshift model after candidate generation, with sufficient comprehensive search coverage",
+      "advantages": [
+        "Can distinguish true substitutions from translation errors and sequencing indels"
+      ],
+      "limitations": [
+        "More complex model and additional compute",
+        "Restricted rescoring cannot discover a target absent from initial candidate generation"
+      ],
+      "sources": [
+        "https://gitlab.com/mcfrith/last/-/raw/main/doc/lastal.rst",
+        "https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options"
+      ]
+    }
+  ],
+  "capacity_math": {
+    "core_nt_bases": 1088816606629,
+    "six_frame_residue_upper_bound_before_stops": 2177633213258,
+    "uncompressed_single_byte_residue_TiB": 1.9805458698629081,
+    "formula": "six frames / three bases per amino acid = about two amino-acid letters per nucleotide; excludes headers, maps, compression, ORF filtering, index and temporary files",
+    "decision": "Do not start a multi-terabyte translation/index build before measuring direct search and estimating amortization"
+  },
+  "comparison_axes": [
+    "Per-read new/lost taxonomic evidence and near-best competitors",
+    "CPU time, wall time, peak memory and allocated cost",
+    "Batch-size curve at3,24,96pairs where feasible",
+    "Index build and storage, amortized across realistic repeated use",
+    "Synonymous substitutions, nonsynonymous substitutions, frameshift and repeat failure mechanisms"
+  ],
+  "sources_are_design_inputs_not_benchmark_results": true
+}
