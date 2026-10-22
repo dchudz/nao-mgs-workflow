@@ -7,10 +7,12 @@ def write(path, rows, fields):
     with path.open('w') as f:
         w=csv.DictWriter(f,fieldnames=fields,delimiter='\t');w.writeheader();w.writerows(rows)
 
-def main(d):
+def main(d, methods=None, output_name="analysis"):
+    methods = methods or ["megablast", "blastn", "tblastx"]
+    assert len(methods) == len(set(methods)) and len(methods) >= 2
     manifest=json.loads((d/'input-manifest.json').read_text());assert m.sha(d/'queries.fna')==manifest['query_sha256']
     queries=m.fasta(d/'queries.fna');selection={x['seq_id']:x for x in csv.DictReader((d/'selection.tsv').open(),delimiter='\t')}
-    methods=['megablast','blastn','tblastx'];allrows=[];resources={};details=[]
+    allrows=[];resources={};details=[]
     for method in methods:assert (d/method/'complete.json').exists(),'Incomplete method cannot be treated as no hit: '+method
     parents={}
     for line in (m.ROOT/'reference/results/taxonomy-nodes.dmp').open():
@@ -29,7 +31,7 @@ def main(d):
         if any(not lineage(t) for t in taxa):return 'unknown_taxonomy'
         viral=any(10239 in lineage(t) for t in taxa);nonviral=any(10239 not in lineage(t) for t in taxa)
         return 'mixed_viral_nonviral' if viral and nonviral else 'viral_only' if viral else 'nonviral_only'
-    out=d/'analysis';out.mkdir(exist_ok=False)
+    out=d/output_name;out.mkdir(exist_ok=False)
     python_image=subprocess.check_output(['docker','image','inspect','public.ecr.aws/q0n1c7g8/nao-mgs-workflow/python:e7c8524f75c0f132','--format','{{index .RepoDigests 0}}'],text=True).strip()
     lca_script=m.ROOT/'modules/local/lcaTsv/resources/usr/bin/lca_tsv.py'
     for method in methods:
@@ -88,4 +90,4 @@ def main(d):
     summary=dict(pairs=len(selection),mates=len(queries),resources=resources,disagreements=groups,status_counts={method+'/'+threshold:dict(collections.Counter(x['status'] for x in allrows if x['method']==method and x['threshold']==threshold)) for method in methods for threshold in ['default_E10','strict_E1e-5']},production_lca_source_sha256=m.sha(lca_script),python_image=python_image,notes=['Counts describe a selected diagnostic panel, not biological truth or prevalence','Natural and combined LCA computed by unchanged production lca_tsv.py','No-hit mates retained in denominator; all three searches must finish','Top10 dense score ranks and90percent near-best applied separately within each mate and method','Strict E1e-5 is a postfilter of returned E10 hits, not a separate search','Unknown taxonomy included in status; unknown entries omitted from production LCA input','Alignment length/identity units are amino acids for tblastx and nucleotides for the other methods','Separate-mate comparison is not a complete production-pipeline replay'])
     m.save(out/'summary.json',summary);print(json.dumps(summary))
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('directory',type=Path);main(p.parse_args().directory)
+    p=argparse.ArgumentParser();p.add_argument('directory',type=Path);p.add_argument('--methods',nargs='+');p.add_argument('--output-name',default='analysis');args=p.parse_args();main(args.directory,args.methods,args.output_name)

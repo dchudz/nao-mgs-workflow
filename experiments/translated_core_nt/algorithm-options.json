@@ -43,7 +43,7 @@
     },
     {
       "name": "Pretranslated core_nt with protein seed search",
-      "status": "Design/capacity assessment, no full index authorized by this plan alone",
+      "status": "Deferred pending capacity and amortization measurements",
       "mechanism": "Translate the same reference, retaining sequence/frame/coordinate/taxonomy mappings; use MMseqs2 or DIAMOND on all reference content",
       "advantages": [
         "Amortize translation over repeated batches",
