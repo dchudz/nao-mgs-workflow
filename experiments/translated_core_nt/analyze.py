@@ -41,12 +41,16 @@ def main(d, methods=None, output_name="analysis"):
             x=dict(zip(m.FIELDS,values));assert x['qseqid'] in queries
             for field in ['bitscore','evalue','pident','qcovs','qcovhsp']:x[field]=float(x[field])
             for field in ['length','qlen','slen','qstart','qend','sstart','send','qframe','sframe']:x[field]=int(x[field])
+            x['coordinate_query_coverage_pct']=100*(abs(x['qend']-x['qstart'])+1)/x['qlen']
+            assert 0 < x['coordinate_query_coverage_pct'] <= 100
             raw.append(x)
         resource=json.loads((d/method/'resources.json').read_text());assert resource['status']=='complete'
         for line in (d/method/'time.txt').read_text().splitlines():
             for text,key in [('User time (seconds):','user_seconds'),('System time (seconds):','system_seconds'),('Maximum resident set size (kbytes):','max_RSS_KiB')]:
                 if text in line:resource[key]=float(line.split(text,1)[1])
-        resource['raw_alignment_rows']=len(raw);resources[method]=resource
+        resource['raw_alignment_rows']=len(raw)
+        resource['reported_HSP_coverage_disagreements']=sum(abs(x['coordinate_query_coverage_pct']-x['qcovhsp'])>1 for x in raw)
+        resources[method]=resource
         for threshold in [10,1e-5]:
             label='default_E10' if threshold==10 else 'strict_E1e-5';best={}
             for x in raw:
@@ -76,7 +80,7 @@ def main(d, methods=None, output_name="analysis"):
                 original=selection[q.rsplit('/',1)[0]];call=lcas.get(q,{})
                 allrows.append(dict(query=q,pair=q.rsplit('/',1)[0],sample=original['sample'],stratum=original['stratum'],method=method,threshold=label,status=status(taxa),pipeline_natural_lca=call.get('staxid_lca','NA'),pipeline_combined_lca=call.get('staxid_lca_combined','NA'),near_best_taxids=';'.join(map(str,sorted(taxa))),retained_subjects=len(xs),best_evalue=min((x['evalue'] for x in xs),default='NA'),best_bitscore=max((x['bitscore'] for x in xs),default='NA')))
     assert len(allrows)==len(queries)*len(methods)*2
-    write(out/'per-mate.tsv',allrows,list(allrows[0]));write(out/'near-best-alignments.tsv',details,['method','threshold']+m.FIELDS)
+    write(out/'per-mate.tsv',allrows,list(allrows[0]));write(out/'near-best-alignments.tsv',details,['method','threshold']+m.FIELDS+['coordinate_query_coverage_pct'])
     lookup={(x['query'],x['method'],x['threshold']):x for x in allrows};disagreements=[];groups={}
     for threshold in ['default_E10','strict_E1e-5']:
         for left,right in itertools.combinations(methods,2):
@@ -87,7 +91,7 @@ def main(d, methods=None, output_name="analysis"):
                     changed.append(q);disagreements.append(dict(query=q,pair=a['pair'],stratum=a['stratum'],threshold=threshold,left=left,right=right,left_status=a['status'],right_status=b['status'],left_lca=a['pipeline_natural_lca'],right_lca=b['pipeline_natural_lca']))
             groups[left+' -> '+right+'/'+threshold]=dict(disagreeing_mates=len(changed),disagreeing_pairs=len({q.rsplit('/',1)[0] for q in changed}))
     write(out/'disagreements.tsv',disagreements,['query','pair','stratum','threshold','left','right','left_status','right_status','left_lca','right_lca'])
-    summary=dict(pairs=len(selection),mates=len(queries),resources=resources,disagreements=groups,status_counts={method+'/'+threshold:dict(collections.Counter(x['status'] for x in allrows if x['method']==method and x['threshold']==threshold)) for method in methods for threshold in ['default_E10','strict_E1e-5']},production_lca_source_sha256=m.sha(lca_script),python_image=python_image,notes=['Counts describe a selected diagnostic panel, not biological truth or prevalence','Natural and combined LCA computed by unchanged production lca_tsv.py','No-hit mates retained in denominator; all three searches must finish','Top10 dense score ranks and90percent near-best applied separately within each mate and method','Strict E1e-5 is a postfilter of returned E10 hits, not a separate search','Unknown taxonomy included in status; unknown entries omitted from production LCA input','Alignment length/identity units are amino acids for tblastx and nucleotides for the other methods','Separate-mate comparison is not a complete production-pipeline replay'])
+    summary=dict(pairs=len(selection),mates=len(queries),resources=resources,disagreements=groups,status_counts={method+'/'+threshold:dict(collections.Counter(x['status'] for x in allrows if x['method']==method and x['threshold']==threshold)) for method in methods for threshold in ['default_E10','strict_E1e-5']},production_lca_source_sha256=m.sha(lca_script),python_image=python_image,notes=['Counts describe a selected diagnostic panel, not biological truth or prevalence','Natural and combined LCA computed by unchanged production lca_tsv.py','No-hit mates retained in denominator; all three searches must finish','Top10 dense score ranks and90percent near-best applied separately within each mate and method','Strict E1e-5 is a postfilter of returned E10 hits, not a separate search','Unknown taxonomy included in status; unknown entries omitted from production LCA input','Alignment length/identity units are amino acids for tblastx and nucleotides for the other methods','Separate-mate comparison is not a complete production-pipeline replay','Reported tblastx qcovhsp can disagree with nucleotide coordinate coverage; retain raw and derived values. Synthetic threshold-boundary checks support internal filtering, not display, on tested cases'])
     m.save(out/'summary.json',summary);print(json.dumps(summary))
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('directory',type=Path);p.add_argument('--methods',nargs='+');p.add_argument('--output-name',default='analysis');args=p.parse_args();main(args.directory,args.methods,args.output_name)

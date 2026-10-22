@@ -94,6 +94,29 @@
         "https://gitlab.com/mcfrith/last/-/raw/main/doc/lastal.rst",
         "https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options"
       ]
+    },
+    {
+      "name": "Translate only queries, then tblastn-fast on unchanged core_nt",
+      "status": "Synthetic characterization successful; full-reference implementation deferred pending baseline runtime and semantic review",
+      "mechanism": "All six complete query frames retained; optimized protein-versus-nucleotide search translates the original reference during search",
+      "potential_benefit": "Avoids multi-terabyte derived reference index while allowing the supported fast search task",
+      "measured_fixture": {
+        "synonymous80aa_match": true,
+        "tblastx_bitscore": 210,
+        "query_translated_tblastn_bitscore": 211,
+        "tblastx_Evalue": 5.58e-60,
+        "query_translated_tblastn_Evalue": 1.54e-60,
+        "nucleotide_coordinates_equal": true,
+        "invalid_frame_warnings_preserved": true
+      },
+      "required_controls": [
+        "Do not claim score or Evalue parity; fixture differs despite identical aligned sequence",
+        "Normalize per-frame query coordinates and query coverage back to original nucleotide read",
+        "Combine frames before per-read near-best taxonomy",
+        "Control target and HSP caps after pooling frames;250targets per frame is not250targets per original read",
+        "Track every frame with invalid-composition warnings; keep every original read in denominator",
+        "Report standard versus fast search as separate heuristics"
+      ]
     }
   ],
   "capacity_math": {
