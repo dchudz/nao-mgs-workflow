@@ -1,0 +1,19 @@
+{
+  "sequence": 23,
+  "title": "Verify comparison coverage and private backup contents",
+  "reconstructed_utc": "2026-10-22T13:19:07.254414+00:00",
+  "snapshot_archive": "private-source-20261022T030717Z.tar.gz",
+  "snapshot_sha256": "c947aa80e9c897ac8a2e6ab60a31b90ea03163ce4b6c59b5758907e0c7cd9128",
+  "snapshot_recorded_utc": "2026-10-22T03:07:17.890739+00:00",
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "",
+  "changed_source_sha256": {
+    "experiments/amino_acids/analyze-native-protein-losses.py": "7557290a5ee17d132a6d084d11d4abc17b0f976d5b86f26a5edd030ffea0b319",
+    "experiments/amino_acids/build-report.py": "23d9803d07124db5dbd2cbe5b4b1eab9d5ccff7dd253adbfdb3d4e3409569a40",
+    "experiments/amino_acids/check-comparison-coverage.py": "009f7b7b7aa1a2e9f1e647c75204c38833de0e9c9412184c24d7bfe6920934eb",
+    "experiments/amino_acids/compare-validation-methods.py": "c0288aaf2a191239ac55b03b978cd3adf0e3c3a1f608d18f9e097d3197c61568",
+    "experiments/amino_acids/summarize-protein-nt-panel.py": "4f2828af619b720a03fb1955cba738e0b2b568aab954ad3f405b27e8e6e27d90",
+    "experiments/amino_acids/verify-private-prefix.py": "1a85efd9b0ec2986fba23c53c587ff7295513dd0f6eee0f4b83b842998863b90"
+  }
+}

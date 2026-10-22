@@ -30,6 +30,15 @@ for sample in order:
   if q not in rows:continue
   assert q not in seen;seen.add(q);z=rows[q];z['native_mate1_nt']=len(key[1]);z['native_mate2_nt']=len(key[3]);z['native_exact_pair_sha256']=hashlib.sha256(key[1]+b'\0'+key[3]).hexdigest();z['nr_control_query_pair']=controls.get((sample,z['native_exact_pair_sha256']),'')
 assert seen==lost
+prepared_losses={x['protein_query_pair'] for x in rows.values() if x['protein_query_pair']}
+meta={x['query_pair']:x for x in table(d/'all.tsv.gz') if x['query_pair'] in prepared_losses}
+assert meta.keys()==prepared_losses
+for z in rows.values():
+ m=meta.get(z['protein_query_pair'])
+ z['prepared_mate1_nt']=len(m['query_seq']) if m else ''
+ z['prepared_mate2_nt']=len(m['query_seq_rev']) if m else ''
+ z['prepared_exact_pair_sha256']=hashlib.sha256(m['query_seq'].encode()+b'\0'+m['query_seq_rev'].encode()).hexdigest() if m else ''
+ z['prepared_sequences_identical_to_native']=z['prepared_exact_pair_sha256']==z['native_exact_pair_sha256'] if m else ''
 control_evidence={x['query_pair']:x for x in table(a.nr_controls)} if a.nr_controls else {}
 for z in rows.values():
  q=z['nr_control_query_pair'];z['nr_control_status']=control_evidence[q]['nr_status'] if q and a.nr_controls else 'pending' if q else 'not_selected';z['nr_control_taxid_lca']=control_evidence[q]['nr_taxid_lca'] if q and a.nr_controls else ''
@@ -46,6 +55,10 @@ with (out/'lost-original-pairs.tsv').open('w') as f:
 summary=dict(samples=len(order),native_original_pairs=len(native),native_original_pairs_present_in_protein_candidates=len(candidate_ids),lost_original_pairs=len(rows),distinct_native_exact_pairs_among_lost_original_members=len({(x['sample'],x['native_exact_pair_sha256']) for x in rows.values()}),loss_boundaries={},nr_controls_complete=bool(a.nr_controls),interpretation='Every loss is an original NT24 read pair absent from all viral-protein candidates. Preparation uses AA12-screen FASTP output followed by unchanged human/other contaminant filters. Absence from prepared queries does not by itself identify which upstream operation removed it. Prepared queries without an eligible viral-protein call passed that boundary but lack an alignment satisfying the frozen protein criteria. Native AA12 assignment preservation is an additional observed comparison, not a presumed causal explanation. Linked NR evidence belongs to the explicitly identified exact-sequence control query. Control-status counts use unique control queries, not extrapolated verdicts for original reads. Other losses remain unvalidated.')
 for boundary in sorted({x['loss_boundary'] for x in rows.values()}):
  selected=[x for x in rows.values() if x['loss_boundary']==boundary];summary['loss_boundaries'][boundary]=dict(original_pairs=len(selected),native_AA12_assignment_preserved=sum(x['native_AA12_assignment_preserved'] for x in selected),nr_control_exact_pairs=len({x['nr_control_query_pair'] for x in selected if x['nr_control_query_pair']}),nr_control_status_exact_pairs=dict(collections.Counter({x['nr_control_query_pair']:x['nr_control_status'] for x in selected if x['nr_control_query_pair']}.values())))
+for boundary,z in summary['loss_boundaries'].items():
+ selected=[x for x in rows.values() if x['loss_boundary']==boundary]
+ z['prepared_sequences_identical_to_native']=sum(x['prepared_sequences_identical_to_native'] is True for x in selected)
+ z['prepared_sequences_differ_from_native']=sum(x['prepared_sequences_identical_to_native'] is False for x in selected)
 summary['raw_screen_membership_measured']=bool(a.raw_screen)
 if a.raw_screen:
  for boundary,z in summary['loss_boundaries'].items():

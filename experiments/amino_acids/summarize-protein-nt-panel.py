@@ -18,11 +18,15 @@ def lca(taxa):
  paths=[ancestry(t) for t in taxa]
  if not paths or any(x is None for x in paths):return 0
  common=set(paths[0]).intersection(*(set(x) for x in paths[1:]));return next((t for t in paths[0] if t in common),0)
-selection={x['query_pair']:x for x in csv.DictReader((d/'selection.tsv').open(),delimiter='\t')};rows=[];details=[]
+selection_rows=list(csv.DictReader((d/'selection.tsv').open(),delimiter='\t'))
+selection={x['query_pair']:x for x in selection_rows};assert len(selection)==len(selection_rows),'Duplicate panel query'
+query_ids=[line[1:].split()[0] for line in (d/'queries.fna').read_text().splitlines() if line.startswith('>')]
+assert len(query_ids)==len(set(query_ids)) and set(query_ids)=={q+'/'+str(m) for q in selection for m in [1,2]},'Panel FASTA and selection differ'
+rows=[];details=[];set_query_ids=set(query_ids)
 for task in ['megablast','blastn']:
  hits=collections.defaultdict(list)
  for x in csv.reader((d/f'{task}.tsv').open(),delimiter='\t'):
-  q,subject,taxa,score,evalue,length,identity,coverage=x;assert q.rsplit('/',1)[0] in selection
+  q,subject,taxa,score,evalue,length,identity,coverage=x;assert q in set_query_ids
   hits[q].append(dict(subject=subject,taxids=taxa,bitscore=float(score),evalue=evalue,alignment_nt=int(length),identity_pct=float(identity),coverage_pct=float(coverage)))
  calls={}
  for q,values in hits.items():
@@ -38,7 +42,9 @@ for task in ['megablast','blastn']:
   relation='unknown' if pa is None or pb is None else 'exact' if ref==taxid else 'ancestor_related' if ref in pb or taxid in pa else 'divergent'
   rows.append(dict(query_pair=q,sample=sel['sample'],stratum=sel['stratum'],task=task,status=status,taxid_lca=taxid,relation_to_viral_reference=relation,aligned_mates=sum(q+'/'+str(m) in calls for m in [1,2]),viral_taxa=len(viral),artificial_taxa=len(artificial),cellular_taxa=len(cellular),unknown_taxa=len(unknown),near_best_taxids=';'.join(map(str,sorted(taxa)))))
 if a.nr:
- nr={x['query_pair']:x for x in csv.DictReader(open(a.nr),delimiter='\t') if x['query_pair'] in selection};assert nr.keys()==selection.keys(),'Missing measured NR evidence'
+ nr_rows=[x for x in csv.DictReader(open(a.nr),delimiter='\t') if x['query_pair'] in selection]
+ nr={x['query_pair']:x for x in nr_rows};assert len(nr)==len(nr_rows),'Duplicate NR panel query'
+ assert nr.keys()==selection.keys(),'Missing measured NR evidence'
  for q,sel in selection.items():
   x=nr[q];rows.append(dict(query_pair=q,sample=sel['sample'],stratum=sel['stratum'],task='protein_NR',status=x['nr_status'],taxid_lca=int(x['nr_taxid_lca']),relation_to_viral_reference=x['taxonomic_relation'],aligned_mates=int(x['aligned_mates']),viral_taxa=x['viral_taxa'],artificial_taxa='',cellular_taxa='',unknown_taxa=x['unknown_taxa'],near_best_taxids=''))
 for name,data in [('comparison.tsv',rows),('eligible-nucleotide-alignments.tsv',details)]:
