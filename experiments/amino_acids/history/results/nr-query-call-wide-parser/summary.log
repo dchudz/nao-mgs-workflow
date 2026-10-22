@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/ec2-user/experiment/protein-nr-summary.compact.py", line 79, in <module>
+    for q,score,taxids in csv.reader(f,delimiter='\t'):
+_csv.Error: field larger than field limit (131072)

@@ -39,7 +39,8 @@ def near_best_calls(directory, original):
             return original.near_best_query_taxa(csv.reader(f, delimiter='\t'))
     calls = {}
     with verified_file(m, 'query_calls').open() as f:
-        for q, score, taxa in csv.reader(f, delimiter='\t'):
+        for line in f:
+            q, score, taxa = line.rstrip('\n').split('\t')
             assert q not in calls
             values = {int(t) for t in taxa.split(';')}
             assert values

@@ -76,7 +76,8 @@ if __name__=='__main__':
  else:
   calls={}
   with open(a.query_calls) as f:
-   for q,score,taxids in csv.reader(f,delimiter='\t'):
+   for line in f:
+    q,score,taxids=line.rstrip('\n').split('\t')
     assert q not in calls
     taxa={int(x) for x in taxids.split(';')};assert taxa
     calls[q]=(taxa,float(score))
