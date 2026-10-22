@@ -1,0 +1,122 @@
+{
+  "protein_runtime_scope": "pooled",
+  "pairs": 746,
+  "available_query_sequences": 1436,
+  "groups": {
+    "all": {
+      "pairs": 746,
+      "status_disagreements": 359,
+      "taxid_disagreements": 534,
+      "methods": {
+        "megablast": {
+          "viral_only": 641,
+          "nonviral_only": 23,
+          "mixed_viral_nonviral": 53,
+          "no_alignment": 28,
+          "unknown_taxonomy": 1
+        },
+        "blastn": {
+          "viral_only": 656,
+          "mixed_viral_nonviral": 74,
+          "nonviral_only": 15,
+          "unknown_taxonomy": 1
+        },
+        "protein": {
+          "viral_only": 363,
+          "mixed_viral_nonviral": 355,
+          "no_alignment": 22,
+          "unknown_taxonomy": 1,
+          "nonviral_only": 5
+        }
+      },
+      "blastn_viral_only_where_megablast_unaligned": 28,
+      "protein_viral_only_where_megablast_unaligned": 26
+    },
+    "AA12_added": {
+      "pairs": 337,
+      "status_disagreements": 141,
+      "taxid_disagreements": 258,
+      "methods": {
+        "megablast": {
+          "nonviral_only": 19,
+          "viral_only": 288,
+          "no_alignment": 26,
+          "unknown_taxonomy": 1,
+          "mixed_viral_nonviral": 3
+        },
+        "blastn": {
+          "mixed_viral_nonviral": 15,
+          "nonviral_only": 11,
+          "viral_only": 310,
+          "unknown_taxonomy": 1
+        },
+        "protein": {
+          "mixed_viral_nonviral": 112,
+          "viral_only": 215,
+          "unknown_taxonomy": 1,
+          "no_alignment": 6,
+          "nonviral_only": 3
+        }
+      },
+      "blastn_viral_only_where_megablast_unaligned": 26,
+      "protein_viral_only_where_megablast_unaligned": 25
+    },
+    "NT20_added": {
+      "pairs": 338,
+      "status_disagreements": 140,
+      "taxid_disagreements": 261,
+      "methods": {
+        "megablast": {
+          "nonviral_only": 21,
+          "viral_only": 287,
+          "no_alignment": 27,
+          "mixed_viral_nonviral": 3
+        },
+        "blastn": {
+          "mixed_viral_nonviral": 15,
+          "nonviral_only": 13,
+          "viral_only": 310
+        },
+        "protein": {
+          "mixed_viral_nonviral": 109,
+          "viral_only": 215,
+          "unknown_taxonomy": 1,
+          "no_alignment": 8,
+          "nonviral_only": 5
+        }
+      },
+      "blastn_viral_only_where_megablast_unaligned": 27,
+      "protein_viral_only_where_megablast_unaligned": 25
+    },
+    "baseline_control": {
+      "pairs": 400,
+      "status_disagreements": 214,
+      "taxid_disagreements": 267,
+      "methods": {
+        "megablast": {
+          "viral_only": 348,
+          "mixed_viral_nonviral": 50,
+          "nonviral_only": 2
+        },
+        "blastn": {
+          "viral_only": 339,
+          "mixed_viral_nonviral": 59,
+          "nonviral_only": 2
+        },
+        "protein": {
+          "viral_only": 144,
+          "mixed_viral_nonviral": 242,
+          "no_alignment": 14
+        }
+      },
+      "blastn_viral_only_where_megablast_unaligned": 0,
+      "protein_viral_only_where_megablast_unaligned": 0
+    }
+  },
+  "limitations": [
+    "Identical available mate sequences, searched separately; original production validation joins or merges mates.",
+    "Nucleotide methods search core_nt; protein method searches NR. Reference coverage and representation differ, so this is not an isolated aligner comparison.",
+    "Protein runtime belongs to the pooled comprehensive-reference job; per-diagnostic runtime is not measured.",
+    "Near-best taxonomy filters differ between production nucleotide ranking and the frozen protein protocol. Disagreement is evidence to inspect, not a known-truth accuracy verdict."
+  ]
+}
