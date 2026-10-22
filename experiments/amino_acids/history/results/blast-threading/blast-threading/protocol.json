@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-22T02:06:41.216655+00:00",
+  "query_count": 2820,
+  "query_sha256": "9ec413393210bfdfe3fa5ed229b33def4922023e6eba0cdb05b78ed54c45843a",
+  "order": [
+    1,
+    0,
+    1
+  ],
+  "modes": {
+    "0": "Pinned BLAST2.17 auto split by database or queries",
+    "1": "Explicit split by queries"
+  },
+  "same_inputs": "Unchanged cap20 query bytes, full core_nt, pinned image, scoring/search/output parameters and8threads.",
+  "resources": "Same primary worker; CPUshares8192,400GiB container memory ceiling on all new trials; two-hour cap per trial. Wait until the matched protein-NT diagnostic completes. No extra instance.",
+  "comparison": "Compare exact alignment multisets with completed cap20 run5 and between query-threaded repeats. No claim of faster identical behavior if alignment rows differ.",
+  "limits": "Shared worker and warm reference cache. Recorded wall time is not isolated latency or incremental billing."
+}

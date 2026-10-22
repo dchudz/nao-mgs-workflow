@@ -1,0 +1,44 @@
+{
+  "experiment": "blast-threading",
+  "title": "BLAST automatic versus query-split threading",
+  "status_at_capture": "complete",
+  "captured_utc": "2026-10-22T13:22:11.310499+00:00",
+  "historical_source_commits": [
+    "6910e1be106fac6e2087f79102cbe3efa07b9a10",
+    "c724bc10015f06500409c0600bd173e973a0bd0e"
+  ],
+  "analysis_source": [
+    {
+      "path": "experiments/amino_acids/run-blast-threading.py",
+      "sha256": "eef5d7b0c8b45e8fa7905fabc5426292906ca07dc5dd10444998991a750d4642",
+      "last_change_commit": "6910e1be106fac6e2087f79102cbe3efa07b9a10"
+    },
+    {
+      "path": "experiments/amino_acids/summarize-blast-threading.py",
+      "sha256": "a7b3d9d28b6043db530641b48853546dd662030a6000a0ff1afe7e1de761d607",
+      "last_change_commit": "c724bc10015f06500409c0600bd173e973a0bd0e"
+    }
+  ],
+  "results": [
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/blast-threading/protocol.json",
+      "snapshot_path": "experiments/amino_acids/history/results/blast-threading/blast-threading/protocol.json",
+      "sha256": "2e0d9420be9d9ad54b6aa62248c684cda61e6a87b85916e584d1d082fb47cbe2",
+      "bytes": 947
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/blast-threading/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/blast-threading/blast-threading/summary.json",
+      "sha256": "89e448d8aa62e81155f663ae96f13dd56c510b4f7cdde32d93c785805eee5345",
+      "bytes": 6714
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/blast-threading/results.json",
+      "snapshot_path": "experiments/amino_acids/history/results/blast-threading/blast-threading/results.json",
+      "sha256": "0d73cb662f06da701d04c039b3c5e61405a0b79cfe751b873896ca61fabb77b8",
+      "bytes": 4167
+    }
+  ],
+  "provenance_limit": "Source commits were reconstructed after these runs from saved archives. They are source references, not Git revisions recorded at launch. Executed binary, query, reference, command and timing records remain authoritative. This snapshot does not rerun or change results.",
+  "private_evidence_base": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/"
+}
