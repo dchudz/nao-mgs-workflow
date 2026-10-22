@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-22T03:14:42.724262+00:00",
+  "scope": "Secondary standalone full-NR search of the already frozen746-pair1436-available-mate diagnostic, using exact SEED_ query bytes extracted from the primary817744-query pool.",
+  "selection": "All existing seed diagnostic queries; no new outcome-based selection. Primary NR search is still running and unchanged.",
+  "purpose": [
+    "Measure standalone full-reference protein runtime, CPU and per-search indexing overhead on the same available mate sequences as the two nucleotide searches.",
+    "Compare raw alignment multisets and per-read taxonomic statuses with the pooled NR result to measure query-context effects rather than assume equivalence."
+  ],
+  "search_parameters": "Same DIAMOND executable, full NR snapshot, sensitive mode,24threads,block-size2,index-chunks4,min-orf1,genetic-code1,Evalue1e-5,query-cover30,top10,seven output columns.",
+  "start_condition": "Primary NR search, private backup and required primary NR-host analyses are complete; explicit nr-primary-analysis-complete.json marker.",
+  "resources": "Reuse existing m8azn.6xlarge and reference volume. No new worker or volume. At most12hours, ending at least90minutes before existing Oct23 15UTC budget shutdown.",
+  "budget": "Existing conservative464.50USD account bound remains unchanged because no provisioned rate or shutdown boundary changes; completed other workers terminate earlier.",
+  "limits": "Different nucleotide/protein references and scoring remain. Primary pooled results are retained separately; standalone results do not replace them. Earlier nucleotide runtime was measured on a shared worker, so speed ratios are not isolated hardware comparisons."
+}
