@@ -1,0 +1,36 @@
+{
+  "samples": 1000,
+  "arms": {
+    "nt": {
+      "total_candidate_pairs": 2630902,
+      "median_candidate_pairs": 1794.0,
+      "median_candidate_fraction": 0.0003588,
+      "median_within_sample_ratio_to_nt24": 1.0
+    },
+    "nt22": {
+      "total_candidate_pairs": 12676835,
+      "median_candidate_pairs": 10654.5,
+      "median_candidate_fraction": 0.0021309,
+      "median_within_sample_ratio_to_nt24": 5.771966228377886
+    },
+    "nt20": {
+      "total_candidate_pairs": 124202008,
+      "median_candidate_pairs": 119354.0,
+      "median_candidate_fraction": 0.023870799999999998,
+      "median_within_sample_ratio_to_nt24": 66.28619003111189
+    },
+    "aa12": {
+      "total_candidate_pairs": 99818491,
+      "median_candidate_pairs": 17961.5,
+      "median_candidate_fraction": 0.0035923,
+      "median_within_sample_ratio_to_nt24": 9.53770854115301
+    },
+    "union": {
+      "total_candidate_pairs": 100633092,
+      "median_candidate_pairs": 18913.5,
+      "median_candidate_fraction": 0.0037827,
+      "median_within_sample_ratio_to_nt24": 10.00706870534597
+    }
+  },
+  "scope": "Only completed raw screens; all arms see identical raw pairs per sample. Counts precede FASTP and downstream filtering."
+}

@@ -1,0 +1,107 @@
+{
+  "completed_samples": 1000,
+  "sampled_input_pairs": 5000000000,
+  "arms": {
+    "nt": {
+      "totals": {
+        "final_pairs": 1478260,
+        "added_pairs": 0,
+        "lost_pairs": 0,
+        "stored_sequence_signatures": 1261232,
+        "joint_exemplars": 1186916,
+        "taxid_changes": 0,
+        "added_beyond_nt20": 0,
+        "added_beyond_aa12_union": 0
+      },
+      "samples_with_gain": 0,
+      "samples_with_loss": 0,
+      "median_net_gain": 0.0,
+      "mean_net_gain": 0.0,
+      "mean_gain_bootstrap_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "nt22": {
+      "totals": {
+        "final_pairs": 1493077,
+        "added_pairs": 14817,
+        "lost_pairs": 0,
+        "stored_sequence_signatures": 1274673,
+        "joint_exemplars": 1199505,
+        "taxid_changes": 0,
+        "added_beyond_nt20": 0,
+        "added_beyond_aa12_union": 336
+      },
+      "samples_with_gain": 849,
+      "samples_with_loss": 0,
+      "median_net_gain": 6.0,
+      "mean_net_gain": 14.817,
+      "mean_gain_bootstrap_95": [
+        12.635,
+        17.11
+      ]
+    },
+    "nt20": {
+      "totals": {
+        "final_pairs": 1498327,
+        "added_pairs": 20067,
+        "lost_pairs": 0,
+        "stored_sequence_signatures": 1279355,
+        "joint_exemplars": 1203784,
+        "taxid_changes": 0,
+        "added_beyond_nt20": 0,
+        "added_beyond_aa12_union": 474
+      },
+      "samples_with_gain": 880,
+      "samples_with_loss": 0,
+      "median_net_gain": 7.0,
+      "mean_net_gain": 20.067,
+      "mean_gain_bootstrap_95": [
+        17.323,
+        23.294
+      ]
+    },
+    "aa12": {
+      "totals": {
+        "final_pairs": 1495224,
+        "added_pairs": 19637,
+        "lost_pairs": 2673,
+        "stored_sequence_signatures": 1276876,
+        "joint_exemplars": 1201695,
+        "taxid_changes": 0,
+        "added_beyond_nt20": 44,
+        "added_beyond_aa12_union": 0
+      },
+      "samples_with_gain": 878,
+      "samples_with_loss": 366,
+      "median_net_gain": 6.0,
+      "mean_net_gain": 16.964,
+      "mean_gain_bootstrap_95": [
+        14.466,
+        19.709
+      ]
+    },
+    "union": {
+      "totals": {
+        "final_pairs": 1497897,
+        "added_pairs": 19637,
+        "lost_pairs": 0,
+        "stored_sequence_signatures": 1278968,
+        "joint_exemplars": 1203448,
+        "taxid_changes": 0,
+        "added_beyond_nt20": 44,
+        "added_beyond_aa12_union": 0
+      },
+      "samples_with_gain": 878,
+      "samples_with_loss": 0,
+      "median_net_gain": 7.0,
+      "mean_net_gain": 19.637,
+      "mean_gain_bootstrap_95": [
+        16.772,
+        22.585
+      ]
+    }
+  },
+  "uncertainty": "Bootstrap intervals resample biological samples, not reads. Related sites/dates remain correlated; intervals are descriptive and may understate uncertainty."
+}

@@ -1,0 +1,74 @@
+{
+  "experiment": "first-step-1000",
+  "title": "Five-arm initial screening on 1000 samples",
+  "status_at_capture": "complete",
+  "captured_utc": "2026-10-22T13:22:10.995486+00:00",
+  "historical_source_commits": [
+    "bed8a986fd6c7e4259c6b2218340d7519df70c6c",
+    "4f3161d9b9735e4f14d6fa6d79f4a75438a38d67",
+    "d89ed0968f5f0a78b955bd663a726baf36ffe4b8",
+    "c724bc10015f06500409c0600bd173e973a0bd0e"
+  ],
+  "analysis_source": [
+    {
+      "path": "experiments/amino_acids/analyze-cohort.py",
+      "sha256": "84a78c01543142034c87d799781d55719bbeb260464d523c3813d185f82ae827",
+      "last_change_commit": "d89ed0968f5f0a78b955bd663a726baf36ffe4b8"
+    },
+    {
+      "path": "experiments/amino_acids/analyze-resources.py",
+      "sha256": "48ca4b69f57a13ff3855c40b40d64a4929c7eebcf2e94e630b7d9fb3e6e31f31",
+      "last_change_commit": "c724bc10015f06500409c0600bd173e973a0bd0e"
+    },
+    {
+      "path": "experiments/amino_acids/analyze-clustered.py",
+      "sha256": "999634ce68016311552d09074560127aa39d1e708e880d6a5e106e395fbd76ec",
+      "last_change_commit": "d89ed0968f5f0a78b955bd663a726baf36ffe4b8"
+    },
+    {
+      "path": "experiments/amino_acids/analyze-species.py",
+      "sha256": "b94c07885b83c4c2504880b2a069528881169ccbaf37574eda0767b324819c79",
+      "last_change_commit": "d89ed0968f5f0a78b955bd663a726baf36ffe4b8"
+    }
+  ],
+  "results": [
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-1000/heldout/summary.json",
+      "sha256": "0637852d788d83e2606ccd79e273f4f62de3a22e84c4d3e16d1c535c45717769",
+      "bytes": 2810
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/resource-summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-1000/heldout/resource-summary.json",
+      "sha256": "2762b2ca40eaac23d437498dbfd893d18b40dba9a9d13670999972ce70b12f44",
+      "bytes": 2367
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/clustered-summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-1000/heldout/clustered-summary.json",
+      "sha256": "4fd1610a3882c44e191d3a890a673cab31d2a6476dd28fa7d0889e71a7f4dd2d",
+      "bytes": 1237
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/species-summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-1000/heldout/species-summary.json",
+      "sha256": "c6ae1db905b686cd8ed06bdf9f8fadf996f86574d5818f9413ad106127bd8173",
+      "bytes": 4305
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/support-transitions.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-1000/heldout/support-transitions.json",
+      "sha256": "591eb2d20e81f28a604e44e32b90c76839582ed5658b43480464306fdf400759",
+      "bytes": 1452
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/screen-burden/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/first-step-1000/screen-burden/summary.json",
+      "sha256": "4d431134c0c9280a42e9565be13e5752875d8882fb62dae3e04873013e667968",
+      "bytes": 1222
+    }
+  ],
+  "provenance_limit": "Source commits were reconstructed after these runs from saved archives. They are source references, not Git revisions recorded at launch. Executed binary, query, reference, command and timing records remain authoritative. This snapshot does not rerun or change results.",
+  "private_evidence_base": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/"
+}
