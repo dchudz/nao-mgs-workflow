@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-10-21T23:30:34.058840+00:00",
+  "reason": "DefaultDocker CPUweight100 competed with Nextflow tasks whose observed CpuShares4096 mapped toweight303. Measured benchmark CPU share was about1core despite8threads. Interrupted before completed result; preserve elapsedwork and files, do not include as completed measurement.",
+  "new_cpu_shares": 8192,
+  "query_and_search_parameters_unchanged": true,
+  "existing_sensitive_blast": "Live CPUshares changed to8192; its wall time spans both resource allocation periods and shared-worker contention.",
+  "new_benchmark_deadline_utc": "2026-10-22T04:00:00+00:00",
+  "observed_new_cgroup_weight": "532",
+  "verification": "docker inspect: native task CpuShares4096, benchmark and sensitiveBLAST CpuShares8192. This follows the same1024shares per requested CPU convention; changing CPUweights does not change query bytes, thread counts, or search parameters."
+}

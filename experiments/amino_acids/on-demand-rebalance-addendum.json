@@ -1,0 +1,19 @@
+{
+  "recorded_utc": "2026-10-21T21:57:56.293586+00:00",
+  "reason": "Both Spot replicas were reclaimed during expensive reference staging. Keep fullNR on durable on-demand EBS, redistribute the32standard vCPU quota.",
+  "nr_resize": "r7i.4xlarge16vCPU -> m8azn.6xlarge24physicalAMDcores96GiB",
+  "screen_resize": "c7i.4xlarge16vCPU -> c7i.2xlarge8vCPU16GiB,4workerprocesses",
+  "screen_distribution": "Original first800 on aa-screen; original last200 on primary,4workerprocesses. All1000sample identities and frozen blocks unchanged.",
+  "nr_compute_hour_usd": 2.47752,
+  "screen_compute_hour_usd": 0.357,
+  "budget": "Existing NR72USD/24h and screen48USD/24h allowances cover the new rates and storage; reserve5USD for reclaimed secondSpotworker. Conservativeaccountbound418.2913929807USD.",
+  "invariants": [
+    "Same frozen binaries, exact indices and sample manifest/ranges.",
+    "Per-sample input ID/count/hash verification and all5arms remain on one worker.",
+    "FullNR query bytes fixed SHA2566aa28bedbaf612c3a7c5a895b24a3be4f18d2c8264a439846427d943b289c597,817744reads.",
+    "Same fullNRreference, sensitivity,blocksize2,indexchunks4; require exact54468-read single-volume raw-alignment parity before adopting changedhardware/threadcount.",
+    "Private commits uploaded last; regenerate only uncommitted interrupted scratch."
+  ],
+  "spot_terminated": "i-0f577952bbbd27d36 at2026-10-21T21:51:41Z; volumevol-0533d3e9b96594f40 deletionconfirmed",
+  "absolute_shutdown_utc": "2026-10-22T15:12:00Z"
+}
