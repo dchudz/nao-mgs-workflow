@@ -1,0 +1,80 @@
+{
+  "experiment": "protein-candidates-200",
+  "title": "Protein-space candidates before comprehensive validation",
+  "status_at_capture": "interim; full NR validation pending",
+  "captured_utc": "2026-10-22T13:22:11.985677+00:00",
+  "historical_source_commits": [
+    "a5d4d326b9fa2fec0935126fdbd99cdddd5d28b6",
+    "99f617603c24e6ce6e39057942c5d365cdee76ea",
+    "c391ee9198821a9ca677d1a3167416ebe5517efb",
+    "44e7abfded6e0454dfd5e51b91db1e8f710d67b0"
+  ],
+  "analysis_source": [
+    {
+      "path": "experiments/amino_acids/analyze-protein200.py",
+      "sha256": "f152d6fc01a9505a2d98f3de2d88b30bede20fc32c2ceffeafe85369edf28dad",
+      "last_change_commit": "99f617603c24e6ce6e39057942c5d365cdee76ea"
+    },
+    {
+      "path": "experiments/amino_acids/analyze-protein-overlap.py",
+      "sha256": "19334d82cf7452e9f91ce1e5f08d4c4c3b5a57b5c1248e0921f94fe1f0d8373d",
+      "last_change_commit": "44e7abfded6e0454dfd5e51b91db1e8f710d67b0"
+    },
+    {
+      "path": "experiments/amino_acids/analyze-native-protein-losses.py",
+      "sha256": "7557290a5ee17d132a6d084d11d4abc17b0f976d5b86f26a5edd030ffea0b319",
+      "last_change_commit": "969e4cdc71a9cbe0bb830472d2131cf77ecb43ef"
+    },
+    {
+      "path": "experiments/amino_acids/audit-native-protein-loss-alignments.py",
+      "sha256": "933e249f43f1bde943e2337eb06c6865ea7c0aba2b03251fda11990db4276a94",
+      "last_change_commit": "4897e4467aaa416cad445ab0ac099d2894b3a265"
+    }
+  ],
+  "results": [
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/protein200/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/protein-candidates-200/protein200/summary.json",
+      "sha256": "ec619a0ab87eebcb044c8b5dc350eae012ba8fe8fd2ecb84558da71c6b6018c7",
+      "bytes": 1112
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/protein200-nt20/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/protein-candidates-200/protein200-nt20/summary.json",
+      "sha256": "addeb9d9c0463f7c1f226db20d45a1d4973d52f2a8943ad10e4cfbbbf6053846",
+      "bytes": 1136
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/protein-full/native-comparison.tsv.json",
+      "snapshot_path": "experiments/amino_acids/history/results/protein-candidates-200/protein-full/native-comparison.tsv.json",
+      "sha256": "c3af5ff9e8297b8d412667667b8d3817490a51d583abb29247c8e14cac19cdf6",
+      "bytes": 696
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/protein-native-losses/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/protein-candidates-200/protein-native-losses/summary.json",
+      "sha256": "4755ecb1fb83b9c6d3cabf0f57a6aaa4c9dad344d27d67a4945e2f364081e183",
+      "bytes": 1950
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/protein-native-loss-alignments/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/protein-candidates-200/protein-native-loss-alignments/summary.json",
+      "sha256": "1527cf3c3d92cb36b681a063bbd28da9c9b39990194534828da2c979cf5f00ec",
+      "bytes": 815
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/protein-screen-boundaries/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/protein-candidates-200/protein-screen-boundaries/summary.json",
+      "sha256": "b407273c0a6a66eba0fa2df7f597843905d49d2d5286e3d6e8858a051a073c54",
+      "bytes": 806
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/protein-repeat-gate/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/protein-candidates-200/protein-repeat-gate/summary.json",
+      "sha256": "87cdd08537c192c55808c23d24cd717c4e8ae6f9169650b54b7856ac3800ce66",
+      "bytes": 1213
+    }
+  ],
+  "provenance_limit": "Source commits were reconstructed after these runs from saved archives. They are source references, not Git revisions recorded at launch. Executed binary, query, reference, command and timing records remain authoritative. This snapshot does not rerun or change results.",
+  "private_evidence_base": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/"
+}

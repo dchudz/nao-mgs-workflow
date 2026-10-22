@@ -1,0 +1,25 @@
+{
+  "samples": 200,
+  "candidate_exact_pairs": 378939,
+  "original_candidate_members": 447209,
+  "retained_original_members": 447015,
+  "gate_status": {
+    "all_retained": 378762,
+    "none_retained": 177
+  },
+  "candidate_members_sha256": "ba75831bed08aa0e9fcd88a5e82f59262d7ad9d039f0fa7b9af046e458948404",
+  "retained_members_sha256": "5dabcbad07d76b14bdf76c43da35177a5af439f6064583e7a4dc8637cf8ad055",
+  "command": [
+    "/home/ec2-user/experiment/rust-tools/target-speed/release/screen_amino_acids",
+    "screen",
+    "--index",
+    "/home/ec2-user/experiment/protein-repeat-gate/repeat-index.bin",
+    "--reads",
+    "/home/ec2-user/experiment/protein-repeat-gate/candidate-members.fastq",
+    "--matched",
+    "/home/ec2-user/experiment/protein-repeat-gate/retained-members.fastq",
+    "--threads",
+    "8"
+  ],
+  "interpretation": "Post-hoc raw-screen attrition diagnostic on original members of the fixed first-200 protein candidates. This does not rerun FASTP, contaminant filters or alignments and does not establish final-pipeline parity. A query retains raw support if at least one original member passes the repeat-filtered index. Original NR outcomes are joined later without changing selection."
+}

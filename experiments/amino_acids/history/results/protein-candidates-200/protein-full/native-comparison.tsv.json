@@ -1,0 +1,15 @@
+{
+  "native_pairs": 28155,
+  "native_exact_complete_trimmed_pairs": 11759,
+  "protein_viral_reference_candidates": 22359,
+  "protein_candidate_original_pairs": 50110,
+  "candidate_original_pairs_added_to_native": 21990,
+  "native_pairs_absent_from_protein_candidates": 35,
+  "native_exact_trimmed_pairs_absent_from_protein_candidates": 20,
+  "candidate_exact_trimmed_pairs_absent_from_native": 10620,
+  "broad_reference_status": {
+    "pending": 22359
+  },
+  "viral_only_NR_exact_pairs_absent_from_native": null,
+  "interpretation": "Candidates are not validated detections. Common exact-pair comparison uses complete original FASTP pairs on both sides; native TSVs may omit an unaligned mate."
+}
