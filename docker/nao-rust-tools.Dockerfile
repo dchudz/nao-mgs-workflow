@@ -36,12 +36,14 @@ RUN apk add --no-cache bash grep procps pigz 'libcrypto3>=3.3.7-r2' 'libssl3>=3.
 # Add additional binaries here as tools are added to the workspace
 COPY --from=builder /build/rust-tools/target/release/mark_duplicates /usr/local/bin/
 COPY --from=builder /build/rust-tools/target/release/mark_duplicates_similarity /usr/local/bin/
+COPY --from=builder /build/rust-tools/target/release/screen_amino_acids /usr/local/bin/
 COPY --from=builder /usr/local/cargo/bin/nucleaze /usr/local/bin/
 
 # Verify binaries are executable
 RUN mark_duplicates --help
 RUN mark_duplicates_similarity --help
 RUN nucleaze --help
+RUN screen_amino_acids --help
 
 # Default to shell for debugging
 CMD ["/bin/sh"]
