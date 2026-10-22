@@ -1,0 +1,1613 @@
+{
+  "candidate_pairs": 378939,
+  "original_pairs": 447209,
+  "samples": 200,
+  "source_sha256": "7f943e81e3ff5c3aae6abcf1ec941a8c9e7ab9a4aec1ff5bfcee7bdb40480f1f",
+  "metadata_sha256": "bbeb1d61bf4d8911ac30914c89a139d47c128e3c69bc5cd47ab016141cf471b0",
+  "membership_sha256": "da214b75526d2432a40ce8ed19adf6f78bdc88158211047d7f1deb5486f0d1ee",
+  "viral_calls_sha256": "3953b0fb4d84504f737fc9ae1963ebf8b398f46b4af7af78a6d62aeaa81977f4",
+  "qualities_sha256": "20e99a22e561ae036a2f3445d402d523a90d4eb0898cd496de6fc33821c50e9a",
+  "sample_metrics": [
+    {
+      "sample": "SRR37076045",
+      "candidate_pairs": 1903,
+      "original_pairs": 2128,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR37076045_aa12_fastp.fastq.gz",
+      "source_sha256": "229e5d2bea8abbd668e8e6771bf9be9a359beccd816e55c151e258b22a5efbda",
+      "seconds": 0.1726993080083048
+    },
+    {
+      "sample": "SRR38294902",
+      "candidate_pairs": 241,
+      "original_pairs": 266,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR38294902_aa12_fastp.fastq.gz",
+      "source_sha256": "c9342a6762a8c0c16266ed9765a28b475c00b50139aa83b66a9e7b2b7f877277",
+      "seconds": 0.052084832001128234
+    },
+    {
+      "sample": "SRR33038013",
+      "candidate_pairs": 44,
+      "original_pairs": 45,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR33038013_aa12_fastp.fastq.gz",
+      "source_sha256": "badc22a4e0afdba19803dfafe017e72687a582437725af1cfe1638887b14ad4c",
+      "seconds": 0.11916926200501621
+    },
+    {
+      "sample": "SRR37027345",
+      "candidate_pairs": 113,
+      "original_pairs": 131,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR37027345_aa12_fastp.fastq.gz",
+      "source_sha256": "b41cc376112695e111bbcc3ff2ae03ec6a3344908e3638abe866cf190e388ad1",
+      "seconds": 0.026012157002696767
+    },
+    {
+      "sample": "SRR38294603",
+      "candidate_pairs": 1538,
+      "original_pairs": 1728,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR38294603_aa12_fastp.fastq.gz",
+      "source_sha256": "1433cc89764070578f3ffe8be7a263012fa8e6d9b3e084324ee7d389a6910ef2",
+      "seconds": 0.15178690799803007
+    },
+    {
+      "sample": "SRR36876812",
+      "candidate_pairs": 36,
+      "original_pairs": 38,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR36876812_aa12_fastp.fastq.gz",
+      "source_sha256": "c35ee5278f67d693d419e67b7c71af322a40cc2c58c1eccd43776af63015b546",
+      "seconds": 0.009721130001707934
+    },
+    {
+      "sample": "SRR39695366",
+      "candidate_pairs": 1677,
+      "original_pairs": 1870,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR39695366_aa12_fastp.fastq.gz",
+      "source_sha256": "cd4dc0476088c22e099b9bf60a8d58ae89b0ad91d50033c1dd4f2510a344a153",
+      "seconds": 0.15533264599798713
+    },
+    {
+      "sample": "SRR36876844",
+      "candidate_pairs": 47,
+      "original_pairs": 51,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b001/output/fastp/SRR36876844_aa12_fastp.fastq.gz",
+      "source_sha256": "6a13d5850cc3dabe19d2af18a2bb8387eb9096ac8b92956d757305818b169224",
+      "seconds": 0.009995084998081438
+    },
+    {
+      "sample": "SRR39695311",
+      "candidate_pairs": 5318,
+      "original_pairs": 6157,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR39695311_aa12_fastp.fastq.gz",
+      "source_sha256": "ff5383a196358217b97ce9e5f8e2afccc76ca3e5530c1e07a21c07392bfd6523",
+      "seconds": 0.5091673220013035
+    },
+    {
+      "sample": "SRR33038025",
+      "candidate_pairs": 593,
+      "original_pairs": 673,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR33038025_aa12_fastp.fastq.gz",
+      "source_sha256": "37ad9c16cbf28f915200a8d22c1973a0022379c81b96e3bb5ad1da2dc4008dd7",
+      "seconds": 0.0840659039968159
+    },
+    {
+      "sample": "SRR39695127",
+      "candidate_pairs": 1267,
+      "original_pairs": 2585,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR39695127_aa12_fastp.fastq.gz",
+      "source_sha256": "e158d51604006dd0e56ac75b50cc53ff2974353dfab0a4511d55e59821fc6ebe",
+      "seconds": 0.1565902919974178
+    },
+    {
+      "sample": "SRR36876989",
+      "candidate_pairs": 624,
+      "original_pairs": 699,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR36876989_aa12_fastp.fastq.gz",
+      "source_sha256": "2e928456c90410f047ac4cc3521771fae2bcdcd04a14dbb62dcf9de4fdadc273",
+      "seconds": 0.11548576000495814
+    },
+    {
+      "sample": "SRR38294979",
+      "candidate_pairs": 2383,
+      "original_pairs": 2501,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR38294979_aa12_fastp.fastq.gz",
+      "source_sha256": "20558b3bae9182cccf0ed40dfd9ed8898af8c34f440470484f3ca92329f81f53",
+      "seconds": 0.27189416300097946
+    },
+    {
+      "sample": "SRR36877019",
+      "candidate_pairs": 1457,
+      "original_pairs": 1773,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR36877019_aa12_fastp.fastq.gz",
+      "source_sha256": "9497117bbbf359a16401eecefca8edb7dbb4e00ced345c595b820dc647959454",
+      "seconds": 0.15111919501214288
+    },
+    {
+      "sample": "SRR38294601",
+      "candidate_pairs": 2638,
+      "original_pairs": 3038,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR38294601_aa12_fastp.fastq.gz",
+      "source_sha256": "09d4a1ab271e1f281e3020acc5c94e2b735bd10ecfba74c4c625e1f3409dcf41",
+      "seconds": 0.2871189160068752
+    },
+    {
+      "sample": "SRR37089586",
+      "candidate_pairs": 295,
+      "original_pairs": 327,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR37089586_aa12_fastp.fastq.gz",
+      "source_sha256": "4c28b6076d2ab807451ded91b7a829f7b0d9ebda233ef6f8fce0cfc913331ac1",
+      "seconds": 0.0430994490016019
+    },
+    {
+      "sample": "SRR38294600",
+      "candidate_pairs": 3553,
+      "original_pairs": 3902,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR38294600_aa12_fastp.fastq.gz",
+      "source_sha256": "3416933e30ddb562d932275532b9960f027c0aba735ba25a3f6a4fe6808fe57a",
+      "seconds": 0.27373183899908327
+    },
+    {
+      "sample": "SRR37181179",
+      "candidate_pairs": 4499,
+      "original_pairs": 5258,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR37181179_aa12_fastp.fastq.gz",
+      "source_sha256": "0fdc05d99beaa5fa06f76c90b352a6d3f08bc10c611a0d76197af7e903728ebb",
+      "seconds": 0.35034094100410584
+    },
+    {
+      "sample": "SRR35904031",
+      "candidate_pairs": 8856,
+      "original_pairs": 13070,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR35904031_aa12_fastp.fastq.gz",
+      "source_sha256": "9ac05897fa114a2543be741263c53cdc4c89d4347a3acf421835567345a91724",
+      "seconds": 2.1823344559961697
+    },
+    {
+      "sample": "SRR38294796",
+      "candidate_pairs": 93,
+      "original_pairs": 100,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR38294796_aa12_fastp.fastq.gz",
+      "source_sha256": "1b01a44be732657b86c9efaea466e65ef46ee6f383c4a6a65359483a9cef7968",
+      "seconds": 0.034078818003763445
+    },
+    {
+      "sample": "SRR39695264",
+      "candidate_pairs": 1697,
+      "original_pairs": 1986,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR39695264_aa12_fastp.fastq.gz",
+      "source_sha256": "772fb0cc6c88d8785823011a66e91dc26725810ef8c8ed0e5f7270eacc85399d",
+      "seconds": 0.23383421900507528
+    },
+    {
+      "sample": "SRR36876972",
+      "candidate_pairs": 2222,
+      "original_pairs": 2716,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR36876972_aa12_fastp.fastq.gz",
+      "source_sha256": "056774a2fec34ddccb88da0e2488ee55db09e40b31fa2679cdea0d97e1400595",
+      "seconds": 0.22799097999813966
+    },
+    {
+      "sample": "SRR37092456",
+      "candidate_pairs": 943,
+      "original_pairs": 1161,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR37092456_aa12_fastp.fastq.gz",
+      "source_sha256": "6217140966bd52980b00b8e031522dbf94c4b626e19b598d7ac832124bb09040",
+      "seconds": 0.18106991300010122
+    },
+    {
+      "sample": "SRR33038001",
+      "candidate_pairs": 602,
+      "original_pairs": 615,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR33038001_aa12_fastp.fastq.gz",
+      "source_sha256": "82bd83e69b24dd439da5866859615abcf316ddf060031f84ae225128472ae212",
+      "seconds": 0.091685799008701
+    },
+    {
+      "sample": "SRR37367652",
+      "candidate_pairs": 45,
+      "original_pairs": 51,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR37367652_aa12_fastp.fastq.gz",
+      "source_sha256": "a0b6306e5de3e64614a2df23a68e38a5b2a9f653fb563da03cfde4612e049a02",
+      "seconds": 0.3759279810037697
+    },
+    {
+      "sample": "SRR33038146",
+      "candidate_pairs": 210,
+      "original_pairs": 226,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR33038146_aa12_fastp.fastq.gz",
+      "source_sha256": "cb9f7b8025da362f95da53274dc37063946205ad321596b0a8530b40957ff942",
+      "seconds": 0.046417992998613045
+    },
+    {
+      "sample": "SRR37089573",
+      "candidate_pairs": 1039,
+      "original_pairs": 1091,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR37089573_aa12_fastp.fastq.gz",
+      "source_sha256": "8807f62d56d594d74c71672c68bd78bef88e8f94e264e5a563ef8d8c426c5156",
+      "seconds": 0.11196377698797733
+    },
+    {
+      "sample": "SRR36861559",
+      "candidate_pairs": 1525,
+      "original_pairs": 1706,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR36861559_aa12_fastp.fastq.gz",
+      "source_sha256": "4978b794494b0a71c8551301c07598492ce78ec9e3d9c851c71b6d4ae64a62f2",
+      "seconds": 0.16993164199811872
+    },
+    {
+      "sample": "SRR35904033",
+      "candidate_pairs": 53,
+      "original_pairs": 83,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR35904033_aa12_fastp.fastq.gz",
+      "source_sha256": "48c4e67183a193ea88be4038b6a2db73d3f7e6fb9a2a608df9466514fa459451",
+      "seconds": 0.010692191004636697
+    },
+    {
+      "sample": "SRR37181175",
+      "candidate_pairs": 3029,
+      "original_pairs": 3427,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR37181175_aa12_fastp.fastq.gz",
+      "source_sha256": "377d0adf8a12e344374b900edc877b1c0b343dcae9d1497ad400cf6c5b29d519",
+      "seconds": 0.30736066499957815
+    },
+    {
+      "sample": "SRR38294622",
+      "candidate_pairs": 2608,
+      "original_pairs": 7800,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR38294622_aa12_fastp.fastq.gz",
+      "source_sha256": "4cd44b0084a93d6fad9bf8ddadbd1d5c1e90eda498e2163a12c091b5a4a95d13",
+      "seconds": 0.42412520200014114
+    },
+    {
+      "sample": "SRR39695295",
+      "candidate_pairs": 3819,
+      "original_pairs": 6222,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR39695295_aa12_fastp.fastq.gz",
+      "source_sha256": "c60ae8880f6f80cf649418803130ea1ea1057faf00ff2e754c499e9c482e6c1c",
+      "seconds": 0.2897426270064898
+    },
+    {
+      "sample": "SRR38294180",
+      "candidate_pairs": 988,
+      "original_pairs": 1118,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/b002/output/fastp/SRR38294180_aa12_fastp.fastq.gz",
+      "source_sha256": "4c11bbac2b7a675495720a5d1432f6cecbfcdb0ca45f84e36891786870564f6b",
+      "seconds": 0.12939250499766786
+    },
+    {
+      "sample": "SRR37367545",
+      "candidate_pairs": 3444,
+      "original_pairs": 3511,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37367545_aa12_fastp.fastq.gz",
+      "source_sha256": "fcaa061c8fd21698757466d6806f0f84186be6c092b2b91d0deb0f76f538af34",
+      "seconds": 0.34464484099589754
+    },
+    {
+      "sample": "SRR38294742",
+      "candidate_pairs": 1915,
+      "original_pairs": 2115,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR38294742_aa12_fastp.fastq.gz",
+      "source_sha256": "6b01e71d02e350e5adb10b4119a18d542e785b3e3552670c0252c185b61780ac",
+      "seconds": 0.22520754599827342
+    },
+    {
+      "sample": "SRR37367596",
+      "candidate_pairs": 684,
+      "original_pairs": 756,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37367596_aa12_fastp.fastq.gz",
+      "source_sha256": "9c997243eda93e0e807fba36b3a67d23d5ef1ee40296cf596618a3bad1c11686",
+      "seconds": 0.11733536700194236
+    },
+    {
+      "sample": "SRR35946895",
+      "candidate_pairs": 8738,
+      "original_pairs": 9737,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR35946895_aa12_fastp.fastq.gz",
+      "source_sha256": "139d96e5f031c7e06baa9dde90153662a87994c511907952e73bcdc09fb294f1",
+      "seconds": 0.7582489900087239
+    },
+    {
+      "sample": "SRR36877032",
+      "candidate_pairs": 969,
+      "original_pairs": 1294,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR36877032_aa12_fastp.fastq.gz",
+      "source_sha256": "17bcf45b6f4522ef0c19faf9a4b3c0f4d68dbf7253e12213efa1dc2b8909277c",
+      "seconds": 0.1400543219933752
+    },
+    {
+      "sample": "SRR37089587",
+      "candidate_pairs": 1826,
+      "original_pairs": 2181,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37089587_aa12_fastp.fastq.gz",
+      "source_sha256": "fbc2335d14c6b77afedbf2132bca9974daf346c0b5ddbd758e28948229b3e7dd",
+      "seconds": 0.2071210739959497
+    },
+    {
+      "sample": "SRR35946910",
+      "candidate_pairs": 11936,
+      "original_pairs": 13005,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR35946910_aa12_fastp.fastq.gz",
+      "source_sha256": "466fdbb557919e87e9a36dec3f37e2db0218ad37ecdf0a4cd18d5133da664c55",
+      "seconds": 0.8529099489969667
+    },
+    {
+      "sample": "SRR35971511",
+      "candidate_pairs": 321,
+      "original_pairs": 454,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR35971511_aa12_fastp.fastq.gz",
+      "source_sha256": "a39d858bd95cdf6d42755d2b69415482f7279d11d442a1d11ca7f7109321884a",
+      "seconds": 0.1409891399962362
+    },
+    {
+      "sample": "SRR39695204",
+      "candidate_pairs": 1066,
+      "original_pairs": 1112,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR39695204_aa12_fastp.fastq.gz",
+      "source_sha256": "0705e2d15ad7b65194ac5d9638767806bd02d0a945f5d4e52d4daea9c41e7a62",
+      "seconds": 0.13877590899937786
+    },
+    {
+      "sample": "SRR37006662",
+      "candidate_pairs": 1010,
+      "original_pairs": 1093,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37006662_aa12_fastp.fastq.gz",
+      "source_sha256": "6c5fa380bce804d2b77fe23f2d80356d58fe081fe37681a75ed68da1a86bbdff",
+      "seconds": 0.16453238599933684
+    },
+    {
+      "sample": "SRR38294651",
+      "candidate_pairs": 152,
+      "original_pairs": 167,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR38294651_aa12_fastp.fastq.gz",
+      "source_sha256": "8bc55da4abf9ed1d89ee1bdc53709ce80d273f082fe738b839209742fe73001c",
+      "seconds": 0.04193569198832847
+    },
+    {
+      "sample": "SRR33038057",
+      "candidate_pairs": 402,
+      "original_pairs": 418,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR33038057_aa12_fastp.fastq.gz",
+      "source_sha256": "91892c08300b290b1ab9ba7a91d93c9411417527c51fa5df41cec9651d9d0948",
+      "seconds": 0.0880674699874362
+    },
+    {
+      "sample": "SRR37089574",
+      "candidate_pairs": 649,
+      "original_pairs": 743,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37089574_aa12_fastp.fastq.gz",
+      "source_sha256": "281e5a8f8c4251b2967027002c81ea5984b6a9641b82023a52230d72346639b1",
+      "seconds": 0.06830429099500179
+    },
+    {
+      "sample": "SRR39695021",
+      "candidate_pairs": 1566,
+      "original_pairs": 1734,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR39695021_aa12_fastp.fastq.gz",
+      "source_sha256": "c30a70c3d109351abfe3ef86d10494addd8652efe074e5166c1a701410b477b7",
+      "seconds": 0.2054865779937245
+    },
+    {
+      "sample": "SRR37367629",
+      "candidate_pairs": 1346,
+      "original_pairs": 1423,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37367629_aa12_fastp.fastq.gz",
+      "source_sha256": "17463624230781af8326d049c5950260b6c89d903136065edd5c8ecdafb67423",
+      "seconds": 0.1539872529974673
+    },
+    {
+      "sample": "SRR39695246",
+      "candidate_pairs": 3578,
+      "original_pairs": 3822,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR39695246_aa12_fastp.fastq.gz",
+      "source_sha256": "a552c3e9f2aa63bff97155f7f01b3e0f4117a9805635bf1fd82821dee217ea54",
+      "seconds": 0.3179784469975857
+    },
+    {
+      "sample": "SRR39695360",
+      "candidate_pairs": 2639,
+      "original_pairs": 3003,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR39695360_aa12_fastp.fastq.gz",
+      "source_sha256": "4cbe81d333a8309c802be9bac005e79a0a35ae4f6b4469fff7995ac1d0570d11",
+      "seconds": 0.23752939600672107
+    },
+    {
+      "sample": "SRR38294644",
+      "candidate_pairs": 2724,
+      "original_pairs": 3080,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR38294644_aa12_fastp.fastq.gz",
+      "source_sha256": "edfcd6e2ceee725d15957218dc246bf5089e8d713fedd8a31e72dce97a3cb53f",
+      "seconds": 0.2560416880005505
+    },
+    {
+      "sample": "SRR37428201",
+      "candidate_pairs": 1178,
+      "original_pairs": 1463,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37428201_aa12_fastp.fastq.gz",
+      "source_sha256": "d3efac9d17899374722c31b6d43e932d3d4efb8410209c6efd355656c66c8c7b",
+      "seconds": 0.157086994004203
+    },
+    {
+      "sample": "SRR36790961",
+      "candidate_pairs": 1200,
+      "original_pairs": 1319,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR36790961_aa12_fastp.fastq.gz",
+      "source_sha256": "323812cd5bba48ee8d777b453ee8304f4a82ff535158d484aa2ae096b5b23175",
+      "seconds": 0.17593060499348212
+    },
+    {
+      "sample": "SRR33038061",
+      "candidate_pairs": 306,
+      "original_pairs": 317,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR33038061_aa12_fastp.fastq.gz",
+      "source_sha256": "ad0e4da8d4e2b59b6c28d16e291075a19f7f4231304f2446dee2ef2be8e78598",
+      "seconds": 0.0676965799939353
+    },
+    {
+      "sample": "SRR38294879",
+      "candidate_pairs": 879,
+      "original_pairs": 1000,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR38294879_aa12_fastp.fastq.gz",
+      "source_sha256": "b2c49b067a28f80466b4f534000a5c230dac2d65fe5c44d2811a8075a290032d",
+      "seconds": 0.10535316700406838
+    },
+    {
+      "sample": "SRR39694967",
+      "candidate_pairs": 3445,
+      "original_pairs": 3760,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR39694967_aa12_fastp.fastq.gz",
+      "source_sha256": "037be8d27ac1960032750d09e4155ae34f33fb866b5486b8c2d24daa70ce9906",
+      "seconds": 0.28794381899933796
+    },
+    {
+      "sample": "SRR38294660",
+      "candidate_pairs": 360,
+      "original_pairs": 383,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR38294660_aa12_fastp.fastq.gz",
+      "source_sha256": "2c97747dba7b92243f0254f1d3b4fd8713682ae184f864ac7e83a278a7fdd2c1",
+      "seconds": 0.06700222099607345
+    },
+    {
+      "sample": "SRR37428202",
+      "candidate_pairs": 1378,
+      "original_pairs": 1641,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s001/output/fastp/SRR37428202_aa12_fastp.fastq.gz",
+      "source_sha256": "55d0bb23eac82d32961e44dea2380e2f6fae4dddfe4945bb5e752a8fcd3a9cd3",
+      "seconds": 0.22644460599985905
+    },
+    {
+      "sample": "SRR38294761",
+      "candidate_pairs": 10536,
+      "original_pairs": 12246,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR38294761_aa12_fastp.fastq.gz",
+      "source_sha256": "4db7b01698f78fdfaf2c4a517e3ad01995767864fd65502370e1993d5233d2d3",
+      "seconds": 0.9347870319907088
+    },
+    {
+      "sample": "SRR36876810",
+      "candidate_pairs": 62,
+      "original_pairs": 69,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR36876810_aa12_fastp.fastq.gz",
+      "source_sha256": "3b6de86b178f6401a5914ccf2092beccf06b5a5a9307010974b5316a049b1712",
+      "seconds": 0.01565984101034701
+    },
+    {
+      "sample": "SRR36995860",
+      "candidate_pairs": 1050,
+      "original_pairs": 1141,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR36995860_aa12_fastp.fastq.gz",
+      "source_sha256": "b5e18ee81356d4653f3e3b0f90528f67e172d9cbe76317ff157014d6d219ec71",
+      "seconds": 0.1578115760057699
+    },
+    {
+      "sample": "SRR38294889",
+      "candidate_pairs": 4256,
+      "original_pairs": 4959,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR38294889_aa12_fastp.fastq.gz",
+      "source_sha256": "343a8f3b94aa5f2cbe67cc74a59c33d0b11b74b0c0628b7bde1ef35312b55655",
+      "seconds": 0.35671486900537275
+    },
+    {
+      "sample": "SRR38294851",
+      "candidate_pairs": 590,
+      "original_pairs": 715,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR38294851_aa12_fastp.fastq.gz",
+      "source_sha256": "f00f740d771100aa2417b93ae5e17dbff8fe5899137a5ee496969c2f3bfc173c",
+      "seconds": 0.1645125720096985
+    },
+    {
+      "sample": "SRR37367621",
+      "candidate_pairs": 227,
+      "original_pairs": 260,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR37367621_aa12_fastp.fastq.gz",
+      "source_sha256": "304ba2792c321b2dad0abc0d3c39c1dd6273d3f4b6248b2c700914344edf3d2a",
+      "seconds": 0.03602282700012438
+    },
+    {
+      "sample": "SRR38294658",
+      "candidate_pairs": 273,
+      "original_pairs": 298,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR38294658_aa12_fastp.fastq.gz",
+      "source_sha256": "b4c7727f99f6216a8f92123f5b23818fdb0c6b553aba8dd1061602427d5c8493",
+      "seconds": 0.023544394003693014
+    },
+    {
+      "sample": "SRR38294184",
+      "candidate_pairs": 695,
+      "original_pairs": 772,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR38294184_aa12_fastp.fastq.gz",
+      "source_sha256": "4d4571aa301029ba82d0754f800e465543d2a18cd44522bf9f9538e4e2527dca",
+      "seconds": 0.11728581400529947
+    },
+    {
+      "sample": "SRR37092455",
+      "candidate_pairs": 2152,
+      "original_pairs": 2769,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR37092455_aa12_fastp.fastq.gz",
+      "source_sha256": "f29c494df51fc6d3b201d340243c9f386f667346b2fd673630821da6ffe476db",
+      "seconds": 0.22397573699709028
+    },
+    {
+      "sample": "SRR35987654",
+      "candidate_pairs": 1373,
+      "original_pairs": 1643,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR35987654_aa12_fastp.fastq.gz",
+      "source_sha256": "7c1246a815387c5501d9a0c7adc1b1ec2d999d8e11e31eac908b8c1c5b8486be",
+      "seconds": 0.21495811399654485
+    },
+    {
+      "sample": "SRR38294789",
+      "candidate_pairs": 1714,
+      "original_pairs": 2098,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR38294789_aa12_fastp.fastq.gz",
+      "source_sha256": "b83b47e7c0d4d86cb71dbb22ec9a419af17457c2cabf638c32c21d5eb01a647f",
+      "seconds": 0.21832454900140874
+    },
+    {
+      "sample": "SRR39695316",
+      "candidate_pairs": 1279,
+      "original_pairs": 1508,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR39695316_aa12_fastp.fastq.gz",
+      "source_sha256": "823349091fac7550f9c61e527641062078bc180cb0eaa31f042a6a8b0d0617a9",
+      "seconds": 0.18079006500192918
+    },
+    {
+      "sample": "SRR36830271",
+      "candidate_pairs": 2936,
+      "original_pairs": 3319,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR36830271_aa12_fastp.fastq.gz",
+      "source_sha256": "3f7ddedd6af50a8b228aa17c9a66c9b3ebdc5f14efee1bb309ef2c0c0039319f",
+      "seconds": 0.2663344360043993
+    },
+    {
+      "sample": "SRR39695093",
+      "candidate_pairs": 7373,
+      "original_pairs": 8268,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR39695093_aa12_fastp.fastq.gz",
+      "source_sha256": "e72ca3284b6ba34d1f4c20403d4531f32353fb532541ac2b179a89958fe92904",
+      "seconds": 0.5490841260034358
+    },
+    {
+      "sample": "SRR36790963",
+      "candidate_pairs": 515,
+      "original_pairs": 543,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR36790963_aa12_fastp.fastq.gz",
+      "source_sha256": "04c3df2fe7e82332d5c7454edbbb2dd8ffb34206bf98279e2476e28c64e8074e",
+      "seconds": 0.15232867500162683
+    },
+    {
+      "sample": "SRR39695030",
+      "candidate_pairs": 1313,
+      "original_pairs": 1424,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR39695030_aa12_fastp.fastq.gz",
+      "source_sha256": "0d1e2fe036e6462577d32ae75bfb8192bafee4b3dc36253969b699c00a06b5f1",
+      "seconds": 0.12835897899640258
+    },
+    {
+      "sample": "SRR39695261",
+      "candidate_pairs": 4160,
+      "original_pairs": 4869,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR39695261_aa12_fastp.fastq.gz",
+      "source_sha256": "fc3ef8f54b59fae51992b8b356b28348913b89f108c7eae60903a049ea144015",
+      "seconds": 0.2696802599966759
+    },
+    {
+      "sample": "SRR39695034",
+      "candidate_pairs": 2439,
+      "original_pairs": 2672,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR39695034_aa12_fastp.fastq.gz",
+      "source_sha256": "318dd64f131303a42872712217ad33eade895b50fd1f226e919c672151e93805",
+      "seconds": 0.3022111309983302
+    },
+    {
+      "sample": "SRR37036131",
+      "candidate_pairs": 2491,
+      "original_pairs": 2819,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR37036131_aa12_fastp.fastq.gz",
+      "source_sha256": "ed1ac29cdc93b68da2fec095f0aede757fbaa0c73be81749b789d3b84eaf65bb",
+      "seconds": 0.22441789098957088
+    },
+    {
+      "sample": "SRR35971512",
+      "candidate_pairs": 1206,
+      "original_pairs": 1398,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR35971512_aa12_fastp.fastq.gz",
+      "source_sha256": "152ec35f771e7e6f6970e632aee5d381ce330f1ed51d4b4773d3d5af01360a9f",
+      "seconds": 0.1545587310101837
+    },
+    {
+      "sample": "SRR33038065",
+      "candidate_pairs": 520,
+      "original_pairs": 535,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR33038065_aa12_fastp.fastq.gz",
+      "source_sha256": "03c2928e41bbf14aca9bea800453a4a0eb62a77d654a01b18a521c49c12e5ec3",
+      "seconds": 0.10205663199303672
+    },
+    {
+      "sample": "SRR35987653",
+      "candidate_pairs": 675,
+      "original_pairs": 894,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR35987653_aa12_fastp.fastq.gz",
+      "source_sha256": "1fb8206f5a1409015e2165e4ca41935962393c8563e20694757435bcef7f8ce3",
+      "seconds": 0.1078433750080876
+    },
+    {
+      "sample": "SRR38294834",
+      "candidate_pairs": 618,
+      "original_pairs": 653,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR38294834_aa12_fastp.fastq.gz",
+      "source_sha256": "5c2a3bdc86c5d27ed17f7f3d49413e65246ea35f485cd72a7297e8a40df14acc",
+      "seconds": 0.14429419999942183
+    },
+    {
+      "sample": "SRR37367565",
+      "candidate_pairs": 140,
+      "original_pairs": 143,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR37367565_aa12_fastp.fastq.gz",
+      "source_sha256": "039935addc2d404daf2543216c4a979a4cef0edf7260d4a1cc0c224721267be0",
+      "seconds": 0.10032414099259768
+    },
+    {
+      "sample": "SRR37367667",
+      "candidate_pairs": 1930,
+      "original_pairs": 2120,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s002/output/fastp/SRR37367667_aa12_fastp.fastq.gz",
+      "source_sha256": "f87d9aff61db6d54d85d42bab9ff5b33ede15edf5698f1e25e81547ded929733",
+      "seconds": 0.19726012600585818
+    },
+    {
+      "sample": "SRR39695200",
+      "candidate_pairs": 982,
+      "original_pairs": 1150,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR39695200_aa12_fastp.fastq.gz",
+      "source_sha256": "52ebb1f0e6c6f4d5cb52007cbdbe3be97398da9e22d57ab52121c935f4e2d5a3",
+      "seconds": 0.0919207160040969
+    },
+    {
+      "sample": "SRR36876799",
+      "candidate_pairs": 120,
+      "original_pairs": 130,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR36876799_aa12_fastp.fastq.gz",
+      "source_sha256": "28521a5ffb1548c2278bc4db151a985354829209222b839ffeaddfa0a3fc2bce",
+      "seconds": 0.022155093000037596
+    },
+    {
+      "sample": "SRR35971516",
+      "candidate_pairs": 819,
+      "original_pairs": 939,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR35971516_aa12_fastp.fastq.gz",
+      "source_sha256": "aac5b1883749b4893cbf75da33937d718b66e45005ad57dc1e74c7ac9399e8c5",
+      "seconds": 0.23829768999712542
+    },
+    {
+      "sample": "SRR38294708",
+      "candidate_pairs": 28,
+      "original_pairs": 31,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR38294708_aa12_fastp.fastq.gz",
+      "source_sha256": "91f68ff977366f2f8fce259c82bfc406eed8adfe91952a6a32af9b6bb1df0ea4",
+      "seconds": 0.008702172999619506
+    },
+    {
+      "sample": "SRR37089581",
+      "candidate_pairs": 289,
+      "original_pairs": 320,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR37089581_aa12_fastp.fastq.gz",
+      "source_sha256": "1a1441b49b32e240f35206c20c65097a9edc3c34d25dacd0fc68f1e97bca42cb",
+      "seconds": 0.03678619899437763
+    },
+    {
+      "sample": "SRR37027355",
+      "candidate_pairs": 1493,
+      "original_pairs": 1643,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR37027355_aa12_fastp.fastq.gz",
+      "source_sha256": "b9d5582773a7bcf34ac2013ceea2fc23c2c1c68f360bf75a84db3228b6f1e7be",
+      "seconds": 0.17910023398872
+    },
+    {
+      "sample": "SRR35987546",
+      "candidate_pairs": 783,
+      "original_pairs": 1038,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR35987546_aa12_fastp.fastq.gz",
+      "source_sha256": "c65936df14729492253108a86465ecca7b0af31e8f300980d48823ea61010513",
+      "seconds": 0.1777842230076203
+    },
+    {
+      "sample": "SRR38294774",
+      "candidate_pairs": 648,
+      "original_pairs": 700,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR38294774_aa12_fastp.fastq.gz",
+      "source_sha256": "98b5b5c6b0f9540ff8e67a3860f0d52d0e77debbcf662eaeafeffc0c4f9f5f9b",
+      "seconds": 0.07320431599509902
+    },
+    {
+      "sample": "SRR38294640",
+      "candidate_pairs": 5022,
+      "original_pairs": 5548,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR38294640_aa12_fastp.fastq.gz",
+      "source_sha256": "7c6115d4607cc3b198ffa1a9cd7fa77a4ce56b579184eeabc89063d3b2fb84b2",
+      "seconds": 0.4740827449859353
+    },
+    {
+      "sample": "SRR39695133",
+      "candidate_pairs": 61,
+      "original_pairs": 61,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR39695133_aa12_fastp.fastq.gz",
+      "source_sha256": "b795923f9f545e1e6471acca922a61b58f542fb38f9a023da079b0f62d16c5bd",
+      "seconds": 0.03828694499679841
+    },
+    {
+      "sample": "SRR36861547",
+      "candidate_pairs": 3325,
+      "original_pairs": 3668,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR36861547_aa12_fastp.fastq.gz",
+      "source_sha256": "ed752768ade424884315bbc310b27c84a346a155201f5c2069d608dc6eb0b50a",
+      "seconds": 0.345568495002226
+    },
+    {
+      "sample": "SRR39695006",
+      "candidate_pairs": 3502,
+      "original_pairs": 4256,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR39695006_aa12_fastp.fastq.gz",
+      "source_sha256": "eb46c564024afbc392419d18c5f97b362cfd476efbe279c00f3c9a02e43ef8f3",
+      "seconds": 0.29487702999904286
+    },
+    {
+      "sample": "SRR38294154",
+      "candidate_pairs": 791,
+      "original_pairs": 998,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR38294154_aa12_fastp.fastq.gz",
+      "source_sha256": "ed3661078ef935b82bb71bd4ad117d871632bad5e03475c8126f424146a481ce",
+      "seconds": 0.1095225710014347
+    },
+    {
+      "sample": "SRR38294063",
+      "candidate_pairs": 3352,
+      "original_pairs": 3945,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR38294063_aa12_fastp.fastq.gz",
+      "source_sha256": "97766b9f1a7046c0d47fc1166d0c7e9ddf41278e2c259a1ece89ff703ff5c1d7",
+      "seconds": 0.3748790950048715
+    },
+    {
+      "sample": "SRR35946894",
+      "candidate_pairs": 1146,
+      "original_pairs": 1295,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR35946894_aa12_fastp.fastq.gz",
+      "source_sha256": "ff21486e4f20b153bbac2594c2f4c7a1d1d781ca1a92fedefd4425e3ef42a02c",
+      "seconds": 0.1630438209977001
+    },
+    {
+      "sample": "SRR33038067",
+      "candidate_pairs": 1242,
+      "original_pairs": 1292,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR33038067_aa12_fastp.fastq.gz",
+      "source_sha256": "334e7112f1f3090b5847c13d69a9e274f0979395449d8fb9c5f50c7c95340401",
+      "seconds": 0.18236565800907556
+    },
+    {
+      "sample": "SRR39695147",
+      "candidate_pairs": 4613,
+      "original_pairs": 5170,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR39695147_aa12_fastp.fastq.gz",
+      "source_sha256": "e8ed48e8f6c964488ae6e677ea6187b103ed7d1d952bccd9b747487599fbdff0",
+      "seconds": 0.3692565670062322
+    },
+    {
+      "sample": "SRR36830269",
+      "candidate_pairs": 1055,
+      "original_pairs": 1175,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR36830269_aa12_fastp.fastq.gz",
+      "source_sha256": "4d2d1c39912b675856806c948be8a0a2543bcc3424c990970981001a0102183d",
+      "seconds": 0.12558036000700668
+    },
+    {
+      "sample": "SRR39695073",
+      "candidate_pairs": 4776,
+      "original_pairs": 5396,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR39695073_aa12_fastp.fastq.gz",
+      "source_sha256": "2e14a5806e8deaa46fe5642571f05daae0405577fe47d8b0874c36ecd7faa86b",
+      "seconds": 0.4170722599956207
+    },
+    {
+      "sample": "SRR38294728",
+      "candidate_pairs": 423,
+      "original_pairs": 474,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR38294728_aa12_fastp.fastq.gz",
+      "source_sha256": "1b6b5f5b5605ddabe9157ddbf17b74e5f29fab08aeaa1d75fa3359b18256dae7",
+      "seconds": 0.05436876000021584
+    },
+    {
+      "sample": "SRR37059713",
+      "candidate_pairs": 499,
+      "original_pairs": 553,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR37059713_aa12_fastp.fastq.gz",
+      "source_sha256": "8a129d432f8ce8661c1d5f676bea813dd3d4af6275d50137f0f89876d9428135",
+      "seconds": 0.08800613999483176
+    },
+    {
+      "sample": "SRR35987629",
+      "candidate_pairs": 900,
+      "original_pairs": 996,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR35987629_aa12_fastp.fastq.gz",
+      "source_sha256": "16fbccea885f42a3a69e4bceb0fb893f9273ed436462ebd94d2af24e7bb4c7e9",
+      "seconds": 0.14883144000486936
+    },
+    {
+      "sample": "SRR36814894",
+      "candidate_pairs": 797,
+      "original_pairs": 958,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR36814894_aa12_fastp.fastq.gz",
+      "source_sha256": "db05cd278d5d4438dfbb4abb23afc8a42566fe77fd2a7538681f6cbb3422b276",
+      "seconds": 0.22586207099084277
+    },
+    {
+      "sample": "SRR38294888",
+      "candidate_pairs": 1560,
+      "original_pairs": 1683,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR38294888_aa12_fastp.fastq.gz",
+      "source_sha256": "c6e82b94fbd943aa578b844eaaf4e7b7bf3767ef4f8c5f68d06ea24adb3c752b",
+      "seconds": 0.23849321801390033
+    },
+    {
+      "sample": "SRR39695372",
+      "candidate_pairs": 2643,
+      "original_pairs": 3055,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/s003/output/fastp/SRR39695372_aa12_fastp.fastq.gz",
+      "source_sha256": "af9e6ea1ecdc8d2ad1c6494b100f87a59b83c1596806e78ee6c9af6179b6e0c7",
+      "seconds": 0.22639935000916012
+    },
+    {
+      "sample": "SRR37181180",
+      "candidate_pairs": 69,
+      "original_pairs": 76,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR37181180_aa12_fastp.fastq.gz",
+      "source_sha256": "3b0ade2e885334e6ad792882b16250fedf2a21d8f8c53d0de07ba72c6d41f2af",
+      "seconds": 0.039380826987326145
+    },
+    {
+      "sample": "SRR38294837",
+      "candidate_pairs": 135,
+      "original_pairs": 147,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR38294837_aa12_fastp.fastq.gz",
+      "source_sha256": "252a15bfb7131a74fceeafa6e15d673a5e516a2e4982fa4de8d3572c8ef8cd9e",
+      "seconds": 0.033491802008938976
+    },
+    {
+      "sample": "SRR36995857",
+      "candidate_pairs": 4505,
+      "original_pairs": 4911,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR36995857_aa12_fastp.fastq.gz",
+      "source_sha256": "a578ff95d30490c85f04783b476f8e7ac4e692ea4a1f2a2a41ffc5dcf462877f",
+      "seconds": 0.606607375011663
+    },
+    {
+      "sample": "SRR39694976",
+      "candidate_pairs": 33,
+      "original_pairs": 36,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR39694976_aa12_fastp.fastq.gz",
+      "source_sha256": "b24a0068a4bf072e5acd08559bfd2552484eb1f831e6d3c170d69e029efb99d3",
+      "seconds": 0.03326022099645343
+    },
+    {
+      "sample": "SRR39695001",
+      "candidate_pairs": 1413,
+      "original_pairs": 1611,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR39695001_aa12_fastp.fastq.gz",
+      "source_sha256": "5ee8812ac5d58cdd5f639bab50dac03d85ace7adc67562c157f3b03a64221f4f",
+      "seconds": 0.15151051900465973
+    },
+    {
+      "sample": "SRR39695109",
+      "candidate_pairs": 5847,
+      "original_pairs": 7118,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR39695109_aa12_fastp.fastq.gz",
+      "source_sha256": "a8bce7f9481b1ad5b54439b3dbdef0609acbaaa4b075af6d4c16620ec81163c0",
+      "seconds": 0.4177226229949156
+    },
+    {
+      "sample": "SRR35946898",
+      "candidate_pairs": 3727,
+      "original_pairs": 3820,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR35946898_aa12_fastp.fastq.gz",
+      "source_sha256": "107131159223bfb8701634004001957e4231d334bbed9bc2c57ded6c58a03bae",
+      "seconds": 0.363641383999493
+    },
+    {
+      "sample": "SRR39694961",
+      "candidate_pairs": 457,
+      "original_pairs": 496,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR39694961_aa12_fastp.fastq.gz",
+      "source_sha256": "a3a4868b025bfb194da5b9c0d0e21177edf2d8d2b5bd0ed67e2159e004bdb906",
+      "seconds": 0.065945301001193
+    },
+    {
+      "sample": "SRR37367516",
+      "candidate_pairs": 660,
+      "original_pairs": 707,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR37367516_aa12_fastp.fastq.gz",
+      "source_sha256": "769c544d0f6cb7cb71627dee641c4b962aa977a02a5871784584099a7d6d7661",
+      "seconds": 0.12222315699909814
+    },
+    {
+      "sample": "SRR35904072",
+      "candidate_pairs": 4287,
+      "original_pairs": 5966,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR35904072_aa12_fastp.fastq.gz",
+      "source_sha256": "c0a9343ba119bba43988ecc753ad0891dc77ac8d8c654f9aaf3fbbe86c38384d",
+      "seconds": 0.32399967800301965
+    },
+    {
+      "sample": "SRR33038049",
+      "candidate_pairs": 166,
+      "original_pairs": 191,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR33038049_aa12_fastp.fastq.gz",
+      "source_sha256": "3521ed3c5e7b5dc086e4b26c937d2c0cf3b07775a0340fbe42eaad6f897b98a6",
+      "seconds": 0.03406500599521678
+    },
+    {
+      "sample": "SRR36995862",
+      "candidate_pairs": 3301,
+      "original_pairs": 3517,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR36995862_aa12_fastp.fastq.gz",
+      "source_sha256": "f09c944433b0dcfea72a51e53ff2d2c68edd6bcef4962f972e06ab2db7735d1d",
+      "seconds": 0.336581252005999
+    },
+    {
+      "sample": "SRR36790973",
+      "candidate_pairs": 688,
+      "original_pairs": 709,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR36790973_aa12_fastp.fastq.gz",
+      "source_sha256": "4a676f6ef3515f9233f78c927b2bed51cdf335c31babd024521b76664df5dbdb",
+      "seconds": 0.16183535900199786
+    },
+    {
+      "sample": "SRR38294775",
+      "candidate_pairs": 591,
+      "original_pairs": 648,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR38294775_aa12_fastp.fastq.gz",
+      "source_sha256": "564affbcd5559270b79c387ff63b254c103f3bd83620ce9b30b79685553b7120",
+      "seconds": 0.06461819200194441
+    },
+    {
+      "sample": "SRR33038012",
+      "candidate_pairs": 1470,
+      "original_pairs": 1490,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR33038012_aa12_fastp.fastq.gz",
+      "source_sha256": "cfe4ae07032aead8028cb1b22f49a9782865955a072ebfb9934da5a521c2185f",
+      "seconds": 0.2187649099942064
+    },
+    {
+      "sample": "SRR36861534",
+      "candidate_pairs": 1542,
+      "original_pairs": 1680,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR36861534_aa12_fastp.fastq.gz",
+      "source_sha256": "f81708c4dd25fd46b3166f3855e0512e43c3dd35402fae1e24b697b7bf2f4b47",
+      "seconds": 0.17854762500792276
+    },
+    {
+      "sample": "SRR38294179",
+      "candidate_pairs": 3128,
+      "original_pairs": 3856,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR38294179_aa12_fastp.fastq.gz",
+      "source_sha256": "4bb596a780ad64aa0eeaea8f0bb65a46bbd5d625c18a0b309eb0550bcec6fbbc",
+      "seconds": 0.28457490900473204
+    },
+    {
+      "sample": "SRR35987658",
+      "candidate_pairs": 1611,
+      "original_pairs": 1857,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR35987658_aa12_fastp.fastq.gz",
+      "source_sha256": "93ea20e383594ec1141a93ee99fce7ff8e81a1599a76097663de7a4f2b058265",
+      "seconds": 0.21753417899890337
+    },
+    {
+      "sample": "SRR38294105",
+      "candidate_pairs": 455,
+      "original_pairs": 523,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR38294105_aa12_fastp.fastq.gz",
+      "source_sha256": "4f9bf68a4e2136a6c62e6f2cf6b73757eb1d952f86f3f1c6120ec029b0d49641",
+      "seconds": 0.06022709600802045
+    },
+    {
+      "sample": "SRR36876821",
+      "candidate_pairs": 1017,
+      "original_pairs": 1159,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR36876821_aa12_fastp.fastq.gz",
+      "source_sha256": "6b77d1d42d4fe38b3d55f93e263285c9368d2498dd03afcf5edf1738eee39011",
+      "seconds": 0.2009174940030789
+    },
+    {
+      "sample": "SRR38294943",
+      "candidate_pairs": 129,
+      "original_pairs": 136,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR38294943_aa12_fastp.fastq.gz",
+      "source_sha256": "70fea690c59962fdc7e3724292adaff0876d13c81b54530ed11ef33e8b2be1c6",
+      "seconds": 0.02209556000889279
+    },
+    {
+      "sample": "SRR39695269",
+      "candidate_pairs": 411,
+      "original_pairs": 463,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR39695269_aa12_fastp.fastq.gz",
+      "source_sha256": "7d8755f9aabeeffab1073b40eacfe7a57a4e3852ca7afb9a7ac74e1ce885998c",
+      "seconds": 0.13183924200711772
+    },
+    {
+      "sample": "SRR38294656",
+      "candidate_pairs": 1453,
+      "original_pairs": 1542,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR38294656_aa12_fastp.fastq.gz",
+      "source_sha256": "05da145540d65d36a8415f7401ce39af1b99029688ae6169632c77c21541dd15",
+      "seconds": 0.11242254600801971
+    },
+    {
+      "sample": "SRR39695101",
+      "candidate_pairs": 503,
+      "original_pairs": 513,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR39695101_aa12_fastp.fastq.gz",
+      "source_sha256": "d53ffd5feee210100c5142304a95d50b0aacee3b9fc0f070c51df802a57dd15c",
+      "seconds": 0.17425871200975962
+    },
+    {
+      "sample": "SRR36995847",
+      "candidate_pairs": 1316,
+      "original_pairs": 1516,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r006/output/fastp/SRR36995847_aa12_fastp.fastq.gz",
+      "source_sha256": "138a30edf76e9122f7ecb86ea9853c2340111896a47197f0f61d08e0aa9badec",
+      "seconds": 0.3701861000008648
+    },
+    {
+      "sample": "SRR35931342",
+      "candidate_pairs": 3910,
+      "original_pairs": 4251,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR35931342_aa12_fastp.fastq.gz",
+      "source_sha256": "4aa104c3a5bcddde9cb18ce0bf6bf91581911b48fc70d82bfc48845d011d018d",
+      "seconds": 0.42984021099982783
+    },
+    {
+      "sample": "SRR35904042",
+      "candidate_pairs": 331,
+      "original_pairs": 353,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR35904042_aa12_fastp.fastq.gz",
+      "source_sha256": "5418e30ca177e4a94a10097c74943b53b298a99fe2895fc4912c0d3c41d7361c",
+      "seconds": 0.06058458800544031
+    },
+    {
+      "sample": "SRR38294700",
+      "candidate_pairs": 9010,
+      "original_pairs": 10444,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294700_aa12_fastp.fastq.gz",
+      "source_sha256": "8181bc134680af9d82d18d490c09ef9ef529d674cb304a4dd6752e2c6cac143c",
+      "seconds": 0.761395392997656
+    },
+    {
+      "sample": "SRR38294751",
+      "candidate_pairs": 1601,
+      "original_pairs": 1782,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294751_aa12_fastp.fastq.gz",
+      "source_sha256": "6eb5d5f1de7fa5b85cdee60229e23d106303ff139531852cd25c86cfa6c901d7",
+      "seconds": 0.1736109189951094
+    },
+    {
+      "sample": "SRR38294086",
+      "candidate_pairs": 2099,
+      "original_pairs": 2569,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294086_aa12_fastp.fastq.gz",
+      "source_sha256": "72dd8cba4314b93639745677da3606145a3d0257633fd1e7c2d3315112393b3f",
+      "seconds": 0.23919934399600606
+    },
+    {
+      "sample": "SRR38294702",
+      "candidate_pairs": 9341,
+      "original_pairs": 11189,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294702_aa12_fastp.fastq.gz",
+      "source_sha256": "071ea244d95d842b1125aca16a60412c18b66aab076e0759764bfe30b3e3dbea",
+      "seconds": 0.7516550319996895
+    },
+    {
+      "sample": "SRR36876986",
+      "candidate_pairs": 326,
+      "original_pairs": 356,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR36876986_aa12_fastp.fastq.gz",
+      "source_sha256": "3bf6c5a052ef82f8c2e454e942a376dd33bf556e7ec71291511bd00da2b7c92b",
+      "seconds": 0.04087677899224218
+    },
+    {
+      "sample": "SRR38294699",
+      "candidate_pairs": 4624,
+      "original_pairs": 5183,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294699_aa12_fastp.fastq.gz",
+      "source_sha256": "d8b834b58ee033563da04750b5bfc24408a148cf236256148c0a9c8a40a3de22",
+      "seconds": 0.3982608810038073
+    },
+    {
+      "sample": "SRR38294119",
+      "candidate_pairs": 3879,
+      "original_pairs": 6739,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294119_aa12_fastp.fastq.gz",
+      "source_sha256": "b9038e42c04a1fe53419e29afc5cb45bed62e855e0c97a21fe863404949b4b9f",
+      "seconds": 0.4239714370050933
+    },
+    {
+      "sample": "SRR35987633",
+      "candidate_pairs": 482,
+      "original_pairs": 547,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR35987633_aa12_fastp.fastq.gz",
+      "source_sha256": "c1a60c812acf8a06bab65e3099a0ccc8f1b4a53e43c5fa22e6e2abb7098adfe5",
+      "seconds": 0.09919533599168062
+    },
+    {
+      "sample": "SRR39695000",
+      "candidate_pairs": 4644,
+      "original_pairs": 5494,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR39695000_aa12_fastp.fastq.gz",
+      "source_sha256": "08787e18999fbd3729183820429c8697c3485e8ef9a37096dbc6984278d1d898",
+      "seconds": 0.3774302700039698
+    },
+    {
+      "sample": "SRR37089580",
+      "candidate_pairs": 436,
+      "original_pairs": 480,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR37089580_aa12_fastp.fastq.gz",
+      "source_sha256": "f149962972587e1c6a484c3adac538e2045d2e86d8615e149597daf9e564d2eb",
+      "seconds": 0.04220257099950686
+    },
+    {
+      "sample": "SRR38294066",
+      "candidate_pairs": 1684,
+      "original_pairs": 2036,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294066_aa12_fastp.fastq.gz",
+      "source_sha256": "63b32832f115ddb1a12d5d3f63f1455c6831809b7f1ff8e0c2a5997e088a9b78",
+      "seconds": 0.2030377360060811
+    },
+    {
+      "sample": "SRR35931357",
+      "candidate_pairs": 5004,
+      "original_pairs": 5566,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR35931357_aa12_fastp.fastq.gz",
+      "source_sha256": "1ce353ae54d1491ad1ebd13d9dcba0fcd4bee30b2f89f3e102e1f92007ebaecb",
+      "seconds": 0.5568298830039566
+    },
+    {
+      "sample": "SRR33038209",
+      "candidate_pairs": 498,
+      "original_pairs": 510,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR33038209_aa12_fastp.fastq.gz",
+      "source_sha256": "abdb371e66aca6cfbd26b1e3634c1ad26b5705c790c232cccdbbcaf50125d074",
+      "seconds": 0.11842799799342174
+    },
+    {
+      "sample": "SRR33038179",
+      "candidate_pairs": 1175,
+      "original_pairs": 1196,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR33038179_aa12_fastp.fastq.gz",
+      "source_sha256": "2b577365ea4764eed1c03473b361a80431b57e9d5cf6284919faf5394ca6b9cb",
+      "seconds": 0.23429313600354362
+    },
+    {
+      "sample": "SRR39695141",
+      "candidate_pairs": 1456,
+      "original_pairs": 1910,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR39695141_aa12_fastp.fastq.gz",
+      "source_sha256": "f2ce6622347a18cef9e8d3936d67fb82c34c1c97916b3499f7a201193a85260f",
+      "seconds": 0.1669546080083819
+    },
+    {
+      "sample": "SRR38294904",
+      "candidate_pairs": 909,
+      "original_pairs": 1014,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294904_aa12_fastp.fastq.gz",
+      "source_sha256": "5f1fb625e11d35c1b8c969304b7e0f8a453570edeb91591c4c7e9d6a808dff43",
+      "seconds": 0.16333909299282823
+    },
+    {
+      "sample": "SRR38294984",
+      "candidate_pairs": 1031,
+      "original_pairs": 1180,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294984_aa12_fastp.fastq.gz",
+      "source_sha256": "647e960eee4e3866ae7df453e1aac166f0946806082ed4e10fb0442fa9e8b2b2",
+      "seconds": 0.09202082500269171
+    },
+    {
+      "sample": "SRR39695064",
+      "candidate_pairs": 4692,
+      "original_pairs": 5251,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR39695064_aa12_fastp.fastq.gz",
+      "source_sha256": "536ab7413ff0c45b51a29f18aefd566270ef5715a77ff0d565c782f238e2d2ff",
+      "seconds": 0.35437171199009754
+    },
+    {
+      "sample": "SRR35904030",
+      "candidate_pairs": 8463,
+      "original_pairs": 13003,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR35904030_aa12_fastp.fastq.gz",
+      "source_sha256": "9a4e48c1b0646a4b94928bb17ad063e4fafe75f9c1e5051eb2f490f03256f0ea",
+      "seconds": 2.153411214996595
+    },
+    {
+      "sample": "SRR36876831",
+      "candidate_pairs": 98,
+      "original_pairs": 112,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR36876831_aa12_fastp.fastq.gz",
+      "source_sha256": "6da9e88ccab998ab3d836a021ac3dcd64b4e553b37c3d354bf5f96cab80e0321",
+      "seconds": 0.024098081004922278
+    },
+    {
+      "sample": "SRR39695293",
+      "candidate_pairs": 465,
+      "original_pairs": 545,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR39695293_aa12_fastp.fastq.gz",
+      "source_sha256": "37d6192947aa0bf58478efe9e9513555c37a30faf391c5e78b21956f6fcd3a7f",
+      "seconds": 0.06708969299506862
+    },
+    {
+      "sample": "SRR38294982",
+      "candidate_pairs": 2275,
+      "original_pairs": 2356,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR38294982_aa12_fastp.fastq.gz",
+      "source_sha256": "fee7d663d453dfda8a0819310be9dec3fc5ce6b6f6840e2a9ffaee5f9d2bc2c2",
+      "seconds": 0.259940967996954
+    },
+    {
+      "sample": "SRR36876970",
+      "candidate_pairs": 4567,
+      "original_pairs": 5957,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r007/output/fastp/SRR36876970_aa12_fastp.fastq.gz",
+      "source_sha256": "e189e692954a1e770af9f9b748353e1f6565119135d6d6de7a88072e695fa036",
+      "seconds": 0.4035778319957899
+    },
+    {
+      "sample": "SRR38295001",
+      "candidate_pairs": 169,
+      "original_pairs": 192,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38295001_aa12_fastp.fastq.gz",
+      "source_sha256": "89512ff1b2014fd15968bfce7731bd7e9fbff5250e7e2700799c16f3401144fc",
+      "seconds": 0.05707265999808442
+    },
+    {
+      "sample": "SRR38294125",
+      "candidate_pairs": 958,
+      "original_pairs": 1097,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38294125_aa12_fastp.fastq.gz",
+      "source_sha256": "3dad6df22cd95da369eef80b0379f72ecba95c1173a73a7b23bf8fecdbdf9b8c",
+      "seconds": 0.1754163939913269
+    },
+    {
+      "sample": "SRR39695245",
+      "candidate_pairs": 113,
+      "original_pairs": 118,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR39695245_aa12_fastp.fastq.gz",
+      "source_sha256": "7b81b440c43e68344cd9e048e7ad0c46a6ee57b89cc82e0419ae35a67371b2de",
+      "seconds": 0.05083171700243838
+    },
+    {
+      "sample": "SRR38294616",
+      "candidate_pairs": 16,
+      "original_pairs": 16,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38294616_aa12_fastp.fastq.gz",
+      "source_sha256": "9eede1f030f525d2edbd91e6827731ddd052b770d46ade07191e20b3ee989f51",
+      "seconds": 0.8699838259926764
+    },
+    {
+      "sample": "SRR36876983",
+      "candidate_pairs": 5388,
+      "original_pairs": 5941,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR36876983_aa12_fastp.fastq.gz",
+      "source_sha256": "0cbb545218853b5d958457acfdf8ae8b183dfef9d60ea7b009a0997ea66169dd",
+      "seconds": 0.5869846160057932
+    },
+    {
+      "sample": "SRR37367546",
+      "candidate_pairs": 411,
+      "original_pairs": 443,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR37367546_aa12_fastp.fastq.gz",
+      "source_sha256": "c682da2a51c194b32d9ff82debaa9acad9c39791290b3ecada6cf8061b554bb5",
+      "seconds": 0.13163952699687798
+    },
+    {
+      "sample": "SRR37181184",
+      "candidate_pairs": 991,
+      "original_pairs": 1130,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR37181184_aa12_fastp.fastq.gz",
+      "source_sha256": "0c4dc46ac12f82680e5643b2f0d09172acb25a1a438d0e4b82ea3a6796f87744",
+      "seconds": 0.23656325599586125
+    },
+    {
+      "sample": "SRR39695315",
+      "candidate_pairs": 1267,
+      "original_pairs": 1465,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR39695315_aa12_fastp.fastq.gz",
+      "source_sha256": "0bdeeaad0d2fb532628973be3f2efaee24d9581d23f0a7673dbd9d41533c93da",
+      "seconds": 0.19753925400436856
+    },
+    {
+      "sample": "SRR39695376",
+      "candidate_pairs": 3988,
+      "original_pairs": 4480,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR39695376_aa12_fastp.fastq.gz",
+      "source_sha256": "75813797658d7e2010919d2eb2f3957a646a4c88bf4241d39f9e9333a95c4ac0",
+      "seconds": 0.29680326700326987
+    },
+    {
+      "sample": "SRR37428226",
+      "candidate_pairs": 287,
+      "original_pairs": 308,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR37428226_aa12_fastp.fastq.gz",
+      "source_sha256": "8e36fe20b38e34429e58c6c40e055e49ca97541f66fd722a1b57473118890d32",
+      "seconds": 0.04351091400894802
+    },
+    {
+      "sample": "SRR38294613",
+      "candidate_pairs": 2379,
+      "original_pairs": 2691,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38294613_aa12_fastp.fastq.gz",
+      "source_sha256": "5df3eacce1a96bab5270aa0d6df930db658ebdbbdb4fabb311ddfceb3ef78706",
+      "seconds": 0.20422484900336713
+    },
+    {
+      "sample": "SRR38294978",
+      "candidate_pairs": 1191,
+      "original_pairs": 1323,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38294978_aa12_fastp.fastq.gz",
+      "source_sha256": "03c3cd43021e9b2b21112aa971ffab51b064580256dbb4fe6d456427946b2670",
+      "seconds": 0.15364280799985863
+    },
+    {
+      "sample": "SRR33038019",
+      "candidate_pairs": 2585,
+      "original_pairs": 2824,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR33038019_aa12_fastp.fastq.gz",
+      "source_sha256": "1769af0a4301e35565f6510eaf56c75e97f8eb98e0ea23c98a51f434eabcda85",
+      "seconds": 0.31803956600197125
+    },
+    {
+      "sample": "SRR38294172",
+      "candidate_pairs": 1013,
+      "original_pairs": 1226,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38294172_aa12_fastp.fastq.gz",
+      "source_sha256": "2ecb656ce995646dfcb7a8c5735a1fa35e0a9ae220c8699f141238cd34445051",
+      "seconds": 0.19241857298766263
+    },
+    {
+      "sample": "SRR37428194",
+      "candidate_pairs": 1749,
+      "original_pairs": 2123,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR37428194_aa12_fastp.fastq.gz",
+      "source_sha256": "58f908e36d72e3db9aecfe1645d5c783e41b814b71ce2a76632d78e347f0c337",
+      "seconds": 0.24354080499324482
+    },
+    {
+      "sample": "SRR37092415",
+      "candidate_pairs": 1363,
+      "original_pairs": 1515,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR37092415_aa12_fastp.fastq.gz",
+      "source_sha256": "078099f31978d76a0b39e613d4eb3ef68ca587d060864c08c623f3a3b2e10869",
+      "seconds": 0.1828831159946276
+    },
+    {
+      "sample": "SRR39695286",
+      "candidate_pairs": 4237,
+      "original_pairs": 4753,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR39695286_aa12_fastp.fastq.gz",
+      "source_sha256": "2b7d24d3c529361949554b5bfaf1459cdb6b41b7e011b9b478cc2e7b2a2f9037",
+      "seconds": 0.3570034600124927
+    },
+    {
+      "sample": "SRR38294973",
+      "candidate_pairs": 2627,
+      "original_pairs": 2838,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38294973_aa12_fastp.fastq.gz",
+      "source_sha256": "670c528cf7df766ba3b48d613c248c1e9d971b2feaa8f8800bd65981562912be",
+      "seconds": 0.3007415059983032
+    },
+    {
+      "sample": "SRR37089572",
+      "candidate_pairs": 318,
+      "original_pairs": 326,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR37089572_aa12_fastp.fastq.gz",
+      "source_sha256": "e005e9c7df9b3d4a13d470e81ad23fe228d81d39baef6a86b8d4dccc31a8b41f",
+      "seconds": 0.04330654798832256
+    },
+    {
+      "sample": "SRR39694952",
+      "candidate_pairs": 6950,
+      "original_pairs": 7743,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR39694952_aa12_fastp.fastq.gz",
+      "source_sha256": "d529d2526a47d69957169e75441d10e2f085745f40242cba17c78096f6e5b27f",
+      "seconds": 0.5435747949959477
+    },
+    {
+      "sample": "SRR37192085",
+      "candidate_pairs": 705,
+      "original_pairs": 775,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR37192085_aa12_fastp.fastq.gz",
+      "source_sha256": "56b0ee7668341f15291e2bda7f4c4879e97a624910d87fb487a244788e3f40df",
+      "seconds": 0.15086502600752283
+    },
+    {
+      "sample": "SRR38294841",
+      "candidate_pairs": 767,
+      "original_pairs": 852,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR38294841_aa12_fastp.fastq.gz",
+      "source_sha256": "004299e337aaedb58dfa66a92dfb47e6f65e4c5e924715329d2e6d18d4c5ebac",
+      "seconds": 0.16219588099920657
+    },
+    {
+      "sample": "SRR35987674",
+      "candidate_pairs": 1226,
+      "original_pairs": 1448,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR35987674_aa12_fastp.fastq.gz",
+      "source_sha256": "7d635cd5306eff1ec317e46d73c4eb609928a5a3b8360b2802f4a03f48500ee0",
+      "seconds": 0.12201194500084966
+    },
+    {
+      "sample": "SRR36876798",
+      "candidate_pairs": 103,
+      "original_pairs": 108,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR36876798_aa12_fastp.fastq.gz",
+      "source_sha256": "25b89b64b9ad559e1fbe5c2e72184daa84e8f60574dd3bb95cbc521e426ba92a",
+      "seconds": 0.021022797998739406
+    },
+    {
+      "sample": "SRR36832675",
+      "candidate_pairs": 940,
+      "original_pairs": 1030,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r008/output/fastp/SRR36832675_aa12_fastp.fastq.gz",
+      "source_sha256": "8a3524ab23665831bb612fc50ac5b167c4befeefdb83bcb33587b892e3cae0e7",
+      "seconds": 0.13533775899850298
+    },
+    {
+      "sample": "SRR33038116",
+      "candidate_pairs": 109,
+      "original_pairs": 112,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR33038116_aa12_fastp.fastq.gz",
+      "source_sha256": "1b3f6a8386312b7ce6a976a6c06c83b573b98fec767196e25b53a748be864b04",
+      "seconds": 0.026871034991927445
+    },
+    {
+      "sample": "SRR39695223",
+      "candidate_pairs": 99,
+      "original_pairs": 100,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR39695223_aa12_fastp.fastq.gz",
+      "source_sha256": "6a3f364d6f6d93b33e6821b0103552eeaae7a5c8f185dd39761d788e2eb705e8",
+      "seconds": 0.1040663440071512
+    },
+    {
+      "sample": "SRR36995843",
+      "candidate_pairs": 2628,
+      "original_pairs": 2751,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR36995843_aa12_fastp.fastq.gz",
+      "source_sha256": "af87eae6032fca691e57c6837a50c0670797a08bfae462c102fa9402b4af3239",
+      "seconds": 0.3888867850037059
+    },
+    {
+      "sample": "SRR38294884",
+      "candidate_pairs": 1174,
+      "original_pairs": 1266,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR38294884_aa12_fastp.fastq.gz",
+      "source_sha256": "36b4d0f47388cfd93cfcaafa86e5d0bc5ab6e1cff56c28e3b14e49ff68097369",
+      "seconds": 0.12279010198835749
+    },
+    {
+      "sample": "SRR33038102",
+      "candidate_pairs": 224,
+      "original_pairs": 237,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR33038102_aa12_fastp.fastq.gz",
+      "source_sha256": "96b9ac78232858cbbfe6d4e6456af61ac41cfd3f72b9866724941cfdb3dc801d",
+      "seconds": 0.05039080200367607
+    },
+    {
+      "sample": "SRR37076038",
+      "candidate_pairs": 4202,
+      "original_pairs": 4972,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR37076038_aa12_fastp.fastq.gz",
+      "source_sha256": "86f6700ee95473043146178c3ba65f5a70c4b7d29c46232535383ad717000eb9",
+      "seconds": 0.34747011298895814
+    },
+    {
+      "sample": "SRR33038214",
+      "candidate_pairs": 530,
+      "original_pairs": 546,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR33038214_aa12_fastp.fastq.gz",
+      "source_sha256": "67817465fd7353587cd00b4cbb320196a501397f3a5ff779aac8b8c321a3f85f",
+      "seconds": 0.1252855069906218
+    },
+    {
+      "sample": "SRR38294706",
+      "candidate_pairs": 2526,
+      "original_pairs": 2628,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR38294706_aa12_fastp.fastq.gz",
+      "source_sha256": "40c0004fb9a6cefa65e711dcb709e0c64f6f57c4e643b0a21d170f22f51130db",
+      "seconds": 0.4767815880040871
+    },
+    {
+      "sample": "SRR37181174",
+      "candidate_pairs": 125,
+      "original_pairs": 148,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR37181174_aa12_fastp.fastq.gz",
+      "source_sha256": "1fef594d22bf016ccd827971cd0f425bdaa0c0d2d7633008ad7f4c7cdc5bd656",
+      "seconds": 0.1289567369967699
+    },
+    {
+      "sample": "SRR36814893",
+      "candidate_pairs": 1754,
+      "original_pairs": 2046,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR36814893_aa12_fastp.fastq.gz",
+      "source_sha256": "67945f58692bf4fadbd7140b8dea6fc0d6d348e0f28fde8638365fb06c68dbb4",
+      "seconds": 0.2642060130019672
+    },
+    {
+      "sample": "SRR38294907",
+      "candidate_pairs": 2681,
+      "original_pairs": 3007,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR38294907_aa12_fastp.fastq.gz",
+      "source_sha256": "6a0c4e10182aba1c12043f93e68462714b309ce562f7cb08a7350f477bf7bcd7",
+      "seconds": 0.3201288769923849
+    },
+    {
+      "sample": "SRR33038171",
+      "candidate_pairs": 3392,
+      "original_pairs": 3567,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR33038171_aa12_fastp.fastq.gz",
+      "source_sha256": "8531673515b4abeda1062bff44fe938fa55d6cc5aaad24a48811b480b359c182",
+      "seconds": 0.40739904801012017
+    },
+    {
+      "sample": "SRR38294956",
+      "candidate_pairs": 31,
+      "original_pairs": 33,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR38294956_aa12_fastp.fastq.gz",
+      "source_sha256": "e6f42358c338b20bc1660a910219e62d6bbd65f066275d7724289448014ee699",
+      "seconds": 0.43158325299737044
+    },
+    {
+      "sample": "SRR39695332",
+      "candidate_pairs": 1718,
+      "original_pairs": 1979,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR39695332_aa12_fastp.fastq.gz",
+      "source_sha256": "46e1ba2aca085dcd463a011420b4e45fde7cb4cd59180a050bac4cbc5799bad5",
+      "seconds": 0.17171234800480306
+    },
+    {
+      "sample": "SRR33038163",
+      "candidate_pairs": 408,
+      "original_pairs": 433,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR33038163_aa12_fastp.fastq.gz",
+      "source_sha256": "36333ce1d04d2cd27ec4854c15a869863f6473ee238605d8e84e8a4c1cdc44e0",
+      "seconds": 0.07050692399207037
+    },
+    {
+      "sample": "SRR37428222",
+      "candidate_pairs": 1737,
+      "original_pairs": 2059,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR37428222_aa12_fastp.fastq.gz",
+      "source_sha256": "b967a14dd7ac5c4c236d4d8df5f39e7a4c1c0b9688e408914fd69d6c3bed52a6",
+      "seconds": 0.23474907099443953
+    },
+    {
+      "sample": "SRR38294145",
+      "candidate_pairs": 888,
+      "original_pairs": 1167,
+      "source": "/home/ec2-user/experiment/cohort-storage/batches/r009/output/fastp/SRR38294145_aa12_fastp.fastq.gz",
+      "source_sha256": "4f62223305bad2d20609f29daf43ba3bb950728fad35db6dd246f2fc4bb1f222",
+      "seconds": 0.10843675999785773
+    }
+  ],
+  "policy": "Every candidate member must occur once with exactly matching sequences in the original AA12 FASTP source. Select maximum summed original qualities per exact pair, with lexical quality and read-ID tie breaking. No rerun, synthetic qualities, or taxonomic verdict changes."
+}
