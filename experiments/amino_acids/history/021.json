@@ -1,0 +1,18 @@
+{
+  "sequence": 21,
+  "title": "Isolate read-name effects in contaminant preparation",
+  "reconstructed_utc": "2026-10-22T13:19:06.910046+00:00",
+  "snapshot_archive": "private-source-20261022T023048Z.tar.gz",
+  "snapshot_sha256": "2e01b41f2e9fd82cadd807bf3bf92ada8a696d0428caa033271fc6c19d5ffe16",
+  "snapshot_recorded_utc": "2026-10-22T02:30:48.541840+00:00",
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "",
+  "changed_source_sha256": {
+    "experiments/amino_acids/extract-preparation-discrepancies.py": "4d74639eadd7ec0116dc5a65c122f13319f84ed700242be44bd92453826b8ac4",
+    "experiments/amino_acids/header-control.nf": "8e6ec3abc00d34f7842fc985c7d0c7beb01b7c44d453ea6ea6e895165f3ca8a3",
+    "experiments/amino_acids/preparation-discrepancy.config": "682cb6d2277fcc1c8b2c19de7c6721cc3a7c14adb8d68b86ac5b679f8afb7160",
+    "experiments/amino_acids/preparation-discrepancy.nf": "8a592778a4be743877f4556e9904d5c2697326d596528fda284d513d2af20791",
+    "experiments/amino_acids/validate-header-discrepancies.py": "c1f82b70c47db9af6645381c5f6b506bd4783cd8bf48b0f1adc319ac8f961be7"
+  }
+}
