@@ -1,0 +1,22 @@
+{
+  "sequence": 10,
+  "title": "Freeze and analyze the 1000-sample five-arm comparison",
+  "reconstructed_utc": "2026-10-22T13:19:04.583981+00:00",
+  "snapshot_archive": "private-source-20261022T003943Z.tar.gz",
+  "snapshot_sha256": "19c8c981c14d4f1687a6eb923a19fc707288ad38823f6bf4807a962fecbf8acf",
+  "snapshot_recorded_utc": "2026-10-22T00:39:44.274673+00:00",
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "Reconstructed from the 00:39 UTC checkpoint. Group order within this checkpoint is organizational, not an inferred execution chronology.",
+  "changed_source_sha256": {
+    "experiments/amino_acids/frozen-protocol.json": "c0a8ec1df730dbda0dfe71ae0a12c4dedcb8ef54850130d9ac048303d08756d1",
+    "experiments/amino_acids/local.config": "d8295cdb2a477cb9d0d9dcd57ed9e1c06449a9b5c8b1f0a6768208a91252a3fc",
+    "experiments/amino_acids/analyze-cohort.py": "84a78c01543142034c87d799781d55719bbeb260464d523c3813d185f82ae827",
+    "experiments/amino_acids/analyze-clustered.py": "999634ce68016311552d09074560127aa39d1e708e880d6a5e106e395fbd76ec",
+    "experiments/amino_acids/analyze-resources.py": "bcce0ea7b927af8bd5d1c3bd384e7760c530e4d515b29217e0853e23f192158f",
+    "experiments/amino_acids/analyze-screen-burden.py": "9fa1571c85df1adecd6eb5c2afa95f5e7d9daeae4ecd8f91c422efb6bcef9664",
+    "experiments/amino_acids/analyze-species.py": "b94c07885b83c4c2504880b2a069528881169ccbaf37574eda0767b324819c79",
+    "experiments/amino_acids/summarize-species-support.py": "39b9a3988ecd225a2f324fc706953ade91293598578d4e6bdb0bb8324a38aaa4",
+    "experiments/amino_acids/refresh-native-analysis.py": "a0cdbb5f847b8c2ac4caeb7b1497bdc8ebff0a0deb51725b68d27f1327c8c18c"
+  }
+}
