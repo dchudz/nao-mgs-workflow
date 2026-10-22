@@ -1,0 +1,2 @@
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.756 MB /home/ec2-user/experiment/cohort-storage/translated-core-nt/profiling/tblastx-perf.data (11705 samples) ]

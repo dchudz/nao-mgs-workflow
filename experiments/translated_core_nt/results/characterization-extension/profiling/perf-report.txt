@@ -1,0 +1,49 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 11K of event 'cpu-clock'
+# Event count (approx.): 238877547915
+#
+# Overhead  Shared Object      Symbol                                       IPC   [IPC Coverage]
+# ........  .................  ...........................................  ....................
+#
+    49.31%  libxblast.so       [.] BlastAaWordFinder                        -      -            
+            |
+            ---BlastAaWordFinder
+
+    30.96%  libxblast.so       [.] s_BlastSmallAaScanSubject                -      -            
+            |
+            ---s_BlastSmallAaScanSubject
+
+     6.77%  libxblast.so       [.] BSearchContextInfo                       -      -            
+            |
+            ---BSearchContextInfo
+
+     5.11%  libxblast.so       [.] s_BlastAaExtendLeft.isra.0               -      -            
+            |
+            ---s_BlastAaExtendLeft.isra.0
+               |          
+                --2.98%--0x60913040619090a
+
+     3.20%  libxblast.so       [.] s_BlastAaExtendTwoHit                    -      -            
+            |
+            ---s_BlastAaExtendTwoHit
+               |          
+                --3.02%--0x561014609ef0
+                          0xffff8000ffff8000
+
+     1.50%  libxblast.so       [.] s_BlastAaExtendRight.constprop.0.isra.0  -      -            
+            |
+            ---s_BlastAaExtendRight.constprop.0.isra.0
+
+     1.23%  libxblast.so       [.] BLAST_TranslateCompressedSequence        -      -            
+            |
+            ---BLAST_TranslateCompressedSequence
+
+
+
+#
+# (Tip: If you have debuginfo enabled, try: perf report -s sym,srcline)
+#

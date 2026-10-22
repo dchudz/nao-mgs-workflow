@@ -1,0 +1,48 @@
+[
+  {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "-v",
+      "/home/ec2-user/experiment:/home/ec2-user/experiment",
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+      "tblastx",
+      "-db",
+      "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+      "-query",
+      "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/queries.fna",
+      "-qcov_hsp_perc",
+      "100",
+      "-outfmt",
+      "6 qseqid length qlen qstart qend qframe qcovhsp"
+    ],
+    "stdout": "identical\t80\t240\t1\t240\t1\t33\nidentical\t79\t240\t238\t2\t-3\t33\nsynonymous\t80\t240\t1\t240\t1\t100\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "-v",
+      "/home/ec2-user/experiment:/home/ec2-user/experiment",
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+      "tblastx",
+      "-db",
+      "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+      "-query",
+      "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/codon-families/queries.fna",
+      "-qcov_hsp_perc",
+      "100",
+      "-outfmt",
+      "6 qseqid length qlen qstart qend qframe qcovhsp"
+    ],
+    "stdout": "reference_control\t80\t240\t1\t240\t1\t33\nreference_control\t79\t240\t238\t2\t-3\t33\nmaximal_synonymous\t80\t240\t1\t240\t1\t100\nreverse_frame3_synonymous\t80\t242\t240\t1\t-3\t99\n",
+    "stderr": ""
+  }
+]

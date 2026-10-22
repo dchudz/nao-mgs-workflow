@@ -1,0 +1,68 @@
+{
+  "created_utc": "2026-10-22T16:30:10.966695+00:00",
+  "methods": {
+    "tblastx": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "tblastx",
+        "-query_gencode",
+        "1",
+        "-db_gencode",
+        "1",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/queries.fna",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ]
+    },
+    "query-tblastn-fast": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "tblastn",
+        "-task",
+        "tblastn-fast",
+        "-ungapped",
+        "-comp_based_stats",
+        "0",
+        "-seg",
+        "12 2.2 2.5",
+        "-soft_masking",
+        "false",
+        "-db_gencode",
+        "1",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/query-only/queries.faa",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ]
+    }
+  },
+  "source_sha256": "522b64de10731fa18218d14d229d9d47f924616e957404f2a87b305d9537802a",
+  "purpose": "Inspect raw score and statistical parameters; do not assume a universal Evalue correction between different programs"
+}

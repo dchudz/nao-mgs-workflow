@@ -1,0 +1,998 @@
+{
+  "created_utc": "2026-10-22T16:28:49.773891+00:00",
+  "source_sha256": "15e90624e81c2ce7055ba3552d9ca6d62b219a2ebfd7db1a89e508c01bfae09e",
+  "reference_sha256": "c39c2ea232a526829b1bb58b12fe386f4e7774005fb0712ac384ef80da997d39",
+  "query_sha256": "8cc4d5509dfb468d8a84b26905875939896ade43cb305eb544eced2052687a75",
+  "truth": {
+    "even_0substitutions": {
+      "AA_substitutions": 0,
+      "AA_identity_pct": 100.0,
+      "nt_identity_pct": 60.0,
+      "placement": "even"
+    },
+    "random_0substitutions": {
+      "AA_substitutions": 0,
+      "AA_identity_pct": 100.0,
+      "nt_identity_pct": 60.0,
+      "placement": "random"
+    },
+    "even_4substitutions": {
+      "AA_substitutions": 4,
+      "AA_identity_pct": 95.0,
+      "nt_identity_pct": 58.333333333333336,
+      "placement": "even"
+    },
+    "random_4substitutions": {
+      "AA_substitutions": 4,
+      "AA_identity_pct": 95.0,
+      "nt_identity_pct": 57.5,
+      "placement": "random"
+    },
+    "even_8substitutions": {
+      "AA_substitutions": 8,
+      "AA_identity_pct": 90.0,
+      "nt_identity_pct": 55.833333333333336,
+      "placement": "even"
+    },
+    "random_8substitutions": {
+      "AA_substitutions": 8,
+      "AA_identity_pct": 90.0,
+      "nt_identity_pct": 55.416666666666664,
+      "placement": "random"
+    },
+    "even_16substitutions": {
+      "AA_substitutions": 16,
+      "AA_identity_pct": 80.0,
+      "nt_identity_pct": 51.25,
+      "placement": "even"
+    },
+    "random_16substitutions": {
+      "AA_substitutions": 16,
+      "AA_identity_pct": 80.0,
+      "nt_identity_pct": 49.166666666666664,
+      "placement": "random"
+    },
+    "even_24substitutions": {
+      "AA_substitutions": 24,
+      "AA_identity_pct": 70.0,
+      "nt_identity_pct": 45.833333333333336,
+      "placement": "even"
+    },
+    "random_24substitutions": {
+      "AA_substitutions": 24,
+      "AA_identity_pct": 70.0,
+      "nt_identity_pct": 45.0,
+      "placement": "random"
+    },
+    "even_32substitutions": {
+      "AA_substitutions": 32,
+      "AA_identity_pct": 60.0,
+      "nt_identity_pct": 41.25,
+      "placement": "even"
+    },
+    "random_32substitutions": {
+      "AA_substitutions": 32,
+      "AA_identity_pct": 60.0,
+      "nt_identity_pct": 40.416666666666664,
+      "placement": "random"
+    },
+    "shuffled_control": {
+      "control": "Composition-preserving protein shuffle; not a biological negative truth label"
+    }
+  },
+  "methods": {
+    "megablast": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "blastn",
+        "-task",
+        "megablast",
+        "-perc_identity",
+        "60",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/divergence/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "returncode": 0,
+      "rows": 0,
+      "queries": {
+        "even_0substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_0substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_4substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_4substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_8substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_8substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_16substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_16substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_24substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_24substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_32substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_32substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "shuffled_control": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        }
+      }
+    },
+    "blastn": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "blastn",
+        "-task",
+        "blastn",
+        "-perc_identity",
+        "60",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/divergence/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "returncode": 0,
+      "rows": 0,
+      "queries": {
+        "even_0substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_0substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_4substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_4substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_8substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_8substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_16substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_16substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_24substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_24substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_32substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_32substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "shuffled_control": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        }
+      }
+    },
+    "dc-megablast": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "blastn",
+        "-task",
+        "dc-megablast",
+        "-template_type",
+        "coding",
+        "-template_length",
+        "18",
+        "-word_size",
+        "11",
+        "-perc_identity",
+        "60",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/divergence/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "returncode": 0,
+      "rows": 0,
+      "queries": {
+        "even_0substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_0substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_4substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_4substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_8substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_8substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_16substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_16substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_24substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_24substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "even_32substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_32substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "shuffled_control": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        }
+      }
+    },
+    "tblastx": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "tblastx",
+        "-query_gencode",
+        "1",
+        "-db_gencode",
+        "1",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/divergence/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "returncode": 0,
+      "rows": 15,
+      "queries": {
+        "even_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.58e-60,
+          "best_bitscore": 210.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.58e-60,
+          "best_bitscore": 210.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.14e-56,
+          "best_bitscore": 199.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.57e-56,
+          "best_bitscore": 198.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.58e-52,
+          "best_bitscore": 183.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.23e-53,
+          "best_bitscore": 188.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 3.47e-46,
+          "best_bitscore": 164.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 3.76e-43,
+          "best_bitscore": 154.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.14e-36,
+          "best_bitscore": 132.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.45e-35,
+          "best_bitscore": 128.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_32substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.45e-27,
+          "best_bitscore": 102.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_32substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 2.33e-29,
+          "best_bitscore": 108.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "shuffled_control": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        }
+      }
+    },
+    "query-tblastn-fast": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "tblastn",
+        "-task",
+        "tblastn-fast",
+        "-ungapped",
+        "-comp_based_stats",
+        "0",
+        "-seg",
+        "12 2.2 2.5",
+        "-soft_masking",
+        "false",
+        "-db_gencode",
+        "1",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/divergence/queries.faa",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "returncode": 0,
+      "rows": 12,
+      "queries": {
+        "even_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.54e-60,
+          "best_bitscore": 211.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.54e-60,
+          "best_bitscore": 211.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 7.3e-57,
+          "best_bitscore": 199.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.76e-57,
+          "best_bitscore": 199.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 2.94e-52,
+          "best_bitscore": 184.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.8e-54,
+          "best_bitscore": 191.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 9.5e-47,
+          "best_bitscore": 166.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 2.14e-43,
+          "best_bitscore": 154.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 9.48e-38,
+          "best_bitscore": 136.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 4.89e-36,
+          "best_bitscore": 130.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_32substitutions": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        },
+        "random_32substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 3.44e-30,
+          "best_bitscore": 111.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "shuffled_control": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        }
+      }
+    },
+    "tblastx-word4": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "tblastx",
+        "-word_size",
+        "4",
+        "-threshold",
+        "18",
+        "-query_gencode",
+        "1",
+        "-db_gencode",
+        "1",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/divergence/queries.fna",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "returncode": 0,
+      "rows": 14,
+      "queries": {
+        "even_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.58e-60,
+          "best_bitscore": 210.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.58e-60,
+          "best_bitscore": 210.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.14e-56,
+          "best_bitscore": 199.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.57e-56,
+          "best_bitscore": 198.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.58e-52,
+          "best_bitscore": 183.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.23e-53,
+          "best_bitscore": 188.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 3.47e-46,
+          "best_bitscore": 164.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 3.76e-43,
+          "best_bitscore": 154.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.14e-36,
+          "best_bitscore": 132.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.45e-35,
+          "best_bitscore": 128.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_32substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.45e-27,
+          "best_bitscore": 102.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_32substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 2.33e-29,
+          "best_bitscore": 108.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "shuffled_control": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        }
+      }
+    },
+    "query-tblastn-standard": {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "-v",
+        "/home/ec2-user/experiment:/home/ec2-user/experiment",
+        "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+        "tblastn",
+        "-task",
+        "tblastn",
+        "-ungapped",
+        "-comp_based_stats",
+        "0",
+        "-seg",
+        "12 2.2 2.5",
+        "-soft_masking",
+        "false",
+        "-db_gencode",
+        "1",
+        "-db",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/db",
+        "-query",
+        "/home/ec2-user/experiment/cohort-storage/translated-core-nt/translation-fixture/divergence/queries.faa",
+        "-outfmt",
+        "6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq",
+        "-qcov_hsp_perc",
+        "30",
+        "-evalue",
+        "10",
+        "-max_hsps",
+        "5",
+        "-num_alignments",
+        "250"
+      ],
+      "returncode": 0,
+      "rows": 15,
+      "queries": {
+        "even_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.54e-60,
+          "best_bitscore": 211.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_0substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.54e-60,
+          "best_bitscore": 211.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 7.3e-57,
+          "best_bitscore": 199.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_4substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 5.76e-57,
+          "best_bitscore": 199.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 2.94e-52,
+          "best_bitscore": 184.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_8substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 1.8e-54,
+          "best_bitscore": 191.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 9.5e-47,
+          "best_bitscore": 166.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_16substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 2.14e-43,
+          "best_bitscore": 154.0,
+          "max_coordinate_query_coverage_pct": 98.75
+        },
+        "even_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 9.48e-38,
+          "best_bitscore": 136.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_24substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 4.89e-36,
+          "best_bitscore": 130.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "even_32substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 2.23e-28,
+          "best_bitscore": 105.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "random_32substitutions": {
+          "any_hit": true,
+          "intended_frame_hit": true,
+          "best_evalue": 3.44e-30,
+          "best_bitscore": 111.0,
+          "max_coordinate_query_coverage_pct": 100.0
+        },
+        "shuffled_control": {
+          "any_hit": false,
+          "intended_frame_hit": false,
+          "best_evalue": null,
+          "best_bitscore": null,
+          "max_coordinate_query_coverage_pct": null
+        }
+      }
+    }
+  },
+  "limits": [
+    "One deterministic synthetic80AAreference with controlled synonymous recoding and AA substitutions",
+    "Not an estimate of recall or accuracy on real samples",
+    "Tiny-database Evalues cannot establish significance against comprehensive core_nt",
+    "No speed claims from this fixture",
+    "Both even and random mutation placement fixed before evaluating methods"
+  ]
+}
