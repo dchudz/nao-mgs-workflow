@@ -30,17 +30,20 @@ def characterize():
     m.save(d/'codon-audit-characterization.json',dict(created_utc=m.now(),rows=all_results,reference_sha256=m.sha(f/'reference.fna'),excluded_from_real_data=True));print('CODON_RECONSTRUCTION_VERIFIED')
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--characterize',action='store_true');p.add_argument('--directory',type=Path);p.add_argument('--analysis',default='analysis');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--characterize',action='store_true');p.add_argument('--directory',type=Path);p.add_argument('--analysis',default='analysis');p.add_argument('--method',choices=['tblastx','query-tblastn-fast'],default='tblastx');p.add_argument('--baseline',choices=['blastn','tblastx'],default='blastn');a=p.parse_args()
     if a.characterize:characterize()
     else:
         d=a.directory;assert d is not None;out=d/a.analysis;calls=list(csv.DictReader((out/'per-mate.tsv').open(),delimiter='\t'));lookup={(x['query'],x['method'],x['threshold']):x for x in calls}
-        queries=m.fasta(d/'queries.fna');selected=[]
+        queries=m.fasta(d/'queries.fna');selected=[];changed=[];assert a.method!=a.baseline
         for q in queries:
-            left=lookup[q,'blastn','strict_E1e-5'];right=lookup[q,'tblastx','strict_E1e-5']
-            if right['status']!='no_alignment' and (left['status'],left['pipeline_natural_lca'])!=(right['status'],right['pipeline_natural_lca']):selected.append(q)
-        rows=[x for x in csv.DictReader((out/'near-best-alignments.tsv').open(),delimiter='\t') if x['method']=='tblastx' and x['threshold']=='strict_E1e-5' and x['qseqid'] in selected]
+            left=lookup[q,a.baseline,'strict_E1e-5'];right=lookup[q,a.method,'strict_E1e-5']
+            if (left['status'],left['pipeline_natural_lca'])!=(right['status'],right['pipeline_natural_lca']):
+                changed.append(q)
+                if right['status']!='no_alignment':selected.append(q)
+        rows=[x for x in csv.DictReader((out/'near-best-alignments.tsv').open(),delimiter='\t') if x['method']==a.method and x['threshold']=='strict_E1e-5' and x['qseqid'] in selected]
         # One highest-scoring subject per changed mate; all changed mate identities retained.
         chosen=[min((x for x in rows if x['qseqid']==q),key=lambda x:(-float(x['bitscore']),float(x['evalue']),x['sseqid'])) for q in sorted(selected)]
         results=[audit(x,queries,m.DB) for x in chosen]
-        m.save(out/'codon-audit.json',dict(created_utc=m.now(),selection='Every mate with a strict tblastx hit whose status or natural LCA differs from strict blastn; one deterministic highest-score subject per mate',rows=results,limits=['Alignment reconstruction explains observed sequence differences; it does not establish infection or a correct species assignment','No exact28nt run within an alignment alone is not proof of the sole reason a method missed the read']))
+        name='codon-audit.json' if (a.method,a.baseline)==('tblastx','blastn') else 'codon-audit-'+a.method+'-vs-'+a.baseline+'.json'
+        m.save(out/name,dict(created_utc=m.now(),audited_method=a.method,baseline_method=a.baseline,all_disagreeing_mates=changed,changed_without_audited_method_hit=sorted(set(changed)-set(selected)),selection='Every mate with a strict audited-method hit whose status or natural LCA differs from the baseline; one deterministic highest-score subject per mate',rows=results,limits=['Alignment reconstruction explains observed sequence differences; it does not establish infection or a correct species assignment','No exact28nt run within an alignment alone is not proof of the sole reason a method missed the read']))
         print(json.dumps({'audited_mates':len(results),'with_synonymous_codon_changes':sum(x['synonymous_changed_codons']>0 for x in results)}))
