@@ -1,0 +1,21 @@
+{
+  "sequence": 1,
+  "title": "Add the initial six-frame amino-acid screen",
+  "reconstructed_utc": "2026-10-22T13:19:03.419818+00:00",
+  "snapshot_archive": "source.tar.gz",
+  "snapshot_sha256": "34275219a8b913262fb1eb3709b47627e2da0aee8afd74ddcac56b94e19beabb",
+  "snapshot_recorded_utc": null,
+  "base_repository_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+  "reconstruction": "Commit created after execution from saved source. This is not a claim that the run used a Git commit or that these changes were authored in this order. Original protocols, query/reference/executable hashes and task logs govern executed results. Snapshot omissions are not deletions.",
+  "note": "Initial launch-source archive. Later worker fixes have their own captured snapshot.",
+  "changed_source_sha256": {
+    "rust-tools/Cargo.toml": "136172f9a4193acff6dc1b065bde43690ef97031e7b975ba834af6690e426f2e",
+    "rust-tools/Cargo.lock": "55f246dec1b56ce28f103170f74ce34edb5c337691205c2edbe21c062b9329ce",
+    "rust-tools/README.md": "dffa09d73baa45372d3335f29bc7225137b579b622d0e95147e9d16ce14f9324",
+    "rust-tools/screen_amino_acids/Cargo.toml": "c8863e3fa960cc197067803f287b7f2a35870363d85135decc978ed1bb007a31",
+    "rust-tools/screen_amino_acids/README.md": "e6008086694fe5bc89c84e8490d7454185f91ff5b2b381e531949a72aa814171",
+    "rust-tools/screen_amino_acids/tests/screen.rs": "a245edbb068b26a112ff1a1b7959592958b97fd2cf8de5b6d61f394bf48a4a27",
+    "rust-tools/screen_amino_acids/src/lib.rs": "ca923d2deb5020293dd48a9996a11addcf2c563815721cb1a9735c9ed71b5128",
+    "rust-tools/screen_amino_acids/src/main.rs": "295510d894c9d2c7c4853be17a0839d5f03ff23322879b0167f30eb7dbe5da9b"
+  }
+}
