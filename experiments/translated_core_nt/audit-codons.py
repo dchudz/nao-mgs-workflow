@@ -20,10 +20,14 @@ def audit(row,queries,database):
 def characterize():
     f=m.ROOT/'cohort-storage/translated-core-nt/translation-fixture';d=f/'codon-families';queries=m.fasta(d/'queries.fna')
     rows=[dict(zip(m.FIELDS,x)) for x in csv.reader((d/'tblastx.tsv').open(),delimiter='\t')]
-    selected=[x for x in rows if x['qseqid']!='reference_control' and x['length']=='80'];results=[audit(x,queries,f/'db') for x in selected]
+    database=d/'audit-db'
+    subprocess.run(['docker','run','--rm','--network','none','-v',f'{m.ROOT}:{m.ROOT}',m.IMAGE,'makeblastdb','-in',str(f/'reference.fna'),'-dbtype','nucl','-parse_seqids','-out',str(database)],check=True,stdout=subprocess.DEVNULL)
+    all_results=[audit(x,queries,database) for x in rows]
+    assert any(x['subject_frame']<0 for x in all_results)
+    results=[x for x in all_results if x['query']!='reference_control' and x['alignment_aa']==80]
     assert len(results)==2 and all(x['synonymous_changed_codons']>0 and x['aligned_nt_identity_pct']==60 for x in results)
     assert {x['query_frame'] for x in results}=={1,-3}
-    m.save(d/'codon-audit-characterization.json',dict(created_utc=m.now(),rows=results,excluded_from_real_data=True));print('CODON_RECONSTRUCTION_VERIFIED')
+    m.save(d/'codon-audit-characterization.json',dict(created_utc=m.now(),rows=all_results,reference_sha256=m.sha(f/'reference.fna'),excluded_from_real_data=True));print('CODON_RECONSTRUCTION_VERIFIED')
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--characterize',action='store_true');p.add_argument('--directory',type=Path);p.add_argument('--analysis',default='analysis');a=p.parse_args()
