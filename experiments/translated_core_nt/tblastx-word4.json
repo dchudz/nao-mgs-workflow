@@ -1,0 +1,21 @@
+{
+  "name": "tblastx-word4",
+  "executable": "tblastx",
+  "arguments": [
+    "-word_size",
+    "4",
+    "-threshold",
+    "18",
+    "-query_gencode",
+    "1",
+    "-db_gencode",
+    "1"
+  ],
+  "identity_units": "amino acid percent",
+  "role": "Supported longer-seed direct translated search; compare speed and lost evidence to default word3",
+  "limits": [
+    "Threshold18 and word4 accepted by installed BLAST2.17.0",
+    "Single controlled divergence ladder retained all tested intended-frame hits; this is not a real-data recall estimate",
+    "No change to the comprehensive reference or original query panel"
+  ]
+}
