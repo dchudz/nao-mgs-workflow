@@ -24,6 +24,8 @@ for method in ['megablast', 'blastn', 'tblastx']:
     assert json.loads((d / 'resources.json').read_text())['status'] == 'complete'
     assert sha(d / 'alignments.tsv') == c['output_sha256']
 prefix = 's3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/pilot-snapshots/' + a.label + '/'
+bucket, key_prefix = prefix[5:].split('/', 1)
+assert subprocess.check_output(aws + ['s3api', 'list-objects-v2', '--bucket', bucket, '--prefix', key_prefix, '--max-keys', '1', '--query', 'KeyCount', '--output', 'text'], text=True).strip() == '0', 'Snapshot label already used; choose a fresh label'
 receipt_path = a.directory.parent / ('backup-' + a.label + '.json')
 files = []
 with tempfile.TemporaryDirectory() as tmp:
