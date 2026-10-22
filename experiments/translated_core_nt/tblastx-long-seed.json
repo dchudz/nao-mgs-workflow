@@ -1,1 +1,19 @@
-{"name":"tblastx-long-seed","executable":"tblastx","arguments":["-query_gencode","1","-db_gencode","1","-word_size","6","-threshold","21"],"identity_units":"amino acid percent","role":"Longer protein seed candidate against the identical core_nt; possible speed/sensitivity tradeoff, requires measured disagreement check","rationale":"Word6 and threshold21 are the documented tblastn-fast seed settings; applying them to tblastx is an experimental choice, not a named NCBI tblastx-fast task","source":"https://www.ncbi.nlm.nih.gov/books/NBK279684/pdf/Bookshelf_NBK279684.pdf"}
+{
+  "name": "tblastx-long-seed",
+  "executable": "tblastx",
+  "arguments": [
+    "-query_gencode",
+    "1",
+    "-db_gencode",
+    "1",
+    "-word_size",
+    "6",
+    "-threshold",
+    "21"
+  ],
+  "identity_units": "amino acid percent",
+  "role": "Rejected seed-setting candidate; never run on full core_nt",
+  "rationale": "Preserved rejected approach. The installed tblastx rejected this setting on the tiny fixture; error text does not accurately distinguish supported word4 from rejected word5.",
+  "source": "https://www.ncbi.nlm.nih.gov/books/NBK279684/pdf/Bookshelf_NBK279684.pdf",
+  "status": "rejected_by_installed_binary"
+}
