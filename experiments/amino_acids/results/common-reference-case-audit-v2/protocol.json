@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "sample": "SRR36876972",
+      "species": "2021738",
+      "reference": "LC708018.1",
+      "reference_nt": 2588,
+      "query_mates": 8,
+      "existing_near_best_query_support": 5,
+      "queries_sha256": "1fe84164902808af59dbfb688a21c9c564fa1f49167a7de11c8bdbbe27110a2e",
+      "reference_sha256": "80015a1547a5c89411a21992f8c71382b982a219f8f154a0abc70b2eb6f4f50c"
+    },
+    {
+      "sample": "SRR36995843",
+      "species": "2021738",
+      "reference": "LC708016.1",
+      "reference_nt": 2603,
+      "query_mates": 6,
+      "existing_near_best_query_support": 5,
+      "queries_sha256": "59a15152f80032edad6af84b2f38b7b7400917e5b7d062c68b0f809c35d9c20b",
+      "reference_sha256": "0ae0476cb3fd95c7d8f47ec65dd43ea061b1dd8bbd49df97d7b8d5a9e2119844"
+    },
+    {
+      "sample": "SRR37076045",
+      "species": "3418604",
+      "reference": "OZ071162.1",
+      "reference_nt": 29857,
+      "query_mates": 24,
+      "existing_near_best_query_support": 15,
+      "queries_sha256": "1a42a80249f159ef790421cd20f41b8466152cc558cf55fd62a8fbf552204eca",
+      "reference_sha256": "4c855b1c2dce881e7160cb54f00b6e931d5d2f8836224ceb287e9df820066db4"
+    },
+    {
+      "sample": "SRR38294879",
+      "species": "3428504",
+      "reference": "MZ153259.1",
+      "reference_nt": 7098,
+      "query_mates": 6,
+      "existing_near_best_query_support": 4,
+      "queries_sha256": "ecdb57dd895ec493386bc0dea43c299e429bd38d2ab288aa08cf29e7a3b7a57c",
+      "reference_sha256": "f78a1835258e6cc2eae7caf68d84a3e4aa20dce25c99ca1df6a26e5a01ed24e9"
+    }
+  ],
+  "source_sha256": "c6408227d97cc398f11a06b90b5b8b7f0bb152b7a5aa4cd20581747b356db5e0",
+  "reference_choice": "Most audited mates with eligible near-best hits, then total best bitscore, then lexical accession. Chosen only from preserved viral-reference hits.",
+  "selection": "Previously frozen audit pairs for all four human-annotated concordant gains; twelve of eighteen similarity supports for Betacoronavirus and all pairs for other three calls.",
+  "limits": [
+    "Local coordinate-inspection only, never a replacement validation database or a source of changed calls.",
+    "Small-database E-values are not comparable to comprehensive-search E-values.",
+    "Failure to align to this one reference does not negate the broad-reference evidence.",
+    "Overlapping intervals are not a molecular-duplicate determination."
+  ]
+}
