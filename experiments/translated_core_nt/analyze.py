@@ -53,7 +53,7 @@ def main(d, methods=None, output_name="analysis"):
             for text,key in [('User time (seconds):','user_seconds'),('System time (seconds):','system_seconds'),('Maximum resident set size (kbytes):','max_RSS_KiB')]:
                 if text in line:resource[key]=float(line.split(text,1)[1])
         resource['raw_alignment_rows']=len(raw)
-        resource['reported_HSP_coverage_disagreements']=sum(abs(x['coordinate_query_coverage_pct']-x['qcovhsp'])>1 for x in raw)
+        resource['raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows']=sum(abs(x['coordinate_query_coverage_pct']-x['qcovhsp'])>1 for x in raw)
         resources[method]=resource
         for threshold in [10,1e-5]:
             label='default_E10' if threshold==10 else 'strict_E1e-5';best={}

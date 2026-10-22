@@ -97,7 +97,7 @@
     },
     {
       "name": "Translate only queries, then tblastn-fast on unchanged core_nt",
-      "status": "Synthetic characterization successful; full-reference implementation deferred pending baseline runtime and semantic review",
+      "status": "Implemented and normalization characterized; full-reference pilot queued after original tblastx",
       "mechanism": "All six complete query frames retained; optimized protein-versus-nucleotide search translates the original reference during search",
       "potential_benefit": "Avoids multi-terabyte derived reference index while allowing the supported fast search task",
       "measured_fixture": {
@@ -117,6 +117,20 @@
         "Track every frame with invalid-composition warnings; keep every original read in denominator",
         "Report standard versus fast search as separate heuristics"
       ]
+    },
+    {
+      "name": "Query-indexed translated reference scan",
+      "status": "Design alternative; no implementation or full-reference run",
+      "mechanism": "Build a compact table of exact or spaced amino-acid seeds from all query frames; stream every nucleotide reference in six translated frames, retain seed-supported per-read candidates, then score alignments with original accession/taxonomy mappings",
+      "potential_benefit": "Amortize one comprehensive reference pass across a large query batch without persisting a multi-terabyte protein index",
+      "limitations": [
+        "Exact peptide seeds can miss homologs with amino-acid substitutions; spaced or neighborhood seeds increase candidate work",
+        "A seed-selected candidate set is an algorithmic heuristic and needs recall measurement against complete translated search",
+        "Short and low-complexity seeds can produce many candidates across a trillion-base database",
+        "A reference-wide translation scan still has fixed cost; existing BLAST already performs related query-indexed seed finding",
+        "Must preserve all target accessions/taxa, both strands, frame and coordinate evidence; no verdict extrapolation"
+      ],
+      "implementation_gate": "Only justify custom implementation if existing fast tblastn or supported seeds leave a measured performance/recall gap; first characterize a prototype against existing frozen alignments and controlled synonymous variants"
     }
   ],
   "capacity_math": {
@@ -141,5 +155,15 @@
     "evidence_quality": "Inspect strong disagreements at sequence/codon level and retain weak significance results separately. Absence of a translated hit is not proof a nucleotide hit is false; short or noncoding reads can behave differently.",
     "batching": "Shared-query alignment and assignment parity across3/24/96panels is an empirical check, not assumed.",
     "false_positive_check": "If new weak or low-complexity matches drive differences, use deterministic composition-preserving shuffled controls before claiming increased sensitivity. No truth-label accuracy claim from these observational reads."
+  },
+  "profiling_evidence": {
+    "scope": "15-second software CPU sample while original full-reference tblastx pilot running; not whole-run attribution",
+    "samples_about": 11000,
+    "lost_samples": 0,
+    "top_seed_finding_self_CPU_percent": 80.27,
+    "direct_compressed_translation_self_CPU_percent": 1.23,
+    "interpretation": "Translation caching alone is not a demonstrated solution to the observed bottleneck. Different seed search and indexing may matter more.",
+    "raw_directory": "profiling",
+    "timing_caveat": "Profiler and brief characterization work overlap the pilot; retain this caveat with wall-time results."
   }
 }
