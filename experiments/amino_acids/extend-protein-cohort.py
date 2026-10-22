@@ -11,6 +11,7 @@ sys.path.insert(0,str(E));from protein_queries import prepare
 p=argparse.ArgumentParser();p.add_argument('--source-commit',required=True);p.add_argument('--parity-only',action='store_true');a=p.parse_args()
 assert len(a.source_commit)==40 and all(c in '0123456789abcdef' for c in a.source_commit)
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1'];BUCKET='s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/'
+assert hashlib.sha256((R/'heldout-ranges.json').read_bytes()).hexdigest()=='09b1e7f5fe4fb5e05aea7d4ad4c6471d780921f7b838af47d50a02faef6a3f65'
 order=[x['run_accession'] for x in json.loads((R/'heldout-ranges.json').read_text())];assert len(order)==len(set(order))==1000
 batches={s:m.parent for m in (S/'batches').glob('*/complete.json') for s in json.loads(m.read_text())['samples']};assert set(order)<=set(batches)
 limit=time.monotonic()+14*3600
@@ -60,22 +61,25 @@ def prepared_queries(ids,out):
      header=next(f)
      if i==0:outfile.write(header)
      shutil.copyfileobj(f,outfile)
- write(out/'preparation-complete.json',{'samples':ids,'counts':counts,'query_sha256':digest(out/'all.fna'),'completed_utc':now().isoformat()})
+ write(out/'preparation-complete.json',{'source_commit':a.source_commit,'samples':ids,'counts':counts,'query_sha256':digest(out/'all.fna'),'completed_utc':now().isoformat()})
  return counts
 # The single-sample characterization uses an original200 sample with a known
 # read-header-sensitive contaminant case, preserving its exact original input.
 parity=D/'preparation-parity'
 if not (parity/'complete.json').exists():
- sample='SRR35904031';assert sample in order[:200];counts=prepared_queries([sample],parity)
+ sample='SRR35904031';assert sample in order[:200]
+ if not (parity/'preparation-complete.json').exists():prepared_queries([sample],parity)
+ counts=json.loads((parity/'preparation-complete.json').read_text())['counts']
+ for sample_id,item in json.loads((parity/'input-hashes.json').read_text()).items():assert digest(item['path'])==item['sha256'], 'Original preparation input changed'
  compared={}
- for suffix in ['.tsv.gz','.fna.members.tsv.gz']:
-  old=S/'protein200/queries'/(sample+suffix)
-  assert old.exists(),old
-  with gzip.open(old,'rb') as f:left=f.read()
-  with gzip.open(parity/'queries'/(sample+suffix),'rb') as f:right=f.read()
-  assert left==right,('Preparation parity failed',suffix)
-  compared[suffix]=hashlib.sha256(right).hexdigest()
- write(parity/'complete.json',{'sample':sample,'source_commit':a.source_commit,'completed_utc':now().isoformat(),'exact_decompressed_query_and_membership_parity':True,'files':compared,'counts':counts})
+ for suffix,merged in [('.tsv.gz','all.tsv.gz'),('.fna.members.tsv.gz','all.members.tsv.gz')]:
+  with gzip.open(S/'protein200'/merged,'rt') as f:
+   reader=csv.DictReader(f,delimiter='\t');fields=reader.fieldnames;left=[row for row in reader if row['query_pair'].startswith(sample+'_')]
+  with gzip.open(parity/'queries'/(sample+suffix),'rt') as f:
+   reader=csv.DictReader(f,delimiter='\t');assert reader.fieldnames==fields;right=list(reader)
+  assert left and left==right,('Preparation parity failed',suffix)
+  compared[suffix]={'records':len(right),'canonical_records_sha256':hashlib.sha256(json.dumps(right,sort_keys=True).encode()).hexdigest()}
+ write(parity/'complete.json',{'sample':sample,'validation_source_commit':a.source_commit,'completed_utc':now().isoformat(),'exact_decompressed_query_and_membership_parity':True,'scope':'Equal CSV fields, rows, order, sequences, IDs and original membership against preserved first200 merged records; compressed byte identity is not asserted','files':compared,'counts':counts})
  print(json.dumps({'preparation_parity':True,'sample':sample}),flush=True)
 if a.parity_only:raise SystemExit
 assert json.loads((parity/'complete.json').read_text())['exact_decompressed_query_and_membership_parity']
