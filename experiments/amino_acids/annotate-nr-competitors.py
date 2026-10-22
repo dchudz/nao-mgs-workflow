@@ -1,7 +1,8 @@
 """Separate artificial constructs from cellular competitors without changing primary NR classifications."""
-import collections,csv,importlib.util,json
+import argparse,collections,csv,importlib.util,json
 from pathlib import Path
-r=Path('/home/ec2-user/experiment');d=r/'protein/combined-validation'
+r=Path('/home/ec2-user/experiment')
+p=argparse.ArgumentParser();p.add_argument('--directory',type=Path,default=r/'protein/combined-validation');a=p.parse_args();d=a.directory
 spec=importlib.util.spec_from_file_location('nr_summary',r/'protein-nr-summary.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
 parents={}
 for line in open(r/'protein/current-nr/nodes.dmp'):
