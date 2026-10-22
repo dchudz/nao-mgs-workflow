@@ -1,0 +1,40 @@
+{
+  "samples": 500,
+  "metrics": {
+    "original_union_downstream_CPU_seconds_estimate": {
+      "total": 26153.09176299998,
+      "median_per_sample": 42.79885149999999
+    },
+    "filtered_union_downstream_CPU_seconds_estimate": {
+      "total": 23404.916101000003,
+      "median_per_sample": 39.018886
+    },
+    "original_tasks_missing_CPU": {
+      "total": 0,
+      "median_per_sample": 0.0
+    },
+    "filtered_tasks_missing_CPU": {
+      "total": 0,
+      "median_per_sample": 0.0
+    },
+    "filtered_tasks": {
+      "total": 12000,
+      "median_per_sample": 24.0
+    },
+    "subset_rescreen_CPU_seconds": {
+      "total": 13862.979999999994,
+      "median_per_sample": 27.88
+    },
+    "downstream_CPU_change_seconds_estimate": {
+      "total": -2748.1756619999987,
+      "median_per_sample": -1.0056725000000029
+    }
+  },
+  "all_tasks_have_CPU": true,
+  "aggregate_downstream_CPU_reduction_fraction": 0.10508033569812769,
+  "interpretation": [
+    "Both downstream measurements use Nextflow realtime multiplied by task percent CPU; they are estimates under differing concurrent loads.",
+    "The correction was screened over already retained AA12 candidates, not full raw inputs. Its GNU-time CPU is separately reported and cannot establish full-pipeline speed.",
+    "Excludes extraction, index construction, union construction, orchestration, storage and idle workers."
+  ]
+}

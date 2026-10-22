@@ -1,0 +1,38 @@
+{
+  "experiment": "repeat-confirmation-500",
+  "title": "Prospective repeat-filter comparison on 500 samples",
+  "status_at_capture": "complete",
+  "captured_utc": "2026-10-22T13:22:11.148178+00:00",
+  "historical_source_commits": [
+    "d059c036e7e7cc47d049722a057da05e6959b012",
+    "ab070ba7bd6be86f69c911864bb017ffff1ae561"
+  ],
+  "analysis_source": [
+    {
+      "path": "experiments/amino_acids/analyze-repeat-confirmation.py",
+      "sha256": "0dd741914e83954a24c12efce60741ab1f943487439617d12ef9586efb60a8a8",
+      "last_change_commit": "c391ee9198821a9ca677d1a3167416ebe5517efb"
+    },
+    {
+      "path": "experiments/amino_acids/analyze-repeat-resources.py",
+      "sha256": "b70e2690a12bc392c65eb82e2d98cf52ccf54570651f9d1c1193eb61e66e3972",
+      "last_change_commit": "ab070ba7bd6be86f69c911864bb017ffff1ae561"
+    }
+  ],
+  "results": [
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/repeat-confirmation/summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/repeat-confirmation-500/repeat-confirmation/summary.json",
+      "sha256": "aba650d3637eb0c42b7f49dc12b8db7a635aac9da1dac5103897285d1e0d0c47",
+      "bytes": 1342
+    },
+    {
+      "original_local_result": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/repeat-confirmation/resource-summary.json",
+      "snapshot_path": "experiments/amino_acids/history/results/repeat-confirmation-500/repeat-confirmation/resource-summary.json",
+      "sha256": "bf6d41b771bf5eec8b0fec32c181ecf85043fd2c55039df0d582a72ccb977ea6",
+      "bytes": 1390
+    }
+  ],
+  "provenance_limit": "Source commits were reconstructed after these runs from saved archives. They are source references, not Git revisions recorded at launch. Executed binary, query, reference, command and timing records remain authoritative. This snapshot does not rerun or change results.",
+  "private_evidence_base": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/"
+}
