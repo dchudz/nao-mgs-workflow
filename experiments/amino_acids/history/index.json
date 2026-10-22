@@ -1,0 +1,361 @@
+{
+  "source_history": {
+    "base_commit": "aa3dcb073af33f6331f6c4223c656e4bab7cd2eb",
+    "head_commit": "f41bf632b65f1f4775d354de903e91689653b053",
+    "branch": "refs/heads/codex/amino-acid-screen",
+    "source_files": 139,
+    "reconstructed": true,
+    "commits": [
+      {
+        "number": 1,
+        "title": "Add the initial six-frame amino-acid screen",
+        "source_snapshot": "source.tar.gz",
+        "files": 8,
+        "commit": "2fbff76b443ca3b40383daaed175028016047ec6",
+        "provenance": "experiments/amino_acids/history/001.json"
+      },
+      {
+        "number": 2,
+        "title": "Capture the deployed amino-acid screen corrections",
+        "source_snapshot": "checkpoint-20261021T161438Z.tar.gz",
+        "files": 2,
+        "commit": "7a130af7eb78be07d1453568c6872bcb087f6c32",
+        "provenance": "experiments/amino_acids/history/002.json"
+      },
+      {
+        "number": 3,
+        "title": "Compare nucleotide and amino-acid upstream screens",
+        "source_snapshot": "checkpoint-20261021T161438Z.tar.gz",
+        "files": 5,
+        "commit": "bed8a986fd6c7e4259c6b2218340d7519df70c6c",
+        "provenance": "experiments/amino_acids/history/003.json"
+      },
+      {
+        "number": 4,
+        "title": "Prepare protein-space candidate queries",
+        "source_snapshot": "checkpoint-20261021T161438Z.tar.gz",
+        "files": 2,
+        "commit": "bf6bea4ec2b0952640370a9770a3ae2961c794df",
+        "provenance": "experiments/amino_acids/history/004.json"
+      },
+      {
+        "number": 5,
+        "title": "Capture input handling regression coverage",
+        "source_snapshot": "source-current.tar.gz",
+        "files": 1,
+        "commit": "9c62caf8540619e5aa8c5614237dc89214c35ae4",
+        "provenance": "experiments/amino_acids/history/005.json"
+      },
+      {
+        "number": 6,
+        "title": "Batch the upstream screen comparison",
+        "source_snapshot": "source-current.tar.gz",
+        "files": 5,
+        "commit": "4f3161d9b9735e4f14d6fa6d79f4a75438a38d67",
+        "provenance": "experiments/amino_acids/history/006.json"
+      },
+      {
+        "number": 7,
+        "title": "Add protein alignment and broad-reference summaries",
+        "source_snapshot": "source-current.tar.gz",
+        "files": 5,
+        "commit": "a5d4d326b9fa2fec0935126fdbd99cdddd5d28b6",
+        "provenance": "experiments/amino_acids/history/007.json"
+      },
+      {
+        "number": 8,
+        "title": "Reject an unterminated first mate before interleaving",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 3,
+        "commit": "390a4152a3e1cc5938cf0998630a0ba4bb7658e2",
+        "provenance": "experiments/amino_acids/history/008.json"
+      },
+      {
+        "number": 9,
+        "title": "Package the experimental screen command",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 1,
+        "commit": "e589ae025b256a6b9b4d45f59ad364cb9a10fe54",
+        "provenance": "experiments/amino_acids/history/009.json"
+      },
+      {
+        "number": 10,
+        "title": "Freeze and analyze the 1000-sample five-arm comparison",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 9,
+        "commit": "d89ed0968f5f0a78b955bd663a726baf36ffe4b8",
+        "provenance": "experiments/amino_acids/history/010.json"
+      },
+      {
+        "number": 11,
+        "title": "Compare full protein detection with nucleotide controls",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 14,
+        "commit": "99f617603c24e6ce6e39057942c5d365cdee76ea",
+        "provenance": "experiments/amino_acids/history/011.json"
+      },
+      {
+        "number": 12,
+        "title": "Explore repetitive amino-acid seed removal",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 2,
+        "commit": "a7003fed10e90d6c7e9306bdf9098fdc6d2fc366",
+        "provenance": "experiments/amino_acids/history/012.json"
+      },
+      {
+        "number": 13,
+        "title": "Freeze repeat-filter confirmation on 500 samples",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 6,
+        "commit": "d059c036e7e7cc47d049722a057da05e6959b012",
+        "provenance": "experiments/amino_acids/history/013.json"
+      },
+      {
+        "number": 14,
+        "title": "Measure BLAST cost across validation sample caps",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 5,
+        "commit": "b1ead742a4c36c047a39b0fd900995b9d3badd34",
+        "provenance": "experiments/amino_acids/history/014.json"
+      },
+      {
+        "number": 15,
+        "title": "Compare megablast and sensitive search on fixed reads",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 8,
+        "commit": "2cd8466940b65ca0bad20d8d1d6eaaecd9a68800",
+        "provenance": "experiments/amino_acids/history/015.json"
+      },
+      {
+        "number": 16,
+        "title": "Preserve comprehensive NR search and rejected variants",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 9,
+        "commit": "892a284fefebbeed4d76fbecbb008979bd55ce45",
+        "provenance": "experiments/amino_acids/history/016.json"
+      },
+      {
+        "number": 17,
+        "title": "Audit protein taxonomy and nucleotide validation evidence",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 8,
+        "commit": "e9dfea43157b608987ff75179661e8ccc0e10fd2",
+        "provenance": "experiments/amino_acids/history/017.json"
+      },
+      {
+        "number": 18,
+        "title": "Preserve private execution and resource controls",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 12,
+        "commit": "c85f19b046bdd4bd378df9ae69a20b916e3c9b27",
+        "provenance": "experiments/amino_acids/history/018.json"
+      },
+      {
+        "number": 19,
+        "title": "Assemble the interim experiment report",
+        "source_snapshot": "private-source-20261022T003943Z.tar.gz",
+        "files": 3,
+        "commit": "d78758b8fc7da665e90f99b7ff68feb750cef6e2",
+        "provenance": "experiments/amino_acids/history/019.json"
+      },
+      {
+        "number": 20,
+        "title": "Measure BLAST query splitting versus automatic mode",
+        "source_snapshot": "private-source-20261022T023048Z.tar.gz",
+        "files": 3,
+        "commit": "6910e1be106fac6e2087f79102cbe3efa07b9a10",
+        "provenance": "experiments/amino_acids/history/020.json"
+      },
+      {
+        "number": 21,
+        "title": "Isolate read-name effects in contaminant preparation",
+        "source_snapshot": "private-source-20261022T023048Z.tar.gz",
+        "files": 5,
+        "commit": "a6c240bb5c20e11d76ceb1ab5655e16985d72cc1",
+        "provenance": "experiments/amino_acids/history/021.json"
+      },
+      {
+        "number": 22,
+        "title": "Capture native protein losses and diagnostic refinements",
+        "source_snapshot": "private-source-20261022T023048Z.tar.gz",
+        "files": 6,
+        "commit": "c391ee9198821a9ca677d1a3167416ebe5517efb",
+        "provenance": "experiments/amino_acids/history/022.json"
+      },
+      {
+        "number": 23,
+        "title": "Verify comparison coverage and private backup contents",
+        "source_snapshot": "private-source-20261022T030717Z.tar.gz",
+        "files": 6,
+        "commit": "969e4cdc71a9cbe0bb830472d2131cf77ecb43ef",
+        "provenance": "experiments/amino_acids/history/023.json"
+      },
+      {
+        "number": 24,
+        "title": "Freeze standalone protein validation and loss audits",
+        "source_snapshot": "private-source-20261022T031914Z.tar.gz",
+        "files": 5,
+        "commit": "4897e4467aaa416cad445ab0ac099d2894b3a265",
+        "provenance": "experiments/amino_acids/history/024.json"
+      },
+      {
+        "number": 25,
+        "title": "Audit initial screening membership and recover NR memory",
+        "source_snapshot": "private-source-20261022T043230Z.tar.gz",
+        "files": 15,
+        "commit": "44e7abfded6e0454dfd5e51b91db1e8f710d67b0",
+        "provenance": "experiments/amino_acids/history/025.json"
+      },
+      {
+        "number": 26,
+        "title": "Preserve NR restart parity and worker retirement safeguards",
+        "source_snapshot": "private-source-20261022T054038Z.tar.gz",
+        "files": 8,
+        "commit": "08d5f0e41e317d690fa7281b07907d7a2dbac05c",
+        "provenance": "experiments/amino_acids/history/026.json"
+      },
+      {
+        "number": 27,
+        "title": "Finalize complete-cohort analyses and scientific figures",
+        "source_snapshot": "private-source-20261022T064819Z.tar.gz",
+        "files": 12,
+        "commit": "c724bc10015f06500409c0600bd173e973a0bd0e",
+        "provenance": "experiments/amino_acids/history/027.json"
+      },
+      {
+        "number": 28,
+        "title": "Measure repeat-filter resources and preserve engine recovery",
+        "source_snapshot": "private-source-20261022T072042Z.tar.gz",
+        "files": 4,
+        "commit": "ab070ba7bd6be86f69c911864bb017ffff1ae561",
+        "provenance": "experiments/amino_acids/history/028.json"
+      },
+      {
+        "number": 29,
+        "title": "Restore pooled input ordering with query and alignment parity",
+        "source_snapshot": "private-source-20261022T075711Z.tar.gz",
+        "files": 5,
+        "commit": "c33eabeee5d3bca9407d640d79200b68e6059d36",
+        "provenance": "experiments/amino_acids/history/029.json"
+      },
+      {
+        "number": 30,
+        "title": "Preserve completed evidence and estimate owned resource costs",
+        "source_snapshot": "private-source-20261022T090326Z.tar.gz",
+        "files": 2,
+        "commit": "ae20834041a5686b197ac19b7a531ff5631b4b3b",
+        "provenance": "experiments/amino_acids/history/030.json"
+      },
+      {
+        "number": 31,
+        "title": "Audit all amino-acid-only upstream exceptions",
+        "source_snapshot": "private-source-20261022T090326Z.tar.gz",
+        "files": 5,
+        "commit": "d50296d261493c560a39193bdb64cd2793880c8c",
+        "provenance": "experiments/amino_acids/history/031.json"
+      },
+      {
+        "number": 32,
+        "title": "Refresh resource accounting in the interim report",
+        "source_snapshot": "private-source-20261022T131620Z.tar.gz",
+        "files": 2,
+        "commit": "f41bf632b65f1f4775d354de903e91689653b053",
+        "provenance": "experiments/amino_acids/history/032.json"
+      }
+    ]
+  },
+  "results": [
+    {
+      "experiment": "first-step-1000",
+      "title": "Five-arm initial screening on 1000 samples",
+      "status": "complete",
+      "result_commit": "864cd3af162acd47377d7ac82dc5938cce527e39",
+      "record": "experiments/amino_acids/history/results/first-step-1000/record.json"
+    },
+    {
+      "experiment": "repeat-development",
+      "title": "Exploratory repetitive seed filter",
+      "status": "complete; development selection was post hoc",
+      "result_commit": "9bee0f4d7f1a3ad3d538601da47b3eec41b438f1",
+      "record": "experiments/amino_acids/history/results/repeat-development/record.json"
+    },
+    {
+      "experiment": "repeat-confirmation-500",
+      "title": "Prospective repeat-filter comparison on 500 samples",
+      "status": "complete",
+      "result_commit": "8404d1eabd12fae44d5c862cca261a2371157710",
+      "record": "experiments/amino_acids/history/results/repeat-confirmation-500/record.json"
+    },
+    {
+      "experiment": "validation-caps",
+      "title": "BLAST validation sample-cap scaling",
+      "status": "complete",
+      "result_commit": "c980e4b123693f7680614522b9b6a402cbd96bc9",
+      "record": "experiments/amino_acids/history/results/validation-caps/record.json"
+    },
+    {
+      "experiment": "blast-threading",
+      "title": "BLAST automatic versus query-split threading",
+      "status": "complete",
+      "result_commit": "b0ec0511086867fd89fb40c6d7bd888244a31923",
+      "record": "experiments/amino_acids/history/results/blast-threading/record.json"
+    },
+    {
+      "experiment": "nr-chunk-variant",
+      "title": "Rejected NR index-chunk variant",
+      "status": "complete; rejected after changed results",
+      "result_commit": "7e1928be4bd798c4a0175301f375dd7e2b3a19c4",
+      "record": "experiments/amino_acids/history/results/nr-chunk-variant/record.json"
+    },
+    {
+      "experiment": "nr-query-dedup",
+      "title": "Rejected extra NR query deduplication",
+      "status": "complete; rejected after changed results",
+      "result_commit": "836c941c3cceca4d4d8151f19d0e713847474300",
+      "record": "experiments/amino_acids/history/results/nr-query-dedup/record.json"
+    },
+    {
+      "experiment": "read-header-effect",
+      "title": "Contaminant filtering read-header diagnostic",
+      "status": "complete; eight selected discrepancies, not a prevalence estimate",
+      "result_commit": "f6382473d61364f7ac88c7cb69929942f722fece",
+      "record": "experiments/amino_acids/history/results/read-header-effect/record.json"
+    },
+    {
+      "experiment": "first-step-exceptions",
+      "title": "Audit all 44 upstream gains absent from NT20",
+      "status": "complete",
+      "result_commit": "e99118b552faa45ef14dae0ce1a3d9fc72432213",
+      "record": "experiments/amino_acids/history/results/first-step-exceptions/record.json"
+    },
+    {
+      "experiment": "native-validation-1000",
+      "title": "Pooled production validation of the five native arms",
+      "status": "complete; cap20 is per species per pooled arm",
+      "result_commit": "cd47c2e91ce37af956f638807dc1c334a97e2b65",
+      "record": "experiments/amino_acids/history/results/native-validation-1000/record.json"
+    },
+    {
+      "experiment": "same-read-nucleotide",
+      "title": "Fixed-read megablast versus sensitive nucleotide search",
+      "status": "nucleotide comparison complete; protein result pending",
+      "result_commit": "ef5bb621f2965baa78b5781d37b989f901c8af2e",
+      "record": "experiments/amino_acids/history/results/same-read-nucleotide/record.json"
+    },
+    {
+      "experiment": "protein-candidates-200",
+      "title": "Protein-space candidates before comprehensive validation",
+      "status": "interim; full NR validation pending",
+      "result_commit": "bee657dc6e9d40936252e96aa0b6c1f3c9a4701c",
+      "record": "experiments/amino_acids/history/results/protein-candidates-200/record.json"
+    },
+    {
+      "experiment": "nr-restart-parity",
+      "title": "NR memory-restart alignment parity fixture",
+      "status": "fixture complete; restarted full search still pending",
+      "result_commit": "3d0199a8750ec376ab6f34ba76c912ecceb2e1e5",
+      "record": "experiments/amino_acids/history/results/nr-restart-parity/record.json"
+    }
+  ],
+  "future_runs": "Commit each distinct approach before execution and record that commit in its launch protocol. Keep later fixes and final result snapshots as separate commits; never rewrite original run provenance."
+}
