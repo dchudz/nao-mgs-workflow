@@ -244,6 +244,15 @@ section('Repetitive candidates and a prospective correction', '<p>In the trigger
     ['Completed paired samples',repeat['completed_paired_samples']],['Planned samples',500],['Aggregate candidate reduction',f'{100*repeat["aggregate_candidate_reduction_fraction"]:.2f}%' if repeat.get('aggregate_candidate_reduction_fraction') is not None else None],['Lost original-union final pairs',repeat.get('totals',{}).get('lost_original_union_pairs')],['Lost NT24 final pairs',repeat.get('totals',{}).get('lost_native_pairs')],['Shared-pair taxid changes',repeat.get('totals',{}).get('taxid_changes')],['Shared-pair sequence changes',repeat.get('totals',{}).get('shared_query_sequence_changes')],['Primary duplicate-representative changes',repeat.get('totals',{}).get('primary_duplicate_exemplar_changes')],['Similarity duplicate-representative changes',repeat.get('totals',{}).get('similarity_duplicate_exemplar_changes')],['Joint-exemplar membership changes',repeat.get('totals',{}).get('joint_exemplar_membership_changes')],
 ]) if repeat else '<p>Prospective confirmation remains pending.</p>'))
 
+repeat_resources=load('repeat-confirmation/resource-summary.json')
+if repeat_resources:
+    m=repeat_resources['metrics']
+    section('Repeat-filter resource measurements',table(['Measurement across 500 samples','CPU seconds'],[
+        ['Original-union downstream, trace estimate',m['original_union_downstream_CPU_seconds_estimate']['total']],
+        ['Filtered-union downstream, trace estimate',m['filtered_union_downstream_CPU_seconds_estimate']['total']],
+        ['Secondary filtering pass over preselected candidates, GNU time',m['subset_rescreen_CPU_seconds']['total']],
+    ])+f'<p>Estimated downstream CPU fell {100*repeat_resources["aggregate_downstream_CPU_reduction_fraction"]:.2f}%. All task CPU fields were available: {repeat_resources["all_tasks_have_CPU"]}. The paired median downstream change was {m["downstream_CPU_change_seconds_estimate"]["median_per_sample"]:.2f} CPU-seconds per sample. These runs shared their worker with different concurrent jobs. The extra filtering pass used existing AA12 candidates, so neither its timing nor the candidate reduction establishes full-raw-screen or end-to-end speed. <a href="results/repeat-confirmation/resource-metrics.tsv">Paired resource measurements</a>.</p>')
+
 overlap=load('protein200/original-read-overlap.json')
 if overlap and overlap.get('repeat_gate_included'):
     rows=[]
