@@ -16,6 +16,6 @@ for name in plan['methods'][3:]:
  cmd=['python3',str(E/'run-query-only.py'),str(D),'--commit',commit] if name.startswith('query-') else ['python3',str(E/'experiment.py'),'run','--directory',str(D),'--config',str(E/(name+'.json')),'--commit',commit]
  subprocess.run(cmd,check=True)
 subprocess.run(['python3',str(E/'analyze.py'),str(D),'--methods']+plan['methods'],check=True)
-subprocess.run(['python3',str(E/'audit-codons.py'),str(D)],check=True)
+subprocess.run(['python3',str(E/'audit-codons.py'),'--directory',str(D)],check=True)
 (D/'pilot-sequence-complete.json').write_text(json.dumps(dict(completed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),source_commit=commit,methods=plan['methods']),indent=2)+'\n')
 print('PILOT_ALTERNATIVES_AND_ANALYSIS_COMPLETE',flush=True)
