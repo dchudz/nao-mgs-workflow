@@ -1,8 +1,9 @@
 """Foreground pilot sequence; wait for original run, compare frozen alternatives, then analyze."""
-import datetime,json,subprocess,sys,time
+import datetime,json,re,subprocess,sys,time
 from pathlib import Path
 R=Path('/home/ec2-user/experiment');E=R/'experiments/translated_core_nt';D=R/'cohort-storage/translated-core-nt/pilot24'
 commit=sys.argv[1]
+assert re.fullmatch("[0-9a-f]{40}",commit), "A full source commit hash is required before any action"
 plan=dict(created_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),source_commit=commit,methods=['megablast','blastn','tblastx','dc-megablast','query-tblastn-fast','tblastx-word4'],policy='Sequential full-reference searches; identical original query panel and reference; original tblastx must complete before alternatives; preserve all raw evidence; no comparison on partial output')
 (D/'alternative-sequence-protocol.json').write_text(json.dumps(plan,indent=2)+'\n')
 while not (D/'tblastx/complete.json').exists():
