@@ -361,6 +361,24 @@ fn paired_and_parallel_inputs_preserve_the_partition() {
         "4",
     ]));
     assert_eq!(read(f.path("match.fq")), read(f.path("parallel.fq")));
+    // A final R1 quality line without LF cannot be interleaved byte-for-byte.
+    f.write("r1.fq", r1.trim_end_matches('\n'));
+    assert!(!f
+        .run(&[
+            "screen",
+            "--index",
+            "ref.aa",
+            "--reads",
+            "r1.fq",
+            "--reads2",
+            "r2.fq",
+            "--matched",
+            "missing-newline.fq",
+        ])
+        .status
+        .success());
+    assert!(!f.path("missing-newline.fq").exists());
+    f.write("r1.fq", &r1);
     f.write("r2.fq", &(r2 + &record("extra/2", "GGTGGTGGTGGT")));
     assert!(!f
         .run(&[

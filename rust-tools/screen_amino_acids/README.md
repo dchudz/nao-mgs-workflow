@@ -66,7 +66,8 @@ removing optional `/1` and `/2` suffixes. When suffixes or recognized mate
 comments (`1`, `2`, `1:...`, `2:...`) are present, they must agree with position.
 Missing mate annotations are allowed. Four-line FASTQ is required. Truncation,
 an odd record count, mismatched pair IDs, invalid sequence characters, and
-invalid quality lengths fail the command. Duplicate pair names are retained
+invalid quality lengths fail the command. A separate R1 file must end with a newline
+so its last quality line can be interleaved without changing the original bytes. Duplicate pair names are retained
 by occurrence, not collapsed. Any matching k-mer in either mate sends both
 records to `--matched` exactly once; the other pairs go to `--unmatched`.
 

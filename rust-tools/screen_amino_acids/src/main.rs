@@ -270,6 +270,11 @@ fn screen(
             if !has_first {
                 break;
             }
+            if !first.lines[3].ends_with(b"\n") {
+                return Err(invalid(
+                    "first mate must end in a newline for lossless interleaving",
+                ));
+            }
             if first.pair_id(1)? != second.pair_id(2)? {
                 return Err(invalid("FASTQ pair identifiers differ"));
             }
