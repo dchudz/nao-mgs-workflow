@@ -31,10 +31,10 @@ elif h=='aa-experiment':
  logs=['heldout-primary-screen.log','validation-scaling.log','validation-scaling-resumed.log','heldout-consumer-recovery.log','heldout-seed-diagnostic.log','repeat-confirmation.log','cohort-validation-scheduled.log','await-screen-commit.log','protein-nt-panel.log','blast-threading.log','header-discrepancy-validation.log','protein-repeat-gate-primary.log','protein-screen-boundaries.log','finalize-cohort.log']
 else:
  o['protein_done']=(r/'cohort-storage/protein200/viral-pairs.tsv.json').exists()
- d=r/'protein/combined-validation';o['nr_started']=(d/'search-protocol.json').exists();o['nr_done']=(d/'complete.json').exists();o['nr_incomplete']=(d/'incomplete.json').exists()
+ d=r/'protein/combined-validation';protocol=d/'search-protocol.json';o['nr_started']=protocol.exists() and json.loads(protocol.read_text()).get('recovery_from')=='nr24-oom-20261022T034211';o['nr_done']=(d/'complete.json').exists();o['nr_incomplete']=(d/'incomplete.json').exists()
  o['dedup_done']=(r/'protein/nr-dedup-benchmark/summary.json').exists()
  log=d/'nr-search.log'
- if log.exists():
+ if log.exists() and o['nr_started']:
   with log.open('rb') as f:f.seek(max(0,log.stat().st_size-8192));tail=f.read().decode(errors='replace')
   blocks=re.findall(r'reference block ([0-9]+)/([0-9]+)',tail)
   if blocks:o['nr_reference_block'],o['nr_reference_blocks']=map(int,blocks[-1])
@@ -47,6 +47,7 @@ else:
  o['standalone_seed_nr_started']=(r/'protein/seed-nr-standalone/search-protocol.json').exists()
  o['standalone_seed_nr_incomplete']=(r/'protein/seed-nr-standalone/incomplete.json').exists()
  o['thread_parity_done']=(r/'protein/nr-thread-parity-on-demand/parity.json').exists()
+ o['nr_memory_restart_parity_done']=(r/'protein/nr-thread-parity-memory-restart/parity.json').exists()
  logs=['nr-restart256.log','standalone-seed-nr.log','heldout-protein-preparation.log','nr-dedup-benchmark.log','cohort-storage/protein200/viral-search.log']
 errors=[]
 for name in logs:
@@ -86,7 +87,7 @@ def events(rows):
   for name in d.get('error_logs',[]):result.add(d['host']+'/job_error/'+name)
   if d.get('nr_memory_available_GiB',1000)<12 or d.get('nr_swap_used_GiB',0)>16:result.add('NR_memory_attention')
   if d.get('cohort_free_GiB',1000)<60:result.add('cohort_disk_attention')
-  if d['free_GiB'] < (120 if d['host']=='aa-screen' else 60):result.add(d['host']+'_disk_attention')
+  if d['free_GiB'] < 60:result.add(d['host']+'_disk_attention')
  return result
 state=r/'foreground-watch-seen.json';seen=set(json.loads(state.read_text())) if state.exists() else set()
 start=time.monotonic();last_print=0

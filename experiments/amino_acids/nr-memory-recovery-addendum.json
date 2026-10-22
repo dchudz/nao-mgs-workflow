@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-10-22T04:28:51.436646+00:00",
+  "reason": "Full NR attempt killed by kernel OOM at block104/221. Zero completed alignment output; failed attempt preserved separately.",
+  "instance": "i-0103f018916b6c9e5",
+  "new_type": "r7a.8xlarge",
+  "memory_GiB": 256,
+  "threads": 32,
+  "swap_fallback_GiB": 64,
+  "compute_hourly_usd": 2.4344,
+  "previous_compute_hourly_usd": 2.47752,
+  "scientific_parameters": "Same query bytes, comprehensive reference, binary, sensitivity, block size, index chunks, scoring and reporting thresholds. Hardware/thread fixture must reproduce all1677041 alignment rows before restart.",
+  "quota": "Standard32vCPU; reduced24CPU option did not reduce admission charge. Finish and retire screenworker before starting32vCPU NRworker.",
+  "budget_cap_usd": 500,
+  "budget_shutdown_utc": "2026-10-23T10:00:00+00:00",
+  "conservative_account_bound_usd": 463.5167307601037,
+  "bound_note": "Updated billed-cost68.2275779564 plus alloriginalreserves/lifetimecompute. Five-hour earlier budgetguard offsets newlybilledcharges; earlierworkerretirement lowers actual exposure. No user time deadline.",
+  "user_deadline": null
+}
