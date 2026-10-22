@@ -142,7 +142,21 @@
         "Must preserve all target accessions/taxa, both strands, frame and coordinate evidence; no verdict extrapolation"
       ],
       "implementation_gate": "Only justify custom implementation if existing fast tblastn or supported seeds leave a measured performance/recall gap; first characterize a prototype against existing frozen alignments and controlled synonymous variants",
-      "reverse_search_warning": "Swapping a large reference into query position and indexing the small read set changes search-space statistics, per-query hit truncation, coverage orientation, and potentially masking/composition behavior. A reversed search is not interchangeable without per-read candidate completeness and statistical/coordinate checks; simply swapping output columns is insufficient."
+      "reverse_search_warning": "Swapping a large reference into query position and indexing the small read set changes search-space statistics, per-query hit truncation, coverage orientation, and potentially masking/composition behavior. A reversed search is not interchangeable without per-read candidate completeness and statistical/coordinate checks; simply swapping output columns is insufficient.",
+      "existing_tool_route": {
+        "installed_DIAMOND_version": "2.1.17",
+        "documented_mechanism": "DIAMOND makeidx plus --target-indexed is documented for small protein target databases below10MB. The sensitivity setting must match the index. A prospective inverted search could index six-frame translations of the small original read panel, then stream original core_nt DNA as blastx queries. This would avoid a persistent multi-terabyte translated reference.",
+        "source": "https://github.com/bbuchfink/diamond/wiki/5.-Advanced-topics",
+        "status": "Design only. No index or reversed search executed. Original forward fast-tblastn benchmark remains the first lower-complexity candidate after the NR cost gate.",
+        "required_checks": [
+          "Treat inversion as candidate generation until statistics and output equivalence are measured. Simply swapping output columns is invalid.",
+          "Retain matches for every original read; top-hit pruning per inverted reference query can hide a valid lower-scoring read and must not transfer verdicts between reads.",
+          "Preserve full original reference traversal, strands, frames, positions and all accession/taxonomy mappings.",
+          "Characterize short targets, masking, stop/ambiguous codons and composition-dependent scores on fixtures before any full-reference pass.",
+          "Recompute or independently rescore significance in the original query/reference orientation; inverted E-values use a different search space.",
+          "Measure candidate recall against completed TBLASTX pilot evidence, including original subject-cap limitations, before interpreting taxonomic outcomes."
+        ]
+      }
     }
   ],
   "capacity_math": {
@@ -178,5 +192,19 @@
     "interpretation": "Translation caching alone is not a demonstrated solution to the observed bottleneck. Different seed search and indexing may matter more.",
     "raw_directory": "profiling",
     "timing_caveat": "Profiler and brief characterization work overlap the pilot; retain this caveat with wall-time results."
+  },
+  "completed_pilot_evidence": {
+    "result_commit": "7e1af6dafc0d3eeba3404a0fd1a19e8fb74c07ce",
+    "tblastx_wall_seconds": 11409.050195003001,
+    "blastn_wall_seconds": 229.75686085800407,
+    "strict_natural_LCA_changes_vs_blastn": {
+      "unchanged": 32,
+      "more_specific": 4,
+      "broader": 5,
+      "lost_alignment": 2
+    },
+    "strong_extra_nonviral_hits": "Artificial constructs only in this returned pilot output; no natural nonviral competition observed.",
+    "reporting_cap": "250subjects reached for38/43TBLASTX and27/43BLASTN queries; specificity changes are not demonstrated improvements.",
+    "short_read_limit": "Two68ntmates of onepair have perfect64ntBLASTN hits but only21aaTBLASTX best hits atE.002; strictE1e-5 removes them."
   }
 }
