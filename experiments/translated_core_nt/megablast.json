@@ -1,0 +1,1 @@
+{"name":"megablast","executable":"blastn","arguments":["-task","megablast","-perc_identity","60"],"identity_units":"nucleotide percent","role":"Existing pipeline search configuration, with identical separate mates for this matched comparison"}
