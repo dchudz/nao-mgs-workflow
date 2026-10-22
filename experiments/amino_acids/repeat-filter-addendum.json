@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-10-21T19:45:13.800174+00:00",
+  "status": "Post hoc exploratory mechanism experiment; not a primary heldout comparison.",
+  "trigger": "SRR36995860 retained2299193of5000000pairs by AA12 yet gained3final native pairs. A fixed1024-pair random reservoir had1021pairs with glycine/proline homopolymer matches.",
+  "variant": "Subset the existing frozen AA12 index to omit every12-residue word containing10or more copies of any one amino acid. Preserve all other index words, original NT24 positives, and native downstream processing.",
+  "parameter_selection": "Chosen after inspecting the outlier motif distribution; exploratory and not independently validated.",
+  "scope": [
+    "The triggering outlier SRR36995860",
+    "Five reserved development samples"
+  ],
+  "evaluation": [
+    "Raw retained candidate pairs",
+    "Final native assignments and losses relative to original NT24 OR AA12",
+    "Exact conservation of the original NT24 branch"
+  ],
+  "primary_experiment": "No changes to the1000-sample frozen comparison or the200-sample full protein branch.",
+  "safety_of_filter": "Not assumed. Repetitive biological evidence may be removed; measure losses explicitly."
+}
