@@ -50,3 +50,18 @@ all assignment losses; preservation is measured, not assumed.
 The resource addenda record byte-identical full-depth aggregation with cyclic
 garbage collection disabled and equivalence of bounded NR taxon-score storage.
 The original NR summarizer is retained as an independent parity oracle.
+
+## Experiment commit history
+
+`history/index.json` links separate result snapshots to source commits. Earlier
+source history was reconstructed after execution from saved archives; each
+`history/NNN.json` records the archive hash and reconstruction limitations. Commit
+dates are reconstruction dates. Original protocols and executable, query, and
+reference hashes govern what ran. The final source tree was checked byte-for-byte
+against the saved pre-reconstruction worktree. No experiments were rerun.
+
+`history/results/` retains immutable summary snapshots, including explicit pending
+NR status where applicable. Finalized results get subsequent commits; these
+interim snapshots remain unchanged. For any new approach, commit its source before
+launch and record that commit in its execution protocol. Results can then point
+to both the execution-source commit and the result commit.
