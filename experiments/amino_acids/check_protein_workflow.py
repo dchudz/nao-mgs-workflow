@@ -24,7 +24,7 @@ def run(name,script,extra):
         stats=[line for line in log.splitlines() if 'Workflow completed > WorkflowStats[' in line]
         if '> Execution complete -- Goodbye' in log and stats and 'failedCount=0;' in stats[-1] and 'abortedCount=0;' in stats[-1]:
             return shlex.split(log.splitlines()[0].split('$> ',1)[1])
-    command=[str(R/'nextflow'),'-log',str(stage/'nextflow.log'),'run',str(R),'-main-script',script,'-lib',str(R/'lib'),
+    command=[str(R/'nextflow'),'-log',str(stage/'nextflow.log'),'run',str(R/script),'-lib',str(R/'lib'),
         '-c',str(R/'experiments/amino_acids/e2e-worker.config'),'-c',str(config),'-work-dir',str(stage/'work'),
         '--base_dir',str(stage),'--ref_dir',str(R/'reference'),'--sample','adapter_fixture','--adapters',str(R/'ref/adapters.fasta'),'-ansi-log','false',*(['-resume'] if (stage/'.nextflow/history').exists() else []),*extra]
     if (stage/'run.log').exists():
