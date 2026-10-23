@@ -25,6 +25,8 @@ def read(path):
 
 for panel, methods in [('pilot24', ['megablast', 'blastn', 'tblastx', 'query-tblastn-fast', 'tblastx-word4']),
                        ('protein232', ['megablast', 'blastn', 'tblastx-word4'])]:
+    optional = ['dc-megablast-coding'] if panel == 'pilot24' else ['tblastx-word4-one-batch']
+    methods += [m for m in optional if (a.root / panel / m / 'protocol.json').exists()]
     for method in methods:
         d = a.root / panel / method
         if not (d / 'complete.json').exists():
