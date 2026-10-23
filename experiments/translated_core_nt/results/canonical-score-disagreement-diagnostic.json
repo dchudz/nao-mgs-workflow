@@ -1,0 +1,76 @@
+{
+  "counts": {
+    "canonical/equal": 4784,
+    "contains_noncanonical/different": 16567,
+    "canonical/different": 6219,
+    "contains_noncanonical/equal": 715
+  },
+  "examples": [
+    {
+      "qseqid": "SRR35931357.113004579/2",
+      "qframe": "-3",
+      "sseqid": "gi|1068358824|ref|NC_030922.1|",
+      "qseq": "PFFFCKKGVRILLISSRNTLISRSIAVLTSSTTSFSLTLFCSNVATGC",
+      "sseq": "PFFFCRNGASTPLISSSSTFISRSIAVLTRSITSLSLTLFCSSVAIGC",
+      "tblastx_bitscore": "53.3",
+      "fast_bitscore": "56.0"
+    },
+    {
+      "qseqid": "SRR35931357.113004579/2",
+      "qframe": "-3",
+      "sseqid": "gi|1238790446|gb|KY271945.1|",
+      "qseq": "PFFFCKKGVRILLISSRNTLISRSIAVLTSSTTSFSLTLFCSNVATGC",
+      "sseq": "PFFFCKNGASIPLISSRSTFISRSIAVLTRSTTSLSLTLFCSSVTIGC",
+      "tblastx_bitscore": "57.9",
+      "fast_bitscore": "60.9"
+    },
+    {
+      "qseqid": "SRR35931357.113004579/2",
+      "qframe": "-3",
+      "sseqid": "gi|1238790450|gb|KY271946.1|",
+      "qseq": "PFFFCKKGVRILLISSRNTLISRSIAVLTSSTTSFSLTLFCSNVATGC",
+      "sseq": "PFFFCRNGASIPLISSRSTFISRSIAVLTRSTTSLSLTFFCSSVAIGC",
+      "tblastx_bitscore": "58.3",
+      "fast_bitscore": "61.3"
+    },
+    {
+      "qseqid": "SRR35931357.113004579/2",
+      "qframe": "-3",
+      "sseqid": "gi|1402399202|gb|MG571777.1|",
+      "qseq": "PFFFCKKGVRILLISSRNTLISRSIAVLTSSTTSFSLTLFCSNVATGC",
+      "sseq": "PFFFCRNGASIPLISSRSTFISRSIAVLTRSTTSLSLTFFCSSAAIGC",
+      "tblastx_bitscore": "56.5",
+      "fast_bitscore": "59.4"
+    },
+    {
+      "qseqid": "SRR35931357.113004579/2",
+      "qframe": "-3",
+      "sseqid": "gi|1421772447|gb|MF684776.1|",
+      "qseq": "PFFFCKKGVRILLISSRNTLISRSIAVLTSSTTSFSLTLFCSNVATGC",
+      "sseq": "PFFFCRNGASIPLISSRSTFISRSIAVLTRSTTSLSLTLFCSSATTGC",
+      "tblastx_bitscore": "57.4",
+      "fast_bitscore": "60.4"
+    }
+  ],
+  "unmasked_matrix_probe_not_score_reconstruction": {
+    "canonical_HSPs": 11003,
+    "assumed_lambda": 0.3176,
+    "assumed_K": 0.134,
+    "native_max_absolute_bit_deviation": 45.65548029552836,
+    "fast_max_absolute_bit_deviation": 45.65548029552836,
+    "native_above_half_bit_deviation": 5250,
+    "fast_above_half_bit_deviation": 9588
+  },
+  "source_sha256": "28268884ad9d2eae43c2ca1ad4d27514e1e185df48a3709a52d90104f444bba1",
+  "input_sha256": {
+    ".tmp/translated-core-nt-20261022/pilot24/shared-HSP-comparison/shared-identical-alignments.tsv.gz": "7c6acdb721fff15ed3d64f660b2eb0daaf4490c8df0a6728e399e35a5ddb639c",
+    ".tmp/translated-core-nt-20261022/diamond-2.1.17-source/tree/src/stats/matrices/blosum62.h": "df1682b3047586b0fb9ebe7b4810dc89b7ec5d8edebef004df172a7288f3280c"
+  },
+  "limits": [
+    "Characterization of existing matched HSPs only; no new search or altered threshold.",
+    "Canonical means every reported aligned character is one of the20standard amino acids. This does not assert absence of masking elsewhere in the query.",
+    "The unmasked matrix probe uses the pinned DIAMOND BLOSUM62 table and standard ungapped constants. It does not reconstruct either NCBI search scoring context or masking, and fails to reproduce their emitted scores.",
+    "The frozen output schema lacks raw scores and per-context statistical parameters. No causal mechanism or score-correction formula is established.",
+    "Removing stops or ambiguous characters alone cannot establish score parity on the observed canonical alignments."
+  ]
+}
