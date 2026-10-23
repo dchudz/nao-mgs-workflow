@@ -9,7 +9,7 @@ q=seq[200:400];mut=''.join(base if i%15 else {'A':'C','C':'G','G':'T','T':'A'}[b
 (D/'query.fna').write_text('>exact\n'+q+'\n>divergent\n'+mut+'\n')
 image='public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast:b7be9dc397b73870'
 with (D/'makeblastdb.log').open('w') as f:
-    subprocess.run(['docker','run','--rm','-v',str(R)+':'+str(R),image,'makeblastdb','-in',str(D/'reference.fna'),'-dbtype','nucl','-parse_seqids','-taxid','10239','-out',str(db/'blast_db')],stdout=f,stderr=subprocess.STDOUT,check=True)
+    subprocess.run(['docker','run','--rm','--network','none','-v',str(R)+':'+str(R),image,'makeblastdb','-in',str(D/'reference.fna'),'-dbtype','nucl','-parse_seqids','-taxid','10239','-out',str(db/'blast_db')],stdout=f,stderr=subprocess.STDOUT,check=True)
 (D/'publish.config').write_text("process.publishDir = [path: { \"${params.base_dir}/published/${task.process.tokenize(':')[-1]}\" }, mode:'copy']\nprocess { withLabel: blast_resources { cpus=4; memory='4 GB' } }\n")
 cmd=[str(R/'nextflow'),'-log',str(D/'nextflow.log'),'run',str(R),'-main-script','experiments/amino_acids/check-blast-task.nf',
      '-c',str(R/'experiments/amino_acids/e2e-worker.config'),'-c',str(D/'publish.config'),'-work-dir',str(D/'work'),

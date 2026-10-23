@@ -1,5 +1,5 @@
 {
-  "status": "Design frozen; implementation and resource/cost gates pending; no workers launched",
+  "status": "Dedicated private worker launched; real-DIAMOND geometry and baseline BLAST replay verified; full-depth sample1 acquisition and reference staging in progress.",
   "question": "Does protein-space viral alignment recover final sample/species calls at full depth beyond nucleotide alignment, and which gains survive same-reference nucleotide validation?",
   "selection": "sample-selection.json",
   "references": {
@@ -71,5 +71,7 @@
     "sensitive_blastn_viral_only": 132,
     "overstatement": "Megablast does not mostly return no alignment in this panel:131/200 return an alignment.",
     "storage": "143GiB raw NR is about$3.28/month at prior Standard rate, about20% of the prior$16.49/month total; not most storage cost."
-  }
+  },
+  "acquisition": "Every spot from NCBI normalized full-quality SRA, with source integrity checks, exact paired spot counts and original quality values. Canonical accession.spot/mate headers are shared by every arm. ENA download attempt was too slow and was abandoned before analysis.",
+  "grouping": "Each original sample is its own downstream group; cap20 per species per sample."
 }
