@@ -18,7 +18,7 @@ def run(name,script,extra):
         '--base_dir',str(stage),'--ref_dir',str(R/'reference'),'--sample','adapter_fixture','--adapters',str(R/'ref/adapters.fasta'),'-ansi-log','false',*extra]
     with (stage/'run.log').open('w') as f:subprocess.run(command,cwd=R,stdout=f,stderr=subprocess.STDOUT,check=True)
     return command
-cmd1=run('native','experiments/amino_acids/postscreen.nf',['--reads',str(D/'fixture.fastq.gz'),'--validate','false'])
+cmd1=run('native','experiments/amino_acids/postscreen.nf',['--reads',str(D/'fixture.fastq.gz')])
 trimmed=next((D/'native/published/FASTP').glob('*_fastp.fastq.gz'))
 cmd2=run('protein','experiments/amino_acids/protein-production.nf',['--reads',str(trimmed)])
 hits=D/'protein/published/PROTEIN_ADAPTER/adapter_fixture_virus_hits.tsv.gz'

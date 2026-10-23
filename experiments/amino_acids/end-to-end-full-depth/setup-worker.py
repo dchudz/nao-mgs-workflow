@@ -67,12 +67,13 @@ def protein():
 def build():
     image='public.ecr.aws/q0n1c7g8/nao-mgs-workflow/rust-tools@sha256:e69b93d9a1a0ae41c59ec4c0a6a0841f3a7f4871fc2f9b333eaa094563612270'
     run('rust-build',['docker','run','--rm','-v',str(R/'rust-tools')+':/build','-w','/build','rust:1.88-bookworm','cargo','build','--release','--locked','-p','screen_amino_acids','-p','mark_duplicates','-p','mark_duplicates_similarity'])
+    run('rust-build-musl',['docker','run','--rm','-v',str(R/'rust-tools')+':/build','-w','/build','rust:1.88-alpine3.21','sh','-ec','apk add --no-cache musl-dev && cargo build --release --locked --target-dir target-musl -p mark_duplicates -p mark_duplicates_similarity'])
     context=D/'rust-image';context.mkdir(exist_ok=True)
     for binary in ['mark_duplicates','mark_duplicates_similarity']:
-        shutil.copy2(R/'rust-tools/target/release'/binary,context/binary)
+        shutil.copy2(R/'rust-tools/target-musl/release'/binary,context/binary)
     dockerfile=context/'Dockerfile'
-    dockerfile.write_text(f'FROM {image}\nCOPY mark_duplicates mark_duplicates_similarity /usr/local/bin/\n')
-    run('rust-image',['docker','build','-f',dockerfile,'-t','pipeline-e2e-rust:local',context])
+    dockerfile.write_text(f'FROM {image}\nCOPY mark_duplicates mark_duplicates_similarity /usr/local/bin/\nRUN mark_duplicates --help && mark_duplicates_similarity --help && nucleaze --help\n')
+    run('rust-image-musl',['docker','build','-f',dockerfile,'-t','pipeline-e2e-rust:local',context])
     run('nextflow',['curl','-fL','--retry','3','https://github.com/nextflow-io/nextflow/releases/download/v26.04.6/nextflow-26.04.6-dist','-o',R/'nextflow'])
     (R/'nextflow').chmod(0o755)
 
@@ -81,5 +82,5 @@ with concurrent.futures.ThreadPoolExecutor(3) as pool:
     tasks=[pool.submit(f) for f in [references,protein,build]]
     for task in tasks:task.result()
 run('aa-index',['docker','run','--rm','--network','none','-v',str(R)+':'+str(R),'rust:1.88-bookworm',R/'rust-tools/target/release/screen_amino_acids','index','--reference',R/'reference/virus-genomes-human-masked.fasta.gz','--output',R/'reference/virus.aa12.bin','--k','12'])
-(D/'complete.json').write_text(json.dumps({'completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'verified':True,'tool_sha256':{str(p.relative_to(R)):sha(p) for p in [R/'nextflow',R/'protein/tools/diamond',R/'rust-tools/target/release/screen_amino_acids',R/'rust-tools/target/release/mark_duplicates',R/'rust-tools/target/release/mark_duplicates_similarity']}}))
+(D/'complete.json').write_text(json.dumps({'completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'verified':True,'tool_sha256':{str(p.relative_to(R)):sha(p) for p in [R/'nextflow',R/'protein/tools/diamond',R/'rust-tools/target/release/screen_amino_acids',R/'rust-tools/target-musl/release/mark_duplicates',R/'rust-tools/target-musl/release/mark_duplicates_similarity']}}))
 run('backup-setup',AWS+['s3','cp',str(D)+'/',PREFIX+'setup/','--recursive','--exclude','*.tar.gz','--only-show-errors'])
