@@ -1,0 +1,23 @@
+{
+  "name": "dc-megablast-coding",
+  "executable": "blastn",
+  "arguments": [
+    "-task",
+    "dc-megablast",
+    "-word_size",
+    "11",
+    "-template_length",
+    "18",
+    "-template_type",
+    "coding",
+    "-perc_identity",
+    "60"
+  ],
+  "identity_units": "nucleotide percent",
+  "role": "Measure codon-aware spaced-seed nucleotide search against the unchanged comprehensive core_nt",
+  "limits": [
+    "Nucleotide scoring, not an amino-acid search.",
+    "Coding templates do not cover every synonymous codon change.",
+    "Task defaults also differ from blastn; this is an algorithm comparison, not an isolated seed-only test."
+  ]
+}
