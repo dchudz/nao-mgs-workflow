@@ -1,0 +1,26 @@
+{
+  "reordered_rows": {
+    "alignment_multiset_equal": true,
+    "query_count": 3,
+    "left_rows": 3,
+    "right_rows": 3,
+    "rows_only_left": 0,
+    "rows_only_right": 0,
+    "differing_queries": 0,
+    "no_output_queries_left": 1,
+    "no_output_queries_right": 1
+  },
+  "duplicate_and_query_loss": {
+    "alignment_multiset_equal": false,
+    "query_count": 3,
+    "left_rows": 3,
+    "right_rows": 1,
+    "rows_only_left": 2,
+    "rows_only_right": 0,
+    "differing_queries": 2,
+    "no_output_queries_left": 1,
+    "no_output_queries_right": 2
+  },
+  "unknown_query_rejected": true,
+  "synthetic_only": true
+}

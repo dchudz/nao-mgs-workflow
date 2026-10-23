@@ -1,0 +1,30 @@
+{
+  "status": "Prepared; not launched or automatically queued",
+  "query_directory": "protein232",
+  "pairs": 232,
+  "mates": 464,
+  "query_sha256": "a98e68ff4763d7702a0755cbf79c551df48ea2e9fe01cc833e039d9c3f1cc794",
+  "method": "tblastx-word4-one-batch",
+  "purpose": "Measure whether combining the same frozen 67,905 query nucleotides into one batch reduces repeated comprehensive reference processing, and whether all returned alignments remain identical.",
+  "change": "Set BATCH_SIZE=100000 in the child environment. Keep the pinned BLAST 2.17.0 image, tblastx word4 threshold18, code1, full core_nt, scoring, 16 threads, reporting caps, output fields and query bytes.",
+  "maximum_seconds": 7200,
+  "maximum_allocated_compute_EBS_IPv4_USD": 7.273,
+  "absolute_search_cutoff_UTC": "2026-10-23T08:00:00Z",
+  "run_gate": [
+    "Original protein232 search must finish and its scientific comparison must be analyzed first.",
+    "Do not run alongside any measured search on the primary worker.",
+    "Proceed only if at least a meaningful bounded interval remains before the existing search cutoff; no automatic deadline extension.",
+    "No new biological queries, no additional panel, no index build."
+  ],
+  "outcomes": [
+    "GNU wall and CPU time, RSS, same-worker cost allocation",
+    "Exact multiset comparison of all19 output fields, preserving row multiplicity and no-hit query denominator",
+    "If raw output differs, use unchanged production-LCA analysis to report every changed mate verdict; do not assume batching preserves sensitivity"
+  ],
+  "limits": [
+    "Official matching-release source uses10,002nt tblastx batches; the frozen panel divides into seven batches at whole-read boundaries.",
+    "No measured runtime benefit or full-panel output parity exists yet.",
+    "A single warm-reference replay cannot isolate cold-cache or run-order effects.",
+    "A bounded timeout is incomplete; retain partial output without interpreting unprocessed reads as no-hit."
+  ]
+}
