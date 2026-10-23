@@ -8,6 +8,7 @@ import json
 import subprocess
 import time
 from pathlib import Path
+from translated_coordinates import coordinates
 
 
 def table(path):
@@ -19,15 +20,6 @@ def ranked(rows, key, salt):
     return sorted(rows, key=lambda x: hashlib.sha256((salt + key(x)).encode()).digest())
 
 
-def coordinates(subject, start, end, genome_length):
-    genome, frame, offset = subject.rsplit('~', 2)
-    frame, offset = int(frame), int(offset)
-    assert 0 <= frame < 6 and 1 <= start <= end
-    lo, hi = offset + 3 * (start - 1), offset + 3 * end
-    assert 0 <= lo < hi <= genome_length
-    if frame >= 3:
-        lo, hi = genome_length - hi, genome_length - lo
-    return genome, '-' if frame >= 3 else '+', lo, hi
 
 
 def main(a):
