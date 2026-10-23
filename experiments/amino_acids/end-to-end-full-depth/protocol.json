@@ -73,5 +73,11 @@
     "storage": "143GiB raw NR is about$3.28/month at prior Standard rate, about20% of the prior$16.49/month total; not most storage cost."
   },
   "acquisition": "Every spot from NCBI normalized full-quality SRA, with source integrity checks, exact paired spot counts and original quality values. Canonical accession.spot/mate headers are shared by every arm. ENA download attempt was too slow and was abandoned before analysis.",
-  "grouping": "Each original sample is its own downstream group; cap20 per species per sample."
+  "grouping": "Each original sample is its own downstream group; cap20 per species per sample.",
+  "runtime_contract": [
+    "Nested Nextflow entry points use the existing root bin through the committed relative symlink.",
+    "Every full-depth or protein-fixture invocation explicitly loads the unchanged root lib directory (SortUtils and SentinelUtils).",
+    "Root main.nf handles production RUN and DOWNSTREAM; protein and postscreen entry points reuse the same module implementations.",
+    "A complete real-protein-to-validation fixture must pass before full-depth execution."
+  ]
 }

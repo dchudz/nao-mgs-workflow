@@ -55,7 +55,7 @@ def nf(stage,script,config,params):
     target=D/stage;target.mkdir(exist_ok=True)
     parameters={**params,'base_dir':str(target),'ref_dir':str(R/'reference')}
     save(target/'params.json',parameters)
-    cmd=[R/'nextflow','-log',target/'nextflow.log','run',R,'-main-script',script,
+    cmd=[R/'nextflow','-log',target/'nextflow.log','run',R,'-main-script',script,'-lib',str(R/'lib'),
          '-c',R/config,'-c',E/'e2e-worker.config','-params-file',target/'params.json','-work-dir',target/'work','-ansi-log','false']
     run(stage,cmd)
 def single(pattern):
@@ -84,6 +84,7 @@ assert json.loads(subprocess.check_output(AWS+['sts','get-caller-identity'],text
 assert json.loads((R/'setup/complete.json').read_text())['verified']
 assert json.loads((R/'integration/real-diamond/verification.json').read_text())['verified']
 assert json.loads((R/'integration/baseline-replay.json').read_text())['verified']
+assert json.loads((R/'integration/protein-workflow/verification.json').read_text())['verified']
 acquisition=json.loads((data/'verified.json').read_text());assert acquisition['spot_count']==int(row['read_count'])
 assert not (D/'complete.json').exists(),'Sample already completed; do not silently rerun it'
 save(D/'protocol.json',{'source_commit':a.source_commit,'sample':a.sample,'selection':row,
@@ -105,7 +106,7 @@ extra_config=D/'extra.config';extra_config.write_text("process.publishDir = [pat
 def extra(stage,script,reads):
     target=D/stage;target.mkdir(exist_ok=True)
     save(target/'params.json',{'base_dir':str(target),'ref_dir':str(R/'reference'),'sample':a.sample,'reads':str(reads),'adapters':str(R/'ref/adapters.fasta'),'validate':False})
-    run(stage,[R/'nextflow','-log',target/'nextflow.log','run',R,'-main-script',script,'-c',E/'e2e-worker.config','-c',extra_config,
+    run(stage,[R/'nextflow','-log',target/'nextflow.log','run',R,'-main-script',script,'-lib',str(R/'lib'),'-c',E/'e2e-worker.config','-c',extra_config,
                '-params-file',target/'params.json','-work-dir',target/'work','-ansi-log','false'])
 extra('screen-run','experiments/amino_acids/postscreen.nf',D/'union.fastq')
 trimmed=single('screen-run/published/FASTP/*_fastp.fastq.gz')

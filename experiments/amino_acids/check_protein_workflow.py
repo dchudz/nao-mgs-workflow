@@ -13,7 +13,7 @@ with gzip.open(D/'fixture.fastq.gz','wb') as out:
 config=D/'publish.config';config.write_text("process.publishDir = [path: { \"${params.base_dir}/published/${task.process.tokenize(':')[-1]}\" }, mode:'copy']\n")
 def run(name,script,extra):
     stage=D/name;stage.mkdir(exist_ok=True)
-    command=[str(R/'nextflow'),'-log',str(stage/'nextflow.log'),'run',str(R),'-main-script',script,
+    command=[str(R/'nextflow'),'-log',str(stage/'nextflow.log'),'run',str(R),'-main-script',script,'-lib',str(R/'lib'),
         '-c',str(R/'experiments/amino_acids/e2e-worker.config'),'-c',str(config),'-work-dir',str(stage/'work'),
         '--base_dir',str(stage),'--ref_dir',str(R/'reference'),'--sample','adapter_fixture','--adapters',str(R/'ref/adapters.fasta'),'-ansi-log','false',*extra]
     with (stage/'run.log').open('w') as f:subprocess.run(command,cwd=R,stdout=f,stderr=subprocess.STDOUT,check=True)
