@@ -8,9 +8,11 @@ import argparse,csv,datetime,gzip,hashlib,json,os,shutil,subprocess,tarfile,time
 from pathlib import Path
 R=Path('/home/ec2-user/experiment');E=R/'experiments/amino_acids';PLAN=E/'end-to-end-full-depth'
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1'];PREFIX='s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/'
-p=argparse.ArgumentParser();p.add_argument('--sample',required=True);p.add_argument('--source-commit',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--sample',required=True);p.add_argument('--source-commit',required=True);p.add_argument('--driver-commit');a=p.parse_args()
 assert len(a.source_commit)==40 and all(c in '0123456789abcdef' for c in a.source_commit)
 assert (R/'source-commit.txt').read_text().strip()==a.source_commit
+if a.driver_commit is None:a.driver_commit=a.source_commit
+assert len(a.driver_commit)==40 and all(c in '0123456789abcdef' for c in a.driver_commit)
 selection=json.loads((PLAN/'sample-selection.json').read_text())['initial_samples'];row=next(x for x in selection if x['run_accession']==a.sample)
 D=R/'e2e'/a.sample;D.mkdir(parents=True,exist_ok=True);data=R/'data'/a.sample
 bound=json.loads((R/'execution-bound.json').read_text());deadline=datetime.datetime.fromisoformat(bound['absolute_stop_utc'])-datetime.timedelta(hours=2)
@@ -33,20 +35,36 @@ def backup():
             with tarfile.open(diagnostic,'w:gz') as tar:
                 for f in tasks:
                     if f.is_file() and not f.is_symlink():tar.add(f,arcname=str(f.relative_to(work)))
-    cmd=AWS+['s3','sync',str(D)+'/',PREFIX+f'samples/{a.sample}/','--exclude','*/work/*','--exclude','*/.nextflow/*','--exclude','*.partial','--only-show-errors']
+    # AWS CLI examines special files before applying --exclude and returns code2
+    # for excluded Nextflow FIFOs. Stage regular retained artifacts as hard links,
+    # pruning work/cache directories before traversal so no scratch is uploaded.
+    staging=R/'checkpoint-staging'/a.sample
+    if staging.exists():shutil.rmtree(staging)
+    staging.mkdir(parents=True)
+    for directory,dirs,files in os.walk(D):
+        dirs[:]=[name for name in dirs if name not in {'work','.nextflow'}]
+        for name in files:
+            if name.endswith('.partial'):continue
+            source=Path(directory)/name
+            assert source.is_file(),('Unexpected retained special file',source)
+            target=staging/source.relative_to(D);target.parent.mkdir(parents=True,exist_ok=True)
+            os.link(source.resolve(),target)
+    cmd=AWS+['s3','sync',str(staging)+'/',PREFIX+f'samples/{a.sample}/','--only-show-errors']
     subprocess.run(cmd,check=True,timeout=1800)
+    shutil.rmtree(staging)
 def run(stage,cmd,cwd=R):
     receipt=D/(stage+'.json')
     if receipt.exists():
         old=json.loads(receipt.read_text())
         assert old['command']==list(map(str,cmd)),('Completed stage command changed',stage)
         assert old['source_commit']==a.source_commit,('Source changed after stage completion',stage)
+        backup()
         return
     remaining=(deadline-now()).total_seconds();assert remaining>1800,'Preserve/stop budget reserve reached'
     started=now();begin=time.monotonic()
     with (D/(stage+'.log')).open('w') as log:
         proc=subprocess.run(list(map(str,cmd)),cwd=cwd,stdout=log,stderr=subprocess.STDOUT,timeout=remaining-900)
-    record={'stage':stage,'source_commit':a.source_commit,'command':list(map(str,cmd)),
+    record={'stage':stage,'source_commit':a.source_commit,'driver_commit':a.driver_commit,'command':list(map(str,cmd)),
             'started_utc':started.isoformat(),'finished_utc':now().isoformat(),'wall_seconds':time.monotonic()-begin,'exit_code':proc.returncode}
     if proc.returncode:
         save(D/(stage+'.failure.json'),record);backup();raise RuntimeError(f'{stage} failed; inspect its preserved log')
@@ -86,10 +104,14 @@ assert json.loads((R/'integration/real-diamond/verification.json').read_text())[
 assert json.loads((R/'integration/baseline-replay.json').read_text())['verified']
 acquisition=json.loads((data/'verified.json').read_text());assert acquisition['spot_count']==int(row['read_count'])
 assert not (D/'complete.json').exists(),'Sample already completed; do not silently rerun it'
-save(D/'protocol.json',{'source_commit':a.source_commit,'sample':a.sample,'selection':row,
+protocol={'source_commit':a.source_commit,'driver_commit':a.driver_commit,'sample':a.sample,'selection':row,
     'started_utc':now().isoformat(),'acquisition':acquisition,'logical_outputs':json.loads((PLAN/'protocol.json').read_text())['logical_outputs'],
     'grouping':'One original sample per group; 20 hash-selected joint duplicate exemplars per species per group.',
-    'validation':'Original production merged/joined nucleotide query preparation; individual read results, never extrapolated.'})
+    'validation':'Original production merged/joined nucleotide query preparation; individual read results, never extrapolated.'}
+if (D/'protocol.json').exists():
+    protocol=json.loads((D/'protocol.json').read_text())
+    protocol.setdefault('resumptions',[]).append({'utc':now().isoformat(),'driver_commit':a.driver_commit,'scientific_source_commit':a.source_commit})
+save(D/'protocol.json',protocol)
 sheet=D/'samplesheet.csv'
 with sheet.open('w') as f:
     w=csv.writer(f);w.writerow(['sample','fastq_1','fastq_2']);w.writerow([a.sample,data/'R1.fastq.gz',data/'R2.fastq.gz'])
@@ -134,5 +156,5 @@ with gzip.open(base,'rt') as left,gzip.open(control,'rt') as right:
         checked+=1
 save(D/'validation-control-parity.json',{'verified':True,'rows':checked,'compared_columns':keys})
 save(D/'complete.json',{'sample':a.sample,'source_commit':a.source_commit,'full_depth_pairs':acquisition['spot_count'],
-     'completed_utc':now().isoformat(),'all_four_outputs_completed':True,'budget_stop_utc':deadline.isoformat()})
+     'completed_utc':now().isoformat(),'driver_commit':a.driver_commit,'all_four_outputs_completed':True,'budget_stop_utc':deadline.isoformat()})
 backup()
