@@ -27,5 +27,14 @@ class SummaryTests(unittest.TestCase):
             metric=next(r for r in result['metrics'] if r['arm']=='protein_variant')
             self.assertEqual(metric['species_concordant_validated_exemplars'],4)
             self.assertEqual(metric['exemplars_without_species_resolution'],1)
+            with gzip.open(root/'cohort/analysis/call-evidence.tsv.gz','rt') as f:
+                evidence={r['seq_id']:r for r in csv.DictReader(f,delimiter='\t') if r['arm']=='protein_variant'}
+            self.assertNotIn('a-duplicate',evidence)
+            self.assertEqual(evidence['a2']['species_concordant_validated'],'False')
+            with gzip.open(root/'cohort/analysis/read-disagreements.tsv.gz','rt') as f:
+                differences={r['seq_id']:r for r in csv.DictReader(f,delimiter='\t') if r['variant']=='protein_variant' and r['baseline']=='production'}
+            self.assertEqual(differences['a2']['change'],'candidate_gained')
+            self.assertEqual(differences['b2']['change'],'candidate_lost')
+            self.assertEqual(differences['b2']['baseline_aligner_taxid_lca'],'222')
 
 if __name__=='__main__':unittest.main()
