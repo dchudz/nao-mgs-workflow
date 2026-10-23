@@ -12,7 +12,6 @@ def link(path,label):
 split=read(p/'split-budget-ledger.json')
 quota=read(p/'quota-verification-20261023.json')
 batch=read(p/'one-batch-final-receipt.json')
-state=read(p/'active-runtime.json')
 retired=read(p/'owned-worker-retirements.json')
 rows=[('First upstream step','1,000 samples; first five million pairs per sample',old/'first-step-result.html'),('Protein detection and NR checking','200-sample subset; experimental call generation',old/'nr200-result-v3.html'),('Translated search against the same core_nt','232 selected pairs / 464 mates',p/'protein232-result-v3.html'),('NR search-mode reproducibility','746 selected pairs / 1,436 mates',p/'nr-context-result-v2.html'),('Translated search algorithms','43-mate pilot and scoring inspection',p/'faster-translated-search-v3.html'),('Read-header reproducibility','Eight selected read IDs',old/'bowtie-header-note.html')]
 text='''<!doctype html><html lang="en"><meta charset="utf-8"><title>Amino-acid experiment results</title><style>body{font:17px/1.5 system-ui;max-width:1080px;margin:40px auto;padding:0 24px;color:#172332}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{border:1px solid #cbd3dc;padding:10px;text-align:left}a{color:#165d9c}.note{background:#edf2f7;padding:16px}code{overflow-wrap:anywhere}</style><h1>Amino-acid experiment results</h1><p>Private results. AI-authored analysis, not human-verified. No source or results were pushed or publicly posted.</p>'''

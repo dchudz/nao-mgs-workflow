@@ -4,10 +4,21 @@ root=pathlib.Path('/Users/david/Documents/ChatGPT/pipeline');base=root/'.tmp';d=
 head=subprocess.check_output(['git','-C',str(work),'rev-parse','HEAD'],text=True).strip();short=head[:12];old=json.loads((d/'latest-backup-manifest.json').read_text())
 now=datetime.datetime.now(datetime.timezone.utc).isoformat()
 retirement_args=['--retirement-receipts',str(d/'owned-worker-retirements.json')] if (d/'owned-worker-retirements.json').exists() else []
-subprocess.run(['python3',str(base/'aa-experiment-20261021/estimate-experiment-cost.py'),'--as-of',now,'--output',str(d/'budget-ledger.json')]+retirement_args,check=True,stdout=subprocess.DEVNULL)
-ledger=json.loads((d/'budget-ledger.json').read_text());split=json.loads((d/'split-budget-ledger.json').read_text());split['as_of_utc']=now
+retired=json.loads((d/'owned-worker-retirements.json').read_text()) if retirement_args else {}
+frozen_ledger=all(i in retired for i in ['i-061f366bd55def34c','i-0103f018916b6c9e5'])
+if frozen_ledger:
+ # Retirement has fixed every remaining allocation interval. Keep the final
+ # ledger byte-identical to the report and committed provenance that cite it.
+ ledger_before=(d/'budget-ledger.json').read_bytes()
+ split_before=(d/'split-budget-ledger.json').read_bytes()
+else:
+ subprocess.run(['python3',str(base/'aa-experiment-20261021/estimate-experiment-cost.py'),'--as-of',now,'--output',str(d/'budget-ledger.json')]+retirement_args,check=True,stdout=subprocess.DEVNULL)
+ledger=json.loads((d/'budget-ledger.json').read_text());split=json.loads((d/'split-budget-ledger.json').read_text());split['as_of_utc']=ledger['as_of_utc']
 for k,v in split['before_boundary'].items():split['after_boundary'][k]=ledger[k]-v
 split['new_cap_modeled_remainder_excluding_other_charges']=500-split['after_boundary']['modeled_owned_compute_EBS_IPv4_total_USD'];(d/'split-budget-ledger.json').write_text(json.dumps(split,indent=2)+'\n')
+if frozen_ledger:
+ assert (d/'budget-ledger.json').read_bytes()==ledger_before
+ assert (d/'split-budget-ledger.json').read_bytes()==split_before
 state=json.loads((d/'active-runtime.json').read_text());state.update(updated_utc=now,latest_budget=split,current_local_head=head,backup_refresh_needed=True);(d/'active-runtime.json').write_text(json.dumps(state,indent=2)+'\n')
 bundle=d/f'history-{short}.bundle';source=d/f'source-{short}.tar.gz';reports=d/f'reports-{short}.tar.gz';assert not any(p.exists() for p in [bundle,source,reports])
 subprocess.run(['git','-C',str(work),'bundle','create',str(bundle),'aa3dcb073af33f6331f6c4223c656e4bab7cd2eb..HEAD'],check=True)
