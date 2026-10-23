@@ -1,5 +1,5 @@
 """Read back every saved sample artifact before releasing reconstructable scratch."""
-import argparse,datetime,hashlib,json,shutil,subprocess
+import argparse,datetime,hashlib,json,shutil,subprocess,tarfile
 from pathlib import Path
 R=Path('/home/ec2-user/experiment');PREFIX='s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/'
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1']
@@ -16,6 +16,14 @@ def digest(path):
     with path.open('rb') as f:
         for b in iter(lambda:f.read(16*1024**2),b''):h.update(b)
     return h.hexdigest()
+# Preserve generated count/parameter sidecars that are not workflow outputs.
+for work in D.glob('*/work'):
+    archive=work.parent/'generated-task-metrics.tar.gz'
+    metrics=list(work.glob('*/*/*.json'))+list(work.glob('*/*/*.stats.txt'))
+    with tarfile.open(archive,'w:gz') as tar:
+        for item in metrics:
+            if item.is_file() and not item.is_symlink():tar.add(item,arcname=str(item.relative_to(work)))
+    subprocess.run(AWS+['s3','cp',str(archive),PREFIX+'samples/'+a.sample+'/'+str(archive.relative_to(D)),'--only-show-errors'],check=True)
 files=[p for p in D.rglob('*') if p.is_file() and included(p)]
 size=sum(p.stat().st_size for p in files);download=R/'verify-download'/a.sample
 assert shutil.disk_usage(R).free>size+50*1024**3, 'Insufficient room for independent backup readback'
