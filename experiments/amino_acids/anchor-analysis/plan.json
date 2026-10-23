@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-10-23T14:16:19.099632+00:00",
+  "sample": "SRR39694979",
+  "searches_authorized": false,
+  "goals": [
+    "Reconstruct all 22359 anchor NR classifications from pooled double-indexed query evidence",
+    "Count 10620 native-absent pairs under raw and construct-excluded policies",
+    "Use pinned production similarity algorithm, real qualities, species concordance, both aligned mates, threshold three",
+    "Compare within-sample first five million raw pair IDs if membership supports this definition"
+  ],
+  "preserve_originals": true,
+  "limitations": [
+    "Full-depth anchor is absent from heldout-ranges.json; shallow comparison must be explicitly defined",
+    "Same supplemental similarity-only criterion as 200 sample report; no claim of production alignment-duplicate parity"
+  ]
+}
