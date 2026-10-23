@@ -1,0 +1,106 @@
+{
+  "verified": true,
+  "scope": "Existing real HSPs, same filtered original reads; no new database search.",
+  "eligible_HSPs": 1330176,
+  "eligible_queries": 378,
+  "maximum_HSPs_one_query": 24827,
+  "extract": {
+    "bytes_identical": true,
+    "decompressed_sha256": "af726369562121e178112aff16238ca4bc362c6eb11fbd2b2935844d637547b4",
+    "lines": 1728,
+    "before": "/home/ec2-user/experiment/integration/protein-workflow/protein/work/e0/f34df1621d0bb7e250b744bb43f62c/candidates.fastq.gz",
+    "after": "/home/ec2-user/experiment/integration/adapter-bounded/candidates.fastq.gz"
+  },
+  "final": {
+    "bytes_identical": true,
+    "decompressed_sha256": "480ede01b7eec9a0dbe7079e320c15155d425bcd5215e2ec358eab3900a2ff58",
+    "lines": 215,
+    "before": "/home/ec2-user/experiment/integration/protein-workflow/protein/work/9d/d91aa9b010661ae981b5f4eb4b0a2e/unsorted.tsv.gz",
+    "after": "/home/ec2-user/experiment/integration/adapter-bounded/final.unsorted.tsv.gz"
+  },
+  "original_trace": [
+    {
+      "task_id": "3",
+      "hash": "e0/f34df1",
+      "native_id": "89181",
+      "name": "PROTEIN_CANDIDATES (1)",
+      "status": "COMPLETED",
+      "exit": "0",
+      "submit": "2026-10-23 20:08:44.901",
+      "duration": "6m 52s",
+      "realtime": "6m 50s",
+      "%cpu": "100.1%",
+      "peak_rss": "1 GB",
+      "peak_vmem": "1 GB",
+      "rchar": "234.6 MB",
+      "wchar": "69.3 KB"
+    },
+    {
+      "task_id": "6",
+      "hash": "9d/d91aa9",
+      "native_id": "96041",
+      "name": "PROTEIN_ADAPTER (1)",
+      "status": "COMPLETED",
+      "exit": "0",
+      "submit": "2026-10-23 20:15:42.406",
+      "duration": "12m 6s",
+      "realtime": "12m 6s",
+      "%cpu": "100.1%",
+      "peak_rss": "3 GB",
+      "peak_vmem": "3 GB",
+      "rchar": "785 MB",
+      "wchar": "439.5 KB"
+    }
+  ],
+  "bounded_extract": {
+    "command": [
+      "python3.12",
+      "/home/ec2-user/experiment/experiments/amino_acids/diamond_adapter_bounded.py",
+      "--extract-only",
+      "--hits",
+      "/home/ec2-user/experiment/integration/adapter-bounded/hits.sorted.tsv",
+      "--query-metadata",
+      "/home/ec2-user/experiment/integration/protein-workflow/protein/work/e0/f34df1621d0bb7e250b744bb43f62c/queries.tsv.gz",
+      "--members",
+      "/home/ec2-user/experiment/integration/protein-workflow/protein/work/e0/f34df1621d0bb7e250b744bb43f62c/queries.fna.members.tsv.gz",
+      "--reads",
+      "/home/ec2-user/experiment/integration/protein-workflow/protein/work/e0/f34df1621d0bb7e250b744bb43f62c/adapter_fixture_fastp.fastq.gz",
+      "--sample",
+      "adapter_fixture",
+      "--reference",
+      "/home/ec2-user/experiment/reference",
+      "--genome-lengths",
+      "/home/ec2-user/experiment/reference/genome-lengths.json",
+      "--output",
+      "/home/ec2-user/experiment/integration/adapter-bounded/candidates.fastq.gz"
+    ],
+    "sort_and_extract_seconds": 21.247583888999998,
+    "children_peak_rss_KiB": 403048,
+    "source_commit": "c773bd53"
+  },
+  "bounded_final": {
+    "command": [
+      "python3.12",
+      "/home/ec2-user/experiment/experiments/amino_acids/diamond_adapter_bounded.py",
+      "--hits",
+      "/home/ec2-user/experiment/integration/adapter-bounded/hits.sorted.tsv",
+      "--query-metadata",
+      "/home/ec2-user/experiment/integration/protein-workflow/protein/work/e0/f34df1621d0bb7e250b744bb43f62c/queries.tsv.gz",
+      "--members",
+      "/home/ec2-user/experiment/integration/protein-workflow/protein/work/e0/f34df1621d0bb7e250b744bb43f62c/queries.fna.members.tsv.gz",
+      "--reads",
+      "/home/ec2-user/experiment/integration/protein-workflow/protein/work/9d/d91aa9b010661ae981b5f4eb4b0a2e/adapter_fixture_other_bowtie2_unmapped.fastq.gz",
+      "--sample",
+      "adapter_fixture",
+      "--reference",
+      "/home/ec2-user/experiment/reference",
+      "--genome-lengths",
+      "/home/ec2-user/experiment/reference/genome-lengths.json",
+      "--output",
+      "/home/ec2-user/experiment/integration/adapter-bounded/final.unsorted.tsv.gz"
+    ],
+    "seconds": 43.446897089999766,
+    "peak_rss_KiB": 2114816
+  },
+  "timing_limit": "Legacy ran in the pinned Python container; bounded timing ran with worker Python3.12. Timing is diagnostic, not a controlled pipeline speed comparison."
+}
