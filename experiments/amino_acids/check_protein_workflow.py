@@ -1,5 +1,5 @@
 """Production-module integration on a frozen, enriched software fixture only."""
-import csv,gzip,hashlib,json,subprocess,sys
+import csv,datetime,gzip,hashlib,json,subprocess,sys
 from pathlib import Path
 from union_pairs import pairs
 R=Path('/home/ec2-user/experiment');D=R/'integration/protein-workflow';D.mkdir(parents=True,exist_ok=True)
@@ -15,7 +15,9 @@ def run(name,script,extra):
     stage=D/name;stage.mkdir(exist_ok=True)
     command=[str(R/'nextflow'),'-log',str(stage/'nextflow.log'),'run',str(R),'-main-script',script,'-lib',str(R/'lib'),
         '-c',str(R/'experiments/amino_acids/e2e-worker.config'),'-c',str(config),'-work-dir',str(stage/'work'),
-        '--base_dir',str(stage),'--ref_dir',str(R/'reference'),'--sample','adapter_fixture','--adapters',str(R/'ref/adapters.fasta'),'-ansi-log','false',*extra]
+        '--base_dir',str(stage),'--ref_dir',str(R/'reference'),'--sample','adapter_fixture','--adapters',str(R/'ref/adapters.fasta'),'-ansi-log','false','-resume',*extra]
+    if (stage/'run.log').exists():
+        (stage/('run.previous-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'.log')).write_bytes((stage/'run.log').read_bytes())
     with (stage/'run.log').open('w') as f:subprocess.run(command,cwd=R,stdout=f,stderr=subprocess.STDOUT,check=True)
     return command
 cmd1=run('native','experiments/amino_acids/postscreen.nf',['--reads',str(D/'fixture.fastq.gz')])
