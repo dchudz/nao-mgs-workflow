@@ -1,0 +1,47 @@
+{
+  "verified": true,
+  "scientific_source_commit": "e34f3b484e56c27d28893c1e820a6016d2f8b534",
+  "custom_image_id": "sha256:d1b77ec75262ad7dc27dce983b4294782c84d986529aabe335c94d8f9aab7b12",
+  "binaries": [
+    {
+      "path": "rust-tools/target/release/screen_amino_acids",
+      "bytes": 2227696,
+      "sha256": "9c8874190f8035a3ef6cb08b0443abeef5fd80674218039265919b20c9809154"
+    },
+    {
+      "path": "rust-tools/target-musl/release/mark_duplicates",
+      "bytes": 2691440,
+      "sha256": "ed2ea7b5af350a46063c26075cd2ab75462546ceb360cb3bea2992d9b3d8b682"
+    },
+    {
+      "path": "rust-tools/target-musl/release/mark_duplicates_similarity",
+      "bytes": 2346192,
+      "sha256": "1de14914422412ec907ba55df92bc14e1c43ff16e614ee2d8b2dee4e5870a8a8"
+    },
+    {
+      "path": "protein/tools/diamond",
+      "bytes": 26396608,
+      "sha256": "c32782ed588593f73c41c57c0d013b7b8a5ac6d78e48d90a63985cbcf148d807"
+    }
+  ],
+  "archives": [
+    {
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/runtime/pipeline-e2e-rust.tar.gz",
+      "bytes": 12725834,
+      "sha256": "a93a0049762b28fe4078e5978790b0ee3c3169ba9c945df8b83b6755b2f4cf15",
+      "independent_stream_readback_verified": true
+    },
+    {
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/runtime/binaries.tar.gz",
+      "bytes": 11236007,
+      "sha256": "58a4d2ecc6552aac58d98fdfdc18c86a798849ee0b975ca075aae3dff86192c1",
+      "independent_stream_readback_verified": true
+    },
+    {
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/runtime/runtime-images.json",
+      "bytes": 7484,
+      "sha256": "a09f6948db3f668bd3813d13daf9f62a87b96eaddc6f31ec2f86210270559eb4",
+      "independent_stream_readback_verified": true
+    }
+  ]
+}

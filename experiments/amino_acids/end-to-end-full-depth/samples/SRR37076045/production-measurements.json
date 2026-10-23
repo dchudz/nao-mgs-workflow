@@ -1,0 +1,23 @@
+{
+  "sample": "SRR37076045",
+  "source_commit": "e34f3b484e56c27d28893c1e820a6016d2f8b534",
+  "stage": "production-downstream",
+  "downstream_wall_seconds": 1240.0076751360011,
+  "query_count": 1050,
+  "query_uncompressed_sha256": "fd74e45be23415ac6caff10aeddc9e5b1d9950c054664558070ac63a192a1d5d",
+  "candidate_pairs": 213561,
+  "joint_duplicate_exemplars": 78079,
+  "validation_statuses": {
+    "not_sampled": 212511,
+    "aligned": 1045,
+    "no_alignment": 5
+  },
+  "blast_trace": {
+    "realtime": "14m 53s",
+    "%cpu": "184.1%",
+    "peak_rss": "251.4 GB",
+    "read_bytes": "195.8 GB",
+    "write_bytes": "1.8 MB"
+  },
+  "scope": "Original full-depth production arm. Task wall times include shared-worker contention and database staging. The two control and protein comparisons remain pending."
+}
