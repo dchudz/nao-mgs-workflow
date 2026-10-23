@@ -1,0 +1,10 @@
+{
+  "rows": 5942196,
+  "raw_bytes": 487195123,
+  "raw_sha256": "0be98f28e7a03a3f517c892b77606e766a3dc93dff7dd1b90113c84641e3cfd9",
+  "projected_sha256": "d6f2d883a4568ef317bf62e36bbb0445694329f3a20ecf635d5e48b7821b3628",
+  "raw_fields": 8,
+  "analysis_fields": 7,
+  "logged_output_closed": true,
+  "logged_reference_blocks": 221
+}

@@ -1,0 +1,7 @@
+{
+  "audit_source_commit": "886bdb4b9ee0a53c24eed524b3485f37e0136477",
+  "failed_step": "summarize-diamond-stages.py",
+  "error": "AssertionError: A completed search is required",
+  "cause": "The stage summarizer correctly requires a successful GNU exit record, absent from the time-limited process.",
+  "resolution": "Preserve this attempt; output-audit-v2 omits completed-search timing summaries and leaves the original guard and search status unchanged."
+}

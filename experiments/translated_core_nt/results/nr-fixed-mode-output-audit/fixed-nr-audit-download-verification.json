@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-23T08:02:15.525629+00:00",
+  "archive": "/home/ec2-user/experiment/protein/fixed-nr-audit-20261023.tar.gz",
+  "bytes": 88057786,
+  "sha256": "e935ee5447a38a0a0d4c5ab8c0a7562de57d1df41a202ae3283a6c3f00f72466",
+  "exclusions": "Duplicate seven-field projections and classifier copies; immutable eight-field raw, protocols, failed audit and final audit retained.",
+  "local_verified_utc": "2026-10-23T08:06:24.701565+00:00",
+  "raw_sha256": "0be98f28e7a03a3f517c892b77606e766a3dc93dff7dd1b90113c84641e3cfd9",
+  "local_raw_hash_verified": true
+}

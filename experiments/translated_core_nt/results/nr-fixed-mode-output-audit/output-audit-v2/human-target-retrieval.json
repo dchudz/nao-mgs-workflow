@@ -1,0 +1,30 @@
+{
+  "retrieved_utc": "2026-10-23T07:56:25.679922+00:00",
+  "command": [
+    "/home/ec2-user/experiment/protein/tools/diamond",
+    "getseq",
+    "--db",
+    "/home/ec2-user/experiment/protein/current-nr/nr.124",
+    "--seq",
+    "4112262",
+    "--out",
+    "/home/ec2-user/experiment/protein/seed-nr-forced-double-index-trace/output-audit-v2/human-target-815174796.faa"
+  ],
+  "wall_seconds": 11.233270687007462,
+  "source_sha256": "874453709dba5a013c38c616de6d63e92b976d13e80737f0322a255a772cac6c",
+  "target": {
+    "global_ordinal": 815174796,
+    "database": "/home/ec2-user/experiment/protein/current-nr/nr.124",
+    "local_ordinal": 4112261,
+    "diamond_getseq_number": 4112262
+  },
+  "header": ">N/A rheumatoid factor, partial [Homo sapiens]",
+  "amino_acids": 1737,
+  "sequence_sha256": "9ca97f3290bc0a4228172ceca342e142f22e7ef5765602667fa1f7e0a62a0781",
+  "fasta_sha256": "5d8cd628d2c7a65703ba99c88441b70f871a585fa9d9858681b5ff30952e964b",
+  "limits": [
+    "Exact target retrieval after the comprehensive NR comparison, not restricted-reference validation.",
+    "All four recovered human HSPs refer to this ordinal. A human taxonomic label does not establish the reads originate from humans.",
+    "Numeric identity is tied to the frozen NR snapshot. No accession or gene name is inferred."
+  ]
+}

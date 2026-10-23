@@ -1,0 +1,26 @@
+    0:d=0  hl=2 l=inf  cons: SEQUENCE          
+    2:d=1  hl=2 l=inf  cons: SEQUENCE          
+    4:d=2  hl=2 l=inf  cons: cont [ 0 ]        
+    6:d=3  hl=2 l=  41 prim: VISIBLESTRING     :rheumatoid factor, partial [Homo sapiens]
+   49:d=3  hl=2 l=   0 prim: EOC               
+   51:d=2  hl=2 l=inf  cons: cont [ 1 ]        
+   53:d=3  hl=2 l=inf  cons: SEQUENCE          
+   55:d=4  hl=2 l=inf  cons: cont [ 13 ]       
+   57:d=5  hl=2 l=inf  cons: SEQUENCE          
+   59:d=6  hl=2 l=inf  cons: cont [ 0 ]        
+   61:d=7  hl=2 l=   8 prim: VISIBLESTRING     :1906410B
+   71:d=7  hl=2 l=   0 prim: EOC               
+   73:d=6  hl=2 l=   0 prim: EOC               
+   75:d=5  hl=2 l=   0 prim: EOC               
+   77:d=4  hl=2 l=   0 prim: EOC               
+   79:d=3  hl=2 l=   0 prim: EOC               
+   81:d=2  hl=2 l=inf  cons: cont [ 2 ]        
+   83:d=3  hl=2 l=   2 prim: INTEGER           :2586
+   87:d=3  hl=2 l=   0 prim: EOC               
+   89:d=2  hl=2 l=inf  cons: cont [ 5 ]        
+   91:d=3  hl=2 l=inf  cons: SEQUENCE          
+   93:d=4  hl=2 l=   3 prim: INTEGER           :099CB2
+   98:d=4  hl=2 l=   0 prim: EOC               
+  100:d=3  hl=2 l=   0 prim: EOC               
+  102:d=2  hl=2 l=   0 prim: EOC               
+  104:d=1  hl=2 l=   0 prim: EOC               

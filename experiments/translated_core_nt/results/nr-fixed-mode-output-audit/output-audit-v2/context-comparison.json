@@ -1,0 +1,26 @@
+{
+  "pooled_double": {
+    "alignment_multiset_equal": true,
+    "original_sha256": "ce53da930fd79fe718797f5b307c12c19da337d6678c1a4c2e19bffc191740c7",
+    "original_rows": 5942196,
+    "audited_rows": 5942196,
+    "rows_only_original": 0,
+    "rows_only_audited": 0,
+    "raw_differing_query_mates": 0,
+    "pairs_with_summary_difference": 0,
+    "status_disagreements": 0,
+    "taxid_disagreements": 0
+  },
+  "standalone_auto_query": {
+    "alignment_multiset_equal": false,
+    "original_sha256": "a7d1f6aa9af6e3893a4377498b3a1df3b83b8da53ac412ceaf5a735e1f0b56cb",
+    "original_rows": 5678862,
+    "audited_rows": 5942196,
+    "rows_only_original": 21113,
+    "rows_only_audited": 284447,
+    "raw_differing_query_mates": 639,
+    "pairs_with_summary_difference": 78,
+    "status_disagreements": 47,
+    "taxid_disagreements": 74
+  }
+}

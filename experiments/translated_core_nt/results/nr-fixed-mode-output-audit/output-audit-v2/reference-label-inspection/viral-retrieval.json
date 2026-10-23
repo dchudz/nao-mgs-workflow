@@ -1,0 +1,25 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "1",
+    "--memory",
+    "4g",
+    "-v",
+    "/home/ec2-user/experiment:/home/ec2-user/experiment:ro",
+    "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602",
+    "blastdbcmd",
+    "-db",
+    "/home/ec2-user/experiment/protein/current-nr/nr",
+    "-entry",
+    "BDA36041.1",
+    "-outfmt",
+    "%f"
+  ],
+  "returncode": 0,
+  "wall_seconds": 0.9426080580014968
+}

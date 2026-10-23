@@ -1,0 +1,8 @@
+{
+  "verified_utc": "2026-10-23T08:09:34.252577+00:00",
+  "both_input_fasta_hashes_match": true,
+  "both_HSP_strings_match_stated_source_intervals": true,
+  "identical_columns": 1377,
+  "alignment_columns": 1747,
+  "identity_percent": 78.82083571837435
+}
