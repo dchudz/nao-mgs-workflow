@@ -24,6 +24,9 @@ def sha(path):
     return h.hexdigest()
 
 def references():
+    if (D/'reference-verification.json').exists() and (R/'reference/genome-lengths.json').exists() and (R/'reference/virus-genomes-human-masked.fasta.gz').exists():
+        assert json.loads((D/'reference-verification.json').read_text())['verified']
+        return
     run('references',AWS+['s3','sync','s3://pipeline-lab-839993661825-us-west-2/runs/full-reference-20261020a/index/output/',R/'reference','--only-show-errors'])
     frozen=json.loads((D/'core-reference-archive-complete.json').read_text())
     for item in frozen['files']:
