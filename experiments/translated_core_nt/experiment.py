@@ -21,6 +21,13 @@ def fasta(p):
             assert name is not None; records[name]+=line.strip()
     assert records and all(records.values()); return records
 
+def allowed_runtime(seconds, cutoff_utc, started):
+    cutoff=datetime.datetime.fromisoformat(cutoff_utc.replace('Z','+00:00'))
+    assert cutoff.tzinfo is not None and started.tzinfo is not None, 'Runtime limits require timezone-aware timestamps'
+    remaining=min(seconds,(cutoff-started).total_seconds())
+    assert remaining>60, 'No useful interval remains before the requested search cutoff'
+    return remaining,cutoff.astimezone(datetime.timezone.utc)
+
 def prepare(d, n):
     source=ROOT/'cohort-storage/seed-diagnostic200'
     rows=list(csv.DictReader((source/'selection.tsv').open(),delimiter='\t'))
@@ -48,7 +55,7 @@ def prepare(d, n):
     save(d/'input-manifest.json',dict(created_utc=now(),pairs=len(selected),queries=len(q),per_stratum=n,query_sha256=sha(d/'queries.fna'),selection_sha256=sha(d/'selection.tsv'),reference_inventory_sha256=sha(d/'reference-inventory.json'),source_query_sha256=sha(source/'queries.fna'),source_selection_sha256=sha(source/'selection.tsv'),selection_rule='SHA256 same-reference-v1:flag:seq_id; disjoint strata baseline,AA12_added,NT20_added in that order; unique samples within each stratum; no BLAST or NR outcome used',limits=['Selected diagnostic panel, not population accuracy or prevalence','Identical separate available mate sequences; production validation merges/joins mates','Baseline and additions deliberately enriched; strata overlap in parent panel but each pair included once here']))
     print(json.dumps(json.loads((d/'input-manifest.json').read_text())),flush=True)
 
-def run(d, config, commit, seconds):
+def run(d, config, commit, seconds, cutoff_utc='2026-10-23T08:00:00+00:00'):
     manifest=json.loads((d/'input-manifest.json').read_text());method=json.loads(config.read_text());name=method['name']
     assert sha(d/'queries.fna')==manifest['query_sha256'] and sha(d/'selection.tsv')==manifest['selection_sha256']
     for x in json.loads((d/'reference-inventory.json').read_text()):
@@ -58,9 +65,8 @@ def run(d, config, commit, seconds):
     command=[method['executable']]+method['arguments']+['-db',str(DB),'-query',str(d/'queries.fna'),'-out',str(output/'alignments.tsv'),'-max_hsps','5','-num_alignments','250','-qcov_hsp_perc','30','-evalue','10','-num_threads','16','-outfmt',OUTFMT]
     container='same-ref-'+d.name+'-'+name
     docker=['docker','run','--rm','--name',container,'--network','none','--cpus','16','--memory','450g','-v','/usr/bin/time:/usr/bin/time:ro','-v',f'{ROOT}:{ROOT}',IMAGE,'/usr/bin/time','-v','-o',str(output/'time.txt')]+command
-    cutoff=datetime.datetime.fromisoformat('2026-10-23T08:00:00+00:00')
-    budget_seconds=min(seconds,(cutoff-datetime.datetime.now(datetime.timezone.utc)).total_seconds());assert budget_seconds>60
-    protocol=dict(started_utc=now(),source_commit=commit,source_sha256=sha(__file__),method_config_sha256=sha(config),input_manifest=manifest,method=method,command=docker,maximum_seconds=budget_seconds,output_fields=FIELDS,allocation_USD_per_hour_conservative=4.0,cache_policy='Existing shared reference cache, not a cold-cache comparison',completion_required=True)
+    budget_seconds,cutoff=allowed_runtime(seconds,cutoff_utc,datetime.datetime.now(datetime.timezone.utc))
+    protocol=dict(started_utc=now(),source_commit=commit,source_sha256=sha(__file__),method_config_sha256=sha(config),input_manifest=manifest,method=method,command=docker,maximum_seconds=budget_seconds,absolute_cutoff_utc=cutoff.isoformat(),output_fields=FIELDS,allocation_USD_per_hour_conservative=4.0,cache_policy='Existing shared reference cache, not a cold-cache comparison',completion_required=True)
     save(output/'protocol.json',protocol); start=time.monotonic();status='failed';returncode=None
     try:
         with (output/'stderr.log').open('w') as log:
@@ -80,7 +86,7 @@ def run(d, config, commit, seconds):
     save(output/'complete.json',dict(completed_utc=now(),rows=count,queries=len(query_ids),output_sha256=sha(output/'alignments.tsv')))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('action',choices=['prepare','run']);p.add_argument('--directory',type=Path,required=True);p.add_argument('--per-stratum',type=int,default=8);p.add_argument('--config',type=Path);p.add_argument('--commit');p.add_argument('--seconds',type=int,default=21600);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['prepare','run']);p.add_argument('--directory',type=Path,required=True);p.add_argument('--per-stratum',type=int,default=8);p.add_argument('--config',type=Path);p.add_argument('--commit');p.add_argument('--seconds',type=int,default=21600);p.add_argument('--cutoff-utc',default='2026-10-23T08:00:00+00:00');a=p.parse_args()
     if a.action=='prepare':prepare(a.directory,a.per_stratum)
     else:
-        assert a.config and a.commit;run(a.directory,a.config,a.commit,a.seconds)
+        assert a.config and a.commit;run(a.directory,a.config,a.commit,a.seconds,a.cutoff_utc)

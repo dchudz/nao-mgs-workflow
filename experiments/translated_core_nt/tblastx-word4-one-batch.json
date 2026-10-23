@@ -16,7 +16,6 @@
   "identity_units": "amino acid percent",
   "role": "Bounded execution-control candidate: keep word4 scoring and full core_nt while concatenating this existing query panel into one batch",
   "limits": [
-    "Prepared only; no search launched.",
     "Same requested scoring, reference and read set; output parity remains to be measured.",
     "The env wrapper changes only the child process BATCH_SIZE; prior experiment configuration is unchanged."
   ]

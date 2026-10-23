@@ -1,5 +1,5 @@
 {
-  "status": "Prepared; not launched or automatically queued",
+  "status": "Released bounded replay of the completed existing panel",
   "query_directory": "protein232",
   "pairs": 232,
   "mates": 464,
@@ -7,13 +7,13 @@
   "method": "tblastx-word4-one-batch",
   "purpose": "Measure whether combining the same frozen 67,905 query nucleotides into one batch reduces repeated comprehensive reference processing, and whether all returned alignments remain identical.",
   "change": "Set BATCH_SIZE=100000 in the child environment. Keep the pinned BLAST 2.17.0 image, tblastx word4 threshold18, code1, full core_nt, scoring, 16 threads, reporting caps, output fields and query bytes.",
-  "maximum_seconds": 7200,
-  "maximum_allocated_compute_EBS_IPv4_USD": 7.273,
-  "absolute_search_cutoff_UTC": "2026-10-23T08:00:00Z",
+  "maximum_seconds": 14400,
+  "maximum_allocated_compute_EBS_IPv4_USD": 14.546,
+  "absolute_search_cutoff_UTC": "2026-10-23T10:00:00Z",
   "run_gate": [
     "Original protein232 search must finish and its scientific comparison must be analyzed first.",
     "Do not run alongside any measured search on the primary worker.",
-    "Proceed only if at least a meaningful bounded interval remains before the existing search cutoff; no automatic deadline extension.",
+    "The new explicit cutoff is10UTC and the relative limit is4h. The runner enforces the earlier bound and records it. All existing method parameters and query bytes remain unchanged.",
     "No new biological queries, no additional panel, no index build."
   ],
   "outcomes": [
@@ -23,8 +23,16 @@
   ],
   "limits": [
     "Official matching-release source uses10,002nt tblastx batches; the frozen panel divides into seven batches at whole-read boundaries.",
-    "No measured runtime benefit or full-panel output parity exists yet.",
     "A single warm-reference replay cannot isolate cold-cache or run-order effects.",
-    "A bounded timeout is incomplete; retain partial output without interpreting unprocessed reads as no-hit."
-  ]
+    "A bounded timeout is incomplete; retain partial output without interpreting unprocessed reads as no-hit.",
+    "No runtime or output-parity benefit is assumed before this replay completes.",
+    "A timeout would be reported as an incomplete performance experiment and would not be followed automatically by a longer replay."
+  ],
+  "decision_recorded_utc": "2026-10-23T06:09:47.553230+00:00",
+  "completed_baseline_GNU_wall_seconds": 23684,
+  "completed_baseline_allocated_USD": 23.924129444444443,
+  "completed_result_commit": "f59140ac",
+  "amendment": "The earlier prepared two-hour plan was never launched. The completed baseline took6h35m. Allow up to4h, constrained by10UTC, to measure batching while leaving4h before the already configured14UTC preservation safeguard. Neither the existing NR control nor its limits change.",
+  "owned_resource_bound_through_14UTC_USD": 146.0778438889,
+  "other_charge_reserve_USD": 20
 }
