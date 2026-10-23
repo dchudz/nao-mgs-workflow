@@ -85,6 +85,7 @@ assert json.loads((R/'setup/complete.json').read_text())['verified']
 assert json.loads((R/'integration/real-diamond/verification.json').read_text())['verified']
 assert json.loads((R/'integration/baseline-replay.json').read_text())['verified']
 assert json.loads((R/'integration/protein-workflow/verification.json').read_text())['verified']
+assert json.loads((R/'integration/adapter-bounded/verification.json').read_text())['verified']
 acquisition=json.loads((data/'verified.json').read_text());assert acquisition['spot_count']==int(row['read_count'])
 assert not (D/'complete.json').exists(),'Sample already completed; do not silently rerun it'
 save(D/'protocol.json',{'source_commit':a.source_commit,'sample':a.sample,'selection':row,
