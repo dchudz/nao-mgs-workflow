@@ -1,0 +1,56 @@
+{
+  "account": "839993661825",
+  "instance": "i-0103f018916b6c9e5",
+  "volume": "vol-07d4e85519abc9f76",
+  "requested_utc": "2026-10-23T08:25:30.036630+00:00",
+  "final_archive_uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/nr-closure-final/analysis-and-source.tar.gz",
+  "final_archive_sha256": "c9825eb7dc2bbab70928769c4a729b2ea9fa8711de1cbd9784a71dd14964172d",
+  "frozen_reference_objects": 1619,
+  "all_symlink_targets_preserved": [
+    {
+      "path": "protein/compacted-validation-v2/nr.tsv",
+      "target": "/home/ec2-user/experiment/protein/combined-validation/nr.tsv",
+      "covered_by": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/protein-nr-combined/nr.tsv"
+    },
+    {
+      "path": "protein/compacted-validation-v2/native-controls.tsv",
+      "target": "/home/ec2-user/experiment/protein/combined-validation/native-controls.tsv",
+      "covered_by": "final archive"
+    },
+    {
+      "path": "protein/compacted-validation-v2/seed-selection.tsv",
+      "target": "/home/ec2-user/experiment/protein/combined-validation/seed-selection.tsv",
+      "covered_by": "final archive"
+    }
+  ],
+  "public_access_block": {
+    "PublicAccessBlockConfiguration": {
+      "BlockPublicAcls": true,
+      "IgnorePublicAcls": true,
+      "BlockPublicPolicy": true,
+      "RestrictPublicBuckets": true
+    }
+  },
+  "reason": "All NR scientific outputs, raw data, exact reference, target inspection, failed attempts and source were preserved and verified. No NR search remains active.",
+  "termination_response": {
+    "TerminatingInstances": [
+      {
+        "InstanceId": "i-0103f018916b6c9e5",
+        "CurrentState": {
+          "Code": 32,
+          "Name": "shutting-down"
+        },
+        "PreviousState": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ]
+  },
+  "termination_confirmed_utc": "2026-10-23T08:26:02.514164+00:00",
+  "final_state": {
+    "Code": 48,
+    "Name": "terminated"
+  },
+  "root_volume_deletion_confirmed": true
+}
