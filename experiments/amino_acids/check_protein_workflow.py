@@ -5,11 +5,15 @@ from union_pairs import pairs
 R=Path('/home/ec2-user/experiment');D=R/'integration/protein-workflow';D.mkdir(parents=True,exist_ok=True)
 source='s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/cohort-screens/SRR37076045/aa12.fastq'
 subprocess.run(['aws','--profile','pipeline-codex','s3','cp',source,str(D/'saved-aa12.fastq'),'--only-show-errors'],check=True)
-with gzip.open(D/'fixture.fastq.gz','wb') as out:
-    count=0
-    for key,raw in pairs(D/'saved-aa12.fastq'):
-        if count==1000:break
-        out.write(raw);count+=1
+records=[]
+for key,raw in pairs(D/'saved-aa12.fastq'):
+    if len(records)==1000:break
+    records.append(raw)
+count=len(records);expected=b''.join(records);fixture=D/'fixture.fastq.gz'
+if fixture.exists():
+    with gzip.open(fixture,'rb') as f:assert f.read()==expected
+else:
+    with gzip.open(fixture,'wb') as f:f.write(expected)
 config=D/'publish.config';config.write_text("process.publishDir = [path: { \"${params.base_dir}/published/${task.process.tokenize(':')[-1]}\" }, mode:'copy']\n")
 def run(name,script,extra):
     stage=D/name;stage.mkdir(exist_ok=True)
