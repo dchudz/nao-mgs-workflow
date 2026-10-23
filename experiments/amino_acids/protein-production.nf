@@ -32,6 +32,7 @@ process PROTEIN_ALIGN {
         else
             : > protein-hits.tsv
         fi
+        LC_ALL=C sort -s -k1,1 -S 2G --parallel 8 protein-hits.tsv -o protein-hits.tsv
         """
 }
 
