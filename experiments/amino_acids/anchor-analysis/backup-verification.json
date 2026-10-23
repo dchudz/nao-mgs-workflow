@@ -1,0 +1,7 @@
+{
+  "verified_utc": "2026-10-23T14:23:27.446393+00:00",
+  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/anchor-analysis-20261023/anchor-result-20261023.tar",
+  "sha256": "c61f21cd62ea2fbc07b8ba03be9640cfb40652feaf29783cbab6905f7e7b9b5c",
+  "bytes": 167034880,
+  "independent_download_hash_verified": true
+}
