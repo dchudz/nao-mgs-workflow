@@ -62,5 +62,6 @@
     "Full RUN QC/profiling branches and final downstream outputs are required for a literal end-to-end claim; any omitted branches must be explicitly named.",
     "First sample is a full-depth engineering and costing gate within the frozen 10; do not change selection based on its biology.",
     "No assumption of authorization to exceed the current cap; terminate/preserve before the hard spend boundary."
-  ]
+  ],
+  "superseded_budget_fields": "Historical remainder and proposed $300 stop below are superseded by budget.json; component scenarios retained as prior estimates."
 }

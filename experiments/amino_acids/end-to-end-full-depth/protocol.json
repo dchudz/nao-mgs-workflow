@@ -64,7 +64,7 @@
     ],
     "testability_before_live_change": true
   },
-  "budget": "Cost first full-depth sample against the remaining cap; preserve all outcomes and commit each approach. Initial batch target10, reserve10 not budget-cleared.",
+  "budget": "Fresh $500 USD cap authorized for this end-to-end run, replacing the prior cap remainder. Target all initial10 if measured total fits. Prior experiments are accounted separately.",
   "claim_corrections": {
     "megablast_no_alignment_in_200_selected_protein_only_pairs": 69,
     "megablast_viral_only": 73,

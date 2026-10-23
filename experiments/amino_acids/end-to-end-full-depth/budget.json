@@ -1,0 +1,10 @@
+{
+  "cap_USD": 500,
+  "authorization": "Yes, good plan, go ahead. Fresh $500 budget for this run, replacing what\u2019s left of the current one. Finish all ten if it fits.",
+  "account_id": "839993661825",
+  "previous_cap_remainder_carried_forward_USD": 0,
+  "compute_ceiling_USD": 400,
+  "noncompute_and_shutdown_reserve_USD": 100,
+  "status": "No worker launched. Reference availability and adapter implementation gates pending.",
+  "accounting": "Charge new workers, attached volumes, IPs, new storage, reference restoration, requests and transfer to this run. Historical worker costs are excluded. Reconcile lagged billing with live resource-time bounds."
+}
