@@ -2,10 +2,11 @@
 import argparse, collections, csv, datetime, hashlib, json, re, shutil, subprocess
 from pathlib import Path
 
-p=argparse.ArgumentParser();p.add_argument('--commit',required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--commit',required=True);p.add_argument('--output-name',default='output-audit-v2');a=p.parse_args()
 assert re.fullmatch('[0-9a-f]{40}',a.commit)
+assert re.fullmatch('output-audit(?:-v[0-9]+)?',a.output_name)
 r=Path('/home/ec2-user/experiment');protein=r/'protein'
-d=protein/'seed-nr-forced-double-index-trace';out=d/'output-audit'
+d=protein/'seed-nr-forced-double-index-trace';out=d/a.output_name
 resource=json.loads((d/'resources.json').read_text())
 protocol=json.loads((d/'search-protocol.json').read_text())
 assert resource['status']=='time_limit' and resource['returncode']==-15
@@ -49,7 +50,8 @@ assert comparisons['pooled_double']['alignment_multiset_equal'], 'Retain raw aud
 # Exact raw-output equality permits replaying the existing classifier as an artifact
 # comparison. It does not turn the interrupted process into a successful search.
 subprocess.run(['python3',str(r/'summarize-seed-nr.py'),str(out)],check=True)
-subprocess.run(['python3',str(r/'summarize-diamond-stages.py'),str(d/'nr-search.log'),str(out/'stage-timings.json')],check=True)
+# The existing stage summarizer requires clean GNU exit statistics. Preserve
+# that guard; this interrupted process has no such timing record.
 def calls(path):
     values=list(csv.DictReader(path.open(),delimiter='\t'));result={x['query_pair']:x for x in values};assert len(values)==len(result)==746;return result
 after=calls(out/'seed-validation.tsv');fields=['nr_status','nr_taxid_lca','aligned_mates','taxonomic_relation'];changes=[]
