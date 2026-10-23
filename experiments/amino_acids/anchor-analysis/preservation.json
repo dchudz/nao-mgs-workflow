@@ -1,0 +1,212 @@
+{
+  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/anchor-analysis-20261023/anchor-result-20261023.tar",
+  "sha256": "c61f21cd62ea2fbc07b8ba03be9640cfb40652feaf29783cbab6905f7e7b9b5c",
+  "bytes": 167034880,
+  "files": {
+    "tools/mark_duplicates_similarity": {
+      "sha256": "43580f677fa43a843a14a6222ed939ecb723829e7a3554bfb08f7f4f476b6dee",
+      "bytes": 878520
+    },
+    "analyze-anchor.py": {
+      "sha256": "0473db281b44f38f0f9967138119594cd3d3fd0efb64c06a0aece689cf768046",
+      "bytes": 13449
+    },
+    "anchor-analysis/anchor-query-cache-selection.json": {
+      "sha256": "01832d2a783b5133ece16c839e3a88d4b8598e058e3ffbd0bdb17e9d0873e190",
+      "bytes": 157
+    },
+    "anchor-analysis/anchor-query-calls.tsv.gz": {
+      "sha256": "c532605c0f2b58aa05fa49335222a3c666fb8fe9546e66f1ff0d9a0cb442da72",
+      "bytes": 148729000
+    },
+    "anchor-analysis/full-restore-receipt.json": {
+      "sha256": "e550c22eb72175978191c783ff2dd025364e5ea8baddc28b1d915e14e7682367",
+      "bytes": 3814
+    },
+    "anchor-analysis/independent-saved-table-counts.json": {
+      "sha256": "8eedecdbf929693a35051141a16bf90c142015d2304cdb6bc9ef7ae2866ebf44",
+      "bytes": 267
+    },
+    "anchor-analysis/local-clustering-parity.json": {
+      "sha256": "d6cf116b2b8e2e17793f524d5b31b981c53fdf73097c667b283ed5e154d49ba3",
+      "bytes": 216
+    },
+    "anchor-analysis/nr-restore-receipt.json": {
+      "sha256": "1acab43e3d8875e03b03bedd7ba938a602482a6a77881ee017432112874e2fee",
+      "bytes": 2083
+    },
+    "anchor-analysis/plan.json": {
+      "sha256": "c899f6b5cca8b0c0236fb8cfb0bff4f1d875de708dc8dc0910dc3345f1096255",
+      "bytes": 817
+    },
+    "anchor-analysis/query-cache-restore-receipt.json": {
+      "sha256": "126c807caaa17cb6c360d06c943c0372e74a75f3a220e258a550c62a5e0969c1",
+      "bytes": 223
+    },
+    "anchor-analysis/result-v1/nt-first5m-exclude_constructs/input.tsv.gz": {
+      "sha256": "44887ccd720479756a0472c4837d84958dc6c0bf7a825ea520406bd6fe311789",
+      "bytes": 61270
+    },
+    "anchor-analysis/result-v1/nt-first5m-exclude_constructs/output.tsv.gz": {
+      "sha256": "225cf98eb5cdee5610e50f96b25b8dd0aad6bfaee885979d8ebac079134d15eb",
+      "bytes": 63762
+    },
+    "anchor-analysis/result-v1/nt-first5m-exclude_constructs/protein-clusters.tsv.gz": {
+      "sha256": "b79db08f38a0b2a080054e5122bb6b573ab739f5c698ef1bd43d4ef12cdedfca",
+      "bytes": 15069
+    },
+    "anchor-analysis/result-v1/nt-first5m-exclude_constructs/stderr.log": {
+      "sha256": "c35718f9dd77e1b267997a3f482a114b8572eee0105a8da6cac91be04f6ce129",
+      "bytes": 347
+    },
+    "anchor-analysis/result-v1/nt-first5m-raw/input.tsv.gz": {
+      "sha256": "44887ccd720479756a0472c4837d84958dc6c0bf7a825ea520406bd6fe311789",
+      "bytes": 61270
+    },
+    "anchor-analysis/result-v1/nt-first5m-raw/output.tsv.gz": {
+      "sha256": "225cf98eb5cdee5610e50f96b25b8dd0aad6bfaee885979d8ebac079134d15eb",
+      "bytes": 63762
+    },
+    "anchor-analysis/result-v1/nt-first5m-raw/protein-clusters.tsv.gz": {
+      "sha256": "39c3c1ea5d4121bf39f37eb80c5ac571917c20d442415b56e9153266ad7c0549",
+      "bytes": 5035
+    },
+    "anchor-analysis/result-v1/nt-first5m-raw/stderr.log": {
+      "sha256": "c35718f9dd77e1b267997a3f482a114b8572eee0105a8da6cac91be04f6ce129",
+      "bytes": 347
+    },
+    "anchor-analysis/result-v1/nt-full-exclude_constructs/input.tsv.gz": {
+      "sha256": "0fbe8168e5b6359456296bba2b3e8f70b01e85e430a12e9ae451cfcc93d44ecb",
+      "bytes": 1557705
+    },
+    "anchor-analysis/result-v1/nt-full-exclude_constructs/output.tsv.gz": {
+      "sha256": "12d12f69369d33c72170806d897f75328a5f19096c48f5a88ea0da0888af2ee2",
+      "bytes": 1688431
+    },
+    "anchor-analysis/result-v1/nt-full-exclude_constructs/protein-clusters.tsv.gz": {
+      "sha256": "0bd8431c85ab3f5311999487735b0f455d66acaba0a386c928d848eedfa97f65",
+      "bytes": 407778
+    },
+    "anchor-analysis/result-v1/nt-full-exclude_constructs/stderr.log": {
+      "sha256": "f9226758b629d57553f9e9793987fa3d7b45ca9a1868ee66ea86fb2681f6f7b7",
+      "bytes": 359
+    },
+    "anchor-analysis/result-v1/nt-full-raw/input.tsv.gz": {
+      "sha256": "af090315612cce2c5546482fe2bbee3259fbd513228e4b8a15ea3783b8c9a9f7",
+      "bytes": 1557705
+    },
+    "anchor-analysis/result-v1/nt-full-raw/output.tsv.gz": {
+      "sha256": "12d12f69369d33c72170806d897f75328a5f19096c48f5a88ea0da0888af2ee2",
+      "bytes": 1688431
+    },
+    "anchor-analysis/result-v1/nt-full-raw/protein-clusters.tsv.gz": {
+      "sha256": "0714056f791d2be1a282964bd21c73e021aa3d29efead03c146ae5caf2311a15",
+      "bytes": 130923
+    },
+    "anchor-analysis/result-v1/nt-full-raw/stderr.log": {
+      "sha256": "f9226758b629d57553f9e9793987fa3d7b45ca9a1868ee66ea86fb2681f6f7b7",
+      "bytes": 359
+    },
+    "anchor-analysis/result-v1/nt20-first5m-exclude_constructs/input.tsv.gz": {
+      "sha256": "ed544ea741dcb7ab08963ebc202f7e65aa88b560a7516ea398fe378c65dd2284",
+      "bytes": 61407
+    },
+    "anchor-analysis/result-v1/nt20-first5m-exclude_constructs/output.tsv.gz": {
+      "sha256": "3e80eeaecf96dcfb334b08188fa5c07f4136a7b176297e0004b044d141153545",
+      "bytes": 63937
+    },
+    "anchor-analysis/result-v1/nt20-first5m-exclude_constructs/protein-clusters.tsv.gz": {
+      "sha256": "4b9651bd34e5ad6111f519b8ebe2e1ae58ca6b29356a99ded1f11feba9598491",
+      "bytes": 15069
+    },
+    "anchor-analysis/result-v1/nt20-first5m-exclude_constructs/stderr.log": {
+      "sha256": "3285d63b2985661619011bc48959394b32f10570087f6bfa6dbca776bb23b86e",
+      "bytes": 347
+    },
+    "anchor-analysis/result-v1/nt20-first5m-raw/input.tsv.gz": {
+      "sha256": "ed544ea741dcb7ab08963ebc202f7e65aa88b560a7516ea398fe378c65dd2284",
+      "bytes": 61407
+    },
+    "anchor-analysis/result-v1/nt20-first5m-raw/output.tsv.gz": {
+      "sha256": "3e80eeaecf96dcfb334b08188fa5c07f4136a7b176297e0004b044d141153545",
+      "bytes": 63937
+    },
+    "anchor-analysis/result-v1/nt20-first5m-raw/protein-clusters.tsv.gz": {
+      "sha256": "3e9e2f3449f44ed773e960e1c09aadee18651644d61262f42f8f74906fff2d5c",
+      "bytes": 5035
+    },
+    "anchor-analysis/result-v1/nt20-first5m-raw/stderr.log": {
+      "sha256": "3285d63b2985661619011bc48959394b32f10570087f6bfa6dbca776bb23b86e",
+      "bytes": 347
+    },
+    "anchor-analysis/result-v1/nt20-full-exclude_constructs/input.tsv.gz": {
+      "sha256": "087a614eb7d1d75c6dcac639a740d90898ecfe8c357a003c52d50277f36799d9",
+      "bytes": 1559026
+    },
+    "anchor-analysis/result-v1/nt20-full-exclude_constructs/output.tsv.gz": {
+      "sha256": "116550aee1f7441d2e8b2bfe3b41465799163d80d55676d7ffcf232e9ebf9e32",
+      "bytes": 1689924
+    },
+    "anchor-analysis/result-v1/nt20-full-exclude_constructs/protein-clusters.tsv.gz": {
+      "sha256": "8ab13ee1b5c4369f8c36798e2a37acdf12d51c9b90d8082b9b76eb489ff11748",
+      "bytes": 407777
+    },
+    "anchor-analysis/result-v1/nt20-full-exclude_constructs/stderr.log": {
+      "sha256": "2fd4c39574157982e7513da8adad1e8b56bb6a953d4689ff9aeb4a3bdda5ee9f",
+      "bytes": 359
+    },
+    "anchor-analysis/result-v1/nt20-full-raw/input.tsv.gz": {
+      "sha256": "79cc4874ce424e39f94f79603bfa8b31951b7973d986426db0edc8a6060d3d61",
+      "bytes": 1559026
+    },
+    "anchor-analysis/result-v1/nt20-full-raw/output.tsv.gz": {
+      "sha256": "116550aee1f7441d2e8b2bfe3b41465799163d80d55676d7ffcf232e9ebf9e32",
+      "bytes": 1689924
+    },
+    "anchor-analysis/result-v1/nt20-full-raw/protein-clusters.tsv.gz": {
+      "sha256": "7889c02fc82c003a9ecb88be73d4e9622604fd17315cec6c514f1745c42a595f",
+      "bytes": 130925
+    },
+    "anchor-analysis/result-v1/nt20-full-raw/stderr.log": {
+      "sha256": "2fd4c39574157982e7513da8adad1e8b56bb6a953d4689ff9aeb4a3bdda5ee9f",
+      "bytes": 359
+    },
+    "anchor-analysis/result-v1/pair-evidence.tsv": {
+      "sha256": "28403de0f25199e0908c8b6dad3fe8c782acbb273b42c3a51305729029dadbf7",
+      "bytes": 2650649
+    },
+    "anchor-analysis/result-v1/species-calls.tsv": {
+      "sha256": "57acf1d7a72ea55cf2fac49c246e86895890dc417adafe3ebb8823c472760b52",
+      "bytes": 13095
+    },
+    "anchor-analysis/result-v1/summary.json": {
+      "sha256": "1b8a0148a374209aa4e523d18cb1da7371b604684f9023db45b0e2e2c46e3fe2",
+      "bytes": 9997
+    },
+    "anchor-analysis/verification.json": {
+      "sha256": "3855ba4f2e2b9c6c4c59e8ee528fe2cf4440bf1cb9198f6bb86fd1bdcc1adf66",
+      "bytes": 6700
+    },
+    "anchor-nr-result.html": {
+      "sha256": "11a65920ef8980666a9125bde78be347fb885f809a4f3bff43a440f04de8357d",
+      "bytes": 6093
+    },
+    "preserve-anchor-result.py": {
+      "sha256": "2568aea79fe44dbda0cb56757cd769bf57128d8276ab0a1370a75ace65d3bbef",
+      "bytes": 1488
+    },
+    "restore-anchor-inputs.py": {
+      "sha256": "1c6a4ebde6b4a0648a0d89bb12c60ba582608b473fba07afebd75050de39fc59",
+      "bytes": 2735
+    },
+    "verify-anchor-result.py": {
+      "sha256": "df1cc696a4e3fe2c9759e537463c4f7bd64a8bd4d9393bd11e99ffdc6d6a574a",
+      "bytes": 2769
+    },
+    "write-anchor-report.py": {
+      "sha256": "62646201582892ef5c26b14b4f95a944bf5508ddfc52481f4dccd50749ffa515",
+      "bytes": 6720
+    }
+  },
+  "original_inputs": "Original full and NR archive locations and checksums are recorded in the enclosed restoration receipts. No new sequence searches were run."
+}

@@ -1,0 +1,12 @@
+{
+  "candidates": 22359,
+  "protein_only": 10620,
+  "protein_only_status": {
+    "mixed_viral_nonviral": 6311,
+    "unknown_taxonomy": 2175,
+    "nonviral_only": 1248,
+    "viral_only": 876,
+    "no_alignment": 10
+  },
+  "protein_only_viral_and_artificial_only": 0
+}
