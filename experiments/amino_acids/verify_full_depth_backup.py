@@ -1,5 +1,5 @@
 """Read back every saved sample artifact before releasing reconstructable scratch."""
-import argparse,datetime,hashlib,json,shutil,subprocess,tarfile
+import argparse,datetime,hashlib,json,os,shutil,subprocess,tarfile,tempfile
 from pathlib import Path
 R=Path('/home/ec2-user/experiment');PREFIX='s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/'
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1']
@@ -24,31 +24,48 @@ for work in D.glob('*/work'):
         for item in metrics:
             if item.is_file() and not item.is_symlink():tar.add(item,arcname=str(item.relative_to(work)))
     subprocess.run(AWS+['s3','cp',str(archive),PREFIX+'samples/'+a.sample+'/'+str(archive.relative_to(D)),'--only-show-errors'],check=True)
-files=[p for p in D.rglob('*') if p.is_file() and included(p)]
-size=sum(p.stat().st_size for p in files);download=R/'verify-download'/a.sample
-assert shutil.disk_usage(R).free>size+50*1024**3, 'Insufficient room for independent backup readback'
-download.mkdir(parents=True,exist_ok=True)
-subprocess.run(AWS+['s3','sync',PREFIX+'samples/'+a.sample+'/',str(download)+'/', '--only-show-errors'],check=True)
+# Prune scratch before traversal, and stream one independent S3 readback at a
+# time. Verification must not require a second complete copy of large HSP files.
+files=[]
+for directory,dirs,names in os.walk(D):
+    dirs[:]=[name for name in dirs if name not in {'work','.nextflow'}]
+    files.extend(p for name in names if (p:=Path(directory)/name).is_file() and included(p))
+size=sum(p.stat().st_size for p in files)
 manifest=[];local_hashes={}
 for path in sorted(files):
-    rel=path.relative_to(D);copy=download/rel
-    assert copy.is_file() and copy.stat().st_size==path.stat().st_size,rel
+    rel=path.relative_to(D)
     stat=path.stat();key=(stat.st_dev,stat.st_ino,stat.st_size,stat.st_mtime_ns)
     if key not in local_hashes:local_hashes[key]=digest(path)
-    sha=local_hashes[key];assert digest(copy)==sha,rel
+    sha=local_hashes[key];remote_hash=hashlib.sha256();remote_bytes=0
+    with tempfile.TemporaryFile() as errors:
+        proc=subprocess.Popen(AWS+['s3','cp',PREFIX+'samples/'+a.sample+'/'+str(rel),'-','--only-show-errors'],
+                              stdout=subprocess.PIPE,stderr=errors)
+        try:
+            for block in iter(lambda:proc.stdout.read(16*1024**2),b''):
+                remote_hash.update(block);remote_bytes+=len(block)
+            proc.stdout.close();code=proc.wait(timeout=60)
+        finally:
+            if proc.poll() is None:proc.kill();proc.wait()
+        if code:
+            errors.seek(0);raise RuntimeError(f'S3 readback failed for {rel}: '+errors.read(4096).decode(errors='replace'))
+    assert remote_bytes==stat.st_size and remote_hash.hexdigest()==sha,('Independent readback differs',rel)
+    assert path.stat().st_mtime_ns==stat.st_mtime_ns,('Artifact changed during verification',rel)
     manifest.append({'path':str(rel),'bytes':stat.st_size,'sha256':sha})
 (D/'file-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 receipt={'verified':True,'sample':a.sample,'files':len(manifest),'bytes':size,'source_commit':complete['source_commit'],
          'verified_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
-         'method':'Every retained artifact independently downloaded from private S3 and compared by SHA256.',
+         'method':'Every retained artifact independently streamed from private S3 and compared by byte count and SHA256, using bounded memory and no duplicate disk copy.',
          'manifest_sha256':digest(D/'file-manifest.json'),'released_scratch':False}
 (D/'backup-verification.json').write_text(json.dumps(receipt,indent=2)+'\n')
 for name in ['file-manifest.json','backup-verification.json']:
     subprocess.run(AWS+['s3','cp',str(D/name),PREFIX+'samples/'+a.sample+'/'+name,'--only-show-errors'],check=True)
-shutil.rmtree(download)
 if a.release_scratch:
     # Published results and per-task diagnostic archives have all passed readback.
     # Shared reference caches, source code, data receipts and scientific outputs stay.
+    # A retained symlink into scratch would become invalid after cleanup.
+    removals=list(D.glob('*/work'))+[R/'data'/a.sample/name for name in [a.sample,'R1.fastq.gz','R2.fastq.gz','R1.partial','R2.partial']]
+    for path in files:
+        if path.is_symlink():assert not any(path.resolve().is_relative_to(p) for p in removals),path
     for work in D.glob('*/work'):
         assert (work.parent/'task-diagnostics.tar.gz').is_file()
         shutil.rmtree(work)
