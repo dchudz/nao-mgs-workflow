@@ -28,9 +28,9 @@
       "name": "Consolidate native tblastx query batches",
       "mechanism": "The inspected official implementation uses 10,002 nucleotide bases per translated-query batch and runs the reference search separately for every batch. BATCH_SIZE provides an explicit override. The frozen 464-mate input totals 67,905 bases and models seven batches.",
       "evidence": "The running output prefix contains exactly the first 137 query mates, matching the first two modeled batches. This is a progress observation, not a completed timing comparison.",
-      "source": "https://raw.githubusercontent.com/ncbi/ncbi-cxx-toolkit-public/715f5043f1bdf08392eaef4b8043c5fed0b4d6fd/src/algo/blast/blastinput/blast_input_aux.cpp",
+      "source": "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.17.0/ncbi-blast-2.17.0+-src.tar.gz",
       "constraints": [
-        "Inspected repository source is not asserted to be the exact source revision of the pinned executable.",
+        "Official BLAST2.17 release source verified, and the pinned container has no BATCH_SIZE override. This is not a reproducible-build verification of the binary.",
         "Larger batches can increase lookup and extension work; speedup is unmeasured.",
         "Raw alignment multiset and per-read taxonomic parity must be compared, not assumed.",
         "Only consider a bounded replay of existing queries after the current panel completes; no larger biological panel or new reference."

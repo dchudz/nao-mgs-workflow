@@ -4,6 +4,8 @@ from pathlib import Path
 r=Path('/home/ec2-user/experiment');d=r/'cohort-storage/translated-core-nt';source=r/'scratch/blast_db_190b4ae1';out=d/'reference-archive';out.mkdir(exist_ok=True)
 assert (d/'protein232/tblastx-word4/complete.json').exists() or (d/'protein232/tblastx-word4/resources.json').exists(),'Do not compete with an unfinished measured search'
 resource=json.loads((d/'protein232/tblastx-word4/resources.json').read_text());assert resource['status'] in ['complete','time_limit','failed']
+for process in ['blastn','tblastx','tblastn','diamond']:
+ assert not subprocess.run(['pgrep','-x',process],capture_output=True).stdout.strip(),'A measured search is still active: '+process
 a=['aws','--profile','pipeline-codex','--region','us-east-1'];bucket='pipeline-lab-839993661825-us-east-1';prefix='runs/translated-core-nt-20261022/frozen-core-nt/'
 assert subprocess.check_output(a+['sts','get-caller-identity','--query','Account','--output','text'],text=True).strip()=='839993661825'
 subprocess.run(a+['s3api','head-bucket','--bucket',bucket,'--expected-bucket-owner','839993661825'],check=True,stdout=subprocess.DEVNULL)

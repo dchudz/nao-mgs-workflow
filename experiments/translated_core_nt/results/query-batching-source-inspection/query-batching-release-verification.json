@@ -1,0 +1,99 @@
+{
+  "verified_utc": "2026-10-23T01:52:28.328270+00:00",
+  "official_release_source": {
+    "retrieved_utc": "2026-10-23T01:49:13.295241+00:00",
+    "release_archive": "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.17.0/ncbi-blast-2.17.0+-src.tar.gz",
+    "files": [
+      {
+        "source_member": "ncbi-blast-2.17.0+-src/c++/src/algo/blast/blastinput/tblastx_args.cpp",
+        "file": "tblastx_args.cpp",
+        "bytes": 4442,
+        "sha256": "b6e1fb8360cde59a40602d3f6658da1e7164d1a49c304aec20b62cba51b7da86"
+      },
+      {
+        "source_member": "ncbi-blast-2.17.0+-src/c++/src/algo/blast/blastinput/blast_input.cpp",
+        "file": "blast_input.cpp",
+        "bytes": 10113,
+        "sha256": "95752a1b5b51e03a103a6618442d7f3c5b94135912be3e63e81796c2beb0997a"
+      },
+      {
+        "source_member": "ncbi-blast-2.17.0+-src/c++/src/algo/blast/blastinput/blast_input_aux.cpp",
+        "file": "blast_input_aux.cpp",
+        "bytes": 13870,
+        "sha256": "d20cf7347ac1e453ab5baeecc8f624fcf8931991de7b7d60c1cade83bf9ca196"
+      },
+      {
+        "source_member": "ncbi-blast-2.17.0+-src/c++/src/app/blast/tblastx_app.cpp",
+        "file": "tblastx_app.cpp",
+        "bytes": 9121,
+        "sha256": "ad251680c6598d782bf94e68fc1ab8f076f932851431dc27325285d61dcefb0c"
+      }
+    ],
+    "scope": "Extracted four source files from the official BLAST2.17.0 release archive. Did not install or rebuild an executable. Individual extracted files are hashed; the full compressed archive was not retained or hashed."
+  },
+  "container": {
+    "container": "/same-ref-protein232-tblastx-word4",
+    "batch_environment": [],
+    "image": "sha256:2025cb45cca15781f1b2f040de88da91f762aa97c8f3a5ac27c1c8aafe0266f3",
+    "started_utc": "2026-10-22T23:09:03.68023719Z"
+  },
+  "query_input_sha256": "a98e68ff4763d7702a0755cbf79c551df48ea2e9fe01cc833e039d9c3f1cc794",
+  "official_release_default_nucleotide_bases_per_batch": 10002,
+  "observed_prefix": {
+    "utc": "2026-10-23T01:26:17.701735+00:00",
+    "observed_query_ids": 137,
+    "matches_first137_query_ids_exactly": true,
+    "observed_file_bytes": 14412196,
+    "observed_file_mtime_utc": "2026-10-23T01:04:13.524137+00:00",
+    "limits": "Output is incomplete; this verifies a batching observation only. No negative or final biological verdicts are inferred."
+  },
+  "modeled_input_batches": [
+    {
+      "mates": 68,
+      "nucleotides": 10100,
+      "first": "SRR33038001_p18/1",
+      "last": "SRR35971516_p5794/2"
+    },
+    {
+      "mates": 69,
+      "nucleotides": 10039,
+      "first": "SRR35987546_p4091/1",
+      "last": "SRR36876989_p5249/1"
+    },
+    {
+      "mates": 68,
+      "nucleotides": 10003,
+      "first": "SRR36876989_p5249/2",
+      "last": "SRR37367545_p6379/1"
+    },
+    {
+      "mates": 68,
+      "nucleotides": 10089,
+      "first": "SRR37367545_p6379/2",
+      "last": "SRR38294622_p3298/1"
+    },
+    {
+      "mates": 70,
+      "nucleotides": 10072,
+      "first": "SRR38294622_p3298/2",
+      "last": "SRR38294943_p530/1"
+    },
+    {
+      "mates": 69,
+      "nucleotides": 10122,
+      "first": "SRR38294943_p530/2",
+      "last": "SRR39695200_p2985/2"
+    },
+    {
+      "mates": 52,
+      "nucleotides": 7480,
+      "first": "SRR39695200_p3392/1",
+      "last": "SRR39695376_p2606/2"
+    }
+  ],
+  "limits": [
+    "Official BLAST2.17 source and the pinned2.17 container have consistent batch behavior; this is not a reproducible-build verification of every binary byte.",
+    "The observed137-query prefix is consistent with two modeled batches. It does not provide separately timed batch runtimes.",
+    "No batch override was applied to the active search; no speedup or output parity is claimed for a larger batch."
+  ]
+}
