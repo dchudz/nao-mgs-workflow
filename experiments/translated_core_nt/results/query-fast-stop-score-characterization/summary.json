@@ -1,0 +1,450 @@
+{
+  "source_sha256": "0621c6c77c3e594be50bbc0119a23b5355a0233f761102ddb3aa3cab0139bc71",
+  "input_sha256": "7c6acdb721fff15ed3d64f660b2eb0daaf4490c8df0a6728e399e35a5ddb639c",
+  "right_score_column": "fast_bitscore",
+  "shared_HSPs": 28285,
+  "alignment_stop_presence": {
+    "no_stop_in_either_alignment": {
+      "HSPs": 11033,
+      "changed": 6224,
+      "delta_range": [
+        0.0,
+        8.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          0.0,
+          4809
+        ],
+        [
+          1.0,
+          748
+        ],
+        [
+          3.0,
+          662
+        ],
+        [
+          2.0,
+          617
+        ],
+        [
+          5.0,
+          440
+        ],
+        [
+          1.6,
+          416
+        ],
+        [
+          1.7,
+          364
+        ],
+        [
+          1.2,
+          331
+        ]
+      ]
+    },
+    "contains_stop": {
+      "HSPs": 17252,
+      "changed": 16562,
+      "delta_range": [
+        0.0,
+        32.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          0.0,
+          690
+        ],
+        [
+          9.0,
+          526
+        ],
+        [
+          8.0,
+          496
+        ],
+        [
+          13.0,
+          332
+        ],
+        [
+          3.1,
+          316
+        ],
+        [
+          7.0,
+          311
+        ],
+        [
+          6.0,
+          307
+        ],
+        [
+          2.8,
+          296
+        ]
+      ]
+    }
+  },
+  "matched_stop_count": {
+    "0": {
+      "HSPs": 14565,
+      "changed": 9066,
+      "delta_range": [
+        0.0,
+        13.8
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          0.0,
+          5499
+        ],
+        [
+          3.0,
+          874
+        ],
+        [
+          1.0,
+          788
+        ],
+        [
+          2.0,
+          636
+        ],
+        [
+          5.0,
+          450
+        ],
+        [
+          1.6,
+          426
+        ],
+        [
+          1.7,
+          384
+        ],
+        [
+          1.2,
+          379
+        ]
+      ]
+    },
+    "1": {
+      "HSPs": 5228,
+      "changed": 5228,
+      "delta_range": [
+        0.8,
+        14.6
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          2.8,
+          264
+        ],
+        [
+          3.9,
+          246
+        ],
+        [
+          6.0,
+          243
+        ],
+        [
+          4.0,
+          210
+        ],
+        [
+          9.0,
+          184
+        ],
+        [
+          4.1,
+          172
+        ],
+        [
+          8.0,
+          148
+        ],
+        [
+          4.3,
+          147
+        ]
+      ]
+    },
+    "2": {
+      "HSPs": 3900,
+      "changed": 3900,
+      "delta_range": [
+        2.0,
+        17.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          9.0,
+          304
+        ],
+        [
+          13.0,
+          300
+        ],
+        [
+          8.0,
+          214
+        ],
+        [
+          10.0,
+          185
+        ],
+        [
+          10.9,
+          150
+        ],
+        [
+          7.0,
+          127
+        ],
+        [
+          10.1,
+          107
+        ],
+        [
+          12.0,
+          92
+        ]
+      ]
+    },
+    "3": {
+      "HSPs": 1392,
+      "changed": 1392,
+      "delta_range": [
+        3.5,
+        22.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          8.0,
+          123
+        ],
+        [
+          21.0,
+          112
+        ],
+        [
+          20.0,
+          69
+        ],
+        [
+          8.5,
+          53
+        ],
+        [
+          8.1,
+          45
+        ],
+        [
+          8.9,
+          41
+        ],
+        [
+          16.1,
+          36
+        ],
+        [
+          8.6,
+          32
+        ]
+      ]
+    },
+    "4": {
+      "HSPs": 951,
+      "changed": 951,
+      "delta_range": [
+        5.8,
+        23.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          14.0,
+          192
+        ],
+        [
+          20.0,
+          137
+        ],
+        [
+          17.0,
+          57
+        ],
+        [
+          15.0,
+          54
+        ],
+        [
+          22.0,
+          53
+        ],
+        [
+          16.0,
+          46
+        ],
+        [
+          12.0,
+          45
+        ],
+        [
+          9.3,
+          35
+        ]
+      ]
+    },
+    "5": {
+      "HSPs": 1122,
+      "changed": 1122,
+      "delta_range": [
+        5.6,
+        24.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          17.0,
+          136
+        ],
+        [
+          18.0,
+          98
+        ],
+        [
+          22.0,
+          78
+        ],
+        [
+          16.0,
+          66
+        ],
+        [
+          19.0,
+          66
+        ],
+        [
+          11.8,
+          44
+        ],
+        [
+          12.8,
+          29
+        ],
+        [
+          23.0,
+          23
+        ]
+      ]
+    },
+    "6": {
+      "HSPs": 721,
+      "changed": 721,
+      "delta_range": [
+        10.1,
+        25.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          23.0,
+          141
+        ],
+        [
+          24.5,
+          124
+        ],
+        [
+          24.0,
+          79
+        ],
+        [
+          20.3,
+          34
+        ],
+        [
+          20.1,
+          26
+        ],
+        [
+          20.2,
+          26
+        ],
+        [
+          13.3,
+          22
+        ],
+        [
+          22.0,
+          17
+        ]
+      ]
+    },
+    "7": {
+      "HSPs": 405,
+      "changed": 405,
+      "delta_range": [
+        7.8,
+        28.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          24.0,
+          102
+        ],
+        [
+          23.0,
+          72
+        ],
+        [
+          26.0,
+          58
+        ],
+        [
+          25.0,
+          54
+        ],
+        [
+          28.0,
+          22
+        ],
+        [
+          18.2,
+          14
+        ],
+        [
+          22.0,
+          8
+        ],
+        [
+          16.5,
+          8
+        ]
+      ]
+    },
+    "8": {
+      "HSPs": 1,
+      "changed": 1,
+      "delta_range": [
+        32.0,
+        32.0
+      ],
+      "most_common_bit_score_deltas": [
+        [
+          32.0,
+          1
+        ]
+      ]
+    }
+  },
+  "limits": [
+    "Only already returned byte-identical HSP sequences, coordinates, frames and lengths are compared.",
+    "An alignment without a stop can still come from a query frame containing stops elsewhere; this measurement does not establish the scoring mechanism.",
+    "Removing stop-containing HSPs alone would leave the observed score differences in the stop-free subset. No filter was changed.",
+    "Score differences and threshold crossings are not established biological sensitivity gains. No new search was run."
+  ]
+}
