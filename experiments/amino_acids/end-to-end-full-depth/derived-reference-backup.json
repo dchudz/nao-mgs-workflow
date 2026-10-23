@@ -1,0 +1,14 @@
+[
+  {
+    "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/reference-derived/virus-genomes-human-masked.fasta.gz",
+    "bytes": 662596925,
+    "sha256": "63d38b34bf1cd8b8c2bef3801d260202312caa53f492eaaaa18a3c455930cae5",
+    "download_verified": true
+  },
+  {
+    "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/reference-derived/virus.aa12.bin",
+    "bytes": 747041128,
+    "sha256": "42ba873c65d5acfb565e762e602ab4767dd1f85d96d2c27d483d931b1cd34e0f",
+    "download_verified": true
+  }
+]

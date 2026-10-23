@@ -1,5 +1,5 @@
 {
-  "status": "First full-depth sample acquired and all references/indexes verified. Independent nucleotide baseline may run while final protein fixture and byte-parity gates complete; protein execution remains gated.",
+  "status": "All real-reference integration and byte-parity gates passed and privately archived with verified readback. First full-depth production RUN completed; AA screening is running. Scientific execution source is e34f3b484e56c27d28893c1e820a6016d2f8b534; checkpoint driver is tracked separately.",
   "question": "Does protein-space viral alignment recover final sample/species calls at full depth beyond nucleotide alignment, and which gains survive same-reference nucleotide validation?",
   "selection": "sample-selection.json",
   "references": {

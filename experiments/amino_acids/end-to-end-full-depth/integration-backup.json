@@ -1,0 +1,7 @@
+{
+  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/integration-checks.tar.gz",
+  "bytes": 179002827,
+  "sha256": "54b89517d3639c5c4c824401253077863f75e3ab7cd06c1399d993ed6d978a74",
+  "download_verified": true,
+  "all_integration_gates_passed": true
+}

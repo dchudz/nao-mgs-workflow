@@ -1,0 +1,14 @@
+[
+  {
+    "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/source/e34f3b484e56c27d28893c1e820a6016d2f8b534/execution-source.tar.gz",
+    "sha256": "f35a27f11079eae5676ca625950bab181ea76243714b1b2c3b37b8326e91c3c7",
+    "bytes": 21199499,
+    "readback_verified": true
+  },
+  {
+    "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/source/e34f3b484e56c27d28893c1e820a6016d2f8b534/execution-history.bundle",
+    "sha256": "140f4d61ae98b90d91bd545a56d7dc3888780eec210da204b7eea02db1458c90",
+    "bytes": 77437786,
+    "readback_verified": true
+  }
+]
