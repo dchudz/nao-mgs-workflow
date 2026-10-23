@@ -1,0 +1,7 @@
+{
+  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/aa-shards.tar.gz",
+  "bytes": 1868105,
+  "sha256": "cff12f259ea95e5f48222c7fb2c0e369e9e05695f0ae484fe7524f956b5583d5",
+  "readback_verified": true,
+  "omitted": "Generated FASTQ input shards can be reconstructed from the saved SRA source and script."
+}
