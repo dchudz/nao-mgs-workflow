@@ -87,7 +87,7 @@ for method in ['tblastx', 'query-tblastn-fast', 'tblastx-word4']:
         if right['reference'] == 'NR':
             ratios.append(dict(numerator='pilot24/' + method, denominator=right['panel'] + '/' + right['method'],
                                observed_per_query_allocation_ratio=left['allocated_USD_per_query'] / right['allocated_USD_per_query']))
-result = dict(searches=rows, incomplete_searches_excluded=pending,
+result = dict(searches=rows, searches_without_local_completion_receipt=pending,
               unequal_experiment_cost_ratios=ratios, input_sha256=inputs,
               source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               limits=['All figures are completed-search wall-time allocations, already included in lifetime spend.',
