@@ -1,0 +1,49 @@
+{
+  "as_of_utc": "2026-10-23T14:01:52.083521+00:00",
+  "account": "839993661825",
+  "prefixes": [
+    {
+      "prefix": "runs/amino-acid-20261021/",
+      "objects": {
+        "STANDARD": 124505,
+        "DEEP_ARCHIVE": 1619
+      },
+      "bytes": {
+        "STANDARD": 591591258872,
+        "DEEP_ARCHIVE": 918566558190
+      }
+    },
+    {
+      "prefix": "runs/translated-core-nt-20261022/",
+      "objects": {
+        "DEEP_ARCHIVE": 836,
+        "STANDARD": 404
+      },
+      "bytes": {
+        "DEEP_ARCHIVE": 318551974004,
+        "STANDARD": 124828643844
+      }
+    }
+  ],
+  "objects_by_storage_class": {
+    "STANDARD": 124909,
+    "DEEP_ARCHIVE": 2455
+  },
+  "bytes_by_storage_class": {
+    "STANDARD": 716419902716,
+    "DEEP_ARCHIVE": 1237118532194
+  },
+  "USD_per_GiB_month": {
+    "STANDARD": 0.023,
+    "DEEP_ARCHIVE": 0.00099
+  },
+  "modeled_monthly_data_storage_USD": 16.486649503316787,
+  "deep_archive_180_day_minimum_data_storage_USD": 6.8438091140541815,
+  "pricing_source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/us-east-1/index.json",
+  "limits": [
+    "Current object versions only; old versions, incomplete multipart uploads, requests, transfer, retrieval and archive metadata overhead are excluded.",
+    "The exact two experiment prefixes exclude unrelated baseline runs.",
+    "Snapshot precedes the final small history/report backup; subsequent receipt/source files add a small amount.",
+    "Rates are the experiment pricing observations, not a new price quotation."
+  ]
+}

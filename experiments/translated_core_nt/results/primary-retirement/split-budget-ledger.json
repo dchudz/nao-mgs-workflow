@@ -1,0 +1,27 @@
+{
+  "as_of_utc": "2026-10-23T14:01:52.118940+00:00",
+  "boundary_utc": "2026-10-22T14:51:00Z",
+  "first_cap_USD": 500,
+  "new_cap_USD": 500,
+  "before_boundary": {
+    "modeled_EC2_compute_USD": 129.6418146028501,
+    "modeled_EBS_maximum_configuration_USD": 12.352432238485893,
+    "modeled_public_IPv4_USD": 0.28971313420694444,
+    "modeled_owned_compute_EBS_IPv4_total_USD": 142.28395997554293
+  },
+  "after_boundary": {
+    "modeled_EC2_compute_USD": 120.07048246290128,
+    "modeled_EBS_maximum_configuration_USD": 10.966114312256359,
+    "modeled_public_IPv4_USD": 0.20377548269166668,
+    "modeled_owned_compute_EBS_IPv4_total_USD": 131.24037225784934
+  },
+  "first_cap_modeled_remainder_excluding_other_charges": 357.7160400244571,
+  "new_cap_modeled_remainder_excluding_other_charges": 368.75962774215066,
+  "accounting": [
+    "Requested time-window view: all owned resource cost incurred after the boundary counts against the new cap, including completion of the earlier NR experiment.",
+    "Worker attribution is separate: primary runs same-core_nt pilot and shared analysis; NR worker is completing the original protein experiment. This does not authorize new NR scope.",
+    "Do not add per-search allocations to these lifetime totals.",
+    "S3 storage, requests, transfer, taxes and credits excluded; retain reserve and report storage separately. Cost Explorer is account-wide and delayed."
+  ],
+  "storage_expansion_receipt": "nr-volume-expansion-20261022.json"
+}
