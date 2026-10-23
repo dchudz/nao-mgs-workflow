@@ -1,0 +1,89 @@
+{
+  "pairs": [
+    "SEED_SRR33038061.678928042",
+    "SEED_SRR35987653.689121697"
+  ],
+  "queries": [
+    {
+      "context": "pooled",
+      "query": "SEED_SRR33038061.678928042/1",
+      "raw_alignment_rows": 1660,
+      "raw_human_alignment_rows": 1,
+      "near_best_human_rows": 1,
+      "maximum_raw_human_bitscore": 84.3,
+      "best_eligible_query_score": 90.9
+    },
+    {
+      "context": "pooled",
+      "query": "SEED_SRR33038061.678928042/2",
+      "raw_alignment_rows": 1660,
+      "raw_human_alignment_rows": 1,
+      "near_best_human_rows": 1,
+      "maximum_raw_human_bitscore": 84.3,
+      "best_eligible_query_score": 90.9
+    },
+    {
+      "context": "pooled",
+      "query": "SEED_SRR35987653.689121697/1",
+      "raw_alignment_rows": 1692,
+      "raw_human_alignment_rows": 1,
+      "near_best_human_rows": 1,
+      "maximum_raw_human_bitscore": 79.3,
+      "best_eligible_query_score": 85.9
+    },
+    {
+      "context": "pooled",
+      "query": "SEED_SRR35987653.689121697/2",
+      "raw_alignment_rows": 1692,
+      "raw_human_alignment_rows": 1,
+      "near_best_human_rows": 1,
+      "maximum_raw_human_bitscore": 79.3,
+      "best_eligible_query_score": 85.9
+    },
+    {
+      "context": "standalone",
+      "query": "SEED_SRR33038061.678928042/1",
+      "raw_alignment_rows": 90,
+      "raw_human_alignment_rows": 0,
+      "near_best_human_rows": 0,
+      "maximum_raw_human_bitscore": 0,
+      "best_eligible_query_score": 89.4
+    },
+    {
+      "context": "standalone",
+      "query": "SEED_SRR33038061.678928042/2",
+      "raw_alignment_rows": 90,
+      "raw_human_alignment_rows": 0,
+      "near_best_human_rows": 0,
+      "maximum_raw_human_bitscore": 0,
+      "best_eligible_query_score": 89.4
+    },
+    {
+      "context": "standalone",
+      "query": "SEED_SRR35987653.689121697/1",
+      "raw_alignment_rows": 87,
+      "raw_human_alignment_rows": 0,
+      "near_best_human_rows": 0,
+      "maximum_raw_human_bitscore": 0,
+      "best_eligible_query_score": 84.3
+    },
+    {
+      "context": "standalone",
+      "query": "SEED_SRR35987653.689121697/2",
+      "raw_alignment_rows": 87,
+      "raw_human_alignment_rows": 0,
+      "near_best_human_rows": 0,
+      "maximum_raw_human_bitscore": 0,
+      "best_eligible_query_score": 84.3
+    }
+  ],
+  "source_sha256": "78da051cbb4ce31184e450026d585b77af98b2652dbd60c6fac0b01dc7ea3de0",
+  "input_receipt_sha256": "11e8b9794b73f9b187b2b97abac3f7a2ee36d59d120e27a30aeaa5ddf117a27d",
+  "limits": [
+    "Cases selected after observing lost near-best human competition, not a prevalence estimate.",
+    "Human matches do not establish that a read originated from a human.",
+    "Raw output absence is distinguished from a retained match falling below the near-best threshold.",
+    "Only direct subject taxid9606 matches are tabulated; the preceding taxonomy analysis identified both cases using complete ancestry.",
+    "The fixed-mode repeat will test whether the automatic mode difference explains these specific cases."
+  ]
+}

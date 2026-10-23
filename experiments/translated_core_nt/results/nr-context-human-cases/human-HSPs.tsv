@@ -1,0 +1,5 @@
+context	query	subject	bitscore	evalue	alignment_AA	identity_pct	taxids	eligible_near_best	best_eligible_query_score
+pooled	SEED_SRR33038061.678928042/1	N/A	84.3	4.27e-17	38	84.2	9606	True	90.9
+pooled	SEED_SRR33038061.678928042/2	N/A	84.3	4.27e-17	38	84.2	9606	True	90.9
+pooled	SEED_SRR35987653.689121697/1	N/A	79.3	2.35e-15	36	83.3	9606	True	85.9
+pooled	SEED_SRR35987653.689121697/2	N/A	79.3	2.35e-15	36	83.3	9606	True	85.9
