@@ -25,6 +25,18 @@
       "costs_unmeasured": "Production batching and full candidate-population cost."
     },
     {
+      "name": "Consolidate native tblastx query batches",
+      "mechanism": "The inspected official implementation uses 10,002 nucleotide bases per translated-query batch and runs the reference search separately for every batch. BATCH_SIZE provides an explicit override. The frozen 464-mate input totals 67,905 bases and models seven batches.",
+      "evidence": "The running output prefix contains exactly the first 137 query mates, matching the first two modeled batches. This is a progress observation, not a completed timing comparison.",
+      "source": "https://raw.githubusercontent.com/ncbi/ncbi-cxx-toolkit-public/715f5043f1bdf08392eaef4b8043c5fed0b4d6fd/src/algo/blast/blastinput/blast_input_aux.cpp",
+      "constraints": [
+        "Inspected repository source is not asserted to be the exact source revision of the pinned executable.",
+        "Larger batches can increase lookup and extension work; speedup is unmeasured.",
+        "Raw alignment multiset and per-read taxonomic parity must be compared, not assumed.",
+        "Only consider a bounded replay of existing queries after the current panel completes; no larger biological panel or new reference."
+      ]
+    },
+    {
       "name": "Materialize all six frames and use a protein index",
       "mechanism": "Retain original nucleotide accession, strand, frame, coordinate and all taxonomic mappings. Translate all reference sequences, including nonviral sequences. Search each query independently; merge evidence by original subject before existing ranking.",
       "constraints": [
