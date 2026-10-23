@@ -8,7 +8,7 @@ import argparse,csv,datetime,gzip,hashlib,json,os,shutil,subprocess,tarfile,time
 from pathlib import Path
 R=Path('/home/ec2-user/experiment');E=R/'experiments/amino_acids';PLAN=E/'end-to-end-full-depth'
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1'];PREFIX='s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/'
-p=argparse.ArgumentParser();p.add_argument('--sample',required=True);p.add_argument('--source-commit',required=True);p.add_argument('--driver-commit');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--sample',required=True);p.add_argument('--source-commit',required=True);p.add_argument('--driver-commit');p.add_argument('--baseline-downstream-only',action='store_true');a=p.parse_args()
 assert len(a.source_commit)==40 and all(c in '0123456789abcdef' for c in a.source_commit)
 assert (R/'source-commit.txt').read_text().strip()==a.source_commit
 if a.driver_commit is None:a.driver_commit=a.source_commit
@@ -45,6 +45,9 @@ def backup():
         dirs[:]=[name for name in dirs if name not in {'work','.nextflow'}]
         for name in files:
             if name.endswith('.partial'):continue
+            # The independent native-validation driver runs while the AA child
+            # writes these files. The primary driver checkpoints them on exit.
+            if a.baseline_downstream_only and Path(directory)==D and name in {'aa12.fastq','aa-screen.log'}:continue
             source=Path(directory)/name
             assert source.is_file(),('Unexpected retained special file',source)
             target=staging/source.relative_to(D);target.parent.mkdir(parents=True,exist_ok=True)
@@ -104,6 +107,20 @@ assert json.loads((R/'integration/real-diamond/verification.json').read_text())[
 assert json.loads((R/'integration/baseline-replay.json').read_text())['verified']
 acquisition=json.loads((data/'verified.json').read_text());assert acquisition['spot_count']==int(row['read_count'])
 assert not (D/'complete.json').exists(),'Sample already completed; do not silently rerun it'
+if a.baseline_downstream_only:
+    # Only completed native RUN evidence is needed by these two logical arms.
+    # Their commands and target directories are exactly the sequential driver's.
+    # The caller pauses that driver (not its screen child) until these finish,
+    # so receipt creation and checkpoint staging cannot race between drivers.
+    native_receipt=json.loads((D/'baseline-run.json').read_text())
+    assert native_receipt['source_commit']==a.source_commit and native_receipt['exit_code']==0
+    measured=counts(D/'baseline-run/output/results'/f'{a.sample}_read_counts.tsv')
+    assert int(float(measured['n_read_pairs']))==acquisition['spot_count']
+    for arm in ['production','validation_control']:
+        manifest=results_view(arm,D/'baseline-run/output/results'/f'{a.sample}_virus_hits.tsv.gz')
+        nf(arm+'-downstream','main.nf','configs/downstream.config',{'platform':'illumina','input_file':str(manifest),
+           'aln_dup_deviation':1,'validation_n_sample':20,'blast_task':None if arm=='production' else 'blastn'})
+    raise SystemExit(0)
 protocol={'source_commit':a.source_commit,'driver_commit':a.driver_commit,'sample':a.sample,'selection':row,
     'started_utc':now().isoformat(),'acquisition':acquisition,'logical_outputs':json.loads((PLAN/'protocol.json').read_text())['logical_outputs'],
     'grouping':'One original sample per group; 20 hash-selected joint duplicate exemplars per species per group.',
