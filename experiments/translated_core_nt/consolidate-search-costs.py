@@ -14,13 +14,26 @@ helper = Path(__file__).with_name('compare-search-costs.py')
 spec = importlib.util.spec_from_file_location('costs', helper)
 costs = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(costs)
-rows, pending, inputs = [], [], {}
+rows, pending, ended, inputs = [], [], [], {}
 
 
 def read(path):
     data = path.read_bytes()
     inputs[str(path)] = hashlib.sha256(data).hexdigest()
     return json.loads(data)
+
+
+def record_uncompleted(directory, rate):
+    pending.append(str(directory.relative_to(a.root)))
+    if (directory / 'resources.json').exists():
+        resource = read(directory / 'resources.json')
+        if resource['status'] in ('failed', 'time_limit'):
+            ended.append(dict(directory=str(directory.relative_to(a.root)),
+                              status=resource['status'], returncode=resource['returncode'],
+                              runner_wall_seconds=resource['wall_seconds'],
+                              runner_elapsed_allocation_USD=resource['wall_seconds'] / 3600 * rate,
+                              included_in_completed_search_table=False,
+                              CPU_and_peak_memory_not_inferred=True))
 
 
 for panel, methods in [('pilot24', ['megablast', 'blastn', 'tblastx', 'query-tblastn-fast', 'tblastx-word4']),
@@ -30,7 +43,7 @@ for panel, methods in [('pilot24', ['megablast', 'blastn', 'tblastx', 'query-tbl
     for method in methods:
         d = a.root / panel / method
         if not (d / 'complete.json').exists():
-            pending.append(panel + '/' + method)
+            record_uncompleted(d, 3.6365)
             continue
         done = read(d / 'complete.json')
         resource = read(d / 'resources.json')
@@ -74,7 +87,7 @@ if (fixed / 'complete.json').exists():
                      allocated_USD=timing['search_wall_seconds'] / 3600 * rate,
                      command=protocol['command'], source_commit=protocol['source_commit']))
 else:
-    pending.append(fixed.name)
+    record_uncompleted(fixed, 2.679511111111111)
 for row in rows:
     row['allocated_USD_per_query'] = row['allocated_USD'] / row['query_mates']
     row['CPU_seconds_per_query'] = row['CPU_seconds'] / row['query_mates']
@@ -90,6 +103,7 @@ for method in ['tblastx', 'query-tblastn-fast', 'tblastx-word4']:
             ratios.append(dict(numerator='pilot24/' + method, denominator=right['panel'] + '/' + right['method'],
                                observed_per_query_allocation_ratio=left['allocated_USD_per_query'] / right['allocated_USD_per_query']))
 result = dict(searches=rows, searches_without_local_completion_receipt=pending,
+              ended_without_clean_completion=ended,
               unequal_experiment_cost_ratios=ratios, input_sha256=inputs,
               source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               limits=['All figures are completed-search wall-time allocations, already included in lifetime spend.',

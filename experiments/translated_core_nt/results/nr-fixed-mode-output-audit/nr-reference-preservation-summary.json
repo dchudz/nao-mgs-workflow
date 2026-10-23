@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-10-23T07:59:05.413170+00:00",
+  "completed_utc": "2026-10-23T08:19:18.834476+00:00",
+  "source_manifest_sha256": "a2d28dd09e49f4569cba803f0456c50f7f6e2c7cc4cd8fe36c4f90d2b1c06786",
+  "source_bytes": 918566558190,
+  "objects": 1619,
+  "destination_bucket": "pipeline-lab-839993661825-us-east-1",
+  "prefix": "runs/amino-acid-20261021/frozen-references/nr-20261017/",
+  "storage_class": "DEEP_ARCHIVE",
+  "monthly_data_storage_USD": 0.8469269542098976,
+  "minimum180day_data_storage_USD": 5.081561725259386,
+  "verified": true,
+  "limits": [
+    "Private retention of already-used reference only, no new biological search.",
+    "Restore requires an archive restoration request; this is not an immediately readable reference copy.",
+    "Full-object CRC64NVME compares local uploads to public source objects whose ETags and sizes match the frozen manifest. It is not download-SHA verification.",
+    "Restore and request charges are separate from storage. No worker is stopped or deleted by this script."
+  ],
+  "complete_receipt_sha256": "626303b0a5ae3837db04f7df86c5ac904dae3f9967fe1379a7e0878c6d95f741",
+  "receipt_uri": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/frozen-references/nr-20261017/receipts/complete.json"
+}
