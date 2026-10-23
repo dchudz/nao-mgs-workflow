@@ -1,0 +1,424 @@
+{
+  "pairs": 232,
+  "mates": 464,
+  "groups": {
+    "blastn/default_E10/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only": 57,
+        "mixed_viral_nonviral": 7,
+        "viral_only": 132,
+        "unknown_taxonomy": 3,
+        "no_alignment": 1
+      },
+      "natural_status": {
+        "natural_nonviral_only": 57,
+        "mixed_viral_natural_nonviral": 7,
+        "viral_only": 132,
+        "unknown_taxonomy": 3,
+        "no_alignment": 1
+      }
+    },
+    "blastn/default_E10/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only": 31,
+        "mixed_viral_nonviral": 1
+      },
+      "natural_status": {
+        "viral_only": 32
+      }
+    },
+    "blastn/strict_E1e-5/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only": 55,
+        "mixed_viral_nonviral": 5,
+        "viral_only": 132,
+        "unknown_taxonomy": 3,
+        "no_alignment": 5
+      },
+      "natural_status": {
+        "natural_nonviral_only": 55,
+        "mixed_viral_natural_nonviral": 5,
+        "viral_only": 132,
+        "unknown_taxonomy": 3,
+        "no_alignment": 5
+      }
+    },
+    "blastn/strict_E1e-5/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only": 31,
+        "mixed_viral_nonviral": 1
+      },
+      "natural_status": {
+        "viral_only": 32
+      }
+    },
+    "megablast/default_E10/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only": 55,
+        "no_alignment": 69,
+        "viral_only": 73,
+        "unknown_taxonomy": 2,
+        "mixed_viral_nonviral": 1
+      },
+      "natural_status": {
+        "natural_nonviral_only": 55,
+        "no_alignment": 69,
+        "viral_only": 73,
+        "unknown_taxonomy": 2,
+        "mixed_viral_natural_nonviral": 1
+      }
+    },
+    "megablast/default_E10/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only": 31,
+        "mixed_viral_nonviral": 1
+      },
+      "natural_status": {
+        "viral_only": 32
+      }
+    },
+    "megablast/strict_E1e-5/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only": 55,
+        "no_alignment": 69,
+        "viral_only": 73,
+        "unknown_taxonomy": 2,
+        "mixed_viral_nonviral": 1
+      },
+      "natural_status": {
+        "natural_nonviral_only": 55,
+        "no_alignment": 69,
+        "viral_only": 73,
+        "unknown_taxonomy": 2,
+        "mixed_viral_natural_nonviral": 1
+      }
+    },
+    "megablast/strict_E1e-5/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only": 31,
+        "mixed_viral_nonviral": 1
+      },
+      "natural_status": {
+        "viral_only": 32
+      }
+    },
+    "protein_NR/nr_native_E1e-5_min25/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only": 13,
+        "mixed_viral_nonviral": 42,
+        "viral_only": 129,
+        "unknown_taxonomy": 14,
+        "no_alignment": 2
+      },
+      "natural_status": {
+        "natural_nonviral_only": 13,
+        "unknown_taxonomy": 47,
+        "viral_only": 133,
+        "mixed_viral_natural_nonviral": 5,
+        "no_alignment": 2
+      }
+    },
+    "protein_NR/nr_native_E1e-5_min25/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only": 11,
+        "mixed_viral_nonviral": 21
+      },
+      "natural_status": {
+        "viral_only": 31,
+        "mixed_viral_natural_nonviral": 1
+      }
+    },
+    "tblastx-word4/default_E10/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "mixed_viral_nonviral": 19,
+        "viral_only": 135,
+        "nonviral_only": 40,
+        "unknown_taxonomy": 6
+      },
+      "natural_status": {
+        "mixed_viral_natural_nonviral": 11,
+        "unknown_taxonomy": 13,
+        "viral_only": 136,
+        "natural_nonviral_only": 40
+      }
+    },
+    "tblastx-word4/default_E10/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only": 24,
+        "mixed_viral_nonviral": 8
+      },
+      "natural_status": {
+        "viral_only": 32
+      }
+    },
+    "tblastx-word4/strict_E1e-5/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "mixed_viral_nonviral": 18,
+        "viral_only": 134,
+        "nonviral_only": 40,
+        "unknown_taxonomy": 6,
+        "no_alignment": 2
+      },
+      "natural_status": {
+        "mixed_viral_natural_nonviral": 10,
+        "unknown_taxonomy": 13,
+        "viral_only": 135,
+        "natural_nonviral_only": 40,
+        "no_alignment": 2
+      }
+    },
+    "tblastx-word4/strict_E1e-5/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only": 24,
+        "mixed_viral_nonviral": 8
+      },
+      "natural_status": {
+        "viral_only": 32
+      }
+    }
+  },
+  "transitions": {
+    "blastn/default_E10 -> megablast/default_E10/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> nonviral_only": 49,
+        "mixed_viral_nonviral -> nonviral_only": 5,
+        "viral_only -> no_alignment": 59,
+        "viral_only -> viral_only": 72,
+        "unknown_taxonomy -> unknown_taxonomy": 2,
+        "viral_only -> mixed_viral_nonviral": 1,
+        "nonviral_only -> no_alignment": 8,
+        "mixed_viral_nonviral -> viral_only": 1,
+        "no_alignment -> no_alignment": 1,
+        "unknown_taxonomy -> nonviral_only": 1,
+        "mixed_viral_nonviral -> no_alignment": 1
+      }
+    },
+    "blastn/default_E10 -> megablast/default_E10/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 31,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "blastn/default_E10 -> tblastx-word4/default_E10/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> mixed_viral_nonviral": 12,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 6,
+        "viral_only -> viral_only": 131,
+        "unknown_taxonomy -> nonviral_only": 2,
+        "nonviral_only -> nonviral_only": 38,
+        "nonviral_only -> unknown_taxonomy": 5,
+        "no_alignment -> viral_only": 1,
+        "unknown_taxonomy -> unknown_taxonomy": 1,
+        "viral_only -> mixed_viral_nonviral": 1,
+        "nonviral_only -> viral_only": 2,
+        "mixed_viral_nonviral -> viral_only": 1
+      }
+    },
+    "blastn/default_E10 -> tblastx-word4/default_E10/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 24,
+        "viral_only -> mixed_viral_nonviral": 7,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "megablast/default_E10 -> tblastx-word4/default_E10/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> mixed_viral_nonviral": 15,
+        "no_alignment -> viral_only": 63,
+        "viral_only -> viral_only": 71,
+        "unknown_taxonomy -> nonviral_only": 2,
+        "nonviral_only -> nonviral_only": 36,
+        "mixed_viral_nonviral -> viral_only": 1,
+        "no_alignment -> unknown_taxonomy": 2,
+        "nonviral_only -> unknown_taxonomy": 4,
+        "viral_only -> mixed_viral_nonviral": 2,
+        "no_alignment -> mixed_viral_nonviral": 2,
+        "no_alignment -> nonviral_only": 2
+      }
+    },
+    "megablast/default_E10 -> tblastx-word4/default_E10/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 24,
+        "viral_only -> mixed_viral_nonviral": 7,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "blastn/strict_E1e-5 -> megablast/strict_E1e-5/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> nonviral_only": 49,
+        "mixed_viral_nonviral -> nonviral_only": 5,
+        "viral_only -> no_alignment": 58,
+        "viral_only -> viral_only": 73,
+        "unknown_taxonomy -> unknown_taxonomy": 2,
+        "viral_only -> mixed_viral_nonviral": 1,
+        "nonviral_only -> no_alignment": 6,
+        "no_alignment -> no_alignment": 5,
+        "unknown_taxonomy -> nonviral_only": 1
+      }
+    },
+    "blastn/strict_E1e-5 -> megablast/strict_E1e-5/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 31,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "blastn/strict_E1e-5 -> tblastx-word4/strict_E1e-5/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> mixed_viral_nonviral": 12,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 5,
+        "viral_only -> viral_only": 131,
+        "unknown_taxonomy -> nonviral_only": 2,
+        "nonviral_only -> nonviral_only": 38,
+        "nonviral_only -> unknown_taxonomy": 5,
+        "no_alignment -> viral_only": 3,
+        "no_alignment -> no_alignment": 2,
+        "unknown_taxonomy -> unknown_taxonomy": 1,
+        "viral_only -> mixed_viral_nonviral": 1
+      }
+    },
+    "blastn/strict_E1e-5 -> tblastx-word4/strict_E1e-5/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 24,
+        "viral_only -> mixed_viral_nonviral": 7,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "megablast/strict_E1e-5 -> tblastx-word4/strict_E1e-5/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> mixed_viral_nonviral": 15,
+        "no_alignment -> viral_only": 61,
+        "viral_only -> viral_only": 72,
+        "unknown_taxonomy -> nonviral_only": 2,
+        "nonviral_only -> nonviral_only": 36,
+        "mixed_viral_nonviral -> viral_only": 1,
+        "no_alignment -> unknown_taxonomy": 2,
+        "nonviral_only -> unknown_taxonomy": 4,
+        "no_alignment -> mixed_viral_nonviral": 2,
+        "no_alignment -> no_alignment": 2,
+        "no_alignment -> nonviral_only": 2,
+        "viral_only -> mixed_viral_nonviral": 1
+      }
+    },
+    "megablast/strict_E1e-5 -> tblastx-word4/strict_E1e-5/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 24,
+        "viral_only -> mixed_viral_nonviral": 7,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "blastn/strict_E1e-5 -> protein_NR/nr_native_E1e-5_min25/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> nonviral_only": 13,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 5,
+        "viral_only -> viral_only": 126,
+        "nonviral_only -> mixed_viral_nonviral": 29,
+        "unknown_taxonomy -> mixed_viral_nonviral": 2,
+        "nonviral_only -> unknown_taxonomy": 13,
+        "no_alignment -> viral_only": 3,
+        "no_alignment -> no_alignment": 2,
+        "viral_only -> mixed_viral_nonviral": 6,
+        "unknown_taxonomy -> unknown_taxonomy": 1
+      }
+    },
+    "blastn/strict_E1e-5 -> protein_NR/nr_native_E1e-5_min25/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 11,
+        "viral_only -> mixed_viral_nonviral": 20,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "megablast/strict_E1e-5 -> protein_NR/nr_native_E1e-5_min25/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "nonviral_only -> nonviral_only": 11,
+        "nonviral_only -> mixed_viral_nonviral": 33,
+        "no_alignment -> viral_only": 61,
+        "viral_only -> viral_only": 67,
+        "unknown_taxonomy -> mixed_viral_nonviral": 1,
+        "mixed_viral_nonviral -> viral_only": 1,
+        "nonviral_only -> unknown_taxonomy": 11,
+        "no_alignment -> nonviral_only": 2,
+        "no_alignment -> no_alignment": 2,
+        "no_alignment -> unknown_taxonomy": 2,
+        "viral_only -> mixed_viral_nonviral": 6,
+        "no_alignment -> mixed_viral_nonviral": 2,
+        "unknown_taxonomy -> unknown_taxonomy": 1
+      }
+    },
+    "megablast/strict_E1e-5 -> protein_NR/nr_native_E1e-5_min25/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 11,
+        "viral_only -> mixed_viral_nonviral": 20,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 1
+      }
+    },
+    "tblastx-word4/strict_E1e-5 -> protein_NR/nr_native_E1e-5_min25/added_beyond_NT24_and_NT20": {
+      "pairs": 200,
+      "status": {
+        "mixed_viral_nonviral -> nonviral_only": 2,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 16,
+        "viral_only -> viral_only": 129,
+        "nonviral_only -> mixed_viral_nonviral": 18,
+        "nonviral_only -> nonviral_only": 10,
+        "nonviral_only -> unknown_taxonomy": 12,
+        "unknown_taxonomy -> nonviral_only": 1,
+        "unknown_taxonomy -> mixed_viral_nonviral": 3,
+        "no_alignment -> no_alignment": 2,
+        "unknown_taxonomy -> unknown_taxonomy": 2,
+        "viral_only -> mixed_viral_nonviral": 5
+      }
+    },
+    "tblastx-word4/strict_E1e-5 -> protein_NR/nr_native_E1e-5_min25/shared_with_NT24_and_NT20": {
+      "pairs": 32,
+      "status": {
+        "viral_only -> viral_only": 11,
+        "viral_only -> mixed_viral_nonviral": 13,
+        "mixed_viral_nonviral -> mixed_viral_nonviral": 8
+      }
+    }
+  },
+  "NR_frozen_pair_verdict_parity_verified": true,
+  "source_sha256": "8d9f50a3b0ae35d49f52866b3815b03bb9e4dd1d2bf320bf4120f0fb2caa5460",
+  "input_hashes": {
+    "/home/ec2-user/experiment/cohort-storage/translated-core-nt/protein232/analysis/per-mate.tsv": "3a8363e4dc04a210554802f54b7294ca694f9c2a5a2b538334becf822b383ff7",
+    "/home/ec2-user/experiment/cohort-storage/translated-core-nt/protein232-nr-evidence/query-calls.tsv": "23df3ac58fcf41e81914c92850224c2a2e6c411dc570650665a0dd0f9bdea3b4",
+    "/home/ec2-user/experiment/cohort-storage/protein-nt-panel/comparison.tsv": "7457971a924219f0f07ff8164270516723a9e305512677660086494d7a06b97d",
+    "/home/ec2-user/experiment/reference/results/taxonomy-nodes.dmp": "cc86f6b18c5b0c4a0344ef728076e69241575108ad1cdbcedcd6cbf93e7ba042"
+  },
+  "limits": [
+    "Frozen sample-balanced selected panel, not prevalence or known-truth accuracy.",
+    "Core_nt mate taxon sets use production subject deduplication,10 dense score ranks and90percent near-best. Pair status uses the frozen NR precedence; unknown counts remain explicit.",
+    "NR keeps its original E1e-5,minimum25AA and90percent score filter, with no10-rank restriction. References, programs and filters differ.",
+    "NR pair verdicts are checked exactly against the completed original NR panel; no earlier verdict is replaced.",
+    "Known natural LCA omits artificial and unknown taxa; natural_status and unknown_taxa preserve that uncertainty."
+  ]
+}

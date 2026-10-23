@@ -31,6 +31,8 @@ mate = read(d / 'analysis/summary.json')
 tax = read(d / 'analysis/taxonomy-description/summary.json')
 pair = read(d / 'pair-analysis/summary.json')
 audit = read(a.codon_audit)
+transitions = read(d / 'transition-analysis/summary.json')
+routing = read(d / 'selective-validation/summary.json')
 cost = read(a.costs)
 assert mate['pairs'] == pair['pairs'] == 232 and mate['mates'] == pair['mates'] == 464
 assert pair['NR_frozen_pair_verdict_parity_verified']
@@ -61,17 +63,29 @@ text+='<p>Natural evidence distinguishes artificial constructs from cellular or 
 changes={k:v for k,v in tax['natural_LCA_comparisons'].items() if k.endswith('/strict_E1e-5')}
 columns=sorted({k for x in changes.values() for k in x})
 text+=table(['Comparison']+columns,[[k]+[v.get(c,0) for c in columns] for k,v in sorted(changes.items())])
-text+='<p>The categories in this comparison can overlap: a natural-status change can also involve gaining or losing an alignment. Broader or narrower taxonomy is a description of resolution, not an accuracy label.</p>'
+text+='<p>The unchanged count refers to LCA alone. Natural-status changes are counted separately and can overlap the LCA categories; a mate can change natural status while retaining the same LCA. Broader or narrower taxonomy is a description of resolution, not an accuracy label.</p>'
 text+='<h2>Pair evidence by frozen stratum</h2>'
 groups={k:v for k,v in pair['groups'].items() if '/strict_E1e-5/' in k or k.startswith('protein_NR/')}
 text+=counts_table(groups,'status')
 text+='<details><summary>Artificial-construct and natural-evidence separation</summary>'+counts_table(groups,'natural_status')+'</details>'
 text+='<p>NR rows reuse the prior completed protein search and exactly reproduce all 232 frozen pair verdicts. They are contextual evidence: NR is a different reference and retains its original minimum 25-amino-acid filter and 90% near-best rule. The core_nt comparisons use best HSP per subject, at most 10 dense score ranks and 90% near-best. NR and core_nt costs or verdicts must not be interpreted as a controlled reference-equivalent comparison.</p>'
 text+='<p>A separate reproducibility check on 746 diagnostic pairs changed 47 viral/nonviral statuses and 74 taxonomic assignments when the same reads were searched in a smaller batch with an automatically selected alternative DIAMOND mode. Those fractions cannot be extrapolated to this panel. The frozen pooled NR evidence is retained here with that limitation.</p>'
+text+='<h2>Pairs recovered by translation</h2>'
+gains=transitions['newly_viral_only_pairs']
+text+=table(['Pair','Translated natural assignment','Rank','Aligned mates','NR status'],[[x['pair'],x['translated_name'],x['translated_rank'],x['translated_aligned_mates'],x['NR_status']] for x in gains])
+losses=transitions['raw_viral_only_losses']
+assert all(x['right_natural_status']=='viral_only' and x['translated_artificial_taxa']>0 and x['translated_cellular_taxa']==0 and x['translated_unknown_taxa']==0 for x in losses)
+text+=f'<p>These are all pairs changing from no strict nucleotide alignment to natural viral-only evidence. The selected panel has one pair per sample, so these observations cannot establish new three-exemplar calls. All {len(losses)} raw viral-only-to-mixed transitions across both strata remain natural viral-only: their additional nonviral competitors are artificial constructs.</p>'
+text+=table(['Mate','Aligned amino acids','AA identity %','Nucleotide identity %','Synonymous codon changes','Longest exact nucleotide stretch'],[[h['query'],h['alignment_aa'],h['reported_aa_identity_pct'],f"{h['aligned_nt_identity_pct']:.2f}",h['synonymous_changed_codons'],h['longest_exact_nt_run_in_alignment']] for x in gains for h in x['reconstructed_mates']])
+text+='<p>Both synonymous changes and amino-acid substitutions occur in these alignments. The nucleotide-stretch measurement applies only within the reconstructed alignment; it does not identify the sole reason another method missed the read. '+link(d/'transition-analysis/summary.json','Complete transition and recovered-pair evidence')+'</p>'
 text+='<h2>Translated sequence reconstruction</h2>'
 rows=audit['rows']
 text+=f'<p>For {len(rows)} changed mates with a strict translated hit, one deterministic highest-score subject was reconstructed from its original nucleotide coordinates. {sum(x["synonymous_changed_codons"]>0 for x in rows)} reconstructed alignments contain synonymous codon changes. This explains sequence-level differences; it does not prove the taxonomic verdict.</p>'
 text+='<p>'+link(a.codon_audit,'Every reconstructed alignment, source DNA, frames, and extraction command')+'</p>'
+text+='<h2>Selective translated checking</h2>'
+selected=[x for x in routing['counts'] if x['threshold']=='strict_E1e-5' and x['comparison']=='natural_verdict']
+text+=table(['Routing rule','Reads routed','Changed natural verdicts captured','Changes missed'],[[x['rule'],x['routed_queries'],x['captured_changes'],x['missed_changes']] for x in selected])
+text+='<p>This retrospective simulation chooses between already measured per-read verdicts. It does not measure a faster search or establish which verdict is correct. Rules were chosen after the small pilot. '+link(d/'selective-validation/summary.json','Routing definitions, all counts and limitations')+'</p>'
 text+='<h2>Reporting limits and exact provenance</h2>'
 text+=table(['Method','Queries reaching 250 returned subjects','Maximum returned subjects'],[[m,tax['subject_cap_diagnostic'][m]['queries_with_at_least250_returned_subjects'],tax['subject_cap_diagnostic'][m]['maximum_returned_subjects']] for m in methods])
 text+='<p>The subject cap can hide competing references. E≤10⁻⁵ is a postfilter of returned E≤10 hits, not a separately executed search. The input consists of separate original mates; production mate merging and complete end-to-end call generation were not replayed here. Different programs’ significance scores are not assumed interchangeable.</p>'

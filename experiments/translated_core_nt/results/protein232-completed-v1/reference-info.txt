@@ -1,0 +1,9 @@
+Database: blast_db
+	131,855,990 sequences; 1,088,816,606,629 total bases
+
+Date: Oct 10, 2026  1:19 AM	Longest sequence: 98,200,793 bases
+
+BLASTDB Version: 5
+
+Volumes:
+	/home/ec2-user/experiment/scratch/blast_db_190b4ae1/core_nt.nal

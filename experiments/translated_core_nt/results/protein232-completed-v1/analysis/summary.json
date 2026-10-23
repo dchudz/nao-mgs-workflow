@@ -1,0 +1,124 @@
+{
+  "pairs": 232,
+  "mates": 464,
+  "resources": {
+    "megablast": {
+      "status": "complete",
+      "returncode": 0,
+      "finished_utc": "2026-10-22T22:43:51.466223+00:00",
+      "wall_seconds": 47.51844586301013,
+      "allocated_cost_upper_estimate_USD": 0.05279827318112237,
+      "user_seconds": 568.52,
+      "system_seconds": 14.46,
+      "max_RSS_KiB": 272228880.0,
+      "raw_alignment_rows": 27510,
+      "raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows": 0
+    },
+    "blastn": {
+      "status": "complete",
+      "returncode": 0,
+      "finished_utc": "2026-10-22T23:09:03.067581+00:00",
+      "wall_seconds": 1511.430579463995,
+      "allocated_cost_upper_estimate_USD": 1.67936731051555,
+      "user_seconds": 23878.87,
+      "system_seconds": 20.01,
+      "max_RSS_KiB": 274321688.0,
+      "raw_alignment_rows": 84985,
+      "raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows": 0
+    },
+    "tblastx-word4": {
+      "status": "complete",
+      "returncode": 0,
+      "finished_utc": "2026-10-23T05:43:48.536064+00:00",
+      "wall_seconds": 23685.06430804399,
+      "allocated_cost_upper_estimate_USD": 26.31673812004888,
+      "user_seconds": 377928.48,
+      "system_seconds": 122.64,
+      "max_RSS_KiB": 274886820.0,
+      "raw_alignment_rows": 277782,
+      "raw_HSP_coverage_vs_nucleotide_span_difference_gt1pct_rows": 250378
+    }
+  },
+  "disagreements": {
+    "megablast -> blastn/default_E10": {
+      "disagreeing_mates": 217,
+      "disagreeing_pairs": 122
+    },
+    "megablast -> tblastx-word4/default_E10": {
+      "disagreeing_mates": 324,
+      "disagreeing_pairs": 177
+    },
+    "blastn -> tblastx-word4/default_E10": {
+      "disagreeing_mates": 245,
+      "disagreeing_pairs": 144
+    },
+    "megablast -> blastn/strict_E1e-5": {
+      "disagreeing_mates": 197,
+      "disagreeing_pairs": 116
+    },
+    "megablast -> tblastx-word4/strict_E1e-5": {
+      "disagreeing_mates": 312,
+      "disagreeing_pairs": 174
+    },
+    "blastn -> tblastx-word4/strict_E1e-5": {
+      "disagreeing_mates": 240,
+      "disagreeing_pairs": 143
+    }
+  },
+  "status_counts": {
+    "megablast/default_E10": {
+      "mixed_viral_nonviral": 3,
+      "no_alignment": 153,
+      "viral_only": 199,
+      "nonviral_only": 106,
+      "unknown_taxonomy": 3
+    },
+    "megablast/strict_E1e-5": {
+      "mixed_viral_nonviral": 3,
+      "no_alignment": 153,
+      "viral_only": 199,
+      "nonviral_only": 106,
+      "unknown_taxonomy": 3
+    },
+    "blastn/default_E10": {
+      "mixed_viral_nonviral": 9,
+      "viral_only": 329,
+      "nonviral_only": 118,
+      "unknown_taxonomy": 5,
+      "no_alignment": 3
+    },
+    "blastn/strict_E1e-5": {
+      "mixed_viral_nonviral": 8,
+      "no_alignment": 23,
+      "viral_only": 316,
+      "nonviral_only": 112,
+      "unknown_taxonomy": 5
+    },
+    "tblastx-word4/default_E10": {
+      "mixed_viral_nonviral": 35,
+      "viral_only": 321,
+      "nonviral_only": 88,
+      "unknown_taxonomy": 20
+    },
+    "tblastx-word4/strict_E1e-5": {
+      "mixed_viral_nonviral": 35,
+      "viral_only": 313,
+      "no_alignment": 11,
+      "unknown_taxonomy": 20,
+      "nonviral_only": 85
+    }
+  },
+  "production_lca_source_sha256": "727a15a9cf5d9800e28a5628982e85afa698c4ed68a6f54fcc876b6ba463008b",
+  "python_image": "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/python@sha256:c14b09c7e483786bd1504c5dffd59deb4e992ee38f54009fc09971f96379b9db",
+  "notes": [
+    "Counts describe a selected diagnostic panel, not biological truth or prevalence",
+    "Natural and combined LCA computed by unchanged production lca_tsv.py",
+    "No-hit mates retained in denominator; every requested search must finish",
+    "Top10 dense score ranks and90percent near-best applied separately within each mate and method",
+    "Strict E1e-5 is a postfilter of returned E10 hits, not a separate search",
+    "Unknown taxonomy included in status; unknown entries omitted from production LCA input",
+    "Alignment length/identity units are amino acids for translated methods and nucleotides for nucleotide methods",
+    "Separate-mate comparison is not a complete production-pipeline replay",
+    "Translated query-coverage filtering uses the peptide-frame length on the characterized cases. Report frame coverage and original-nucleotide coverage separately; raw tblastx qcovhsp can be inconsistent."
+  ]
+}

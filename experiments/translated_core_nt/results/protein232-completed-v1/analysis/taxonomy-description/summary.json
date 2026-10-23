@@ -1,0 +1,126 @@
+{
+  "source_sha256": "b6b266987769f6a88c4a0576990d031c17855f5d4a575a563d2854b2e5d4e73a",
+  "original_per_mate_sha256": "3a8363e4dc04a210554802f54b7294ca694f9c2a5a2b538334becf822b383ff7",
+  "natural_status_counts": {
+    "blastn/default_E10": {
+      "viral_only": 331,
+      "natural_nonviral_only": 118,
+      "unknown_taxonomy": 5,
+      "mixed_viral_natural_nonviral": 7,
+      "no_alignment": 3
+    },
+    "blastn/strict_E1e-5": {
+      "viral_only": 318,
+      "no_alignment": 23,
+      "natural_nonviral_only": 112,
+      "unknown_taxonomy": 5,
+      "mixed_viral_natural_nonviral": 6
+    },
+    "megablast/default_E10": {
+      "viral_only": 201,
+      "no_alignment": 153,
+      "natural_nonviral_only": 106,
+      "unknown_taxonomy": 3,
+      "mixed_viral_natural_nonviral": 1
+    },
+    "megablast/strict_E1e-5": {
+      "viral_only": 201,
+      "no_alignment": 153,
+      "natural_nonviral_only": 106,
+      "unknown_taxonomy": 3,
+      "mixed_viral_natural_nonviral": 1
+    },
+    "tblastx-word4/default_E10": {
+      "viral_only": 338,
+      "natural_nonviral_only": 88,
+      "unknown_taxonomy": 20,
+      "mixed_viral_natural_nonviral": 18
+    },
+    "tblastx-word4/strict_E1e-5": {
+      "viral_only": 330,
+      "no_alignment": 11,
+      "unknown_taxonomy": 20,
+      "natural_nonviral_only": 85,
+      "mixed_viral_natural_nonviral": 18
+    }
+  },
+  "rows_with_artificial_hits": {
+    "blastn/default_E10": 2,
+    "blastn/strict_E1e-5": 2,
+    "megablast/default_E10": 2,
+    "megablast/strict_E1e-5": 2,
+    "tblastx-word4/default_E10": 23,
+    "tblastx-word4/strict_E1e-5": 23
+  },
+  "natural_LCA_comparisons": {
+    "blastn -> megablast/default_E10": {
+      "unchanged": 247,
+      "natural_status_changed": 159,
+      "lost_alignment": 150,
+      "different_lineage": 18,
+      "more_specific_LCA": 45,
+      "broader_LCA": 4
+    },
+    "blastn -> tblastx-word4/default_E10": {
+      "unchanged": 243,
+      "natural_status_changed": 42,
+      "more_specific_LCA": 26,
+      "broader_LCA": 160,
+      "different_lineage": 32,
+      "gained_alignment": 3
+    },
+    "megablast -> tblastx-word4/default_E10": {
+      "unchanged": 160,
+      "natural_status_changed": 190,
+      "gained_alignment": 153,
+      "different_lineage": 15,
+      "broader_LCA": 130,
+      "more_specific_LCA": 6
+    },
+    "blastn -> megablast/strict_E1e-5": {
+      "unchanged": 267,
+      "natural_status_changed": 139,
+      "lost_alignment": 130,
+      "different_lineage": 18,
+      "more_specific_LCA": 45,
+      "broader_LCA": 4
+    },
+    "blastn -> tblastx-word4/strict_E1e-5": {
+      "unchanged": 248,
+      "natural_status_changed": 51,
+      "gained_alignment": 14,
+      "broader_LCA": 154,
+      "different_lineage": 25,
+      "more_specific_LCA": 21,
+      "lost_alignment": 2
+    },
+    "megablast -> tblastx-word4/strict_E1e-5": {
+      "unchanged": 172,
+      "natural_status_changed": 179,
+      "gained_alignment": 142,
+      "different_lineage": 15,
+      "broader_LCA": 129,
+      "more_specific_LCA": 6
+    }
+  },
+  "subject_cap_diagnostic": {
+    "blastn": {
+      "queries_with_at_least250_returned_subjects": 224,
+      "maximum_returned_subjects": 250
+    },
+    "megablast": {
+      "queries_with_at_least250_returned_subjects": 74,
+      "maximum_returned_subjects": 250
+    },
+    "tblastx-word4": {
+      "queries_with_at_least250_returned_subjects": 372,
+      "maximum_returned_subjects": 250
+    }
+  },
+  "limits": [
+    "Supplement annotates existing outputs; search results, score filtering, and production LCA calculations are unchanged.",
+    "Original mixed_viral_nonviral status includes artificial constructs. It must not be interpreted as natural bacterial/human competition without this distinction.",
+    "Taxonomic comparisons describe returned, filtered hits. The250subject reporting cap can omit competing references.",
+    "Broader LCA is taxonomic resolution loss, not a demonstrated false viral detection. Different methods and missing translated hits do not by themselves establish biological truth."
+  ]
+}

@@ -1,0 +1,23 @@
+	Command being timed: "blastn -task blastn -perc_identity 60 -db /home/ec2-user/experiment/scratch/blast_db_190b4ae1/blast_db -query /home/ec2-user/experiment/cohort-storage/translated-core-nt/protein232/queries.fna -out /home/ec2-user/experiment/cohort-storage/translated-core-nt/protein232/blastn/alignments.tsv -max_hsps 5 -num_alignments 250 -qcov_hsp_perc 30 -evalue 10 -num_threads 16 -outfmt 6 qseqid sseqid staxids bitscore evalue length pident qcovs qcovhsp qlen slen qstart qend sstart send qframe sframe qseq sseq"
+	User time (seconds): 23878.87
+	System time (seconds): 20.01
+	Percent of CPU this job got: 1581%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 25:11.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 274321688
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2121
+	Minor (reclaiming a frame) page faults: 4399371
+	Voluntary context switches: 8328
+	Involuntary context switches: 195150
+	Swaps: 0
+	File system inputs: 404248
+	File system outputs: 60808
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
