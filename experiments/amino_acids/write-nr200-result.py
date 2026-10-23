@@ -1,7 +1,7 @@
 """Render the completed, private NR200 result from preserved evidence tables."""
-import argparse,csv,hashlib,html,json
+import argparse,csv,hashlib,html,json,os
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('root',type=Path);p.add_argument('comparison',type=Path);a=p.parse_args();r=a.root
+p=argparse.ArgumentParser();p.add_argument('root',type=Path);p.add_argument('comparison',type=Path);p.add_argument('--output',type=Path);a=p.parse_args();r=a.root
 load=lambda x:json.loads((r/'results'/x).read_text())
 s=load('protein200-compacted-nt20/summary.json');z=load('protein-resolution-compacted-v2/summary.json');sim=load('protein-similarity-support-compacted-v2-nt20/summary.json');calls=list(csv.DictReader((r/'results/protein-similarity-support-compacted-v2-nt20/sample-species-calls.tsv').open(),delimiter='\t'))
 con=sim['counts']['NR_and_viral_reference_same_species'];assert con['gained_protein_call']==66 and con['human_annotated_gained_protein_call']==4
@@ -44,5 +44,14 @@ text=f'''<!doctype html><html><head><meta charset="utf-8"><title>Protein detecti
 <h2>Verification and evidence</h2><p>The original full-file Python aggregation and optimized query-call aggregation produce byte-identical classifications for all 406,173 pooled candidate pairs: SHA-256 <code>{parity['sha256']}</code>. The raw NR output and compact query evidence were downloaded from private S3 and independently hashed. The optimized representation does not replace the preserved raw alignments.</p>
 <p><a href="results/protein200-compacted-nt20/pair-evidence.tsv">Per-pair evidence</a> · <a href="results/protein-resolution-compacted-v2/resolution.tsv">Species resolution</a> · <a href="results/protein-similarity-support-compacted-v2-nt20/sample-species-calls.tsv">Similarity support calls</a> · <a href="results/protein-species-gain-cases-compacted-v2/pairs.tsv">Audited original read IDs</a> · <a href="results/protein-species-gain-cases-compacted-v2/alignments.tsv">Audited alignments</a> · <a href="first-step-result.html">Finished upstream-only experiment</a></p>
 <p>The already-planned standalone NR seed-panel run is a separate query-context reproducibility check; its result is pending. Production alignment-coordinate duplicate handling and matched validation of all baseline candidates would be needed before claiming production end-to-end call parity or sensitivity.</p></body></html>'''
-(r/'nr200-result.html').write_text(text)
-print(r/'nr200-result.html')
+context_path = a.comparison/'seed-nr-standalone/context-cost-and-mode.json'
+if context_path.exists():
+ context=json.loads(context_path.read_text()); c=context['reproducibility']; small=context['searches']['seed-nr-standalone']
+ assert c['pairs']==746 and c['queries']==1436
+ evidence=os.path.relpath(context_path,(a.output or r/'nr200-result.html').parent)
+ section=f'<h2>Query-context reproducibility</h2><p>The same 1,436 diagnostic query mates were searched alone against the identical full NR snapshot with the same executable options. DIAMOND automatically selected query-indexed search for this small batch, whereas the 817,744-query primary run used double-indexed search. These modes are documented to differ in sensitivity. The <a href="https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options">DIAMOND options documentation</a> describes the automatic mode selection.</p><p>Among 746 diagnostic pairs, {c["status_disagreements"]} have different viral/nonviral statuses and {c["taxid_disagreements"]} have different taxonomic assignments. A total of {c["pairs_with_summary_difference"]} differ in at least one reported summary field; {c["raw_alignment_differing_query_mates"]} mates differ in raw alignment output. This diagnostic is separate from the complete200-sample candidate set, so these fractions must not be extrapolated to the candidate calls above.</p><p>The standalone search took {small["GNU_wall_seconds"]:,.0f} seconds and ${small["allocated_compute_EBS_IPv4_USD"]:.2f} of allocated search cost, or ${small["allocated_USD_per_query"]:.6f} per query. This illustrates why the much cheaper per-query figure from the large pooled batch cannot be used to price a small validation batch. Reference seed structures are rebuilt within each search; no persistent DIAMOND index was built.</p><p>The primary figures above remain the results of the original frozen pooled run. One bounded repeat of the identical small query set with double-indexed mode forced is running to isolate the automatic mode difference. It does not add biological samples or change the reference.</p><p><a href="{html.escape(evidence)}">Exact costs, mode observations and comparison counts</a></p>'
+ old='<p>The already-planned standalone NR seed-panel run is a separate query-context reproducibility check; its result is pending. Production alignment-coordinate duplicate handling and matched validation of all baseline candidates would be needed before claiming production end-to-end call parity or sensitivity.</p>'
+ assert old in text
+ text=text.replace(old,section+'<p>Production alignment-coordinate duplicate handling and matched validation of all baseline candidates remain unmeasured. The report does not establish production end-to-end call parity or sensitivity.</p>')
+output=a.output or r/'nr200-result.html';output.write_text(text);print(output)
+
