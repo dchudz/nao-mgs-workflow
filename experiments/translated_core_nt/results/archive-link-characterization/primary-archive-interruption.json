@@ -1,0 +1,14 @@
+{
+  "interrupted_utc": "2026-10-23T13:31:23.702771+00:00",
+  "pid": 73203,
+  "source_sha256": "6f3b5f3c21851f7fa5e74e6379a93593de4ad9bd7db0eaefbcb36bb18da067da",
+  "verified_scopes_retained": [
+    "cohort-storage"
+  ],
+  "partial_scope": "cohort",
+  "reason": "Confirmed hardlinked compiled Rust files would fail the original per-file byte-count guard. Preserve the verified scope, keep the partial attempt, correct hardlink handling and use installed parallel gzip for remaining archives. Scientific source files and measured search results are unchanged.",
+  "partial_archive": "/home/ec2-user/experiment/primary-closure-final/cohort.interrupted-first-attempt.tar.gz",
+  "partial_archive_bytes": 9116331545,
+  "partial_archive_sha256": "4236f8126e7cac24b92598b7c57ae8607b60dff61a5c82078961415c46b1ed66",
+  "partial_archive_not_a_completed_result": true
+}

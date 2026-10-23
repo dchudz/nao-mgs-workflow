@@ -11,6 +11,7 @@ import subprocess
 import tarfile
 import tempfile
 from pathlib import Path
+from evidence_archive import archive_paths
 
 r = Path('/home/ec2-user/experiment')
 d = r / 'cohort-storage/translated-core-nt'
@@ -91,37 +92,8 @@ for name, roots in scopes.items():
                     exclusions.append(dict(path=str(p.relative_to(r)), reason=skip[p]))
                 else:
                     paths.add(p)
-    manifest = []
-    class Reader:
-        def __init__(self, f):
-            self.f, self.digest, self.bytes = f, hashlib.sha256(), 0
-        def read(self, n):
-            b = self.f.read(n)
-            self.digest.update(b)
-            self.bytes += len(b)
-            return b
-    with tarfile.open(target, 'w:gz', compresslevel=1) as tar:
-        for path in sorted(paths):
-            relative = str(path.relative_to(r))
-            if path.is_symlink():
-                tar.add(path, arcname=relative, recursive=False)
-                manifest.append(dict(path=relative, symlink=os.readlink(path),
-                                     resolved_target=str(path.resolve()), target_exists=path.exists()))
-                continue
-            before = path.stat()
-            info = tar.gettarinfo(str(path), arcname=relative)
-            with path.open('rb') as f:
-                reader = Reader(f)
-                tar.addfile(info, reader)
-            assert reader.bytes == before.st_size
-            # Only continuously appended root logs are intentionally snapshots.
-            root_log = path.parent == r and path.suffix in ('.log', '.jsonl')
-            after = path.stat()
-            if not root_log:
-                assert (before.st_size, before.st_mtime_ns) == (after.st_size, after.st_mtime_ns), path
-            manifest.append(dict(path=relative, bytes=reader.bytes,
-                                 sha256=reader.digest.hexdigest(), root_log_snapshot=root_log))
-    record = dict(scope=name, completed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    manifest = archive_paths(target, paths, r)
+    record = dict(scope=name, source_sha256=sha(Path(__file__)), archive_helper_sha256=sha(Path(__file__).with_name('evidence_archive.py')), completed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   archive=verify_upload(target), files=manifest, exclusions=exclusions)
     receipt.write_text(json.dumps(record, indent=2) + '\n')
     verify_upload(receipt)
@@ -138,6 +110,7 @@ final = dict(completed_utc=datetime.datetime.now(datetime.timezone.utc).isoforma
                      'Reference blast_db is preserved separately with recorded SHA and end-to-end CRC verification; no archived-reference restore was performed.',
                      'Existing S3 scientific backups are unchanged. This closure adds consolidated source-hashed archives.',
                      'Symlinks are retained as links with their original target recorded. Inspect their receipts before resource retirement.',
+                     'The first verified cohort-storage scope predates the parallel-compression helper; later scope receipts identify their source and helper hashes.',
                      'No resources are stopped, deleted or made public.'])
 (out / 'complete.json').write_text(json.dumps(final, indent=2) + '\n')
 verify_upload(out / 'complete.json')

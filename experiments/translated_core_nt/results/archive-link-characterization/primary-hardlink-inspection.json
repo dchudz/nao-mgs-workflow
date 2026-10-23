@@ -1,0 +1,77 @@
+{
+  "cohort": [],
+  "full": [],
+  "pilot": [],
+  "protein": [],
+  "reference/results": [],
+  "null-controls": [],
+  ".nextflow": [],
+  "assets": [],
+  "bin": [],
+  "configs": [],
+  "experiments": [],
+  "lib": [],
+  "modules": [],
+  "schemas": [],
+  "subworkflows": [],
+  "workflows": [],
+  "rust-tools": [
+    [
+      "rust-tools/target/release/screen_amino_acids",
+      "rust-tools/target/release/deps/screen_amino_acids-128668f9042e9d55"
+    ],
+    [
+      "rust-tools/target/release/build/proc-macro2-27e2adc1270359f5/build_script_build-27e2adc1270359f5",
+      "rust-tools/target/release/build/proc-macro2-27e2adc1270359f5/build-script-build"
+    ],
+    [
+      "rust-tools/target/release/build/quote-bbaacdf70bfde1cd/build_script_build-bbaacdf70bfde1cd",
+      "rust-tools/target/release/build/quote-bbaacdf70bfde1cd/build-script-build"
+    ],
+    [
+      "rust-tools/target/release/build/crc32fast-f69369d4087817db/build_script_build-f69369d4087817db",
+      "rust-tools/target/release/build/crc32fast-f69369d4087817db/build-script-build"
+    ],
+    [
+      "rust-tools/target/release/build/crossbeam-utils-35c14bdcb43c83ca/build_script_build-35c14bdcb43c83ca",
+      "rust-tools/target/release/build/crossbeam-utils-35c14bdcb43c83ca/build-script-build"
+    ],
+    [
+      "rust-tools/target/release/build/rayon-core-a5cf0dad02d0573b/build_script_build-a5cf0dad02d0573b",
+      "rust-tools/target/release/build/rayon-core-a5cf0dad02d0573b/build-script-build"
+    ],
+    [
+      "rust-tools/target-speed/release/screen_amino_acids",
+      "rust-tools/target-speed/release/deps/screen_amino_acids-1312e7c23526d5de"
+    ],
+    [
+      "rust-tools/target-speed/release/build/proc-macro2-27e2adc1270359f5/build_script_build-27e2adc1270359f5",
+      "rust-tools/target-speed/release/build/proc-macro2-27e2adc1270359f5/build-script-build"
+    ],
+    [
+      "rust-tools/target-speed/release/build/quote-bbaacdf70bfde1cd/build_script_build-bbaacdf70bfde1cd",
+      "rust-tools/target-speed/release/build/quote-bbaacdf70bfde1cd/build-script-build"
+    ],
+    [
+      "rust-tools/target-speed/release/build/crc32fast-f69369d4087817db/build_script_build-f69369d4087817db",
+      "rust-tools/target-speed/release/build/crc32fast-f69369d4087817db/build-script-build"
+    ],
+    [
+      "rust-tools/target-speed/release/build/crossbeam-utils-35c14bdcb43c83ca/build_script_build-35c14bdcb43c83ca",
+      "rust-tools/target-speed/release/build/crossbeam-utils-35c14bdcb43c83ca/build-script-build"
+    ],
+    [
+      "rust-tools/target-speed/release/build/rayon-core-a5cf0dad02d0573b/build_script_build-a5cf0dad02d0573b",
+      "rust-tools/target-speed/release/build/rayon-core-a5cf0dad02d0573b/build-script-build"
+    ]
+  ],
+  "tools": [],
+  "ref": [],
+  "protein-repeat-gate": [],
+  "protein-screen-boundaries": [],
+  "range-probe": [],
+  "reads": [],
+  "reads-pilot": [],
+  "primary-closure": [],
+  "backup-verification": []
+}
