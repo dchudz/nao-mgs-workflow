@@ -14,6 +14,8 @@ p.add_argument('directory', type=Path)
 p.add_argument('output', type=Path)
 p.add_argument('--costs', type=Path, required=True)
 p.add_argument('--codon-audit', type=Path, required=True)
+p.add_argument('--nr-control', type=Path)
+p.add_argument('--batch-replay', type=Path)
 a = p.parse_args()
 d = a.directory
 methods = ['megablast', 'blastn', 'tblastx-word4']
@@ -55,7 +57,12 @@ text+='<p class="note">The panel contains one protein-only candidate from each o
 text+='<h2>Measured search work</h2>'
 text+=table(['Method','Query mates','Wall seconds','CPU seconds','Allocated USD','USD/query','Raw HSP rows'],[[m,searches[m]['query_mates'],f"{searches[m]['wall_seconds']:,.2f}",f"{searches[m]['CPU_seconds']:,.2f}",f"{searches[m]['allocated_USD']:.4f}",f"{searches[m]['allocated_USD_per_query']:.6f}",mate['resources'][m]['raw_alignment_rows']] for m in methods])
 text+='<p>Each search uses the same 16-vCPU worker and existing reference cache. Allocation includes compute, provisioned EBS and public IPv4 during search wall time; it excludes staging, analysis, archival and idle time and is already included in lifetime spend. The reference occupies 318,551,974,004 bytes. No new persistent search index was built. Peak temporary disk use was not measured. These are sequential warm-reference observations.</p>'
-text+='<h2>Per-mate natural evidence at E≤10⁻⁵</h2>'
+if a.batch_replay:
+    replay = read(a.batch_replay)
+    assert replay['remote_download_hashes_match'] and replay['search_status']['status'] == 'time_limit'
+    assert replay['files']['alignments.tsv']['bytes'] == 0
+    text += '<p class="note">A separate attempt to put all 464 queries in one batch reached its preset limit after '+f"{replay['search_status']['wall_seconds']:,.1f}"+' seconds and produced no finalized output. Its allocated compute, EBS and IPv4 cost was $'+f"{replay['allocated_compute_EBS_IPv4_USD']:.4f}"+'. Output equivalence and speedup remain unmeasured. Empty incomplete output is not a biological no-hit result. '+link(a.batch_replay,'Bounded replay receipt and source commit')+'</p>'
+text+='<h2>Per-mate natural evidence at E≤10⁻⁵</h2>' 
 groups={m:tax['natural_status_counts'][m+'/strict_E1e-5'] for m in methods}
 columns=sorted({k for x in groups.values() for k in x})
 text+=table(['Method']+columns,[[m]+[groups[m].get(k,0) for k in columns] for m in methods])
@@ -70,6 +77,13 @@ text+=counts_table(groups,'status')
 text+='<details><summary>Artificial-construct and natural-evidence separation</summary>'+counts_table(groups,'natural_status')+'</details>'
 text+='<p>NR rows reuse the prior completed protein search and exactly reproduce all 232 frozen pair verdicts. They are contextual evidence: NR is a different reference and retains its original minimum 25-amino-acid filter and 90% near-best rule. The core_nt comparisons use best HSP per subject, at most 10 dense score ranks and 90% near-best. NR and core_nt costs or verdicts must not be interpreted as a controlled reference-equivalent comparison.</p>'
 text+='<p>A separate reproducibility check on 746 diagnostic pairs changed 47 viral/nonviral statuses and 74 taxonomic assignments when the same reads were searched in a smaller batch with an automatically selected alternative DIAMOND mode. Those fractions cannot be extrapolated to this panel. The frozen pooled NR evidence is retained here with that limitation.</p>'
+if a.nr_control:
+    control = read(a.nr_control)
+    parity = control['comparisons']['pooled_double']
+    assert control['pairs'] == 746 and parity['alignment_multiset_equal'] and parity['pairs_with_summary_difference'] == 0
+    assert control['search_status_unchanged']['status'] == 'time_limit' and control['projection']['logged_output_closed']
+    text += '<p>A subsequent control forced the original double-indexed DIAMOND mode on those 746 pairs. All 5,942,196 alignment rows and all 746 pair classifications exactly matched the pooled result. The process hit its time limit during shutdown after closing output, so this is a separately verified artifact comparison, not a clean search-completion measurement. It resolves the observed mode discrepancy on this diagnostic panel only. '+link(a.nr_control,'Closed-output audit and exact parity evidence')+'</p>'
+
 text+='<h2>Pairs recovered by translation</h2>'
 gains=transitions['newly_viral_only_pairs']
 text+=table(['Pair','Translated natural assignment','Rank','Aligned mates','NR status'],[[x['pair'],x['translated_name'],x['translated_rank'],x['translated_aligned_mates'],x['NR_status']] for x in gains])

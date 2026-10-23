@@ -1,0 +1,56 @@
+{
+  "recorded_utc": "2026-10-23T12:43:58.242629+00:00",
+  "status": "not_run",
+  "reason": "The planned10:30UTC launch window passed before this turn resumed; no automatic extension. Preserve completed evidence and retire resources.",
+  "planned_source_commit": "520e723252ca9921295c3da04ed1b5766ac32af4",
+  "search_allocation_USD": 0,
+  "original_plan": {
+    "prepared_utc": "2026-10-23T08:29:34.927690+00:00",
+    "status": "Prepared, not launched or queued",
+    "decision": "Reuse the already-completed 232-pair comparison, rather than the earlier prepared 43-mate panel, for one bounded coding-template nucleotide comparison.",
+    "reason": "The 232-pair panel contains translated-only support absent from sensitive nucleotide search. A coding spaced seed tests whether a cheaper nucleotide algorithm recovers any of that same observed support. This does not claim full amino-acid equivalence.",
+    "superseded_unexecuted_plan": "The earlier prepared dc-megablast pilot on 43 mates was never launched. Those 43 mates already all have sensitive-blastn viral support, making them less informative for this question.",
+    "input_manifest": {
+      "created_utc": "2026-10-22T22:43:03.905327+00:00",
+      "pairs": 232,
+      "queries": 464,
+      "query_sha256": "a98e68ff4763d7702a0755cbf79c551df48ea2e9fe01cc833e039d9c3f1cc794",
+      "selection_sha256": "bc086eb9ea3470535162eac5baa122d0ae4bbe8279b703d55dd110de6c995444",
+      "reference_inventory_sha256": "1ed64d2e853e52f333dfe5a87996aeca99f1499f702318bf3341f930caa2e764",
+      "source_query_sha256": "a98e68ff4763d7702a0755cbf79c551df48ea2e9fe01cc833e039d9c3f1cc794",
+      "source_selection_sha256": "bf7510b756f248fee0da885043b4de3a52910983d428282ef8a42e304a6c6bdf",
+      "selection_rule": "One SHA256-ranked candidate absent from both NT24 and NT20 per each of the fixed first200 samples; one shared candidate per32 SHA256-ranked sample controls. Selection made while every broad-NR outcome was pending.",
+      "limits": [
+        "Frozen one-pair-per-sample diagnostic panel, not a read-weighted accuracy estimate.",
+        "Original separate trimmed mates, not production mate merging.",
+        "Original selection predates broad-NR outcomes; choosing to reuse this panel occurs after those outcomes.",
+        "New nucleotide controls match16threads and full19field outputs; older8thread controls retained separately.",
+        "Translated search uses word4 threshold18 after the matched43mate pilot; defaultTBLASTX not scaled.",
+        "Evalues may change when retrieved HSP sets change; shared bitscore parity does not assert Evalue parity."
+      ]
+    },
+    "source_reference": "Existing unchanged comprehensive core_nt; no derived or reduced database.",
+    "maximum_seconds": 900,
+    "absolute_cutoff_utc": "2026-10-23T10:30:00+00:00",
+    "maximum_search_allocation_USD": 0.909125,
+    "maximum_incremental_searches": 1,
+    "preconditions": [
+      "Wait for the one-batch translated replay and finish its immediate analysis.",
+      "No concurrent measured search on the primary worker.",
+      "Verify coding-template options in the pinned BLAST 2.17 executable before launch.",
+      "Skip if fewer than 60 seconds remain before the absolute cutoff."
+    ],
+    "analysis": [
+      "Use the unchanged per-mate postfilter and taxonomy annotation, with separate per-read evidence.",
+      "Compare all 464 mates and 232 pairs to megablast, blastn and the completed tblastx-word4 result.",
+      "Report runtime, cost, differing reads, and whether the three translated-only viral-support pairs are recovered.",
+      "Keep a time-limited search incomplete; do not classify unprocessed queries as negative."
+    ],
+    "limits": [
+      "Method selected after viewing the completed comparison; not an independent held-out accuracy result.",
+      "The frozen input panel and reference were not selected or changed based on this method outcome.",
+      "No automatic retry or larger query panel.",
+      "No biological call is inherited from another read."
+    ]
+  }
+}
