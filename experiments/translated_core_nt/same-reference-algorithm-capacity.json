@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-10-23T01:13:19.567420+00:00",
+  "status": "Design and capacity calculation; no new search or index build launched",
+  "reference": "The same frozen comprehensive core_nt; no NR substitution or taxonomic subset",
+  "core_nt_sequences": 131855990,
+  "core_nt_nucleotides": 1088816606629,
+  "six_complete_frames": {
+    "formula": "sum over lengths L>=2: 2*(floor(L/3)+floor((L-1)/3)+floor((L-2)/3)) = 2*sum(L)-4*N",
+    "amino_acid_characters_if_all_sequences_at_least_two_nt": 2177105789298,
+    "sequence_length_distribution_not_measured": true,
+    "byte_per_residue_TiB": 1.9800661805657,
+    "ratio_to_measured_NR_amino_acids": 4.926885856781351,
+    "excluded_overheads": "FASTA headers, original nucleotide payload, taxonomic/provenance maps, indexes and temporary storage"
+  },
+  "MMseqs2_index_capacity": {
+    "source": "https://github.com/soedinglab/MMseqs2/wiki#memory-consumption",
+    "documented_model": "7*residues + 8*alphabet_size**k bytes",
+    "complete_frame_residue_term_TiB": 13.8604632639599,
+    "interpretation": "Capacity estimate for an unfiltered complete-frame representation, not a measured MMseqs2 build. The normal ORF-splitting representation has a different residue/sequence count; dropping short ORFs changes sensitivity. Splitting the index changes resident memory but does not establish wall-time or disk cost."
+  },
+  "candidate_designs": [
+    {
+      "name": "Native tblastx word4",
+      "evidence": "Completed 43-mate pilot preserved all mate statuses and LCAs at both thresholds, with 4.63x lower elapsed time than default word size 3. Larger 464-mate run pending.",
+      "costs_unmeasured": "Production batching and full candidate-population cost."
+    },
+    {
+      "name": "Materialize all six frames and use a protein index",
+      "mechanism": "Retain original nucleotide accession, strand, frame, coordinate and all taxonomic mappings. Translate all reference sequences, including nonviral sequences. Search each query independently; merge evidence by original subject before existing ranking.",
+      "constraints": [
+        "Retain short and stop-containing sequence evidence rather than silently discarding it.",
+        "Protein score statistics and target/HSP limits need measured comparison to native tblastx.",
+        "Measured extraction/index-build time, peak memory, peak disk and output sizes required before a full build.",
+        "No full build launched; current workers lack space for a naive multi-terabyte intermediate plus index."
+      ]
+    },
+    {
+      "name": "MMseqs2 translated nucleotide search",
+      "source": "https://github.com/soedinglab/MMseqs2/wiki#translated-sequence-searching",
+      "mechanism": "Native translated search accepts nucleotide query and target inputs with search type 2. Default ORF extraction splits at stops and requires 30 amino acids.",
+      "constraints": [
+        "Default minimum ORF length would exclude the known 21-amino-acid short-read example.",
+        "Lowering minimum length does not reproduce alignments spanning stop codons.",
+        "Target splitting, global result merging and report caps must preserve each read\u2019s own competing taxa.",
+        "No executable installed or search launched for this candidate."
+      ]
+    },
+    {
+      "name": "Codon-aware spaced nucleotide seeding",
+      "source": "https://blast.ncbi.nlm.nih.gov/doc/blast-topics/discontmegablast.html",
+      "mechanism": "dc-megablast coding templates tolerate third-position mismatches during seeding while retaining the existing nucleotide database.",
+      "constraints": [
+        "This remains nucleotide scoring and is not equivalent to amino-acid homology.",
+        "Synonymous differences affecting the first or second codon bases are not all covered.",
+        "A bounded small-panel comparison could measure cost and discrepancies before considering it further.",
+        "No search launched; do not compete for CPU with either active measurement."
+      ]
+    }
+  ],
+  "limits": [
+    "No new biological conclusion follows from these resource calculations or documented tool options.",
+    "The existing selected diagnostic panels cannot establish accuracy or full-public-dataset detection gains.",
+    "Future comparisons must preserve the original observations and use a separate source commit per approach."
+  ]
+}

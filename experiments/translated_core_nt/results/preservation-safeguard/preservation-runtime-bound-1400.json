@@ -1,0 +1,152 @@
+{
+  "as_of_utc": "2026-10-23T14:00:00Z",
+  "account": "839993661825",
+  "compute_intervals": [
+    {
+      "instance": "i-061f366bd55def34c",
+      "type": "x2iedn.4xlarge",
+      "start": "2026-10-21T15:24:12Z",
+      "end": "2026-10-23T14:00:00Z",
+      "modeled_hours": 46.596666666666664,
+      "USD_per_hour": 3.3345,
+      "modeled_USD": 155.37658499999998
+    },
+    {
+      "instance": "i-0dd39a46c4efb6c4c",
+      "type": "c7i.4xlarge",
+      "start": "2026-10-21T16:19:35Z",
+      "end": "2026-10-21T22:00:13Z",
+      "modeled_hours": 5.677222222222222,
+      "USD_per_hour": 0.714,
+      "modeled_USD": 4.053536666666667
+    },
+    {
+      "instance": "i-0dd39a46c4efb6c4c",
+      "type": "c7i.2xlarge",
+      "start": "2026-10-21T22:00:13Z",
+      "end": "2026-10-22T05:22:19.224178Z",
+      "modeled_hours": 7.368395605,
+      "USD_per_hour": 0.357,
+      "modeled_USD": 2.630517230985
+    },
+    {
+      "instance": "i-0103f018916b6c9e5",
+      "type": "r7i.4xlarge",
+      "start": "2026-10-21T17:11:13Z",
+      "end": "2026-10-21T22:00:13Z",
+      "modeled_hours": 4.816666666666666,
+      "USD_per_hour": 1.0584,
+      "modeled_USD": 5.09796
+    },
+    {
+      "instance": "i-0103f018916b6c9e5",
+      "type": "m8azn.6xlarge",
+      "start": "2026-10-21T22:00:13Z",
+      "end": "2026-10-22T04:06:26Z",
+      "modeled_hours": 6.103611111111111,
+      "USD_per_hour": 2.47752,
+      "modeled_USD": 15.121818600000001
+    },
+    {
+      "instance": "i-0103f018916b6c9e5",
+      "type": "r7a.8xlarge",
+      "start": "2026-10-22T05:22:36.767549Z",
+      "end": "2026-10-23T14:00:00Z",
+      "modeled_hours": 32.62312012527778,
+      "USD_per_hour": 2.4344,
+      "modeled_USD": 79.41772363297623
+    },
+    {
+      "instance": "i-048be724ac0462256",
+      "type": "m7i.16xlarge Spot",
+      "start": "2026-10-21T18:06:37Z",
+      "end": "2026-10-21T18:50:53Z",
+      "modeled_hours": 0.7377777777777778,
+      "USD_per_hour": 1.5461,
+      "modeled_USD": 1.1406782222222223
+    },
+    {
+      "instance": "i-0f577952bbbd27d36",
+      "type": "c6a.24xlarge Spot",
+      "start": "2026-10-21T21:32:32Z",
+      "end": "2026-10-21T21:51:41Z",
+      "modeled_hours": 0.31916666666666665,
+      "USD_per_hour": 1.1061,
+      "modeled_USD": 0.35303025
+    }
+  ],
+  "volume_intervals": [
+    {
+      "volume": "vol-098cdf9d650bd4a0d",
+      "instance": "i-061f366bd55def34c",
+      "start": "2026-10-21T15:24:13.296Z",
+      "end": "2026-10-23T14:00:00Z",
+      "GiB": 2048,
+      "IOPS": 6000,
+      "MiB_per_second": 1000,
+      "maximum_configuration_modeled_USD": 13.83910308
+    },
+    {
+      "volume": "vol-07d4e85519abc9f76",
+      "instance": "i-0103f018916b6c9e5",
+      "start": "2026-10-21T17:11:14.288Z",
+      "end": "2026-10-22T19:41:42Z",
+      "GiB": 1280,
+      "IOPS": 6000,
+      "MiB_per_second": 1000,
+      "maximum_configuration_modeled_USD": 5.61079602962963
+    },
+    {
+      "volume": "vol-07d4e85519abc9f76",
+      "instance": "i-0103f018916b6c9e5",
+      "start": "2026-10-22T19:41:42Z",
+      "end": "2026-10-23T14:00:00Z",
+      "GiB": 1536,
+      "IOPS": 6000,
+      "MiB_per_second": 1000,
+      "maximum_configuration_modeled_USD": 4.395233888888889
+    },
+    {
+      "volume": "vol-0461a97dae04945e3",
+      "instance": "i-0dd39a46c4efb6c4c",
+      "start": "2026-10-21T16:19:36.008Z",
+      "end": "2026-10-22T05:22:19.224178Z",
+      "GiB": 256,
+      "IOPS": 3000,
+      "MiB_per_second": 500,
+      "maximum_configuration_modeled_USD": 0.6428452584858951
+    },
+    {
+      "volume": "vol-0aad5b7d9f190c48d",
+      "instance": "i-048be724ac0462256",
+      "start": "2026-10-21T18:06:37Z",
+      "end": "2026-10-21T18:50:53Z",
+      "GiB": 512,
+      "IOPS": 6000,
+      "MiB_per_second": 1000,
+      "maximum_configuration_modeled_USD": 0.09320592592592594
+    },
+    {
+      "volume": "vol-0533d3e9b96594f40",
+      "instance": "i-0f577952bbbd27d36",
+      "start": "2026-10-21T21:32:32Z",
+      "end": "2026-10-21T21:51:41Z",
+      "GiB": 1280,
+      "IOPS": 6000,
+      "MiB_per_second": 1000,
+      "maximum_configuration_modeled_USD": 0.06755694444444445
+    }
+  ],
+  "modeled_EC2_compute_USD": 263.1918496028501,
+  "modeled_EBS_maximum_configuration_USD": 24.648741127374784,
+  "modeled_public_IPv4_USD": 0.5212131342069444,
+  "interpretation": [
+    "Lifetime allocation includes reference staging, failed and interrupted attempts, concurrent searches, analyses, and idle time. Individual search allocations must not be added to this ledger.",
+    "Short resize stop gaps before 22:00 are conservatively counted as running; the longer NR stop from 04:06:26 to 05:22:36 is excluded from compute but included in EBS.",
+    "EBS uses a conservative 720-hour month. The NR volume expansion from1280to1536GiB is charged only after its recorded2026-10-22T19:41:42Z start. Other historical IOPS/throughput and the primary size use the maximum observed configuration.",
+    "Historical Spot rates are verified in primary-closure/spot-price-*.json. Runtime times rate does not account for potential AWS interruption credits.",
+    "S3 storage, requests, data transfer, taxes, credits and unrelated account usage are excluded. Cost Explorer and retained-storage estimates must be shown separately.",
+    "This is a resource-based estimate, not an invoice or a claim that Cost Explorer is current."
+  ],
+  "modeled_owned_compute_EBS_IPv4_total_USD": 288.3618038644318
+}
