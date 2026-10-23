@@ -2,7 +2,7 @@
 import argparse, collections, hashlib, json, random, subprocess
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--commit',required=True);a=p.parse_args()
-r=Path('/home/ec2-user/experiment');d=r/'protein/nr-target-ordinal-fixture-v2';d.mkdir(exist_ok=False)
+r=Path('/home/ec2-user/experiment');d=r/'protein/nr-target-ordinal-fixture-v3';d.mkdir(exist_ok=False)
 image='public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602'
 exe=r/'protein/tools/diamond';rng=random.Random(17);alphabet='ACDEFGHIKLMNPQRSTVWY'
 peptides={name:''.join(rng.choice(alphabet) for _ in range(80)) for name in ('CONTROL_A','CONTROL_B')}
@@ -35,7 +35,7 @@ for mode in ('0','1'):
 retrieval=[]
 for oid,name in enumerate(peptides):
     target=d/('retrieved-'+str(oid)+'.faa')
-    cmd=[str(exe),'getseq','--db',str(d/'db'),'--seq',str(oid+1),'--block-size','0','--out',str(target)]
+    cmd=[str(exe),'getseq','--db',str(d/'db'),'--seq',str(oid+1),'--out',str(target)]
     with (d/('retrieve-'+str(oid)+'.log')).open('w') as log:subprocess.run(cmd,check=True,stdout=log,stderr=log)
     sequence=''.join(x for x in target.read_text().splitlines() if not x.startswith('>'))
     assert sequence==peptides[name]
