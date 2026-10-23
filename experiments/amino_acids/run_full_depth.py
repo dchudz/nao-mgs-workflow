@@ -84,8 +84,6 @@ assert json.loads(subprocess.check_output(AWS+['sts','get-caller-identity'],text
 assert json.loads((R/'setup/complete.json').read_text())['verified']
 assert json.loads((R/'integration/real-diamond/verification.json').read_text())['verified']
 assert json.loads((R/'integration/baseline-replay.json').read_text())['verified']
-assert json.loads((R/'integration/protein-workflow/verification.json').read_text())['verified']
-assert json.loads((R/'integration/adapter-bounded/verification.json').read_text())['verified']
 acquisition=json.loads((data/'verified.json').read_text());assert acquisition['spot_count']==int(row['read_count'])
 assert not (D/'complete.json').exists(),'Sample already completed; do not silently rerun it'
 save(D/'protocol.json',{'source_commit':a.source_commit,'sample':a.sample,'selection':row,
@@ -111,6 +109,8 @@ def extra(stage,script,reads):
                '-params-file',target/'params.json','-work-dir',target/'work','-ansi-log','false'])
 extra('screen-run','experiments/amino_acids/postscreen.nf',D/'union.fastq')
 trimmed=single('screen-run/published/FASTP/*_fastp.fastq.gz')
+assert json.loads((R/'integration/protein-workflow/verification.json').read_text())['verified']
+assert json.loads((R/'integration/adapter-bounded/verification.json').read_text())['verified']
 extra('protein-run','experiments/amino_acids/protein-production.nf',trimmed)
 hit_paths={'production':D/'baseline-run/output/results'/f'{a.sample}_virus_hits.tsv.gz',
            'validation_control':D/'baseline-run/output/results'/f'{a.sample}_virus_hits.tsv.gz',

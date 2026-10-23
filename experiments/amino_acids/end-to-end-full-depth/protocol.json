@@ -1,5 +1,5 @@
 {
-  "status": "Dedicated private worker launched; real-DIAMOND geometry and baseline BLAST replay verified; full-depth sample1 acquisition and reference staging in progress.",
+  "status": "First full-depth sample acquired and all references/indexes verified. Independent nucleotide baseline may run while final protein fixture and byte-parity gates complete; protein execution remains gated.",
   "question": "Does protein-space viral alignment recover final sample/species calls at full depth beyond nucleotide alignment, and which gains survive same-reference nucleotide validation?",
   "selection": "sample-selection.json",
   "references": {
@@ -78,7 +78,7 @@
     "Nested Nextflow entry points use the existing root bin through the committed relative symlink.",
     "Every full-depth or protein-fixture invocation explicitly loads the unchanged root lib directory (SortUtils and SentinelUtils).",
     "Root main.nf handles production RUN and DOWNSTREAM; protein and postscreen entry points reuse the same module implementations.",
-    "A complete real-protein-to-validation fixture must pass before full-depth execution.",
-    "Bounded adapter must preserve decompressed candidate FASTQ and every final TSV field byte-for-byte on the real-reference integration fixture before full-depth execution. All HSPs remain in saved evidence; only processing order and memory use change."
+    "A complete real-protein-to-validation fixture must pass before full-depth protein execution.",
+    "Bounded adapter must preserve decompressed candidate FASTQ and every final TSV field byte-for-byte on the real-reference integration fixture before full-depth protein execution. All HSPs remain in saved evidence; only processing order and memory use change."
   ]
 }
