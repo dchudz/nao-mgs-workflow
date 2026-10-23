@@ -1,0 +1,17 @@
+{
+  "diagnostic_pairs": 746,
+  "status": {
+    "viral_only": 389,
+    "mixed_viral_nonviral": 320,
+    "no_alignment": 31,
+    "unknown_taxonomy": 1,
+    "nonviral_only": 5
+  },
+  "relation": {
+    "ancestor_related": 635,
+    "unknown": 56,
+    "divergent": 16,
+    "exact": 39
+  },
+  "interpretation": "Same available mate sequences used in megablast and blastn diagnostic. NR protein coverage differs from core_nt nucleotide coverage; these are not known-truth labels."
+}

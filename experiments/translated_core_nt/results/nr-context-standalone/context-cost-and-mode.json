@@ -1,0 +1,161 @@
+{
+  "generated_utc": "2026-10-23T00:05:39.062862+00:00",
+  "source_sha256": "9d8323ccfe591679725a5741ca6474a3092950e88fbe659c49d3d36acf00ec4e",
+  "commands_identical_except_query_and_output_paths": true,
+  "executable_sha256": "c32782ed588593f73c41c57c0d013b7b8a5ac6d78e48d90a63985cbcf148d807",
+  "searches": {
+    "combined-validation": {
+      "queries": 817744,
+      "query_sha256": "6aa28bedbaf612c3a7c5a895b24a3be4f18d2c8264a439846427d943b289c597",
+      "started_utc": "2026-10-22T05:26:55.192175+00:00",
+      "GNU_wall_seconds": 51542.0,
+      "GNU_user_seconds": 1227025.36,
+      "GNU_system_seconds": 7269.47,
+      "GNU_max_RSS_KiB": 214106076,
+      "algorithms": [
+        "Double-indexed"
+      ],
+      "allocated_compute_EBS_IPv4_USD": 37.95792692582717,
+      "allocated_USD_per_query": 4.641786051114673e-05,
+      "search_seconds_before_volume_expansion": 51286.807825,
+      "search_seconds_after_volume_expansion": 255.1921749999965,
+      "logged_stage_groups": {
+        "reference_loading": {
+          "logged_seconds": 3434.7229999999986,
+          "labels": [
+            "Loading reference sequences"
+          ]
+        },
+        "reference_masking": {
+          "logged_seconds": 515.0070000000001,
+          "labels": [
+            "Masking reference"
+          ]
+        },
+        "reference_histograms_and_seed_arrays": {
+          "logged_seconds": 18764.750999999993,
+          "labels": [
+            "Building reference histograms",
+            "Building reference seed array"
+          ]
+        },
+        "query_histograms_and_seed_arrays": {
+          "logged_seconds": 1271.2380000000162,
+          "labels": [
+            "Building query histograms",
+            "Building query seed array"
+          ]
+        },
+        "hash_join": {
+          "logged_seconds": 2623.229999999995,
+          "labels": [
+            "Computing hash join"
+          ]
+        },
+        "alignment_search_and_computation": {
+          "logged_seconds": 23087.561,
+          "labels": [
+            "Searching alignments",
+            "Computing alignments"
+          ]
+        }
+      },
+      "input_hashes": {
+        "search-protocol.json": "87565c16fa4cb86042616af4ea788000d13780266eb536d90922fad7fbaae320",
+        "nr-search.log": "280cc8781f4e23862ff7ad7fce530cefd5e84c0db9b2296ec53a1b3ca7359a1f",
+        "stage-timings.json": "9d58e558b5e8e4f62e7924aa839d6c368fe9e56f2d318db4271eb6f06cb2aa27"
+      }
+    },
+    "seed-nr-standalone": {
+      "queries": 1436,
+      "query_sha256": "b5d74d481f0291a671af931ff0e14f13b97f58f38ecd85b2bd2950e6cb3b841a",
+      "started_utc": "2026-10-22T21:09:26.819943+00:00",
+      "GNU_wall_seconds": 10468.0,
+      "GNU_user_seconds": 200175.33,
+      "GNU_system_seconds": 7902.87,
+      "GNU_max_RSS_KiB": 91528304,
+      "algorithms": [
+        "Query-indexed"
+      ],
+      "allocated_compute_EBS_IPv4_USD": 7.79142286419753,
+      "allocated_USD_per_query": 0.005425781938856219,
+      "search_seconds_before_volume_expansion": 0,
+      "search_seconds_after_volume_expansion": 10468.0,
+      "logged_stage_groups": {
+        "reference_loading": {
+          "logged_seconds": 3381.0660000000016,
+          "labels": [
+            "Loading reference sequences"
+          ]
+        },
+        "reference_masking": {
+          "logged_seconds": 0,
+          "labels": [
+            "Masking reference"
+          ]
+        },
+        "reference_histograms_and_seed_arrays": {
+          "logged_seconds": 5675.055000000024,
+          "labels": [
+            "Building reference histograms",
+            "Building reference seed array"
+          ]
+        },
+        "query_histograms_and_seed_arrays": {
+          "logged_seconds": 14.247999999997607,
+          "labels": [
+            "Building query histograms",
+            "Building query seed array"
+          ]
+        },
+        "hash_join": {
+          "logged_seconds": 139.16300000000126,
+          "labels": [
+            "Computing hash join"
+          ]
+        },
+        "alignment_search_and_computation": {
+          "logged_seconds": 1042.301999999985,
+          "labels": [
+            "Searching alignments",
+            "Computing alignments"
+          ]
+        }
+      },
+      "input_hashes": {
+        "search-protocol.json": "fb78f94c916211b1b5e837bbb1e0805d813e45c0fa67e6d1b96b90a28af2553c",
+        "nr-search.log": "a9decac382a1a29ab3c7128910f0f943bdff9bfeca358a817a3ffb7ca6d2e565",
+        "stage-timings.json": "8b7a5ff6686dc236a7d45b561d562938857293ad9f7dc13286de9e84e690c29a"
+      }
+    }
+  },
+  "reproducibility": {
+    "pairs": 746,
+    "queries": 1436,
+    "alignment_multiset_equal": false,
+    "pooled_alignment_rows": 5942196,
+    "standalone_alignment_rows": 5678862,
+    "alignment_rows_only_pooled": 284447,
+    "alignment_rows_only_standalone": 21113,
+    "raw_alignment_differing_query_mates": 639,
+    "raw_alignment_differing_pair_queries": 407,
+    "pairs_with_summary_difference": 78,
+    "status_disagreements": 47,
+    "taxid_disagreements": 74,
+    "interpretation": "Same query bytes, executable, comprehensive reference and frozen search parameters; only the surrounding query pool changes. Standalone results are secondary and never replace pooled primary results."
+  },
+  "rates_USD_per_hour": {
+    "1280": 2.651066666666667,
+    "1536": 2.679511111111111
+  },
+  "limits": [
+    "The same executable options automatically selected different search algorithms as query context changed. This experiment does not isolate a batch-size effect from that automatic mode choice.",
+    "Each cost is an allocation of GNU search elapsed time on r7a.8xlarge, plus provisioned gp3 and public IPv4. It excludes analysis, backup, staging, idle time, S3, requests, transfer and taxes.",
+    "Use the experiment lifetime ledger for cap accounting; do not add these search allocations to that ledger.",
+    "Original protocol rates used 1280GiB, a730-hour month and omitted IPv4. This supplementary record applies the recorded1280-to1536GiB expansion and a conservative720-hour month without editing those protocols.",
+    "Completed_utc includes downstream analysis and upload; GNU elapsed search time is used instead.",
+    "Logged stage durations are elapsed stage measurements, not CPU time, and may not sum exactly to GNU elapsed time.",
+    "No persistent protein index was built for these searches. Reference seed structures were rebuilt during each search.",
+    "Pooled primary classifications remain the reported primary evidence; standalone results are a separate reproducibility measurement."
+  ]
+}
