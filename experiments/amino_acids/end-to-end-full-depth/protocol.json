@@ -5,7 +5,8 @@
   "references": {
     "viral_alignment": "Same exact DUST-masked viral genome snapshot for Bowtie2 and six-frame translated DIAMOND index; verify source hashes. No curated reduction.",
     "validation": "Same comprehensive frozen core_nt snapshot in every arm; no NR or tblastx in this comparison.",
-    "prescreen": "Retain original NT24 baseline. Use NT24 OR AA12 for both controlled alignment arms, because an upstream NT24-only gate can discard divergent reads before either aligner sees them."
+    "prescreen": "Retain original NT24 baseline. Use NT24 OR AA12 for both controlled alignment arms, because an upstream NT24-only gate can discard divergent reads before either aligner sees them.",
+    "prescreen_masking": "NT24 uses the original production DUST-masked index. AA12 uses the previously established human-masked version of the same viral genome collection. The screen-control contrast measures this combined added prescreen, including its masking choice. The protein-vs-screen-control contrast shares that exact union input and isolates the alignment change; both aligners use the identical DUST-masked genome snapshot."
   },
   "logical_outputs": [
     {
