@@ -35,7 +35,7 @@ for directory in samples:
     sample=directory.name;callsets={};pairsets={};readsets={}
     for arm in arms:
         path=directory/(arm+'-downstream')/'output/results_downstream'/f'{sample}_validation_hits.tsv.gz'
-        metrics=collections.Counter();candidate=collections.defaultdict(set);validated=collections.defaultdict(set);all_pairs=set();compact={}
+        metrics=collections.Counter();candidate=collections.defaultdict(set);validated=collections.defaultdict(set);artificial_validation=collections.defaultdict(set);all_pairs=set();compact={}
         with gzip.open(path,'rt') as f:
             for r in csv.DictReader(f,delimiter='\t'):
                 sid=r['seq_id'];assert sid not in all_pairs;all_pairs.add(sid)
@@ -51,12 +51,16 @@ for directory in samples:
                     'species_concordant_validated':r['validation_status']=='aligned' and species(r['validation_staxid_lca'])==t,**compact[sid]})
                 if r['validation_status']=='aligned' and species(r['validation_staxid_lca'])==t:
                     validated[t].add(sid);metrics['species_concordant_validated_exemplars']+=1
+                    if r.get('validation_staxid_lca_artificial') not in (None,'NA',''):
+                        artificial_validation[t].add(sid)
         pairsets[arm]=all_pairs;readsets[arm]=compact
         for t in sorted(set(candidate)|set(validated)):
             note=annotations.get(t,{})
             species_rows.append({'sample':sample,'arm':arm,'species_taxid':t,'name':note.get('name',''),
                 'human_annotation':note.get('infection_status_human','NA'),'candidate_exemplars':len(candidate[t]),
-                'species_concordant_validated_exemplars':len(validated[t]),'candidate_call':len(candidate[t])>=3,
+                'species_concordant_validated_exemplars':len(validated[t]),
+                'validated_exemplars_with_artificial_reference_evidence':len(artificial_validation[t]),
+                'validated_exemplars_without_artificial_reference_evidence':len(validated[t]-artificial_validation[t]),'candidate_call':len(candidate[t])>=3,
                 'validated_call':len(validated[t])>=3})
         callsets[arm]={'candidate':{t for t,x in candidate.items() if len(x)>=3},'validated':{t for t,x in validated.items() if len(x)>=3}}
         summary.append({'sample':sample,'arm':arm,**metrics,'candidate_species_calls':len(callsets[arm]['candidate']),
@@ -97,7 +101,7 @@ receipt={'analysis_source_commit':a.analysis_commit,'read_disagreement_rows':dis
     'calling_rule':'Descriptive threshold of at least three production alignment-and-similarity duplicate exemplars per species per sample.',
     'validated_rule':'Each of at least three exemplars has its own aligned validation result whose natural LCA resolves to the same species as its viral alignment.',
     'limits':['Validation uses production merged/joined queries, not the earlier NR both-mate criterion.',
-              'Production separates artificial references when computing the natural LCA; combined and artificial fields remain in the full read-level output.',
+              'Production separates artificial references when computing the natural LCA; combined and artificial fields remain in the full read-level output. Species support separately counts validated exemplars with artificial-reference evidence; this annotation does not change the frozen call rule and is not proof of laboratory origin.',
               'Not-sampled and no-alignment rows are retained and are not reclassified as false positives.',
               'Human-infection annotations are copied from the frozen reference and are not evidence of infection.',
               'Absence of a validated call under cap20 is not absence of that species from the sample.'],

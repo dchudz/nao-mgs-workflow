@@ -12,7 +12,8 @@ class SummaryTests(unittest.TestCase):
             d=root/'cohort/sample';d.mkdir(parents=True);(d/'complete.json').write_text('{"all_four_outputs_completed":true}')
             def row(sid,t,status='aligned',exemplar=None):
                 return dict(seq_id=sid,prim_align_dup_exemplar=exemplar or sid,sim_dup_exemplar=exemplar or sid,
-                            aligner_taxid_lca=str(t),validation_staxid_lca=str(t) if status=='aligned' else 'NA',validation_status=status)
+                            aligner_taxid_lca=str(t),validation_staxid_lca=str(t) if status=='aligned' else 'NA',
+                            validation_staxid_lca_artificial='81077' if sid=='a0' else 'NA',validation_status=status)
             baseline=[row(f'a{i}',112) for i in range(2)]+[row(f'b{i}',222) for i in range(3)]
             variant=[row(f'a{i}',112) for i in range(2)]+[row('a2',112,'not_sampled'),row('a-duplicate',112,exemplar='a0')]+[row(f'b{i}',222) for i in range(2)]+[row('unresolved',100)]
             for arm in ['production','validation_control','screen_control','protein_variant']:
@@ -27,6 +28,10 @@ class SummaryTests(unittest.TestCase):
             metric=next(r for r in result['metrics'] if r['arm']=='protein_variant')
             self.assertEqual(metric['species_concordant_validated_exemplars'],4)
             self.assertEqual(metric['exemplars_without_species_resolution'],1)
+            with (root/'cohort/analysis/species-support.tsv').open() as f:
+                support=next(r for r in csv.DictReader(f,delimiter='\t') if r['arm']=='protein_variant' and r['species_taxid']=='111')
+            self.assertEqual(support['validated_exemplars_with_artificial_reference_evidence'],'1')
+            self.assertEqual(support['validated_exemplars_without_artificial_reference_evidence'],'1')
             with gzip.open(root/'cohort/analysis/call-evidence.tsv.gz','rt') as f:
                 evidence={r['seq_id']:r for r in csv.DictReader(f,delimiter='\t') if r['arm']=='protein_variant'}
             self.assertNotIn('a-duplicate',evidence)
