@@ -1,0 +1,9 @@
+{
+  "checked_utc": "2026-10-23T13:55:45.686600+00:00",
+  "bucket_versioning": {},
+  "multipart_uploads": {
+    "runs/amino-acid-20261021/": [],
+    "runs/translated-core-nt-20261022/": []
+  },
+  "objects_or_uploads_changed": false
+}

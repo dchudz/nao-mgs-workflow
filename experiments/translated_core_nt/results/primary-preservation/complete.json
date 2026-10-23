@@ -1,0 +1,83 @@
+{
+  "completed_utc": "2026-10-23T13:52:07.995663+00:00",
+  "account": "839993661825",
+  "source_sha256": "013bbb9b0a6222853fe1223d54b9244f0299dfe1f6991ed6d1abdac1aa1bb7ea",
+  "archives": [
+    {
+      "scope": "cohort-storage",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/cohort-storage.tar.gz",
+      "bytes": 57472888143,
+      "sha256": "d8ba81a7efabf769cf76f3ae709f4f6b28fd29334604dd36ed449060dba283e5",
+      "independent_download_hash_verified": true
+    },
+    {
+      "scope": "cohort",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/cohort.tar.gz",
+      "bytes": 10101954114,
+      "sha256": "6d95869f766c69e0ddc7a1e34a3fd532cbfad3177b62f1dedde5ad586b242534",
+      "independent_download_hash_verified": true
+    },
+    {
+      "scope": "full",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/full.tar.gz",
+      "bytes": 4855571159,
+      "sha256": "95c8e5cf8731b63f2700fb7e0efe3b8e8e69faeeba46a821b4b7a65e98965fc2",
+      "independent_download_hash_verified": true
+    },
+    {
+      "scope": "pilot",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/pilot.tar.gz",
+      "bytes": 2425364830,
+      "sha256": "94fe91adbee0e67600e132f1f965030e8a022444512a0f65cf48f3ebef7fe3fc",
+      "independent_download_hash_verified": true
+    },
+    {
+      "scope": "protein",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/protein.tar.gz",
+      "bytes": 7837859310,
+      "sha256": "0e4a0d43a07cd4398e7d343ecce23ec1a6a28bd17d669e299c988ece8f033377",
+      "independent_download_hash_verified": true
+    },
+    {
+      "scope": "reference-results",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/reference-results.tar.gz",
+      "bytes": 37835281128,
+      "sha256": "31f88652684a988dad9e39b2bc2115cc24c1408ec9e951e07d9360eefedd35da",
+      "independent_download_hash_verified": true
+    },
+    {
+      "scope": "null-controls",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/null-controls.tar.gz",
+      "bytes": 24251178,
+      "sha256": "8b8dea9556f452f2b5346c14e78bb2128afe7b221e5c0681dd86e2ac4e0eec37",
+      "independent_download_hash_verified": true
+    },
+    {
+      "scope": "metadata-and-inputs",
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/metadata-and-inputs.tar.gz",
+      "bytes": 3504374922,
+      "sha256": "94c7bf2e13e0bc0d844ddeeec3d7cbc0b6b392d01a820fa70989f1c2d2ea3b37",
+      "independent_download_hash_verified": true
+    }
+  ],
+  "scope_receipts": [
+    "cohort-storage.json",
+    "cohort.json",
+    "full.json",
+    "pilot.json",
+    "protein.json",
+    "reference-results.json",
+    "null-controls.json",
+    "metadata-and-inputs.json"
+  ],
+  "frozen_core_reference_prefix": "runs/translated-core-nt-20261022/frozen-core-nt/",
+  "all_scientific_archives_download_hash_verified": true,
+  "limits": [
+    "Transient work directories and public SRA download caches are excluded.",
+    "Reference blast_db is preserved separately with recorded SHA and end-to-end CRC verification; no archived-reference restore was performed.",
+    "Existing S3 scientific backups are unchanged. This closure adds consolidated source-hashed archives.",
+    "Symlinks are retained as links with their original target recorded. Inspect their receipts before resource retirement.",
+    "The first verified cohort-storage scope predates the parallel-compression helper; later scope receipts identify their source and helper hashes.",
+    "No resources are stopped, deleted or made public."
+  ]
+}

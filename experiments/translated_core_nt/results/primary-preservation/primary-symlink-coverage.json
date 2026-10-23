@@ -1,0 +1,379 @@
+{
+  "verified_utc": "2026-10-23T13:55:44.669559+00:00",
+  "source_sha256": "7d756d374ea74b987f815787227278eeee8e1e16ce3eb2d13886d3f5eabb289e",
+  "closure_sha256": "62803c01671cfca6bd3fb8296c8a9b962105b3d84cc22951ae56645c689e5de5",
+  "links": 61,
+  "coverage": [
+    {
+      "path": "cohort-storage/analysis-inputs-508/b001",
+      "target": "cohort-storage/batches/b001",
+      "included_target_files": 210,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/b002",
+      "target": "cohort-storage/batches/b002",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r006",
+      "target": "cohort-storage/batches/r006",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r007",
+      "target": "cohort-storage/batches/r007",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r008",
+      "target": "cohort-storage/batches/r008",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r009",
+      "target": "cohort-storage/batches/r009",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r010",
+      "target": "cohort-storage/batches/r010",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r011",
+      "target": "cohort-storage/batches/r011",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r012",
+      "target": "cohort-storage/batches/r012",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r013",
+      "target": "cohort-storage/batches/r013",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r014",
+      "target": "cohort-storage/batches/r014",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r015",
+      "target": "cohort-storage/batches/r015",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r016",
+      "target": "cohort-storage/batches/r016",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r017",
+      "target": "cohort-storage/batches/r017",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r018",
+      "target": "cohort-storage/batches/r018",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r019",
+      "target": "cohort-storage/batches/r019",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r020",
+      "target": "cohort-storage/batches/r020",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/r021",
+      "target": "cohort-storage/batches/r021",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/s001",
+      "target": "cohort-storage/batches/s001",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/s002",
+      "target": "cohort-storage/batches/s002",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-508/s003",
+      "target": "cohort-storage/batches/s003",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/b001",
+      "target": "cohort-storage/batches/b001",
+      "included_target_files": 210,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/b002",
+      "target": "cohort-storage/batches/b002",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r006",
+      "target": "cohort-storage/batches/r006",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r007",
+      "target": "cohort-storage/batches/r007",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r008",
+      "target": "cohort-storage/batches/r008",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r009",
+      "target": "cohort-storage/batches/r009",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r010",
+      "target": "cohort-storage/batches/r010",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r011",
+      "target": "cohort-storage/batches/r011",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r012",
+      "target": "cohort-storage/batches/r012",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r013",
+      "target": "cohort-storage/batches/r013",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r014",
+      "target": "cohort-storage/batches/r014",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r015",
+      "target": "cohort-storage/batches/r015",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r016",
+      "target": "cohort-storage/batches/r016",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r017",
+      "target": "cohort-storage/batches/r017",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r018",
+      "target": "cohort-storage/batches/r018",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r019",
+      "target": "cohort-storage/batches/r019",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r020",
+      "target": "cohort-storage/batches/r020",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r021",
+      "target": "cohort-storage/batches/r021",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r022",
+      "target": "cohort-storage/batches/r022",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/r023",
+      "target": "cohort-storage/batches/r023",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/s001",
+      "target": "cohort-storage/batches/s001",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/s002",
+      "target": "cohort-storage/batches/s002",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/analysis-inputs-558/s003",
+      "target": "cohort-storage/batches/s003",
+      "included_target_files": 882,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "cohort-storage/native-validation-summary-check/output",
+      "target": "pilot/validation",
+      "included_target_files": 2854,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "protein/diamond",
+      "target": "protein/tools/diamond",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "assets/nucleaze",
+      "target": "tools/nucleaze",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "experiments/amino_acids/bin",
+      "target": "bin",
+      "included_target_files": 40,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "experiments/amino_acids/lib",
+      "target": "lib",
+      "included_target_files": 2,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_adapter_stats_cleaned.schema.json",
+      "target": "schemas/qc_adapter_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_adapter_stats_raw.schema.json",
+      "target": "schemas/qc_adapter_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_basic_stats_cleaned.schema.json",
+      "target": "schemas/qc_basic_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_basic_stats_raw.schema.json",
+      "target": "schemas/qc_basic_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_length_stats_cleaned.schema.json",
+      "target": "schemas/qc_length_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_length_stats_raw.schema.json",
+      "target": "schemas/qc_length_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_overrepresented_cleaned.schema.json",
+      "target": "schemas/qc_overrepresented.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_overrepresented_raw.schema.json",
+      "target": "schemas/qc_overrepresented.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_quality_base_stats_cleaned.schema.json",
+      "target": "schemas/qc_quality_base_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_quality_base_stats_raw.schema.json",
+      "target": "schemas/qc_quality_base_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_quality_sequence_stats_cleaned.schema.json",
+      "target": "schemas/qc_quality_sequence_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    },
+    {
+      "path": "schemas/qc_quality_sequence_stats_raw.schema.json",
+      "target": "schemas/qc_quality_sequence_stats.schema.json",
+      "included_target_files": 1,
+      "documented_excluded_target_files": []
+    }
+  ],
+  "unpreserved_existing_scientific_targets": [],
+  "limits": [
+    "Transient work and cache exclusions retain their explicit archive reasons; no scientific target is implicitly excused.",
+    "File contents are verified by the source-hashed independently downloaded archives, not rehashed by this path-coverage check."
+  ]
+}
