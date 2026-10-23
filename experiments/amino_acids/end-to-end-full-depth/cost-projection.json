@@ -1,0 +1,66 @@
+{
+  "status": "Conditional planning scenarios, not measured end-to-end cost bounds or probability intervals",
+  "new_budget_cap_USD": 500,
+  "prior_modeled_worker_spend_this_cap_USD": 131.24037225784934,
+  "remainder_before_storage_transfer_requests_USD": 368.75962774215066,
+  "proposed_additional_execution_stop_USD": 300,
+  "reserve_outside_execution_stop_USD": 68.75962774215066,
+  "rate_basis_USD_per_worker_hour": 3.6365,
+  "rate_basis": "Previously measured 16-vCPU x2iedn.4xlarge allocation including EBS and IPv4; live EC2 pricing API denied pricing:GetProducts. No current machine-price quote claimed.",
+  "scenarios": [
+    {
+      "samples": 10,
+      "input_pairs_metadata": 9474220155,
+      "compressed_FASTQ_TB_decimal": 0.932294876758,
+      "measured_component_busy_worker_cost_range_USD": [
+        73.03592875088349,
+        90.99092841313897
+      ],
+      "assumed_other_worker_hours_range": [
+        12.0,
+        36.0
+      ],
+      "assumed_total_sensitive_validation_queries_range": [
+        2000.0,
+        10000.0
+      ],
+      "assumed_nonworker_reserve_USD": 15,
+      "conditional_total_USD_range": [
+        138.2530679750214,
+        342.3841876401585
+      ]
+    },
+    {
+      "samples": 20,
+      "input_pairs_metadata": 20477246365,
+      "compressed_FASTQ_TB_decimal": 2.159055397295,
+      "measured_component_busy_worker_cost_range_USD": [
+        157.85728873306172,
+        196.66459377267083
+      ],
+      "assumed_other_worker_hours_range": [
+        25.93637812504474,
+        77.80913437513422
+      ],
+      "assumed_total_sensitive_validation_queries_range": [
+        4000.0,
+        20000.0
+      ],
+      "assumed_nonworker_reserve_USD": 15,
+      "conditional_total_USD_range": [
+        280.33320623306275,
+        705.5760293818854
+      ]
+    }
+  ],
+  "limits": [
+    "The busy-worker term assumes the measured CPU time transfers linearly to full depth and keeps 16 CPUs busy; it excludes initial NT24 screening/native alignments and all non-search work.",
+    "Other-worker-hours are assumptions covering acquisition, reference staging, native/control alignment, production adapters, filtering, duplicate marking, analysis and idle/inefficiency; they are not measurements.",
+    "Sensitive BLAST rates span two existing panels with different scheduling and query composition; neither predicts production merged-read costs reliably.",
+    "Merged/joined production queries differ from the 464 separately searched mates. The 20-read cap is per species/group, not a global budget bound.",
+    "Deduplication, candidate density and data availability can change at full depth. Paired input totals and object sizes must be checked.",
+    "Full RUN QC/profiling branches and final downstream outputs are required for a literal end-to-end claim; any omitted branches must be explicitly named.",
+    "First sample is a full-depth engineering and costing gate within the frozen 10; do not change selection based on its biology.",
+    "No assumption of authorization to exceed the current cap; terminate/preserve before the hard spend boundary."
+  ]
+}
