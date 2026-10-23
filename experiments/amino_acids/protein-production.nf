@@ -41,13 +41,13 @@ process PROTEIN_CANDIDATES {
     input:
         tuple val(sample), path(hits), path(metadata), path(members), path(reads)
     output:
-        tuple val(sample), path('candidates.fastq'), emit: reads
+        tuple val(sample), path('candidates.fastq.gz'), emit: reads
         tuple val(sample), path(hits), path(metadata), path(members), emit: evidence
     script:
         """
         python ${params.pipeline_root}/experiments/amino_acids/diamond_adapter.py --extract-only \\
             --hits ${hits} --query-metadata ${metadata} --members ${members} --reads ${reads} \\
-            --sample ${sample} --reference ${params.ref_dir} --genome-lengths ${params.genome_lengths} --output candidates.fastq
+            --sample ${sample} --reference ${params.ref_dir} --genome-lengths ${params.genome_lengths} --output candidates.fastq.gz
         """
 }
 
