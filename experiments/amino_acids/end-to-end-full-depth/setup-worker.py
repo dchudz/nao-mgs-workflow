@@ -80,6 +80,6 @@ identity=json.loads(subprocess.check_output(AWS+['sts','get-caller-identity'],te
 with concurrent.futures.ThreadPoolExecutor(3) as pool:
     tasks=[pool.submit(f) for f in [references,protein,build]]
     for task in tasks:task.result()
-run('aa-index',['docker','run','--rm','-v',str(R)+':'+str(R),'rust:1.88-bookworm',R/'rust-tools/target/release/screen_amino_acids','index','--reference',R/'reference/virus-genomes-human-masked.fasta.gz','--output',R/'reference/virus.aa12.bin','--k','12'])
-(D/'complete.json').write_text(json.dumps({'completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'verified':True}))
+run('aa-index',['docker','run','--rm','--network','none','-v',str(R)+':'+str(R),'rust:1.88-bookworm',R/'rust-tools/target/release/screen_amino_acids','index','--reference',R/'reference/virus-genomes-human-masked.fasta.gz','--output',R/'reference/virus.aa12.bin','--k','12'])
+(D/'complete.json').write_text(json.dumps({'completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'verified':True,'tool_sha256':{str(p.relative_to(R)):sha(p) for p in [R/'nextflow',R/'protein/tools/diamond',R/'rust-tools/target/release/screen_amino_acids',R/'rust-tools/target/release/mark_duplicates',R/'rust-tools/target/release/mark_duplicates_similarity']}}))
 run('backup-setup',AWS+['s3','cp',str(D)+'/',PREFIX+'setup/','--recursive','--exclude','*.tar.gz','--only-show-errors'])
