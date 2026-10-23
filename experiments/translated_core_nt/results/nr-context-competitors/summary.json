@@ -1,0 +1,40 @@
+{
+  "counts": {
+    "original_classifications_reproduced": 1492,
+    "pairs": 746,
+    "mixed_to_viral_pairs": 35,
+    "mixed_to_viral_with_prior_artificial_only_nonviral": 28,
+    "mixed_to_viral_with_prior_cellular": 7,
+    "mixed_to_viral_with_prior_human": 2,
+    "mixed_to_viral_with_prior_other_known_nonviral": 0,
+    "natural_status_changes": 16,
+    "original_status_transitions": {
+      "mixed_viral_nonviral -> viral_only": 35,
+      "viral_only -> no_alignment": 6,
+      "mixed_viral_nonviral -> no_alignment": 3,
+      "viral_only -> mixed_viral_nonviral": 3
+    },
+    "changed_natural_status_transitions": {
+      "viral_only -> no_alignment": 8,
+      "mixed_viral_natural_nonviral -> viral_only": 7,
+      "mixed_viral_natural_nonviral -> no_alignment": 1
+    }
+  },
+  "source_sha256": "d879f7ce014c49b8331f880fb8b46e1b8a7d7941da6c98fbdb5d8de00ee00415",
+  "input_hashes": {
+    "/Users/david/Documents/ChatGPT/pipeline/.tmp/translated-core-nt-20261022/NR-context-local-evidence/download-receipt.json": "11e8b9794b73f9b187b2b97abac3f7a2ee36d59d120e27a30aeaa5ddf117a27d",
+    "/Users/david/Documents/ChatGPT/pipeline/.tmp/translated-core-nt-20261022/NR-context-local-evidence/pooled-seed-validation.tsv": "349300dfa3b6ca2096a641c600059a69607b7ad00d88a0669f289cb508311051",
+    "/Users/david/Documents/ChatGPT/pipeline/.tmp/translated-core-nt-20261022/seed-nr-standalone/seed-validation.tsv": "9f2c202ba3415da35fcf8e7dd1fb42ed6bab35545a1ec685130cfc40bfa046fc",
+    "/Users/david/Documents/ChatGPT/pipeline/.tmp/translated-core-nt-20261022/NR-context-local-evidence/pooled-cache/query-calls.tsv": "d7da56ba6dc20d285079fd919e45dd16b15315694055b4a3b0a8d51eeb7e3fce",
+    "/Users/david/Documents/ChatGPT/pipeline/.tmp/translated-core-nt-20261022/NR-context-local-evidence/standalone-cache/query-calls.tsv": "6030c350c017a50c99c4ec6c6f2e641ebe2fe504d82296706621f5ff04e272f9",
+    "experiments/amino_acids/protein-nr-summary.py": "eb1b6cb43054f7ae08f4028e1981bb836e749c02db440e8aebcc922ba67faf19"
+  },
+  "limits": [
+    "Supplementary taxonomy annotation of completed original results; no new sequence search and no changed primary classifications.",
+    "The original pair classifier exactly reproduces all1492 saved context-specific classifications and their score/taxon-count fields from the compact evidence.",
+    "Cellular groups use bacterial, archaeal and eukaryotic ancestry. Artificial constructs and other known nonviral taxa are separate; cellular and artificial sets need not cover every known nonviral taxon.",
+    "Counts of taxa describe the returned near-best set, not all competing sequences in NR or the true source organism.",
+    "These746 pairs are a selected diagnostic panel, not a prevalence sample or the complete200-sample candidate set.",
+    "Both query context and automatic search mode differ. The fixed-mode repeat remains the separate causal control."
+  ]
+}

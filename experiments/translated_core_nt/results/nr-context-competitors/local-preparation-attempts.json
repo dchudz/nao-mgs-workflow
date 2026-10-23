@@ -1,0 +1,24 @@
+{
+  "recorded_utc": "2026-10-23T00:27:48.232355+00:00",
+  "attempts": [
+    {
+      "reader": "Existing Linux C++ compactor compiled with macOS c++ -O2 -std=c++17",
+      "status": "compile_failed",
+      "reason": "macOS libc++ does not supply floating-point std::from_chars; no executable or results produced."
+    },
+    {
+      "analysis_directory": "NR-context-competitor-analysis",
+      "status": "failed_before_output",
+      "reason": "Dependent analysis lacked cache files after compiler failure; empty output directory retained."
+    },
+    {
+      "reader": "Unchanged original Python near_best_query_taxa",
+      "status": "complete",
+      "evidence": [
+        "pooled-cache/complete.json",
+        "standalone-cache/complete.json"
+      ],
+      "classification_parity": "All1492 saved classifications, taxon counts and best scores exactly reproduced."
+    }
+  ]
+}
