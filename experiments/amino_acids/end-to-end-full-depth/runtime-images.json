@@ -1,0 +1,128 @@
+[
+  {
+    "Id": "sha256:0317a8b62a996cae4eed4b4fc564109f98eed2348d5b6258c6db9640b642ea68",
+    "RepoTags": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/coreutils:6f1b16cd645a69b1"
+    ],
+    "RepoDigests": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/coreutils@sha256:922fb40480241cbb67d858c25ae11a09856e6b574c9181ee540484d9a059b196"
+    ],
+    "Created": "2026-08-26T13:28:18.794569078Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:1dc2982f2cd4ba58fff5557629297b31e4ef59c02d8a38594afe9b02f59c4bd2",
+    "RepoTags": [
+      "rust:1.88-bookworm"
+    ],
+    "RepoDigests": [
+      "rust@sha256:af306cfa71d987911a781c37b59d7d67d934f49684058f96cf72079c3626bfe0"
+    ],
+    "Created": "2025-06-26T18:18:04Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:2025cb45cca15781f1b2f040de88da91f762aa97c8f3a5ac27c1c8aafe0266f3",
+    "RepoTags": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast:b7be9dc397b73870"
+    ],
+    "RepoDigests": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/blast@sha256:cb02427c58f3842e371a8dfea28d2a92e311406dbebec2c3a457e375079f2602"
+    ],
+    "Created": "2026-08-21T15:26:08.584200942Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:21f8c4f67a1deff707ffd50a587d72f8b7e2c8a416b955e2231e87b0824e357f",
+    "RepoTags": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/bowtie2_samtools:7d17a28088d75942"
+    ],
+    "RepoDigests": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/bowtie2_samtools@sha256:878a62a071ff7e9ab5ffa4b27382061d4720b7ba131009094e5a6efb843191e9"
+    ],
+    "Created": "2026-08-21T15:27:13.199649199Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:a16f65e3a2ab9783ab097e94c682ca2905728e544e4f52b9a32a2e90496de66c",
+    "RepoTags": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/python:e7c8524f75c0f132"
+    ],
+    "RepoDigests": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/python@sha256:c14b09c7e483786bd1504c5dffd59deb4e992ee38f54009fc09971f96379b9db"
+    ],
+    "Created": "2026-08-21T15:36:28.499066655Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:ac2b6d7c67c6f62122a4b44ca2debf9b7b0dc3ecc439fb9eff09d8131f7b13f4",
+    "RepoTags": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/fastp:f88318ccff4cec1c"
+    ],
+    "RepoDigests": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/fastp@sha256:9c076234911c48213224ed7c73fb6b576ba53eed7cd9c8552adb009178479821"
+    ],
+    "Created": "2026-08-21T15:29:39.841787335Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:bcc19fddceb8c3f792c1b4738b1d0a6bdd9348e4b2ea7dd6ecdbd5c1c613177e",
+    "RepoTags": [],
+    "RepoDigests": [],
+    "Created": "2026-10-23T19:11:02.658662589Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:d1b77ec75262ad7dc27dce983b4294782c84d986529aabe335c94d8f9aab7b12",
+    "RepoTags": [
+      "pipeline-e2e-rust:local"
+    ],
+    "RepoDigests": [],
+    "Created": "2026-10-23T20:05:04.261069807Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:d96274d77b2e8ebd36d00bf662724460b5310cc80d439d36d3c421810a2483a2",
+    "RepoTags": [
+      "rust:1.88-alpine3.21"
+    ],
+    "RepoDigests": [
+      "rust@sha256:54e937b1530d435dc83b94f5a61ef08365127f2fefbb3789712c5d6f55bbb58c"
+    ],
+    "Created": "2025-07-21T21:40:43Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:e849f72dd66cbde0b7259b97b80a9358e68e19e7d8521da04d9ff23af1e543c8",
+    "RepoTags": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/biopython:1f9b81f173ab7358"
+    ],
+    "RepoDigests": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/biopython@sha256:c2eb66019741c7f1dc7613151801bd76d07dbad989eaf6d9ff03d6cfa0251021"
+    ],
+    "Created": "2026-08-21T15:25:23.911388152Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:f4015d1159986015688a8d7b6fd875bd8fabb2fc664d239db61d28e54db8dc4b",
+    "RepoTags": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/pysam_biopython:eff54717b46a6c95"
+    ],
+    "RepoDigests": [
+      "public.ecr.aws/q0n1c7g8/nao-mgs-workflow/pysam_biopython@sha256:f62627fbc395dd4de25513c4292df0ba2e1a2dd8f13684de18fe89f5641b6a03"
+    ],
+    "Created": "2026-08-21T15:35:58.708280223Z",
+    "Architecture": "amd64",
+    "Os": "linux"
+  }
+]
