@@ -3,6 +3,7 @@ import concurrent.futures,datetime,hashlib,json,subprocess
 from pathlib import Path
 r=Path('/home/ec2-user/experiment/protein');root=r/'current-nr';manifest=json.loads((root/'source-manifest.json').read_text());out=r/'reference-archive';out.mkdir(exist_ok=True)
 assert (r/'seed-nr-standalone/complete.json').exists(),'Do not compete with the measured NR search'
+assert not subprocess.run(['pgrep','-x','diamond'],capture_output=True).stdout.strip(),'A measured DIAMOND search is still active'
 a=['aws','--profile','pipeline-codex','--region','us-east-1'];public=['aws','--no-sign-request','--region','us-east-1'];bucket='pipeline-lab-839993661825-us-east-1';prefix='runs/amino-acid-20261021/frozen-references/nr-20261017/'
 assert subprocess.check_output(a+['sts','get-caller-identity','--query','Account','--output','text'],text=True).strip()=='839993661825'
 subprocess.run(a+['s3api','head-bucket','--bucket',bucket,'--expected-bucket-owner','839993661825'],check=True,stdout=subprocess.DEVNULL)

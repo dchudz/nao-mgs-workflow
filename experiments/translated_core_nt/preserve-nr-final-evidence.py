@@ -3,6 +3,7 @@ import datetime,hashlib,io,json,os,subprocess,tarfile,tempfile
 from pathlib import Path
 r=Path('/home/ec2-user/experiment');protein=r/'protein';out=r/'nr-closure-final';out.mkdir(exist_ok=True)
 assert (protein/'seed-nr-standalone/complete.json').exists() and (protein/'protein232-nr-evidence/complete.json').exists()
+assert not subprocess.run(['pgrep','-x','diamond'],capture_output=True).stdout.strip(),'A measured DIAMOND search is still active'
 archive=json.loads((protein/'reference-archive/complete.json').read_text());assert archive['verified'] and len(archive['files'])==1619
 raw=json.loads((protein/'nr-query-call-full/backup-download-verification.json').read_text());assert raw['all_download_hashes_verified']
 parity=json.loads((protein/'full-aggregation-parity.json').read_text());assert parity['byte_identical'] and parity['pair_rows']==406173
