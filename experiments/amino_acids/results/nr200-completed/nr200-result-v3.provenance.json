@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-23T08:17:18.705051+00:00",
+  "previous_report_sha256": "ca88ef5b1f1612fca5fc61b127feb0adb70c5753d16c912214d2e891f0a76578",
+  "report_sha256": "ce102f923e06bba211949428eb8ac1bd923e842cc7a27813feb984d00034d804",
+  "all_original_tables_byte_identical": true,
+  "table_count": 6,
+  "change": "Completed mode-control and reference-label inspection replace pending notes; original candidate counts remain unchanged."
+}
