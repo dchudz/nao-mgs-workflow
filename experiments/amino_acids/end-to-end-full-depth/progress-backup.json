@@ -1,0 +1,14 @@
+[
+  {
+    "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/source/dae102c2a96aa99d3d5bf3b6fb20dc38b84d5ddc/progress-source.tar.gz",
+    "sha256": "53339e19559a090a215f0294bcbdcc2d488663cd5cc6cfb192aa17ff3b754416",
+    "bytes": 21206357,
+    "readback_verified": true
+  },
+  {
+    "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/source/dae102c2a96aa99d3d5bf3b6fb20dc38b84d5ddc/progress-history.bundle",
+    "sha256": "af3e001563140aaede71ec40781404c8317e7fceeba34d226c543f81ec4047ec",
+    "bytes": 77455517,
+    "readback_verified": true
+  }
+]

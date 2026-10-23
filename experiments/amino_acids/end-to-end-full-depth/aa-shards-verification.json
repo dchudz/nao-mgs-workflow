@@ -1,0 +1,179 @@
+{
+  "verified": true,
+  "sample": "SRR37076045",
+  "pairs": 5000000,
+  "parts": 8,
+  "pairs_per_part": 625000,
+  "threads_per_part": 4,
+  "binary_sha256": "9c8874190f8035a3ef6cb08b0443abeef5fd80674218039265919b20c9809154",
+  "index_sha256": "42ba873c65d5acfb565e762e602ab4767dd1f85d96d2c27d483d931b1cd34e0f",
+  "prepare_seconds": 21.445308836999175,
+  "screen_seconds": 45.25960827400013,
+  "screen_CPU_seconds": 530.279664,
+  "output_sha256": "da4c3f0b269396994243b9e579ea92143800f4e6192e373a527db7d2bece1bd9",
+  "baseline_output_sha256": "da4c3f0b269396994243b9e579ea92143800f4e6192e373a527db7d2bece1bd9",
+  "trials": [
+    {
+      "part": 0,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/00.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/00.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/00.matched.fastq"
+      ],
+      "seconds": 44.7699216710007,
+      "output_sha256": "f965d358446722c481b266202818d71c20028d31ec2b81ae1d6b371d3af0a9f4",
+      "counts": "matched_pairs=1303 total_pairs=625000 amino_k=12"
+    },
+    {
+      "part": 1,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/01.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/01.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/01.matched.fastq"
+      ],
+      "seconds": 44.453295451001395,
+      "output_sha256": "7871652cd2f749857904136286ae04ff32d0d228eaa2433a0e891e249032ae1a",
+      "counts": "matched_pairs=1305 total_pairs=625000 amino_k=12"
+    },
+    {
+      "part": 2,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/02.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/02.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/02.matched.fastq"
+      ],
+      "seconds": 43.97359480299929,
+      "output_sha256": "a2158452683959ae7d4bb819c2e3b15cf7fc36151ff2cf4238c5f0e05a19e5af",
+      "counts": "matched_pairs=1276 total_pairs=625000 amino_k=12"
+    },
+    {
+      "part": 3,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/03.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/03.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/03.matched.fastq"
+      ],
+      "seconds": 44.96265399100048,
+      "output_sha256": "17335c6e8e6e15432259bac6910119129520c5c38a201397959a1c4e4ef23458",
+      "counts": "matched_pairs=1327 total_pairs=625000 amino_k=12"
+    },
+    {
+      "part": 4,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/04.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/04.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/04.matched.fastq"
+      ],
+      "seconds": 43.96371294000164,
+      "output_sha256": "a5054f7f30879e867d234dc2c5f167719627f0b33c871046237e0f8acaffed16",
+      "counts": "matched_pairs=1227 total_pairs=625000 amino_k=12"
+    },
+    {
+      "part": 5,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/05.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/05.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/05.matched.fastq"
+      ],
+      "seconds": 45.253750788000616,
+      "output_sha256": "d40666bcef0ceffdc9d2a18bc15b16e14e9dba2bb2bdc165951210c5d9175ae3",
+      "counts": "matched_pairs=1295 total_pairs=625000 amino_k=12"
+    },
+    {
+      "part": 6,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/06.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/06.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/06.matched.fastq"
+      ],
+      "seconds": 44.41064726500008,
+      "output_sha256": "dbb741acbed804e88794c6a8330ee3e1777897e9264fd83cd9435e18664bc843",
+      "counts": "matched_pairs=1295 total_pairs=625000 amino_k=12"
+    },
+    {
+      "part": 7,
+      "command": [
+        "/home/ec2-user/experiment/rust-tools/target/release/screen_amino_acids",
+        "screen",
+        "--index",
+        "/home/ec2-user/experiment/reference/virus.aa12.bin",
+        "--reads",
+        "/home/ec2-user/experiment/integration/aa-shards/07.R1.fastq",
+        "--reads2",
+        "/home/ec2-user/experiment/integration/aa-shards/07.R2.fastq",
+        "--threads",
+        "4",
+        "--matched",
+        "/home/ec2-user/experiment/integration/aa-shards/07.matched.fastq"
+      ],
+      "seconds": 44.40111307500047,
+      "output_sha256": "1207f9bbaa27849917d033d8e86ae3233579a586d92241f94c74bd0d116792ad",
+      "counts": "matched_pairs=1329 total_pairs=625000 amino_k=12"
+    }
+  ],
+  "scope": "Fixed 5-million-pair prefix, ordered concatenation must equal frozen whole-prefix AA12 output byte for byte. Includes index loading per shard; no scientific parameters changed.",
+  "decision": "Retain the frozen full-input screen for this comparison. Ordered shards preserve output, but this prefix trial took 45.26 seconds screening plus 21.45 seconds input preparation, compared with 63.86 seconds for the prepared plain input. Larger chunks may amortize startup, but that benefit is not measured here."
+}
