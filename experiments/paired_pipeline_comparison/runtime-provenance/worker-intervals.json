@@ -1,0 +1,22 @@
+{
+  "intervals": [
+    {
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T05:07:00+00:00",
+      "ended_utc_upper": "2026-10-24T08:21:32.474962+00:00",
+      "evidence": "primary-stop.json"
+    },
+    {
+      "instance_id": "i-0f5065e3b4f67cfbc",
+      "started_utc": "2026-10-24T06:10:29+00:00",
+      "ended_utc_upper": null,
+      "evidence": "parallel-feasibility/worker-inventory.json"
+    },
+    {
+      "instance_id": "i-0ee9da3f09d197be6",
+      "started_utc": "2026-10-24T06:11:40+00:00",
+      "ended_utc_upper": null,
+      "evidence": "parallel-feasibility/worker-inventory.json"
+    }
+  ]
+}
