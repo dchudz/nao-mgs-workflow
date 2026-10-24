@@ -1,0 +1,41 @@
+{
+  "fixture": "Artificial tree only: root 1 -> 10 -> {11,12}; no sequence data",
+  "cases": [
+    {
+      "aligner_label": 10,
+      "validation_label": 11,
+      "distance_aligner": 0,
+      "distance_validation": 1,
+      "standard_agreement": true,
+      "identical_label": false
+    },
+    {
+      "aligner_label": 11,
+      "validation_label": 10,
+      "distance_aligner": 1,
+      "distance_validation": 0,
+      "standard_agreement": false,
+      "identical_label": false
+    },
+    {
+      "aligner_label": 11,
+      "validation_label": 11,
+      "distance_aligner": 0,
+      "distance_validation": 0,
+      "standard_agreement": true,
+      "identical_label": true
+    },
+    {
+      "aligner_label": 11,
+      "validation_label": 12,
+      "distance_aligner": 1,
+      "distance_validation": 1,
+      "standard_agreement": false,
+      "identical_label": false
+    }
+  ],
+  "source_file": "modules/local/computeTaxidDistance/resources/usr/bin/compute_taxid_distance.py",
+  "source_sha256": "5ea47518e8347520ada709247c90565e0cd16919695dc7005c93ab1f8728a25e",
+  "source_commit": "ec3a8b1728df27976a386cfa561f7a7287d1ba0e",
+  "finding": "Standard agreement uses only the aligner-side distance; a less-specific ancestor label can agree without equal labels. No pipeline or metric code changed."
+}

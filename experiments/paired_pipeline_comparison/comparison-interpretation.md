@@ -44,6 +44,16 @@ it does not turn those clade counts into a validation-filtered positive-call
 table. Output counts and validation evidence must remain separate in the
 comparison. No new binary positivity decision is supplied by this report.
 
+The standard report's `agreement_rate` is directional compatibility, not exact
+label equality. `bin/downstream_metrics.py::validation_agreement` counts
+`validation_distance_aligner == 0`. The distance module measures each label's
+steps to their common ancestor separately. An aligner label at a parent node
+therefore agrees with a validation label at its child; reversing those labels
+does not agree. A four-case artificial-tree check is saved in
+`runtime-provenance/validation-agreement-semantics.json`. Differences in taxonomic
+resolution and in validation sampling can therefore change this rate without
+establishing a change in classification accuracy. The frozen metric is retained.
+
 Profiling and raw-input QC are reused between arms. Consequently, their
 identity is expected and is not independent evidence of reproducibility. Their
 wall time is paid once in this experiment. It must not be omitted from a future
