@@ -1,0 +1,27 @@
+[2026-10-24 07:51:19 UTC] Comparing DOWNSTREAM output: reference=/home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/production-downstream/output candidate=/home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/protein_variant-downstream/output
+[2026-10-24 07:51:19 UTC] Using local results dir /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/production-downstream/output/results_downstream
+[2026-10-24 07:51:19 UTC] Using local results dir /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/protein_variant-downstream/output/results_downstream
+[2026-10-24 07:51:19 UTC] Discovered 1 reference groups, 1 candidate groups.
+[2026-10-24 07:51:19 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/run_identity.tsv (2 rows)
+[2026-10-24 07:51:20 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/file_inventory.tsv (19 rows)
+[2026-10-24 07:51:20 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/column_conformance.tsv (18 rows)
+[2026-10-24 07:51:20 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/qc_numeric.tsv (12 rows)
+[2026-10-24 07:51:20 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/qc_survival.tsv (1 rows)
+[2026-10-24 07:51:20 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/qc_flag_changes.tsv (0 rows)
+[2026-10-24 07:51:20 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/kraken_bray_curtis.tsv (4 rows)
+[2026-10-24 07:51:21 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/kraken_top_movers.tsv (40 rows)
+[2026-10-24 07:51:23 UTC] Parsed taxonomy: 3022547 taxa from taxonomy-nodes.dmp
+[2026-10-24 07:51:23 UTC] No taxonomy-merged.dmp in index; skipping taxid canonicalization (reassignments may include taxid-renumbering artifacts).
+[2026-10-24 07:51:23 UTC] 33710 vertebrate-infecting taxids (status 1, candidate index).
+[2026-10-24 07:51:23 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/viral_read_status.tsv (2 rows)
+[2026-10-24 07:51:24 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/viral_reassignment_buckets.tsv (24 rows)
+[2026-10-24 07:51:24 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/viral_reassignment_concentration.tsv (2 rows)
+[2026-10-24 07:51:24 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/viral_reassignment_pairs.tsv (98 rows)
+[2026-10-24 07:51:32 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/clade_rank_shares.tsv (74 rows)
+[2026-10-24 07:51:32 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/viral_validation_agreement.tsv (1 rows)
+[2026-10-24 07:51:32 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/viral_validation_agreement_by_taxon.tsv (97 rows)
+[2026-10-24 07:51:32 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/vertebrate_status_flips.tsv (0 rows)
+[2026-10-24 07:51:32 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/flags.tsv (5 rows)
+[2026-10-24 07:51:32 UTC] Wrote /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard/skipped_groups.tsv (0 rows)
+[2026-10-24 07:51:32 UTC] 5 flags raised across all focuses.
+[2026-10-24 07:51:32 UTC] Done. Outputs in /home/ec2-user/paired-study-20261024/comparisons/SRR39695239_5m/comparison-report/standard

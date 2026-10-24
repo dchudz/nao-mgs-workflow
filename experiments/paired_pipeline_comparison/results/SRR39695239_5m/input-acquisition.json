@@ -1,0 +1,107 @@
+{
+  "sample": "SRR39695239",
+  "population_pairs": 1124907212,
+  "sampling": "Exact uniform random pairs without replacement; nested 5M within 25M when applicable",
+  "full_quality": true,
+  "source_sha256": "e1feeda16d603f8329d7f0a69d55444010425cfa957b49bc1b5bbb2b0e167c86",
+  "seed_sha256": "a5d11fea67c6fc66ac2e69fbf3119876fd9556d46e8fd91fd52f917a2b8a65c7",
+  "files": [
+    {
+      "level": "shallow",
+      "mate": 1,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR39695239/shallow/R1.fastq.gz",
+      "pairs": 5000000,
+      "bytes": 368028285,
+      "sha256": "71dbd2cb9a71b490a3e9bf05554188e33d0c93f83a2494a53919a78702cfbb9d"
+    },
+    {
+      "level": "shallow",
+      "mate": 2,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR39695239/shallow/R2.fastq.gz",
+      "pairs": 5000000,
+      "bytes": 365718164,
+      "sha256": "99c3eb5f367e3fe763ec2ff11f03311c34055dd4ca98b4d0f403cbe4458a78fd"
+    },
+    {
+      "level": "deep",
+      "mate": 1,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR39695239/deep/R1.fastq.gz",
+      "pairs": 25000000,
+      "bytes": 1821827092,
+      "sha256": "ab019884b30172d8b71eef976bb06d5a92718a60a75eb56dd5071a3d35e39a7f"
+    },
+    {
+      "level": "deep",
+      "mate": 2,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR39695239/deep/R2.fastq.gz",
+      "pairs": 25000000,
+      "bytes": 1810281025,
+      "sha256": "b9a92035430db0e83109f93fd25416054858f18068258ab1aa0b51202c2adc16"
+    }
+  ],
+  "seconds_excluding_initial_download": 1027.556496329,
+  "vdb_validation_seconds": 166.39762396900005,
+  "completed_utc": "2026-10-24T06:43:47.440251+00:00",
+  "source_bytes": 97133417998,
+  "acquisition_receipt_sha256": "d0f44256dfb6cee7ba301658861ae1baa62716fb32fb7e03269bc1b01acb570a",
+  "download_receipts": [
+    {
+      "command": [
+        "aws",
+        "--profile",
+        "pipeline-codex",
+        "--region",
+        "us-east-1",
+        "s3",
+        "cp",
+        "s3://sra-pub-run-odp/sra/SRR39695239/SRR39695239",
+        "/home/ec2-user/paired-study-20261024/inputs/SRR39695239/SRR39695239.partial",
+        "--no-sign-request",
+        "--only-show-errors"
+      ],
+      "started_utc": "2026-10-24T06:22:55.654692+00:00",
+      "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+      "exit_code": 0,
+      "seconds": 223.576315035,
+      "finished_utc": "2026-10-24T06:26:39.231138+00:00"
+    }
+  ],
+  "download_time_recorded_in_batch": true,
+  "download_seconds": 223.576315035,
+  "backup_record": {
+    "objects": [
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR39695239/shallow/R1.fastq.gz",
+        "bytes": 368028285,
+        "sha256": "71dbd2cb9a71b490a3e9bf05554188e33d0c93f83a2494a53919a78702cfbb9d",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR39695239/shallow/R2.fastq.gz",
+        "bytes": 365718164,
+        "sha256": "99c3eb5f367e3fe763ec2ff11f03311c34055dd4ca98b4d0f403cbe4458a78fd",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR39695239/deep/R1.fastq.gz",
+        "bytes": 1821827092,
+        "sha256": "ab019884b30172d8b71eef976bb06d5a92718a60a75eb56dd5071a3d35e39a7f",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR39695239/deep/R2.fastq.gz",
+        "bytes": 1810281025,
+        "sha256": "b9a92035430db0e83109f93fd25416054858f18068258ab1aa0b51202c2adc16",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR39695239/sampling-provenance.tar.gz",
+        "bytes": 76018548,
+        "sha256": "92b697387cec07d75e9748a0ffae21372839d55b40ebb22e3ee9be5dc8875246",
+        "readback_verified": true
+      }
+    ],
+    "verified_utc": "2026-10-24T06:45:35.560022+00:00"
+  },
+  "interpretation": "Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero."
+}
