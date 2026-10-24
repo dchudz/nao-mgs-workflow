@@ -1,0 +1,15 @@
+group	scope	taxid_reference	taxid_candidate	bucket	n_reads
+SRR39695253_5m	all	1239565	39733	same-family	10
+SRR39695253_5m	all	12456	39733	same-family	2
+SRR39695253_5m	all	1239570	39733	same-family	2
+SRR39695253_5m	all	28875	10912	same-genus	5
+SRR39695253_5m	all	1547495	688449	same-genus	1
+SRR39695253_5m	all	35300	1239565	same-species	1
+SRR39695253_5m	all	1239565	35740	same-species	1
+SRR39695253_5m	vertebrate	1239565	39733	same-family	10
+SRR39695253_5m	vertebrate	12456	39733	same-family	2
+SRR39695253_5m	vertebrate	1239570	39733	same-family	2
+SRR39695253_5m	vertebrate	28875	10912	same-genus	5
+SRR39695253_5m	vertebrate	1547495	688449	same-genus	1
+SRR39695253_5m	vertebrate	35300	1239565	same-species	1
+SRR39695253_5m	vertebrate	1239565	35740	same-species	1
