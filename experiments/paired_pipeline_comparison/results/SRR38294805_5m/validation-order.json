@@ -1,0 +1,7 @@
+{
+  "order": [
+    "protein_variant",
+    "production"
+  ],
+  "reason": "Prespecified execution-order counterbalance; unchanged per-arm search settings."
+}
