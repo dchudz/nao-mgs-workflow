@@ -1,0 +1,22 @@
+{
+  "execution_source_commit": "481d57a4",
+  "frozen_pipeline_source": "e34f3b484e56c27d28893c1e820a6016d2f8b534",
+  "files": [
+    {
+      "path": "mark_duplicates/src/main.rs",
+      "matches_frozen_experiment_source": true,
+      "sha256": "75ed469c64049dd4a5d6f70da013f0e85f43ca022ae4d58d0c1ac01c36503a77"
+    },
+    {
+      "path": "mark_duplicates_similarity/src/main.rs",
+      "matches_frozen_experiment_source": true,
+      "sha256": "f113f7abcc0db9c48f3d628b5098e5a054d348889ce0ae80e9f55f40666c5cc1"
+    },
+    {
+      "path": "Cargo.lock",
+      "matches_frozen_experiment_source": true,
+      "sha256": "55f246dec1b56ce28f103170f74ce34edb5c337691205c2edbe21c062b9329ce"
+    }
+  ],
+  "platform": "Local arm64 macOS binaries; binary hashes recorded in characterization-summary.json"
+}
