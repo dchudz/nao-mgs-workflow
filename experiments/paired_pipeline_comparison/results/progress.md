@@ -1,6 +1,6 @@
 # Frozen paired pipeline comparison
 
-Report snapshot: 2026-10-24T09:49:06.226915+00:00.
+Report snapshot: 2026-10-24T09:51:13.900465+00:00.
 
 9 of 12 feasibility comparisons are collected and accepted. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
 
@@ -8,19 +8,19 @@ Both arms use the same selected input pairs, source reference collection, produc
 
 ## Completed output inventory
 
-These are final output records, not confirmed detections or species calls. “Only” compares pair identifiers between arms at the same depth. It does not compare shallow and deep identifiers.
+These are final output records, not confirmed detections or species calls. “Only” compares pair identifiers between arms at the same depth. It does not compare shallow and deep identifiers. Reassigned shared records occur in both arms with different labels; these are separate from added or lost records.
 
-| Run | Input pairs (million) | Production records | Protein records | Production only | Protein only | Stage minutes | Driver minutes |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| SRR38294967 | 5 | 2,861 | 3,408 | 8 | 555 | 37.9 | unrecorded |
-| SRR39695348 | 5 | 112 | 158 | 0 | 46 | 74.5 | 74.6 |
-| SRR39695348 | 25 | 594 | 834 | 1 | 241 | 16.3 | 27.9 |
-| SRR38294785 | 5 | 344 | 620 | 0 | 276 | 22.2 | 22.3 |
-| SRR37059981 | 5 | 931 | 1,396 | 0 | 465 | 16.0 | 16.1 |
-| SRR38294137 | 5 | 691 | 1,639 | 1 | 949 | 20.3 | 20.4 |
-| SRR37367647 | 5 | 26 | 43 | 0 | 17 | 15.5 | 15.7 |
-| SRR39695239 | 5 | 2,986 | 4,182 | 6 | 1,202 | 65.0 | 65.3 |
-| SRR39695239 | 25 | 14,746 | 20,877 | 29 | 6,160 | 23.4 | 25.3 |
+| Run | Input pairs (million) | Production records | Protein records | Production only | Protein only | Shared records reassigned | Stage minutes | Driver minutes |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| SRR38294967 | 5 | 2,861 | 3,408 | 8 | 555 | 1,652 | 37.9 | unrecorded |
+| SRR39695348 | 5 | 112 | 158 | 0 | 46 | 84 | 74.5 | 74.6 |
+| SRR39695348 | 25 | 594 | 834 | 1 | 241 | 438 | 16.3 | 27.9 |
+| SRR38294785 | 5 | 344 | 620 | 0 | 276 | 216 | 22.2 | 22.3 |
+| SRR37059981 | 5 | 931 | 1,396 | 0 | 465 | 556 | 16.0 | 16.1 |
+| SRR38294137 | 5 | 691 | 1,639 | 1 | 949 | 418 | 20.3 | 20.4 |
+| SRR37367647 | 5 | 26 | 43 | 0 | 17 | 20 | 15.5 | 15.7 |
+| SRR39695239 | 5 | 2,986 | 4,182 | 6 | 1,202 | 2,111 | 65.0 | 65.3 |
+| SRR39695239 | 25 | 14,746 | 20,877 | 29 | 6,160 | 10,327 | 23.4 | 25.3 |
 
 Stage minutes omit preflight, inter-stage backups and driver overhead. Driver minutes include those, but omit acquisition and the final verified archive. Worker uptime captures all of them. Early replica timings overlap storage initialization; see [runtime context](aggregate/runtime-context.tsv). The same input QC/profiling work is shared between arms, so these are not standalone deployment timings.
 

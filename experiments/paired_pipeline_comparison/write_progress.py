@@ -27,9 +27,9 @@ def main():
         'This does not isolate alignment as the only cause of differences.', '',
         '## Completed output inventory', '',
         'These are final output records, not confirmed detections or species calls. '
-        '“Only” compares pair identifiers between arms at the same depth. It does not compare shallow and deep identifiers.', '',
-        '| Run | Input pairs (million) | Production records | Protein records | Production only | Protein only | Stage minutes | Driver minutes |',
-        '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
+        '“Only” compares pair identifiers between arms at the same depth. It does not compare shallow and deep identifiers. Reassigned shared records occur in both arms with different labels; these are separate from added or lost records.', '',
+        '| Run | Input pairs (million) | Production records | Protein records | Production only | Protein only | Shared records reassigned | Stage minutes | Driver minutes |',
+        '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
     for r in complete:
         overhead_path = w/'results'/r['label']/'execution-overhead.json'
         overhead = read(overhead_path) if overhead_path.exists() else {}
@@ -37,7 +37,7 @@ def main():
         minutes = f"{receipt['seconds']/60:.1f}" if receipt else 'unrecorded'
         lines.append(f"| {r['sample']} | {r['depth_million_pairs']} | {int(r['production_rows']):,} | "
                      f"{int(r['protein_rows']):,} | {int(r['production_only']):,} | {int(r['protein_only']):,} | "
-                     f"{float(r['stage_minutes']):.1f} | {minutes} |")
+                     f"{int(r['reassigned']):,} | {float(r['stage_minutes']):.1f} | {minutes} |")
     lines += ['', 'Stage minutes omit preflight, inter-stage backups and driver overhead. Driver minutes include those, '
         'but omit acquisition and the final verified archive. Worker uptime captures all of them. '
         'Early replica timings overlap storage initialization; see [runtime context](aggregate/runtime-context.tsv). '
