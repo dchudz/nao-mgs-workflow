@@ -9,9 +9,15 @@ the initial feasibility stage has 10 runs and two deeper cases. Execution
 beyond that stage remains conditional on measured cost and complete outputs.
 
 The 50 selected runs have 50 distinct BioSample identifiers. Collection date
-and country are absent for 26 runs in the frozen metadata. Distinct identifiers
-do not establish independent specimens, collection sites, or outbreaks. The
-results describe the selected run collection and do not estimate prevalence.
+and country were absent for 26 runs in the frozen ENA metadata. A subsequent
+NCBI BioSample audit recovered dates and location labels for all 50, without
+changing selection. There are 23 location labels and 47 collection dates,
+spanning 2024-10-06 through 2026-06-17; no location/date combination repeats.
+Location labels vary in granularity and do not establish 23 independent sites.
+Repeated locations and temporal relationships remain relevant. The results
+describe the selected run collection and do not estimate prevalence. The raw
+public metadata, its checksum and the accession mapping are retained in
+`runtime-provenance/biosample-metadata-audit.json` and `biosample-metadata.xml`.
 
 | Measurement | Supports | Does not establish |
 | --- | --- | --- |

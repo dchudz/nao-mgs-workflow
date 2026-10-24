@@ -1,0 +1,493 @@
+{
+  "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=biosample&id=47830440%2C47830450%2C47830492%2C47830519%2C53084837%2C53084839%2C53111717%2C53134983%2C53135042%2C54569809%2C54610785%2C54703750%2C54703778%2C54705919%2C54949036%2C54984671%2C54984702%2C54984714%2C55037936%2C55279268%2C55951623%2C55951627%2C57413692%2C57413734%2C57413777%2C57413816%2C57413818%2C57413825%2C57413888%2C57413894%2C57413960%2C57414021%2C57414027%2C57414057%2C57414077%2C57495866%2C57495872%2C57495940%2C57495951%2C57495957%2C61656640%2C61656661%2C61656752%2C61656765%2C61656794%2C61656827%2C61656854%2C61656934%2C61657023%2C61657044",
+  "retrieved_utc": "2026-10-24T06:38:10.454544+00:00",
+  "raw_sha256": "951d82f0fe1584f65850635cd12ad4d00ea9006f9fcf019e3ffe2a4b5c0b0c02",
+  "selection_changed": false,
+  "runs": [
+    {
+      "run_accession": "SRR38294967",
+      "sample_accession": "SAMN57413734",
+      "collection_date": "2026-02-02",
+      "geo_loc_name": "USA: Palo Alto Regional Water Quality Control Plant, CA",
+      "unique ID": "CA_PaloAlto_20260202",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR37367610",
+      "sample_accession": "SAMN54984714",
+      "collection_date": "2025-12-10",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant South, MA",
+      "unique ID": "MA_Boston_DITPS_20251210",
+      "frozen_collection_date": "2025-12-10",
+      "frozen_country": "USA: Boston Deer Island Treatment Plant (DITP) South, MA"
+    },
+    {
+      "run_accession": "SRR39695225",
+      "sample_accession": "SAMN61656794",
+      "collection_date": "2026-06-01",
+      "geo_loc_name": "USA: Miami-Dade Central District Wastewater Treatment Plant, FL",
+      "unique ID": "FL_Miami_20260601",
+      "frozen_collection_date": "2026-06-01",
+      "frozen_country": "USA: Miami-Dade Central District Wastewater Treatment Plant, FL"
+    },
+    {
+      "run_accession": "SRR38294772",
+      "sample_accession": "SAMN57413825",
+      "collection_date": "2026-03-15",
+      "geo_loc_name": "USA: Chicago (CHI-D1), IL",
+      "unique ID": "CHI-D1_20260315",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR33038144",
+      "sample_accession": "SAMN47830440",
+      "collection_date": "2024-10-06",
+      "geo_loc_name": "USA: Chicago (CHI-A), IL",
+      "unique ID": "2024-10-06~CHI-A~0",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR39695144",
+      "sample_accession": "SAMN61656640",
+      "collection_date": "2026-06-08",
+      "geo_loc_name": "USA: Miami-Dade Central District Wastewater Treatment Plant, FL",
+      "unique ID": "CASPER-260608-FL_Miami-R1-A1",
+      "frozen_collection_date": "2026-06-08",
+      "frozen_country": "USA: Miami-Dade Central District Wastewater Treatment Plant, FL"
+    },
+    {
+      "run_accession": "SRR35971518",
+      "sample_accession": "SAMN53111717",
+      "collection_date": "2025-03-20",
+      "geo_loc_name": "USA: Milan Wastewater Treatment Facility, MO",
+      "unique ID": "MOMilan_20250320",
+      "frozen_collection_date": "2025-03-20",
+      "frozen_country": "USA: Milan, MO"
+    },
+    {
+      "run_accession": "SRR33038009",
+      "sample_accession": "SAMN47830450",
+      "collection_date": "2024-10-21",
+      "geo_loc_name": "USA: Chicago (CHI-A), IL",
+      "unique ID": "2024-10-21~CHI-A~0",
+      "frozen_collection_date": "2024-10-21",
+      "frozen_country": "USA: Chicago, IL"
+    },
+    {
+      "run_accession": "SRR33038067",
+      "sample_accession": "SAMN47830492",
+      "collection_date": "2024-12-08",
+      "geo_loc_name": "USA: Chicago (CHI-B), IL",
+      "unique ID": "2024-12-08~CHI-B~0",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR39695348",
+      "sample_accession": "SAMN61657023",
+      "collection_date": "2026-04-05",
+      "geo_loc_name": "USA: Southern California, CA",
+      "unique ID": "Southern_California_20260405",
+      "frozen_collection_date": "2026-04-05",
+      "frozen_country": "USA: Southern California, CA"
+    },
+    {
+      "run_accession": "SRR38294785",
+      "sample_accession": "SAMN57414077",
+      "collection_date": "2026-02-15",
+      "geo_loc_name": "USA: Southern California, CA",
+      "unique ID": "Southern_California_20260215",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR37059981",
+      "sample_accession": "SAMN54984702",
+      "collection_date": "2025-11-12",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant North, MA",
+      "unique ID": "MA_Boston_DITPN_20251112",
+      "frozen_collection_date": "2025-11-12",
+      "frozen_country": "USA: Boston Deer Island Treatment Plant (DITP) North, MA"
+    },
+    {
+      "run_accession": "SRR37027368",
+      "sample_accession": "SAMN54949036",
+      "collection_date": "2025-08-19",
+      "geo_loc_name": "USA: Kansas City Blue River Wastewater Treatment Plant, MO",
+      "unique ID": "MO_KC_BlueRiver_20250819",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR36876827",
+      "sample_accession": "SAMN54705919",
+      "collection_date": "2025-11-09",
+      "geo_loc_name": "USA: Southern California, CA",
+      "unique ID": "Southern_California_20251109",
+      "frozen_collection_date": "2025-11-09",
+      "frozen_country": "USA: Southern California, CA"
+    },
+    {
+      "run_accession": "SRR38294137",
+      "sample_accession": "SAMN57495940",
+      "collection_date": "2025-09-01",
+      "geo_loc_name": "USA: Lemay Wastewater Treatment Plant, MO",
+      "unique ID": "MO_STL_Lemay_20250901",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294805",
+      "sample_accession": "SAMN57414057",
+      "collection_date": "2026-01-27",
+      "geo_loc_name": "USA: Central Oklahoma (OK-B), OK",
+      "unique ID": "OK-B_20260127",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR39695374",
+      "sample_accession": "SAMN61656827",
+      "collection_date": "2026-04-29",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant North, MA",
+      "unique ID": "MA_Boston_DITPN_20260429",
+      "frozen_collection_date": "2026-04-29",
+      "frozen_country": "USA: Boston Deer Island Treatment Plant North, MA"
+    },
+    {
+      "run_accession": "SRR35946910",
+      "sample_accession": "SAMN53084839",
+      "collection_date": "2025-06-11",
+      "geo_loc_name": "USA: Ottumwa Water Pollution Control Facility, IA",
+      "unique ID": "IAOTT_20250611",
+      "frozen_collection_date": "2025-06-11",
+      "frozen_country": "USA: Ottumwa, IA"
+    },
+    {
+      "run_accession": "SRR39695024",
+      "sample_accession": "SAMN61656854",
+      "collection_date": "2026-04-28",
+      "geo_loc_name": "USA: Columbia Wastewater Treatment Plant, MO",
+      "unique ID": "MO_Columbia_20260428",
+      "frozen_collection_date": "2026-04-28",
+      "frozen_country": "USA: Columbia Wastewater Treatment Plant, MO"
+    },
+    {
+      "run_accession": "SRR38294183",
+      "sample_accession": "SAMN57495957",
+      "collection_date": "2025-12-29",
+      "geo_loc_name": "USA: Lemay Wastewater Treatment Plant, MO",
+      "unique ID": "MO_STL_Lemay_20251229",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR36832676",
+      "sample_accession": "SAMN54610785",
+      "collection_date": "2025-11-02",
+      "geo_loc_name": "USA: Chicago (CHI-B), IL",
+      "unique ID": "CHI-B_20251102",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR37367643",
+      "sample_accession": "SAMN55951627",
+      "collection_date": "2025-07-16",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant South, MA",
+      "unique ID": "CASPER-250716-MA_Boston_DITPS-R1-A2~illumina",
+      "frozen_collection_date": "2025-07-16",
+      "frozen_country": "USA: Boston Deer Island Treatment Plant (DITP) South, MA"
+    },
+    {
+      "run_accession": "SRR35987549",
+      "sample_accession": "SAMN53134983",
+      "collection_date": "2025-06-22",
+      "geo_loc_name": "USA: Chicago (CHI-B), IL",
+      "unique ID": "CHI-B_20250622",
+      "frozen_collection_date": "2025-06-22",
+      "frozen_country": "USA: Chicago, IL"
+    },
+    {
+      "run_accession": "SRR38294666",
+      "sample_accession": "SAMN57413777",
+      "collection_date": "2026-03-11",
+      "geo_loc_name": "USA: Sacramento, CA; Sacramento Area Sewer District",
+      "unique ID": "CA_Sacramento_20260311",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294715",
+      "sample_accession": "SAMN57413816",
+      "collection_date": "2026-01-11",
+      "geo_loc_name": "USA: Chicago (CHI-D1), IL",
+      "unique ID": "CHI-D1_20260111",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR39695325",
+      "sample_accession": "SAMN61656752",
+      "collection_date": "2026-05-11",
+      "geo_loc_name": "USA: Chicago (CHI-C), IL",
+      "unique ID": "CHI-C_20260511",
+      "frozen_collection_date": "2026-05-11",
+      "frozen_country": "USA: Chicago (CHI-C), IL"
+    },
+    {
+      "run_accession": "SRR38294677",
+      "sample_accession": "SAMN57413894",
+      "collection_date": "2026-02-25",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant South, MA",
+      "unique ID": "MA_Boston_DITPS_20260225",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR37367647",
+      "sample_accession": "SAMN55951623",
+      "collection_date": "2025-07-02",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant South, MA",
+      "unique ID": "CASPER-250702-MA_Boston_DITPS-R1-A1~illumina",
+      "frozen_collection_date": "2025-07-02",
+      "frozen_country": "USA: Boston Deer Island Treatment Plant (DITP) South, MA"
+    },
+    {
+      "run_accession": "SRR39695253",
+      "sample_accession": "SAMN61657044",
+      "collection_date": "2026-06-17",
+      "geo_loc_name": "USA: Southern California, CA",
+      "unique ID": "Southern_California_20260617",
+      "frozen_collection_date": "2026-06-17",
+      "frozen_country": "USA: Southern California, CA"
+    },
+    {
+      "run_accession": "SRR35946912",
+      "sample_accession": "SAMN53084837",
+      "collection_date": "2025-05-28",
+      "geo_loc_name": "USA: Ottumwa Water Pollution Control Facility, IA",
+      "unique ID": "IAOTT_20250528",
+      "frozen_collection_date": "2025-05-28",
+      "frozen_country": "USA: Ottumwa, IA"
+    },
+    {
+      "run_accession": "SRR37092454",
+      "sample_accession": "SAMN55037936",
+      "collection_date": "2025-11-04",
+      "geo_loc_name": "USA: Columbia Wastewater Treatment Plant, MO",
+      "unique ID": "MO_Columbia_20251104",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294124",
+      "sample_accession": "SAMN57495872",
+      "collection_date": "2025-09-01",
+      "geo_loc_name": "USA: Bissell Point Wastewater Treatment Plant, MO",
+      "unique ID": "MO_STL_Bissell_20250901",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294667",
+      "sample_accession": "SAMN57413692",
+      "collection_date": "2026-01-14",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant North, MA",
+      "unique ID": "CASPER-260114-MA_Boston_DITPN-R1-A1",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR35987661",
+      "sample_accession": "SAMN53135042",
+      "collection_date": "2025-10-19",
+      "geo_loc_name": "USA: Chicago (CHI-A), IL",
+      "unique ID": "IL_CHI-A_20251019",
+      "frozen_collection_date": "2025-10-19",
+      "frozen_country": "USA: Chicago, IL"
+    },
+    {
+      "run_accession": "SRR37181155",
+      "sample_accession": "SAMN55279268",
+      "collection_date": "2026-01-06",
+      "geo_loc_name": "USA: Palo Alto Regional Water Quality Control Plant, CA",
+      "unique ID": "CA_PaloAlto_20260106",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR37367662",
+      "sample_accession": "SAMN54984671",
+      "collection_date": "2025-07-23",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant South, MA",
+      "unique ID": "MA_Boston_DITPS_20250723",
+      "frozen_collection_date": "2025-07-23",
+      "frozen_country": "USA: Boston Deer Island Treatment Plant (DITP) South, MA"
+    },
+    {
+      "run_accession": "SRR38294842",
+      "sample_accession": "SAMN57414021",
+      "collection_date": "2026-03-10",
+      "geo_loc_name": "USA: New York (Hospital B), NY",
+      "unique ID": "NYC-Hospital-B_20260310",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR39695239",
+      "sample_accession": "SAMN61656661",
+      "collection_date": "2026-04-20",
+      "geo_loc_name": "USA: Ontario, CA",
+      "unique ID": "CA_Ontario_20260420",
+      "frozen_collection_date": "2026-04-20",
+      "frozen_country": "USA: Ontario, CA"
+    },
+    {
+      "run_accession": "SRR36877014",
+      "sample_accession": "SAMN54703750",
+      "collection_date": "2025-09-08",
+      "geo_loc_name": "USA: West Boise and Lander Street Water Renewal Facility, ID",
+      "unique ID": "ID_Boise_20250908",
+      "frozen_collection_date": "2025-09-08",
+      "frozen_country": "USA: West Boise and Lander Street Water Renewal Facility (Boise RWF), ID"
+    },
+    {
+      "run_accession": "SRR38294684",
+      "sample_accession": "SAMN57413888",
+      "collection_date": "2026-01-14",
+      "geo_loc_name": "USA: Boston Deer Island Treatment Plant South, MA",
+      "unique ID": "MA_Boston_DITPS_20260114",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR33038182",
+      "sample_accession": "SAMN47830519",
+      "collection_date": "2024-12-30",
+      "geo_loc_name": "USA: Chicago (CHI-C), IL",
+      "unique ID": "2024-12-30~CHI-C~0",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294835",
+      "sample_accession": "SAMN57414027",
+      "collection_date": "2026-01-28",
+      "geo_loc_name": "USA: New York (Hospital C), NY",
+      "unique ID": "NYC-Hospital-C_20260128",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR39695102",
+      "sample_accession": "SAMN61656765",
+      "collection_date": "2026-05-10",
+      "geo_loc_name": "USA: Chicago (CHI-D1), IL",
+      "unique ID": "CHI-D1_20260510",
+      "frozen_collection_date": "2026-05-10",
+      "frozen_country": "USA: Chicago (CHI-D1), IL"
+    },
+    {
+      "run_accession": "SRR38294858",
+      "sample_accession": "SAMN57413960",
+      "collection_date": "2026-02-24",
+      "geo_loc_name": "USA: Bissell Point Wastewater Treatment Plant, MO",
+      "unique ID": "MO_STL_Bissell_20260224",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294103",
+      "sample_accession": "SAMN57495951",
+      "collection_date": "2025-11-17",
+      "geo_loc_name": "USA: Lemay Wastewater Treatment Plant, MO",
+      "unique ID": "MO_STL_Lemay_20251117",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR39695002",
+      "sample_accession": "SAMN61656934",
+      "collection_date": "2026-05-04",
+      "geo_loc_name": "USA: Coldwater Creek Wastewater Treatment Plant, MO",
+      "unique ID": "MO_STL_Coldwater_20260504",
+      "frozen_collection_date": "2026-05-04",
+      "frozen_country": "USA: Coldwater Creek Wastewater Treatment Plant, MO"
+    },
+    {
+      "run_accession": "SRR36790977",
+      "sample_accession": "SAMN54569809",
+      "collection_date": "2025-12-08",
+      "geo_loc_name": "USA: Ontario, CA",
+      "unique ID": "CA_Ontario_20251208",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294653",
+      "sample_accession": "SAMN57413818",
+      "collection_date": "2026-01-25",
+      "geo_loc_name": "USA: Chicago (CHI-D1), IL",
+      "unique ID": "CHI-D1_20260125",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR38294098",
+      "sample_accession": "SAMN57495866",
+      "collection_date": "2025-07-23",
+      "geo_loc_name": "USA: Bissell Point Wastewater Treatment Plant, MO",
+      "unique ID": "MO_STL_Bissell_20250723",
+      "frozen_collection_date": "",
+      "frozen_country": ""
+    },
+    {
+      "run_accession": "SRR36876987",
+      "sample_accession": "SAMN54703778",
+      "collection_date": "2025-11-24",
+      "geo_loc_name": "USA: Monett Wastewater Treatment Plant, MO",
+      "unique ID": "MO_Monett_20251124",
+      "frozen_collection_date": "2025-11-24",
+      "frozen_country": "USA: Monett WWTP, MO"
+    }
+  ],
+  "site_counts": {
+    "USA: Palo Alto Regional Water Quality Control Plant, CA": 2,
+    "USA: Boston Deer Island Treatment Plant South, MA": 6,
+    "USA: Miami-Dade Central District Wastewater Treatment Plant, FL": 2,
+    "USA: Chicago (CHI-D1), IL": 4,
+    "USA: Chicago (CHI-A), IL": 3,
+    "USA: Milan Wastewater Treatment Facility, MO": 1,
+    "USA: Chicago (CHI-B), IL": 3,
+    "USA: Southern California, CA": 4,
+    "USA: Boston Deer Island Treatment Plant North, MA": 3,
+    "USA: Kansas City Blue River Wastewater Treatment Plant, MO": 1,
+    "USA: Lemay Wastewater Treatment Plant, MO": 3,
+    "USA: Central Oklahoma (OK-B), OK": 1,
+    "USA: Ottumwa Water Pollution Control Facility, IA": 2,
+    "USA: Columbia Wastewater Treatment Plant, MO": 2,
+    "USA: Sacramento, CA; Sacramento Area Sewer District": 1,
+    "USA: Chicago (CHI-C), IL": 2,
+    "USA: Bissell Point Wastewater Treatment Plant, MO": 3,
+    "USA: New York (Hospital B), NY": 1,
+    "USA: Ontario, CA": 2,
+    "USA: West Boise and Lander Street Water Renewal Facility, ID": 1,
+    "USA: New York (Hospital C), NY": 1,
+    "USA: Coldwater Creek Wastewater Treatment Plant, MO": 1,
+    "USA: Monett Wastewater Treatment Plant, MO": 1
+  },
+  "distinct_collection_dates": 47,
+  "missing_collection_date": 0,
+  "missing_location": 0,
+  "distinct_location_labels": 23,
+  "same_location_date_groups": [],
+  "collection_date_range": [
+    "2024-10-06",
+    "2026-06-17"
+  ],
+  "collection_date_conflicts": []
+}

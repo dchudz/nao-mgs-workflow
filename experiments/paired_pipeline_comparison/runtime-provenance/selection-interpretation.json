@@ -5,5 +5,6 @@
   "missing_collection_date": 26,
   "missing_country": 26,
   "eligible_runs": 2262,
-  "limitation": "Different BioSample identifiers do not prove epidemiological independence. Missing site/date metadata prevents a complete clustering assessment."
+  "limitation": "The initial frozen ENA fields were incomplete. Subsequent NCBI BioSample annotation recovers all dates and locations without changing selection; repeated location labels still preclude assuming independent specimens.",
+  "subsequent_metadata_audit": "biosample-metadata-audit.json"
 }
