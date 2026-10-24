@@ -1,8 +1,8 @@
 # Frozen paired pipeline comparison
 
-Report snapshot: 2026-10-24T12:51:08.604891+00:00.
+Report snapshot: 2026-10-24T13:09:33.017218+00:00.
 
-16 of 60 planned comparisons are collected and accepted, including 12 of 12 feasibility comparisons. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
+17 of 60 planned comparisons are collected and accepted, including 12 of 12 feasibility comparisons. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
 
 Both arms use the same selected input pairs, source reference collection, production duplicate handling, validation mode and validation cap. The variant changes the upstream screen and alignment representation. This does not isolate alignment as the only cause of differences.
 
@@ -19,6 +19,7 @@ These are final output records, not confirmed detections or species calls. “On
 | SRR39695348 | 25 | 594 | 834 | 1 | 241 | 438 | 16.3 | 27.9 |
 | SRR38294785 | 5 | 344 | 620 | 0 | 276 | 216 | 22.2 | 22.3 |
 | SRR37059981 | 5 | 931 | 1,396 | 0 | 465 | 556 | 16.0 | 16.1 |
+| SRR36876827 | 5 | 232 | 444 | 0 | 212 | 116 | 20.0 | 20.2 |
 | SRR38294137 | 5 | 691 | 1,639 | 1 | 949 | 418 | 20.3 | 20.4 |
 | SRR38294805 | 5 | 2,974 | 3,893 | 2 | 921 | 2,182 | 19.7 | 20.3 |
 | SRR38294805 | 25 | 15,063 | 19,542 | 21 | 4,500 | 11,169 | 27.5 | 29.4 |
@@ -45,6 +46,6 @@ See [the interpretation record](../comparison-interpretation.md), [nested depth 
 
 ## Remaining execution
 
-44 of the full cohort comparisons remain uncollected. The feasibility gate passed and the fixed expansion was accepted within the budget. No sample is chosen or discarded because of its biological findings. Uncollected does not mean a zero result.
+43 of the full cohort comparisons remain uncollected. The feasibility gate passed and the fixed expansion was accepted within the budget. No sample is chosen or discarded because of its biological findings. Uncollected does not mean a zero result.
 
 The existing budget is $500. The working allocation reserves $200 for new compute; posted historical charges, billing lag and noncompute retention are accounted for separately in [budget.json](../budget.json). Observed resource-time ledgers live in `../runtime-provenance/`. They are estimates and ceilings, not invoice reconciliation.
