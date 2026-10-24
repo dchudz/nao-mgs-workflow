@@ -12,6 +12,7 @@ import hashlib
 import json
 import subprocess
 import time
+import tomllib
 from pathlib import Path
 
 p=argparse.ArgumentParser()
@@ -28,6 +29,17 @@ def save(p,x):p.write_text(json.dumps(x,indent=2)+'\n')
 def table(p):
     with (gzip.open(p,'rt') if str(p).endswith('.gz') else p.open()) as f:
         return list(csv.DictReader(f,delimiter='\t'))
+
+project=tomllib.loads((a.source/'pyproject.toml').read_text())
+expected_files=project.get('tool',{}).get('mgs-workflow',project)['expected-outputs-downstream']
+assert expected_files
+missing=[]
+for arm in ('production','protein_variant'):
+    for relative in expected_files:
+        path=d/(arm+'-downstream/output')/relative.replace('{GROUP}',a.sample)
+        if not path.is_file():missing.append(str(path))
+save(out/'expected-files.json',{'missing':missing,'expected_per_arm':len(expected_files)})
+if missing:raise RuntimeError('Missing declared downstream output: '+str(missing))
 
 # The existing reporter expects INDEX/output/results, whereas the retained
 # reference is mounted at reference/results. This view changes only the path.
@@ -48,6 +60,11 @@ save(out/'execution.json',{'command':cmd,'started_utc':started,'seconds':time.mo
     'exit_code':result.returncode,'image_id':image_id,'pipeline_source_commit':complete['source_commit'],
     'report_source_hashes':{name:sha(a.source/'bin'/name) for name in ('compare_downstream_runs.py','downstream_metrics.py')}})
 if result.returncode:raise RuntimeError('Existing comparison report failed; retained log and receipt')
+missing_columns=[r for r in table(out/'standard/column_conformance.tsv')
+                 if r['missing_vs_schema_reference'] or r['missing_vs_schema_candidate']]
+skipped=table(out/'standard/skipped_groups.tsv')
+save(out/'integrity.json',{'passed':not missing_columns and not skipped,'missing_columns':missing_columns,'skipped_groups':skipped})
+if missing_columns or skipped:raise RuntimeError('Incomplete comparison inventory; see retained integrity.json')
 
 stages=[]
 for path in sorted(d.glob('*.json')):
