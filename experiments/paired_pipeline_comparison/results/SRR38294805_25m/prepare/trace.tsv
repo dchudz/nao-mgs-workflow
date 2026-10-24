@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	99/ae8e33	1034861	FASTP (id=SRR38294805_25m)	COMPLETED	0	2026-10-24 11:56:43.331	1.4s	1s	720.9%	11 MB	156.8 MB	120.4 MB	85.4 MB
