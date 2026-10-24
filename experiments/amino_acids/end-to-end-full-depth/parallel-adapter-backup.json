@@ -1,0 +1,6 @@
+{
+  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/parallel-adapter-checks.tar.gz",
+  "bytes": 2536157,
+  "sha256": "ad995506d78749772f1b12da2a6eb33cc829be19a629c0c436a6333de0fff645",
+  "readback_verified": true
+}

@@ -23,11 +23,11 @@ timings=[];versions=[]
 for row in selection:
  sample=row['run_accession'];d=a.root/sample
  if not d.exists():continue
- for stage in ['baseline-run','aa-screen','union','screen-run','protein-run','production-downstream','validation_control-downstream','screen_control-downstream','protein_variant-downstream']:
+ for stage in ['baseline-run','aa-screen','union','screen-run','protein-run-original','protein-run','production-downstream','validation_control-downstream','screen_control-downstream','protein_variant-downstream']:
   f=d/(stage+'.json')
   if f.exists():
-   r=json.loads(f.read_text());timings.append([sample,stage,f"{r['wall_seconds']/60:.2f}",r.get('exit_code','')]);versions.append((r.get('source_commit',''),r.get('driver_commit','')))
-version_html=''.join('<li>Scientific source <code>'+esc(src)+'</code>; execution driver <code>'+esc(driver)+'</code></li>' for src,driver in sorted(set(versions)))
+   r=json.loads(f.read_text());timings.append([sample,stage,f"{r['wall_seconds']/60:.2f}",r.get('exit_code','')]);versions.append((r.get('source_commit',''),r.get('driver_commit',''),r.get('protein_workflow_commit','')))
+version_html=''.join('<li>Frozen production/functions <code>'+esc(src)+'</code>; execution driver <code>'+esc(driver)+'</code>'+('; parallel workflow <code>'+esc(parallel)+'</code>' if parallel else '')+'</li>' for src,driver,parallel in sorted(set(versions)))
 status_path=a.root/'worker-status.json'
 status=json.loads(status_path.read_text()) if status_path.exists() else None
 cost=(f"Worker allocation upper bound: ${status['worker_cost_upper_USD']:.2f} at {esc(status['utc'])}. This excludes transfer, retained object storage and requests; it is not the total AWS bill." if status else 'Worker-cost reconciliation pending.')
