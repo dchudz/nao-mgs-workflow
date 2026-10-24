@@ -1,0 +1,36 @@
+{
+  "requested_utc": "2026-10-24T08:19:01.815350+00:00",
+  "instance_id": "i-02d118993a6f4989a",
+  "start_utc": "2026-10-24T05:07:00+00:00",
+  "action": "stop, retain disk",
+  "volumes": [
+    {
+      "DeviceName": "/dev/xvda",
+      "Ebs": {
+        "AttachTime": "2026-10-23T19:07:51+00:00",
+        "DeleteOnTermination": false,
+        "Status": "attached",
+        "VolumeId": "vol-0272ade891333af83",
+        "EbsCardIndex": 0
+      }
+    }
+  ],
+  "completed_shard": true,
+  "last_unit": "SRR37059981_5m",
+  "last_unit_backup_readback_verified": true,
+  "response": {
+    "StoppingInstances": [
+      {
+        "InstanceId": "i-02d118993a6f4989a",
+        "CurrentState": {
+          "Code": 64,
+          "Name": "stopping"
+        },
+        "PreviousState": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ]
+  }
+}
