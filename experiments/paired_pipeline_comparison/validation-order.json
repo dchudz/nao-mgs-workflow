@@ -1,0 +1,270 @@
+{
+  "seed": "paired-pipeline-study-20261024-v1:validation-order-v1",
+  "orders": {
+    "SRR38294967_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695348_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294785_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR37059981_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294137_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR37367647_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR39695239_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294858_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294103_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294653_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR37367610_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695225_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294772_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR33038144_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695144_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR35971518_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR33038009_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR33038067_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR37027368_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR36876827_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294805_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR39695374_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR35946910_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR39695024_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294183_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR36832676_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR37367643_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR35987549_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294666_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294715_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695325_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294677_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695253_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR35946912_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR37092454_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294124_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294667_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR35987661_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR37181155_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR37367662_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294842_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR36877014_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294684_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR33038182_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294835_5m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR39695102_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695002_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR36790977_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294098_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR36876987_5m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695348_25m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR39695239_25m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR39695144_25m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR35971518_25m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR36876827_25m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR38294805_25m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294124_25m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR37367662_25m": [
+      "production",
+      "protein_variant"
+    ],
+    "SRR38294842_25m": [
+      "protein_variant",
+      "production"
+    ],
+    "SRR39695102_25m": [
+      "production",
+      "protein_variant"
+    ]
+  },
+  "strata": {
+    "shallow_pilot": {
+      "units": 10,
+      "production_first": 5,
+      "protein_first": 5
+    },
+    "shallow_remaining": {
+      "units": 40,
+      "production_first": 20,
+      "protein_first": 20
+    },
+    "deep_pilot": {
+      "units": 2,
+      "production_first": 1,
+      "protein_first": 1
+    },
+    "deep_remaining": {
+      "units": 8,
+      "production_first": 4,
+      "protein_first": 4
+    }
+  },
+  "first_case_exception": "SRR38294967_5m",
+  "reason": "Counterbalance cache/order effects before cohort expansion. First case ran production first. No biological outcome participates in ordering.",
+  "changed_search_settings": false
+}

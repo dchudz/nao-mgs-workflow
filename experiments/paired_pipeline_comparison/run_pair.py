@@ -99,7 +99,10 @@ nf('prepare','experiments/paired_pipeline_comparison/prepare.nf',None,{'sample':
 trimmed=one('prepare/published/FASTP/*_fastp.fastq.gz')
 nf('protein-run','experiments/amino_acids/protein-parallel.nf',None,{'sample':sample,'reads':str(trimmed),'adapters':str(R/'ref/adapters.fasta'),'validate':False},True)
 hits={'production':baseline/f'{sample}_virus_hits.tsv.gz','protein_variant':one('protein-run/published/PROTEIN_ADAPTER/*_virus_hits.tsv.gz')}
-for arm,hit in hits.items():
+order=json.loads((R/'experiments/paired_pipeline_comparison/validation-order.json').read_text())['orders'][sample]
+save(D/'validation-order.json',{'order':order,'reason':'Prespecified execution-order counterbalance; unchanged per-arm search settings.'})
+for arm in order:
+    hit=hits[arm]
     view=D/arm/'run-results';view.mkdir(parents=True,exist_ok=True)
     for source in baseline.iterdir():
         if source.name==f'{sample}_virus_hits.tsv.gz':continue

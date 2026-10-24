@@ -63,8 +63,34 @@ if result.returncode:raise RuntimeError('Existing comparison report failed; reta
 missing_columns=[r for r in table(out/'standard/column_conformance.tsv')
                  if r['missing_vs_schema_reference'] or r['missing_vs_schema_candidate']]
 skipped=table(out/'standard/skipped_groups.tsv')
-save(out/'integrity.json',{'passed':not missing_columns and not skipped,'missing_columns':missing_columns,'skipped_groups':skipped})
-if missing_columns or skipped:raise RuntimeError('Incomplete comparison inventory; see retained integrity.json')
+unavailable=[];blocking=[]
+for issue in missing_columns:
+    if issue['file_type']=='bracken' and issue['missing_vs_schema_reference']==issue['missing_vs_schema_candidate']=='(empty file)':
+        evidence=[]
+        for task in table(d/'baseline-run/trace.tsv'):
+            if not task['process'].endswith(':BRACKEN'):continue
+            work=Path(task['workdir']);report=next(work.glob('*.report.gz'))
+            with gzip.open(report,'rt') as f:raw=[line.rstrip('\n').split('\t') for line in f]
+            ranks=collections.Counter(row[5] for row in raw)
+            log=(work/'.command.out').read_text()
+            assert task['status']=='COMPLETED' and task['exit']=='0'
+            assert len(raw)>1 and ranks['D']==0
+            assert 'Number of lines with classification level D (z): 0' in log
+            assert 'No reads classified at desired level in input - creating empty output.' in log
+            evidence.append({'task':task['name'],'report_rows':len(raw),'rank_counts':dict(ranks),'log':log})
+        assert len(evidence)==2
+        for arm in ('production','protein_variant'):
+            f=next((d/(arm+'-downstream/output/results_downstream')).glob('*_bracken.tsv.gz'))
+            with gzip.open(f,'rb') as h:assert h.read()==b''
+        unavailable.append({'output':'bracken','status':'unavailable, not zero abundance',
+            'reason':'Shared profiling tasks explicitly skipped Bracken because Kraken reports contain no requested D-rank rows.',
+            'evidence':evidence,'interpretation':'No Bracken abundance conclusion is supported. Viral calling/validation consume viral hits, not Bracken.'})
+    else:blocking.append(issue)
+save(out/'integrity.json',{'passed':not blocking and not skipped,
+    'scope':'Assignment comparison only; shared unavailable community outputs remain explicit limitations.',
+    'full_schema_conformant':not missing_columns,'missing_columns':missing_columns,
+    'blocking_missing_columns':blocking,'shared_unavailable_outputs':unavailable,'skipped_groups':skipped})
+if blocking or skipped:raise RuntimeError('Incomplete comparison inventory; see retained integrity.json')
 
 stages=[]
 for path in sorted(d.glob('*.json')):
@@ -93,6 +119,7 @@ save(out/'accounting.json',{'completed':True,'sample':a.sample,'pairs_per_arm':c
     'production_only_output_pair_ids':len(identities['production']-identities['protein_variant']),
     'protein_only_output_pair_ids':len(identities['protein_variant']-identities['production']),
     'sum_stage_wall_seconds':sum(r['wall_seconds'] for r in stages),
+    'shared_unavailable_outputs':[r['output'] for r in unavailable],
     'cost_interpretation':'Stage wall time excludes full-source acquisition, boot, checkpoints and other worker time. Billable worker time must be accounted separately. No cost forecast is inferred from a single case.',
     'classification_interpretation':'The standard pipeline outputs are compared without an added NR agreement or three-exemplar calling rule. Changes are not ground-truth sensitivity or specificity.'})
 print(json.dumps({'report':str(out),'validation_status_counts':statuses},indent=2))

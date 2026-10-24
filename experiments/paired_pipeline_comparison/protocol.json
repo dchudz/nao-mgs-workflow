@@ -52,5 +52,8 @@
     "evidence": "synthetic-control-results/attempt-3/result.json",
     "meaning": "Known-origin synthetic coordinate, taxonomy, and duplicate handling control. Passing does not establish environmental accuracy or validate other pipeline stages.",
     "first_run": "Already launched before this control was requested; eligibility assessed retrospectively against identical tested source and production container. Future launches check the gate before work."
-  }
+  },
+  "execution_order": "validation-order.json counterbalances downstream arm order within pilot/remaining and shallow/deep strata. The first case was production-first; no biological settings change.",
+  "shared_profile_limit": "The frozen reference has domain taxonomy ranks, while Kraken emits no D-rank rows. If both profiling branches explicitly skip Bracken for this verified condition, its empty abundance output remains unavailable. Assignment comparison may proceed, but no Bracken abundance result is claimed.",
+  "cost_limit": "Profiling/QC outputs are shared between arms. Component wall times and total experiment worker costs are measured; these are not independent standalone deployment timings."
 }
