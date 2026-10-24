@@ -56,8 +56,10 @@ def prepare(d):
     ref=d/'reference'/'results';ref.mkdir(parents=True)
     rng=random.Random(2026102401)
     expected={};fastq=[];genomes=[];peptides=[];metadata=[];taxa=[];lengths={}
-    nodes=['1\t|\t1\t|\tno rank\t|','81077\t|\t1\t|\tno rank\t|']
-    names=['1\t|\troot\t|','81077\t|\tartificial sequences\t|']
+    nodes=['1\t|\t1\t|\tno rank\t|','81077\t|\t1\t|\tno rank\t|',
+           '81078\t|\t81077\t|\tspecies\t|']
+    names=['1\t|\troot\t|','81077\t|\tartificial sequences\t|',
+           '81078\t|\tUnused synthetic taxonomy child\t|']
     for frame, bounds in enumerate(INTERVALS):
         gid=f'synthetic_{frame}';taxid=str(900000000+frame);phase=frame%3
         peptide=''.join(rng.choice(list(CODONS)) for _ in range(180))

@@ -3,9 +3,9 @@
   "genome-lengths.json": "d6e68c2a5d8f95c58c3d9d2157f716160077771f894b4ff17acf5e8eb9cfaab7",
   "genomes.fna": "e13470f443f0ddcc053923ee22e70849288198a179657039cb55c19f79c4480b",
   "peptides.faa": "e2a0cf707478ec92c281a6d9f16157e17c4f9c44700ee424543e7b883e11c024",
-  "reference/results/taxonomy-names.dmp": "62b4503d36e8706454c2fd0eb34b6afa3091fb0aacb7c6b50a39c82c489de7fb",
-  "reference/results/taxonomy-nodes.dmp": "c1fcd94d0a275fd7253283927596ccf1f6b3ae82dd0b6747cd979300bbb327a1",
-  "reference/results/total-virus-db-annotated.tsv.gz": "e955aa19046514eb160f40d2f35fee908cd6637db3bc567cd59ad954a3357e37",
-  "reference/results/virus-genome-metadata-gid.tsv.gz": "a3fc0e87e142192d2548e758ce8d8adee96872ee0928f10d35e9b55fb2902f87",
+  "reference/results/taxonomy-names.dmp": "6c9a0158b609138cabacba7c98531abb39e6a1171529b44df5d171f67a903e7c",
+  "reference/results/taxonomy-nodes.dmp": "03517f4d847b70ac670ccce26bcfb62007540a89f4ea2ba8c3b0de397940f214",
+  "reference/results/total-virus-db-annotated.tsv.gz": "07f580ab7004329b823332a6c9837f7d0b546078f997d6ac0764b9daf4c9cda0",
+  "reference/results/virus-genome-metadata-gid.tsv.gz": "febad57146bdeb9a8c429656f9456cc03c2742c767db27f770377eb8ae7a3ed4",
   "sample.fastq": "4c69f3503a2dbb23078d1a4f4aad328c07da815e58439bddf55397b64d1c4658"
 }
