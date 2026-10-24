@@ -1,0 +1,105 @@
+{
+  "sample": "SRR38294858",
+  "population_pairs": 751424059,
+  "sampling": "Exact uniform random pairs without replacement; nested 5M within 25M when applicable",
+  "full_quality": true,
+  "source_sha256": "e2d8ba7cddcf797880500b1332aff1fdae5054e865c6a4d90a7a02ce59a65ae7",
+  "seed_sha256": "d9b12b253cc3525609a8186f3143d831e1ce73a9fcced01a3b197521af43f9eb",
+  "files": [
+    {
+      "level": "shallow",
+      "mate": 1,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR38294858/shallow/R1.fastq.gz",
+      "pairs": 5000000,
+      "bytes": 359364912,
+      "sha256": "8b564b99381a4cdbbb4c5ff81637202651b2324da4edc324d62c7c07d85f8aae"
+    },
+    {
+      "level": "shallow",
+      "mate": 2,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR38294858/shallow/R2.fastq.gz",
+      "pairs": 5000000,
+      "bytes": 353563987,
+      "sha256": "17635c0e6135eb9dc5728de0bb133ffedfd36aa99912e48a5c82591b75fb1821"
+    }
+  ],
+  "seconds_excluding_initial_download": 594.8291970180017,
+  "vdb_validation_seconds": 107.15563684100016,
+  "completed_utc": "2026-10-24T09:26:00.989770+00:00",
+  "source_bytes": 63987994246,
+  "acquisition_receipt_sha256": "9f4fae883cdd22c1478718a659e9b55b1ef1a6f1da6bc4be05ee19e79393ae5f",
+  "backup_record": {
+    "objects": [
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR38294858/shallow/R1.fastq.gz",
+        "bytes": 359364912,
+        "sha256": "8b564b99381a4cdbbb4c5ff81637202651b2324da4edc324d62c7c07d85f8aae",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR38294858/shallow/R2.fastq.gz",
+        "bytes": 353563987,
+        "sha256": "17635c0e6135eb9dc5728de0bb133ffedfd36aa99912e48a5c82591b75fb1821",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR38294858/sampling-provenance.tar.gz",
+        "bytes": 15957796,
+        "sha256": "a988770c24aff2d674af37f599efdc31d7b5f518eaccb3be19ceb8ce60f4a749",
+        "readback_verified": true
+      }
+    ],
+    "verified_utc": "2026-10-24T09:26:28.158399+00:00"
+  },
+  "storage_retry_preflight": {
+    "sample": "SRR38294858",
+    "source": "s3://sra-pub-run-odp/sra/SRR38294858/SRR38294858",
+    "source_metadata": {
+      "AcceptRanges": "bytes",
+      "LastModified": "2026-04-29T07:31:33+00:00",
+      "ContentLength": 63987994246,
+      "ETag": "\"eb1ae6fdaab1b435b1a173bf5a9ac76c-7628\"",
+      "VersionId": "2DcUAk.pgjeFSvbMJAW.5JRg5Pt5Xw1c",
+      "ContentType": "binary/octet-stream",
+      "ServerSideEncryption": "AES256",
+      "Metadata": {},
+      "TagCount": 1
+    },
+    "started_utc": "2026-10-24T09:03:25.510912+00:00",
+    "purpose": "Retry storage preparation with identical public archive and unchanged validation settings",
+    "download_seconds": 147.73718870300036,
+    "sha256": "e2d8ba7cddcf797880500b1332aff1fdae5054e865c6a4d90a7a02ce59a65ae7",
+    "checksum_seconds": 126.58818826700008,
+    "validation_seconds": 106.86289910499909,
+    "finished_utc": "2026-10-24T09:09:46.699307+00:00",
+    "validation_passed": true
+  },
+  "sampling_attempt_receipts": [
+    {
+      "command": [
+        "python3.12",
+        "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/acquire_subset.py",
+        "--root",
+        "/home/ec2-user/paired-study-20261024",
+        "--sample",
+        "SRR38294858",
+        "--selection",
+        "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/selection.json",
+        "--tools",
+        "/home/ec2-user/experiment/sratoolkit.3.4.1-ubuntu64/bin",
+        "--selector",
+        "/home/ec2-user/paired-study-20261024/tools/select_pairs"
+      ],
+      "started_utc": "2026-10-24T09:16:06.122086+00:00",
+      "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+      "exit_code": 0,
+      "seconds": 594.952384623999,
+      "finished_utc": "2026-10-24T09:26:01.074609+00:00"
+    }
+  ],
+  "interpretation": "Recovered from private S3 after Spot interruption. Original failed-attempt receipts remain in runtime-provenance/scratch-storage/spot1. Acquisition is shared by both arms; durations may overlap and are not additive worker cost.",
+  "download_time_recorded_in_batch": false,
+  "download_receipts": [],
+  "download_seconds": null,
+  "timing_limit": "Successful fresh-storage download is recorded in storage_retry_preflight; previous attempt is preserved separately. No total download duration is inferred."
+}
