@@ -1,0 +1,3 @@
+group	scope	n_reference	n_candidate	n_shared	n_same	n_reassigned	n_lost	n_gained	pct_lost	pct_gained	pct_reassigned
+SRR36790977_5m	all	966	1353	966	533	433	0	387	0.0	28.60310421286031	44.824016563147
+SRR36790977_5m	vertebrate	770	968	770	354	416	0	198	0.0	20.454545454545453	54.02597402597402
