@@ -36,6 +36,14 @@ procedures, validation cap and validation mode. This is a comparison of two
 frozen pipelines; it cannot isolate alignment as the sole cause of a change.
 There is no NR agreement requirement or additional exemplar calling threshold.
 
+In this source version, `workflows/downstream.nf` sends duplicate-marked hits
+separately to clade counting and validation. The clade-count table therefore
+precedes validation. `subworkflows/local/validateViralAssignments/main.nf`
+annotates every hit with its own validation result or missing-result status;
+it does not turn those clade counts into a validation-filtered positive-call
+table. Output counts and validation evidence must remain separate in the
+comparison. No new binary positivity decision is supplied by this report.
+
 Profiling and raw-input QC are reused between arms. Consequently, their
 identity is expected and is not independent evidence of reproducibility. Their
 wall time is paid once in this experiment. It must not be omitted from a future
