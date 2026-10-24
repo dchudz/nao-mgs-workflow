@@ -1,8 +1,8 @@
 # Frozen paired pipeline comparison
 
-Report snapshot: 2026-10-24T10:54:43.344751+00:00.
+Report snapshot: 2026-10-24T10:58:47.655811+00:00.
 
-12 of 12 feasibility comparisons are collected and accepted. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
+12 of 60 planned comparisons are collected and accepted, including 12 of 12 feasibility comparisons. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
 
 Both arms use the same selected input pairs, source reference collection, production duplicate handling, validation mode and validation cap. The variant changes the upstream screen and alignment representation. This does not isolate alignment as the only cause of differences.
 
@@ -37,10 +37,10 @@ Stage minutes omit preflight, inter-stage backups and driver overhead. Driver mi
 - Output additions, losses and changes have no complete environmental truth labels. More output is not established to be better.
 - Nested depth comparisons reuse observations from the same run. Differences of exemplar totals are not counts of new independent origins.
 
-See [the interpretation record](../comparison-interpretation.md), [nested depth table](aggregate/nested-depth.tsv), and [full acceptance inventory](aggregate/runs.tsv). Individual run folders retain the standard comparison reports, source commit, commands, stage timings, acquisition receipts and private archive checksum.
+See [the interpretation record](../comparison-interpretation.md), [nested depth table](aggregate/nested-depth.tsv), [measured stage split](aggregate/compute-split.md), and [full acceptance inventory](aggregate/runs.tsv). Individual run folders retain the standard comparison reports, source commit, commands, stage timings, acquisition receipts and private archive checksum.
 
 ## Remaining execution
 
-0 feasibility comparisons remain uncollected. Expansion beyond this initial cohort is conditional on completed outputs and measured costs. No sample will be chosen or discarded because of its biological findings.
+48 of the full cohort comparisons remain uncollected. The feasibility gate passed and the fixed expansion was accepted within the budget. No sample is chosen or discarded because of its biological findings. Uncollected does not mean a zero result.
 
 The existing budget is $500. The working allocation reserves $200 for new compute; posted historical charges, billing lag and noncompute retention are accounted for separately in [budget.json](../budget.json). Observed resource-time ledgers live in `../runtime-provenance/`. They are estimates and ceilings, not invoice reconciliation.

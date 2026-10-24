@@ -18,8 +18,12 @@ def main():
     pilot = [r for r in rows if r['feasibility_run']=='True']
     pilot_done = [r for r in pilot if r['status']=='complete']
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    expansion = w/'runtime-provenance/expansion/accepted-expansion-plan.json'
+    expanded = expansion.exists() and read(expansion)['status']=='accepted-for-execution'
+    execution = (f'{len(rows)-len(complete)} of the full cohort comparisons remain uncollected. The feasibility gate passed and the fixed expansion was accepted within the budget. ' if expanded else f'{len(pilot)-len(pilot_done)} feasibility comparisons remain uncollected. Expansion is conditional on completed outputs and measured costs. ')
+    execution += 'No sample is chosen or discarded because of its biological findings. Uncollected does not mean a zero result.'
     lines = ['# Frozen paired pipeline comparison', '', f'Report snapshot: {now}.', '',
-        f'{len(pilot_done)} of {len(pilot)} feasibility comparisons are collected and accepted. '
+        f'{len(complete)} of {len(rows)} planned comparisons are collected and accepted, including {len(pilot_done)} of {len(pilot)} feasibility comparisons. '
         f'The full frozen design contains {len(rows)} comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. '
         'A missing local report can still be running remotely.', '',
         'Both arms use the same selected input pairs, source reference collection, production duplicate handling, '
@@ -51,11 +55,10 @@ def main():
         '- Output additions, losses and changes have no complete environmental truth labels. More output is not established to be better.',
         '- Nested depth comparisons reuse observations from the same run. Differences of exemplar totals are not counts of new independent origins.', '',
         'See [the interpretation record](../comparison-interpretation.md), [nested depth table](aggregate/nested-depth.tsv), '
-        'and [full acceptance inventory](aggregate/runs.tsv). Individual run folders retain the standard comparison reports, source commit, '
+        '[measured stage split](aggregate/compute-split.md), and [full acceptance inventory](aggregate/runs.tsv). Individual run folders retain the standard comparison reports, source commit, '
         'commands, stage timings, acquisition receipts and private archive checksum.', '',
         '## Remaining execution', '',
-        f'{len(pilot)-len(pilot_done)} feasibility comparisons remain uncollected. Expansion beyond this initial cohort is conditional on '
-        'completed outputs and measured costs. No sample will be chosen or discarded because of its biological findings.', '',
+        execution, '',
         'The existing budget is $500. The working allocation reserves $200 for new compute; '
         'posted historical charges, billing lag and noncompute retention are accounted for separately in [budget.json](../budget.json). '
         'Observed resource-time ledgers live in `../runtime-provenance/`. They are estimates and ceilings, not invoice reconciliation.', '']
