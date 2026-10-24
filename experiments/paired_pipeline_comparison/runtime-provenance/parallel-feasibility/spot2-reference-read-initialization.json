@@ -1,0 +1,16 @@
+{
+  "worker": "paired-spot2",
+  "path": "/home/ec2-user/experiment/scratch/kraken_db_9f172f33/hash.k2d",
+  "bytes": 117958174752,
+  "started_utc": "2026-10-24T06:49:09.918138+00:00",
+  "mode": "read-only",
+  "concurrent_readers": 32,
+  "block_bytes": 1048576,
+  "region_bytes": 1073741824,
+  "scope": "Storage initialization only. No alignment, classification, sequence processing, reference edits or search-setting changes.",
+  "timing_limit": "Concurrent I/O intervention; first execution is not a steady-state timing measurement.",
+  "completed": true,
+  "read_bytes": 117958174752,
+  "seconds": 490.2672824440001,
+  "finished_utc": "2026-10-24T06:57:20.185422+00:00"
+}

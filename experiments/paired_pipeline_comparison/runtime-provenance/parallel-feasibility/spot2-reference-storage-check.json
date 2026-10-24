@@ -1,0 +1,11 @@
+{
+  "worker": "paired-spot2",
+  "path": "/home/ec2-user/experiment/scratch/kraken_db_9f172f33/hash.k2d",
+  "started_utc": "2026-10-24T06:45:08.519802+00:00",
+  "bytes": 117958174752,
+  "purpose": "Read-only byte-identity verification and file-cache population on retained/restored storage",
+  "timing_limit": "Concurrent index reading affects first-run wall times; include this storage work in experiment cost and do not call these steady-state deployment timings.",
+  "sha256": "914ed6edec0801e9449f028da86b5f47a439c566a28c85fbf29f5941598906c6",
+  "seconds": 759.8867542409998,
+  "finished_utc": "2026-10-24T06:57:48.246717+00:00"
+}
