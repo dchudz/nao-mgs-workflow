@@ -3,10 +3,15 @@ import argparse,datetime,hashlib,json,os,shutil,subprocess,tarfile,tempfile
 from pathlib import Path
 R=Path('/home/ec2-user/experiment');PREFIX='s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/'
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1']
-p=argparse.ArgumentParser();p.add_argument('sample');p.add_argument('--release-scratch',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('sample');p.add_argument('--release-scratch',action='store_true');p.add_argument('--release-published-hsps',action='store_true');a=p.parse_args()
+assert not a.release_published_hsps or a.release_scratch,'Release HSP copies only with verified scratch cleanup'
 allowed={r['run_accession'] for r in json.loads((R/'experiments/amino_acids/end-to-end-full-depth/sample-selection.json').read_text())['initial_samples']}
 assert a.sample in allowed
-D=R/'e2e'/a.sample;complete=json.loads((D/'complete.json').read_text());assert complete['all_four_outputs_completed']
+D=R/'e2e'/a.sample
+previous=D/'backup-verification.json'
+if previous.exists():
+    assert not any(json.loads(previous.read_text()).get(key) for key in ['locally_evicted_hsps','local_hsp_eviction_plan']),'Restore the recorded S3 HSPs before repeating full verification'
+complete=json.loads((D/'complete.json').read_text());assert complete['all_four_outputs_completed']
 identity=json.loads(subprocess.check_output(AWS+['sts','get-caller-identity'],text=True));assert identity['Account']=='839993661825'
 def included(path):
     parts=path.relative_to(D).parts
@@ -74,6 +79,24 @@ if a.release_scratch:
         path=raw/name
         if path.exists():path.unlink()
     receipt['released_scratch']=True
+    if a.release_published_hsps:
+        # These exact immutable outputs have just passed independent S3 readback.
+        # Keep their original manifest entries and object keys after local eviction.
+        names={f'protein-run/published/{stage}/protein-hits.tsv' for stage in ['PROTEIN_ALIGN','PROTEIN_CANDIDATES']}
+        selected=[record for record in manifest if record['path'] in names]
+        assert {record['path'] for record in selected}==names
+        assert len({(record['bytes'],record['sha256']) for record in selected})==1
+        for record in selected:
+            path=D/record['path']
+            assert path.is_file() and not path.is_symlink() and path.stat().st_size==record['bytes']
+        receipt['local_hsp_eviction_plan']=[{**record,'s3_uri':PREFIX+'samples/'+a.sample+'/'+record['path']} for record in selected]
+        # Persist the recovery plan before unlinking, including across interruption.
+        (D/'backup-verification.json').write_text(json.dumps(receipt,indent=2)+'\n')
+        subprocess.run(AWS+['s3','cp',str(D/'backup-verification.json'),PREFIX+'samples/'+a.sample+'/backup-verification.json','--only-show-errors'],check=True)
+        receipt['locally_evicted_hsps']=[]
+        for record in receipt['local_hsp_eviction_plan']:
+            (D/record['path']).unlink()
+            receipt['locally_evicted_hsps'].append(record)
     (D/'backup-verification.json').write_text(json.dumps(receipt,indent=2)+'\n')
     subprocess.run(AWS+['s3','cp',str(D/'backup-verification.json'),PREFIX+'samples/'+a.sample+'/backup-verification.json','--only-show-errors'],check=True)
 print(json.dumps(receipt))
