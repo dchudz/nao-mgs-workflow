@@ -1,0 +1,106 @@
+{
+  "sample": "SRR37367643",
+  "population_pairs": 2087620769,
+  "sampling": "Exact uniform random pairs without replacement; nested 5M within 25M when applicable",
+  "full_quality": true,
+  "source_sha256": "8d489c5e196d3d380012441c542c88c527f40a290b7f4eb1befb0ffd98893660",
+  "seed_sha256": "e2767927c632f002fa04110cebeae9704adee764a043fc758e6f580b53b066a3",
+  "files": [
+    {
+      "level": "shallow",
+      "mate": 1,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR37367643/shallow/R1.fastq.gz",
+      "pairs": 5000000,
+      "bytes": 355917234,
+      "sha256": "ba746a02c3eb00d111aa04d1fbe1028d74e0e6aba45714d5bb264049dd9e8f8a"
+    },
+    {
+      "level": "shallow",
+      "mate": 2,
+      "path": "/home/ec2-user/paired-study-20261024/inputs/SRR37367643/shallow/R2.fastq.gz",
+      "pairs": 5000000,
+      "bytes": 363265481,
+      "sha256": "a6924f0e375286d34ba5ccc134ff06c17d53abe169bf8f2d255236003ed0fab8"
+    }
+  ],
+  "seconds_excluding_initial_download": 2335.782700365,
+  "vdb_validation_seconds": 918.7699235059999,
+  "completed_utc": "2026-10-24T17:09:58.254868+00:00",
+  "source_bytes": 194560768608,
+  "acquisition_receipt_sha256": "ffd73502a04c023b17a26f0e7c3da1315605cb6e779bc63eb949aaf08655014e",
+  "download_receipts": [
+    {
+      "command": [
+        "aws",
+        "--profile",
+        "pipeline-codex",
+        "--region",
+        "us-east-1",
+        "s3",
+        "cp",
+        "s3://sra-pub-run-odp/sra/SRR37367643/SRR37367643",
+        "/home/ec2-user/paired-study-20261024/inputs/SRR37367643/SRR37367643.partial",
+        "--no-sign-request",
+        "--only-show-errors"
+      ],
+      "started_utc": "2026-10-24T16:23:34.254847+00:00",
+      "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+      "execution_driver_sha256": "7eb629e93cba8c98f385483ff00f8e149f7a7ac7efc8f3403a6d86bdaebeb1b7",
+      "exit_code": 0,
+      "seconds": 447.6815811030001,
+      "finished_utc": "2026-10-24T16:31:01.936604+00:00"
+    }
+  ],
+  "download_time_recorded_in_batch": true,
+  "download_seconds": 447.6815811030001,
+  "backup_record": {
+    "objects": [
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR37367643/shallow/R1.fastq.gz",
+        "bytes": 355917234,
+        "sha256": "ba746a02c3eb00d111aa04d1fbe1028d74e0e6aba45714d5bb264049dd9e8f8a",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR37367643/shallow/R2.fastq.gz",
+        "bytes": 363265481,
+        "sha256": "a6924f0e375286d34ba5ccc134ff06c17d53abe169bf8f2d255236003ed0fab8",
+        "readback_verified": true
+      },
+      {
+        "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR37367643/sampling-provenance.tar.gz",
+        "bytes": 17548925,
+        "sha256": "40638ec727f15ead05ebae813cd264ae238f6b39710a99e66da4e98ad04cb898",
+        "readback_verified": true
+      }
+    ],
+    "verified_utc": "2026-10-24T17:10:26.040777+00:00"
+  },
+  "interpretation": "Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero.",
+  "storage_retry_preflight": null,
+  "sampling_attempt_receipts": [
+    {
+      "command": [
+        "python3.12",
+        "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/acquire_subset.py",
+        "--root",
+        "/home/ec2-user/paired-study-20261024",
+        "--sample",
+        "SRR37367643",
+        "--selection",
+        "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/selection.json",
+        "--tools",
+        "/home/ec2-user/experiment/sratoolkit.3.4.1-ubuntu64/bin",
+        "--selector",
+        "/home/ec2-user/paired-study-20261024/tools/select_pairs"
+      ],
+      "started_utc": "2026-10-24T16:31:02.401587+00:00",
+      "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+      "execution_driver_sha256": "7eb629e93cba8c98f385483ff00f8e149f7a7ac7efc8f3403a6d86bdaebeb1b7",
+      "exit_code": 0,
+      "seconds": 2335.927709066,
+      "finished_utc": "2026-10-24T17:09:58.329495+00:00"
+    }
+  ],
+  "timing_limit": "Recorded download totals include a documented storage retry when present. Attempt durations and manual storage checks may overlap; do not add them as worker cost. The final acquisition duration is not the total cost of failed or interrupted attempts."
+}
