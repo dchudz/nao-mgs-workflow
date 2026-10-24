@@ -182,10 +182,15 @@ def run(a):
     assert read_tsv(out/'diamond_adapter.tsv.gz')==read_tsv(out/'parallel_diamond_adapter.tsv.gz')
     command([sys.executable,scripts/'parallel_diamond_adapter.py',*common,'--workers','2','--extract-only','--output',out/'candidates.fastq.gz'])
     assert [raw for _,raw in pairs(out/'candidates.fastq.gz')]==[raw for key,raw in pairs(d/'sample.fastq') if key[0]!=b'@negative']
-    command([a.mark_duplicates,'-i',out/'parallel_diamond_adapter.tsv.gz','-o',out/'alignment.tsv.gz','-m',out/'groups.tsv.gz','-d','1','-n','2'])
+    def duplicate_tool(binary):
+        if a.duplicate_container:
+            return ['docker','run','--rm','--network','none','-v',f'{out}:{out}',
+                    '--entrypoint',binary,a.duplicate_container]
+        return [binary]
+    command([*duplicate_tool(a.mark_duplicates),'-i',out/'parallel_diamond_adapter.tsv.gz','-o',out/'alignment.tsv.gz','-m',out/'groups.tsv.gz','-d','1','-n','2'])
     rows=sorted(read_tsv(out/'alignment.tsv.gz'),key=lambda r:r['seq_id'])
     write_tsv(out/'alignment-sorted.tsv.gz',list(rows[0]),rows)
-    command([a.mark_similarity,'-i',out/'alignment-sorted.tsv.gz','-o',out/'joint.tsv.gz'])
+    command([*duplicate_tool(a.mark_similarity),'-i',out/'alignment-sorted.tsv.gz','-o',out/'joint.tsv.gz'])
     rows=read_tsv(out/'joint.tsv.gz');check_rows(rows,expected,marked=True)
     # Prove the checker itself rejects the three errors this control targets.
     rejected=[]
@@ -195,6 +200,13 @@ def run(a):
         try:check_rows(changed,expected,marked=True)
         except AssertionError:rejected.append(field)
         else:raise AssertionError('Checker accepted injected error: '+field)
+    binaries={str(a.diamond):sha(a.diamond)}
+    for binary in (a.mark_duplicates,a.mark_similarity):
+        binaries[str(binary)]=(subprocess.check_output(['docker','run','--rm','--network','none',
+            '--entrypoint','sha256sum',a.duplicate_container,str(binary)],text=True).split()[0]
+            if a.duplicate_container else sha(binary))
+    image_id=(subprocess.check_output(['docker','image','inspect',a.duplicate_container,'--format','{{.Id}}'],text=True).strip()
+              if a.duplicate_container else None)
     record=dict(passed=True,geometry_cases=n_geometry,positive_pairs=24,negative_pairs_excluded=1,
         exact_unique_pairs=query_result['exact_unique_pairs'],alignment_exemplars=len({r['prim_align_dup_exemplar'] for r in rows}),
         joint_exemplars=12,rejected_error_injections=rejected,seconds=time.monotonic()-start,
@@ -203,7 +215,7 @@ def run(a):
             scripts/'diamond_adapter.py',scripts/'diamond_geometry.py',scripts/'translated_coordinates.py',
             scripts/'parallel_diamond_adapter.py',scripts/'protein_queries.py',
             src/'modules/local/lcaTsv/resources/usr/bin/lca_tsv.py']},
-        binary_hashes={str(p):sha(p) for p in (a.diamond,a.mark_duplicates,a.mark_similarity)},
+        binary_hashes=binaries,duplicate_container_id=image_id,runner_sha256=sha(__file__),
         scope=expected['scope'])
     save(out/'result.json',record);print(json.dumps(record,indent=2))
 
@@ -213,6 +225,7 @@ if __name__=='__main__':
     q=sub.add_parser('run')
     for flag in ('fixture','output','source','diamond','mark-duplicates','mark-similarity'):q.add_argument('--'+flag,type=Path,required=True)
     q.add_argument('--source-commit',required=True)
+    q.add_argument('--duplicate-container',help='Use this exact Docker image for production duplicate executables')
     args=p.parse_args()
     if args.mode=='prepare':prepare(args.fixture)
     else:run(args)
