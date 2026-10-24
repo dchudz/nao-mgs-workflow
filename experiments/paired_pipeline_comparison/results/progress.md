@@ -1,8 +1,8 @@
 # Frozen paired pipeline comparison
 
-Report snapshot: 2026-10-24T10:12:05.323434+00:00.
+Report snapshot: 2026-10-24T10:54:43.344751+00:00.
 
-11 of 12 feasibility comparisons are collected and accepted. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
+12 of 12 feasibility comparisons are collected and accepted. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
 
 Both arms use the same selected input pairs, source reference collection, production duplicate handling, validation mode and validation cap. The variant changes the upstream screen and alignment representation. This does not isolate alignment as the only cause of differences.
 
@@ -23,6 +23,7 @@ These are final output records, not confirmed detections or species calls. “On
 | SRR39695239 | 25 | 14,746 | 20,877 | 29 | 6,160 | 10,327 | 23.4 | 25.3 |
 | SRR38294858 | 5 | 1,482 | 2,008 | 9 | 535 | 1,013 | 21.4 | 21.8 |
 | SRR38294103 | 5 | 1,222 | 1,761 | 1 | 540 | 833 | 18.5 | 18.7 |
+| SRR38294653 | 5 | 29 | 388 | 0 | 359 | 14 | 29.1 | 29.2 |
 
 Stage minutes omit preflight, inter-stage backups and driver overhead. Driver minutes include those, but omit acquisition and the final verified archive. Worker uptime captures all of them. Early replica timings overlap storage initialization; see [runtime context](aggregate/runtime-context.tsv). The same input QC/profiling work is shared between arms, so these are not standalone deployment timings.
 
@@ -40,6 +41,6 @@ See [the interpretation record](../comparison-interpretation.md), [nested depth 
 
 ## Remaining execution
 
-1 feasibility comparisons remain uncollected. Expansion beyond this initial cohort is conditional on completed outputs and measured costs. No sample will be chosen or discarded because of its biological findings.
+0 feasibility comparisons remain uncollected. Expansion beyond this initial cohort is conditional on completed outputs and measured costs. No sample will be chosen or discarded because of its biological findings.
 
 The existing budget is $500. The working allocation reserves $200 for new compute; posted historical charges, billing lag and noncompute retention are accounted for separately in [budget.json](../budget.json). Observed resource-time ledgers live in `../runtime-provenance/`. They are estimates and ceilings, not invoice reconciliation.

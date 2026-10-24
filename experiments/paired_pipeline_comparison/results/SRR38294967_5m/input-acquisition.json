@@ -48,5 +48,8 @@
       }
     ]
   },
-  "interpretation": "Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero."
+  "interpretation": "Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero.",
+  "storage_retry_preflight": null,
+  "sampling_attempt_receipts": [],
+  "timing_limit": "Recorded download totals include a documented storage retry when present. Attempt durations and manual storage checks may overlap; do not add them as worker cost. The final acquisition duration is not the total cost of failed or interrupted attempts."
 }
