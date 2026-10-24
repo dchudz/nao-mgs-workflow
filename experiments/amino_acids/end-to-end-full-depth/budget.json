@@ -5,7 +5,7 @@
   "previous_cap_remainder_carried_forward_USD": 0,
   "compute_ceiling_USD": 400,
   "noncompute_and_shutdown_reserve_USD": 100,
-  "status": "First full-depth production RUN completed; AA screening underway. Second full-depth input verified. Protein integration and byte-parity gates passed. The worker remains bounded at $400 with $100 reserved for other run charges.",
+  "status": "Three-sample maximum supersedes the original ten-sample expensive-arm target. First sample remains incomplete; preservation and shutdown are in progress.",
   "accounting": "Charge new workers, attached volumes, IPs, new storage, reference restoration, requests and transfer to this run. Historical worker costs are excluded. Reconcile lagged billing with live resource-time bounds.",
   "worker": {
     "instance_id": "i-02d118993a6f4989a",
@@ -14,5 +14,6 @@
     "verified_compute_USD_per_hour": 3.024,
     "conservative_worker_including_volume_USD_per_hour": 4,
     "absolute_termination_utc": "2026-10-27T23:07:48Z"
-  }
+  },
+  "scope_decision": "scope-decision-20261024.json"
 }

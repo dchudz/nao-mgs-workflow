@@ -1,0 +1,21 @@
+{
+  "recorded_utc": "2026-10-24T01:36:54.992980+00:00",
+  "decision_source": "David relayed via Claude in this conversation; David subsequently asked whether the reasoning was sound and authorized useful work within the budget while away.",
+  "expensive_arm_limit_samples": 3,
+  "expensive_arm_allowed_samples": [
+    "SRR37076045",
+    "SRR38294902",
+    "SRR33038013"
+  ],
+  "configuration_changes_allowed_this_cohort": false,
+  "additional_baseline_only_samples": "Discretionary only if useful; not scheduled.",
+  "budget_cap_USD": 500,
+  "budget_replaces_previous_remainder": true,
+  "inference_limits": [
+    "The original order was frozen, but this is not a random population sample or a prospectively blinded selection.",
+    "Three selected cases can support paired method comparisons; they cannot estimate a population rare-event rate.",
+    "Prior candidate gains and final validated calls are different endpoints."
+  ],
+  "execution_status": "Further sequence-level discovery work is not being launched. Preserve completed outputs, reconcile costs, and stop dedicated compute.",
+  "not_completed": "The first sample has not completed all four outputs; no claim of a completed three-sample comparison."
+}
