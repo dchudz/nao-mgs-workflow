@@ -1,0 +1,72 @@
+{
+  "strata": [
+    {
+      "depth_million_pairs": 5,
+      "planned_units": 50,
+      "status_counts": {
+        "complete": 2,
+        "not_collected": 48
+      },
+      "completed_run_count": 2,
+      "production_rows": {
+        "sum": 3205,
+        "median": 1602.5,
+        "min": 344,
+        "max": 2861
+      },
+      "protein_rows": {
+        "sum": 4028,
+        "median": 2014.0,
+        "min": 620,
+        "max": 3408
+      },
+      "production_only": {
+        "sum": 8,
+        "median": 4.0,
+        "min": 0,
+        "max": 8
+      },
+      "protein_only": {
+        "sum": 831,
+        "median": 415.5,
+        "min": 276,
+        "max": 555
+      },
+      "reassigned": {
+        "sum": 1868,
+        "median": 934.0,
+        "min": 216,
+        "max": 1652
+      },
+      "net_rows": {
+        "sum": 823,
+        "median": 411.5,
+        "min": 276,
+        "max": 547
+      },
+      "stage_minutes": {
+        "sum": 60.050278050083335,
+        "median": 30.025139025041668,
+        "min": 22.157443115216665,
+        "max": 37.89283493486667
+      }
+    },
+    {
+      "depth_million_pairs": 25,
+      "planned_units": 10,
+      "status_counts": {
+        "not_collected": 10
+      }
+    }
+  ],
+  "interpretation": [
+    "Units are sequencing runs, not proven independent specimens.",
+    "Output counts and changed assignments are not sensitivity, specificity, or confirmed new detections.",
+    "No additional taxonomic agreement or exemplar threshold is imposed.",
+    "Validation statuses have different sampled sets; unaligned and unsampled records are kept separate.",
+    "Stage minutes exclude acquisition, boot, preservation and idle time, and share profiling/QC work.",
+    "Not-collected units may be running remotely; absence from this local snapshot is not a zero result.",
+    "Depth strata are nested; their rows must not be pooled as independent observations.",
+    "Unavailable Bracken output is not zero abundance."
+  ]
+}
