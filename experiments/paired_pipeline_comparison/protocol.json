@@ -45,5 +45,12 @@
     "No causal attribution to alignment alone",
     "No confirmed complete ground truth for environmental samples"
   ],
-  "prior_preflight": "The preceding execution refusal was withdrawn; prior preservation/accounting observations remain valid. No biological methods are altered by this status correction."
+  "prior_preflight": "The preceding execution refusal was withdrawn; prior preservation/accounting observations remain valid. No biological methods are altered by this status correction.",
+  "synthetic_control_gate": {
+    "required": true,
+    "fixture": "synthetic-control-fixture/expected.json",
+    "evidence": "synthetic-control-results/attempt-3/result.json",
+    "meaning": "Known-origin synthetic coordinate, taxonomy, and duplicate handling control. Passing does not establish environmental accuracy or validate other pipeline stages.",
+    "first_run": "Already launched before this control was requested; eligibility assessed retrospectively against identical tested source and production container. Future launches check the gate before work."
+  }
 }

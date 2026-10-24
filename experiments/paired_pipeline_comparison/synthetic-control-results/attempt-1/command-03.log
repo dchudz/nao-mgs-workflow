@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/ec2-user/paired-study-20261024/source/experiments/amino_acids/diamond_adapter.py", line 217, in <module>
+    if __name__ == '__main__':main()
+                              ^^^^^^
+  File "/home/ec2-user/paired-study-20261024/source/experiments/amino_acids/diamond_adapter.py", line 174, in main
+    parents, children = lca.parse_nodes_db(str(ref/'taxonomy-nodes.dmp'),81077)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/paired-study-20261024/source/modules/local/lcaTsv/resources/usr/bin/lca_tsv.py", line 801, in parse_nodes_db
+    assert artificial_taxid in parent_to_children, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Artificial parent taxid not found in parent-to-children DB: 81077, defaultdict(<class 'set'>, {1: {900000000, 1, 900000002, 900000001, 900000003, 900000004, 900000005, 81077}})

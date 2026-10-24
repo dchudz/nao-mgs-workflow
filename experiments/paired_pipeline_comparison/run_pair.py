@@ -5,13 +5,16 @@ Never treat a failed, missing, or unfinished output as an empty biological resul
 """
 import argparse,csv,datetime,gzip,hashlib,json,os,subprocess,time
 from pathlib import Path
+from synthetic_control_gate import verify_control
 p=argparse.ArgumentParser()
 for flag in ('root','source','retained'):p.add_argument('--'+flag,type=Path,required=True)
 p.add_argument('--sample',required=True);p.add_argument('--level',choices=['shallow','deep'],default='shallow')
 p.add_argument('--source-commit',required=True);a=p.parse_args()
 R=a.source;root=a.root;retained=a.retained;ref=retained/'reference'
+control_proof=verify_control(R,retained/'protein/tools/diamond','pipeline-e2e-rust:local')
 sample=a.sample+('_5m' if a.level=='shallow' else '_25m');pairs=5_000_000 if a.level=='shallow' else 25_000_000
 D=root/'comparisons'/sample;D.mkdir(parents=True,exist_ok=True)
+(D/'synthetic-control-gate.json').write_text(json.dumps(control_proof,indent=2)+'\n')
 data=root/'inputs'/a.sample/a.level;AWS=['aws','--profile','pipeline-codex','--region','us-east-1']
 prefix='s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/'
 def now():return datetime.datetime.now(datetime.timezone.utc)
