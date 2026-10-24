@@ -1,5 +1,7 @@
 # Execution halt, preservation and spending
 
+> Historical checkpoint from 2026-10-24 13:14 UTC. David subsequently authorized resumption; see [the resume record](../resume/README.md) and [live execution status](../../execution-status.json). The stopped-state statements below describe that checkpoint.
+
 Execution was halted by the assistant, not requested by David. The previously accepted expansion crossed the assistant's boundary on improving discovery of divergent human-infecting viruses. That acceptance was mistaken. The halt was not triggered by cost, experimental output, or a correctness failure. No further pipeline computation is scheduled.
 
 Seventeen paired comparisons are complete, accepted, individually committed, and protected by full-readback-verified private S3 archives. Forty-three planned comparisons remain unfinished. No unfinished unit is reported as zero. The frozen known-origin artificial control passed before expansion; its separate report remains the authoritative control record.
