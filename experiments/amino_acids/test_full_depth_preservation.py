@@ -7,8 +7,9 @@ class PreservationTest(unittest.TestCase):
     def test_eviction_requires_identical_private_copy(self):
         source=(Path(__file__).with_name('verify_full_depth_backup.py')).read_text()
         prefix='s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/'
-        for corrupt in [True,False]:
-            with self.subTest(corrupt=corrupt),tempfile.TemporaryDirectory() as temporary:
+        for scenario in ['corrupt','complete','interrupt']:
+            corrupt=scenario=='corrupt'
+            with self.subTest(scenario=scenario),tempfile.TemporaryDirectory() as temporary:
                 root=Path(temporary);sample='SRRtest';d=root/'e2e'/sample
                 plan=root/'experiments/amino_acids/end-to-end-full-depth';plan.mkdir(parents=True)
                 (plan/'sample-selection.json').write_text(json.dumps({'initial_samples':[{'run_accession':sample}]}))
@@ -37,6 +38,19 @@ class PreservationTest(unittest.TestCase):
                         with self.assertRaisesRegex(AssertionError,'Independent readback differs'):exec(compile(program,'verify','exec'),{'__name__':'__main__'})
                         self.assertTrue(work.exists());self.assertTrue((raw/'R1.fastq.gz').exists())
                         self.assertEqual(len(list(d.glob('protein-run/published/*/protein-hits.tsv'))),2)
+                    elif scenario=='interrupt':
+                        unlink=Path.unlink
+                        def interrupt(path,*args,**kwargs):
+                            if path.name=='protein-hits.tsv' and path.parent.name=='PROTEIN_CANDIDATES':raise OSError('interrupted cleanup')
+                            return unlink(path,*args,**kwargs)
+                        with patch.object(Path,'unlink',autospec=True,side_effect=interrupt):
+                            with self.assertRaisesRegex(OSError,'interrupted cleanup'):exec(compile(program,'verify','exec'),{'__name__':'__main__'})
+                        receipt=json.loads((d/'backup-verification.json').read_text())
+                        self.assertEqual(len(receipt['local_hsp_eviction_plan']),2)
+                        saved=json.loads(remote[prefix+'samples/'+sample+'/backup-verification.json'])
+                        self.assertEqual(saved['local_hsp_eviction_plan'],receipt['local_hsp_eviction_plan'])
+                        for item in receipt['local_hsp_eviction_plan']:self.assertEqual(remote[item['s3_uri']],b'query\treference\n')
+                        with self.assertRaisesRegex(AssertionError,'Restore the recorded S3 HSPs'):exec(compile(program,'verify','exec'),{'__name__':'__main__'})
                     else:
                         exec(compile(program,'verify','exec'),{'__name__':'__main__'})
                         self.assertFalse(work.exists());self.assertFalse((raw/'R1.fastq.gz').exists());self.assertTrue(final.exists())
