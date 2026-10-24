@@ -1,0 +1,29 @@
+{
+  "recorded_utc": "2026-10-24T02:12:32.388553+00:00",
+  "shared_run_cap_USD": 500,
+  "new_instances_allocated": 0,
+  "preservation_priority": true,
+  "allocations": [
+    {
+      "session": "Output branch failures",
+      "thread": "01a16b9e-b882-7d13-b8ae-88816ab8fa32",
+      "resource": "Existing worker only; one CPU, 512 MiB, ten minutes maximum; no lifetime extension.",
+      "incremental_cost_ceiling_USD": 0.1,
+      "status": "Peer reports completed within allocation and scratch removed; no downloads, searches, or lifecycle changes.",
+      "evidence_scope": "Synthetic output-writer correctness; actual alignment replaced with fixed benign records."
+    },
+    {
+      "session": "Protein-search result stability",
+      "thread": "01a16b9e-cbb9-7ae3-930e-92b12557e277",
+      "resource": "Existing small private metadata objects only, maximum 10 MiB.",
+      "incremental_cost_ceiling_USD": 0.05,
+      "status": "Peer reports four HEAD and four GET requests, 118326 bytes retrieved; no worker use or search reruns."
+    },
+    {
+      "session": "Reference cache concurrency",
+      "thread": "01a16b9e-d816-7be0-9f9b-5be1fcda7995",
+      "status": "Declined optional existing-worker allocation; no AWS work requested or used."
+    }
+  ],
+  "accounting_note": "These ceilings are not new budgets or measured charges. Existing-worker costs remain in the run wall-time accounting and must not be double-counted. Peer reports are attributed; no independent replay of their tests was performed here."
+}

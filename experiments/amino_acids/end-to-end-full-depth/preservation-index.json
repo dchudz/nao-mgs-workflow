@@ -1,0 +1,30 @@
+{
+  "sample": "SRR37076045",
+  "bucket": "pipeline-lab-839993661825-us-east-1",
+  "prefix": "runs/e2e-full-depth-20261023/preservation/20261024/",
+  "sorted_alignment_table": "completed-sorted-search-output.tsv",
+  "sorted_alignment_bytes": 241765580228,
+  "completed_artifact_archive": "completed-artifacts-and-diagnostics.tar.gz",
+  "archive_contents": "archive-members.json",
+  "verification_receipt": "receipt.json",
+  "adapter_inputs_archive_directory": "e2e/SRR37076045/protein-run/published/PROTEIN_QUERY/",
+  "adapter_input_files": [
+    "SRR37076045_fastp.fastq.gz",
+    "queries.tsv.gz",
+    "queries.fna.members.tsv.gz",
+    "queries.fna"
+  ],
+  "parameters_archive_path": "e2e/SRR37076045/protein-run/params.json",
+  "frozen_reference_source": "s3://pipeline-lab-839993661825-us-west-2/runs/full-reference-20261020a/index/output/",
+  "protein_reference_archive": {
+    "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/translated-core-nt-20261022/primary-closure-final/protein.tar.gz",
+    "bytes": 7837859310,
+    "sha256": "0e4a0d43a07cd4398e7d343ecce23ec1a6a28bd17d669e299c988ece8f033377",
+    "independent_download_hash_verified": true
+  },
+  "reference_hashes_archive_path": "experiments/amino_acids/end-to-end-full-depth/reference-verification.json",
+  "scientific_source_commit": "e34f3b484e56c27d28893c1e820a6016d2f8b534",
+  "workflow_status": "Protein search and sorting finished; protein adapter and protein downstream workflow have not completed. The archive is not a completed four-arm comparison.",
+  "access": "Uploaded using pipeline-codex in account 839993661825. Access using pipeline-claude has not been tested.",
+  "raw_input_recovery": "Acquisition receipts in archive record public source and hashes; no public raw SRA input is unique to this worker."
+}

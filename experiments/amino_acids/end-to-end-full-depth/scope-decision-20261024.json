@@ -17,5 +17,9 @@
     "Prior candidate gains and final validated calls are different endpoints."
   ],
   "execution_status": "Further sequence-level discovery work is not being launched. Preserve completed outputs, reconcile costs, and stop dedicated compute.",
-  "not_completed": "The first sample has not completed all four outputs; no claim of a completed three-sample comparison."
+  "not_completed": "The first sample has not completed all four outputs; no claim of a completed three-sample comparison.",
+  "latest_relayed_request": "Finish sample-1 conversion and calling from existing alignments only; preserve first, no new BLAST or DIAMOND searches.",
+  "continuation_completed": "Preservation, existing timing/accounting summaries, conceptual method comparisons, and a six-record synthetic duplicate-selection counterexample.",
+  "conversion_and_calling_completed": false,
+  "scientific_scope_limit": "No additional sequence-level discovery, per-case genome reconstruction, or coverage maps undertaken in this continuation."
 }

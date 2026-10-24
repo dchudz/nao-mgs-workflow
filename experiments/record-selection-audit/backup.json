@@ -1,0 +1,7 @@
+{
+  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/preservation/20261024/synthetic-record-selection.tar.gz",
+  "bytes": 8204,
+  "sha256": "040e38d558052883160b9ca2597b9720fff302ae0d5a5635d7c90a3c847b9afc",
+  "readback_verified": true,
+  "initial_attempt": "Rejected by schema check because synthetic boolean strings used lower case; corrected to documented capitalization before the measured comparison."
+}
