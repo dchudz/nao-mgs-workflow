@@ -5,7 +5,7 @@ include { BOWTIE2 as OTHER } from '../../modules/local/bowtie2'
 
 process PROTEIN_CANDIDATES {
     label 'python'
-    label 'max'
+    cpus 32
     memory '240 GB'
     input:
         tuple val(sample), path(hits), path(metadata), path(members), path(reads)
@@ -22,7 +22,7 @@ process PROTEIN_CANDIDATES {
 
 process PROTEIN_ADAPTER {
     label 'python'
-    label 'max'
+    cpus 32
     memory '240 GB'
     input:
         tuple val(sample), path(hits), path(metadata), path(members), path(reads)
