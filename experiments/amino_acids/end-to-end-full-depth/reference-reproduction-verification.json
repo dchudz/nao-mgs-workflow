@@ -1,0 +1,28 @@
+{
+  "verified": true,
+  "original_builder_sha256": "60f07af878602f9cd6d596616afbfa20746401b5aa33b1393f2364aab0c53a46",
+  "isolated_script_sha256": "f572020e096f6711896464cd0f9b8822ca345289544f5647ffd6ab20447679a9",
+  "only_source_edit": "Output root changed to an isolated reproduction directory; input is a symlink to the current frozen Bowtie2 DUST-masked FASTA.",
+  "genome_fasta_gzip_sha256": "41e773911c11749f7d5f99b3f09f30c59504d70b05cb9c522fd833c3022d3254",
+  "protein_fasta_sha256": "e9861f81d94d567905610e544d906db2e3bc75a79a24d220247e6121a6b18966",
+  "restored_diamond_index_sha256": "d154a0b68879119bbfd933edfcb8fe6a2d9cfffc7a1f28eb5535ce8d1bbaab04",
+  "wall_seconds": 252.50902469500033,
+  "translation": {
+    "genomes": 73815,
+    "proteins": 44892414,
+    "residues": 2645858332,
+    "seconds": 216.68439316749573,
+    "sha256": "e9861f81d94d567905610e544d906db2e3bc75a79a24d220247e6121a6b18966",
+    "minimum_length": 25,
+    "genetic_code": 1,
+    "ambiguity": "break",
+    "source": "/home/ec2-user/experiment/integration/translation-reproduction/reference/results/virus-genomes-masked.fasta.gz",
+    "purpose": "Protein alignment reference uses the same DUST-masked genomes as Bowtie2; the amino-acid k-mer index separately uses human-masked genomes.",
+    "oracle_cases": 503
+  },
+  "dependencies": [
+    "biopython==1.85",
+    "numpy==2.0.2"
+  ],
+  "scope": "Complete six-frame protein FASTA regenerated from the current native alignment genomes. Exact bytes match the archived FASTA used to build the restored DIAMOND index; no scientific index or pipeline input is replaced."
+}
