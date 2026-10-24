@@ -82,7 +82,8 @@ def main():
         commands=[('aggregate_reports.py',['--results',results,'--selection',study/'selection.json','--orders',study/'validation-order.json','--out',results/'aggregate']),
                   ('annotate_runtime.py',['--results',results,'--selection',study/'selection.json','--provenance',study/'runtime-provenance/parallel-feasibility','--out',results/'aggregate']),
                   ('report_depth.py',['--aggregate',results/'aggregate/runs.tsv','--selection',study/'selection.json','--out',results/'aggregate']),
-                  ('write_progress.py',['--study',study])]
+                  ('write_progress.py',['--study',study]),
+                  ('report_compute_split.py',['--study',study])]
         for script,args in commands:run(['python3',study/script,*args],cwd=repo)
         run(['git','add','--',results],cwd=repo)
         run(['git','commit','--quiet','-m','Refresh accepted comparison inventory and complete execution receipts'],cwd=repo)
