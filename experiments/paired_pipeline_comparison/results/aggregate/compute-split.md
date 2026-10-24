@@ -4,13 +4,13 @@ These are completed-unit wall times, not CPU times or a bill. Cold reference wor
 
 | Pairs | Stage | Units | Median minutes | Range minutes |
 |---|---|---:|---:|---:|
-| 5M | aa-screen | 26 | 1.19 | 1.10–3.66 |
-| 5M | baseline-run | 26 | 4.95 | 3.59–15.62 |
-| 5M | prepare | 26 | 0.06 | 0.06–0.20 |
-| 5M | production-downstream | 26 | 1.98 | 1.20–39.64 |
-| 5M | protein-run | 26 | 3.34 | 2.69–12.72 |
-| 5M | protein_variant-downstream | 26 | 6.67 | 1.82–19.11 |
-| 5M | union | 26 | 0.00 | 0.00–0.12 |
+| 5M | aa-screen | 27 | 1.19 | 1.10–3.66 |
+| 5M | baseline-run | 27 | 4.86 | 3.48–15.62 |
+| 5M | prepare | 27 | 0.06 | 0.06–0.20 |
+| 5M | production-downstream | 27 | 2.15 | 1.20–39.64 |
+| 5M | protein-run | 27 | 3.34 | 2.69–12.72 |
+| 5M | protein_variant-downstream | 27 | 6.55 | 1.20–19.11 |
+| 5M | union | 27 | 0.00 | 0.00–0.12 |
 | 25M | aa-screen | 10 | 3.90 | 3.71–4.01 |
 | 25M | baseline-run | 10 | 4.27 | 2.58–5.85 |
 | 25M | prepare | 10 | 0.10 | 0.06–0.15 |
