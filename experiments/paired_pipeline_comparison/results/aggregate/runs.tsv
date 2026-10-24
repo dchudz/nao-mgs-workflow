@@ -1,7 +1,7 @@
 sample	depth_million_pairs	label	feasibility_run	validation_first	status	source_commit	unavailable_outputs	stage_minutes	production_rows	protein_rows	shared	same_assignment	reassigned	production_only	protein_only	net_rows	production_joint_exemplars	production_aligned	production_no_alignment	production_not_sampled	protein_variant_joint_exemplars	protein_variant_aligned	protein_variant_no_alignment	protein_variant_not_sampled
 SRR38294967	5	SRR38294967_5m	True	production	complete	629db5c220c0b425aaf24f9685a3fab36c8d6e54	bracken	37.89283493486667	2861	3408	2853	1201	1652	8	555	547	2831	353	0	2508	3367	523	86	2799
 SRR37367610	5	SRR37367610_5m	False	production	not_collected																			
-SRR39695225	5	SRR39695225_5m	False	protein_variant	not_collected																			
+SRR39695225	5	SRR39695225_5m	False	protein_variant	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	22.76378760794996	3624	4302	3617	1188	2429	7	685	678	3556	338	2	3284	4162	471	131	3700
 SRR38294772	5	SRR38294772_5m	False	production	not_collected																			
 SRR33038144	5	SRR33038144_5m	False	production	not_collected																			
 SRR39695144	5	SRR39695144_5m	False	protein_variant	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	21.7597275484333	9871	11048	9784	3124	6660	87	1264	1177	9445	388	1	9482	10478	524	188	10336
