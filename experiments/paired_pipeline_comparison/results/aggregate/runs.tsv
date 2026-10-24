@@ -11,7 +11,7 @@ SRR35971518	25	SRR35971518_25m	False	protein_variant	not_collected
 SRR33038009	5	SRR33038009_5m	False	protein_variant	not_collected																			
 SRR33038067	5	SRR33038067_5m	False	production	not_collected																			
 SRR39695348	5	SRR39695348_5m	True	production	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	74.45731603573334	112	158	112	28	84	0	46	46	112	74	0	38	158	113	16	29
-SRR39695348	25	SRR39695348_25m	True	production	not_collected																			
+SRR39695348	25	SRR39695348_25m	True	production	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	16.337503538549996	594	834	593	155	438	1	241	240	592	160	0	434	829	318	53	463
 SRR38294785	5	SRR38294785_5m	True	protein_variant	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	22.157443115216665	344	620	344	128	216	0	276	276	343	174	0	170	617	304	61	255
 SRR37059981	5	SRR37059981_5m	True	protein_variant	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	16.00056583484996	931	1396	931	375	556	0	465	465	916	244	1	686	1373	459	79	858
 SRR37027368	5	SRR37027368_5m	False	protein_variant	not_collected																			
@@ -45,7 +45,7 @@ SRR37367662	25	SRR37367662_25m	False	production	not_collected
 SRR38294842	5	SRR38294842_5m	False	production	not_collected																			
 SRR38294842	25	SRR38294842_25m	False	protein_variant	not_collected																			
 SRR39695239	5	SRR39695239_5m	True	production	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	65.01048048876667	2986	4182	2980	869	2111	6	1202	1196	2779	173	0	2813	3742	330	120	3732
-SRR39695239	25	SRR39695239_25m	True	protein_variant	not_collected																			
+SRR39695239	25	SRR39695239_25m	True	protein_variant	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	23.38216463186665	14746	20877	14717	4390	10327	29	6160	6131	11457	388	0	14358	15340	616	247	20014
 SRR36877014	5	SRR36877014_5m	False	protein_variant	not_collected																			
 SRR38294684	5	SRR38294684_5m	False	production	not_collected																			
 SRR33038182	5	SRR33038182_5m	False	protein_variant	not_collected																			

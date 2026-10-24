@@ -1,0 +1,28 @@
+{
+  "pair_receipt": {
+    "command": [
+      "python3.12",
+      "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/run_pair.py",
+      "--root",
+      "/home/ec2-user/paired-study-20261024",
+      "--source",
+      "/home/ec2-user/paired-study-20261024/sources/c77cdde0",
+      "--retained",
+      "/home/ec2-user/experiment",
+      "--sample",
+      "SRR38294785",
+      "--level",
+      "shallow",
+      "--source-commit",
+      "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83"
+    ],
+    "started_utc": "2026-10-24T06:38:01.609616+00:00",
+    "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+    "exit_code": 0,
+    "seconds": 1336.6993902020004,
+    "finished_utc": "2026-10-24T07:00:18.309171+00:00"
+  },
+  "sum_stage_wall_seconds": 1329.446586913,
+  "outside_stage_seconds": 7.25280328900044,
+  "interpretation": "The wrapper includes preflight checks, inter-stage preservation and orchestration. The residual is not search time and is not attributed to any one operation. Final integrity/report generation and the verified full archive occur after the pair wrapper. Missing wrapper timing is unknown, not zero."
+}

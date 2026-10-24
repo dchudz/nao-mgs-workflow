@@ -28,6 +28,18 @@ with tarfile.open(target,'w:gz') as tar:
             download_seconds=sum(r['seconds'] for r in downloads) if downloads else None,
             backup_record=json.loads((inputs/'backup-readback.json').read_text()),
             interpretation='Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero.')
+        pair_receipts=[json.loads(p.read_text()) for p in (root/'batch-logs').glob('*/'+d.name+'-pair.json')]
+        assert len(pair_receipts)<=1
+        accounting=json.loads((d/'comparison-report/accounting.json').read_text())
+        measured=accounting['sum_stage_wall_seconds']
+        execution={'pair_receipt':pair_receipts[0] if pair_receipts else None,
+            'sum_stage_wall_seconds':measured,
+            'outside_stage_seconds':pair_receipts[0]['seconds']-measured if pair_receipts else None,
+            'interpretation':'The wrapper includes preflight checks, inter-stage preservation and orchestration. The residual is not search time and is not attributed to any one operation. Final integrity/report generation and the verified full archive occur after the pair wrapper. Missing wrapper timing is unknown, not zero.'}
+        if pair_receipts:assert execution['outside_stage_seconds']>=-0.1
+        execution_payload=(json.dumps(execution,indent=2)+'\n').encode()
+        execution_item=tarfile.TarInfo(d.name+'/execution-overhead.json');execution_item.size=len(execution_payload)
+        tar.addfile(execution_item,io.BytesIO(execution_payload))
         payload=(json.dumps(summary,indent=2)+'\n').encode()
         item=tarfile.TarInfo(d.name+'/input-acquisition.json');item.size=len(payload)
         tar.addfile(item,io.BytesIO(payload))

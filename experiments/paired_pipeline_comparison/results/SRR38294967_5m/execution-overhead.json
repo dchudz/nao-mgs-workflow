@@ -1,0 +1,6 @@
+{
+  "pair_receipt": null,
+  "sum_stage_wall_seconds": 2273.5700960920003,
+  "outside_stage_seconds": null,
+  "interpretation": "The wrapper includes preflight checks, inter-stage preservation and orchestration. The residual is not search time and is not attributed to any one operation. Final integrity/report generation and the verified full archive occur after the pair wrapper. Missing wrapper timing is unknown, not zero."
+}
