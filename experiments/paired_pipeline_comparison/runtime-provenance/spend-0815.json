@@ -1,0 +1,229 @@
+{
+  "observed_utc": "2026-10-24T08:08:29.773238+00:00",
+  "account": "839993661825",
+  "workers": [
+    {
+      "worker": "spot2",
+      "instance_id": "i-0ee9da3f09d197be6",
+      "started_utc": "2026-10-24T06:11:40+00:00",
+      "state": "running",
+      "observed_utc": "2026-10-24T08:08:29.773238+00:00",
+      "hours": 1.9471592327777778,
+      "hourly_compute_ceiling_USD": 2,
+      "compute_ceiling_USD": 3.8943184655555556
+    },
+    {
+      "worker": "spot1",
+      "instance_id": "i-0f5065e3b4f67cfbc",
+      "started_utc": "2026-10-24T06:10:29+00:00",
+      "state": "running",
+      "observed_utc": "2026-10-24T08:08:29.773238+00:00",
+      "hours": 1.966881455,
+      "hourly_compute_ceiling_USD": 2,
+      "compute_ceiling_USD": 3.93376291
+    },
+    {
+      "worker": "primary",
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T05:07:00+00:00",
+      "state": "running",
+      "observed_utc": "2026-10-24T08:08:29.773238+00:00",
+      "hours": 3.0249370105555555,
+      "hourly_compute_ceiling_USD": 4,
+      "compute_ceiling_USD": 12.099748042222222
+    }
+  ],
+  "volumes": [
+    {
+      "volume_id": "vol-0272ade891333af83",
+      "size_GiB": 2048,
+      "iops": 6000,
+      "throughput_MiB_per_s": 1000,
+      "study_hours": 3.0249370105555555,
+      "modeled_USD_per_30day_month": 213.84,
+      "accrued_model_USD": 0.8984062921350001
+    },
+    {
+      "volume_id": "vol-004c4ffab08c46dbd",
+      "size_GiB": 2048,
+      "iops": 6000,
+      "throughput_MiB_per_s": 1000,
+      "study_hours": 1.9664533994444444,
+      "modeled_USD_per_30day_month": 213.84,
+      "accrued_model_USD": 0.5840366596350001
+    },
+    {
+      "volume_id": "vol-05ca1445d265f5325",
+      "size_GiB": 2048,
+      "iops": 6000,
+      "throughput_MiB_per_s": 1000,
+      "study_hours": 1.9468667327777778,
+      "modeled_USD_per_30day_month": 213.84,
+      "accrued_model_USD": 0.578219419635
+    }
+  ],
+  "elapsed_compute_ceiling_USD": 19.92782941777778,
+  "new_compute_allowance_USD": 200,
+  "study_EBS_accrual_model_USD": 2.0606623714050003,
+  "study_S3_current_objects": 1236,
+  "study_S3_current_bytes": 16376549466,
+  "cost_explorer_account_wide": {
+    "GroupDefinitions": [
+      {
+        "Type": "DIMENSION",
+        "Key": "SERVICE"
+      }
+    ],
+    "ResultsByTime": [
+      {
+        "TimePeriod": {
+          "Start": "2026-10-23",
+          "End": "2026-10-24"
+        },
+        "Total": {},
+        "Groups": [
+          {
+            "Keys": [
+              "AWS Cost Explorer"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.04",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AWS Glue"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AWS Key Management Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon EC2 Container Registry (ECR)"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.003854884",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "EC2 - Other"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "5.8288577491",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Elastic Compute Cloud - Compute"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "73.2889530941",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Simple Notification Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Simple Storage Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "11.3979950336",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Virtual Private Cloud"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.246588885",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AmazonCloudWatch"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          }
+        ],
+        "Estimated": true
+      },
+      {
+        "TimePeriod": {
+          "Start": "2026-10-24",
+          "End": "2026-10-25"
+        },
+        "Total": {
+          "UnblendedCost": {
+            "Amount": "0",
+            "Unit": "USD"
+          }
+        },
+        "Groups": [],
+        "Estimated": true
+      }
+    ],
+    "DimensionValueAttributes": []
+  },
+  "unpriced": [
+    "Snapshot incremental storage",
+    "S3 storage age and requests",
+    "Data transfer",
+    "Taxes"
+  ],
+  "limits": [
+    "Compute is an elapsed-time ceiling, not an invoice.",
+    "EBS model excludes pre-study retention and uses a 30-day month.",
+    "S3 bytes are a current inventory, not byte-hours or a charge.",
+    "Cost Explorer is account-wide and delayed; do not add it to these overlapping models.",
+    "No posted charge for a day means unposted, not free.",
+    "The existing 150 USD billing-lag/noncompute reserve remains separate."
+  ]
+}
