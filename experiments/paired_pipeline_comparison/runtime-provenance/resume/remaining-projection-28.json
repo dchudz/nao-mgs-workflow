@@ -1,0 +1,136 @@
+{
+  "observed_utc": "2026-10-24T17:49:53.840633+00:00",
+  "completed": 28,
+  "remaining": 32,
+  "workers": {
+    "primary": {
+      "remaining_units": {
+        "SRR35987549": [
+          "shallow"
+        ],
+        "SRR39695024": [
+          "shallow"
+        ],
+        "SRR35987661": [
+          "shallow"
+        ],
+        "SRR35946910": [
+          "shallow"
+        ],
+        "SRR38294666": [
+          "shallow"
+        ],
+        "SRR38294772": [
+          "shallow"
+        ],
+        "SRR37181155": [
+          "shallow"
+        ],
+        "SRR35946912": [
+          "shallow"
+        ],
+        "SRR36877014": [
+          "shallow"
+        ],
+        "SRR37027368": [
+          "shallow"
+        ],
+        "SRR33038067": [
+          "shallow"
+        ],
+        "SRR33038182": [
+          "shallow"
+        ],
+        "SRR39695002": [
+          "shallow"
+        ],
+        "SRR38294715": [
+          "shallow"
+        ],
+        "SRR33038144": [
+          "shallow"
+        ],
+        "SRR37367610": [
+          "shallow"
+        ]
+      },
+      "source_pairs_still_charged_in_model": 15429627439,
+      "modeled_acquisition_hours": 6.857612195111112,
+      "shallow_remaining": 16,
+      "deep_remaining": 0,
+      "modeled_remaining_hours": 14.857612195111113,
+      "hourly_compute_ceiling_USD": 4,
+      "modeled_additional_compute_USD": 59.43044878044445
+    },
+    "spot2": {
+      "remaining_units": {
+        "SRR38294842": [
+          "deep"
+        ],
+        "SRR37092454": [
+          "shallow"
+        ],
+        "SRR39695225": [
+          "shallow"
+        ],
+        "SRR33038009": [
+          "shallow"
+        ],
+        "SRR38294667": [
+          "shallow"
+        ],
+        "SRR38294183": [
+          "shallow"
+        ],
+        "SRR39695253": [
+          "shallow"
+        ],
+        "SRR36790977": [
+          "shallow"
+        ],
+        "SRR36876987": [
+          "shallow"
+        ],
+        "SRR38294098": [
+          "shallow"
+        ],
+        "SRR36832676": [
+          "shallow"
+        ],
+        "SRR39695374": [
+          "shallow"
+        ],
+        "SRR38294677": [
+          "shallow"
+        ],
+        "SRR39695325": [
+          "shallow"
+        ],
+        "SRR38294684": [
+          "shallow"
+        ],
+        "SRR38294835": [
+          "shallow"
+        ]
+      },
+      "source_pairs_still_charged_in_model": 13493329925,
+      "modeled_acquisition_hours": 5.997035522222222,
+      "shallow_remaining": 15,
+      "deep_remaining": 1,
+      "modeled_remaining_hours": 14.247035522222223,
+      "hourly_compute_ceiling_USD": 2,
+      "modeled_additional_compute_USD": 28.494071044444446
+    }
+  },
+  "elapsed_compute_ceiling_USD": 68.29487018444445,
+  "modeled_remaining_compute_USD": 87.9245198248889,
+  "modeled_final_compute_USD": 156.21939000933335,
+  "current_compute_allowance_USD": 200,
+  "guard_hours_remaining": 20.601002004444446,
+  "limits": [
+    "Uses the original planning rates: 1.6 seconds per million source pairs, 0.5 hours per shallow unit, and 0.75 hours per remaining deep unit.",
+    "Charges full acquisition for a run with no accepted unit, even if preparation is already in progress. An accepted sibling depth means acquisition is already paid.",
+    "This is a planning scenario, not a runtime guarantee or invoice. Stage and preservation overhead can vary; live costs and shutdown guards remain authoritative.",
+    "No biological result is used in scheduling or this calculation."
+  ]
+}
