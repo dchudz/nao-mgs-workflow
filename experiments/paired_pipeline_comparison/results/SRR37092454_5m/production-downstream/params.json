@@ -1,0 +1,9 @@
+{
+  "platform": "illumina",
+  "input_file": "/home/ec2-user/paired-study-20261024/comparisons/SRR37092454_5m/production/input.csv",
+  "aln_dup_deviation": 1,
+  "validation_n_sample": 20,
+  "blast_task": null,
+  "base_dir": "/home/ec2-user/paired-study-20261024/comparisons/SRR37092454_5m/production-downstream",
+  "ref_dir": "/home/ec2-user/experiment/reference"
+}
