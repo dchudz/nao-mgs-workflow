@@ -35,6 +35,10 @@ def main():
     rows=[]
     for path in sorted(a.results.glob('*/comparison-report/stage-wall-times.tsv')):
         label=path.parent.parent.name;sample=label.rsplit('_',1)[0];worker=workers.get(sample)
+        placement=path.parent.parent/'execution-worker.json'
+        if placement.exists():
+            worker=json.loads(placement.read_text())['worker']
+            assert worker in {'primary','spot1','spot2'}, 'Unknown execution worker'
         if worker is None:raise ValueError('Missing worker provenance for '+label)
         with path.open() as f:
             for row in csv.DictReader(f,delimiter='\t'):

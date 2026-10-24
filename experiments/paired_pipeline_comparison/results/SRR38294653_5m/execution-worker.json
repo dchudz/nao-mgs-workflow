@@ -1,0 +1,6 @@
+{
+  "worker": "primary",
+  "instance_id": "i-02d118993a6f4989a",
+  "reason": "Resumed unfinished unit on retained primary after Spot1 interruption",
+  "shard": "primary-recovery"
+}
