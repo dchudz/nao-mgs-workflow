@@ -11,5 +11,10 @@
   "initial_worker_bound_USD": 32,
   "limits": "Do not extend the first allocation or add workers without recording live resource-time costs against the shared 200 USD new-compute allowance. Retained storage and transfers consume the separate reserve. No quota increase.",
   "remaining_budget_is_invoice_reconciled": false,
-  "conservative_total_bound_USD": 449.98585180777775
+  "conservative_total_bound_USD": 449.98585180777775,
+  "current_worker_max_hours": 24,
+  "current_worker_bound_USD": 96,
+  "deadline_type": "Renewable spending safeguard; the user imposed no elapsed-time deadline.",
+  "extension_reason": "User explicitly requested useful work beyond eight hours. One worker at the existing conservative 4 USD/hour bound fits within the shared 200 USD new-compute allocation.",
+  "allocation_rule": "Before adding workers, recompute all spending deadlines against the shared remaining compute allowance, including elapsed time."
 }

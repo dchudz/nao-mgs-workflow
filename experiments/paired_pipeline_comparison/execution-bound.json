@@ -1,0 +1,11 @@
+{
+  "stop_utc": "2026-10-25T05:07:00+00:00",
+  "instance_id": "i-02d118993a6f4989a",
+  "started_utc": "2026-10-24T05:07:00+00:00",
+  "worker_rate_bound_USD_per_hour": 4,
+  "first_worker_bound_USD": 96,
+  "new_compute_allowance_USD": 200,
+  "shutdown_behavior": "stop, retain volume",
+  "deadline_type": "Renewable spending safeguard, not a user deadline",
+  "parallel_expansion_rule": "Before starting additional workers, recompute all stop times against the shared remaining 200 USD new-compute allowance."
+}

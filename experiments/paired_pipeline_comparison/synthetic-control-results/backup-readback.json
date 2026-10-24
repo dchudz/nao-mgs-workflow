@@ -1,0 +1,18 @@
+{
+  "verified_utc": "2026-10-24T05:34:02.921501+00:00",
+  "source_commit": "91b1063abd9e274012240acaf614daae3492dc16",
+  "objects": [
+    {
+      "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/controls/synthetic-adapter/91b1063a/synthetic-control-91b1063a.tar.gz",
+      "bytes": 88442,
+      "sha256": "ffff4a67f1c5d1d267b9c3087db7876eb21a9a4222dcc93ff9ba34c882fde5f6",
+      "readback_verified": true
+    },
+    {
+      "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/controls/synthetic-adapter/91b1063a/synthetic-control-history.bundle",
+      "bytes": 46878,
+      "sha256": "2922f0cc7b6c7d0763d304dc87daf55e32752fb24821cb12d82482cdce6948c8",
+      "readback_verified": true
+    }
+  ]
+}

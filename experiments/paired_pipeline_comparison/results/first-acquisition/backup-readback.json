@@ -1,0 +1,17 @@
+{
+  "verified_utc": "2026-10-24T05:41:07.776983+00:00",
+  "objects": [
+    {
+      "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR38294967/shallow/R1.fastq.gz",
+      "bytes": 393069021,
+      "sha256": "445d86c7a5a9951bb1dd38ddfdfe621714cd4c90d4abd43478ffb3bfa635b740",
+      "readback_verified": true
+    },
+    {
+      "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/inputs/SRR38294967/shallow/R2.fastq.gz",
+      "bytes": 384349383,
+      "sha256": "39bec179014c03863d2e814e5bb80a0e12afe1c45f8b2b737a11ce06f8ff5466",
+      "readback_verified": true
+    }
+  ]
+}
