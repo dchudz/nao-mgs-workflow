@@ -1,0 +1,29 @@
+{
+  "stage": "protein_variant-downstream",
+  "command": [
+    "/home/ec2-user/experiment/nextflow",
+    "-log",
+    "/home/ec2-user/paired-study-20261024/comparisons/SRR35971518_5m/protein_variant-downstream/nextflow.log",
+    "run",
+    "/home/ec2-user/paired-study-20261024/sources/c77cdde0",
+    "-main-script",
+    "main.nf",
+    "-lib",
+    "/home/ec2-user/paired-study-20261024/sources/c77cdde0/lib",
+    "-c",
+    "/home/ec2-user/paired-study-20261024/sources/c77cdde0/configs/downstream.config",
+    "-c",
+    "/home/ec2-user/paired-study-20261024/runtime.config",
+    "-params-file",
+    "/home/ec2-user/paired-study-20261024/comparisons/SRR35971518_5m/protein_variant-downstream/params.json",
+    "-work-dir",
+    "/home/ec2-user/paired-study-20261024/comparisons/SRR35971518_5m/protein_variant-downstream/work",
+    "-ansi-log",
+    "false"
+  ],
+  "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+  "started_utc": "2026-10-24T15:39:18.547951+00:00",
+  "finished_utc": "2026-10-24T15:43:06.882742+00:00",
+  "wall_seconds": 228.3355125549997,
+  "exit_code": 0
+}

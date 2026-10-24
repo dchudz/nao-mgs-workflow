@@ -1,0 +1,12 @@
+focus	key	metric	value	threshold	flag_type
+viral	group=SRR35971518_5m	vertebrate-viral reads lost (%)	3.3333333333333335	2.0	fixed
+viral	group=SRR35971518_5m	vertebrate-viral reads gained (%)	87.28070175438596	25.0	fixed
+viral	group=SRR35971518_5m	vertebrate-viral reads reassigned (%)	51.724137931034484	10.0	fixed
+viral	group=SRR35971518_5m, rank_level=family, name=Astroviridae	clade share change (pp)	-55.440852936199015	3.0	fixed
+viral	group=SRR35971518_5m, rank_level=family, name=Caliciviridae	clade share change (pp)	-3.33389744457607	3.0	fixed
+viral	group=SRR35971518_5m, rank_level=family, name=Dicistroviridae	clade share change (pp)	3.536977491961415	3.0	fixed
+viral	group=SRR35971518_5m, rank_level=family, name=Orthoherpesviridae	clade share change (pp)	7.717041800643088	3.0	fixed
+viral	group=SRR35971518_5m, rank_level=order, name=Stellavirales	clade share change (pp)	-55.440852936199015	3.0	fixed
+viral	group=SRR35971518_5m, rank_level=order, name=Herpesvirales	clade share change (pp)	7.717041800643088	3.0	fixed
+viral	group=SRR35971518_5m, rank_level=order, name=Picornavirales	clade share change (pp)	21.12878659671687	3.0	fixed
+viral	group=SRR35971518_5m	BLAST-agreement rate drop	0.3192724458204334	0.1	fixed
