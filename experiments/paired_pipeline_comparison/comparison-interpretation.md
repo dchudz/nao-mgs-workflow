@@ -74,3 +74,17 @@ strata are reported separately.
 ## Runtime order limitation
 
 The baseline run precedes the protein run in every paired driver invocation. Validation-arm order is prespecified separately. Randomizing validation order does not remove the upstream execution-order difference. In addition to the recorded cold-storage overlaps, reuse of input and reference caches can therefore affect stage comparisons. No standalone speed ratio is inferred from these runs.
+
+## Execution outcome
+
+Execution was halted with 17 of 60 planned comparisons complete. See
+`execution-status.json` and the shutdown record in
+`runtime-provenance/preservation-halt/README.md`. The 43 unfinished comparisons
+are not failures or zero results. Completion order depended on infrastructure
+and workload; the completed subset is not a random completion sample.
+
+Equal downstream settings do not match the two upstream aligners' scoring
+thresholds, candidate sets, or false-positive operating points. With no complete
+environmental truth labels, output differences cannot establish which pipeline
+has greater sensitivity or precision. The synthetic control verifies its stated
+record-handling cases, not the biological correctness of extra outputs.

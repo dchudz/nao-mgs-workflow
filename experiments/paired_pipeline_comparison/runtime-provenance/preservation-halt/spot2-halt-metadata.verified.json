@@ -1,0 +1,194 @@
+{
+  "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/preservation-halt/spot2-halt-metadata.tar.gz",
+  "bytes": 6774530,
+  "sha256": "2aef2db0e0ee6785eb249559a332f9fccf43a7b526c65de934c0a1de95111d33",
+  "readback_verified": true,
+  "inventory": {
+    "utc": "2026-10-24T13:12:42.306087+00:00",
+    "worker": "spot2",
+    "units": [
+      {
+        "label": "SRR33038009_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR35971518_25m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR35971518_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR36790977_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR36832676_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR36876827_25m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR36876827_5m",
+        "complete": true,
+        "backup": {
+          "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR36876827_5m/completed-evidence.tar.gz",
+          "bytes": 13969207,
+          "sha256": "ac39979cac2d99a53b1d1b724e43ea42f2a00e62a086d65ddd335df7ef6b9f14",
+          "readback_verified": true
+        }
+      },
+      {
+        "label": "SRR36876987_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR37092454_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR37367647_5m",
+        "complete": true,
+        "backup": {
+          "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR37367647_5m/completed-evidence.tar.gz",
+          "bytes": 33930972,
+          "sha256": "fcd99b0f1e4c5aca153f486aa9913e022571984c22b4e95599dae818f1f78708",
+          "readback_verified": true
+        }
+      },
+      {
+        "label": "SRR37367662_25m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR37367662_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294098_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294103_5m",
+        "complete": true,
+        "backup": {
+          "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR38294103_5m/completed-evidence.tar.gz",
+          "bytes": 40147515,
+          "sha256": "f7477ae0974fc60817308f97825193c4886c1cec75cb37baed19b6d5a9a95a50",
+          "readback_verified": true
+        }
+      },
+      {
+        "label": "SRR38294183_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294667_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294677_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294684_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294805_25m",
+        "complete": true,
+        "backup": {
+          "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR38294805_25m/completed-evidence.tar.gz",
+          "bytes": 504723480,
+          "sha256": "061c4453e3c7b981eccd5537de9f0dcc24449435f5dfb023b343c51d8b44b54e",
+          "readback_verified": true
+        }
+      },
+      {
+        "label": "SRR38294805_5m",
+        "complete": true,
+        "backup": {
+          "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR38294805_5m/completed-evidence.tar.gz",
+          "bytes": 102464824,
+          "sha256": "057273944198a87c902ab03474b673d51eb3af22c67c5450d4c1560e9cad799a",
+          "readback_verified": true
+        }
+      },
+      {
+        "label": "SRR38294835_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294842_25m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR38294842_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR39695225_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR39695239_25m",
+        "complete": true,
+        "backup": {
+          "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR39695239_25m/completed-evidence.tar.gz",
+          "bytes": 281578240,
+          "sha256": "c9cbcb1c496495e0782e8e0aa7f657a318e11a9dcd01e9910b3e14234dc2b83f",
+          "readback_verified": true
+        }
+      },
+      {
+        "label": "SRR39695239_5m",
+        "complete": true,
+        "backup": {
+          "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR39695239_5m/completed-evidence.tar.gz",
+          "bytes": 59208424,
+          "sha256": "4565367825f3e81eb593b48112c1df7dbc2bb5fc414e9f1ef485f9579c858307",
+          "readback_verified": true
+        }
+      },
+      {
+        "label": "SRR39695253_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR39695325_5m",
+        "complete": false,
+        "backup": null
+      },
+      {
+        "label": "SRR39695374_5m",
+        "complete": false,
+        "backup": null
+      }
+    ],
+    "unfinished_state": "Retained on EBS; processes suspended; no new analysis requested",
+    "mounts": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/\",\n         \"source\": \"/dev/nvme0n1p1\",\n         \"fstype\": \"xfs\",\n         \"options\": \"rw,noatime,seclabel,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=1024,noquota\",\n         \"children\": [\n            {\n               \"target\": \"/proc\",\n               \"source\": \"proc\",\n               \"fstype\": \"proc\",\n               \"options\": \"rw,nosuid,nodev,noexec,relatime\",\n               \"children\": [\n                  {\n                     \"target\": \"/proc/sys/fs/binfmt_misc\",\n                     \"source\": \"systemd-1\",\n                     \"fstype\": \"autofs\",\n                     \"options\": \"rw,relatime,fd=33,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=5499\"\n                  }\n               ]\n            },{\n               \"target\": \"/sys\",\n               \"source\": \"sysfs\",\n               \"fstype\": \"sysfs\",\n               \"options\": \"rw,nosuid,nodev,noexec,relatime,seclabel\",\n               \"children\": [\n                  {\n                     \"target\": \"/sys/kernel/security\",\n                     \"source\": \"securityfs\",\n                     \"fstype\": \"securityfs\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime\"\n                  },{\n                     \"target\": \"/sys/fs/cgroup\",\n                     \"source\": \"cgroup2\",\n                     \"fstype\": \"cgroup2\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime,seclabel,nsdelegate,memory_recursiveprot\"\n                  },{\n                     \"target\": \"/sys/fs/pstore\",\n                     \"source\": \"none\",\n                     \"fstype\": \"pstore\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime,seclabel\"\n                  },{\n                     \"target\": \"/sys/firmware/efi/efivars\",\n                     \"source\": \"efivarfs\",\n                     \"fstype\": \"efivarfs\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime\"\n                  },{\n                     \"target\": \"/sys/fs/bpf\",\n                     \"source\": \"bpf\",\n                     \"fstype\": \"bpf\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime,mode=700\"\n                  },{\n                     \"target\": \"/sys/fs/selinux\",\n                     \"source\": \"selinuxfs\",\n                     \"fstype\": \"selinuxfs\",\n                     \"options\": \"rw,nosuid,noexec,relatime\"\n                  },{\n                     \"target\": \"/sys/kernel/debug\",\n                     \"source\": \"debugfs\",\n                     \"fstype\": \"debugfs\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime,seclabel\"\n                  },{\n                     \"target\": \"/sys/kernel/tracing\",\n                     \"source\": \"tracefs\",\n                     \"fstype\": \"tracefs\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime,seclabel\"\n                  },{\n                     \"target\": \"/sys/fs/fuse/connections\",\n                     \"source\": \"fusectl\",\n                     \"fstype\": \"fusectl\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime\"\n                  },{\n                     \"target\": \"/sys/kernel/config\",\n                     \"source\": \"configfs\",\n                     \"fstype\": \"configfs\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime\"\n                  }\n               ]\n            },{\n               \"target\": \"/dev\",\n               \"source\": \"devtmpfs\",\n               \"fstype\": \"devtmpfs\",\n               \"options\": \"rw,nosuid,seclabel,size=4096k,nr_inodes=48717014,mode=755\",\n               \"children\": [\n                  {\n                     \"target\": \"/dev/shm\",\n                     \"source\": \"tmpfs\",\n                     \"fstype\": \"tmpfs\",\n                     \"options\": \"rw,nosuid,nodev,seclabel\"\n                  },{\n                     \"target\": \"/dev/pts\",\n                     \"source\": \"devpts\",\n                     \"fstype\": \"devpts\",\n                     \"options\": \"rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000\"\n                  },{\n                     \"target\": \"/dev/mqueue\",\n                     \"source\": \"mqueue\",\n                     \"fstype\": \"mqueue\",\n                     \"options\": \"rw,nosuid,nodev,noexec,relatime,seclabel\"\n                  },{\n                     \"target\": \"/dev/hugepages\",\n                     \"source\": \"hugetlbfs\",\n                     \"fstype\": \"hugetlbfs\",\n                     \"options\": \"rw,relatime,seclabel,pagesize=2M\"\n                  }\n               ]\n            },{\n               \"target\": \"/run\",\n               \"source\": \"tmpfs\",\n               \"fstype\": \"tmpfs\",\n               \"options\": \"rw,nosuid,nodev,seclabel,size=77962112k,nr_inodes=819200,mode=755\",\n               \"children\": [\n                  {\n                     \"target\": \"/run/credentials/systemd-sysctl.service\",\n                     \"source\": \"ramfs\",\n                     \"fstype\": \"ramfs\",\n                     \"options\": \"ro,nosuid,nodev,noexec,relatime,seclabel,mode=700\"\n                  },{\n                     \"target\": \"/run/credentials/systemd-tmpfiles-setup-dev.service\",\n                     \"source\": \"ramfs\",\n                     \"fstype\": \"ramfs\",\n                     \"options\": \"ro,nosuid,nodev,noexec,relatime,seclabel,mode=700\"\n                  },{\n                     \"target\": \"/run/credentials/systemd-tmpfiles-setup.service\",\n                     \"source\": \"ramfs\",\n                     \"fstype\": \"ramfs\",\n                     \"options\": \"ro,nosuid,nodev,noexec,relatime,seclabel,mode=700\"\n                  },{\n                     \"target\": \"/run/user/1000\",\n                     \"source\": \"tmpfs\",\n                     \"fstype\": \"tmpfs\",\n                     \"options\": \"rw,nosuid,nodev,relatime,seclabel,size=38981052k,nr_inodes=9745263,mode=700,uid=1000,gid=1000\"\n                  },{\n                     \"target\": \"/run/docker/netns/d1977b48e8b6\",\n                     \"source\": \"nsfs[net:[4026532367]]\",\n                     \"fstype\": \"nsfs\",\n                     \"options\": \"rw\"\n                  }\n               ]\n            },{\n               \"target\": \"/tmp\",\n               \"source\": \"tmpfs\",\n               \"fstype\": \"tmpfs\",\n               \"options\": \"rw,nosuid,nodev,seclabel,nr_inodes=1048576\"\n            },{\n               \"target\": \"/boot/efi\",\n               \"source\": \"systemd-1\",\n               \"fstype\": \"autofs\",\n               \"options\": \"rw,relatime,fd=48,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=39094\",\n               \"children\": [\n                  {\n                     \"target\": \"/boot/efi\",\n                     \"source\": \"/dev/nvme0n1p128\",\n                     \"fstype\": \"vfat\",\n                     \"options\": \"rw,noatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=winnt,errors=remount-ro\"\n                  }\n               ]\n            },{\n               \"target\": \"/var/lib/nfs/rpc_pipefs\",\n               \"source\": \"sunrpc\",\n               \"fstype\": \"rpc_pipefs\",\n               \"options\": \"rw,relatime\"\n            },{\n               \"target\": \"/mnt/paired-study-inputs\",\n               \"source\": \"/dev/nvme1n1\",\n               \"fstype\": \"xfs\",\n               \"options\": \"rw,relatime,seclabel,inode64,logbufs=8,logbsize=32k,noquota\"\n            },{\n               \"target\": \"/var/lib/docker/overlay2/db728a6c5a84a5dae10631cb830c068fcf640ad13399952dfe6953710e308d5e/merged\",\n               \"source\": \"overlay\",\n               \"fstype\": \"overlay\",\n               \"options\": \"rw,relatime,seclabel,lowerdir=/var/lib/docker/overlay2/l/TANWWQLYO6J53KQUEONYQ6K5K5:/var/lib/docker/overlay2/l/Z3QEBC3BF4F2E5BGCVNH7AJNWV:/var/lib/docker/overlay2/l/MKCKN7UGVJV3KIBQFUH7X4IDE7:/var/lib/docker/overlay2/l/NFO6M2ZFFAPYORD3HTAGMDCTGH:/var/lib/docker/overlay2/l/WADXX6EVNPKNZFBKAH6WQ2I5U6:/var/lib/docker/overlay2/l/V4LGQ33WLQBESKK5XIERCBTBML:/var/lib/docker/overlay2/l/JTOSNJHYIGZK25ENHNLO2DAFHV:/var/lib/docker/overlay2/l/5IKT3UXQZNMNW2E6PYOGETJOEV:/var/lib/docker/overlay2/l/DJ7HW3VQ32O6DA4AAVUFAQ3IWA:/var/lib/docker/overlay2/l/Y4DIEIPZAW5423H3ZJXILFPH7N:/var/lib/docker/overlay2/l/XOCBBWZQ5W7XEIE77522IMVK2O:/var/lib/docker/overlay2/l/QABT6ACM2CQWVGKO3QZULCGNU4:/var/lib/docker/overlay2/l/P4N2VRJH2ARF7CF72FD4YLBHME:/var/lib/docker/overlay2/l/MV6HVQNJONFE27SHWOOKPZWI45:/var/lib/docker/overlay2/l/YVHX53DUKF5KRM235WM3YSZ5YO:/var/lib/docker/overlay2/l/RB2ZDPPSZ5M4THYOD5RLFE7T4X,upperdir=/var/lib/docker/overlay2/db728a6c5a84a5dae10631cb830c068fcf640ad13399952dfe6953710e308d5e/diff,workdir=/var/lib/docker/overlay2/db728a6c5a84a5dae10631cb830c068fcf640ad13399952dfe6953710e308d5e/work\"\n            }\n         ]\n      }\n   ]\n}\n"
+  }
+}

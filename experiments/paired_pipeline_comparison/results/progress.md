@@ -1,8 +1,8 @@
 # Frozen paired pipeline comparison
 
-Report snapshot: 2026-10-24T13:09:33.017218+00:00.
+Report snapshot: 2026-10-24T13:16:49.362117+00:00.
 
-17 of 60 planned comparisons are collected and accepted, including 12 of 12 feasibility comparisons. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
+17 of 60 planned comparisons are collected and accepted, including 12 of 12 feasibility comparisons. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. Execution is halted; unfinished units are retained as incomplete.
 
 Both arms use the same selected input pairs, source reference collection, production duplicate handling, validation mode and validation cap. The variant changes the upstream screen and alignment representation. This does not isolate alignment as the only cause of differences.
 
@@ -40,12 +40,13 @@ Stage minutes omit preflight, inter-stage backups and driver overhead. Driver mi
 - Clade counts precede validation. Validation annotates sampled records and does not turn all output records into confirmed positives.
 - Standard validation agreement allows a parent label to agree with a more specific child label. It is not exact species agreement or accuracy.
 - Output additions, losses and changes have no complete environmental truth labels. More output is not established to be better.
+- Equal downstream settings do not imply matched upstream scoring thresholds or false-positive operating points.
 - Nested depth comparisons reuse observations from the same run. Differences of exemplar totals are not counts of new independent origins.
 
 See [the interpretation record](../comparison-interpretation.md), [nested depth table](aggregate/nested-depth.tsv), [measured stage split](aggregate/compute-split.md), and [full acceptance inventory](aggregate/runs.tsv). Individual run folders retain the standard comparison reports, source commit, commands, stage timings, acquisition receipts and private archive checksum.
 
 ## Remaining execution
 
-43 of the full cohort comparisons remain uncollected. The feasibility gate passed and the fixed expansion was accepted within the budget. No sample is chosen or discarded because of its biological findings. Uncollected does not mean a zero result.
+43 planned comparisons are unfinished. Execution is halted; no pipeline jobs remain running. This was an assistant scope decision, not budget exhaustion or a failed correctness gate. The completed subset is not a random completion sample and does not establish population-level performance. Unfinished units are not zero results. See [the shutdown and preservation record](../runtime-provenance/preservation-halt/README.md).
 
 The existing budget is $500. The working allocation reserves $200 for new compute; posted historical charges, billing lag and noncompute retention are accounted for separately in [budget.json](../budget.json). Observed resource-time ledgers live in `../runtime-provenance/`. They are estimates and ceilings, not invoice reconciliation.
