@@ -1,0 +1,9 @@
+{
+  "name": "primary",
+  "runs": [
+    "SRR38294785",
+    "SRR38294137",
+    "SRR37059981"
+  ],
+  "stage": "frozen-feasibility"
+}

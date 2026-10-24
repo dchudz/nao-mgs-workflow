@@ -1,0 +1,9 @@
+{
+  "name": "spot2",
+  "runs": [
+    "SRR39695239",
+    "SRR37367647",
+    "SRR38294103"
+  ],
+  "stage": "frozen-feasibility"
+}

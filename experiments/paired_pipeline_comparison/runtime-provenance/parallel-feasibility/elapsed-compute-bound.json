@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-24T06:24:25.018593+00:00",
+  "workers": [
+    {
+      "instance_id": "i-0ee9da3f09d197be6",
+      "started_utc": "2026-10-24T06:11:40+00:00",
+      "observed_state": "running",
+      "elapsed_hours": 0.21250516472222222,
+      "rate_bound_USD_per_hour": 2,
+      "compute_bound_USD": 0.42501032944444445
+    },
+    {
+      "instance_id": "i-0f5065e3b4f67cfbc",
+      "started_utc": "2026-10-24T06:10:29+00:00",
+      "observed_state": "running",
+      "elapsed_hours": 0.23222738694444445,
+      "rate_bound_USD_per_hour": 2,
+      "compute_bound_USD": 0.4644547738888889
+    },
+    {
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T05:07:00+00:00",
+      "observed_state": "running",
+      "elapsed_hours": 1.2902829425,
+      "rate_bound_USD_per_hour": 4,
+      "compute_bound_USD": 5.16113177
+    }
+  ],
+  "total_elapsed_compute_bound_USD": 6.050596873333333,
+  "allowance_USD": 200,
+  "includes_storage_transfer": false,
+  "invoice_reconciled": false
+}
