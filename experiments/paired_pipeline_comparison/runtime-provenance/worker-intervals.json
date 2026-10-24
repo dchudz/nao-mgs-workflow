@@ -9,14 +9,20 @@
     {
       "instance_id": "i-0f5065e3b4f67cfbc",
       "started_utc": "2026-10-24T06:10:29+00:00",
-      "ended_utc_upper": null,
-      "evidence": "parallel-feasibility/worker-inventory.json"
+      "ended_utc_upper": "2026-10-24T10:07:39.719504+00:00",
+      "evidence": "worker-recovery-inventory.json; conservative observation after service interruption at 09:51:03 UTC"
     },
     {
       "instance_id": "i-0ee9da3f09d197be6",
       "started_utc": "2026-10-24T06:11:40+00:00",
       "ended_utc_upper": null,
       "evidence": "parallel-feasibility/worker-inventory.json"
+    },
+    {
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T09:59:59+00:00",
+      "ended_utc_upper": null,
+      "evidence": "worker-recovery-inventory.json"
     }
   ]
 }

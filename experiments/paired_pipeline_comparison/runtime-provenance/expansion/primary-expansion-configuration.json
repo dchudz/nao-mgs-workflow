@@ -1,0 +1,30 @@
+{
+  "worker": "primary",
+  "instance_id": "i-02d118993a6f4989a",
+  "stop_utc": "2026-10-25T11:55:53.193360+00:00",
+  "runs": [
+    "SRR39695144",
+    "SRR38294124",
+    "SRR39695102",
+    "SRR37367643",
+    "SRR35987549",
+    "SRR39695024",
+    "SRR35987661",
+    "SRR35946910",
+    "SRR38294666",
+    "SRR38294772",
+    "SRR37181155",
+    "SRR35946912",
+    "SRR36877014",
+    "SRR37027368",
+    "SRR33038067",
+    "SRR33038182",
+    "SRR39695002",
+    "SRR38294715",
+    "SRR33038144",
+    "SRR37367610"
+  ],
+  "runtime_config_sha256": "d061955a7dc733fb7fd1eea58ea0b1e30fb7bcdb726ac73059e0b82e1161f29a",
+  "timer": "NEXT                        LEFT     LAST PASSED UNIT                                     ACTIVATES\nSun 2026-10-25 11:55:53 UTC 24h left -    -      paired-study-budget-stop-expansion.timer paired-study-budget-stop-expansion.service\n\n1 timers listed.\nPass --all to see loaded but inactive timers, too.\n",
+  "analysis_launched": false
+}

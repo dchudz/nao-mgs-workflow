@@ -1,0 +1,30 @@
+{
+  "worker": "spot2",
+  "instance_id": "i-0ee9da3f09d197be6",
+  "stop_utc": "2026-10-25T11:55:53.193360+00:00",
+  "runs": [
+    "SRR38294805",
+    "SRR36876827",
+    "SRR35971518",
+    "SRR37367662",
+    "SRR38294842",
+    "SRR37092454",
+    "SRR39695225",
+    "SRR33038009",
+    "SRR38294667",
+    "SRR38294183",
+    "SRR39695253",
+    "SRR36790977",
+    "SRR36876987",
+    "SRR38294098",
+    "SRR36832676",
+    "SRR39695374",
+    "SRR38294677",
+    "SRR39695325",
+    "SRR38294684",
+    "SRR38294835"
+  ],
+  "runtime_config_sha256": "d061955a7dc733fb7fd1eea58ea0b1e30fb7bcdb726ac73059e0b82e1161f29a",
+  "timer": "NEXT                        LEFT     LAST PASSED UNIT                                     ACTIVATES\nSun 2026-10-25 11:55:53 UTC 24h left -    -      paired-study-budget-stop-expansion.timer paired-study-budget-stop-expansion.service\n\n1 timers listed.\nPass --all to see loaded but inactive timers, too.\n",
+  "analysis_launched": false
+}
