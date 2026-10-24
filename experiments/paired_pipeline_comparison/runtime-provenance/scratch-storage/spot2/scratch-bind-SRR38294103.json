@@ -1,0 +1,15 @@
+{
+  "sample": "SRR38294103",
+  "source": "/mnt/paired-study-inputs/SRR38294103",
+  "target": "/home/ec2-user/paired-study-20261024/inputs/SRR38294103",
+  "prepared_before_download": true,
+  "worker": "spot2",
+  "volume_id": "vol-03f6a458f0812c7b4",
+  "created_utc": "2026-10-24T09:05:56.590296+00:00",
+  "code_and_inputs_unchanged": true,
+  "note": "Existing active sample remains on original disk. This empty future-input directory uses fresh scratch storage.",
+  "link_type": "persistent directory symlink",
+  "bind_unmounted": true,
+  "updated_utc": "2026-10-24T09:06:53.432925+00:00",
+  "path_check_passed": true
+}

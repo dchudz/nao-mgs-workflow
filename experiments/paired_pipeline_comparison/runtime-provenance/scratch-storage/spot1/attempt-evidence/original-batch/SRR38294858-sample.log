@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/acquire_subset.py", line 28, in <module>
+    validation_seconds=run([a.tools/'vdb-validate',archive],D/'vdb-validate.log')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/acquire_subset.py", line 19, in run
+    with log.open('w') as f:subprocess.run(list(map(str,cmd)),stdout=f,stderr=subprocess.STDOUT,check=True,timeout=timeout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/ec2-user/experiment/sratoolkit.3.4.1-ubuntu64/bin/vdb-validate', '/home/ec2-user/paired-study-20261024/inputs/SRR38294858/SRR38294858']' died with <Signals.SIGKILL: 9>.

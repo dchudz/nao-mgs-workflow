@@ -1,0 +1,16 @@
+{
+  "worker": "spot1",
+  "path": "/home/ec2-user/paired-study-20261024/inputs/SRR38294858/SRR38294858",
+  "bytes": 63987994246,
+  "started_utc": "2026-10-24T08:40:03.542497+00:00",
+  "mode": "read-only",
+  "concurrent_readers": 32,
+  "block_bytes": 1048576,
+  "region_bytes": 1073741824,
+  "scope": "Read-only file cache fill. No parsing, classification, file edits or pipeline-setting changes.",
+  "timing_limit": "Concurrent I/O intervention; first execution is not a steady-state timing measurement.",
+  "completed": true,
+  "read_bytes": 63987994246,
+  "seconds": 203.6496431200012,
+  "finished_utc": "2026-10-24T08:43:27.192143+00:00"
+}

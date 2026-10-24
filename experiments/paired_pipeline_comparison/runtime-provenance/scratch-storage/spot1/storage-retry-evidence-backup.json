@@ -1,0 +1,7 @@
+{
+  "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/runtime/storage-retry-spot1.tar.gz",
+  "bytes": 8008,
+  "sha256": "22c0209a8f5a10dbe2466c9571e3d82e284c36da3536fc1aa4e4aff20613c3b2",
+  "readback_verified": true,
+  "failed_attempt_preserved": true
+}

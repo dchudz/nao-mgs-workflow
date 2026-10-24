@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-10-24T08:57:36.584810+00:00",
+  "worker": "spot1",
+  "bytes": 536870912,
+  "synthetic_random_bytes_only": true,
+  "write_fsync_and_hash_seconds": 7.678301829000702,
+  "cold_sequential_read_and_hash_seconds": 91.48725709799874,
+  "checksum_match": true,
+  "scope": "Small new-file storage diagnostic while other I/O runs. File-local cache hint only; no reference/input cache flush. Not a standalone storage benchmark."
+}

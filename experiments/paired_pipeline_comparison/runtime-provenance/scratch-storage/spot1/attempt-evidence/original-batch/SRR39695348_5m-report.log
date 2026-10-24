@@ -1,0 +1,22 @@
+{
+  "report": "/home/ec2-user/paired-study-20261024/comparisons/SRR39695348_5m/comparison-report",
+  "validation_status_counts": {
+    "production": {
+      "rows": 112,
+      "validation_status": {
+        "aligned": 74,
+        "not_sampled": 38
+      },
+      "joint_exemplars": 112
+    },
+    "protein_variant": {
+      "rows": 158,
+      "validation_status": {
+        "aligned": 113,
+        "no_alignment": 16,
+        "not_sampled": 29
+      },
+      "joint_exemplars": 158
+    }
+  }
+}

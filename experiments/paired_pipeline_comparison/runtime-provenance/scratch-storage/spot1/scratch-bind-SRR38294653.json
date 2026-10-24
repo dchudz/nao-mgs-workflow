@@ -1,0 +1,11 @@
+{
+  "sample": "SRR38294653",
+  "source": "/mnt/paired-study-inputs/SRR38294653",
+  "target": "/home/ec2-user/paired-study-20261024/inputs/SRR38294653",
+  "prepared_before_download": true,
+  "worker": "spot1",
+  "volume_id": "vol-06f002b044d0aeb35",
+  "created_utc": "2026-10-24T09:07:24.604115+00:00",
+  "link_type": "persistent directory symlink",
+  "code_and_inputs_unchanged": true
+}

@@ -1,0 +1,9 @@
+{
+  "name": "spot1-retry",
+  "runs": [
+    "SRR38294858",
+    "SRR38294653"
+  ],
+  "worker": "spot1",
+  "reason": "Only unfinished inputs after an explicitly preserved storage interruption; same selection and frozen pipeline source."
+}

@@ -1,0 +1,20 @@
+{
+  "sample": "SRR38294858",
+  "requested_utc": "2026-10-24T09:13:17.627251+00:00",
+  "reason": "Restored disk input preparation remained disk-bound; an independently downloaded identical public object passed the unchanged validator on a fresh disk. No comparison stage had started.",
+  "fresh_sha256": "e2d8ba7cddcf797880500b1332aff1fdae5054e865c6a4d90a7a02ce59a65ae7",
+  "source_last_modified": "2026-04-29T07:31:33+00:00",
+  "source_object_predates_both_attempts": true,
+  "terminated_processes": {
+    "379469": "/home/ec2-user/experiment/sratoolkit.3.4.1-ubuntu64/bin/vdb-validate /home/ec2-user/paired-study-20261024/inputs/SRR38294858/SRR38294858",
+    "380033": "python3.12 - spot1 SRR38294858"
+  },
+  "original_sequential_checksum_complete": false,
+  "next": "Preserve old logs and rerun only unfinished source-shard entries with unchanged source code and selection.",
+  "termination_escalation": {
+    "pid": 379469,
+    "signal": "SIGKILL",
+    "utc": "2026-10-24T09:14:22.305838+00:00",
+    "reason": "Validator handled SIGTERM but continued reading; no comparison outputs exist."
+  }
+}

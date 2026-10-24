@@ -1,0 +1,23 @@
+{
+  "sample": "SRR38294858",
+  "source": "s3://sra-pub-run-odp/sra/SRR38294858/SRR38294858",
+  "source_metadata": {
+    "AcceptRanges": "bytes",
+    "LastModified": "2026-04-29T07:31:33+00:00",
+    "ContentLength": 63987994246,
+    "ETag": "\"eb1ae6fdaab1b435b1a173bf5a9ac76c-7628\"",
+    "VersionId": "2DcUAk.pgjeFSvbMJAW.5JRg5Pt5Xw1c",
+    "ContentType": "binary/octet-stream",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {},
+    "TagCount": 1
+  },
+  "started_utc": "2026-10-24T09:03:25.510912+00:00",
+  "purpose": "Retry storage preparation with identical public archive and unchanged validation settings",
+  "download_seconds": 147.73718870300036,
+  "sha256": "e2d8ba7cddcf797880500b1332aff1fdae5054e865c6a4d90a7a02ce59a65ae7",
+  "checksum_seconds": 126.58818826700008,
+  "validation_seconds": 106.86289910499909,
+  "finished_utc": "2026-10-24T09:09:46.699307+00:00",
+  "validation_passed": true
+}

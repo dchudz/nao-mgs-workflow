@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3.12",
+    "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/report_pair.py",
+    "--root",
+    "/home/ec2-user/paired-study-20261024",
+    "--source",
+    "/home/ec2-user/paired-study-20261024/sources/c77cdde0",
+    "--retained",
+    "/home/ec2-user/experiment",
+    "--sample",
+    "SRR39695348_5m"
+  ],
+  "started_utc": "2026-10-24T07:50:28.955526+00:00",
+  "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83"
+}

@@ -1,0 +1,28 @@
+{
+    "AvailabilityZoneId": "use1-az6",
+    "Iops": 3000,
+    "Tags": [
+        {
+            "Key": "Study",
+            "Value": "paired-comparison-20261024"
+        },
+        {
+            "Key": "ManagedBy",
+            "Value": "Codex"
+        },
+        {
+            "Key": "Name",
+            "Value": "paired-study-scratch-spot2"
+        }
+    ],
+    "VolumeType": "gp3",
+    "MultiAttachEnabled": false,
+    "Throughput": 500,
+    "VolumeId": "vol-03f6a458f0812c7b4",
+    "Size": 512,
+    "SnapshotId": "",
+    "AvailabilityZone": "us-east-1d",
+    "State": "creating",
+    "CreateTime": "2026-10-24T09:04:46+00:00",
+    "Encrypted": true
+}

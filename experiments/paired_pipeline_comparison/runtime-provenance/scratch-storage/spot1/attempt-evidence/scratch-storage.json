@@ -1,0 +1,9 @@
+{
+  "worker": "spot1",
+  "volume_id": "vol-06f002b044d0aeb35",
+  "device": "/dev/nvme1n1",
+  "filesystem_uuid": "309042d2-8891-4e44-8d73-df87d12d1db0",
+  "mount": "/mnt/paired-study-inputs",
+  "empty_volume_verified_before_format": true,
+  "purpose": "Temporary source acquisition and sampling only; reference and pipeline output disks unchanged."
+}

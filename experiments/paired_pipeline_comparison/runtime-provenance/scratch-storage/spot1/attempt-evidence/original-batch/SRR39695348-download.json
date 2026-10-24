@@ -1,0 +1,20 @@
+{
+  "command": [
+    "aws",
+    "--profile",
+    "pipeline-codex",
+    "--region",
+    "us-east-1",
+    "s3",
+    "cp",
+    "s3://sra-pub-run-odp/sra/SRR39695348/SRR39695348",
+    "/home/ec2-user/paired-study-20261024/inputs/SRR39695348/SRR39695348.partial",
+    "--no-sign-request",
+    "--only-show-errors"
+  ],
+  "started_utc": "2026-10-24T06:22:58.279610+00:00",
+  "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+  "exit_code": 0,
+  "seconds": 110.40846913100006,
+  "finished_utc": "2026-10-24T06:24:48.688211+00:00"
+}

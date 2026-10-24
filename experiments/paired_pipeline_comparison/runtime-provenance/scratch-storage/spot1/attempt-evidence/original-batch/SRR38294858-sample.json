@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3.12",
+    "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/acquire_subset.py",
+    "--root",
+    "/home/ec2-user/paired-study-20261024",
+    "--sample",
+    "SRR38294858",
+    "--selection",
+    "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/selection.json",
+    "--tools",
+    "/home/ec2-user/experiment/sratoolkit.3.4.1-ubuntu64/bin",
+    "--selector",
+    "/home/ec2-user/paired-study-20261024/tools/select_pairs"
+  ],
+  "started_utc": "2026-10-24T08:22:26.999658+00:00",
+  "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+  "exit_code": 1,
+  "seconds": 3115.5331767280013,
+  "finished_utc": "2026-10-24T09:14:22.532989+00:00"
+}
