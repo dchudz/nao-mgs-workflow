@@ -1,0 +1,5 @@
+group	ribosomal	rank	bray_curtis	n_taxa_union
+SRR35987549_5m	False	G	0.0	2483
+SRR35987549_5m	True	G	0.0	2197
+SRR35987549_5m	False	S	0.0	6786
+SRR35987549_5m	True	S	0.0	5014
