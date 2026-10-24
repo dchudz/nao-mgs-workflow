@@ -1,0 +1,15 @@
+{
+  "existing_cap_USD": 500,
+  "new_cap_created": false,
+  "account_cost_through_20261023_USD": 71.13916342,
+  "additional_conservative_historical_worker_bound_USD": 28.846688387777778,
+  "billing_lag_reserve_USD": 50,
+  "noncompute_shutdown_storage_reserve_USD": 100,
+  "maximum_new_compute_allowance_USD": 200,
+  "initial_worker_max_hours": 8,
+  "initial_worker_inclusive_rate_bound_USD_per_hour": 4,
+  "initial_worker_bound_USD": 32,
+  "limits": "Do not extend the first allocation or add workers without recording live resource-time costs against the shared 200 USD new-compute allowance. Retained storage and transfers consume the separate reserve. No quota increase.",
+  "remaining_budget_is_invoice_reconciled": false,
+  "conservative_total_bound_USD": 449.98585180777775
+}
