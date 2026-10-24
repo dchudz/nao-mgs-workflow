@@ -5,6 +5,7 @@ import tempfile
 from pathlib import Path
 from diamond_adapter import Hit, paired_row, group_from_hits, grouped_hits, near_best, lca
 from diamond_geometry import Hsp
+from parallel_diamond_adapter import query_ranges, reduce_hits
 
 PARENTS = {1:1,10239:1,10:10239,11:10,12:10,20:10239,81077:1,99:81077}
 
@@ -65,9 +66,21 @@ class AdapterTests(unittest.TestCase):
             observed=list(grouped_hits(p,{'g':(11,90)},{'p'}))
             self.assertEqual(len(observed),1)
             self.assertEqual([[h.score for h in mate] for mate in observed[0][1]],[[100,90],[50]])
+            wanted={key:(('A'*75,'C'*75),('I'*75,'?'*75)) for key in ['p','q']}
+            expected={key:paired_row(key,'sample',*wanted[key],hs,PARENTS,{81077,99},set()) for key,hs in grouped_hits(p,{'g':(11,90)},wanted)}
+            for workers in [1,2,8]:
+                ranges=query_ranges(p,workers*4)
+                self.assertEqual(ranges[0][0],0);self.assertEqual(ranges[-1][1],p.stat().st_size)
+                self.assertTrue(all(left[1]==right[0] for left,right in zip(ranges,ranges[1:])))
+                self.assertEqual(reduce_hits(p,{'g':(11,90)},wanted,PARENTS,{81077,99},set(),'sample',workers,False),expected)
+                self.assertEqual(reduce_hits(p,{'g':(11,90)},wanted,PARENTS,{81077,99},set(),'sample',workers,True),{'p','q'})
             p.write_text(record('q/1',100)+record('p/1',100))
             with self.assertRaisesRegex(ValueError,'sorted'):
                 list(grouped_hits(p,{'g':(11,90)},{'p','q'}))
+            with self.assertRaisesRegex(ValueError,'sorted'):
+                reduce_hits(p,{'g':(11,90)},wanted,PARENTS,{81077,99},set(),'sample',2,False)
+            p.write_text('')
+            self.assertEqual(reduce_hits(p,{}, {}, {},set(),set(),'sample',8,True),set())
 
     def test_constructs_follow_production_separate_taxonomy(self):
         r=row([[hit()],[hit(taxon=99,subject='a~0~30',query='p/2')]])

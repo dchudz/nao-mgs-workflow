@@ -1,0 +1,53 @@
+{
+  "source": "/home/ec2-user/experiment/e2e/SRR37076045/protein-run/work/62/f6a71d0c492f2c3e0e47e2f547717e/protein-hits.tsv",
+  "source_bytes_at_sampling": 241765580228,
+  "frozen_adapter_commit": "e34f3b484e56c27d28893c1e820a6016d2f8b534",
+  "interpreter": "3.12.14 (main, Aug 24 2026, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-5)]",
+  "parts": [
+    {
+      "part": 0,
+      "byte_start": 0,
+      "physical_rows": 100000,
+      "bytes": 17214032,
+      "sha256": "a38b9480ab1969af59cc61017d3098017b56bba8b7c7c1117cec74e95faa5384",
+      "eligible_HSPs": 100000,
+      "wall_seconds": 1.418083790998935,
+      "cpu_seconds": 1.4179861139999999,
+      "full_current_bytes_scaled_single_pass_hours": 5.532370506139981
+    },
+    {
+      "part": 1,
+      "byte_start": 72529674174,
+      "physical_rows": 100000,
+      "bytes": 16434420,
+      "sha256": "9187795717692c0f0c8fcf53fec26d4d52bf5422cd218961a960c9a3239ae5ed",
+      "eligible_HSPs": 100000,
+      "wall_seconds": 1.3495078339983593,
+      "cpu_seconds": 1.3494925179999995,
+      "full_current_bytes_scaled_single_pass_hours": 5.5145870764739975
+    },
+    {
+      "part": 2,
+      "byte_start": 145059348201,
+      "physical_rows": 100000,
+      "bytes": 18191749,
+      "sha256": "ba7118d563411d21016f9f63a81f07c8745f19a764c224026e8839debf2597d2",
+      "eligible_HSPs": 100000,
+      "wall_seconds": 1.4379778360016644,
+      "cpu_seconds": 1.4378798250000004,
+      "full_current_bytes_scaled_single_pass_hours": 5.3084741555078105
+    },
+    {
+      "part": 3,
+      "byte_start": 217589022336,
+      "physical_rows": 100000,
+      "bytes": 18241545,
+      "sha256": "7c2e2f391a7bd1f0893b53a63b89f7419e40befc96a97010f57964c1d9843b07",
+      "eligible_HSPs": 99984,
+      "wall_seconds": 1.4455059740030265,
+      "cpu_seconds": 1.4451474849999997,
+      "full_current_bytes_scaled_single_pass_hours": 5.321698209710641
+    }
+  ],
+  "scope": "Diagnostic throughput only: four bounded slices of real output, no search, no change to filtering or geometry. Scaled time is conditional on representativeness; final adapter also computes taxonomy and per-query summaries."
+}
