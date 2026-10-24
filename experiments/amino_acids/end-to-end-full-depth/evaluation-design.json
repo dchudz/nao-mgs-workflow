@@ -81,5 +81,38 @@
       }
     ],
     "limits": "These binomial calculations do not apply to outcome-selected or otherwise nonrandom cohorts without an appropriate sampling model. Detecting at least one event is not estimating its rate precisely."
-  }
+  },
+  "general_approach_options": [
+    {
+      "approach": "Exhaustive evaluation",
+      "role": "Ground-truth oracle for a bounded synthetic benchmark.",
+      "tradeoff": "Transparent coverage of the defined search space, but cost scales with the number of comparisons."
+    },
+    {
+      "approach": "Exact indexed retrieval",
+      "role": "Retrieve items that share the benchmark's predefined discrete keys.",
+      "tradeoff": "Low query overhead after an index build; a representation mismatch becomes a retrieval miss."
+    },
+    {
+      "approach": "Approximate retrieval",
+      "role": "Trade a measurable approximation error against query time on synthetic vectors or strings.",
+      "tradeoff": "Requires an exhaustive oracle to quantify misses, plus explicit build-time and memory accounting."
+    },
+    {
+      "approach": "Coarse-to-fine cascade",
+      "role": "Use a cheap first stage followed by a more expensive fixed verifier.",
+      "tradeoff": "May reduce total verification work, but downstream verification cannot recover items discarded by the first stage."
+    },
+    {
+      "approach": "Union of retrieval methods",
+      "role": "Measure complementarity between retrieval methods with a shared verifier.",
+      "tradeoff": "Candidate count and verification cost grow; gains must be measured after the shared decision rule, not inferred from larger candidate sets."
+    },
+    {
+      "approach": "Batch-oriented execution",
+      "role": "Evaluate whether repeated shared work can be amortized without changing output.",
+      "tradeoff": "Amortization competes with larger intermediate storage, startup overhead, and skew. Output parity is a prerequisite."
+    }
+  ],
+  "next_safe_evaluation": "A standalone synthetic benchmark with known matches and nonmatches could compare these generic approaches. No such benchmark has been executed in this continuation, and no biological pipeline change is proposed by this file."
 }
