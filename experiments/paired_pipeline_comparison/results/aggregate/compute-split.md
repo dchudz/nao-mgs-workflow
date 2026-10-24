@@ -11,13 +11,13 @@ These are completed-unit wall times, not CPU times or a bill. Cold reference wor
 | 5M | protein-run | 19 | 3.34 | 2.69–12.72 |
 | 5M | protein_variant-downstream | 19 | 5.31 | 1.82–19.11 |
 | 5M | union | 19 | 0.00 | 0.00–0.12 |
-| 25M | aa-screen | 9 | 3.89 | 3.71–4.01 |
-| 25M | baseline-run | 9 | 4.25 | 2.58–5.85 |
-| 25M | prepare | 9 | 0.09 | 0.06–0.15 |
-| 25M | production-downstream | 9 | 3.70 | 1.42–7.65 |
-| 25M | protein-run | 9 | 4.68 | 3.26–11.86 |
-| 25M | protein_variant-downstream | 9 | 4.02 | 1.97–20.22 |
-| 25M | union | 9 | 0.02 | 0.00–0.05 |
+| 25M | aa-screen | 10 | 3.90 | 3.71–4.01 |
+| 25M | baseline-run | 10 | 4.27 | 2.58–5.85 |
+| 25M | prepare | 10 | 0.10 | 0.06–0.15 |
+| 25M | production-downstream | 10 | 3.68 | 1.42–7.65 |
+| 25M | protein-run | 10 | 4.73 | 3.26–11.86 |
+| 25M | protein_variant-downstream | 10 | 4.12 | 1.97–20.22 |
+| 25M | union | 10 | 0.02 | 0.00–0.05 |
 
 Acquisition of the entire public source archive, input sampling, boot, preservation, retries and idle periods are outside this table. Acquisition is shared by both arms and by nested depths. The execution-overhead receipts account for wrapper time outside the listed stages; they do not attribute that residual to a search.
 
