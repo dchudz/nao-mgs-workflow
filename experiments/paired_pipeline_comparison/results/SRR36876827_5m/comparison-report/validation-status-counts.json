@@ -1,0 +1,20 @@
+{
+  "production": {
+    "rows": 232,
+    "validation_status": {
+      "aligned": 160,
+      "not_sampled": 71,
+      "no_alignment": 1
+    },
+    "joint_exemplars": 232
+  },
+  "protein_variant": {
+    "rows": 444,
+    "validation_status": {
+      "not_sampled": 68,
+      "aligned": 315,
+      "no_alignment": 61
+    },
+    "joint_exemplars": 442
+  }
+}
