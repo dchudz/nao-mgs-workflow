@@ -1,0 +1,7 @@
+{
+  "sample": "SRR38294666_5m",
+  "reads": "/home/ec2-user/paired-study-20261024/comparisons/SRR38294666_5m/union.fastq",
+  "adapters": "/home/ec2-user/paired-study-20261024/sources/c77cdde0/ref/adapters.fasta",
+  "base_dir": "/home/ec2-user/paired-study-20261024/comparisons/SRR38294666_5m/prepare",
+  "ref_dir": "/home/ec2-user/experiment/reference"
+}
