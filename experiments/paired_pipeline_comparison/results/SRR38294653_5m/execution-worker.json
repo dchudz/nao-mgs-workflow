@@ -2,5 +2,8 @@
   "worker": "primary",
   "instance_id": "i-02d118993a6f4989a",
   "reason": "Resumed unfinished unit on retained primary after Spot1 interruption",
-  "shard": "primary-recovery"
+  "shard": "primary-recovery",
+  "first_unit_after_instance_restart": true,
+  "storage_observation": "runtime-provenance/spot-interruption/primary-recovery-validation-io.json",
+  "timing_limit": "First validation after instance restart; no cache initialization was added. I/O observation is not a causal decomposition of wall time."
 }
