@@ -1,0 +1,13 @@
+{
+  "worker": "primary",
+  "instance_id": "i-02d118993a6f4989a",
+  "shard": "primary-resume",
+  "reason": "Resume unchanged frozen comparison after an erroneous halt",
+  "prior_placement": {
+    "worker": "primary",
+    "instance_id": "i-02d118993a6f4989a",
+    "shard": "primary-expansion",
+    "reason": "Frozen size-balanced allocation after the feasibility gate"
+  },
+  "retained_reference_volume": "vol-0272ade891333af83"
+}
