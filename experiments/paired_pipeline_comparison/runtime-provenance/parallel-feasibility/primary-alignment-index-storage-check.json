@@ -1,0 +1,12 @@
+{
+  "worker": "paired-study",
+  "path": "/home/ec2-user/experiment/protein/viral-alignment.dmnd",
+  "started_utc": "2026-10-24T07:04:48.894342+00:00",
+  "bytes": 4313022605,
+  "expected_sha256": "d154a0b68879119bbfd933edfcb8fe6a2d9cfffc7a1f28eb5535ce8d1bbaab04",
+  "mode": "Read-only storage initialization and checksum; no index rebuild or search-setting change",
+  "sha256": "d154a0b68879119bbfd933edfcb8fe6a2d9cfffc7a1f28eb5535ce8d1bbaab04",
+  "seconds": 7.125467691000267,
+  "finished_utc": "2026-10-24T07:04:56.019779+00:00",
+  "passed": true
+}
