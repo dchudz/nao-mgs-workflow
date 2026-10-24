@@ -101,7 +101,7 @@
         "readback_verified": true
       }
     ],
-    "verified_utc": "2026-10-24T12:47:47.147120+00:00"
+    "verified_utc": "2026-10-24T14:35:22.826964+00:00"
   },
   "interpretation": "Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero.",
   "storage_retry_preflight": null,
