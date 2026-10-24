@@ -1,0 +1,13 @@
+group	sample	platform	stage	metric	reference	candidate	delta	pct_change
+SRR38294137_5m	SRR38294137_5m	illumina	cleaned	mean_seq_len	143.15779412946588	143.15779412946588	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	cleaned	n_bases_approx	281400000.0	281400000.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	cleaned	n_read_pairs	982977.0	982977.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	cleaned	n_reads_single	1965954.0	1965954.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	cleaned	percent_duplicates	45.3234939994062	45.3234939994062	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	cleaned	percent_gc	50.0	50.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	raw	mean_seq_len	151.0	151.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	raw	n_bases_approx	301800000.0	301800000.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	raw	n_read_pairs	999562.0	999562.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	raw	n_reads_single	1999124.0	1999124.0	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	raw	percent_duplicates	45.53106594853945	45.53106594853945	0.0	0.0
+SRR38294137_5m	SRR38294137_5m	illumina	raw	percent_gc	50.0	50.0	0.0	0.0
