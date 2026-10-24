@@ -1,0 +1,8 @@
+{
+  "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/runtime/interrupted-spot1-final-logs.tar.gz",
+  "bytes": 56213,
+  "sha256": "e6e8a65da7d00d67054781cdb149e0d734e0312df48beb7e4b8687a8fffa3b32",
+  "readback_verified": true,
+  "source_volume": "vol-004c4ffab08c46dbd",
+  "source_mount": "read-only,nouuid,norecovery"
+}
