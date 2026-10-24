@@ -1,0 +1,51 @@
+{
+  "recorded_utc": "2026-10-24T02:20:32.019549+00:00",
+  "worker_state": {
+    "State": "stopped",
+    "StateTransitionReason": "User initiated (2026-10-24 02:18:29 GMT)",
+    "InstanceType": "r6i.12xlarge",
+    "LaunchTime": "2026-10-23T19:07:50+00:00",
+    "Volumes": [
+      {
+        "DeviceName": "/dev/xvda",
+        "Ebs": {
+          "AttachTime": "2026-10-23T19:07:51+00:00",
+          "DeleteOnTermination": false,
+          "Status": "attached",
+          "VolumeId": "vol-0272ade891333af83",
+          "EbsCardIndex": 0
+        }
+      }
+    ]
+  },
+  "cap_USD": 500,
+  "elapsed_hours_through_stop_confirmation": 7.2116720969444446,
+  "EC2_rate_USD_per_hour": 3.024,
+  "EC2_cost_bound_USD": 21.808096421160002,
+  "conservative_running_worker_rate_USD_per_hour": 4,
+  "conservative_running_worker_cost_bound_USD": 28.846688387777778,
+  "nonworker_reserve_USD": 100,
+  "billing_status": "Resource-time bounds, not a reconciled invoice. Transfer, object requests, persistent storage, and prior workers are not part of the EC2-only amount.",
+  "account_cost_explorer": {
+    "period": "2026-10-23 to 2026-10-24 exclusive",
+    "account_total_USD": 71.13916342,
+    "estimated": true,
+    "scope": "Entire account and lagged; not attributable to this experiment."
+  },
+  "run_prefix_storage_inventory": {
+    "objects": 268,
+    "bytes": 256505324336
+  },
+  "retained_disk": {
+    "VolumeId": "vol-0272ade891333af83",
+    "Type": "gp3",
+    "Size": 2048,
+    "Iops": 6000,
+    "Throughput": 1000,
+    "Encrypted": true,
+    "State": "in-use"
+  },
+  "retention_cost": "Compute is stopped; EBS and S3 storage continue to accrue charges. The disk was retained so existing files remain available.",
+  "guard": "Old persistent termination timer disabled before stop; any future compute requires a new explicit spending guard.",
+  "result_status": "First-sample raw search preserved and readback verified; no completed four-arm comparison. Requested new conversion/calling was not executed in this continuation."
+}

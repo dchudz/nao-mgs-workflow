@@ -1,0 +1,15 @@
+{
+  "prepared_stop_utc": "2026-10-24T02:18:11.732891+00:00",
+  "instance_id": "i-02d118993a6f4989a",
+  "action": "Stop instance and retain attached EBS, not termination.",
+  "previous_units": {
+    "e2e-budget-stop.service": "# /etc/systemd/system/e2e-budget-stop.service\n[Unit]\nDescription=Enforce private experiment spending limit\n[Service]\nType=oneshot\nExecStart=/sbin/shutdown -h now\n",
+    "e2e-budget-stop.timer": "# /etc/systemd/system/e2e-budget-stop.timer\n[Unit]\nDescription=Absolute experiment budget deadline\n[Timer]\nOnCalendar=2026-10-27 23:07:48 UTC\nPersistent=true\nUnit=e2e-budget-stop.service\n[Install]\nWantedBy=timers.target\n"
+  },
+  "automatic_termination_timer_disabled": true,
+  "reason": "A persistent termination timer must not delete the retained disk if the worker is restarted after its old deadline.",
+  "restart_requirement": "Establish a new explicit budget guard before any future compute. No analysis auto-resume is authorized by this record.",
+  "paused_driver_and_scheduler_ended": true,
+  "running_containers_at_check": 0,
+  "backup_verified_before_stop": true
+}
