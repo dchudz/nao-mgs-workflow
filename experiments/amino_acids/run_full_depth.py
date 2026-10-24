@@ -8,7 +8,13 @@ import argparse,csv,datetime,gzip,hashlib,json,os,shutil,subprocess,tarfile,time
 from pathlib import Path
 R=Path('/home/ec2-user/experiment');E=R/'experiments/amino_acids';PLAN=E/'end-to-end-full-depth'
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1'];PREFIX='s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/'
-p=argparse.ArgumentParser();p.add_argument('--sample',required=True);p.add_argument('--source-commit',required=True);p.add_argument('--driver-commit');p.add_argument('--baseline-downstream-only',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--sample',required=True);p.add_argument('--source-commit',required=True);p.add_argument('--driver-commit');p.add_argument('--baseline-downstream-only',action='store_true');p.add_argument('--protein-workflow-commit');p.add_argument('--protein-resume');a=p.parse_args()
+assert not a.protein_resume or a.protein_workflow_commit
+if a.protein_workflow_commit:
+    assert len(a.protein_workflow_commit)==40 and all(c in '0123456789abcdef' for c in a.protein_workflow_commit)
+    proof=json.loads((R/'integration/parallel-adapter/verification.json').read_text());assert proof['verified']
+    assert proof['implementation_sha256']==hashlib.sha256((R/'analysis-tools/parallel_diamond_adapter.py').read_bytes()).hexdigest()
+    assert proof['frozen_adapter_sha256']==hashlib.sha256((E/'diamond_adapter.py').read_bytes()).hexdigest()
 assert len(a.source_commit)==40 and all(c in '0123456789abcdef' for c in a.source_commit)
 assert (R/'source-commit.txt').read_text().strip()==a.source_commit
 if a.driver_commit is None:a.driver_commit=a.source_commit
@@ -69,6 +75,12 @@ def run(stage,cmd,cwd=R):
         proc=subprocess.run(list(map(str,cmd)),cwd=cwd,stdout=log,stderr=subprocess.STDOUT,timeout=remaining-900)
     record={'stage':stage,'source_commit':a.source_commit,'driver_commit':a.driver_commit,'command':list(map(str,cmd)),
             'started_utc':started.isoformat(),'finished_utc':now().isoformat(),'wall_seconds':time.monotonic()-begin,'exit_code':proc.returncode}
+    if stage=='protein-run' and a.protein_workflow_commit:
+        record['protein_workflow_commit']=a.protein_workflow_commit
+        record['resumed_nextflow_session']=a.protein_resume
+        record['parallel_adapter_sha256']=sha(R/'analysis-tools/parallel_diamond_adapter.py')
+        record['protein_workflow_sha256']=sha(E/'protein-parallel.nf')
+        record['parity_verification_sha256']=sha(R/'integration/parallel-adapter/verification.json')
     if proc.returncode:
         save(D/(stage+'.failure.json'),record);backup();raise RuntimeError(f'{stage} failed; inspect its preserved log')
     save(receipt,record);backup();print(json.dumps(record),flush=True)
@@ -128,6 +140,8 @@ protocol={'source_commit':a.source_commit,'driver_commit':a.driver_commit,'sampl
 if (D/'protocol.json').exists():
     protocol=json.loads((D/'protocol.json').read_text())
     protocol.setdefault('resumptions',[]).append({'utc':now().isoformat(),'driver_commit':a.driver_commit,'scientific_source_commit':a.source_commit})
+if a.protein_workflow_commit:
+    protocol['protein_execution']={'implementation_commit':a.protein_workflow_commit,'workflow':'experiments/amino_acids/protein-parallel.nf','base_scientific_source':a.source_commit,'parity_receipt':'integration/parallel-adapter/verification.json','resumed_session':a.protein_resume}
 save(D/'protocol.json',protocol)
 sheet=D/'samplesheet.csv'
 with sheet.open('w') as f:
@@ -144,13 +158,15 @@ extra_config=D/'extra.config';extra_config.write_text("process.publishDir = [pat
 def extra(stage,script,reads):
     target=D/stage;target.mkdir(exist_ok=True)
     save(target/'params.json',{'base_dir':str(target),'ref_dir':str(R/'reference'),'sample':a.sample,'reads':str(reads),'adapters':str(R/'ref/adapters.fasta'),'validate':False})
-    run(stage,[R/'nextflow','-log',target/'nextflow.log','run',R,'-main-script',script,'-lib',str(R/'lib'),'-c',E/'e2e-worker.config','-c',extra_config,
-               '-params-file',target/'params.json','-work-dir',target/'work','-ansi-log','false'])
+    cmd=[R/'nextflow','-log',target/'nextflow.log','run',R,'-main-script',script,'-lib',str(R/'lib'),'-c',E/'e2e-worker.config','-c',extra_config,
+         '-params-file',target/'params.json','-work-dir',target/'work','-ansi-log','false']
+    if stage=='protein-run' and a.protein_resume:cmd+=['-resume',a.protein_resume]
+    run(stage,cmd)
 extra('screen-run','experiments/amino_acids/postscreen.nf',D/'union.fastq')
 trimmed=single('screen-run/published/FASTP/*_fastp.fastq.gz')
 assert json.loads((R/'integration/protein-workflow/verification.json').read_text())['verified']
 assert json.loads((R/'integration/adapter-bounded/verification.json').read_text())['verified']
-extra('protein-run','experiments/amino_acids/protein-production.nf',trimmed)
+extra('protein-run','experiments/amino_acids/protein-parallel.nf' if a.protein_workflow_commit else 'experiments/amino_acids/protein-production.nf',trimmed)
 hit_paths={'production':D/'baseline-run/output/results'/f'{a.sample}_virus_hits.tsv.gz',
            'validation_control':D/'baseline-run/output/results'/f'{a.sample}_virus_hits.tsv.gz',
            'screen_control':single('screen-run/published/RENAME_VIRUS_HITS/*_virus_hits.tsv.gz'),
