@@ -44,12 +44,20 @@ def run(stage,cmd):
     remaining=(deadline-now()).total_seconds()-1800
     assert remaining>1800,'Reached shutdown/preservation reserve'
     started=now();t=time.monotonic()
-    with (D/(stage+'.log')).open('w') as f:
-        result=subprocess.run(command,cwd=R,stdout=f,stderr=subprocess.STDOUT,timeout=remaining)
-    record={'stage':stage,'command':command,'source_commit':a.source_commit,'started_utc':started.isoformat(),'finished_utc':now().isoformat(),'wall_seconds':time.monotonic()-t,'exit_code':result.returncode}
-    save(receipt if result.returncode==0 else D/(stage+'.failure.json'),record)
+    record={'stage':stage,'command':command,'source_commit':a.source_commit,'started_utc':started.isoformat()}
+    save(D/(stage+'.started.json'),record)
+    failure=None
+    try:
+        with (D/(stage+'.log')).open('w') as f:
+            result=subprocess.run(command,cwd=R,stdout=f,stderr=subprocess.STDOUT,timeout=remaining)
+        code=result.returncode
+    except Exception as error:
+        code=-1;failure=error;record['exception']=str(error)
+    record.update(finished_utc=now().isoformat(),wall_seconds=time.monotonic()-t,exit_code=code)
+    save(receipt if code==0 else D/(stage+'.failure.json'),record)
     backup();print(json.dumps(record),flush=True)
-    if result.returncode:raise RuntimeError('Stage failed: '+stage)
+    if failure:raise failure
+    if code:raise RuntimeError('Stage failed: '+stage)
 def one(pattern):
     values=list(D.glob(pattern));assert len(values)==1,(pattern,values);return values[0]
 cfg=root/'runtime.config';publish=D/'publish.config'
