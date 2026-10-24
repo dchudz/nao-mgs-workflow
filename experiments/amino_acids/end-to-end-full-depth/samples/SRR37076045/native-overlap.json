@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3.12",
+    "analysis-tools/run_native_downstream_5c366cbb.py",
+    "--sample",
+    "SRR37076045",
+    "--source-commit",
+    "e34f3b484e56c27d28893c1e820a6016d2f8b534",
+    "--driver-commit",
+    "5c366cbb378bc32590c8c477e95c2f2c90acf113",
+    "--baseline-downstream-only"
+  ],
+  "paused_orchestrator_pid": 260641,
+  "screen_child_continues": true,
+  "started_utc": "2026-10-23T21:51:40.300029+00:00",
+  "reason": "Run native validation arms on their completed frozen inputs while the independent AA screen continues; pause only the parent orchestrator to avoid checkpoint or later stage races.",
+  "exit_code": 0,
+  "orchestrator_resumed_utc": "2026-10-23T22:48:19.117866+00:00"
+}

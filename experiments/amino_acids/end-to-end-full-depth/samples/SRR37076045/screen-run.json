@@ -1,0 +1,30 @@
+{
+  "stage": "screen-run",
+  "source_commit": "e34f3b484e56c27d28893c1e820a6016d2f8b534",
+  "driver_commit": "d7e2555b8962033fd45fba65c8ede793da050e82",
+  "command": [
+    "/home/ec2-user/experiment/nextflow",
+    "-log",
+    "/home/ec2-user/experiment/e2e/SRR37076045/screen-run/nextflow.log",
+    "run",
+    "/home/ec2-user/experiment",
+    "-main-script",
+    "experiments/amino_acids/postscreen.nf",
+    "-lib",
+    "/home/ec2-user/experiment/lib",
+    "-c",
+    "/home/ec2-user/experiment/experiments/amino_acids/e2e-worker.config",
+    "-c",
+    "/home/ec2-user/experiment/e2e/SRR37076045/extra.config",
+    "-params-file",
+    "/home/ec2-user/experiment/e2e/SRR37076045/screen-run/params.json",
+    "-work-dir",
+    "/home/ec2-user/experiment/e2e/SRR37076045/screen-run/work",
+    "-ansi-log",
+    "false"
+  ],
+  "started_utc": "2026-10-23T23:17:36.961501+00:00",
+  "finished_utc": "2026-10-23T23:27:54.927150+00:00",
+  "wall_seconds": 617.9656551469998,
+  "exit_code": 0
+}

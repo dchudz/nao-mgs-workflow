@@ -1,0 +1,21 @@
+{
+  "sample": "SRR37076045",
+  "nonvalidation_columns_identical": true,
+  "rows": 213561,
+  "statuses": {
+    "production": {
+      "not_sampled": 212511,
+      "aligned": 1045,
+      "no_alignment": 5
+    },
+    "validation_control": {
+      "not_sampled": 212511,
+      "aligned": 1050
+    }
+  },
+  "changes": {
+    "natural_lca_changed": 65,
+    "status_changed": 5
+  },
+  "note": "Alignment outcomes, not confirmed virus or infection counts."
+}
