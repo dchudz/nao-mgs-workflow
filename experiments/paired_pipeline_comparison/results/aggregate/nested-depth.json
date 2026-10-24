@@ -1,6 +1,6 @@
 {
   "planned_pairs": 10,
-  "complete_pairs": 2,
+  "complete_pairs": 3,
   "interpretation": [
     "Each row compares nested input subsets of one sequencing run, not independent observations.",
     "Counts are pipeline output records or production duplicate exemplars, not confirmed biological detections.",

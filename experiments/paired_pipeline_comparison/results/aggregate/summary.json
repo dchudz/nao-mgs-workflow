@@ -55,51 +55,51 @@
       "depth_million_pairs": 25,
       "planned_units": 10,
       "status_counts": {
-        "not_collected": 8,
-        "complete": 2
+        "not_collected": 7,
+        "complete": 3
       },
-      "completed_run_count": 2,
+      "completed_run_count": 3,
       "production_rows": {
-        "sum": 15340,
-        "median": 7670.0,
+        "sum": 30403,
+        "median": 14746,
         "min": 594,
-        "max": 14746
+        "max": 15063
       },
       "protein_rows": {
-        "sum": 21711,
-        "median": 10855.5,
+        "sum": 41253,
+        "median": 19542,
         "min": 834,
         "max": 20877
       },
       "production_only": {
-        "sum": 30,
-        "median": 15.0,
+        "sum": 51,
+        "median": 21,
         "min": 1,
         "max": 29
       },
       "protein_only": {
-        "sum": 6401,
-        "median": 3200.5,
+        "sum": 10901,
+        "median": 4500,
         "min": 241,
         "max": 6160
       },
       "reassigned": {
-        "sum": 10765,
-        "median": 5382.5,
+        "sum": 21934,
+        "median": 10327,
         "min": 438,
-        "max": 10327
+        "max": 11169
       },
       "net_rows": {
-        "sum": 6371,
-        "median": 3185.5,
+        "sum": 10850,
+        "median": 4479,
         "min": 240,
         "max": 6131
       },
       "stage_minutes": {
-        "sum": 39.71966817041665,
-        "median": 19.859834085208323,
+        "sum": 67.25822587481676,
+        "median": 23.38216463186665,
         "min": 16.337503538549996,
-        "max": 23.38216463186665
+        "max": 27.538557704400105
       }
     }
   ],
