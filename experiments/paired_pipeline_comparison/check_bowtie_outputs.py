@@ -37,7 +37,13 @@ for stage in ('baseline-run','protein-run'):
     receipt=json.loads((a.comparison/(stage+'.json')).read_text());assert receipt['exit_code']==0
     with (a.comparison/stage/'trace.tsv').open() as f:tasks=list(csv.DictReader(f,delimiter='\t'))
     for task in tasks:
-        work=Path(task['workdir']);inputs=list(work.glob('*_bowtie2_in.fastq.gz'))
+        if task.get('workdir'):
+            work=Path(task['workdir'])
+        else:
+            candidates=list((a.comparison/stage/'work').glob(task['hash']+'*'))
+            assert len(candidates)==1,(stage,task['hash'],candidates)
+            work=candidates[0]
+        inputs=list(work.glob('*_bowtie2_in.fastq.gz'))
         if not inputs:continue
         assert task['status']=='COMPLETED' and len(inputs)==1
         base=inputs[0].name.removesuffix('_in.fastq.gz')
