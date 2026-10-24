@@ -88,3 +88,8 @@ thresholds, candidate sets, or false-positive operating points. With no complete
 environmental truth labels, output differences cannot establish which pipeline
 has greater sensitivity or precision. The synthetic control verifies its stated
 record-handling cases, not the biological correctness of extra outputs.
+
+The halt described above is a historical checkpoint. David subsequently authorized
+resumption of the unchanged public-data benchmark. See `execution-status.json` and
+`runtime-provenance/resume/README.md` for the live execution record. The scientific
+limitations above still apply; resumption does not change the meaning of a result.

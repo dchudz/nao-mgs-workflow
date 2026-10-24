@@ -23,6 +23,18 @@
       "started_utc": "2026-10-24T09:59:59+00:00",
       "ended_utc_upper": "2026-10-24T13:14:32.266264+00:00",
       "evidence": "primary-halt-final-state.json; conservative verified final state"
+    },
+    {
+      "instance_id": "i-0638e9b2262f8f52c",
+      "started_utc": "2026-10-24T14:26:23+00:00",
+      "ended_utc_upper": null,
+      "evidence": "resume-worker-inventory.json"
+    },
+    {
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T14:26:21+00:00",
+      "ended_utc_upper": null,
+      "evidence": "resume-worker-inventory.json"
     }
   ]
 }

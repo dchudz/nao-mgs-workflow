@@ -1,14 +1,11 @@
 {
-  "status": "halted",
-  "recorded_utc": "2026-10-24T13:16:32.398000+00:00",
-  "completed_comparisons": 17,
+  "status": "resuming",
+  "recorded_utc": "2026-10-24T14:34:04.887254+00:00",
+  "completed_before_resume": 17,
+  "remaining_at_resume": 43,
   "planned_comparisons": 60,
-  "unfinished_comparisons": 43,
-  "reason": "Assistant scope boundary: do not continue expansion of sequence-level discovery of divergent human-infecting viruses. This is not a user cancellation, budget exhaustion, or failed correctness gate. Earlier execution acceptance was mistaken.",
-  "workers": {
-    "primary": "stopped",
-    "spot2": "terminated; all attached volumes retained"
-  },
-  "further_pipeline_execution": false,
-  "completed_results_preserved": true
+  "authorization": "David explicitly instructed resumption and completion within the existing budget and quotas.",
+  "scope": "Frozen public-data diagnostic comparison; no changes to scientific source, reference, settings, controls, or selection.",
+  "analysis_source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+  "resume_plan": "runtime-provenance/resume/resume-plan.json"
 }

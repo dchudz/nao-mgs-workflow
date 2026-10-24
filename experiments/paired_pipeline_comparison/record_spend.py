@@ -6,11 +6,12 @@ import subprocess
 from pathlib import Path
 
 WORKERS = {
+    'i-0638e9b2262f8f52c': ('spot2-resume', '2026-10-24T14:26:23+00:00', 2),
     'i-02d118993a6f4989a': ('primary', '2026-10-24T05:07:00+00:00', 4),
     'i-0f5065e3b4f67cfbc': ('spot1', '2026-10-24T06:10:29+00:00', 2),
     'i-0ee9da3f09d197be6': ('spot2', '2026-10-24T06:11:40+00:00', 2),
 }
-VOLUMES = ['vol-0272ade891333af83', 'vol-004c4ffab08c46dbd', 'vol-05ca1445d265f5325', 'vol-06f002b044d0aeb35', 'vol-03f6a458f0812c7b4']
+VOLUMES = ['vol-05bffc9a8717b6229', 'vol-0272ade891333af83', 'vol-004c4ffab08c46dbd', 'vol-05ca1445d265f5325', 'vol-06f002b044d0aeb35', 'vol-03f6a458f0812c7b4']
 AWS = ['aws', '--profile', 'pipeline-codex', '--region', 'us-east-1']
 
 def get(*args):

@@ -6,8 +6,8 @@ import statistics
 import subprocess
 from pathlib import Path
 
-INSTANCES={'primary':'i-02d118993a6f4989a','spot1':'i-0f5065e3b4f67cfbc','spot2':'i-0ee9da3f09d197be6'}
-VOLUMES={'primaryroot':'vol-0272ade891333af83','spot1root':'vol-004c4ffab08c46dbd','spot2root':'vol-05ca1445d265f5325','spot1scratch':'vol-06f002b044d0aeb35','spot2scratch':'vol-03f6a458f0812c7b4'}
+INSTANCES={'spot2resume':'i-0638e9b2262f8f52c','primary':'i-02d118993a6f4989a','spot1':'i-0f5065e3b4f67cfbc','spot2':'i-0ee9da3f09d197be6'}
+VOLUMES={'resumeboot':'vol-05bffc9a8717b6229','primaryroot':'vol-0272ade891333af83','spot1root':'vol-004c4ffab08c46dbd','spot2root':'vol-05ca1445d265f5325','spot1scratch':'vol-06f002b044d0aeb35','spot2scratch':'vol-03f6a458f0812c7b4'}
 AWS=['aws','--profile','pipeline-codex','--region','us-east-1']
 
 def main():

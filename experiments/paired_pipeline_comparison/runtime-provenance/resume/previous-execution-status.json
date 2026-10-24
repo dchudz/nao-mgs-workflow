@@ -1,0 +1,14 @@
+{
+  "status": "halted",
+  "recorded_utc": "2026-10-24T13:16:32.398000+00:00",
+  "completed_comparisons": 17,
+  "planned_comparisons": 60,
+  "unfinished_comparisons": 43,
+  "reason": "Assistant scope boundary: do not continue expansion of sequence-level discovery of divergent human-infecting viruses. This is not a user cancellation, budget exhaustion, or failed correctness gate. Earlier execution acceptance was mistaken.",
+  "workers": {
+    "primary": "stopped",
+    "spot2": "terminated; all attached volumes retained"
+  },
+  "further_pipeline_execution": false,
+  "completed_results_preserved": true
+}
