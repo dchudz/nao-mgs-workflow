@@ -1,0 +1,20 @@
+group	platform	file_type	in_reference	in_candidate	n_rows_reference	n_rows_candidate	row_delta	row_pct_change
+SRR39695144_25m	illumina	bracken	True	True	0	0	0	
+SRR39695144_25m	illumina	clade_counts	True	True	342	451	109	31.871345029239766
+SRR39695144_25m	illumina	duplicate_stats	True	True	43446	44354	908	2.089950743451641
+SRR39695144_25m	illumina	fastp	True	True				
+SRR39695144_25m	illumina	kraken	True	True	10306	10306	0	0.0
+SRR39695144_25m	illumina	qc_adapter_stats_cleaned	True	True	0	0	0	
+SRR39695144_25m	illumina	qc_adapter_stats_raw	True	True	148	148	0	0.0
+SRR39695144_25m	illumina	qc_basic_stats_cleaned	True	True	1	1	0	0.0
+SRR39695144_25m	illumina	qc_basic_stats_raw	True	True	1	1	0	0.0
+SRR39695144_25m	illumina	qc_length_stats_cleaned	True	True	24	24	0	0.0
+SRR39695144_25m	illumina	qc_length_stats_raw	True	True	1	1	0	0.0
+SRR39695144_25m	illumina	qc_overrepresented_cleaned	True	True	0	0	0	
+SRR39695144_25m	illumina	qc_overrepresented_raw	True	True	2	2	0	0.0
+SRR39695144_25m	illumina	qc_quality_base_stats_cleaned	True	True	38	38	0	0.0
+SRR39695144_25m	illumina	qc_quality_base_stats_raw	True	True	38	38	0	0.0
+SRR39695144_25m	illumina	qc_quality_sequence_stats_cleaned	True	True	21	21	0	0.0
+SRR39695144_25m	illumina	qc_quality_sequence_stats_raw	True	True	41	41	0	0.0
+SRR39695144_25m	illumina	read_counts	True	True	1	1	0	0.0
+SRR39695144_25m	illumina	validation_hits	True	True	49581	55537	5956	12.012666142272241
