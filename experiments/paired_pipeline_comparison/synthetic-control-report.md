@@ -92,3 +92,5 @@ The earlier description of coverage as only serial/parallel byte parity was
 incomplete: coordinate unit tests and a small synthetic duplicate-marker test
 already existed. The new evidence adds independently frozen origins carried
 through real alignments and the exact production duplicate container.
+
+Separate reference-construction evidence also exists: the archived [builder](../amino_acids/history/source/translate-alignment-reference.original.py) checked its translation and offsets against a separate implementation on 503 artificial inputs. A [prior reproduction](../amino_acids/end-to-end-full-depth/reference-reproduction-verification.json) regenerated the complete protein FASTA from the frozen native alignment genomes and matched the archived bytes. These checks complement this fixture; neither establishes biological accuracy or exercises every builder/adapter combination. The saved builder hash was rechecked against the retained worker during this run. No new reference was generated for this audit.
