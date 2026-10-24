@@ -1,6 +1,6 @@
 # Frozen paired pipeline comparison
 
-Report snapshot: 2026-10-24T09:28:25.079348+00:00.
+Report snapshot: 2026-10-24T09:34:50.480074+00:00.
 
 9 of 12 feasibility comparisons are collected and accepted. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
 

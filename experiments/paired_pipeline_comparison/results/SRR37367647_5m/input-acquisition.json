@@ -75,5 +75,30 @@
     ],
     "verified_utc": "2026-10-24T09:07:53.918658+00:00"
   },
-  "interpretation": "Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero."
+  "interpretation": "Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero.",
+  "storage_retry_preflight": null,
+  "sampling_attempt_receipts": [
+    {
+      "command": [
+        "python3.12",
+        "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/acquire_subset.py",
+        "--root",
+        "/home/ec2-user/paired-study-20261024",
+        "--sample",
+        "SRR37367647",
+        "--selection",
+        "/home/ec2-user/paired-study-20261024/sources/c77cdde0/experiments/paired_pipeline_comparison/selection.json",
+        "--tools",
+        "/home/ec2-user/experiment/sratoolkit.3.4.1-ubuntu64/bin",
+        "--selector",
+        "/home/ec2-user/paired-study-20261024/tools/select_pairs"
+      ],
+      "started_utc": "2026-10-24T08:25:23.168735+00:00",
+      "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+      "exit_code": 0,
+      "seconds": 2520.6091402950005,
+      "finished_utc": "2026-10-24T09:07:23.778026+00:00"
+    }
+  ],
+  "timing_limit": "Recorded download totals include a documented storage retry when present. Attempt durations and manual storage checks may overlap; do not add them as worker cost. The final acquisition duration is not the total cost of failed or interrupted attempts."
 }
