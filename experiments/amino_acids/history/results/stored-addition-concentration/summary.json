@@ -1,0 +1,65 @@
+{
+  "scope": "Local aggregation of already saved per-pair flags, sample counts, and frozen taxonomy annotations. No sequence data, new search, duplicate rerun, or species calling.",
+  "source_files": {
+    "added-pairs.tsv": {
+      "path": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/added-pairs.tsv",
+      "bytes": 4643484,
+      "sha256": "90e5e81ca120c3a1bc345903e4cbefa011be0534f5ba5bfc9651fea3f2fc6049"
+    },
+    "sample-metrics.tsv": {
+      "path": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/sample-metrics.tsv",
+      "bytes": 203316,
+      "sha256": "429135d322f14cec3ea01c76854dbb9d586141f974ae38afeee083a0d47fa0f6"
+    },
+    "summary.json": {
+      "path": "/Users/david/Documents/ChatGPT/pipeline/.tmp/aa-experiment-20261021/results/heldout/summary.json",
+      "bytes": 2810,
+      "sha256": "0637852d788d83e2606ccd79e273f4f62de3a22e84c4d3e16d1c535c45717769"
+    },
+    "annotation": {
+      "path": "/Users/david/Documents/ChatGPT/pipeline/.tmp/translated-core-nt-20261022/anchor-analysis/reference/total-virus-db-annotated.tsv.gz",
+      "bytes": 3701264,
+      "sha256": "ddc830343abde0e3c266f2150ae437eaa963f82e8ca5754e2e7b0da0548d46a0"
+    }
+  },
+  "added_pairs": 19637,
+  "added_pairs_marked_joint_exemplars_in_full_union": 16699,
+  "other_added_pairs": 2938,
+  "joint_exemplar_definition": "Saved flag from analyze-cohort.py: seq_id == prim_align_dup_exemplar == sim_dup_exemplar, within the original full-union run for each sample.",
+  "distinct_duplicate_groups_touched_by_additions": null,
+  "exemplar_limit": "The saved table has a boolean flag, not representative IDs. It does not give the number of all duplicate groups touched by additions, an additions-only reclustering result, or distinct loci across samples. Representative selection can change when records are removed.",
+  "samples": {
+    "cohort": 1000,
+    "with_additions": 878,
+    "without_additions": 122,
+    "median_all_samples": 7.0,
+    "mean_all_samples": 19.637,
+    "maximum": 496,
+    "top_10_pairs": 3668,
+    "top_10_share": 0.18679024290879462,
+    "top_100_pairs": 11663,
+    "top_100_share": 0.5939298263482202,
+    "nearest_rank_percentiles": {
+      "0.9": 39,
+      "0.95": 71,
+      "0.99": 273
+    }
+  },
+  "species": {
+    "distinct_resolved_species": 147,
+    "resolved_pairs": 19476,
+    "unresolved_pairs": 161,
+    "unresolved_by_rank": {
+      "family": 31,
+      "genus": 73,
+      "subgenus": 55,
+      "subfamily": 1,
+      "acellular root": 1
+    },
+    "largest_species_pairs": 5639,
+    "largest_species_share_all_additions": 0.28716199012069055,
+    "largest_species_share_resolved": 0.28953583898131036,
+    "definition": "Use the frozen annotation taxid_species field, or the assigned taxid itself when its rank is species. Assignments above species remain unresolved; no evidence is redistributed."
+  },
+  "interpretation": "The overlap is exact descriptive agreement on this cohort, not a precision estimate from independent events. Per-sample exemplars can recur at the same loci across samples. Sample, location, and species concentration remain relevant."
+}
