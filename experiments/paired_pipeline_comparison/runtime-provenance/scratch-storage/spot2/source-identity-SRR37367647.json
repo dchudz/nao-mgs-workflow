@@ -1,0 +1,9 @@
+{
+  "sample": "SRR37367647",
+  "source_sha256": "f5fe626be0570086f4e605a10052f5130e266f14095998b35c7d04b8579b9194",
+  "bytes": 103423137560,
+  "independent_storage_checksum_matches_acquisition": true,
+  "full_quality": true,
+  "population_pairs": 1187294516,
+  "verified_utc": "2026-10-24T09:23:41.493824+00:00"
+}

@@ -1,8 +1,8 @@
 # Frozen paired pipeline comparison
 
-Report snapshot: 2026-10-24T08:29:34.713569+00:00.
+Report snapshot: 2026-10-24T09:28:25.079348+00:00.
 
-8 of 12 feasibility comparisons are collected and accepted. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
+9 of 12 feasibility comparisons are collected and accepted. The full frozen design contains 60 comparisons: 50 at 5 million pairs and 10 nested comparisons at 25 million pairs. A missing local report can still be running remotely.
 
 Both arms use the same selected input pairs, source reference collection, production duplicate handling, validation mode and validation cap. The variant changes the upstream screen and alignment representation. This does not isolate alignment as the only cause of differences.
 
@@ -18,6 +18,7 @@ These are final output records, not confirmed detections or species calls. “On
 | SRR38294785 | 5 | 344 | 620 | 0 | 276 | 22.2 | 22.3 |
 | SRR37059981 | 5 | 931 | 1,396 | 0 | 465 | 16.0 | 16.1 |
 | SRR38294137 | 5 | 691 | 1,639 | 1 | 949 | 20.3 | 20.4 |
+| SRR37367647 | 5 | 26 | 43 | 0 | 17 | 15.5 | 15.7 |
 | SRR39695239 | 5 | 2,986 | 4,182 | 6 | 1,202 | 65.0 | 65.3 |
 | SRR39695239 | 25 | 14,746 | 20,877 | 29 | 6,160 | 23.4 | 25.3 |
 
@@ -37,6 +38,6 @@ See [the interpretation record](../comparison-interpretation.md), [nested depth 
 
 ## Remaining execution
 
-4 feasibility comparisons remain uncollected. Expansion beyond this initial cohort is conditional on completed outputs and measured costs. No sample will be chosen or discarded because of its biological findings.
+3 feasibility comparisons remain uncollected. Expansion beyond this initial cohort is conditional on completed outputs and measured costs. No sample will be chosen or discarded because of its biological findings.
 
 The existing budget is $500. The working allocation reserves $200 for new compute; posted historical charges, billing lag and noncompute retention are accounted for separately in [budget.json](../budget.json). Observed resource-time ledgers live in `../runtime-provenance/`. They are estimates and ceilings, not invoice reconciliation.

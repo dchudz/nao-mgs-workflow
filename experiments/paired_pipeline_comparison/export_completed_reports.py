@@ -28,6 +28,12 @@ with tarfile.open(target,'w:gz') as tar:
             download_seconds=sum(r['seconds'] for r in downloads) if downloads else None,
             backup_record=json.loads((inputs/'backup-readback.json').read_text()),
             interpretation='Acquisition covers the complete source archive. It is shared by shallow/deep comparisons and both arms; do not charge it once per arm or once per depth. Missing download timing is unknown, not zero.')
+        retry_path=inputs/'fresh-storage-preflight.json'
+        retry=json.loads(retry_path.read_text()) if retry_path.exists() else None
+        summary['storage_retry_preflight']=retry
+        summary['sampling_attempt_receipts']=[json.loads(p.read_text()) for p in (root/'batch-logs').glob('*/'+sample+'-sample.json')]
+        if retry and downloads:summary['download_seconds']+=retry['download_seconds']
+        summary['timing_limit']='Recorded download totals include a documented storage retry when present. Attempt durations and manual storage checks may overlap; do not add them as worker cost. The final acquisition duration is not the total cost of failed or interrupted attempts.'
         pair_receipts=[json.loads(p.read_text()) for p in (root/'batch-logs').glob('*/'+d.name+'-pair.json')]
         assert len(pair_receipts)<=1
         accounting=json.loads((d/'comparison-report/accounting.json').read_text())
