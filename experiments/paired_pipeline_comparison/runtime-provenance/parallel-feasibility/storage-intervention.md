@@ -23,3 +23,13 @@ AWS documents increased latency while restoring snapshot blocks and supports
 read-only initialization: [Initialize Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html).
 The experiment reads only the needed file, not the whole device. The source
 scripts, timestamps and checksums are retained alongside these records.
+
+The retained 4,313,022,605-byte alignment index also matches its previously
+recorded checksum on all workers. Reading it did not rebuild or alter it.
+
+A separate full-cache check covered 836 validation files totaling
+318,551,974,004 bytes. Every filename, size and SHA-256 matches across all
+three workers. The retained worker completed that read in 97.95 seconds; the
+replicas took 1,907.85 and 1,908.58 seconds. These checks overlap pipeline
+execution and are storage/provenance work, not validation searches. Their
+elapsed times must not be added to overlapping stage time as if serial.

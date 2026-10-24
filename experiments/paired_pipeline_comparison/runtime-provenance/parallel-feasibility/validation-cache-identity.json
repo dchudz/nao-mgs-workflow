@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "workers": [
+    "paired-study",
+    "paired-spot1",
+    "paired-spot2"
+  ],
+  "files": 836,
+  "bytes": 318551974004,
+  "manifest_sha256": "a970c169905475a24e01d5e8fcd25e359410dd704e877f869afbcba6eb0a7f06",
+  "comparison": "Exact equality of every filename, size and SHA-256, not only aggregate manifest equality.",
+  "scope": "Existing validation-cache bytes only; no database search or method change."
+}
