@@ -1,0 +1,56 @@
+{
+  "observed_utc": "2026-10-24T06:32:28.542269+00:00",
+  "volumes": [
+    {
+      "VolumeId": "vol-0272ade891333af83",
+      "Size": 2048,
+      "VolumeType": "gp3",
+      "Iops": 6000,
+      "Throughput": 1000,
+      "State": "in-use",
+      "CreateTime": "2026-10-23T19:07:51.371000+00:00",
+      "SnapshotId": "snap-0b000e1afc2d5a7b5",
+      "modeled_monthly_USD": 213.84,
+      "modeled_24h_USD_30day_proration": 7.128,
+      "higher_throughput_price_scenario_24h_USD": 7.711333333333333
+    },
+    {
+      "VolumeId": "vol-004c4ffab08c46dbd",
+      "Size": 2048,
+      "VolumeType": "gp3",
+      "Iops": 6000,
+      "Throughput": 1000,
+      "State": "in-use",
+      "CreateTime": "2026-10-24T06:10:30.541000+00:00",
+      "SnapshotId": "snap-0c13ccf01c762eb8a",
+      "modeled_monthly_USD": 213.84,
+      "modeled_24h_USD_30day_proration": 7.128,
+      "higher_throughput_price_scenario_24h_USD": 7.711333333333333
+    },
+    {
+      "VolumeId": "vol-05ca1445d265f5325",
+      "Size": 2048,
+      "VolumeType": "gp3",
+      "Iops": 6000,
+      "Throughput": 1000,
+      "State": "in-use",
+      "CreateTime": "2026-10-24T06:11:41.053000+00:00",
+      "SnapshotId": "snap-0c13ccf01c762eb8a",
+      "modeled_monthly_USD": 213.84,
+      "modeled_24h_USD_30day_proration": 7.128,
+      "higher_throughput_price_scenario_24h_USD": 7.711333333333333
+    }
+  ],
+  "three_volume_24h_model_USD": 21.384,
+  "three_volume_24h_higher_throughput_scenario_USD": 23.134,
+  "source": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage-compare-volume-types.html",
+  "higher_throughput_price_source": "https://aws.amazon.com/ebs/pricing/",
+  "rate_status": "Published documentation model, not account Price List API or invoice. pricing:GetProducts was denied to the existing role; no permissions were changed.",
+  "excludes": [
+    "snapshot",
+    "S3 storage and requests",
+    "data transfer",
+    "taxes"
+  ],
+  "retention": "Original volume and snapshot remain preserved. Replica disks stay retained through backup verification; unnecessary copies should be removed after all unique experiment artifacts are verified."
+}
