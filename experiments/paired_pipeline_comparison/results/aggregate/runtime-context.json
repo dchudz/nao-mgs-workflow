@@ -1,5 +1,5 @@
 {
-  "stages": 259,
+  "stages": 266,
   "stages_with_concurrent_storage_work": 9,
   "interpretation": "Overlap is a union of recorded storage intervals. It does not establish slowdown and must not be subtracted from stage time. Stages without a recorded overlap are not proven warm-cache or steady-state measurements."
 }

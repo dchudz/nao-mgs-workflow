@@ -27,7 +27,7 @@ SRR38294183	5	SRR38294183_5m	False	protein_variant	not_collected
 SRR36832676	5	SRR36832676_5m	False	protein_variant	not_collected																			
 SRR37367643	5	SRR37367643_5m	False	production	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	24.09213000706662	946	1459	941	296	645	5	518	513	935	241	0	705	1395	420	94	945
 SRR35987549	5	SRR35987549_5m	False	production	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	20.830872752449977	867	1689	866	249	617	1	823	822	834	215	1	651	1606	424	133	1132
-SRR38294666	5	SRR38294666_5m	False	protein_variant	not_collected																			
+SRR38294666	5	SRR38294666_5m	False	protein_variant	complete	c77cdde08b03834a9c1f54f3d80b0c9668bf9a83	bracken	19.383007574199958	2097	2899	2091	575	1516	6	808	802	2081	258	1	1838	2835	478	156	2265
 SRR38294715	5	SRR38294715_5m	False	production	not_collected																			
 SRR39695325	5	SRR39695325_5m	False	production	not_collected																			
 SRR38294677	5	SRR38294677_5m	False	production	not_collected																			
