@@ -65,8 +65,10 @@ def main():
         for label in metadata['labels']:
             assert accepted[label]['status']=='complete', (label,accepted[label])
             source=extracted/label; dest=results/label
-            if not dest.exists():
-                shutil.copytree(source,dest)
+            if not (dest/'complete.json').exists():
+                # A launch may record placement before completed reports arrive.
+                assert not dest.exists() or {p.name for p in dest.iterdir()}=={'execution-worker.json'}
+                shutil.copytree(source,dest,dirs_exist_ok=True)
                 run(['git','add','--',dest],cwd=repo)
                 run(['git','commit','--quiet','-m',f'Record {label} paired results and verified preservation'],cwd=repo)
                 new.append(label)
