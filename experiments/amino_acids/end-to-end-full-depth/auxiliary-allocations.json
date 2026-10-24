@@ -17,7 +17,8 @@
       "thread": "01a16b9e-cbb9-7ae3-930e-92b12557e277",
       "resource": "Existing small private metadata objects only, maximum 10 MiB.",
       "incremental_cost_ceiling_USD": 0.05,
-      "status": "Peer reports four HEAD and four GET requests, 118326 bytes retrieved; no worker use or search reruns."
+      "status": "Peer reports closed: four HEAD, four GET, six bounded LIST calls; four logs total 118326 bytes, all returned data under 1 MiB. No worker use, searches, or large readback.",
+      "peer_audit_commit": "749fe10c"
     },
     {
       "session": "Reference cache concurrency",

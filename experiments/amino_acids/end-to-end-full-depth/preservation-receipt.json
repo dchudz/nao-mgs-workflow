@@ -1,0 +1,21 @@
+{
+  "verified_utc": "2026-10-24T02:17:00.498106+00:00",
+  "records": [
+    {
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/preservation/20261024/completed-artifacts-and-diagnostics.tar.gz",
+      "bytes": 3994997972,
+      "sha256": "541f20071873e747a3fabfd2db8888ed39bdcce91486f53d4a02fc90de104ab2",
+      "readback_verified": true
+    },
+    {
+      "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/preservation/20261024/completed-sorted-search-output.tsv",
+      "bytes": 241765580228,
+      "sha256": "7a5b186b9ac92efc03e2d63758b98af95f3f3b30ed03231cea98c4dcbc134357",
+      "readback_verified": true
+    }
+  ],
+  "all_four_outputs_completed": false,
+  "raw_inputs_and_remaining_scratch": "Retained on attached EBS volume; not duplicated in this archive.",
+  "deletions": [],
+  "new_searches_launched": false
+}
