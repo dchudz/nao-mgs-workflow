@@ -22,16 +22,20 @@ def main():
     p.add_argument('--intervals', type=Path, required=True)
     a = p.parse_args()
     assert get('sts', 'get-caller-identity')['Account'] == '839993661825'
-    instances = get('ec2', 'describe-instances', '--instance-ids', *WORKERS)
-    now = dt.datetime.now(dt.timezone.utc)
     intervals = json.loads(a.intervals.read_text())['intervals']
+    active_ids = sorted({x['instance_id'] for x in intervals if x['ended_utc_upper'] is None})
+    assert set(active_ids) <= set(WORKERS)
+    # EC2 eventually omits terminated instances. Closed, evidenced intervals
+    # remain billable history even after their live instance record disappears.
+    instances = get('ec2', 'describe-instances', '--instance-ids', *active_ids) if active_ids else {'Reservations': []}
+    now = dt.datetime.now(dt.timezone.utc)
     inventory = {x['InstanceId']:x for r in instances['Reservations'] for x in r['Instances']}
     rows = []
     for instance_id, (worker, original_start, rate) in WORKERS.items():
         periods = sorted((x for x in intervals if x['instance_id']==instance_id), key=lambda x:x['started_utc'])
         assert periods and periods[0]['started_utc']==original_start
         opened = [x for x in periods if x['ended_utc_upper'] is None]
-        state = inventory[instance_id]['State']['Name']
+        state = inventory.get(instance_id, {}).get('State', {}).get('Name', 'closed_interval_no_live_query')
         assert len(opened)==(1 if state in {'running','pending','stopping','shutting-down'} else 0)
         if opened:
             assert dt.datetime.fromisoformat(inventory[instance_id]['LaunchTime'])==dt.datetime.fromisoformat(opened[0]['started_utc'])
