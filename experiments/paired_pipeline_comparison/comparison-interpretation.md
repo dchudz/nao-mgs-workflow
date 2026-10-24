@@ -27,7 +27,7 @@ public metadata, its checksum and the accession mapping are retained in
 | Joint exemplar counts | The production duplicate rules applied to each complete arm | Independent biological events, or distinct exemplars attributable to additions by subtracting totals |
 | Nested depth differences | What changes when more pairs from the same run are processed | A monotone increase in calls, or independent observations at the two depths |
 | Synthetic known-origin control | The declared artificial coordinate, label, and duplicate cases pass | Complete biological accuracy or coverage of every possible adapter input |
-| Stage wall time | Elapsed time for the recorded stage on the recorded worker | Standalone deployment cost, actual CPU use, or a speed advantage from the first order-confounded case |
+| Stage wall time | Elapsed time for the recorded stage on the recorded worker | Standalone deployment cost, actual CPU use, or a speed advantage from order-confounded cases |
 | Worker-time accounting | A compute spending bound from launch time and rate ceilings | An invoice, or inclusion of persistent storage and transfer charges |
 
 The variant changes both its upstream screen and alignment representation.
@@ -70,3 +70,7 @@ Completed units enter the aggregate only after both arms, output checks, and
 checksum-verified private preservation are present. Missing or blocked units
 stay in the inventory rather than becoming zero results. Shallow and deep
 strata are reported separately.
+
+## Runtime order limitation
+
+The baseline run precedes the protein run in every paired driver invocation. Validation-arm order is prespecified separately. Randomizing validation order does not remove the upstream execution-order difference. In addition to the recorded cold-storage overlaps, reuse of input and reference caches can therefore affect stage comparisons. No standalone speed ratio is inferred from these runs.
