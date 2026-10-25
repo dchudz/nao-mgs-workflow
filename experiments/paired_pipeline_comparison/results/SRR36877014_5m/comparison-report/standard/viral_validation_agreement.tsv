@@ -1,0 +1,2 @@
+group	n_reads_reference	n_validated_reference	frac_validated_reference	agreement_rate_reference	mean_distance_reference	n_reads_candidate	n_validated_candidate	frac_validated_candidate	agreement_rate_candidate	mean_distance_candidate
+SRR36877014_5m	998	261	0.26152304609218435	0.4521072796934866	1.1455938697318007	6198	417	0.06727976766698936	0.4676258992805755	2.091127098321343
