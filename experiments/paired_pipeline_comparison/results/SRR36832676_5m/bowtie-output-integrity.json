@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "seconds": 0.06565170300018508,
+  "tasks": [
+    {
+      "stage": "baseline-run",
+      "process": "RUN:EXTRACT_VIRAL_READS:EXTRACT_VIRAL_READS_SHORT:BOWTIE2_VIRUS (id=SRR36832676_5m)",
+      "workdir": "/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/baseline-run/work/6c/4cfa11905600c4da25f20b6dc8bc55",
+      "input_pairs": 957,
+      "mapped_pairs": 207,
+      "unmapped_pairs": 750,
+      "id_sequence_quality_multiset_equal": true,
+      "mapped_sam_gzip_crc_valid": true
+    },
+    {
+      "stage": "baseline-run",
+      "process": "RUN:EXTRACT_VIRAL_READS:EXTRACT_VIRAL_READS_SHORT:BOWTIE2_HUMAN (id=SRR36832676_5m)",
+      "workdir": "/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/baseline-run/work/fe/d3d72d597e2cfe4c3f521fe07050a8",
+      "input_pairs": 207,
+      "mapped_pairs": 0,
+      "unmapped_pairs": 207,
+      "id_sequence_quality_multiset_equal": true,
+      "mapped_sam_gzip_crc_valid": true
+    },
+    {
+      "stage": "baseline-run",
+      "process": "RUN:EXTRACT_VIRAL_READS:EXTRACT_VIRAL_READS_SHORT:BOWTIE2_OTHER (id=SRR36832676_5m)",
+      "workdir": "/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/baseline-run/work/c2/a4e2d8f82f60fd5cc862da4eda5e95",
+      "input_pairs": 207,
+      "mapped_pairs": 0,
+      "unmapped_pairs": 207,
+      "id_sequence_quality_multiset_equal": true,
+      "mapped_sam_gzip_crc_valid": true
+    },
+    {
+      "stage": "protein-run",
+      "process": "HUMAN (id=SRR36832676_5m)",
+      "workdir": "/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/protein-run/work/48/98a437060a268b23e7a9c0e3d63312",
+      "input_pairs": 676,
+      "mapped_pairs": 4,
+      "unmapped_pairs": 672,
+      "id_sequence_quality_multiset_equal": true,
+      "mapped_sam_gzip_crc_valid": true
+    },
+    {
+      "stage": "protein-run",
+      "process": "OTHER (id=SRR36832676_5m)",
+      "workdir": "/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/protein-run/work/93/d338cf1e653898dfab15633772965b",
+      "input_pairs": 672,
+      "mapped_pairs": 13,
+      "unmapped_pairs": 659,
+      "id_sequence_quality_multiset_equal": true,
+      "mapped_sam_gzip_crc_valid": true
+    }
+  ],
+  "scope": "Pair IDs, mate sequences, qualities and multiplicity are conserved across the mapped/unmapped split; valid gzip EOF also checked. This does not validate alignment correctness or prove writer-error propagation is generally safe."
+}

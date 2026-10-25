@@ -1,0 +1,3 @@
+side	downstream_root	index_root	pipeline_version
+reference	/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/production-downstream/output	/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/comparison-report/reference-view	3.4.0.2-dev
+candidate	/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/protein_variant-downstream/output	/home/ec2-user/paired-study-20261024/comparisons/SRR36832676_5m/comparison-report/reference-view	3.4.0.2-dev
