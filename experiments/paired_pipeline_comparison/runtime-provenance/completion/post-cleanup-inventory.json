@@ -1,0 +1,214 @@
+{
+  "observed_utc": "2026-10-25T06:23:20.551150+00:00",
+  "volumes": [
+    {
+      "AvailabilityZoneId": "use1-az1",
+      "Iops": 6000,
+      "Tags": [
+        {
+          "Key": "Project",
+          "Value": "nao-public-pipeline-demo"
+        },
+        {
+          "Key": "RunId",
+          "Value": "e2e-full-depth-20261023"
+        },
+        {
+          "Key": "Name",
+          "Value": "pipeline-lab-e2e-full-depth"
+        }
+      ],
+      "VolumeType": "gp3",
+      "MultiAttachEnabled": false,
+      "Throughput": 1000,
+      "Operator": {
+        "Managed": false,
+        "HiddenByDefault": false
+      },
+      "VolumeArn": "arn:aws:ec2:us-east-1:839993661825:volume/vol-0272ade891333af83",
+      "OwnerId": "839993661825",
+      "VolumeId": "vol-0272ade891333af83",
+      "Size": 2048,
+      "SnapshotId": "snap-0b000e1afc2d5a7b5",
+      "AvailabilityZone": "us-east-1a",
+      "State": "in-use",
+      "CreateTime": "2026-10-23T19:07:51.371000+00:00",
+      "Attachments": [
+        {
+          "DeleteOnTermination": false,
+          "EbsCardIndex": 0,
+          "VolumeId": "vol-0272ade891333af83",
+          "InstanceId": "i-02d118993a6f4989a",
+          "Device": "/dev/xvda",
+          "State": "attached",
+          "AttachTime": "2026-10-23T19:07:51+00:00"
+        }
+      ],
+      "Encrypted": true,
+      "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+    }
+  ],
+  "snapshots": [
+    {
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "e2e-full-depth-preservation-20261024"
+        },
+        {
+          "Key": "RunId",
+          "Value": "e2e-full-depth-20261023"
+        },
+        {
+          "Key": "Project",
+          "Value": "nao-public-pipeline-demo"
+        }
+      ],
+      "StorageTier": "standard",
+      "TransferType": "standard",
+      "CompletionTime": "2026-10-24T04:21:09.592000+00:00",
+      "FullSnapshotSizeInBytes": 2070776119296,
+      "SnapshotId": "snap-0c13ccf01c762eb8a",
+      "VolumeId": "vol-0272ade891333af83",
+      "State": "completed",
+      "StartTime": "2026-10-24T02:25:54.298000+00:00",
+      "Progress": "100%",
+      "OwnerId": "839993661825",
+      "Description": "Preserve stopped e2e-full-depth-20261023 worker references runtime and completed artifacts",
+      "VolumeSize": 2048,
+      "Encrypted": true,
+      "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+    },
+    {
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "predelete-feasibility-2"
+        },
+        {
+          "Key": "Purpose",
+          "Value": "ebs-cleanup-20261025"
+        }
+      ],
+      "StorageTier": "standard",
+      "TransferType": "standard",
+      "CompletionTime": "2026-10-25T05:41:36.123000+00:00",
+      "FullSnapshotSizeInBytes": 2093990543360,
+      "SnapshotId": "snap-0bbf1bc938982ad2d",
+      "VolumeId": "vol-05ca1445d265f5325",
+      "State": "completed",
+      "StartTime": "2026-10-25T05:27:03.626000+00:00",
+      "Progress": "100%",
+      "OwnerId": "839993661825",
+      "Description": "Pre-deletion preservation of detached feasibility-2 volume; paired-comparison-20261024 cleanup",
+      "VolumeSize": 2048,
+      "Encrypted": true,
+      "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+    },
+    {
+      "Tags": [
+        {
+          "Key": "Purpose",
+          "Value": "ebs-cleanup-20261025"
+        },
+        {
+          "Key": "Name",
+          "Value": "predelete-paired-resume"
+        }
+      ],
+      "StorageTier": "standard",
+      "TransferType": "standard",
+      "CompletionTime": "2026-10-25T05:28:02.629000+00:00",
+      "FullSnapshotSizeInBytes": 2070792896512,
+      "SnapshotId": "snap-038808e14e6a0df60",
+      "VolumeId": "vol-05bffc9a8717b6229",
+      "State": "completed",
+      "StartTime": "2026-10-25T05:27:04.753000+00:00",
+      "Progress": "100%",
+      "OwnerId": "839993661825",
+      "Description": "Pre-deletion preservation of detached paired-resume volume; paired-comparison-20261024 cleanup",
+      "VolumeSize": 2048,
+      "Encrypted": true,
+      "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+    },
+    {
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "predelete-scratch-spot1"
+        },
+        {
+          "Key": "Purpose",
+          "Value": "ebs-cleanup-20261025"
+        }
+      ],
+      "StorageTier": "standard",
+      "TransferType": "standard",
+      "CompletionTime": "2026-10-25T05:36:05.198000+00:00",
+      "FullSnapshotSizeInBytes": 76017041408,
+      "SnapshotId": "snap-0dd6b042898e7031d",
+      "VolumeId": "vol-06f002b044d0aeb35",
+      "State": "completed",
+      "StartTime": "2026-10-25T05:27:00.181000+00:00",
+      "Progress": "100%",
+      "OwnerId": "839993661825",
+      "Description": "Pre-deletion preservation of detached scratch-spot1 volume; paired-comparison-20261024 cleanup",
+      "VolumeSize": 512,
+      "Encrypted": true,
+      "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+    },
+    {
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "predelete-scratch-spot2"
+        },
+        {
+          "Key": "Purpose",
+          "Value": "ebs-cleanup-20261025"
+        }
+      ],
+      "StorageTier": "standard",
+      "TransferType": "standard",
+      "CompletionTime": "2026-10-25T06:12:44.733000+00:00",
+      "FullSnapshotSizeInBytes": 409405489152,
+      "SnapshotId": "snap-01a0de05c3ec4297c",
+      "VolumeId": "vol-03f6a458f0812c7b4",
+      "State": "completed",
+      "StartTime": "2026-10-25T05:27:01.406000+00:00",
+      "Progress": "100%",
+      "OwnerId": "839993661825",
+      "Description": "Pre-deletion preservation of detached scratch-spot2 volume; paired-comparison-20261024 cleanup",
+      "VolumeSize": 512,
+      "Encrypted": true,
+      "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+    },
+    {
+      "Tags": [
+        {
+          "Key": "Purpose",
+          "Value": "ebs-cleanup-20261025"
+        },
+        {
+          "Key": "Name",
+          "Value": "predelete-feasibility-1"
+        }
+      ],
+      "StorageTier": "standard",
+      "TransferType": "standard",
+      "CompletionTime": "2026-10-25T05:35:03.817000+00:00",
+      "FullSnapshotSizeInBytes": 2080692502528,
+      "SnapshotId": "snap-05cebb2f8705d5c9f",
+      "VolumeId": "vol-004c4ffab08c46dbd",
+      "State": "completed",
+      "StartTime": "2026-10-25T05:27:02.323000+00:00",
+      "Progress": "100%",
+      "OwnerId": "839993661825",
+      "Description": "Pre-deletion preservation of detached feasibility-1 volume; paired-comparison-20261024 cleanup",
+      "VolumeSize": 2048,
+      "Encrypted": true,
+      "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+    }
+  ],
+  "instance_state": "stopped"
+}
