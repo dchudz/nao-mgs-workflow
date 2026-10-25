@@ -1,0 +1,9 @@
+focus	key	metric	value	threshold	flag_type
+viral	group=SRR37367610_5m	vertebrate-viral reads reassigned (%)	66.41123882503193	10.0	fixed
+viral	group=SRR37367610_5m, rank_level=family, name=Astroviridae	clade share change (pp)	-17.025192258655796	3.0	fixed
+viral	group=SRR37367610_5m, rank_level=family, name=Sedoreoviridae	clade share change (pp)	-5.942372292580533	3.0	fixed
+viral	group=SRR37367610_5m, rank_level=family, name=Orthoherpesviridae	clade share change (pp)	3.8594008107938316	3.0	fixed
+viral	group=SRR37367610_5m, rank_level=order, name=Stellavirales	clade share change (pp)	-17.025192258655796	3.0	fixed
+viral	group=SRR37367610_5m, rank_level=order, name=Reovirales	clade share change (pp)	-5.942372292580533	3.0	fixed
+viral	group=SRR37367610_5m, rank_level=order, name=Herpesvirales	clade share change (pp)	3.8594008107938316	3.0	fixed
+viral	group=SRR37367610_5m, rank_level=order, name=Picornavirales	clade share change (pp)	5.538730741798751	3.0	fixed
