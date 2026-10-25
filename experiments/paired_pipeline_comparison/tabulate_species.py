@@ -6,6 +6,7 @@ import datetime as dt
 import gzip
 import hashlib
 import json
+import re
 from pathlib import Path
 
 
@@ -57,14 +58,25 @@ def fastp_counts(d, arm):
             tasks = [r for r in csv.DictReader(f, delimiter='\t')
                      if r['process'].endswith('EXTRACT_VIRAL_READS_SHORT:FASTP')]
         assert len(tasks) == 1
-        paths = list(Path(tasks[0]['workdir']).glob('*.json'))
+        work = Path(tasks[0]['workdir'])
+        if not work.exists():
+            work = d/tasks[0]['workdir'].split('/comparisons/'+d.name+'/',1)[1]
+        paths = list(work.glob('*.json'))
+        if not paths:
+            log=work/'.command.err';text=log.read_text()
+            values={}
+            for state in ('before','after'):
+                mates=[re.findall(r'Read'+str(mate)+' '+state+r' filtering:\s*total reads: (\d+)',text) for mate in (1,2)]
+                assert all(len(x)==1 for x in mates) and mates[0]==mates[1]
+                values[state+'_pairs']=int(mates[0][0])
+            return dict(**values,file=str(log),sha256=sha(log),source_format='Preserved FASTP stderr counts')
     else:
         paths = list((d/'prepare/published/FASTP').glob('*.json'))
     assert len(paths) == 1, paths
     data = json.loads(paths[0].read_text())['summary']
     before = data['before_filtering']['total_reads']; after = data['after_filtering']['total_reads']
     assert before % 2 == after % 2 == 0
-    return dict(before_pairs=before//2, after_pairs=after//2, file=str(paths[0]), sha256=sha(paths[0]))
+    return dict(before_pairs=before//2, after_pairs=after//2, file=str(paths[0]), sha256=sha(paths[0]),source_format='FASTP JSON')
 
 
 def main():
