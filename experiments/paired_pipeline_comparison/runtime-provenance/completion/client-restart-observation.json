@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-25T03:42:55.358488+00:00",
+  "meaning": "Reattached to surviving remote output pipes; monitor only. No jobs launched.",
+  "workers": {
+    "primary": [
+      "paired-study",
+      "i-02d118993a6f4989a",
+      10343
+    ],
+    "spot2": [
+      "paired-spot2",
+      "i-0638e9b2262f8f52c",
+      10881
+    ]
+  }
+}

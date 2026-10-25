@@ -1,0 +1,418 @@
+{
+  "observed_utc": "2026-10-25T04:37:24.336144+00:00",
+  "account": "839993661825",
+  "workers": [
+    {
+      "worker": "spot2-resume",
+      "instance_id": "i-0638e9b2262f8f52c",
+      "started_utc": "2026-10-24T14:26:23+00:00",
+      "ended_utc_upper": "2026-10-25T03:54:39.609235+00:00",
+      "observed_state": "closed_interval_no_live_query",
+      "observed_utc": "2026-10-25T04:37:24.336144+00:00",
+      "hours": 13.471280343055556,
+      "hourly_compute_ceiling_USD": 2,
+      "compute_ceiling_USD": 26.94256068611111,
+      "evidence": "spot2-resume-final-state.json"
+    },
+    {
+      "worker": "primary",
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T05:07:00+00:00",
+      "ended_utc_upper": "2026-10-24T08:21:32.474962+00:00",
+      "observed_state": "closed_interval_no_live_query",
+      "observed_utc": "2026-10-25T04:37:24.336144+00:00",
+      "hours": 3.2423541561111113,
+      "hourly_compute_ceiling_USD": 4,
+      "compute_ceiling_USD": 12.969416624444445,
+      "evidence": "primary-stop.json"
+    },
+    {
+      "worker": "primary",
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T09:59:59+00:00",
+      "ended_utc_upper": "2026-10-24T13:14:32.266264+00:00",
+      "observed_state": "closed_interval_no_live_query",
+      "observed_utc": "2026-10-25T04:37:24.336144+00:00",
+      "hours": 3.242573962222222,
+      "hourly_compute_ceiling_USD": 4,
+      "compute_ceiling_USD": 12.970295848888888,
+      "evidence": "primary-halt-final-state.json; conservative verified final state"
+    },
+    {
+      "worker": "primary",
+      "instance_id": "i-02d118993a6f4989a",
+      "started_utc": "2026-10-24T14:26:21+00:00",
+      "ended_utc_upper": "2026-10-25T04:37:23.822857+00:00",
+      "observed_state": "closed_interval_no_live_query",
+      "observed_utc": "2026-10-25T04:37:24.336144+00:00",
+      "hours": 14.184117460277777,
+      "hourly_compute_ceiling_USD": 4,
+      "compute_ceiling_USD": 56.73646984111111,
+      "evidence": "primary-resume-final-state.json"
+    },
+    {
+      "worker": "spot1",
+      "instance_id": "i-0f5065e3b4f67cfbc",
+      "started_utc": "2026-10-24T06:10:29+00:00",
+      "ended_utc_upper": "2026-10-24T10:07:39.719504+00:00",
+      "observed_state": "closed_interval_no_live_query",
+      "observed_utc": "2026-10-25T04:37:24.336144+00:00",
+      "hours": 3.9529776400000003,
+      "hourly_compute_ceiling_USD": 2,
+      "compute_ceiling_USD": 7.905955280000001,
+      "evidence": "worker-recovery-inventory.json; conservative observation after service interruption at 09:51:03 UTC"
+    },
+    {
+      "worker": "spot2",
+      "instance_id": "i-0ee9da3f09d197be6",
+      "started_utc": "2026-10-24T06:11:40+00:00",
+      "ended_utc_upper": "2026-10-24T13:14:32.042477+00:00",
+      "observed_state": "closed_interval_no_live_query",
+      "observed_utc": "2026-10-25T04:37:24.336144+00:00",
+      "hours": 7.047789576944444,
+      "hourly_compute_ceiling_USD": 2,
+      "compute_ceiling_USD": 14.095579153888888,
+      "evidence": "spot2-halt-final-state.json; conservative verified final state"
+    }
+  ],
+  "volumes": [
+    {
+      "volume_id": "vol-06f002b044d0aeb35",
+      "size_GiB": 512,
+      "iops": 3000,
+      "throughput_MiB_per_s": 500,
+      "study_hours": 19.621910595555555,
+      "modeled_USD_per_30day_month": 55.96,
+      "accrued_model_USD": 1.5250584957323456
+    },
+    {
+      "volume_id": "vol-0272ade891333af83",
+      "size_GiB": 2048,
+      "iops": 6000,
+      "throughput_MiB_per_s": 1000,
+      "study_hours": 23.50676004,
+      "modeled_USD_per_30day_month": 213.84,
+      "accrued_model_USD": 6.98150773188
+    },
+    {
+      "volume_id": "vol-004c4ffab08c46dbd",
+      "size_GiB": 2048,
+      "iops": 6000,
+      "throughput_MiB_per_s": 1000,
+      "study_hours": 22.44827642888889,
+      "modeled_USD_per_30day_month": 213.84,
+      "accrued_model_USD": 6.66713809938
+    },
+    {
+      "volume_id": "vol-03f6a458f0812c7b4",
+      "size_GiB": 512,
+      "iops": 3000,
+      "throughput_MiB_per_s": 500,
+      "study_hours": 19.54388392888889,
+      "modeled_USD_per_30day_month": 55.96,
+      "accrued_model_USD": 1.5189940898064198
+    },
+    {
+      "volume_id": "vol-05ca1445d265f5325",
+      "size_GiB": 2048,
+      "iops": 6000,
+      "throughput_MiB_per_s": 1000,
+      "study_hours": 22.428689762222223,
+      "modeled_USD_per_30day_month": 213.84,
+      "accrued_model_USD": 6.661320859380001
+    },
+    {
+      "volume_id": "vol-05bffc9a8717b6229",
+      "size_GiB": 2048,
+      "iops": 6000,
+      "throughput_MiB_per_s": 1000,
+      "study_hours": 14.183268095555555,
+      "modeled_USD_per_30day_month": 213.84,
+      "accrued_model_USD": 4.21243062438
+    }
+  ],
+  "elapsed_compute_ceiling_USD": 131.62027743444443,
+  "new_compute_allowance_USD": 200,
+  "study_EBS_accrual_model_USD": 27.566449900558766,
+  "study_S3_current_objects": 12615,
+  "study_S3_current_bytes": 168267778573,
+  "cost_explorer_account_wide": {
+    "GroupDefinitions": [
+      {
+        "Type": "DIMENSION",
+        "Key": "SERVICE"
+      }
+    ],
+    "ResultsByTime": [
+      {
+        "TimePeriod": {
+          "Start": "2026-10-23",
+          "End": "2026-10-24"
+        },
+        "Total": {},
+        "Groups": [
+          {
+            "Keys": [
+              "AWS Cost Explorer"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.04",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AWS Glue"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AWS Key Management Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon EC2 Container Registry (ECR)"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.004205328",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "EC2 - Other"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "7.2439508332",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Elastic Compute Cloud - Compute"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "81.9627920861",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Simple Notification Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Simple Storage Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "11.3980000336",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Virtual Private Cloud"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.256588885",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AmazonCloudWatch"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          }
+        ],
+        "Estimated": true
+      },
+      {
+        "TimePeriod": {
+          "Start": "2026-10-24",
+          "End": "2026-10-25"
+        },
+        "Total": {},
+        "Groups": [
+          {
+            "Keys": [
+              "AWS Cost Explorer"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.32",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AWS Glue"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AWS Key Management Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon EC2 Container Registry (ECR)"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.003854884",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "EC2 - Other"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "11.9749452432",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Elastic Compute Cloud - Compute"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "63.9127910056",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Simple Storage Service"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "1.5142499665",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Amazon Virtual Private Cloud"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.26812639",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "AmazonCloudWatch"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0.00044",
+                "Unit": "USD"
+              }
+            }
+          },
+          {
+            "Keys": [
+              "Tax"
+            ],
+            "Metrics": {
+              "UnblendedCost": {
+                "Amount": "0",
+                "Unit": "USD"
+              }
+            }
+          }
+        ],
+        "Estimated": true
+      },
+      {
+        "TimePeriod": {
+          "Start": "2026-10-25",
+          "End": "2026-10-26"
+        },
+        "Total": {
+          "UnblendedCost": {
+            "Amount": "0",
+            "Unit": "USD"
+          }
+        },
+        "Groups": [],
+        "Estimated": true
+      }
+    ],
+    "DimensionValueAttributes": []
+  },
+  "unpriced": [
+    "Snapshot incremental storage",
+    "S3 storage age and requests",
+    "Data transfer",
+    "Taxes"
+  ],
+  "limits": [
+    "Compute is a sum of disjoint observed running intervals at rate ceilings, not an invoice. Closed intervals use a conservative verified-stop time.",
+    "EBS model excludes pre-study retention and uses a 30-day month.",
+    "S3 bytes are a current inventory, not byte-hours or a charge.",
+    "Cost Explorer is account-wide and delayed; do not add it to these overlapping models.",
+    "No posted charge for a day means unposted, not free.",
+    "The existing 150 USD billing-lag/noncompute reserve remains separate."
+  ]
+}

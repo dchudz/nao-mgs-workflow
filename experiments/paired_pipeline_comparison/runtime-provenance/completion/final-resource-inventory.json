@@ -1,0 +1,556 @@
+{
+  "observed_utc": "2026-10-25T04:38:03.627341+00:00",
+  "instances": {
+    "Reservations": [
+      {
+        "ReservationId": "r-0a60c2e38e04daeba",
+        "OwnerId": "839993661825",
+        "Groups": [],
+        "Instances": [
+          {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "paired-20261024-resume-spot2",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "InstanceLifecycle": "spot",
+            "NetworkInterfaces": [],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [],
+            "SpotInstanceRequestId": "sir-46eqn5qj",
+            "StateReason": {
+              "Code": "Client.UserInitiatedShutdown",
+              "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+            },
+            "Tags": [
+              {
+                "Key": "Project",
+                "Value": "nao-public-pipeline-demo"
+              },
+              {
+                "Key": "RunId",
+                "Value": "paired-comparison-20261024"
+              },
+              {
+                "Key": "BudgetStopUTC",
+                "Value": "2026-10-25T14:25:57.447849+00:00"
+              },
+              {
+                "Key": "Name",
+                "Value": "pipeline-paired-resume"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 24,
+              "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "open"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "pending",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 1,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-10-24T14:26:23+00:00",
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "SecondaryInterfaces": [],
+            "InstanceId": "i-0638e9b2262f8f52c",
+            "ImageId": "ami-0c321b7d544c84df9",
+            "State": {
+              "Code": 48,
+              "Name": "terminated"
+            },
+            "PrivateDnsName": "",
+            "PublicDnsName": "",
+            "StateTransitionReason": "User initiated (2026-10-25 03:53:36 GMT)",
+            "KeyName": "pipeline-lab-runner",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "r6i.12xlarge",
+            "LaunchTime": "2026-10-24T14:26:23+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "use1-az6",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "us-east-1d"
+            },
+            "Monitoring": {
+              "State": "disabled"
+            }
+          }
+        ]
+      },
+      {
+        "ReservationId": "r-08430834af440d5b8",
+        "OwnerId": "839993661825",
+        "Groups": [],
+        "Instances": [
+          {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [
+              {
+                "DeviceName": "/dev/xvda",
+                "Ebs": {
+                  "AttachTime": "2026-10-23T19:07:51+00:00",
+                  "DeleteOnTermination": false,
+                  "Status": "attached",
+                  "VolumeId": "vol-0272ade891333af83",
+                  "EbsCardIndex": 0
+                }
+              }
+            ],
+            "ClientToken": "pipeline-e2e-full-depth-20261023-v1",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::839993661825:instance-profile/pipeline-lab-runner",
+              "Id": "AIPA4HE4GDGATAMI3622E"
+            },
+            "NetworkInterfaces": [
+              {
+                "Attachment": {
+                  "AttachTime": "2026-10-23T19:07:50+00:00",
+                  "AttachmentId": "eni-attach-0243f55c0e3fb1bf3",
+                  "DeleteOnTermination": true,
+                  "DeviceIndex": 0,
+                  "Status": "attached",
+                  "NetworkCardIndex": 0
+                },
+                "Description": "",
+                "Groups": [
+                  {
+                    "GroupId": "sg-02f788cf008d9a396",
+                    "GroupName": "pipeline-lab-runner"
+                  }
+                ],
+                "Ipv6Addresses": [],
+                "MacAddress": "02:ff:e7:23:81:fd",
+                "NetworkInterfaceId": "eni-0392e92aff405f66d",
+                "OwnerId": "839993661825",
+                "PrivateDnsName": "ip-172-31-11-232.ec2.internal",
+                "PrivateIpAddress": "172.31.11.232",
+                "PrivateIpAddresses": [
+                  {
+                    "Primary": true,
+                    "PrivateDnsName": "ip-172-31-11-232.ec2.internal",
+                    "PrivateIpAddress": "172.31.11.232"
+                  }
+                ],
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "subnet-54aeba33",
+                "VpcId": "vpc-f08aaa8a",
+                "InterfaceType": "interface",
+                "Operator": {
+                  "Managed": false
+                }
+              }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-02f788cf008d9a396",
+                "GroupName": "pipeline-lab-runner"
+              }
+            ],
+            "SourceDestCheck": true,
+            "StateReason": {
+              "Code": "Client.UserInitiatedShutdown",
+              "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+            },
+            "Tags": [
+              {
+                "Key": "RunId",
+                "Value": "e2e-full-depth-20261023"
+              },
+              {
+                "Key": "Project",
+                "Value": "nao-public-pipeline-demo"
+              },
+              {
+                "Key": "Name",
+                "Value": "pipeline-lab-e2e-full-depth"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 24,
+              "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "open"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "applied",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 1,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-10-23T19:07:50+00:00",
+            "PrivateDnsNameOptions": {
+              "HostnameType": "ip-name",
+              "EnableResourceNameDnsARecord": false,
+              "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "SecondaryInterfaces": [],
+            "InstanceId": "i-02d118993a6f4989a",
+            "ImageId": "ami-0567589d25e06853e",
+            "State": {
+              "Code": 80,
+              "Name": "stopped"
+            },
+            "PrivateDnsName": "ip-172-31-11-232.ec2.internal",
+            "PublicDnsName": "",
+            "StateTransitionReason": "User initiated (2026-10-25 04:36:36 GMT)",
+            "KeyName": "pipeline-lab-runner",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "r6i.12xlarge",
+            "LaunchTime": "2026-10-24T14:26:21+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "use1-az1",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "us-east-1a"
+            },
+            "Monitoring": {
+              "State": "disabled"
+            },
+            "SubnetId": "subnet-54aeba33",
+            "VpcId": "vpc-f08aaa8a",
+            "PrivateIpAddress": "172.31.11.232"
+          }
+        ]
+      }
+    ]
+  },
+  "volumes": {
+    "Volumes": [
+      {
+        "AvailabilityZoneId": "use1-az6",
+        "Iops": 3000,
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "paired-study-scratch-spot1"
+          },
+          {
+            "Key": "ManagedBy",
+            "Value": "Codex"
+          },
+          {
+            "Key": "Study",
+            "Value": "paired-comparison-20261024"
+          }
+        ],
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 500,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:839993661825:volume/vol-06f002b044d0aeb35",
+        "OwnerId": "839993661825",
+        "VolumeId": "vol-06f002b044d0aeb35",
+        "Size": 512,
+        "SnapshotId": "",
+        "AvailabilityZone": "us-east-1d",
+        "State": "available",
+        "CreateTime": "2026-10-24T09:00:05.458000+00:00",
+        "Attachments": [],
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+      },
+      {
+        "AvailabilityZoneId": "use1-az1",
+        "Iops": 6000,
+        "Tags": [
+          {
+            "Key": "Project",
+            "Value": "nao-public-pipeline-demo"
+          },
+          {
+            "Key": "RunId",
+            "Value": "e2e-full-depth-20261023"
+          },
+          {
+            "Key": "Name",
+            "Value": "pipeline-lab-e2e-full-depth"
+          }
+        ],
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 1000,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:839993661825:volume/vol-0272ade891333af83",
+        "OwnerId": "839993661825",
+        "VolumeId": "vol-0272ade891333af83",
+        "Size": 2048,
+        "SnapshotId": "snap-0b000e1afc2d5a7b5",
+        "AvailabilityZone": "us-east-1a",
+        "State": "in-use",
+        "CreateTime": "2026-10-23T19:07:51.371000+00:00",
+        "Attachments": [
+          {
+            "DeleteOnTermination": false,
+            "EbsCardIndex": 0,
+            "VolumeId": "vol-0272ade891333af83",
+            "InstanceId": "i-02d118993a6f4989a",
+            "Device": "/dev/xvda",
+            "State": "attached",
+            "AttachTime": "2026-10-23T19:07:51+00:00"
+          }
+        ],
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+      },
+      {
+        "AvailabilityZoneId": "use1-az6",
+        "Iops": 6000,
+        "Tags": [
+          {
+            "Key": "BudgetStopUTC",
+            "Value": "2026-10-25T05:07:00Z"
+          },
+          {
+            "Key": "RunId",
+            "Value": "paired-comparison-20261024"
+          },
+          {
+            "Key": "Name",
+            "Value": "pipeline-paired-feasibility-1"
+          },
+          {
+            "Key": "Project",
+            "Value": "nao-public-pipeline-demo"
+          }
+        ],
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 1000,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:839993661825:volume/vol-004c4ffab08c46dbd",
+        "OwnerId": "839993661825",
+        "VolumeId": "vol-004c4ffab08c46dbd",
+        "Size": 2048,
+        "SnapshotId": "snap-0c13ccf01c762eb8a",
+        "AvailabilityZone": "us-east-1d",
+        "State": "available",
+        "CreateTime": "2026-10-24T06:10:30.541000+00:00",
+        "Attachments": [],
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+      },
+      {
+        "AvailabilityZoneId": "use1-az6",
+        "Iops": 3000,
+        "Tags": [
+          {
+            "Key": "ManagedBy",
+            "Value": "Codex"
+          },
+          {
+            "Key": "Study",
+            "Value": "paired-comparison-20261024"
+          },
+          {
+            "Key": "Name",
+            "Value": "paired-study-scratch-spot2"
+          }
+        ],
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 500,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:839993661825:volume/vol-03f6a458f0812c7b4",
+        "OwnerId": "839993661825",
+        "VolumeId": "vol-03f6a458f0812c7b4",
+        "Size": 512,
+        "SnapshotId": "",
+        "AvailabilityZone": "us-east-1d",
+        "State": "available",
+        "CreateTime": "2026-10-24T09:04:46.354000+00:00",
+        "Attachments": [],
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+      },
+      {
+        "AvailabilityZoneId": "use1-az6",
+        "Iops": 6000,
+        "Tags": [
+          {
+            "Key": "Project",
+            "Value": "nao-public-pipeline-demo"
+          },
+          {
+            "Key": "RunId",
+            "Value": "paired-comparison-20261024"
+          },
+          {
+            "Key": "Name",
+            "Value": "pipeline-paired-feasibility-2"
+          },
+          {
+            "Key": "BudgetStopUTC",
+            "Value": "2026-10-25T05:07:00Z"
+          }
+        ],
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 1000,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:839993661825:volume/vol-05ca1445d265f5325",
+        "OwnerId": "839993661825",
+        "VolumeId": "vol-05ca1445d265f5325",
+        "Size": 2048,
+        "SnapshotId": "snap-0c13ccf01c762eb8a",
+        "AvailabilityZone": "us-east-1d",
+        "State": "available",
+        "CreateTime": "2026-10-24T06:11:41.053000+00:00",
+        "Attachments": [],
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+      },
+      {
+        "AvailabilityZoneId": "use1-az6",
+        "Iops": 6000,
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "pipeline-paired-resume"
+          },
+          {
+            "Key": "RunId",
+            "Value": "paired-comparison-20261024"
+          },
+          {
+            "Key": "Project",
+            "Value": "nao-public-pipeline-demo"
+          },
+          {
+            "Key": "BudgetStopUTC",
+            "Value": "2026-10-25T14:25:57.447849+00:00"
+          }
+        ],
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 1000,
+        "Operator": {
+          "Managed": false,
+          "HiddenByDefault": false
+        },
+        "VolumeArn": "arn:aws:ec2:us-east-1:839993661825:volume/vol-05bffc9a8717b6229",
+        "OwnerId": "839993661825",
+        "VolumeId": "vol-05bffc9a8717b6229",
+        "Size": 2048,
+        "SnapshotId": "snap-0c13ccf01c762eb8a",
+        "AvailabilityZone": "us-east-1d",
+        "State": "available",
+        "CreateTime": "2026-10-24T14:26:24.571000+00:00",
+        "Attachments": [],
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+      }
+    ]
+  },
+  "reference_snapshot": {
+    "Snapshots": [
+      {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "e2e-full-depth-preservation-20261024"
+          },
+          {
+            "Key": "RunId",
+            "Value": "e2e-full-depth-20261023"
+          },
+          {
+            "Key": "Project",
+            "Value": "nao-public-pipeline-demo"
+          }
+        ],
+        "StorageTier": "standard",
+        "TransferType": "standard",
+        "CompletionTime": "2026-10-24T04:21:09.592000+00:00",
+        "FullSnapshotSizeInBytes": 2070776119296,
+        "SnapshotId": "snap-0c13ccf01c762eb8a",
+        "VolumeId": "vol-0272ade891333af83",
+        "State": "completed",
+        "StartTime": "2026-10-24T02:25:54.298000+00:00",
+        "Progress": "100%",
+        "OwnerId": "839993661825",
+        "Description": "Preserve stopped e2e-full-depth-20261023 worker references runtime and completed artifacts",
+        "VolumeSize": 2048,
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:839993661825:key/cb97e27e-4665-4464-bc8c-94c54fd5ece8"
+      }
+    ]
+  },
+  "all_six_volumes_retained": true
+}

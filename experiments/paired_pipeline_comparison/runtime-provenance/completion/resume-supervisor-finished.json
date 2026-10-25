@@ -1,0 +1,12 @@
+{
+  "finished_utc": "2026-10-25T04:37:31.243311+00:00",
+  "workers": {
+    "spot2": {
+      "exit_code": 0
+    },
+    "primary": {
+      "exit_code": 0
+    }
+  },
+  "monitor": "watch_surviving_workers.py"
+}

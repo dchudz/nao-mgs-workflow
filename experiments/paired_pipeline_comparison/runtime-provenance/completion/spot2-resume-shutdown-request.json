@@ -1,0 +1,222 @@
+{
+  "requested_utc": "2026-10-25T03:53:36.337372+00:00",
+  "inventory": {
+    "Reservations": [
+      {
+        "ReservationId": "r-0a60c2e38e04daeba",
+        "OwnerId": "839993661825",
+        "Groups": [],
+        "Instances": [
+          {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [
+              {
+                "DeviceName": "/dev/xvda",
+                "Ebs": {
+                  "AttachTime": "2026-10-24T14:26:24+00:00",
+                  "DeleteOnTermination": false,
+                  "Status": "attached",
+                  "VolumeId": "vol-05bffc9a8717b6229",
+                  "EbsCardIndex": 0
+                }
+              },
+              {
+                "DeviceName": "/dev/sdf",
+                "Ebs": {
+                  "AttachTime": "2026-10-24T14:27:36.803000+00:00",
+                  "DeleteOnTermination": false,
+                  "Status": "attached",
+                  "VolumeId": "vol-03f6a458f0812c7b4",
+                  "EbsCardIndex": 0
+                }
+              },
+              {
+                "DeviceName": "/dev/sdg",
+                "Ebs": {
+                  "AttachTime": "2026-10-24T14:27:35.724000+00:00",
+                  "DeleteOnTermination": false,
+                  "Status": "attached",
+                  "VolumeId": "vol-05ca1445d265f5325",
+                  "EbsCardIndex": 0
+                }
+              }
+            ],
+            "ClientToken": "paired-20261024-resume-spot2",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::839993661825:instance-profile/pipeline-lab-runner",
+              "Id": "AIPA4HE4GDGATAMI3622E"
+            },
+            "InstanceLifecycle": "spot",
+            "NetworkInterfaces": [
+              {
+                "Association": {
+                  "IpOwnerId": "amazon",
+                  "PublicDnsName": "ec2-18-232-61-75.compute-1.amazonaws.com",
+                  "PublicIp": "18.232.61.75"
+                },
+                "Attachment": {
+                  "AttachTime": "2026-10-24T14:26:23+00:00",
+                  "AttachmentId": "eni-attach-02c4c591ee7863039",
+                  "DeleteOnTermination": true,
+                  "DeviceIndex": 0,
+                  "Status": "attached",
+                  "NetworkCardIndex": 0
+                },
+                "Description": "",
+                "Groups": [
+                  {
+                    "GroupId": "sg-02f788cf008d9a396",
+                    "GroupName": "pipeline-lab-runner"
+                  }
+                ],
+                "Ipv6Addresses": [],
+                "MacAddress": "0e:ff:de:97:dc:1f",
+                "NetworkInterfaceId": "eni-00326759b6f41d3cb",
+                "OwnerId": "839993661825",
+                "PrivateDnsName": "ip-172-31-35-53.ec2.internal",
+                "PrivateIpAddress": "172.31.35.53",
+                "PrivateIpAddresses": [
+                  {
+                    "Association": {
+                      "IpOwnerId": "amazon",
+                      "PublicDnsName": "ec2-18-232-61-75.compute-1.amazonaws.com",
+                      "PublicIp": "18.232.61.75"
+                    },
+                    "Primary": true,
+                    "PrivateDnsName": "ip-172-31-35-53.ec2.internal",
+                    "PrivateIpAddress": "172.31.35.53"
+                  }
+                ],
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "subnet-882030d4",
+                "VpcId": "vpc-f08aaa8a",
+                "InterfaceType": "interface",
+                "Operator": {
+                  "Managed": false
+                }
+              }
+            ],
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-02f788cf008d9a396",
+                "GroupName": "pipeline-lab-runner"
+              }
+            ],
+            "SourceDestCheck": true,
+            "SpotInstanceRequestId": "sir-46eqn5qj",
+            "Tags": [
+              {
+                "Key": "Project",
+                "Value": "nao-public-pipeline-demo"
+              },
+              {
+                "Key": "RunId",
+                "Value": "paired-comparison-20261024"
+              },
+              {
+                "Key": "BudgetStopUTC",
+                "Value": "2026-10-25T14:25:57.447849+00:00"
+              },
+              {
+                "Key": "Name",
+                "Value": "pipeline-paired-resume"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 24,
+              "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "open"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "applied",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 1,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-10-24T14:26:23+00:00",
+            "PrivateDnsNameOptions": {
+              "HostnameType": "ip-name",
+              "EnableResourceNameDnsARecord": false,
+              "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "SecondaryInterfaces": [],
+            "InstanceId": "i-0638e9b2262f8f52c",
+            "ImageId": "ami-0c321b7d544c84df9",
+            "State": {
+              "Code": 16,
+              "Name": "running"
+            },
+            "PrivateDnsName": "ip-172-31-35-53.ec2.internal",
+            "PublicDnsName": "ec2-18-232-61-75.compute-1.amazonaws.com",
+            "StateTransitionReason": "",
+            "KeyName": "pipeline-lab-runner",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "r6i.12xlarge",
+            "LaunchTime": "2026-10-24T14:26:23+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "use1-az6",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "us-east-1d"
+            },
+            "Monitoring": {
+              "State": "disabled"
+            },
+            "SubnetId": "subnet-882030d4",
+            "VpcId": "vpc-f08aaa8a",
+            "PrivateIpAddress": "172.31.35.53",
+            "PublicIpAddress": "18.232.61.75"
+          }
+        ]
+      }
+    ]
+  },
+  "result": {
+    "TerminatingInstances": [
+      {
+        "InstanceId": "i-0638e9b2262f8f52c",
+        "CurrentState": {
+          "Code": 32,
+          "Name": "shutting-down"
+        },
+        "PreviousState": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-25T04:38:10.051727+00:00",
+  "files": {
+    "worker-intervals.json": "3266aef205a6b69de3f6d27c0ce44d62228834163cb49957759af3e1a9fbfca1",
+    "resume-supervisor-finished.json": "ade2a16b68f222a0da16612a3bf517d829d8d95c1648c3a76ab9d81817f6b9b7",
+    "primary-resume-finished.json": "296cb06557cfa28037e7048978fc991cf6867c61890aa0c386158a70531aac1a",
+    "spot2-resume-finished.json": "6fbed9328efb7805aa9110e58fa2ca53293d05fc06be46cb565613e37fa5730d",
+    "primary-resume-shutdown-request.json": "043d0775df37a238392fc0a6572ec046ed4d21a5cdf6d61ac31bf10b6897dd90",
+    "spot2-resume-shutdown-request.json": "7b957dea5a1c41b0c6f3418c154f68a0d62a084ede7fde95d9be8b36f4cea074",
+    "primary-resume-final-state.json": "8d6c68d167812ac03471e01294a613816aa4f4c97ecec7064305cf366808fdce",
+    "spot2-resume-final-state.json": "be9b7f20aeb77e486a4738a90f30e3cb4c1fbc0d42da89ae6c57f1ff0f53fad3",
+    "final-resource-inventory.json": "3d30070da856559790f46afefab9b0162c47abb38cdcc54ff012c50606728d0a",
+    "client-restart-observation.json": "723b4fa7bf9903dd7b713a115bec0de1d2ff833d4d66be46b579d2d7e7afd39d",
+    "watch_surviving_workers.py": "fdd4e01a5579007b5eed547a36e713a67d749440e16891466f5890577cb5740e",
+    "final-aggregate-report-inputs.verified.json": "8edc6b00855bbf08968b836a197b3d747b2bdc42196803f59446499dd4f61ab2",
+    "spend-supervised-0437.json": "6bfb0586433d343c97fa14804a59352b223cd7b3bc3563353a9b0d43be750678"
+  },
+  "meaning": "Closed compute intervals and preservation receipts; storage continues accruing after this observation."
+}
