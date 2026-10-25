@@ -1,0 +1,17 @@
+{
+  "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
+  "sample": "SRR39695374_5m",
+  "source_run": "SRR39695374",
+  "level": "shallow",
+  "pairs": 5000000,
+  "acquisition_sha256": "c5b8de44594d8d33952b4edfc0a1390e1551c6709c0ff904ccf881aa2af8bd79",
+  "arms": [
+    "production",
+    "protein_variant"
+  ],
+  "validation_policy": "Original production settings, equal in both arms",
+  "group": "One run and depth per group",
+  "source_reference": "/home/ec2-user/experiment/reference",
+  "runtime_config_sha256": "d061955a7dc733fb7fd1eea58ea0b1e30fb7bcdb726ac73059e0b82e1161f29a",
+  "started_utc": "2026-10-25T01:31:38.038764+00:00"
+}
