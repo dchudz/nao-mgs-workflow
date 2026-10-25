@@ -1,0 +1,26 @@
+{
+  "input_hashes": {
+    ".tmp/paired-comparison-20261024/species-audit/SRR35971518_5m/complete.json": "def088d409cf4da76930172d589a216e754251b978e90e0e807a8335cc8aab3b",
+    ".tmp/paired-comparison-20261024/species-audit/SRR35971518_25m/complete.json": "df0420b628ba35e4e9bd3674194e14cf3011282cf46ce262cefc08a196b0a3ac",
+    ".tmp/paired-comparison-20261024/species-audit/SRR36876827_5m/complete.json": "94bd173e4f963cd7110371e201e7b23048783e14eb5e94a352aad778e1c61122",
+    ".tmp/paired-comparison-20261024/species-audit/SRR36876827_25m/complete.json": "2aa8eeb4e79bae0b56e596d6beb64d9abca3aa8584494e8cc4e3ab4b0e661e1c",
+    ".tmp/paired-comparison-20261024/species-audit/SRR37367662_5m/complete.json": "3306b20bda5839125872f5b12adc5a2f39f91f3655739f4fcf6d9bfceecb5ec8",
+    ".tmp/paired-comparison-20261024/species-audit/SRR37367662_25m/complete.json": "015d5cc5caf2dc5ba82d8ddbb0fd7fc1ec7129f9e64a41b0cb489d818031c64b",
+    ".tmp/paired-comparison-20261024/species-audit/SRR38294124_5m/complete.json": "47e288bb3675ee40f8d30b22edd2b294315b25fa27a6202fad94b59ac055429d",
+    ".tmp/paired-comparison-20261024/species-audit/SRR38294124_25m/complete.json": "09293bbf0d7baa7a5f98b5919f9e838f6591df3dbe2e57d145ceaf6603c0e847",
+    ".tmp/paired-comparison-20261024/species-audit/SRR38294805_5m/complete.json": "ab45469c7590e8a888ebbaeff123f5b886544d148896ce5fdecc37ebaf9f6c7c",
+    ".tmp/paired-comparison-20261024/species-audit/SRR38294805_25m/complete.json": "fad9322837f794109a194edfb2cee782adb5896c488f3cc718c855f038d2875d",
+    ".tmp/paired-comparison-20261024/species-audit/SRR38294842_5m/complete.json": "c0558add1e10e02f400d4bf2d0f2e8fd3417fc1a1aa3e714c0f753f4c04a6993",
+    ".tmp/paired-comparison-20261024/species-audit/SRR38294842_25m/complete.json": "cca3640f2c91183bfc05337f7c195c4c8ffb3b11e6e30668246888fef3d659cc",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695102_5m/complete.json": "366311d12b44e110e3eaa02ab567bc30c564a82df2d38117a7057ffeca9a9893",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695102_25m/complete.json": "58d9d0f810f3e9f269c50ddaff9cd8728005c11fa5d1fb150ee2c742ceea9aa0",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695144_5m/complete.json": "2205c918d119a2f716a824ef3254e3c6e3d0b013e7a15e246ea9d1ac312b19a2",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695144_25m/complete.json": "dcaad7510baf19a1c6528dfc2f970490880b6ecb23d8e834ba2fea7f899f4b6c",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695239_5m/complete.json": "2f09549bd439742ec96a99a2a34532c8e19d508f7f146ba0aa3e0703d683b05d",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695239_25m/complete.json": "75515f0eec45000e0faa7045006d48a7b4baa96077497707d6dde832e76261c3",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695348_5m/complete.json": "e14431f20085f640b28e7c682718ca4450188b9cc94f1c6382f8ff57ea2e8c12",
+    ".tmp/paired-comparison-20261024/species-audit/SRR39695348_25m/complete.json": "22cdbe01008fb7a4c7f1ae52cdc300cf1061177103c4aae42af46af1d2a559f0"
+  },
+  "script_sha256": "4b916e279ae9b9fc6349aebd2ec8a5c31e8bf621ad6cc1f0b4125bf90a120b21",
+  "scope": "Counts from existing outputs only; no new alignments, taxonomic reassignment, or validation searches."
+}

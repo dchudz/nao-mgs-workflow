@@ -1,0 +1,15 @@
+depth_million_pairs	units	arm	threshold	category	calls	joint_exemplars_in_called_species	median_exemplars	mean_exemplars	minimum_exemplars	maximum_exemplars
+5	50	production	3	all_called	661	62662	12	94.79878971255673	3	5141
+5	50	production	3	retained	582	62296	15.0	107.03780068728523	3	5141
+5	50	production	3	lost	79	366	4	4.632911392405063	3	14
+5	50	protein_variant	3	all_called	1058	54113	11.0	51.146502835538755	3	4341
+5	50	protein_variant	3	retained	582	39153	15.0	67.27319587628865	3	4341
+5	50	protein_variant	3	gained_from_zero	391	12026	9	30.757033248081843	3	2100
+5	50	protein_variant	3	promoted	85	2934	7	34.51764705882353	3	966
+25	10	production	3	all_called	231	75971	12	328.8787878787879	3	21794
+25	10	production	3	retained	202	75850	16.0	375.4950495049505	3	21794
+25	10	production	3	lost	29	121	3	4.172413793103448	3	10
+25	10	protein_variant	3	all_called	380	45317	15.0	119.25526315789473	3	7661
+25	10	protein_variant	3	retained	202	33645	20.5	166.55940594059405	3	7661
+25	10	protein_variant	3	gained_from_zero	152	9448	9.0	62.1578947368421	3	2126
+25	10	protein_variant	3	promoted	26	2224	7.5	85.53846153846153	3	807

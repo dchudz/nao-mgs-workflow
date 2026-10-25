@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-25T04:38:57.118074+00:00",
+  "comparisons": 60,
+  "files": {
+    "validation-category-provenance.json": "163b92868653a23627a007cc61204f6f42361d61f093205e7946ccbf27997e15",
+    "provenance.json": "bc6bf697084fe2ee00d4b0504ab7db1c2d6ec600bd2da8147a4c096bf59628aa",
+    "runtime.tsv": "1e67e751934f17abdc2c84e1d53d14f450fda355e3aa89e6c7fa279f0b4e2592",
+    "funnel.tsv": "7c850a378bcec6bc09fc9c57a3618939fd06dc71692451c08d93f6657f6d6be8",
+    "acquisition-provenance.json": "fac93b4dcfce265342b628fa51da39f7e9948f6db7608bfefe4e74cc0cd070cc",
+    "final-aggregate-report-inputs.verified.json": "8edc6b00855bbf08968b836a197b3d747b2bdc42196803f59446499dd4f61ab2",
+    "support-per-call.tsv": "6391d923aba5c01453070ae716fd5fc0a6b3d56e8c36e44a680ef6ea00e50ddc",
+    "threshold-calls.tsv": "a60232feabf9ac4128daec4fab7c9c4454693327d9e10a4ac1d16193de3186eb",
+    "depth-summary.tsv": "5488b4ba08472d4b79b783107fd7ec1e9319e231c2b131ce1a2895876c649e88",
+    "calls-per-run.tsv": "e70eeccb90530000c2c646e61f24b8c328948ee21bbfcbe953b0443227ff16f0",
+    "screen-funnel.tsv": "924f2e9fe213300c5ee29469a9ca95c91816c42bc051784c730a69550eb8acb1",
+    "acquisition-per-run.tsv": "9aeec2b8c886e1143bda3c3ace6ff041e97ac0c1494195ed2362dae496e53e7d",
+    "taxonomic-resolution.tsv": "2d0a4ff5dd51472d90af6d113dc196ffa02784858bd6e6be044e52aa8c7613d0",
+    "README.md": "f691160efd9d06e5cbf23637df41d063b34c70d53426dcd7c11c18b81d4dd937",
+    "species-transitions.verified.json": "5eee0391c00fe18602c15fc46b239b90c6ca64957498629847ef8630a082d07f",
+    "cost-snapshot.json": "6bfb0586433d343c97fa14804a59352b223cd7b3bc3563353a9b0d43be750678",
+    "depth-per-run.tsv": "05c784650381dc92639f6ce1069ca8740e442932aa291488ce3cb040f81ebe35",
+    "depth-provenance.json": "1ebfa06185ee06fedc293fbda7e9efdb2b11b722237509ee2b10747c0b08cf56",
+    "call-distribution.tsv": "425bd0da054212a57dcdbc8eda93f663e44023576831608e283488e23b019b74",
+    "validation-audit.tsv": "b734671e0006bd2fc1883711fc27fbcbd44c5ff485ff79158359459c69215eb3",
+    "unresolved-ranks.tsv": "4e62bc71d53c853d2c79c4b42cfc19f5bdf999a2e1293abc42ffb924edb3ca79",
+    "validation-by-category.tsv": "c4958d147442d930582dd7cd0c6a50df3245bbc743162dfdaf3d7ef30040fa2c",
+    "output-volume.tsv": "4cd30f31c886fc89b5c452ac26728fb216c1ce963b4d21262ef5947761614a5a",
+    "acquisition-summary.tsv": "0fc1dcef5a1810dd72f8ba2786fe8274b590c3ae421cac6c5dcde5e98ee142b4"
+  }
+}
