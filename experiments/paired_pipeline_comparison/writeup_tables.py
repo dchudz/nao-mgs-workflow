@@ -90,6 +90,13 @@ def main():
             tables['call-distribution'].append(dict(depth_million_pairs=depth,units=len(cases),threshold=n,
                 median_net_calls=statistics.median(per_run),minimum_net_calls=min(per_run),maximum_net_calls=max(per_run),
                 runs_with_gain=sum(x>0 for x in per_run),runs_with_no_net_change=sum(x==0 for x in per_run),runs_with_loss=sum(x<0 for x in per_run)))
+        for arm in ('production','protein_variant'):
+            for category in ('all_called','retained','gained_from_zero','promoted','lost'):
+                support=[int(r[arm+'_exemplars']) for r in species if int(r[arm+'_exemplars'])>=3 and (category=='all_called' or r['threshold_3']==category)]
+                if not support:continue
+                tables['support-per-call'].append(dict(depth_million_pairs=depth,units=len(cases),arm=arm,threshold=3,category=category,
+                    calls=len(support),joint_exemplars_in_called_species=sum(support),median_exemplars=statistics.median(support),
+                    mean_exemplars=statistics.mean(support),minimum_exemplars=min(support),maximum_exemplars=max(support)))
         for r in species:tables['species-transitions'].append(dict(depth_million_pairs=depth,**r))
         for arm,side in [('production','reference'),('protein_variant','candidate')]:
             stats=collections.Counter();n_dist=agree=0;sum_dist=0
