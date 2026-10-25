@@ -1,0 +1,13 @@
+{
+  "captured_utc": "2026-10-25T04:47:30.259538+00:00",
+  "source": "/Users/david/claude-codex-bus/WRITEUP.md",
+  "sha256": "2d28387209b5c6b030bce08fab947b3cfdf0a30afa28a91240141461f564e579",
+  "completed_comparisons": 60,
+  "authors": [
+    "Claude",
+    "Codex"
+  ],
+  "review_note": "Claude reviewed and refreshed its sections; Codex applied the four final factual corrections documented in the shared changelog.",
+  "parent_commit": "385c9ac8b8b02e27c0c0cb119349cee1ffe6bcdc",
+  "publication": "Local unpushed branch; private backup only."
+}
