@@ -1,0 +1,14 @@
+{
+  "completed": true,
+  "sample": "SRR33038182_5m",
+  "pairs_per_arm": 5000000,
+  "shared_output_pair_ids": 77,
+  "production_only_output_pair_ids": 0,
+  "protein_only_output_pair_ids": 76,
+  "sum_stage_wall_seconds": 948.5635908060067,
+  "shared_unavailable_outputs": [
+    "bracken"
+  ],
+  "cost_interpretation": "Stage wall time excludes full-source acquisition, boot, checkpoints and other worker time. Billable worker time must be accounted separately. No cost forecast is inferred from a single case.",
+  "classification_interpretation": "The standard pipeline outputs are compared without an added NR agreement or three-exemplar calling rule. Changes are not ground-truth sensitivity or specificity."
+}

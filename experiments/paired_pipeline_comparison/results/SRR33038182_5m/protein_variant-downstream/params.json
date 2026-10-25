@@ -1,0 +1,9 @@
+{
+  "platform": "illumina",
+  "input_file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038182_5m/protein_variant/input.csv",
+  "aln_dup_deviation": 1,
+  "validation_n_sample": 20,
+  "blast_task": null,
+  "base_dir": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038182_5m/protein_variant-downstream",
+  "ref_dir": "/home/ec2-user/experiment/reference"
+}
