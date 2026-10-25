@@ -15,10 +15,11 @@ def duration(value):
 def main():
     p=argparse.ArgumentParser()
     for key in ('study','audit','out'):p.add_argument('--'+key,type=Path,required=True)
+    p.add_argument('--trace-root',type=Path)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
     inventory=rows(a.study/'results/aggregate/runs.tsv');done=[r for r in inventory if r['status']=='complete']
     assert all((a.audit/r['label']/'complete.json').exists() for r in done)
-    input_hashes={};tables=collections.defaultdict(list)
+    input_hashes={str(a.study/'results/aggregate/runs.tsv'):sha(a.study/'results/aggregate/runs.tsv')};tables=collections.defaultdict(list)
     for depth in (5,25):
         cases=[r for r in done if int(r['depth_million_pairs'])==depth]
         audits={r['label']:read(a.audit/r['label']/'complete.json') for r in cases}
@@ -30,6 +31,7 @@ def main():
             assert sha(a.audit/label/'species.tsv')==proof['outputs']['species.tsv']
             species.extend(rows(a.audit/label/'species.tsv'))
             screen=read(d/'union-counts.json');screens.update(screen)
+            input_hashes[str(d/'union-counts.json')]=sha(d/'union-counts.json')
             assert proof['fastp']['production']['before_pairs']==screen['nucleotide_pairs']
             assert proof['fastp']['protein_variant']['before_pairs']==screen['union_pairs']
             for arm,key in [('production','production_rows'),('protein_variant','protein_rows')]:
@@ -94,6 +96,7 @@ def main():
             for r in cases:
                 d=a.study/'results'/r['label']/'comparison-report'
                 stats.update(read(d/'validation-status-counts.json')[arm]['validation_status'])
+                for path in (d/'validation-status-counts.json',d/'standard/viral_validation_agreement.tsv'):input_hashes[str(path)]=sha(path)
                 standard=rows(d/'standard/viral_validation_agreement.tsv');assert len(standard)==1
                 x=standard[0];n=int(x['n_validated_'+side]);n_dist+=n
                 if n:
@@ -107,14 +110,19 @@ def main():
                 rows_with_taxonomic_distance=n_dist,agreement_rows=agree,
                 agreement_rate=agree/n_dist if n_dist else None,mean_taxonomic_distance=sum_dist/n_dist if n_dist else None))
         for stage in ('baseline-run','aa-screen','union','prepare','protein-run','production-downstream','protein_variant-downstream'):
-            wall=[];alloc=0;task_wall=0;task_count=0;derived=0
+            wall=[];alloc=0;task_wall=0;task_count=0;derived=0;traced_units=0;missing_traces=[]
             for r in cases:
                 d=a.study/'results'/r['label'];x=read(d/(stage+'.json'))
+                input_hashes[str(d/(stage+'.json'))]=sha(d/(stage+'.json'))
                 seconds=(dt.datetime.fromisoformat(x['finished_utc'])-dt.datetime.fromisoformat(x['started_utc'])).total_seconds()
                 assert abs(seconds-x['wall_seconds'])<2
                 wall.append(seconds)
                 trace=d/stage/'trace.tsv'
-                if not trace.exists():continue
+                if not trace.exists() and a.trace_root:trace=a.trace_root/r['label']/stage/'trace.tsv'
+                if not trace.exists():
+                    missing_traces.append(r['label']);continue
+                traced_units+=1
+                input_hashes[str(trace)]=sha(trace)
                 for task in rows(trace):
                     assert task['status']=='COMPLETED' and task['exit'] in ('0','-')
                     realtime=duration(task['realtime'])
@@ -129,7 +137,7 @@ def main():
             tables['runtime'].append(dict(depth_million_pairs=depth,units=len(cases),stage=stage,
                 workflow_wall_minutes=sum(wall)/60,median_workflow_minutes=statistics.median(wall)/60,
                 min_workflow_minutes=min(wall)/60,max_workflow_minutes=max(wall)/60,
-                task_allocation_hours=alloc if task_count else None,tasks=task_count,
+                task_allocation_hours=alloc if task_count else None,tasks=task_count,units_with_task_trace=traced_units,units_missing_task_trace=';'.join(missing_traces),
                 tasks_with_cpu_allocation_from_frozen_config=derived,
                 task_wall_hours_complete_minus_start=task_wall/3600 if task_count and not derived else None))
     for name,data in tables.items():
