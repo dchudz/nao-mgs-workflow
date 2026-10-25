@@ -65,6 +65,18 @@ def main():
             tables['threshold-calls'].append(dict(depth_million_pairs=depth,units=len(cases),threshold=n,
                 production_calls=pc,protein_variant_calls=qc,net_calls=qc-pc,
                 **{k:states[k] for k in ('retained','gained_from_zero','promoted','lost','below_threshold_both')}))
+        for n in (2,3,5):
+            per_run=[]
+            for case in cases:
+                label=case['label'];group=[x for x in species if x['group']==label]
+                pc=sum(int(x['production_exemplars'])>=n for x in group)
+                qc=sum(int(x['protein_variant_exemplars'])>=n for x in group)
+                per_run.append(qc-pc)
+                tables['calls-per-run'].append(dict(depth_million_pairs=depth,label=label,threshold=n,
+                    production_calls=pc,protein_variant_calls=qc,net_calls=qc-pc))
+            tables['call-distribution'].append(dict(depth_million_pairs=depth,units=len(cases),threshold=n,
+                median_net_calls=statistics.median(per_run),minimum_net_calls=min(per_run),maximum_net_calls=max(per_run),
+                runs_with_gain=sum(x>0 for x in per_run),runs_with_no_net_change=sum(x==0 for x in per_run),runs_with_loss=sum(x<0 for x in per_run)))
         for r in species:tables['species-transitions'].append(dict(depth_million_pairs=depth,**r))
         for arm,side in [('production','reference'),('protein_variant','candidate')]:
             stats=collections.Counter();n_dist=agree=0;sum_dist=0
