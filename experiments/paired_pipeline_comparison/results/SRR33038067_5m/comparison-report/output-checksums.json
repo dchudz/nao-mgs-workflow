@@ -1,0 +1,230 @@
+[
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_bracken.tsv.gz",
+    "bytes": 67,
+    "sha256": "06ab483eeb43fcdd2d86e75dd76c1f7baf63457c1d0de6b498daaa30351f3198"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_clade_counts.tsv.gz",
+    "bytes": 1189,
+    "sha256": "2c54863f01053e0da09ce63b102defc1fe09958869d0d53842ae15816bb58d21"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_duplicate_stats.tsv.gz",
+    "bytes": 4465,
+    "sha256": "ee59f82db9137579e0c20690a146d2398a2a060381f699497560306e60691896"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_fastp.json",
+    "bytes": 245206,
+    "sha256": "b59a4f9c36006c6c77ee2336939c5cf68e5fa663001e95924a32c66786fa7d69"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_kraken.tsv.gz",
+    "bytes": 358781,
+    "sha256": "408fa33fd2535c23490e08cb71b5dccd26c29330c9a1a6d48c7fe9fa70358a94"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_adapter_stats_cleaned.tsv.gz",
+    "bytes": 115,
+    "sha256": "6ef942ee0d5c02806901a40c247ef4f91eca156fd017fd4baf5604845ae7426f"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_adapter_stats_raw.tsv.gz",
+    "bytes": 1088,
+    "sha256": "0487521fa6a34517725f3a897f8b9a681e0c1b26fbe3fcafaa4951aa94bfb8a9"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_basic_stats_cleaned.tsv.gz",
+    "bytes": 328,
+    "sha256": "fdb6ed71fe9f171622d78c582271b0fb0940e41446cd9e33d25f0dd4cf174304"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_basic_stats_raw.tsv.gz",
+    "bytes": 316,
+    "sha256": "5f992077243e1844c9acd917f908dd6a50cbc03867509eaa01990fe909bc39bb"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_length_stats_cleaned.tsv.gz",
+    "bytes": 293,
+    "sha256": "a003fb19be1ad318e5a598db0157f9434d60719cceca7164961b99cc8110373e"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_length_stats_raw.tsv.gz",
+    "bytes": 153,
+    "sha256": "91472f239ad529cebbbde918e888bdc4493ccbbb13ad928bb842c13ef4d5cd71"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_overrepresented_cleaned.tsv.gz",
+    "bytes": 538,
+    "sha256": "a08128f5592264e170925ede59f2245b353e96b5ab35af9904327a241d14145d"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_overrepresented_raw.tsv.gz",
+    "bytes": 519,
+    "sha256": "37466a7bf73b38fce54433e888272d4c43b7815819eff3c2fa5a25a86fc6c386"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_quality_base_stats_cleaned.tsv.gz",
+    "bytes": 609,
+    "sha256": "bc3a5d008a3190ffc59467ad40e41885f742a8d80a09dac917b3578bfd586122"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_quality_base_stats_raw.tsv.gz",
+    "bytes": 613,
+    "sha256": "c1fc5c649c38ae4b961abd446a9dd6dba01f47b94795785b4c97aab4b43b2056"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_quality_sequence_stats_cleaned.tsv.gz",
+    "bytes": 275,
+    "sha256": "b8c3bea7af876d49c22ae636bb3037764d0384b7e485701f406b6d02181c09c3"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_qc_quality_sequence_stats_raw.tsv.gz",
+    "bytes": 339,
+    "sha256": "488c92a24a5153b4577440b814f02746b8b2c3ff06a5be38293eaa4003f9fa6a"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_read_counts.tsv.gz",
+    "bytes": 127,
+    "sha256": "55d422a8d8dfff81165c3443579a4e6ba31e6fc05ce47ef8fd60ca223f6f1754"
+  },
+  {
+    "arm": "production",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/production-downstream/output/results_downstream/SRR33038067_5m_validation_hits.tsv.gz",
+    "bytes": 113310,
+    "sha256": "920c42bb03f29f43ecf0ffbfb266dae0c65e74f134896c3d7f719bb741ff2962"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_bracken.tsv.gz",
+    "bytes": 67,
+    "sha256": "ca0df49e66b65634e410cd0ba46419341869406a7ebdcedb98b497fe9540a396"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_clade_counts.tsv.gz",
+    "bytes": 1726,
+    "sha256": "811426e2f7edf407e254ef51633de3514edd52dd8fc4bb174e6669644b5fe8f0"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_duplicate_stats.tsv.gz",
+    "bytes": 10916,
+    "sha256": "90eae2895d70fe342d7beb19fa835154da49fa48f9890646734559f69433db57"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_fastp.json",
+    "bytes": 245206,
+    "sha256": "b59a4f9c36006c6c77ee2336939c5cf68e5fa663001e95924a32c66786fa7d69"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_kraken.tsv.gz",
+    "bytes": 358781,
+    "sha256": "7f3c0c5b65e8a02edd9c2b0d72860190744eacd7ed84374422bb85daa57c8638"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_adapter_stats_cleaned.tsv.gz",
+    "bytes": 115,
+    "sha256": "5355fbca1c19a8d494d2b49d2b5d0ca2640ebdfed6e4eb234d4cacafa3121f30"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_adapter_stats_raw.tsv.gz",
+    "bytes": 1088,
+    "sha256": "995176d2d547d957b5aaea9ba4d3c8fa3fe6b3859eaa1c845842ae787a8e848a"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_basic_stats_cleaned.tsv.gz",
+    "bytes": 328,
+    "sha256": "a50a7d91fd12042a7699c0e3196787c2cdcd17ae63430259a37adba9975c31bc"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_basic_stats_raw.tsv.gz",
+    "bytes": 316,
+    "sha256": "8746cc1dd276ee70762b8f3f3a7324a1356de8105dea5782bcfb467d02c2a2cd"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_length_stats_cleaned.tsv.gz",
+    "bytes": 293,
+    "sha256": "b6f38e718a99849c6e4766bcc58513face5a521ad1d957ed2cd8fa3ba8de71ae"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_length_stats_raw.tsv.gz",
+    "bytes": 153,
+    "sha256": "e52231ff4d168eb061da53f0b56cdb7e4db0e7cf7f10ac12b9e55b5b75967e2b"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_overrepresented_cleaned.tsv.gz",
+    "bytes": 538,
+    "sha256": "d49ed370e796a2549a74bc3fdc4842ee3c4436194b3bc946de95bc88459d987b"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_overrepresented_raw.tsv.gz",
+    "bytes": 519,
+    "sha256": "c9bb93e24db2c35c80b54b32d1e3a3f4e98aba6de75c5cb44cefe98d69a2499b"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_quality_base_stats_cleaned.tsv.gz",
+    "bytes": 609,
+    "sha256": "f63da4d9e8e601ac4219b67656ecb42e33d82930eceaec0b341eb0b5279f1bbe"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_quality_base_stats_raw.tsv.gz",
+    "bytes": 613,
+    "sha256": "e17cd091ea3474d813d55ed774608128dc4f88b987bf02e7524450cb246cb664"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_quality_sequence_stats_cleaned.tsv.gz",
+    "bytes": 275,
+    "sha256": "720cc1c4a6648233f71c1849064c815710f50e559efaa185cc992eda66317d4b"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_qc_quality_sequence_stats_raw.tsv.gz",
+    "bytes": 339,
+    "sha256": "2b34a3b49f9eeaacde1b4489da02503ad6536559fef0a94bf0dbe424a27a629c"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_read_counts.tsv.gz",
+    "bytes": 127,
+    "sha256": "cbb5ad7e8af2314981c0faa8187ad8ddb857dc773435acb6518ad983fcd8ed0b"
+  },
+  {
+    "arm": "protein_variant",
+    "file": "/home/ec2-user/paired-study-20261024/comparisons/SRR33038067_5m/protein_variant-downstream/output/results_downstream/SRR33038067_5m_validation_hits.tsv.gz",
+    "bytes": 327784,
+    "sha256": "204e9fa8a9beff572b8cd7738a13944ef3154a5ea4319fc89e14e4dcd8b7ebb1"
+  }
+]
