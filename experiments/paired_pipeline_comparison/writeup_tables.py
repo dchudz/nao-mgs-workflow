@@ -48,6 +48,17 @@ def main():
                 else:value=sum(int(x[arm+'_exemplars'])>=3 for x in species)
                 line[arm]=value
             tables['funnel'].append(line)
+        for arm in ('production','protein_variant'):
+            resolved=sum(sum(x['arms'][arm]['species_exemplars'].values()) for x in audits.values())
+            joint=sum(x['arms'][arm]['joint_exemplars'] for x in audits.values())
+            ranks=collections.Counter()
+            for x in audits.values():ranks.update(x['arms'][arm]['unresolved_exemplars_by_rank'])
+            assert resolved+sum(ranks.values())==joint
+            tables['taxonomic-resolution'].append(dict(depth_million_pairs=depth,units=len(cases),arm=arm,
+                joint_exemplars=joint,species_resolved=resolved,above_species_or_unresolved=sum(ranks.values()),
+                species_resolved_fraction=resolved/joint if joint else None))
+            for rank,count in sorted(ranks.items()):
+                tables['unresolved-ranks'].append(dict(depth_million_pairs=depth,units=len(cases),arm=arm,rank=rank,joint_exemplars=count))
         volume=dict(depth_million_pairs=depth,units=len(cases))
         for field in ('production_rows','protein_rows','shared','same_assignment','reassigned','production_only','protein_only','net_rows','production_joint_exemplars','protein_variant_joint_exemplars'):
             volume[field]=sum(int(r[field]) for r in cases)
