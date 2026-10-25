@@ -1,0 +1,5 @@
+{
+  "profile_and_qc_from": "/home/ec2-user/paired-study-20261024/comparisons/SRR38294677_5m/baseline-run/output/results",
+  "reason": "Same original input and production profiling configuration; independent of viral alignment",
+  "viral_hits_sha256": "3afd7ea77717c67c84368030f529c23ffbe81cc9ec46188f8044a8257d5878f2"
+}
