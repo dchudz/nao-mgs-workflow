@@ -1,0 +1,83 @@
+{
+  "authorship": "Codex experiment protocol, frozen before any held-out reads are processed.",
+  "frozen_utc": "2026-10-21T16:54:22.424700+00:00",
+  "heldout_manifest_sha256": "09b1e7f5fe4fb5e05aea7d4ad4c6471d780921f7b838af47d50a02faef6a3f65",
+  "primary_screen_comparison": {
+    "samples": 1000,
+    "pairs_per_sample": 5000000,
+    "arms": [
+      "NT24 control",
+      "NT22",
+      "NT20",
+      "AA12 only",
+      "NT24 OR AA12"
+    ],
+    "downstream": "Existing FASTP, viral Bowtie2, human and other-contaminant Bowtie2, score threshold20, original taxonomy and duplicate marking; no downstream threshold tuning on held-out data."
+  },
+  "protein_path": {
+    "primary_screen": "AA12 only",
+    "control": "NT24 original nucleotide path on exactly the same sampled raw pairs",
+    "steps": [
+      "Original FASTP",
+      "Original human and other-contaminant nucleotide filters",
+      "Exact trimmed nucleotide-pair deduplication with multiplicity retained",
+      "DIAMOND blastx against six-frame viral genomic translations",
+      "NCBI LCA of near-best viral assignments",
+      "Independent search against current nr snapshot, including nonviral competitors"
+    ],
+    "reference_min_peptide_aa": 25,
+    "viral_search": {
+      "diamond_version": "2.1.17",
+      "mode": "very-sensitive",
+      "evalue": 1e-05,
+      "query_cover_pct": 30,
+      "minimum_alignment_aa": 25,
+      "min_orf": 1,
+      "genetic_code": 1,
+      "near_best_bitscore_fraction": 0.9
+    },
+    "NR_validation": {
+      "snapshot": "s3://ncbi-blast-databases/2026-10-17-01-05-01/",
+      "mode": "sensitive",
+      "evalue": 1e-05,
+      "query_cover_pct": 30,
+      "minimum_alignment_aa": 25,
+      "min_orf": 1,
+      "near_best_bitscore_fraction": 0.9,
+      "policy": "Report viral-only, mixed/competing nonviral, no alignment, and unknown-taxonomy evidence separately. No alignment is unvalidated, not a proven false hit."
+    },
+    "evaluation_order": "Begin with the first200 samples in the predetermined random manifest order; expand up to1000 based only on measured throughput, available time and cost, without changing parameters. Report the actual completed scope."
+  },
+  "development_only": [
+    "All5 reserved biological samples",
+    "IAOTT engineering benchmark",
+    "AA8 andAA10 threshold exploration, including protein10 engineering prototype",
+    "Non-organism-derived random-DNA controls"
+  ],
+  "primary_metrics": [
+    "Matched-pair count and overlap",
+    "Final per-sample assignments: gains, losses and taxonomic changes",
+    "Original coordinate/similarity exemplars for nucleotide arms",
+    "Common exact-sequence pair counts when comparing protein and nucleotide arms",
+    "Broad-reference support and contradictory evidence",
+    "Candidate burden, CPU time, memory, runtime and cost"
+  ],
+  "limits": [
+    "Environmental samples do not supply known-truth sensitivity or specificity.",
+    "Extra reads do not establish a new virus or a new infected person.",
+    "Five million pairs per sample is reduced-depth block sampling, separate from the247633776-pair full-depth anchor.",
+    "Samples from related sites and dates are correlated.",
+    "Protein evidence has its own schema and scoring; it is not represented as nucleotide SAM scores."
+  ],
+  "resource_limits": {
+    "account": "839993661825",
+    "account_usd_ceiling": 500,
+    "deadline_utc": "2026-10-22T15:21:40Z",
+    "owned_instances": [
+      "i-061f366bd55def34c",
+      "i-0dd39a46c4efb6c4c"
+    ],
+    "conservative_account_bound_usd": 328.2913929807,
+    "privacy": "All results private; no external publishing."
+  }
+}

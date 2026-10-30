@@ -13,6 +13,11 @@ process BLASTN {
     script:
         def extractCmd = fasta.toString().endsWith(".gz") ? "zcat" : "cat"
         def inputCmd = fasta.toString().endsWith(".gz") ? "ln -s ${fasta} ${sample}_in.fasta.gz" : "gzip -c ${fasta} > ${sample}_in.fasta.gz"
+        def selectedTask = params_map.get('blast_task', null)
+        if (selectedTask != null && !(selectedTask in ['megablast', 'blastn'])) {
+            throw new IllegalArgumentException("Unsupported blast_task: ${selectedTask}")
+        }
+        def taskFlag = selectedTask == null ? '' : " -task ${selectedTask}"
         """
         set -euo pipefail
         # Download BLAST database if not already present
@@ -22,7 +27,7 @@ process BLASTN {
         par="-perc_identity ${params_map.blast_perc_id} -max_hsps 5 -num_alignments 250 -qcov_hsp_perc ${params_map.blast_qcov_hsp_perc} -num_threads ${task.cpus}"
         fmt="6 qseqid sseqid sgi staxid qlen evalue bitscore qcovs length pident mismatch gapopen sstrand qstart qend sstart send"
         # Run BLAST
-        ${extractCmd} ${fasta} | blastn \${io} \${par} -outfmt "\${fmt}" \\
+        ${extractCmd} ${fasta} | blastn${taskFlag} \${io} \${par} -outfmt "\${fmt}" \\
             | gzip > ${sample}_hits.blast.gz
         # Link input to output for testing
         ${inputCmd}

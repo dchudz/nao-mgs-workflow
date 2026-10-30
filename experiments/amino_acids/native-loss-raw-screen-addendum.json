@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-10-22T01:56:49.697257+00:00",
+  "selection_sha256": "a097f3e0bcfea8282c912d5ab9fba7f56556b1ef8453153c0cd4c8a7c88c2f89",
+  "original_pairs": 1876,
+  "loss_boundaries": {
+    "absent_from_prepared_protein_queries": 565,
+    "prepared_without_eligible_viral_protein_alignment": 1311
+  },
+  "purpose": "During the already planned raw-repeat-gate scan, check direct original-AA12-screen membership for every native original pair absent from protein candidates. No additional alignment, no changed screening rule, and no inferred verdict for unsearched reads. This is a post-hoc loss-attribution diagnostic; original primary results stay fixed."
+}

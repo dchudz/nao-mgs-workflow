@@ -1,0 +1,55 @@
+"""Production-module integration on a frozen, enriched software fixture only."""
+import argparse,csv,datetime,gzip,hashlib,json,shlex,subprocess,sys
+from pathlib import Path
+from union_pairs import pairs
+R=Path('/home/ec2-user/experiment');D=R/'integration/protein-workflow';D.mkdir(parents=True,exist_ok=True)
+parser=argparse.ArgumentParser();parser.add_argument('--reuse-completed',action='store_true');args=parser.parse_args()
+source='s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/cohort-screens/SRR37076045/aa12.fastq'
+subprocess.run(['aws','--profile','pipeline-codex','s3','cp',source,str(D/'saved-aa12.fastq'),'--only-show-errors'],check=True)
+records=[]
+for key,raw in pairs(D/'saved-aa12.fastq'):
+    if len(records)==1000:break
+    records.append(raw)
+count=len(records);expected=b''.join(records);fixture=D/'fixture.fastq.gz'
+if fixture.exists():
+    with gzip.open(fixture,'rb') as f:assert f.read()==expected
+else:
+    with gzip.open(fixture,'wb') as f:f.write(expected)
+config=D/'publish.config';config.write_text("process.publishDir = [path: { \"${params.base_dir}/published/${task.process.tokenize(':')[-1]}\" }, mode:'copy']\n")
+def run(name,script,extra):
+    stage=D/name;stage.mkdir(exist_ok=True)
+    previous=stage/'nextflow.log'
+    if args.reuse_completed and previous.exists():
+        log=previous.read_text()
+        stats=[line for line in log.splitlines() if 'Workflow completed > WorkflowStats[' in line]
+        if '> Execution complete -- Goodbye' in log and stats and 'failedCount=0;' in stats[-1] and 'abortedCount=0;' in stats[-1]:
+            return shlex.split(log.splitlines()[0].split('$> ',1)[1])
+    command=[str(R/'nextflow'),'-log',str(stage/'nextflow.log'),'run',str(R/script),'-lib',str(R/'lib'),
+        '-c',str(R/'experiments/amino_acids/e2e-worker.config'),'-c',str(config),'-work-dir',str(stage/'work'),
+        '--base_dir',str(stage),'--ref_dir',str(R/'reference'),'--sample','adapter_fixture','--adapters',str(R/'ref/adapters.fasta'),'-ansi-log','false',*(['-resume'] if (stage/'.nextflow/history').exists() else []),*extra]
+    if (stage/'run.log').exists():
+        (stage/('run.previous-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'.log')).write_bytes((stage/'run.log').read_bytes())
+    with (stage/'run.log').open('w') as f:subprocess.run(command,cwd=stage,stdout=f,stderr=subprocess.STDOUT,check=True)
+    return command
+cmd1=run('native','experiments/amino_acids/postscreen.nf',['--reads',str(D/'fixture.fastq.gz')])
+trimmed=next((D/'native/published/FASTP').glob('*_fastp.fastq.gz'))
+cmd2=run('protein','experiments/amino_acids/protein-production.nf',['--reads',str(trimmed)])
+hits=D/'protein/published/PROTEIN_ADAPTER/adapter_fixture_virus_hits.tsv.gz'
+with gzip.open(hits,'rt') as f:before=list(csv.DictReader(f,delimiter='\t'))
+assert before,'The integration fixture must exercise actual candidate rows'
+cmd3=run('downstream','experiments/amino_acids/check-protein-downstream.nf',['--hits',str(hits)])
+final=next((D/'downstream/published/COPY_HITS').glob('*_validation_hits.tsv.gz'))
+with gzip.open(final,'rt') as f:after=list(csv.DictReader(f,delimiter='\t'))
+assert {r['seq_id'] for r in before}=={r['seq_id'] for r in after}
+by_id={r['seq_id']:r for r in before}
+for row in after:
+    for key in ['query_seq','query_seq_rev','query_qual','query_qual_rev']:
+        assert row[key]==by_id[row['seq_id']][key]
+    assert row['validation_status'] in {'aligned','no_alignment','not_sampled'}
+receipt={'verified':True,'source':source,'source_sha256':hashlib.sha256((D/'saved-aa12.fastq').read_bytes()).hexdigest(),
+    'fixture_rule':'First1000 original pairs of a preserved AA-screen-selected sample, fixed before its new alignments. Enriched software fixture, not an unbiased biological comparison.',
+    'input_pairs':count,'protein_rows_preserved_through_downstream':len(after),'commands':[cmd1,cmd2,cmd3],
+    'checks':['Real HSPs accepted by adapter','Both original sequences and qualities preserved','Production alignment and similarity duplicate marking completed',
+              'Production hash sampling, merged/joined query preparation, sensitive core_nt validation and per-read statuses completed'],
+    'biological_interpretation':'None. This fixture tests software integration and is excluded from full-depth cohort results.'}
+(D/'verification.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt))

@@ -1,0 +1,51 @@
+{
+  "recorded_utc": "2026-10-24T04:59:09.011144+00:00",
+  "scope": "Read-only AWS preservation and accounting checks; no experiment execution.",
+  "new_compute_launched": false,
+  "new_sequence_searches_run": false,
+  "instance": {
+    "id": "i-02d118993a6f4989a",
+    "state": "stopped",
+    "volume_id": "vol-0272ade891333af83",
+    "delete_on_termination": false
+  },
+  "snapshot": {
+    "id": "snap-0c13ccf01c762eb8a",
+    "state": "completed",
+    "progress": "100%",
+    "volume_size_GiB": 2048
+  },
+  "cost_explorer": {
+    "metric": "UnblendedCost",
+    "scope": "Entire AWS account, not attributable experiment expenditure",
+    "days": [
+      {
+        "start": "2026-10-23",
+        "end_exclusive": "2026-10-24",
+        "USD": "71.13916342",
+        "estimated": true
+      },
+      {
+        "start": "2026-10-24",
+        "end_exclusive": "2026-10-25",
+        "USD": "0",
+        "estimated": true
+      }
+    ],
+    "limitations": [
+      "Billing is delayed; the zero is not proof of zero incurred charges.",
+      "Remaining experiment budget was not established by this check."
+    ]
+  },
+  "protocol_check": {
+    "path": "experiments/amino_acids/end-to-end-full-depth/protocol.json",
+    "observation": "Saved protocol still describes four outputs with differing validation policies. It does not represent the latest two-pipeline proposal.",
+    "modified": false
+  },
+  "execution_status": "The proposed new pathogen-discovery comparison was not launched. Assistant corrected its earlier commitment and limited this turn to preservation and accounting checks.",
+  "verification_limits": [
+    "This turn verified snapshot and volume metadata only.",
+    "Prior S3 content checksums were not repeated.",
+    "No new experimental result or completion forecast is claimed."
+  ]
+}

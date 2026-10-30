@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-10-21T19:33:29.263035+00:00",
+  "scope": "Secondary descriptive summaries added after preliminary nucleotide and viral-reference-only results, before the pooled broad NR search. Primary screen and protein-search parameters remain fixed.",
+  "comparisons": [
+    "Common exact complete trimmed pair sequence keys for both paths; retain original-ID multiplicity separately.",
+    "Report all viral-reference candidates, NR viral-only evidence, and two descriptive subsets: both mates aligned to NR, and NR LCA exact/ancestor-related to the viral-reference LCA.",
+    "Species support at one, two, and three exact pairs using frozen viral-reference taxonomy; these are descriptive counts, not tuned diagnostic thresholds."
+  ],
+  "test": "A synthetic fixture verifies that duplicate native IDs count once, a new ID with the same complete pair is not an exact-pair gain, and nonviral competition excludes only its own candidate.",
+  "limits": [
+    "Extra assignments do not establish infection or novel viruses.",
+    "Reference-only candidates and NR-unvalidated pairs are reported separately.",
+    "Native production duplicate marking differs from the common exact-pair comparison."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "Prepared; not launched or automatically queued",
+  "query_directory": "pilot24",
+  "pairs": 24,
+  "mates": 43,
+  "query_sha256": "3cd013485d5086892f89a2979f373bfb6d125a77c458727fead40e297d6957aa",
+  "method": "dc-megablast-coding",
+  "purpose": "Measure a codon-aware nucleotide-seeding alternative on the existing frozen small panel while retaining core_nt and nucleotide alignment scoring.",
+  "maximum_seconds": 900,
+  "maximum_allocated_compute_EBS_IPv4_USD": 0.909125,
+  "run_gate": "Only after the ongoing protein232 search and its analysis are complete. No competition for measured CPU, no larger follow-on panel automatically authorized by this plan.",
+  "comparison": [
+    "Existing megablast and blastn",
+    "Existing default and word4 tblastx"
+  ],
+  "outcomes": [
+    "Wall and CPU time, allocation, output rows and capped queries",
+    "Per-mate strict and default-threshold status and taxonomic assignment disagreements"
+  ],
+  "limits": [
+    "A nucleotide spaced seed is not equivalent to amino-acid alignment.",
+    "Task defaults beyond the seed pattern can differ; do not attribute the result solely to wobble tolerance.",
+    "Verify the installed executable accepts the explicit coding-template parameters before searching.",
+    "No claim about speed, sensitivity or clinical truth until measured."
+  ]
+}

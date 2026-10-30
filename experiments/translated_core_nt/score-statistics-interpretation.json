@@ -1,0 +1,39 @@
+{
+  "scope": "Tiny same-reference fixture, installed BLAST2.17.0; query-only tblastn-fast versus tblastx",
+  "evidence": {
+    "raw_score_identical_80AA_alignment_both": 452,
+    "effective_search_space_both": 4624,
+    "tblastx_lambda_K_H": [
+      0.318,
+      0.134,
+      0.401
+    ],
+    "query_frame1_tblastn_lambda_K_H": [
+      0.321,
+      0.139,
+      0.449
+    ],
+    "tblastx_bitscore": 210,
+    "tblastn_bitscore": 211,
+    "tblastx_Evalue_synonymous": 5.58e-60,
+    "tblastn_Evalue_synonymous": 1.54e-60,
+    "alternate_query_frame_lambdas_observed": [
+      0.341,
+      0.431,
+      0.349,
+      0.4,
+      0.353
+    ]
+  },
+  "interpretation": [
+    "The same alignment raw score receives different bit scores and Evalues between programs. Query-only translation is not a drop-in statistical equivalent.",
+    "Effective search space for the exact intended-frame example is equal; do not invent a universal sixfold Evalue adjustment.",
+    "Keep program-reported scores and significance with method labels, and inspect shared alignment coordinates/sequences separately from taxonomy differences.",
+    "Invalid-composition frame warnings and zero effective search spaces are retained; original reads remain in denominators."
+  ],
+  "raw_files": "translation-fixture/score-statistics",
+  "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1779365/"
+  ],
+  "source_limit": "Interpretation rests on captured executable output; no claim that the cited historical paper specifies this installed version."
+}

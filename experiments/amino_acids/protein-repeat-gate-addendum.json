@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-10-21T21:10:08.931090+00:00",
+  "secondary_post_hoc": true,
+  "selection": "All original read-pair members of viral-reference protein candidates in the fixed first200samples, before NR outcomes are known.",
+  "gate": "Previously frozen repeat-filtered AA12 index; no new threshold selection.",
+  "timing": "Run on screen worker after original1000screens finish, with no added worker or changed primary outputs.",
+  "outputs": "Per-query original-member retention counts, joined with fixed NR evidence later.",
+  "limits": "This measures raw gate attrition, not full pipeline parity. Trimming and correction may depend on input composition. The prospective500nucleotide comparison does not demonstrate preservation of protein-only assignments."
+}

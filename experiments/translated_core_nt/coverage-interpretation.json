@@ -1,0 +1,8 @@
+{
+ "finding":"Translated coverage requires distinguishing the peptide frame, the original nucleotide read, and the displayed qcovhsp value",
+ "observed_100percent_cases":[{"query_nt":240,"frame":-3,"aligned_aa":79,"nucleotide_span":237,"frame_aa":79,"frame_coverage_pct":100,"nucleotide_coverage_pct":98.75,"retained_with_qcov_hsp_perc100":true},{"query_nt":242,"frame":-3,"aligned_aa":80,"nucleotide_span":240,"frame_aa":80,"frame_coverage_pct":100,"nucleotide_coverage_pct":99.17355371900827,"retained_with_qcov_hsp_perc100":true}],
+ "correction_to_earlier_characterization":"The0/30/35/40/80/99cases did not distinguish frame coverage from whole-read coverage. The100percent boundary does. Do not describe the filter as a whole-nucleotide-read coverage filter for tblastx.",
+ "display_observation":"Some multi-HSP tblastx rows display amino-acid length divided by nucleotide query length as qcovhsp, while single-HSP rows can display the nucleotide span percentage. Preserve raw values and do not use them to infer biological span.",
+ "analysis_policy":"Keep the original searches unchanged. Record coordinate-derived nucleotide coverage and translated frame coverage explicitly. Each method retains its original30percent query-coverage search argument; near-best taxonomy is unchanged.",
+ "query_only_translation_policy":"tblastn takes one full peptide frame per query; its30percent coverage threshold is therefore expressed on the peptide-frame length. Pool frames only after coordinate mapping and retain every original read in the denominator."
+}

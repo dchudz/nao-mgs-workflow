@@ -1,0 +1,1 @@
+{"name":"tblastx","executable":"tblastx","arguments":["-query_gencode","1","-db_gencode","1"],"identity_units":"amino acid percent","role":"Both query and unchanged core_nt translated in six frames, without NR"}

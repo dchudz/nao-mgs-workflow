@@ -1,0 +1,18 @@
+{
+  "name": "tblastx-word5",
+  "executable": "tblastx",
+  "arguments": [
+    "-query_gencode",
+    "1",
+    "-db_gencode",
+    "1",
+    "-word_size",
+    "5",
+    "-threshold",
+    "20"
+  ],
+  "identity_units": "amino acid percent",
+  "role": "Rejected seed-setting candidate; never run on full core_nt",
+  "rationale": "Preserved rejected approach. The installed tblastx rejected this setting on the tiny fixture; error text does not accurately distinguish supported word4 from rejected word5.",
+  "status": "rejected_by_installed_binary"
+}

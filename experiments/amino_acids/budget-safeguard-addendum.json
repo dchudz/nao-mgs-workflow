@@ -1,0 +1,46 @@
+{
+  "recorded_utc": "2026-10-22T00:23:54.344299+00:00",
+  "user_direction": "No deadline for work stopping; continue as needed. The $500 cap and private-account-only restrictions remain.",
+  "user_deadline_utc": null,
+  "budget_shutdown_utc": "2026-10-23T15:00:00+00:00",
+  "cap_usd": 500,
+  "conservative_account_bound_usd": 464.5043445844037,
+  "headroom_usd": 35.495655415596275,
+  "reported_month_to_date_usd": 34.2913929807,
+  "prior_unbilled_reserve_usd": 75,
+  "other_charges_reserve_usd": 35,
+  "terminated_spot_reserve_usd": 10,
+  "workers": [
+    {
+      "worker": "primary",
+      "start_utc": "2026-10-21T15:24:12+00:00",
+      "guard_hours": 47.596666666666664,
+      "compute_before_resize_per_hour": 3.3345,
+      "compute_after_resize_per_hour": 3.3345,
+      "compute_bound_usd": 158.71108499999997,
+      "storage_bound_usd": 14.136209999999998,
+      "storage_assumption": "Maximum configured gp3 capacity and performance charged for the full worker lifetime, using a conservative 720-hour month."
+    },
+    {
+      "worker": "screen",
+      "start_utc": "2026-10-21T16:19:00+00:00",
+      "guard_hours": 46.68333333333333,
+      "compute_before_resize_per_hour": 0.714,
+      "compute_after_resize_per_hour": 0.357,
+      "compute_bound_usd": 18.696189166666667,
+      "storage_bound_usd": 2.300450925925926,
+      "storage_assumption": "Maximum configured gp3 capacity and performance charged for the full worker lifetime, using a conservative 720-hour month."
+    },
+    {
+      "worker": "NR",
+      "start_utc": "2026-10-21T17:11:00+00:00",
+      "guard_hours": 45.81666666666667,
+      "compute_before_resize_per_hour": 1.0584,
+      "compute_after_resize_per_hour": 2.47752,
+      "compute_bound_usd": 106.6711554,
+      "storage_bound_usd": 9.697861111111113,
+      "storage_assumption": "Maximum configured gp3 capacity and performance charged for the full worker lifetime, using a conservative 720-hour month."
+    }
+  ],
+  "interpretation": "Budget safeguard, not a user time limit. Stop finished workers earlier. Re-evaluate using measured charges and retained storage before extending or adding resources. Historical addenda retain the superseded 24-hour assumption."
+}

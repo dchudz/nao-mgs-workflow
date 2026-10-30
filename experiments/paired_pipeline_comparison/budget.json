@@ -1,0 +1,23 @@
+{
+  "existing_cap_USD": 500,
+  "new_cap_created": false,
+  "account_cost_through_20261023_USD": 90.8062496458,
+  "additional_conservative_historical_worker_bound_USD": 28.846688387777778,
+  "billing_lag_reserve_USD": 30.33291377420001,
+  "noncompute_shutdown_storage_reserve_USD": 100,
+  "maximum_new_compute_allowance_USD": 200,
+  "initial_worker_max_hours": 8,
+  "initial_worker_inclusive_rate_bound_USD_per_hour": 4,
+  "initial_worker_bound_USD": 32,
+  "limits": "Do not extend the first allocation or add workers without recording live resource-time costs against the shared 200 USD new-compute allowance. Retained storage and transfers consume the separate reserve. No quota increase.",
+  "remaining_budget_is_invoice_reconciled": false,
+  "conservative_total_bound_USD": 449.9858518077778,
+  "current_worker_max_hours": 24,
+  "current_worker_bound_USD": 96,
+  "deadline_type": "Renewable spending safeguard; the user imposed no elapsed-time deadline.",
+  "extension_reason": "User explicitly requested useful work beyond eight hours. One worker at the existing conservative 4 USD/hour bound fits within the shared 200 USD new-compute allocation.",
+  "allocation_rule": "Before adding workers, recompute all spending deadlines against the shared remaining compute allowance, including elapsed time.",
+  "billing_lag_reserve_initial_USD": 50,
+  "billing_lag_reserve_recognized_USD": 19.66708622579999,
+  "latest_billing_check_utc": "2026-10-24T08:08:29.773238+00:00"
+}

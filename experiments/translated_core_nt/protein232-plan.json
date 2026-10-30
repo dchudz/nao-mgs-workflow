@@ -1,0 +1,14 @@
+{
+  "status": "RELEASED one larger same-reference panel",
+  "question": "What evidence does native translated validation add over nucleotide validation for protein-detected additions, using the same comprehensive nucleotide reference?",
+  "pairs": 232,
+  "mates": 464,
+  "selection": "Existing panel frozen2026-10-22T00:28:26UTC:one outcome-independent protein-only candidate per first200samples plus32shared controls. Reuse exact query bytes, no selection on the completed NR results.",
+  "query_sha256": "a98e68ff4763d7702a0755cbf79c551df48ea2e9fe01cc833e039d9c3f1cc794",
+  "methods_in_order": ["megablast", "blastn", "tblastx-word4"],
+  "maximum_seconds": [1800, 5400, 28800],
+  "maximum_total_worker_allocation_USD_before_existing_08UTC_guard": 36.365,
+  "justification": "On the matched43mate pilot word4 completed in about2464seconds versus11408default; all43natural and combined verdicts retained at bothcutoffs;36738sharedidenticalHSPs have equalbitscores.358sharedEvaluesdifferandonecrossesthestrictcutoff,withoutchangingthereadverdict. Pilot resultsdo not establishparityondivergentqueries.",
+  "predeclared_outputs": ["Every query and no-hit denominator", "Raw alignments and original sourceDNA/protein reconstruction for changed translated calls", "Raw and natural taxonomic verdicts at E10 and E1e-5", "Pair and mate disagreements within the two frozen strata", "Same-query join to completed NR, with reference-difference caveat", "Measured wall/CPU time, allocationcost, subjectcaps and no new indexbuild"],
+  "constraints": ["No new reference database or reduced reference", "No full defaultTBLASTX scaling", "No query-translated-fast scaling", "Only one search at a time on primary", "A timeout is incomplete, never no alignment", "Do not change production code or publish", "No larger panel automatically follows this run"]
+}

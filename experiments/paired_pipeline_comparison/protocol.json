@@ -1,0 +1,59 @@
+{
+  "status": "Authorized staged execution; first run only until measured feasibility is reviewed.",
+  "question": "How do two frozen complete pipelines differ in reported calls, losses, shared-policy validation evidence, runtime, and cost on public wastewater sequencing runs?",
+  "comparison": [
+    "Unchanged production nucleotide pipeline",
+    "Previously implemented protein-alignment variant with its expanded upstream screen; same production downstream validation policy"
+  ],
+  "reference": "Reuse the retained October 2026 source genome/reference snapshot in both arms; no claim to reproduce the 20250825 simulated benchmark.",
+  "changes_not_in_scope": [
+    "New reference database",
+    "New search-parameter tuning",
+    "Sensitive-validator-only advantage in one arm",
+    "Additional NR agreement or both-mate species requirements"
+  ],
+  "unchanged_downstream": "Same production duplicate handling, hash-based validation sampling, query preparation, validation settings, taxonomy data, per-read statuses, and reporting code. Different aligner representations and score selection remain intrinsic differences.",
+  "validation": "Original default nucleotide validation in both arms, maximum 20 per species per group. No NR.",
+  "grouping": "Each selected sequencing run is a separate downstream group. Depths are separate executions, never pooled.",
+  "source_runtime": "Reuse verified retained executable/reference environment, but execute a new frozen driver and archive source commit and commands.",
+  "selection_file": "selection.json",
+  "budget_file": "budget.json",
+  "sampling": "Uniform pairs across each complete run, not first reads. 5M nested in 25M where selected.",
+  "execution_gate": "Complete first paired comparison and verify baseline/output integrity before expansion. Initial batch is 10 runs including two deeper cases.",
+  "pinned_invariants": [
+    "Original sequence and quality bytes preserved by subset selection",
+    "Both mates selected together with exact requested counts",
+    "Nested shallow/deep selection",
+    "Baseline source modules unchanged",
+    "Existing adapter parity fixtures remain unchanged",
+    "Same downstream parameters for both arms",
+    "Failed or empty outputs recorded, never omitted from denominator"
+  ],
+  "new_sampler_verification": {
+    "synthetic_fixture": "Six artificial pairs; selected IDs 2,4,6 with shallow IDs2,6",
+    "checks": [
+      "Exact nested selection",
+      "Byte-identical selected records and qualities",
+      "Mismatched mate IDs rejected"
+    ],
+    "passed": true
+  },
+  "interpretation_limits": [
+    "Run-level collection comparison, not independent specimen prevalence estimate",
+    "Additional calls are not automatically true positives",
+    "Original validator may reject legitimate protein-only matches; this evaluates usefulness under that policy",
+    "No causal attribution to alignment alone",
+    "No confirmed complete ground truth for environmental samples"
+  ],
+  "prior_preflight": "The preceding execution refusal was withdrawn; prior preservation/accounting observations remain valid. No biological methods are altered by this status correction.",
+  "synthetic_control_gate": {
+    "required": true,
+    "fixture": "synthetic-control-fixture/expected.json",
+    "evidence": "synthetic-control-results/attempt-3/result.json",
+    "meaning": "Known-origin synthetic coordinate, taxonomy, and duplicate handling control. Passing does not establish environmental accuracy or validate other pipeline stages.",
+    "first_run": "Already launched before this control was requested; eligibility assessed retrospectively against identical tested source and production container. Future launches check the gate before work."
+  },
+  "execution_order": "validation-order.json counterbalances downstream arm order within pilot/remaining and shallow/deep strata. The first case was production-first; no biological settings change.",
+  "shared_profile_limit": "The frozen reference has domain taxonomy ranks, while Kraken emits no D-rank rows. If both profiling branches explicitly skip Bracken for this verified condition, its empty abundance output remains unavailable. Assignment comparison may proceed, but no Bracken abundance result is claimed.",
+  "cost_limit": "Profiling/QC outputs are shared between arms. Component wall times and total experiment worker costs are measured; these are not independent standalone deployment timings."
+}

@@ -1,0 +1,34 @@
+{
+  "seed": 284104,
+  "data": "Generated uniform random strings; fictional reference keys and categories X/Y only. No biological sample/reference used.",
+  "source_commit": "481d57a4",
+  "groups": [
+    3,
+    30
+  ],
+  "random_replicates_per_cell": 30,
+  "random_removal_probabilities": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "quality_models": [
+    "independent",
+    "X_higher",
+    "Y_higher"
+  ],
+  "curated_sizes": [
+    1,
+    3,
+    10,
+    100,
+    1000
+  ],
+  "curated_cases": [
+    "category_swap",
+    "total_increase",
+    "total_decrease"
+  ],
+  "interpretation": "Synthetic frequencies apply only to this declared generator, not to experimental reads, biological prevalence, or the published 53 calls. Empty input has zero selected records by definition; tool empty-input behavior is not tested.",
+  "production_code_modified": false
+}

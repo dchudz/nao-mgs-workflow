@@ -1,0 +1,210 @@
+{
+  "goal": "Detect homologous coding sequences despite synonymous nucleotide differences while preserving comprehensive-reference competition and per-read evidence",
+  "constraints": [
+    "Same core_nt snapshot and original nucleotide accession/taxonomy provenance",
+    "No NR substitution",
+    "No query-selected reference subset",
+    "Original per-read results, no verdict extrapolation",
+    "Fresh500USDcap including build/storage costs",
+    "Freeze evaluation inputs before outcome-based tuning"
+  ],
+  "candidates": [
+    {
+      "name": "tblastx on existing core_nt",
+      "status": "Full-reference pilot running",
+      "mechanism": "Translate query and reference in six frames during search",
+      "advantages": [
+        "No new reference-content choice or index build",
+        "Direct implementation of requested comparison"
+      ],
+      "costs": [
+        "Repeated translation and scanning",
+        "Query-dependent search work"
+      ],
+      "limitations": [
+        "Ungapped alignment",
+        "Standard code1 does not model frameshifts or all genetic codes"
+      ]
+    },
+    {
+      "name": "Coding-aware spaced nucleotide seeds",
+      "status": "HELD: do not launch until NR200 report and completed TBLASTX-versus-NR cost comparison exist",
+      "mechanism": "dc-megablast coding template18 wordweight11, then nucleotide extension",
+      "advantages": [
+        "Existing core_nt index",
+        "Tolerates some third-position changes without full translation"
+      ],
+      "limitations": [
+        "Nucleotide extension and scoring still penalize synonymous substitutions",
+        "Third-position pattern does not represent all synonymous codons",
+        "Cannot assume recall parity with translated comparison"
+      ],
+      "source": "https://blast.ncbi.nlm.nih.gov/doc/blast-topics/discontmegablast.html"
+    },
+    {
+      "name": "Pretranslated core_nt with protein seed search",
+      "status": "Deferred pending capacity and amortization measurements",
+      "mechanism": "Translate the same reference, retaining sequence/frame/coordinate/taxonomy mappings; use MMseqs2 or DIAMOND on all reference content",
+      "advantages": [
+        "Amortize translation over repeated batches",
+        "Established fast protein seed and alignment implementations"
+      ],
+      "costs": [
+        "One-time extraction/translation/indexing",
+        "Potential terabytes of translated sequence, index and coordinate mapping storage",
+        "Rebuild whenever nucleotide snapshot changes"
+      ],
+      "limitations": [
+        "Short ORF defaults discard reference evidence unless explicitly controlled",
+        "Stopping translation at stop codons differs from tblastx behavior",
+        "Deduplicating peptides must preserve every accession/taxon and database-size statistics",
+        "Protein search heuristics and gapped scoring differ from tblastx"
+      ],
+      "sources": [
+        "https://github.com/soedinglab/MMseqs2/wiki#translated-sequence-searching",
+        "https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options"
+      ],
+      "implementation_verified_2026_10_22": {
+        "MMseqs2_option": "--translation-mode 1 selects full reading frames",
+        "source_behavior": "Search.cpp sets ORF_SKIP and translated_search.sh uses extractframes for nucleotide queries and targets instead of extractorfs. This offers a way to avoid default short-ORF filtering; exact installed-binary handling of stops, ambiguities, long sequences and coordinates still needs a fixture.",
+        "sources": [
+          "https://github.com/soedinglab/MMseqs2/blob/master/src/commons/Parameters.cpp",
+          "https://github.com/soedinglab/MMseqs2/blob/master/src/workflow/Search.cpp",
+          "https://raw.githubusercontent.com/soedinglab/MMseqs2/master/data/workflow/translated_search.sh"
+        ],
+        "measurement_status": "Source inspection only; no MMseqs2 install, translation or index build performed",
+        "capacity_effect": "Does not remove the full-frame translated representation and index storage costs."
+      }
+    },
+    {
+      "name": "Staged search on uncertain queries",
+      "status": "Evaluate retrospective routing only after full-search evidence",
+      "mechanism": "Run inexpensive search first, spend translated-search work on selected queries",
+      "advantages": [
+        "Could reduce translated query volume"
+      ],
+      "limitations": [
+        "Strong nucleotide viral hit does not prove absence of a stronger translated nonviral competitor",
+        "If only no-hit reads advance, measure all changed assignments missed on confident reads",
+        "Savings may be small if repeated reference scan dominates",
+        "Never extrapolate a validation verdict between reads"
+      ]
+    },
+    {
+      "name": "Frameshift-aware or codon-aware scoring",
+      "status": "Reserve for disagreements showing the need",
+      "mechanism": "Use a codon/frameshift model after candidate generation, with sufficient comprehensive search coverage",
+      "advantages": [
+        "Can distinguish true substitutions from translation errors and sequencing indels"
+      ],
+      "limitations": [
+        "More complex model and additional compute",
+        "Restricted rescoring cannot discover a target absent from initial candidate generation"
+      ],
+      "sources": [
+        "https://gitlab.com/mcfrith/last/-/raw/main/doc/lastal.rst",
+        "https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options"
+      ]
+    },
+    {
+      "name": "Translate only queries, then tblastn-fast on unchanged core_nt",
+      "status": "HELD: do not launch until NR200 report and completed TBLASTX-versus-NR cost comparison exist",
+      "mechanism": "All six complete query frames retained; optimized protein-versus-nucleotide search translates the original reference during search",
+      "potential_benefit": "Avoids multi-terabyte derived reference index while allowing the supported fast search task",
+      "measured_fixture": {
+        "synonymous80aa_match": true,
+        "tblastx_bitscore": 210,
+        "query_translated_tblastn_bitscore": 211,
+        "tblastx_Evalue": 5.58e-60,
+        "query_translated_tblastn_Evalue": 1.54e-60,
+        "nucleotide_coordinates_equal": true,
+        "invalid_frame_warnings_preserved": true
+      },
+      "required_controls": [
+        "Do not claim score or Evalue parity; fixture differs despite identical aligned sequence",
+        "Normalize per-frame query coordinates and query coverage back to original nucleotide read",
+        "Combine frames before per-read near-best taxonomy",
+        "Control target and HSP caps after pooling frames;250targets per frame is not250targets per original read",
+        "Track every frame with invalid-composition warnings; keep every original read in denominator",
+        "Report standard versus fast search as separate heuristics"
+      ]
+    },
+    {
+      "name": "Query-indexed translated reference scan",
+      "status": "Design alternative; no implementation or full-reference run",
+      "mechanism": "Build a compact table of exact or spaced amino-acid seeds from all query frames; stream every nucleotide reference in six translated frames, retain seed-supported per-read candidates, then score alignments with original accession/taxonomy mappings",
+      "potential_benefit": "Amortize one comprehensive reference pass across a large query batch without persisting a multi-terabyte protein index",
+      "limitations": [
+        "Exact peptide seeds can miss homologs with amino-acid substitutions; spaced or neighborhood seeds increase candidate work",
+        "A seed-selected candidate set is an algorithmic heuristic and needs recall measurement against complete translated search",
+        "Short and low-complexity seeds can produce many candidates across a trillion-base database",
+        "A reference-wide translation scan still has fixed cost; existing BLAST already performs related query-indexed seed finding",
+        "Must preserve all target accessions/taxa, both strands, frame and coordinate evidence; no verdict extrapolation"
+      ],
+      "implementation_gate": "Only justify custom implementation if existing fast tblastn or supported seeds leave a measured performance/recall gap; first characterize a prototype against existing frozen alignments and controlled synonymous variants",
+      "reverse_search_warning": "Swapping a large reference into query position and indexing the small read set changes search-space statistics, per-query hit truncation, coverage orientation, and potentially masking/composition behavior. A reversed search is not interchangeable without per-read candidate completeness and statistical/coordinate checks; simply swapping output columns is insufficient.",
+      "existing_tool_route": {
+        "installed_DIAMOND_version": "2.1.17",
+        "documented_mechanism": "DIAMOND makeidx plus --target-indexed is documented for small protein target databases below10MB. The sensitivity setting must match the index. A prospective inverted search could index six-frame translations of the small original read panel, then stream original core_nt DNA as blastx queries. This would avoid a persistent multi-terabyte translated reference.",
+        "source": "https://github.com/bbuchfink/diamond/wiki/5.-Advanced-topics",
+        "status": "Design only. No index or reversed search executed. Original forward fast-tblastn benchmark remains the first lower-complexity candidate after the NR cost gate.",
+        "required_checks": [
+          "Treat inversion as candidate generation until statistics and output equivalence are measured. Simply swapping output columns is invalid.",
+          "Retain matches for every original read; top-hit pruning per inverted reference query can hide a valid lower-scoring read and must not transfer verdicts between reads.",
+          "Preserve full original reference traversal, strands, frames, positions and all accession/taxonomy mappings.",
+          "Characterize short targets, masking, stop/ambiguous codons and composition-dependent scores on fixtures before any full-reference pass.",
+          "Recompute or independently rescore significance in the original query/reference orientation; inverted E-values use a different search space.",
+          "Measure candidate recall against completed TBLASTX pilot evidence, including original subject-cap limitations, before interpreting taxonomic outcomes."
+        ]
+      }
+    }
+  ],
+  "capacity_math": {
+    "core_nt_bases": 1088816606629,
+    "six_frame_residue_upper_bound_before_stops": 2177633213258,
+    "uncompressed_single_byte_residue_TiB": 1.9805458698629081,
+    "formula": "six frames / three bases per amino acid = about two amino-acid letters per nucleotide; excludes headers, maps, compression, ORF filtering, index and temporary files",
+    "decision": "Do not start a multi-terabyte translation/index build before measuring direct search and estimating amortization"
+  },
+  "comparison_axes": [
+    "Per-read new/lost taxonomic evidence and near-best competitors",
+    "CPU time, wall time, peak memory and allocated cost",
+    "Batch-size curve at3,24,96pairs where feasible",
+    "Index build and storage, amortized across realistic repeated use",
+    "Synonymous substitutions, nonsynonymous substitutions, frameshift and repeat failure mechanisms"
+  ],
+  "sources_are_design_inputs_not_benchmark_results": true,
+  "decision_rules": {
+    "same_reference": "Derived indexes must represent the full original snapshot and preserve every accession/taxon mapping; a translated index changes representation, not chosen reference content. Explicitly report any ORF or length exclusions.",
+    "uncertain_query_cascade": "Measure retrospective routing against completed full-search outputs. Never assume a strong nucleotide viral hit has no translated competing match.",
+    "break_even": "For R repeated batches, compare direct_cost(R) with index_build_cost + R*indexed_search_cost + retained_index_storage_cost. Fit only within measured batch-size range; report fixed reference scan and marginal query work separately.",
+    "evidence_quality": "Inspect strong disagreements at sequence/codon level and retain weak significance results separately. Absence of a translated hit is not proof a nucleotide hit is false; short or noncoding reads can behave differently.",
+    "batching": "Shared-query alignment and assignment parity across3/24/96panels is an empirical check, not assumed.",
+    "false_positive_check": "If new weak or low-complexity matches drive differences, use deterministic composition-preserving shuffled controls before claiming increased sensitivity. No truth-label accuracy claim from these observational reads.",
+    "user_priority_gate": "Finish NR200 and measured TBLASTX-versus-NR cost comparison before additional translated panels. If default TBLASTX cost per query is orders higher, stop scaling that method. No new reference build just because the remaining budget permits one."
+  },
+  "profiling_evidence": {
+    "scope": "15-second software CPU sample while original full-reference tblastx pilot running; not whole-run attribution",
+    "samples_about": 11000,
+    "lost_samples": 0,
+    "top_seed_finding_self_CPU_percent": 80.27,
+    "direct_compressed_translation_self_CPU_percent": 1.23,
+    "interpretation": "Translation caching alone is not a demonstrated solution to the observed bottleneck. Different seed search and indexing may matter more.",
+    "raw_directory": "profiling",
+    "timing_caveat": "Profiler and brief characterization work overlap the pilot; retain this caveat with wall-time results."
+  },
+  "completed_pilot_evidence": {
+    "result_commit": "7e1af6dafc0d3eeba3404a0fd1a19e8fb74c07ce",
+    "tblastx_wall_seconds": 11409.050195003001,
+    "blastn_wall_seconds": 229.75686085800407,
+    "strict_natural_LCA_changes_vs_blastn": {
+      "unchanged": 32,
+      "more_specific": 4,
+      "broader": 5,
+      "lost_alignment": 2
+    },
+    "strong_extra_nonviral_hits": "Artificial constructs only in this returned pilot output; no natural nonviral competition observed.",
+    "reporting_cap": "250subjects reached for38/43TBLASTX and27/43BLASTN queries; specificity changes are not demonstrated improvements.",
+    "short_read_limit": "Two68ntmates of onepair have perfect64ntBLASTN hits but only21aaTBLASTX best hits atE.002; strictE1e-5 removes them."
+  }
+}

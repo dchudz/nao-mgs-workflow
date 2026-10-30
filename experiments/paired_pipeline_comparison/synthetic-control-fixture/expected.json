@@ -1,0 +1,782 @@
+{
+  "input_pairs": 25,
+  "positive_pairs": 24,
+  "exact_unique_pairs": 19,
+  "alignment_exemplars": 12,
+  "joint_exemplars": 12,
+  "negative_ids": [
+    "negative"
+  ],
+  "rows": {
+    "synthetic_0_a_high": {
+      "genome": "synthetic_0",
+      "taxid": "900000000",
+      "origin": "a",
+      "exemplar": "synthetic_0_a_high",
+      "mates": [
+        {
+          "ref_start": 60,
+          "ref_end_exclusive": 180,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 182,
+          "query_rc": false
+        },
+        {
+          "ref_start": 210,
+          "ref_end_exclusive": 330,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 332,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "CTTCATGGTCATGAAACTTCTTCTAATTATATTGAAATTGCTGAACGTGTTGCTTTTGTTAATCCTCCTGGTAAATGTTTTGTTCTTTGTGAATGGGTTTATAAATCTTGGTCTATTGTTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNATGAAGTTGCCAAGAAAGAACATTAGGAACCATCCATTCATTCATAACAAGAGATTTATAAGGCCACCAATGAACACGAAGACCAAGTTCAATAACAAGCATAGGACCTTGAAGAGCAAT",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_0_a_low": {
+      "genome": "synthetic_0",
+      "taxid": "900000000",
+      "origin": "a",
+      "exemplar": "synthetic_0_a_high",
+      "mates": [
+        {
+          "ref_start": 60,
+          "ref_end_exclusive": 180,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 182,
+          "query_rc": false
+        },
+        {
+          "ref_start": 210,
+          "ref_end_exclusive": 330,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 332,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "CTTCATGGTCATGAAACTTCTTCTAATTATATTGAAATTGCTGAACGTGTTGCTTTTGTTAATCCTCCTGGTAAATGTTTTGTTCTTTGTGAATGGGTTTATAAATCTTGGTCTATTGTTNNN",
+          "quality": "555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        },
+        {
+          "sequence": "NNNATGAAGTTGCCAAGAAAGAACATTAGGAACCATCCATTCATTCATAACAAGAGATTTATAAGGCCACCAATGAACACGAAGACCAAGTTCAATAACAAGCATAGGACCTTGAAGAGCAAT",
+          "quality": "555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        }
+      ]
+    },
+    "synthetic_0_a_synonymous": {
+      "genome": "synthetic_0",
+      "taxid": "900000000",
+      "origin": "a",
+      "exemplar": "synthetic_0_a_high",
+      "mates": [
+        {
+          "ref_start": 60,
+          "ref_end_exclusive": 180,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 182,
+          "query_rc": false
+        },
+        {
+          "ref_start": 210,
+          "ref_end_exclusive": 330,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 332,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "CTCCATGGTCATGAAACTTCTTCCAATTATATTGAAATTGCTGAGCGTGTTGCTTTTGTTAATCCCCCTGGTAAATGTTTTGTTCTCTGTGAATGGGTTTATAAATCCTGGTCTATTGTTNNN",
+          "quality": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        },
+        {
+          "sequence": "NNNATGAAGTTGCCAGGAAAGAACATTAGGAACCATCCATTCATTCATAACAAGAGACTTATAAGGCCACCAATGAACGCGAAGACCAAGTTCAATAACGAGCATAGGACCTTGAAGAGCGAT",
+          "quality": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        }
+      ]
+    },
+    "synthetic_0_b_high": {
+      "genome": "synthetic_0",
+      "taxid": "900000000",
+      "origin": "b",
+      "exemplar": "synthetic_0_b_high",
+      "mates": [
+        {
+          "ref_start": 360,
+          "ref_end_exclusive": 480,
+          "ref_start_unclipped": 360,
+          "ref_end_unclipped": 482,
+          "query_rc": false
+        },
+        {
+          "ref_start": 450,
+          "ref_end_exclusive": 570,
+          "ref_start_unclipped": 450,
+          "ref_end_unclipped": 572,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "TCTCCTTCTAATCTTTGGATGTATAAAAAAACTTTTACTATTGCTTATCGTAAAGGTCGTTCTTGTCTTGAACCTCTTGTTTCTCATAAAGCTCCTGTTCCTGAAGAACAATGTCGTGTTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNAGCAGCATCTTGTTTATGATCACCAAATTCACCCATCCAAGTAATAGCAATAAAAGTACCAATATCACATTTCCAAACATCAGACATAAAAACACGACATTGTTCTTCAGGAACAGGAGC",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_1_a_high": {
+      "genome": "synthetic_1",
+      "taxid": "900000001",
+      "origin": "a",
+      "exemplar": "synthetic_1_a_high",
+      "mates": [
+        {
+          "ref_start": 61,
+          "ref_end_exclusive": 181,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 183,
+          "query_rc": false
+        },
+        {
+          "ref_start": 211,
+          "ref_end_exclusive": 331,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 333,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NAATTTTCTTAAACGTTATGAAAAAATTAATAAAACTACTCTTAAACTTATGAAATATCTTACTTCTCATACTGGTTGTACTAATGGTGGTAATTGGCCTACTCCTGCTTATAAACTTTTTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNACAATAATGACGAGCACCACACCAACAAATATTAAGTTGAACATGTTGAGCACCACATTGTTCACCAGAAGGTTGAAAAGATTGTTTATAAGACATCCACATAATAAAAATCATTTCAGGN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_1_a_low": {
+      "genome": "synthetic_1",
+      "taxid": "900000001",
+      "origin": "a",
+      "exemplar": "synthetic_1_a_high",
+      "mates": [
+        {
+          "ref_start": 61,
+          "ref_end_exclusive": 181,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 183,
+          "query_rc": false
+        },
+        {
+          "ref_start": 211,
+          "ref_end_exclusive": 331,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 333,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NAATTTTCTTAAACGTTATGAAAAAATTAATAAAACTACTCTTAAACTTATGAAATATCTTACTTCTCATACTGGTTGTACTAATGGTGGTAATTGGCCTACTCCTGCTTATAAACTTTTTNNN",
+          "quality": "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        },
+        {
+          "sequence": "NNNACAATAATGACGAGCACCACACCAACAAATATTAAGTTGAACATGTTGAGCACCACATTGTTCACCAGAAGGTTGAAAAGATTGTTTATAAGACATCCACATAATAAAAATCATTTCAGGN",
+          "quality": "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        }
+      ]
+    },
+    "synthetic_1_a_synonymous": {
+      "genome": "synthetic_1",
+      "taxid": "900000001",
+      "origin": "a",
+      "exemplar": "synthetic_1_a_high",
+      "mates": [
+        {
+          "ref_start": 61,
+          "ref_end_exclusive": 181,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 183,
+          "query_rc": false
+        },
+        {
+          "ref_start": 211,
+          "ref_end_exclusive": 331,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 333,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NAACTTTCTTAAACGTTATGAAAAGATTAATAAAACTACTCTTAAGCTTATGAAATATCTTACTTCCCATACTGGTTGTACTAATGGCGGTAATTGGCCTACTCCTGCCTATAAACTTTTTNNN",
+          "quality": "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        },
+        {
+          "sequence": "NNNACAATAATGACGGGCACCACACCAACAAATATTGAGTTGAACATGTTGAGCACCGCATTGTTCACCAGAAGGTTGGAAAGATTGTTTATAAGACATCCACATAATAAAAATCATTTCGGGN",
+          "quality": "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        }
+      ]
+    },
+    "synthetic_1_b_high": {
+      "genome": "synthetic_1",
+      "taxid": "900000001",
+      "origin": "b",
+      "exemplar": "synthetic_1_b_high",
+      "mates": [
+        {
+          "ref_start": 361,
+          "ref_end_exclusive": 481,
+          "ref_start_unclipped": 360,
+          "ref_end_unclipped": 483,
+          "query_rc": false
+        },
+        {
+          "ref_start": 451,
+          "ref_end_exclusive": 571,
+          "ref_start_unclipped": 450,
+          "ref_end_unclipped": 573,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NTCTCATCTTCATCCTTGGAATGAAATTGATCTTTGGTATGTTGGTAAATGGTTTAAACAAAAACGTATTAAAGAAAATTGGCTTGTTGGTATTCATGCTGATGAATATTCTTGGAATATGNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNATTCCACCATTGAGATTCCATAGGATCAGGATTAACAACAGAAGCTTGACGAAAAATAGTACCTTCTTCTTTATTATAAATAGAATGAGTCATATTCCAAGAATATTCATCAGCATGAATN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_2_a_high": {
+      "genome": "synthetic_2",
+      "taxid": "900000002",
+      "origin": "a",
+      "exemplar": "synthetic_2_a_high",
+      "mates": [
+        {
+          "ref_start": 62,
+          "ref_end_exclusive": 182,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 184,
+          "query_rc": false
+        },
+        {
+          "ref_start": 212,
+          "ref_end_exclusive": 332,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 334,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNGCTCTTGCTGGTACTTGTTTTCCTGGTATTCAAAAAGGTTATATGGCTCTTGGTGAAACTTATACTATGGGTAAACCTGCTGCTATTTATCGTCGTTCTGTTTGGTGGGCTCGTAATTGTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNAACAATATCTTCTTTAGAACCTTCATTCATTTGAGACATATCTTGAATACAAGGAGAAGTAAAATGAGGATATTGATATTCACCATCATTATGATCATCAGCATACCAAACATGAATAATNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_2_a_low": {
+      "genome": "synthetic_2",
+      "taxid": "900000002",
+      "origin": "a",
+      "exemplar": "synthetic_2_a_high",
+      "mates": [
+        {
+          "ref_start": 62,
+          "ref_end_exclusive": 182,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 184,
+          "query_rc": false
+        },
+        {
+          "ref_start": 212,
+          "ref_end_exclusive": 332,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 334,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNGCTCTTGCTGGTACTTGTTTTCCTGGTATTCAAAAAGGTTATATGGCTCTTGGTGAAACTTATACTATGGGTAAACCTGCTGCTATTTATCGTCGTTCTGTTTGGTGGGCTCGTAATTGTNNN",
+          "quality": "55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        },
+        {
+          "sequence": "NNNAACAATATCTTCTTTAGAACCTTCATTCATTTGAGACATATCTTGAATACAAGGAGAAGTAAAATGAGGATATTGATATTCACCATCATTATGATCATCAGCATACCAAACATGAATAATNN",
+          "quality": "55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        }
+      ]
+    },
+    "synthetic_2_a_synonymous": {
+      "genome": "synthetic_2",
+      "taxid": "900000002",
+      "origin": "a",
+      "exemplar": "synthetic_2_a_high",
+      "mates": [
+        {
+          "ref_start": 62,
+          "ref_end_exclusive": 182,
+          "ref_start_unclipped": 60,
+          "ref_end_unclipped": 184,
+          "query_rc": false
+        },
+        {
+          "ref_start": 212,
+          "ref_end_exclusive": 332,
+          "ref_start_unclipped": 210,
+          "ref_end_unclipped": 334,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNGCCCTTGCTGGTACTTGTTTTCCCGGTATTCAAAAAGGTTATATGGCTCTTGGTGAAACTTATACCATGGGTAAACCTGCTGCTATCTATCGTCGTTCTGTTTGGTGGGCTCGTAATTGTNNN",
+          "quality": "?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        },
+        {
+          "sequence": "NNNAACAATATCTTCCTTAGAACCTTCATTCATTTGGGACATATCTTGAATACAAGGGGAAGTAAAATGAGGATATTGGTATTCACCATCATTATGATCGTCAGCATACCAAACATGAATGATNN",
+          "quality": "?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        }
+      ]
+    },
+    "synthetic_2_b_high": {
+      "genome": "synthetic_2",
+      "taxid": "900000002",
+      "origin": "b",
+      "exemplar": "synthetic_2_b_high",
+      "mates": [
+        {
+          "ref_start": 362,
+          "ref_end_exclusive": 482,
+          "ref_start_unclipped": 360,
+          "ref_end_unclipped": 484,
+          "query_rc": false
+        },
+        {
+          "ref_start": 452,
+          "ref_end_exclusive": 572,
+          "ref_start_unclipped": 450,
+          "ref_end_unclipped": 574,
+          "query_rc": true
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNGCTAATATTTGTAATCATAATTGGTGGCCTTCTTATCTTCCTAAAGTTGTTCCTTATACTCATATGGAAGAAGAATGTACTACTTGTGATCTTTGGCCTATGGATTATCCTTCTTATTATNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNATAACGAAAAACACGAATTTCCATTTGAAAAGACATAAGACCACGACACCAACAATGACAATCATCCCAACGAGTCCATTTATGACGAGGATAATAAGAAGGATAATCCATAGGCCAAAGNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_3_a_high": {
+      "genome": "synthetic_3",
+      "taxid": "900000003",
+      "origin": "a",
+      "exemplar": "synthetic_3_a_high",
+      "mates": [
+        {
+          "ref_start": 720,
+          "ref_end_exclusive": 840,
+          "ref_start_unclipped": 717,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 570,
+          "ref_end_exclusive": 690,
+          "ref_start_unclipped": 567,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "TGGATGTTTATGCATATGGGTCTTCATATTTCTGAAGCTCGTTCTGTTGAAGTTAAAGAACGTCAAAATCCTGAACATTCTTCTGTTGATATTTGTATGGATTCTTGTACTAAAGATGGTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNAGAAATCCAATTACAACACATTTCATCAGAATCAGTAGGAAGAGAAAGATTATCATCAGAACGACAACCAATAGAACAACCACATTCTTGTTGATCAGACATAGAAAAAGGAGTATTAGC",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_3_a_low": {
+      "genome": "synthetic_3",
+      "taxid": "900000003",
+      "origin": "a",
+      "exemplar": "synthetic_3_a_high",
+      "mates": [
+        {
+          "ref_start": 720,
+          "ref_end_exclusive": 840,
+          "ref_start_unclipped": 717,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 570,
+          "ref_end_exclusive": 690,
+          "ref_start_unclipped": 567,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "TGGATGTTTATGCATATGGGTCTTCATATTTCTGAAGCTCGTTCTGTTGAAGTTAAAGAACGTCAAAATCCTGAACATTCTTCTGTTGATATTTGTATGGATTCTTGTACTAAAGATGGTNNN",
+          "quality": "555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        },
+        {
+          "sequence": "NNNAGAAATCCAATTACAACACATTTCATCAGAATCAGTAGGAAGAGAAAGATTATCATCAGAACGACAACCAATAGAACAACCACATTCTTGTTGATCAGACATAGAAAAAGGAGTATTAGC",
+          "quality": "555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        }
+      ]
+    },
+    "synthetic_3_a_synonymous": {
+      "genome": "synthetic_3",
+      "taxid": "900000003",
+      "origin": "a",
+      "exemplar": "synthetic_3_a_high",
+      "mates": [
+        {
+          "ref_start": 720,
+          "ref_end_exclusive": 840,
+          "ref_start_unclipped": 717,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 570,
+          "ref_end_exclusive": 690,
+          "ref_start_unclipped": 567,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "TGGATGTTTATGCATATGGGTCTCCATATTTCTGAAGCTCGTTCCGTTGAAGTTAAAGAACGTCAGAATCCTGAACATTCTTCTGTCGATATTTGTATGGATTCTTGCACTAAAGATGGTNNN",
+          "quality": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        },
+        {
+          "sequence": "NNNAGAAATCCAATTGCAACACATTTCATCAGAATCGGTAGGAAGAGAAAGATTATCGTCAGAACGACAACCAATAGAGCAACCACATTCTTGTTGATCGGACATAGAAAAAGGAGTATTGGC",
+          "quality": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        }
+      ]
+    },
+    "synthetic_3_b_high": {
+      "genome": "synthetic_3",
+      "taxid": "900000003",
+      "origin": "b",
+      "exemplar": "synthetic_3_b_high",
+      "mates": [
+        {
+          "ref_start": 420,
+          "ref_end_exclusive": 540,
+          "ref_start_unclipped": 417,
+          "ref_end_unclipped": 539,
+          "query_rc": true
+        },
+        {
+          "ref_start": 330,
+          "ref_end_exclusive": 450,
+          "ref_start_unclipped": 327,
+          "ref_end_unclipped": 449,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "CATATGGTTATGAATTATTCTAATCGTGGTATTTCTGATGTTGTTGCTTCTACTAATCGTTTTTCTCATCGTAATGATGGTATTTATCATATGGGTTGGATTCAAATTTATTCTTGGTGTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNTTCATCTTGATGTTCACGTTTAACTTGAATAGCATTTTCAGAATCAGAAGTAATACGAATAGGATTAGGATTTTGCCATTTATAATACATACACCAAGAATAAATTTGAATCCAACCCAT",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_4_a_high": {
+      "genome": "synthetic_4",
+      "taxid": "900000004",
+      "origin": "a",
+      "exemplar": "synthetic_4_a_high",
+      "mates": [
+        {
+          "ref_start": 719,
+          "ref_end_exclusive": 839,
+          "ref_start_unclipped": 716,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 569,
+          "ref_end_exclusive": 689,
+          "ref_start_unclipped": 566,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NCTTGTTCGTGATTGGTCTTGGTATATTTGGCCTCATGCTGCTTGGCTTCCTCGTCCTCTTGTTTATCTTCGTGAAACTCGTCAACTTGTTTGGCGTTGGATTTATCTTATGAAAATTCGTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNAGGATTATGTTTTTCATCAGACATAGAAGTAGTACAAGTAAGATAATGATAAACACAACGATTCCATTTAACAATAATTTTACAAGGAAAACGTTCCCAACGTTCCCAAGAAGTTTGACGN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_4_a_low": {
+      "genome": "synthetic_4",
+      "taxid": "900000004",
+      "origin": "a",
+      "exemplar": "synthetic_4_a_high",
+      "mates": [
+        {
+          "ref_start": 719,
+          "ref_end_exclusive": 839,
+          "ref_start_unclipped": 716,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 569,
+          "ref_end_exclusive": 689,
+          "ref_start_unclipped": 566,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NCTTGTTCGTGATTGGTCTTGGTATATTTGGCCTCATGCTGCTTGGCTTCCTCGTCCTCTTGTTTATCTTCGTGAAACTCGTCAACTTGTTTGGCGTTGGATTTATCTTATGAAAATTCGTNNN",
+          "quality": "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        },
+        {
+          "sequence": "NNNAGGATTATGTTTTTCATCAGACATAGAAGTAGTACAAGTAAGATAATGATAAACACAACGATTCCATTTAACAATAATTTTACAAGGAAAACGTTCCCAACGTTCCCAAGAAGTTTGACGN",
+          "quality": "5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        }
+      ]
+    },
+    "synthetic_4_a_synonymous": {
+      "genome": "synthetic_4",
+      "taxid": "900000004",
+      "origin": "a",
+      "exemplar": "synthetic_4_a_high",
+      "mates": [
+        {
+          "ref_start": 719,
+          "ref_end_exclusive": 839,
+          "ref_start_unclipped": 716,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 569,
+          "ref_end_exclusive": 689,
+          "ref_start_unclipped": 566,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NCTCGTTCGTGATTGGTCTTGGTACATTTGGCCTCATGCTGCTTGGCTTCCTCGTCCTCTTGTTTACCTTCGTGAAACTCGTCAACTCGTTTGGCGTTGGATTTATCTCATGAAAATTCGTNNN",
+          "quality": "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        },
+        {
+          "sequence": "NNNAGGATTATGTTTCTCATCAGACATAGAAGTAGTGCAAGTAAGATAATGATAAACGCAACGATTCCATTTAACAATGATTTTACAAGGAAAACGTTCCCAACGTTCCCAAGAAGTTTGGCGN",
+          "quality": "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        }
+      ]
+    },
+    "synthetic_4_b_high": {
+      "genome": "synthetic_4",
+      "taxid": "900000004",
+      "origin": "b",
+      "exemplar": "synthetic_4_b_high",
+      "mates": [
+        {
+          "ref_start": 419,
+          "ref_end_exclusive": 539,
+          "ref_start_unclipped": 416,
+          "ref_end_unclipped": 539,
+          "query_rc": true
+        },
+        {
+          "ref_start": 329,
+          "ref_end_exclusive": 449,
+          "ref_start_unclipped": 326,
+          "ref_end_unclipped": 449,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NTGGCTTTCTTTTTGGTCTATGACTATTGTTCGTCGTTATACTCTTGCTTTTATGTGTTTTTATGAATCTATTTATCATAATCGTAATCGTTGTCGTGATCAATGGAATGGTAAATGTTGTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNAATCCAACCATAACGATGATCACAATGCCATTGACACATACGAATATTTTTCATACCAATATAACGATAACCTTCATTTTGAGGATTCATACAACATTTACCATTCCATTGATCACGACAN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_5_a_high": {
+      "genome": "synthetic_5",
+      "taxid": "900000005",
+      "origin": "a",
+      "exemplar": "synthetic_5_a_high",
+      "mates": [
+        {
+          "ref_start": 718,
+          "ref_end_exclusive": 838,
+          "ref_start_unclipped": 715,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 568,
+          "ref_end_exclusive": 688,
+          "ref_start_unclipped": 565,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNCCTGTTTATGTTTTTCTTCCTTGTTGGAAAGTTCAAAAACATCGTCAACCTCGTTATCAATTTTTTAATCTTGATAAATCTCATTGGCCTGTTTTTATTTATAATGGTATTGGTAAACTTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNAAGCATATTCCATTTTTGAAGAAACCAACATTTTTGAACCATATGAAATTGAAATTGAGTCATCATAAATTCAACAACACAAGTATAAACAGAATAATGACCTTGAACAGAAATAACTTGNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    },
+    "synthetic_5_a_low": {
+      "genome": "synthetic_5",
+      "taxid": "900000005",
+      "origin": "a",
+      "exemplar": "synthetic_5_a_high",
+      "mates": [
+        {
+          "ref_start": 718,
+          "ref_end_exclusive": 838,
+          "ref_start_unclipped": 715,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 568,
+          "ref_end_exclusive": 688,
+          "ref_start_unclipped": 565,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNCCTGTTTATGTTTTTCTTCCTTGTTGGAAAGTTCAAAAACATCGTCAACCTCGTTATCAATTTTTTAATCTTGATAAATCTCATTGGCCTGTTTTTATTTATAATGGTATTGGTAAACTTNNN",
+          "quality": "55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        },
+        {
+          "sequence": "NNNAAGCATATTCCATTTTTGAAGAAACCAACATTTTTGAACCATATGAAATTGAAATTGAGTCATCATAAATTCAACAACACAAGTATAAACAGAATAATGACCTTGAACAGAAATAACTTGNN",
+          "quality": "55555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+        }
+      ]
+    },
+    "synthetic_5_a_synonymous": {
+      "genome": "synthetic_5",
+      "taxid": "900000005",
+      "origin": "a",
+      "exemplar": "synthetic_5_a_high",
+      "mates": [
+        {
+          "ref_start": 718,
+          "ref_end_exclusive": 838,
+          "ref_start_unclipped": 715,
+          "ref_end_unclipped": 839,
+          "query_rc": true
+        },
+        {
+          "ref_start": 568,
+          "ref_end_exclusive": 688,
+          "ref_start_unclipped": 565,
+          "ref_end_unclipped": 689,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNCCCGTTTATGTTTTTCTTCCTTGCTGGAAAGTTCAAAAACATCGCCAACCTCGTTATCAATTTTTCAATCTTGATAAATCTCATTGGCCTGTTTTTATTTATAATGGCATTGGTAAACTTNNN",
+          "quality": "?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        },
+        {
+          "sequence": "NNNAAGCATATTCCACTTTTGAAGAAACCAACATTTCTGAACCATATGAAATTGAAACTGAGTCATCATAAATTCAACGACACAAGTATAAACAGAATAGTGACCTTGAACAGAAATAACCTGNN",
+          "quality": "?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"
+        }
+      ]
+    },
+    "synthetic_5_b_high": {
+      "genome": "synthetic_5",
+      "taxid": "900000005",
+      "origin": "b",
+      "exemplar": "synthetic_5_b_high",
+      "mates": [
+        {
+          "ref_start": 418,
+          "ref_end_exclusive": 538,
+          "ref_start_unclipped": 415,
+          "ref_end_unclipped": 539,
+          "query_rc": true
+        },
+        {
+          "ref_start": 328,
+          "ref_end_exclusive": 448,
+          "ref_start_unclipped": 325,
+          "ref_end_unclipped": 449,
+          "query_rc": false
+        }
+      ],
+      "reads": [
+        {
+          "sequence": "NNGGTACTCAATATCTTTGTATTGATTCTTGTCAATGTTCTCTTCGTCTTTGTAATGCTATTTCTCATGCTCTTATGTGGCCTCCTGCTAAAAAATCTCTTAATTGTTATCCTACTGGTCGTNNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        },
+        {
+          "sequence": "NNNAGACCAATAACAAGTACGAAAAAACATACAAGCACAAGGAACCATCCAAAGAGGTTTACCATCAGAATATTGACCTTCAGCACAAAAATCACGACCAGTAGGATAACAATTAAGAGATTTNN",
+          "quality": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+        }
+      ]
+    }
+  },
+  "coordinate_convention": "Aligned intervals are zero-based half-open; unclipped end is zero-based inclusive.",
+  "scope": "Artificial coding strings, no organism-derived sequences. Minimal controlled peptide database, not a test of full reference construction, environmental sensitivity, FASTP or validation."
+}

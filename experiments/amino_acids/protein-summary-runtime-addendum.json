@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-10-21T19:44:08.579941+00:00",
+  "change": "Disable cyclic garbage collection in viral alignment aggregation; scientific code and parameters otherwise unchanged.",
+  "original_sha256": "1511107078630775dfab99428760641a7d78fc07b6a862aa89f9e41404af8657",
+  "updated_sha256": "cb0d3c22e4b376389c7ee6e4793c00dab32344b19b992e6b7af1d08026421170",
+  "evidence": "Full-depth completed 3.9GiB alignment replay took249.746seconds and produced byte-identical TSV, JSON, and query FASTA. Original script retained all alignment records until aggregation ended.",
+  "scope": "Future summaries; original full-depth primary output retained.",
+  "replay_private_s3": "s3://pipeline-lab-839993661825-us-east-1/runs/amino-acid-20261021/protein-summary-gc-benchmark/"
+}

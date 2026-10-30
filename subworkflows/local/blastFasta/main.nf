@@ -40,6 +40,7 @@ workflow BLAST_FASTA {
         names_db = "${ref_dir}/results/taxonomy-names.dmp"
         // 1. Run BLAST
         blast_params = [
+            blast_task: params_map.get('blast_task', null),
             blast_perc_id: params_map.blast_perc_id,
             blast_qcov_hsp_perc: params_map.blast_qcov_hsp_perc,
             db_download_timeout: params_map.db_download_timeout

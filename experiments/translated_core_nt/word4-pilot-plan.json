@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-10-22T21:55:24.139286+00:00",
+  "status": "RELEASED small matched pilot only",
+  "method": "tblastx-word4.json",
+  "input": "Frozen43matepilot24; unchanged fullcore_nt",
+  "maximum_seconds": 3600,
+  "maximum_worker_allocation_USD": 3.6365,
+  "reason": "Query-translated fast search took2095.23s versus11408s defaultTBLASTX, but22786of28285identical shared HSPs receive different bitscores;1324identical HSPs cross strictE cutoff. The two short-read apparent gains are already retrieved by defaultTBLASTX with different reported significance. Test a supported longer-seed setting inside the original program, keeping its input representation.",
+  "characterization": "Existing word4threshold18 executable and fixed divergence-fixture checks passed before any real-data run.",
+  "required_invariants": [
+    "Original input and reference inventory unchanged.",
+    "Every query kept in denominator.",
+    "Shared identical HSPs should preserve reported scores and Evalues; verify, do not assume.",
+    "Compare every missing or changed read assignment, output caps and runtime.",
+    "No larger defaultTBLASTX run; no larger translated-query-fast run.",
+    "Timeout means incomplete and will not be scaled."
+  ]
+}
