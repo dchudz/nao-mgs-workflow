@@ -1509,4 +1509,13 @@ mod tests {
         assert_eq!(mapping[&4], 7);
         assert_eq!(mapping[&2], 7);
     }
+
+    #[test]
+    fn resolve_group_merges_unifies_groups_with_a_shared_member() {
+        let mut merges = HashMap::new();
+        merges.insert(1, HashSet::from([0, 1]));
+        merges.insert(2, HashSet::from([0, 2]));
+        let mapping = resolve_group_merges(merges);
+        assert_eq!((mapping[&0], mapping[&1], mapping[&2]), (2, 2, 2));
+    }
 }
