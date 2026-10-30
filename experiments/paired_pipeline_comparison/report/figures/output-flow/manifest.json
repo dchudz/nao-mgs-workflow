@@ -1,0 +1,16 @@
+{
+  "authorship": "Written by Codex, an AI, at David\u2019s request; David did not review it line by line.",
+  "source_commit": "264dcae8abb955063f27f0ad7e84f39bf9bfb420",
+  "source_directory": "experiments/paired_pipeline_comparison/report",
+  "source_body_sha256": "0737d96bd518bc92578008ba9073a1cd9471b0a338c4cd8f9d0d2ee8ae43ec01",
+  "description": "Display existing aggregate counts without new biological analysis. Original TSV bytes preserved. Final split partitions joint exemplars. Box sizes are not proportional to counts.",
+  "files": {
+    "output-flow.py": "c48581d711018888295e3d8c0a0be9582adaa91378ba64cff4fb67a879389cce",
+    "funnel.tsv": "7c850a378bcec6bc09fc9c57a3618939fd06dc71692451c08d93f6657f6d6be8",
+    "taxonomic-resolution.tsv": "2d0a4ff5dd51472d90af6d113dc196ffa02784858bd6e6be044e52aa8c7613d0",
+    "output-flow-5m.png": "99ad8035d491ab401ecc03b2cbc126dd9c82c04c4280d57dd353ec5b6802465d",
+    "output-flow-5m.svg": "896571e07a23bbd7d6d80e57d36eff3bb597bc5c9d9afce0f6b660621cf7cedc",
+    "output-flow-25m.png": "3e017958de23626db78c5262ddb0e9538799483ec3b5e3cc352f064d0622eef5",
+    "output-flow-25m.svg": "b802533c4dc79546239e494c5270c596f970ed4e33dc2cbb8cb537bb9857820d"
+  }
+}
