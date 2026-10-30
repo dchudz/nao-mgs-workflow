@@ -1,0 +1,13 @@
+{
+  "authorship": "Written by Codex, an AI, at David\u2019s request; David did not review it line by line.",
+  "source_commit": "264dcae8abb955063f27f0ad7e84f39bf9bfb420",
+  "source_body_sha256": "3a91cbbdfb982d5d9b8d69cf6356cb956203e7c437f4fd127e2421282068fdbe",
+  "description": "Wording-only revision of comparative chart labels. Counts, plotted data and geometry preserved.",
+  "files": {
+    "plot.py": "aadebf39442253e37a2b9f13bdd0b4ac9428c74344aaff9e16c3a054d1a71d7b",
+    "call-changes.png": "d99afdd4fc87fb291fa3b4bb08aeeb3ea721220c7e893aa627ff3a287e31899c",
+    "call-changes.svg": "d552e8fe342414766581da83959f1d17e45e44e4badf365d1560dcaeca2aee01",
+    "validation.png": "e46c88d58b3b99b75546da0af2f93111bf1203bf4cd7c6fa247ae7afc8e199b8",
+    "validation.svg": "1a2afbcc61abefce0852302b8111cca14514a81ba0dde87ae02b775a993d8350"
+  }
+}
