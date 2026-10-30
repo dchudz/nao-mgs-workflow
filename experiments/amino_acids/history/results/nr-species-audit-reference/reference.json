@@ -1,6 +1,0 @@
-{
-  "source": "/home/ec2-user/experiment/reference/results/virus-genomes-masked.fasta.gz",
-  "bytes": 661075424,
-  "sha256": "41e773911c11749f7d5f99b3f09f30c59504d70b05cb9c522fd833c3022d3254",
-  "purpose": "Unchanged frozen viral nucleotide reference for genomic-coordinate audit"
-}

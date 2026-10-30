@@ -1,6 +1,0 @@
-{
-  "s3": "s3://pipeline-lab-839993661825-us-east-1/runs/paired-comparison-20261024/comparisons/SRR39695348_25m/completed-evidence.tar.gz",
-  "bytes": 28637305,
-  "sha256": "352faf04d2a9d3b652505d28983030987181a94379b7509661740c456220f64f",
-  "readback_verified": true
-}

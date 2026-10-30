@@ -1,8 +1,0 @@
-{
-  "verified_utc": "2026-10-22T21:07:36.049544+00:00",
-  "original": "/home/ec2-user/experiment/protein/combined-validation/validated-pairs.tsv",
-  "compacted": "/home/ec2-user/experiment/protein/compacted-validation-v2/validated-pairs.tsv",
-  "sha256": "d41350a484c89c566763df6704371079c7091821b935780bd0aadbeb5ba69cdc",
-  "pair_rows": 406173,
-  "byte_identical": true
-}

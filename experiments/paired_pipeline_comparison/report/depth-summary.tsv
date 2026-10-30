@@ -1,7 +1,0 @@
-arm	threshold	paired_runs	shallow_calls	deep_calls	retained	deep_only	shallow_only	net_calls	median_net_per_run	runs_with_positive_net	runs_with_zero_net	runs_with_negative_net
-production	2	10	155	275	155	120	0	120	13.0	10	0	0
-production	3	10	126	231	126	105	0	105	10.0	10	0	0
-production	5	10	89	176	89	87	0	87	8.0	10	0	0
-protein_variant	2	10	268	472	268	204	0	204	18.5	10	0	0
-protein_variant	3	10	218	380	218	162	0	162	13.0	10	0	0
-protein_variant	5	10	163	306	163	143	0	143	13.5	10	0	0

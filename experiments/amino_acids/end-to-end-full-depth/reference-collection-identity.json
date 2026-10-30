@@ -1,6 +1,0 @@
-{
-  "verified": true,
-  "genomes": 73815,
-  "bases": 2454957110,
-  "check": "Human-masked AA prescreen and DUST-masked viral alignment references have exactly identical genome IDs and lengths; masking positions intentionally differ."
-}

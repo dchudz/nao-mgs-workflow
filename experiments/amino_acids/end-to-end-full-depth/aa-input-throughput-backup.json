@@ -1,7 +1,0 @@
-{
-  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/aa-input-throughput.tar.gz",
-  "bytes": 2795776,
-  "sha256": "9851c990b9b484bf7e8cb7fe690b3cb40c0f218188ba32c9d661cc4b4cd6d32a",
-  "readback_verified": true,
-  "omitted": "Generated 5-million-pair FASTQ inputs can be reconstructed from saved SRA source and script."
-}

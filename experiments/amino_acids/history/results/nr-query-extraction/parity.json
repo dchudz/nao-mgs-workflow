@@ -1,8 +1,0 @@
-{
-  "source_rows": 1677041,
-  "requested_queries": 7,
-  "selected_raw_rows": 86,
-  "exact_selected_bytes_and_order_preserved": true,
-  "absent_query_retained_in_denominator": true,
-  "binary_sha256": "ceb07b5ded5f28882e25bff990ba64c6bff5900760e27a86a502e8e7de36b7d4"
-}

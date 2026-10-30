@@ -1,7 +1,0 @@
-focus	key	metric	value	threshold	flag_type
-viral	group=SRR35946912_5m	vertebrate-viral reads gained (%)	33.49478390461997	25.0	fixed
-viral	group=SRR35946912_5m	vertebrate-viral reads reassigned (%)	34.94677871148459	10.0	fixed
-viral	group=SRR35946912_5m, rank_level=family, name=Tobaniviridae	clade share change (pp)	-7.477694678918098	3.0	fixed
-viral	group=SRR35946912_5m, rank_level=family, name=Coronaviridae	clade share change (pp)	-4.349855104984125	3.0	fixed
-viral	group=SRR35946912_5m, rank_level=order, name=Nidovirales	clade share change (pp)	-11.827549783902224	3.0	fixed
-viral	group=SRR35946912_5m, rank_level=order, name=Picornavirales	clade share change (pp)	13.517393793837304	3.0	fixed

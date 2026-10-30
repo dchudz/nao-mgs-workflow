@@ -1,7 +1,0 @@
-{
-  "verified": true,
-  "method": "Downloaded the frozen annotation object and compared its bytes with the already saved local annotation; no sequence search or worker restart.",
-  "uri": "s3://pipeline-lab-839993661825-us-west-2/runs/full-reference-20261020a/index/output/results/total-virus-db-annotated.tsv.gz",
-  "bytes": 3701264,
-  "sha256": "ddc830343abde0e3c266f2150ae437eaa963f82e8ca5754e2e7b0da0548d46a0"
-}

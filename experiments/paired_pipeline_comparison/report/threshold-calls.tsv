@@ -1,7 +1,0 @@
-depth_million_pairs	units	threshold	production_calls	protein_variant_calls	net_calls	retained	gained_from_zero	promoted	lost	below_threshold_both
-5	50	2	835	1325	490	726	522	77	109	818
-5	50	3	661	1058	397	582	391	85	79	1115
-5	50	5	511	806	295	442	278	86	69	1377
-25	10	2	275	472	197	248	197	27	27	283
-25	10	3	231	380	149	202	152	26	29	373
-25	10	5	176	306	130	160	113	33	16	460

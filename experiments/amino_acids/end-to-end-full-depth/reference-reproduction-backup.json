@@ -1,8 +1,0 @@
-{
-  "verified": true,
-  "uri": "s3://pipeline-lab-839993661825-us-east-1/runs/e2e-full-depth-20261023/reference-reproduction.tar.gz",
-  "bytes": 3956,
-  "sha256": "789998d643df5d00bb060330398a4e41d43bf0751199f79b959c16218636c6d2",
-  "independent_download_verified": true,
-  "omitted": "Regenerated protein FASTA is byte-identical to the already archived restored protein FASTA; verification.json contains both source and output hashes."
-}

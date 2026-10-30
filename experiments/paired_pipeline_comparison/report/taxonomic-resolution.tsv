@@ -1,5 +1,0 @@
-depth_million_pairs	units	arm	joint_exemplars	species_resolved	above_species_or_unresolved	species_resolved_fraction
-5	50	production	67452	63455	3997	0.9407430469074305
-5	50	protein_variant	99206	55404	43802	0.5584742858294861
-25	10	production	77223	76203	1020	0.9867914999417272
-25	10	protein_variant	101037	45760	55277	0.45290339182675654

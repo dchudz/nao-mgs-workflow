@@ -1,3 +1,0 @@
-group	scope	n_reassigned	n_distinct_pairs	top_pair	top_pair_reads	top_pair_frac
-SRR35987549_5m	all	617	48	28875->10912	297	0.4813614262560778
-SRR35987549_5m	vertebrate	590	42	28875->10912	297	0.5033898305084745

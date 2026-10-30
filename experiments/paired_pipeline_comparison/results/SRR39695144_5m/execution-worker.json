@@ -1,6 +1,0 @@
-{
-  "worker": "primary",
-  "instance_id": "i-02d118993a6f4989a",
-  "shard": "primary-expansion",
-  "reason": "Frozen size-balanced allocation after the feasibility gate"
-}

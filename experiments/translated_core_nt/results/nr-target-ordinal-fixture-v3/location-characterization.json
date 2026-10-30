@@ -1,9 +1,0 @@
-{
-  "synthetic_two_volume_boundary_mapping": "verified",
-  "invalid_ordinals_rejected": [
-    -1,
-    4
-  ],
-  "existing_fixture_targets_match_verified_getseq_numbers": true,
-  "limits": "PIN-header and alias mapping characterization only. No biological search or sequence decoding."
-}

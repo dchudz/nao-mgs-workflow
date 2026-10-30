@@ -1,8 +1,0 @@
-{
-  "utc": "2026-10-23T01:26:17.701735+00:00",
-  "observed_query_ids": 137,
-  "matches_first137_query_ids_exactly": true,
-  "observed_file_bytes": 14412196,
-  "observed_file_mtime_utc": "2026-10-23T01:04:13.524137+00:00",
-  "limits": "Output is incomplete; this verifies a batching observation only. No negative or final biological verdicts are inferred."
-}

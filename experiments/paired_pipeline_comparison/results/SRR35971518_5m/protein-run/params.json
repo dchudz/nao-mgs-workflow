@@ -1,8 +1,0 @@
-{
-  "sample": "SRR35971518_5m",
-  "reads": "/home/ec2-user/paired-study-20261024/comparisons/SRR35971518_5m/prepare/published/FASTP/SRR35971518_5m_fastp.fastq.gz",
-  "adapters": "/home/ec2-user/paired-study-20261024/sources/c77cdde0/ref/adapters.fasta",
-  "validate": false,
-  "base_dir": "/home/ec2-user/paired-study-20261024/comparisons/SRR35971518_5m/protein-run",
-  "ref_dir": "/home/ec2-user/experiment/reference"
-}

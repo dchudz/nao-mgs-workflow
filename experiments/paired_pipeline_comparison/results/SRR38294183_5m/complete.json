@@ -1,8 +1,0 @@
-{
-  "sample": "SRR38294183_5m",
-  "source_commit": "c77cdde08b03834a9c1f54f3d80b0c9668bf9a83",
-  "pairs": 5000000,
-  "both_arms_complete": true,
-  "downstream_parameters_equal": true,
-  "completed_utc": "2026-10-24T22:14:31.634354+00:00"
-}

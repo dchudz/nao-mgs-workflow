@@ -1,7 +1,0 @@
-{
-  "cases": 6000,
-  "all_six_frames": true,
-  "original_source_sha256": "a867c40934f94300cea839235259417286d9f1828d6769242340814307655cd7",
-  "function_body_identical": true,
-  "change": "Move existing coordinate function into an importable helper; no behavior change."
-}

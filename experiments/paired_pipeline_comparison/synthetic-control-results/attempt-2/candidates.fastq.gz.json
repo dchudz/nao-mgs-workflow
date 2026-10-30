@@ -1,7 +1,0 @@
-{
-  "pairs": 24,
-  "extract_only": true,
-  "workers": 2,
-  "frozen_functions": "/home/ec2-user/paired-study-20261024/source/experiments/amino_acids/diamond_adapter.py",
-  "execution": "Complete query-pair byte ranges; original geometry, near-best and LCA functions; original FASTQ order and qualities."
-}

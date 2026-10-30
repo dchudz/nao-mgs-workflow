@@ -1,6 +1,0 @@
-{
-  "candidate_pairs": 22359,
-  "aligned_query_mates": 44287,
-  "source": "pooled-query-calls.tsv",
-  "source_receipt": "query-cache-restore-receipt.json"
-}

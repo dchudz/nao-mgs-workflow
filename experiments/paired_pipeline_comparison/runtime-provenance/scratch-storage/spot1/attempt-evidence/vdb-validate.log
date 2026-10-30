@@ -1,6 +1,0 @@
-2026-10-24T08:22:27 vdb-validate.3.4.1 info: Database 'SRR38294858' metadata: no md5 file
-2026-10-24T08:22:27 vdb-validate.3.4.1 info: Table 'SEQUENCE' metadata: md5 ok
-2026-10-24T08:22:34 vdb-validate.3.4.1 info: Column 'ALTREAD': md5 ok
-2026-10-24T08:43:24 vdb-validate.3.4.1 info: Column 'ORIGINAL_QUALITY': md5 ok
-2026-10-24T08:43:24 vdb-validate.3.4.1 info: Column 'RD_FILTER': md5 ok
-2026-10-24T09:13:17 vdb-validate.3.4.1 info: SIGNAL - TERM

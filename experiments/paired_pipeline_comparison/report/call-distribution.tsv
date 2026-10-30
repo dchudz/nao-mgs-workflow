@@ -1,7 +1,0 @@
-depth_million_pairs	units	threshold	median_net_calls	minimum_net_calls	maximum_net_calls	runs_with_gain	runs_with_no_net_change	runs_with_loss
-5	50	2	9.5	-1	18	48	1	1
-5	50	3	8.0	-1	15	47	1	2
-5	50	5	7.0	-3	12	47	1	2
-25	10	2	15.5	13	34	10	0	0
-25	10	3	14.0	6	27	10	0	0
-25	10	5	11.5	7	22	10	0	0

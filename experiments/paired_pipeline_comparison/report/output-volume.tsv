@@ -1,3 +1,0 @@
-depth_million_pairs	units	production_rows	protein_rows	shared	same_assignment	reassigned	production_only	protein_only	net_rows	production_joint_exemplars	protein_variant_joint_exemplars	reassigned_fraction_of_shared
-5	50	70084	108862	69672	29434	40238	412	39190	38778	67452	99206	0.577534734183029
-25	10	91821	129965	91330	28678	62652	491	38635	38144	77223	101037	0.6859958392642067

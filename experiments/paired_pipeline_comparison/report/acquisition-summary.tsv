@@ -1,5 +1,0 @@
-metric	source_runs	recorded_runs	missing_runs	recorded_hours	median_recorded_minutes
-recorded_download_seconds	50	48	2	2.4170206874466666	2.8181305682249937
-final_acquisition_excluding_download_seconds	50	50	0	14.5585437332975	16.661283555975025
-validation_seconds_within_acquisition	50	50	0	5.391778812744719	5.57020664847496
-remaining_acquisition_seconds	50	50	0	9.166764920552781	10.235329837841649

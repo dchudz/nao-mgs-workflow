@@ -1,9 +1,0 @@
-{
-  "recorded_utc": "2026-10-23T00:36:14.175458+00:00",
-  "pid": 529907,
-  "process_group": 529906,
-  "elapsed_seconds": 1512.649854,
-  "allocated_worker_cost_USD": 1.1258783586148888,
-  "reason": "Intentional restart before completion to record DIAMOND subject ordinal (snum). Two lost human-competitor HSPs have sseqid N/A. Preserve this unfinished attempt; characterize first-seven-column output parity before relaunching the same fixed-mode control with richer traceability.",
-  "raw_output_bytes": 0
-}

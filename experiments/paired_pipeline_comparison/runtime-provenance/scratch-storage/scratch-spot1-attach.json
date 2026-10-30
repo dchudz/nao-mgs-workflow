@@ -1,7 +1,0 @@
-{
-    "VolumeId": "vol-06f002b044d0aeb35",
-    "InstanceId": "i-0f5065e3b4f67cfbc",
-    "Device": "/dev/sdf",
-    "State": "attaching",
-    "AttachTime": "2026-10-24T09:00:16.295000+00:00"
-}

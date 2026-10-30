@@ -1,6 +1,0 @@
-{
-  "worker": "spot2",
-  "instance_id": "i-0ee9da3f09d197be6",
-  "shard": "spot2-expansion",
-  "reason": "Frozen size-balanced allocation after the feasibility gate"
-}

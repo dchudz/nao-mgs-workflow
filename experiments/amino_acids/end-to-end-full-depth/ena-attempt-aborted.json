@@ -1,8 +1,0 @@
-{
-  "utc": "2026-10-23T19:20:00.278942+00:00",
-  "reason": "Observed about 1.2MB/s, over 11h per mate; switch to full-quality SRA AWS source before biological analysis",
-  "stopped_pids": [
-    42892,
-    42893
-  ]
-}

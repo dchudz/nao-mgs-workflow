@@ -1,7 +1,0 @@
-focus	key	metric	value	threshold	flag_type
-viral	group=SRR38294858_5m	vertebrate-viral reads reassigned (%)	69.45778997940974	10.0	fixed
-viral	group=SRR38294858_5m, rank_level=family, name=Sedoreoviridae	clade share change (pp)	-18.316679301686644	3.0	fixed
-viral	group=SRR38294858_5m, rank_level=family, name=Nodaviridae	clade share change (pp)	5.776892430278884	3.0	fixed
-viral	group=SRR38294858_5m, rank_level=order, name=Reovirales	clade share change (pp)	-18.316679301686644	3.0	fixed
-viral	group=SRR38294858_5m, rank_level=order, name=Nodamuvirales	clade share change (pp)	5.776892430278884	3.0	fixed
-viral	group=SRR38294858_5m	BLAST-agreement rate drop	0.2778001611603546	0.1	fixed

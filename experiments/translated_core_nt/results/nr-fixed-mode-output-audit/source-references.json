@@ -1,8 +1,0 @@
-{
-  "search": "d884f1f2370a90214dd9e2cec2ee7f8946ee9fd0",
-  "artifact_audit": "705cba14eb521bdfd2eafff8df791e33b3c056cb",
-  "exact_target_retrieval": "8500e4991fac426ff9c599d0acdc52da253b9170",
-  "pairwise_reference_inspection": "f19036ed8e2b47222e42ab79980f19b36774d8b9",
-  "search_status": "time_limit; no clean completion receipt",
-  "audit_status": "saved output exactly matches pooled output, separately audited"
-}

@@ -1,9 +1,0 @@
-{
-  "completed_utc": "2026-10-23T05:54:33.608128+00:00",
-  "source_worker": "i-061f366bd55def34c",
-  "file": "protein232-results-v1.tar.gz",
-  "bytes": 22510115,
-  "sha256": "bf7b346cfe21b636c56c734aca27a7a6d8ca4fef6778dc7056d4bfe91745ec2f",
-  "remote_and_local_SHA256_match": true,
-  "existing_input_and_receipt_bytes_unchanged": true
-}
