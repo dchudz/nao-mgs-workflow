@@ -1,3 +1,4 @@
+// Written by Codex, an AI, at David's request; David has not reviewed this change line by line.
 // Run Bowtie2 on streamed interleaved or single-end input and return mapped and unmapped reads
 // NB: This handles non-concordant alignments correctly for this use case (including them with the aligned rather than unaligned reads), so we can skip some downstream processing steps
 process BOWTIE2 {
@@ -21,6 +22,9 @@ process BOWTIE2 {
         def par = "--threads ${task.cpus} --mm ${params_map.par_string}"
         def unmapped_flag = params_map.interleaved ? "12" : "4"
         def in2 = "${sample}_${suffix}_bowtie2_in.fastq.gz"
+        def debug_all = params_map.debug ? '"${tmpdir}/all.fifo"' : ""
+        def debug_un = params_map.debug ? '| tee "${tmpdir}/debug_un.fifo"' : ""
+        def debug_al = params_map.debug ? '| tee "${tmpdir}/debug_al.fifo"' : ""
         """
         set -euo pipefail
         # Download Bowtie2 index if not already present
@@ -40,24 +44,40 @@ process BOWTIE2 {
         #   - Third branch (samtools view -h -G ${unmapped_flag}) also filters SAM to mapped reads,
         #       optionally removes SQ header lines, then saves SAM
         # Debug statements allow saving of additional SAM files at different steps in the pipeline.
+        tmpdir=\$(mktemp -d)
+        trap 'rm -rf "\${tmpdir}"' EXIT
+        PIDS=()
+        mkfifo "\${tmpdir}/un.fifo" "\${tmpdir}/al.fifo"
+        if [[ "${params_map.debug}" == "true" ]]; then
+            mkfifo "\${tmpdir}/all.fifo" "\${tmpdir}/debug_un.fifo" "\${tmpdir}/debug_al.fifo"
+            ( gzip -c > test_all.sam.gz ) < "\${tmpdir}/all.fifo" & PIDS+=(\$!)
+            ( samtools view -h - | pigz -p ${task.cpus} -1 -c > test_unmapped.sam.gz ) < "\${tmpdir}/debug_un.fifo" & PIDS+=(\$!)
+            ( samtools view -h - | pigz -p ${task.cpus} -1 -c > test_mapped.sam.gz ) < "\${tmpdir}/debug_al.fifo" & PIDS+=(\$!)
+        fi
+        # Open each FIFO before starting its pipeline, even if an output cannot
+        # be opened. Otherwise tee can block waiting for a reader that has exited.
+        ( samtools view -u -f ${unmapped_flag} - \\
+            ${debug_un} \\
+            | samtools fastq -1 /dev/stdout -2 /dev/stdout \\
+                -0 /dev/stdout -s /dev/stdout -N - \\
+            | sed '1~4 s/\\/\\([12]\\)\$/ \\1/' \\
+            | pigz -p ${task.cpus} -1 -c > ${un} ) < "\${tmpdir}/un.fifo" & PIDS+=(\$!)
+        ( samtools view -u -G ${unmapped_flag} - \\
+            ${debug_al} \\
+            | samtools fastq -1 /dev/stdout -2 /dev/stdout \\
+                -0 /dev/stdout -s /dev/stdout -N - \\
+            | sed '1~4 s/\\/\\([12]\\)\$/ \\1/' \\
+            | pigz -p ${task.cpus} -1 -c > ${al} ) < "\${tmpdir}/al.fifo" & PIDS+=(\$!)
+        status=0
         pigz -dc -p ${task.cpus} ${reads_interleaved} \\
             | bowtie2 ${par} \${io} \\
-            | tee \\
-                ${ params_map.debug ? ">(gzip -c > test_all.sam.gz)" : "" } \\
-                >(samtools view -u -f ${unmapped_flag} - \\
-                    ${ params_map.debug ? "| tee >(samtools view -h - | pigz -p ${task.cpus} -1 -c > test_unmapped.sam.gz)" : "" } \\
-                    | samtools fastq -1 /dev/stdout -2 /dev/stdout \\
-                        -0 /dev/stdout -s /dev/stdout -N - \\
-                    | sed '1~4 s/\\/\\([12]\\)\$/ \\1/' \\
-                    | pigz -p ${task.cpus} -1 -c > ${un}) \\
-                >(samtools view -u -G ${unmapped_flag} - \\
-                    ${ params_map.debug ? "| tee >(samtools view -h - | pigz -p ${task.cpus} -1 -c > test_mapped.sam.gz)" : "" } \\
-                    | samtools fastq -1 /dev/stdout -2 /dev/stdout \\
-                        -0 /dev/stdout -s /dev/stdout -N - \\
-                    | sed '1~4 s/\\/\\([12]\\)\$/ \\1/' \\
-                    | pigz -p ${task.cpus} -1 -c > ${al}) \\
+            | tee "\${tmpdir}/un.fifo" "\${tmpdir}/al.fifo" ${debug_all} \\
             | samtools view -h -G ${unmapped_flag} - \\
-            ${ params_map.remove_sq ? "| grep -v '^@SQ'" : "" } | pigz -p ${task.cpus} -1 -c > ${sam}
+            ${ params_map.remove_sq ? "| grep -v '^@SQ'" : "" } | pigz -p ${task.cpus} -1 -c > ${sam} || status=\$?
+        # Reap every writer, including after a failed producer or writer. Each
+        # subshell inherits pipefail, so intermediate failures also reach wait.
+        for pid in "\${PIDS[@]}"; do wait "\${pid}" || status=\$?; done
+        [[ "\${status}" -eq 0 ]] || exit "\${status}"
         # Move input files for testing
         ln -s ${reads_interleaved} ${in2}
         """
